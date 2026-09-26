@@ -21,7 +21,6 @@ permissions:
   contents: write
   pages: write
   id-token: write
-  models: read      # 무료 GitHub Models (Gemini가 안 될 때 백업 AI)
 
 concurrency:
   group: daily-post
@@ -59,7 +58,7 @@ jobs:
           ALI_TRACKING_ID: ${{ secrets.ALI_TRACKING_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_MODELS_TOKEN: ${{ github.token }}
+          BACKUP_AI_KEY: ${{ secrets.BACKUP_AI_KEY }}
           KBEAUTY_SHEET_CSV_URL: ${{ secrets.KBEAUTY_SHEET_CSV_URL }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
@@ -76,7 +75,7 @@ jobs:
           ALI_TRACKING_ID: ${{ secrets.ALI_TRACKING_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_MODELS_TOKEN: ${{ github.token }}
+          BACKUP_AI_KEY: ${{ secrets.BACKUP_AI_KEY }}
           KBEAUTY_SHEET_CSV_URL: ${{ secrets.KBEAUTY_SHEET_CSV_URL }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: python -m bot check

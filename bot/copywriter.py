@@ -1,7 +1,7 @@
 """Turns a Candidate into card text + an Instagram caption.
 
 Template mode (free) uses bot/knowledge.py. If an AI is available (see bot/ai.py: Gemini free
-key, GitHub Models via the workflow token, or Claude), it polishes the hook and translates Korean notes (한줄평, 특징, 순위, 리뷰 요약) into English,
+key, a backup OpenAI-compatible key such as Groq, or Claude), it polishes the hook and translates Korean notes (한줄평, 특징, 순위, 리뷰 요약) into English,
 using only the facts given — it never invents ingredients or results.
 """
 from __future__ import annotations

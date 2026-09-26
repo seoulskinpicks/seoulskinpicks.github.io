@@ -222,9 +222,15 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 - **비용:** 무료 한도로 충분해요 (하루 1번만 불러요).
 - **참고:** 무료 버전은 구글이 입력 내용을 서비스 개선에 쓸 수 있어요. 봇이 보내는 건 제품명과 설명뿐이라 괜찮아요.
 - **모델:** `config.toml`의 `gemini_model`(기본 `gemini-flash-latest`)을 쓰고, 안 되면 다른 Flash 모델로 자동으로 바꿔 시도해요.
-- **오류가 나면:** 일시 오류(서버 혼잡·요청 한도·네트워크)일 때 **5초 → 1분 → 5분** 뒤에 다시 시도해요. 그래도 안 되면 **GitHub Models**(무료 백업 AI, 가입·키 필요 없음)로 넘어가요. 그것도 안 되면 내장 템플릿으로 게시해요. 게시는 절대 멈추지 않아요.
+- **오류가 나면:** 일시 오류(서버 혼잡·요청 한도·네트워크)일 때 **5초 → 1분 → 5분** 뒤에 다시 시도해요. 그래도 안 되면 **백업 AI**(`BACKUP_AI_KEY`, 기본 Groq 무료)로 넘어가요. 그것도 안 되면 내장 템플릿으로 게시해요. 게시는 절대 멈추지 않아요.
   - 키가 틀린 것처럼 다시 시도해도 소용없는 오류는 기다리지 않고 바로 다음 AI로 넘어가요.
   - 순서·간격은 `config.toml`의 `[copy]`에서 `ai_order`, `retry_delays`로 바꿀 수 있어요.
+
+**백업 AI — Groq 무료 (`BACKUP_AI_KEY`)**
+- **하는 일:** Gemini가 재시도 후에도 안 될 때 대신 카피를 써요.
+- **발급:** [console.groq.com/keys](https://console.groq.com/keys)에 구글 계정으로 로그인해서 **Create API Key**를 누르고, 키를 `BACKUP_AI_KEY` Secret에 넣어요. 무료 한도는 하루 약 1,000번이라 충분해요.
+- **다른 곳을 쓰고 싶다면:** OpenAI 호환 API(OpenRouter 등)는 `config.toml`의 `backup_ai_url`·`backup_ai_model`·`backup_ai_name`만 바꾸면 돼요.
+- ⚠️ GitHub Models는 2026년 7월에 서비스가 종료돼서 백업으로 쓸 수 없어요.
 
 **Claude AI 카피 (`ANTHROPIC_API_KEY`)** — Gemini 대신 쓰고 싶을 때 (두 키가 다 있으면 Claude 우선)
 - **하는 일:** 표지 제목을 더 자연스럽게 다듬고, 한국어로 적은 한줄평·특징·순위를 영어로 번역해요.
@@ -247,6 +253,7 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 | `IG_ACCESS_TOKEN` | 게시하려면 필수 | 인스타 게시 |
 | `ALI_APP_KEY` / `ALI_APP_SECRET` / `ALI_TRACKING_ID` | 알리 쓸 때 | 알리 인기 도구 + 제휴 링크 |
 | `GEMINI_API_KEY` | 선택 (추천) | AI 카피·번역 (무료) |
+| `BACKUP_AI_KEY` | 선택 (추천) | 백업 AI (Groq 무료) |
 | `ANTHROPIC_API_KEY` | 선택 | AI 카피·번역 (유료) |
 | `GH_PAT` | 선택 | 인스타 토큰 자동 저장 |
 | `IG_USER_ID` | 거의 불필요 | 페이스북 로그인 방식 API를 쓸 때만 |

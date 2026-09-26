@@ -1,9 +1,9 @@
 """AI text for card copy, with retries and backup providers.
 
 Order (only the ones that are set up are used):
-  1. Claude  (ANTHROPIC_API_KEY, paid)          — only if you add the key
+  1. Claude  (ANTHROPIC_API_KEY, paid)              — only if you add the key
   2. Gemini  (GEMINI_API_KEY, free AI Studio key)
-  3. GitHub Models (the workflow's own GITHUB_TOKEN, free, no sign-up)
+  3. Backup  (BACKUP_AI_KEY, any OpenAI-compatible API; default Groq's free tier)
 
 Each provider gets a few tries when the error looks temporary (busy server, rate limit,
 network): wait 5 s → 1 min → 5 min (config [copy] retry_delays). If it still fails, the next
@@ -23,8 +23,11 @@ DEFAULT_RETRY_DELAYS = [5, 60, 300]
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 GEMINI_FALLBACK_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
-GITHUB_MODELS_URL = "https://models.github.ai/inference/chat/completions"
-PROVIDER_NAMES = {"claude": "Claude", "gemini": "Gemini", "github": "GitHub Models"}
+BACKUP_DEFAULTS = {
+    "backup_ai_name": "Groq",
+    "backup_ai_url": "https://api.groq.com/openai/v1/chat/completions",
+    "backup_ai_model": "openai/gpt-oss-120b",
+}
 
 
 class AITemporary(Exception):
@@ -35,14 +38,22 @@ class AIUnavailable(Exception):
     """Retrying won't help (bad key, unknown model, no access) → go to the next provider."""
 
 
+def _opt(cfg, key: str) -> str:
+    return str(cfg.copy.get(key) or BACKUP_DEFAULTS[key]).strip()
+
+
+def provider_name(cfg, p: str) -> str:
+    return {"claude": "Claude", "gemini": "Gemini"}.get(p) or _opt(cfg, "backup_ai_name")
+
+
 def providers(cfg) -> list[str]:
-    ready = {"claude": bool(cfg.anthropic_key), "gemini": bool(cfg.gemini_key), "github": bool(cfg.github_models_token)}
-    order = cfg.copy.get("ai_order", ["claude", "gemini", "github"])
+    ready = {"claude": bool(cfg.anthropic_key), "gemini": bool(cfg.gemini_key), "backup": bool(cfg.backup_ai_key)}
+    order = cfg.copy.get("ai_order", ["claude", "gemini", "backup"])
     return [p for p in order if ready.get(p)]
 
 
 def describe(cfg) -> str:
-    return " → ".join(PROVIDER_NAMES[p] for p in providers(cfg))
+    return " → ".join(provider_name(cfg, p) for p in providers(cfg))
 
 
 def _error_text(resp) -> str:
@@ -66,7 +77,10 @@ def _post(http, url, headers, body, timeout, secrets=()):
     try:
         return resp.json()
     except Exception:
-        raise AITemporary("응답을 읽지 못했어요") from None
+        # A 2xx that isn't JSON (login page, redirect, wrong endpoint) won't fix itself by waiting.
+        ctype = (getattr(resp, "headers", None) or {}).get("content-type", "?")
+        body = " ".join(str(getattr(resp, "text", "") or "").split())[:100]
+        raise AIUnavailable(scrub(f"HTTP {resp.status_code} {ctype} — JSON 아님: {body}", *secrets)) from None
 
 
 # ---- one attempt per provider -------------------------------------------------
@@ -123,14 +137,14 @@ def _gemini_once(system, user, cfg, http) -> str:
     raise AIUnavailable(unavailable or "사용할 수 있는 모델 없음")
 
 
-def _github_once(system, user, cfg, http) -> str:
-    token = cfg.github_models_token
-    data = _post(http, GITHUB_MODELS_URL,
-                 {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json",
-                  "X-GitHub-Api-Version": "2022-11-28", "Content-Type": "application/json"},
-                 {"model": cfg.copy.get("github_model", "openai/gpt-4.1-mini"), "temperature": 0.7, "max_tokens": 800,
+def _backup_once(system, user, cfg, http) -> str:
+    """Any OpenAI-compatible chat API (Groq by default; OpenRouter etc. also work via config)."""
+    key = cfg.backup_ai_key
+    data = _post(http, _opt(cfg, "backup_ai_url"),
+                 {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+                 {"model": _opt(cfg, "backup_ai_model"), "temperature": 0.7, "max_tokens": 2000,
                   "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]},
-                 60, (token,))
+                 60, (key,))
     try:
         text = data["choices"][0]["message"]["content"] or ""
     except (KeyError, IndexError, TypeError):
@@ -140,7 +154,7 @@ def _github_once(system, user, cfg, http) -> str:
     return text
 
 
-ONCE = {"claude": _claude_once, "gemini": _gemini_once, "github": _github_once}
+ONCE = {"claude": _claude_once, "gemini": _gemini_once, "backup": _backup_once}
 
 
 # ---- retries + fallback -------------------------------------------------------
@@ -150,22 +164,22 @@ def ask(system: str, user: str, cfg, session=None, sleep=time.sleep) -> tuple[st
     delays = [float(d) for d in cfg.copy.get("retry_delays", DEFAULT_RETRY_DELAYS)]
     failures = []
     for p in providers(cfg):
-        name = PROVIDER_NAMES[p]
+        name = provider_name(cfg, p)
         for attempt in range(len(delays) + 1):
             if attempt:
                 wait = delays[attempt - 1]
-                warn(f"{name} 다시 시도 {attempt}/{len(delays)} — {wait:g}초 뒤")
+                warn(f"{name} 일시 오류 ({last}) → {wait:g}초 뒤 다시 시도 {attempt}/{len(delays)}")
                 sleep(wait)
             try:
                 return ONCE[p](system, user, cfg, http), name
             except AITemporary as exc:
-                last = f"{name}: {exc}"
+                last = str(exc)
                 continue
             except AIUnavailable as exc:
-                last = f"{name}: {exc}"
+                last = str(exc)
                 break
-        failures.append(last)
-        warn(f"{name} 실패 ({last}) → 다음 AI로 넘어가요")
+        failures.append(f"{name}: {last}")
+        warn(f"{name} 실패 ({last}) → 다음 AI로 넘어가요 (없으면 템플릿)")
     raise RuntimeError("모든 AI 실패: " + " | ".join(failures) if failures else "설정된 AI 없음")
 
 
@@ -174,7 +188,7 @@ def check(cfg, session=None) -> list[str]:
     http = session or requests
     lines = []
     for p in providers(cfg):
-        name = PROVIDER_NAMES[p]
+        name = provider_name(cfg, p)
         try:
             if p == "gemini":
                 resp = http.get("https://generativelanguage.googleapis.com/v1beta/models",
@@ -184,9 +198,14 @@ def check(cfg, session=None) -> list[str]:
                 names = [m.get("name", "").split("/")[-1] for m in resp.json().get("models", [])]
                 flash = [n for n in names if "flash" in n and not any(x in n for x in ("image", "tts", "live", "audio"))]
                 lines.append(f"{name}: 키 확인됨 (Flash 모델 {len(flash)}개)")
-            elif p == "github":
-                text = _github_once("Reply with the single word OK.", "ping", cfg, http)
-                lines.append(f"{name}: 연결됨 ({text.strip()[:10]})")
+            elif p == "backup":
+                url = _opt(cfg, "backup_ai_url").rsplit("/chat/completions", 1)[0] + "/models"
+                resp = http.get(url, headers={"Authorization": f"Bearer {cfg.backup_ai_key}"}, timeout=30)
+                if resp.status_code != 200:
+                    raise AIUnavailable(scrub(_error_text(resp), cfg.backup_ai_key))
+                ids = [m.get("id", "") for m in (resp.json().get("data") or [])]
+                model = _opt(cfg, "backup_ai_model")
+                lines.append(f"{name}: 키 확인됨 ({model} {'사용 가능' if model in ids else '목록에 없음 — config 확인'})")
             else:
                 lines.append(f"{name}: 키 있음")
         except Exception as exc:

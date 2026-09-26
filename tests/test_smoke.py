@@ -307,27 +307,61 @@ class Tests(unittest.TestCase):
         cfg = make_cfg(self.tmp, [])
         cand = copy.deepcopy(DEMO_KBEAUTY[0])
         reply = {"hook": "The toner Seoul keeps restocking", "brand_en": "Hanbit Lab", "product_en": "Rice Water Glow Toner"}
-        waits, hits = [], {"gemini": 0, "github": 0}
+        waits, hits = [], {"gemini": 0, "backup": 0}
 
         class Flaky:
             def post(self, url, headers=None, json=None, timeout=None):
                 if "generativelanguage" in url:
                     hits["gemini"] += 1
                     return FakeResp({"error": {"message": "The model is overloaded"}}, status=503)
-                assert url.startswith("https://models.github.ai/")
-                assert headers["Authorization"] == "Bearer gh-test"
-                hits["github"] += 1
+                assert url == "https://api.groq.com/openai/v1/chat/completions"
+                assert headers["Authorization"] == "Bearer gq-test"
+                assert json["model"] == "openai/gpt-oss-120b"
+                hits["backup"] += 1
                 return FakeResp({"choices": [{"message": {"content": __import__("json").dumps(reply)}}]})
 
-        env = {"GEMINI_API_KEY": "gm-test", "GITHUB_MODELS_TOKEN": "gh-test"}
+        env = {"GEMINI_API_KEY": "gm-test", "BACKUP_AI_KEY": "gq-test"}
         with mock.patch.dict("os.environ", env):
             cp = make_copy(cand, 7, cfg, session=Flaky(), sleep=waits.append)
         self.assertEqual(waits, [5, 60, 300])                 # 5 s → 1 min → 5 min
         self.assertEqual(hits["gemini"], 4 * 3)               # 4 tries x 3 model names
-        self.assertEqual(hits["github"], 1)
+        self.assertEqual(hits["backup"], 1)
         self.assertTrue(cp.ai_used)
-        self.assertEqual(cp.ai_provider, "GitHub Models")
+        self.assertEqual(cp.ai_provider, "Groq")
         self.assertEqual(cp.hook, reply["hook"])
+
+    def test_non_json_reply_is_not_retried(self):
+        from bot import ai
+        cfg = make_cfg(self.tmp, [])
+        waits = []
+
+        class Html(FakeResp):
+            text = "<html>retired</html>"
+
+            def json(self):
+                raise ValueError("not json")
+
+        class S:
+            def post(self, *a, **k):
+                return Html(status=200, headers={"content-type": "text/html"})
+
+        with mock.patch.dict("os.environ", {"BACKUP_AI_KEY": "gq-test"}):
+            with self.assertRaises(RuntimeError) as ctx:
+                ai.ask("sys", "user", cfg, session=S(), sleep=waits.append)
+        self.assertEqual(waits, [])
+        self.assertIn("JSON 아님", str(ctx.exception))
+
+    def test_backup_key_check(self):
+        from bot import ai
+        cfg = make_cfg(self.tmp, [])
+
+        class S:
+            def get(self, url, headers=None, params=None, timeout=None):
+                assert url == "https://api.groq.com/openai/v1/models"
+                return FakeResp({"data": [{"id": "openai/gpt-oss-120b"}, {"id": "openai/gpt-oss-20b"}]})
+
+        with mock.patch.dict("os.environ", {"BACKUP_AI_KEY": "gq-test"}):
+            self.assertIn("사용 가능", ai.check(cfg, session=S())[0])
 
     def test_bad_key_skips_retries(self):
         import copy
