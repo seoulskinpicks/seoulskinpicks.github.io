@@ -107,7 +107,7 @@ CATEGORIES: dict[str, dict] = {
     },
     "serum": {
         "label": "serum",
-        "aliases": ["serum", "ampoule", "ampule", "세럼", "앰플", "앰풀"],
+        "aliases": ["serum", "ampoule", "ampule", "booster", "세럼", "앰플", "앰풀", "부스터"],
         "what": [
             "A concentrated step for your main skin goal",
             "Goes on after toner, before cream",
