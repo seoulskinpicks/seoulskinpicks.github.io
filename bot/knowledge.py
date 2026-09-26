@@ -318,6 +318,8 @@ def match_category(text: str) -> str:
         return "other"
     if t in CATEGORIES:
         return t
+    if re.search(r"\bpads?\b", t) and re.search(r"toner|peel|exfoliat|cotton", t):
+        return "toner_pad"
     best, best_len = "other", 0
     for key, cat in CATEGORIES.items():
         for alias in cat["aliases"]:
