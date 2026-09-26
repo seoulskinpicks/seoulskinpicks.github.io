@@ -1,0 +1,10 @@
+User-Agent: Scrapy
+User-Agent: Bytespider
+Disallow: /
+
+User-agent: *
+Allow: /
+Allow: /display
+Allow: /product
+Disallow: /order
+Disallow: /cart

@@ -1,0 +1,117 @@
+name: Daily post
+
+on:
+  schedule:
+    # 매일 13:07 UTC = 한국 22:07 · 미국 동부 09:07 · 영국 14:07
+    # (GitHub 사정으로 10~30분 늦게 시작될 수 있어요)
+    - cron: "7 13 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "미리보기만 (체크하면 인스타에 올리지 않고 카드 이미지만 만들어요)"
+        type: boolean
+        default: true
+      source:
+        description: "올릴 종류 (auto = 설정대로 번갈아)"
+        type: choice
+        options: [auto, kbeauty, tools]
+        default: auto
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Get site address
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare today's post
+        id: prepare
+        env:
+          ALI_APP_KEY: ${{ secrets.ALI_APP_KEY }}
+          ALI_APP_SECRET: ${{ secrets.ALI_APP_SECRET }}
+          ALI_TRACKING_ID: ${{ secrets.ALI_TRACKING_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KBEAUTY_SHEET_CSV_URL: ${{ secrets.KBEAUTY_SHEET_CSV_URL }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          ARGS="--out site --source ${{ inputs.source || 'auto' }}"
+          if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          python -m bot prepare $ARGS
+
+      - name: Check connections (preview runs only)
+        if: env.DRY_RUN == 'true'
+        continue-on-error: true
+        env:
+          ALI_APP_KEY: ${{ secrets.ALI_APP_KEY }}
+          ALI_APP_SECRET: ${{ secrets.ALI_APP_SECRET }}
+          ALI_TRACKING_ID: ${{ secrets.ALI_TRACKING_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KBEAUTY_SHEET_CSV_URL: ${{ secrets.KBEAUTY_SHEET_CSV_URL }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python -m bot check
+
+      - name: Keep card images for review
+        if: steps.prepare.outputs.has_post == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-images
+          path: |
+            site/posts
+            site/pins
+            pins/*.jpg
+          retention-days: 14
+
+      - name: Upload link page + images
+        if: steps.prepare.outputs.has_post == 'true' && env.DRY_RUN != 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: steps.prepare.outputs.has_post == 'true' && env.DRY_RUN != 'true'
+        uses: actions/deploy-pages@v4
+
+      - name: Publish to Instagram
+        if: steps.prepare.outputs.has_post == 'true' && env.DRY_RUN != 'true'
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python -m bot publish --site-url "${{ steps.deployment.outputs.page_url }}"
+
+      - name: Save progress
+        if: always() && steps.prepare.outputs.has_post == 'true' && env.DRY_RUN != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state.json pins
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update posting state (No.${{ steps.prepare.outputs.number }})"
+          git pull --rebase --autostash
+          git push

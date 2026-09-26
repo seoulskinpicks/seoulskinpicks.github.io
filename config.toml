@@ -1,0 +1,74 @@
+# ─────────────────────────────────────────────────────────────
+#  K-beauty 자동 게시 봇 설정
+#  '#' 뒤는 설명이에요. 따옴표 안의 값만 바꾸면 됩니다.
+# ─────────────────────────────────────────────────────────────
+
+[account]
+handle = "seoul.skin.picks"                       # 인스타 아이디 (@ 빼고)
+brand_name = "Seoul Skin Picks"                   # 링크 페이지 제목
+tagline = "Real K-beauty picks, chosen in Korea"  # 링크 페이지 한 줄 소개
+timezone = "Asia/Seoul"                           # 날짜 기준 시간대
+
+[schedule]
+# alternate     : K뷰티와 알리 도구를 하루씩 번갈아 (한쪽이 비면 다른 쪽)
+# kbeauty_first : K뷰티 목록이 남아 있으면 항상 K뷰티, 비면 알리 도구
+# tools_first   : 알리 도구 우선, 안 되면 K뷰티
+mode = "alternate"
+
+[kbeauty]
+# 구글 시트를 '웹에 게시 → CSV'로 만든 주소.
+# 비워두면 GitHub Secret KBEAUTY_SHEET_CSV_URL → 없으면 data/kbeauty_queue.csv 순서로 읽어요.
+sheet_csv_url = ""
+shop_name = "Olive Young Global"                  # 마지막 장 "Shop at ..." 문구
+review_source = "Olive Young"                     # 평점·리뷰 출처 표시 ("... reviews on Olive Young")
+auto_find_aliexpress = true   # 알리 주소 칸이 비어 있으면 브랜드 공식 스토어에서 같은 제품을 자동으로 찾아봐요 (끄려면 false)
+# 올리브영 글로벌 제휴에 가입한 뒤, 제휴 링크 모양에 맞춰 바꾸세요.
+# {url} = 상품 주소, {prdt_no} = 상품 번호.  예: "{url}&referral=MYCODE"
+oliveyoung_link_template = "{url}"
+oliveyoung_code = ""          # 제휴 코드(리워드 코드)가 있으면 적어요 → 캡션·링크 페이지에 "Use code ..." 표시
+
+[discover]
+# 매주 월요일 올리브영 글로벌 베스트셀러를 모아서 알리 공식 스토어에 있는지 확인하고
+# data/auto_queue.csv 에 자동으로 넣어요. (내 구글 시트에 적은 제품이 항상 먼저 올라가요)
+enabled = true
+lists = ["Skincare", "Suncare", "Face Masks"]   # 추가 가능: "Makeup", "Hair", "Bath & Body"
+top_n = 20          # 목록마다 상위 몇 위까지 볼지
+max_new = 10        # 한 번에 새로 추가할 최대 개수
+min_rating = 4.5    # 평점 이보다 낮으면 제외
+min_reviews = 30    # 리뷰 수 이보다 적으면 제외
+skip_brands = []    # 빼고 싶은 브랜드 (예: ["BRAND A"])
+
+[aliexpress]
+ship_to_country = "US"      # 가격·배송 기준 국가 (US, GB, AU, CA ...)
+currency = "USD"
+language = "EN"
+max_price_usd = 25          # 이 가격 넘는 상품은 제외
+min_rating_percent = 90     # 긍정 리뷰 비율이 이보다 낮으면 제외
+min_orders = 200            # 판매량이 이보다 적으면 제외
+# 돌아가며 찾을 도구 종류 (bot/knowledge.py 의 TOOLS 이름). 빼고 싶은 건 지우면 돼요.
+tools = [
+  "gua_sha", "ice_roller", "face_roller", "silicone_scrubber", "mask_brush",
+  "makeup_sponge", "brush_set", "spa_headband", "konjac_sponge",
+  "scalp_massager", "eyelash_curler", "reusable_pads",
+]
+extra_blocked_words = []    # 추가로 걸러낼 단어 (예: ["unicorn", "cartoon"])
+
+[copy]
+# GitHub Secret ANTHROPIC_API_KEY 가 있으면 Claude가 카피를 다듬고 한국어 한줄평을 영어로 번역해요.
+# 없으면 내장 템플릿으로 작성해요 (무료).
+ai_model = "claude-haiku-4-5-20251001"
+hashtags_common = ["#kbeauty", "#koreanskincare", "#skincareroutine", "#kbeautytips", "#seoulbeauty"]
+hashtags_kbeauty = ["#oliveyoung", "#oliveyoungglobal", "#kbeautyfavorites", "#koreanbeauty"]
+hashtags_tools = ["#skincaretools", "#selfcaretools", "#aliexpressfinds", "#beautytools"]
+
+[pinterest]
+# 핀터레스트 비즈니스 계정 → 설정 → 소유권 확인(Claimed accounts) → 웹사이트 → "HTML 태그" 에서
+# content="..." 안의 값만 복사해서 넣으세요. 링크 페이지에 인증 태그가 자동으로 들어가요.
+domain_verify = ""
+# 보통 비워두세요 (GitHub가 자동으로 알려줘요). 직접 도메인을 쓰면 적어요: "https://example.com/"
+site_url = ""
+
+[instagram]
+# 'Instagram 로그인' 방식 API (페이스북 페이지 불필요). 보통은 그대로 두세요.
+api_host = "graph.instagram.com"
+api_version = "v24.0"

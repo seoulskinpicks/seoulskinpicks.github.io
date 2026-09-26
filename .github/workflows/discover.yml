@@ -1,0 +1,57 @@
+name: Find bestsellers
+
+# 매주 월요일 올리브영 글로벌 베스트셀러를 모으고, 알리 공식 스토어에 있는지 확인해서
+# data/auto_queue.csv 에 자동으로 추가해요. Actions 탭에서 "Run workflow" 로 바로 실행할 수도 있어요.
+on:
+  schedule:
+    - cron: "17 0 * * 1"   # 매주 월요일 한국 09:17
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "미리보기만 (목록 파일은 바꾸지 않음)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Collect bestsellers and check AliExpress
+        env:
+          ALI_APP_KEY: ${{ secrets.ALI_APP_KEY }}
+          ALI_APP_SECRET: ${{ secrets.ALI_APP_SECRET }}
+          ALI_TRACKING_ID: ${{ secrets.ALI_TRACKING_ID }}
+          KBEAUTY_SHEET_CSV_URL: ${{ secrets.KBEAUTY_SHEET_CSV_URL }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then python -m bot discover --dry-run; else python -m bot discover; fi
+
+      - name: Save list
+        if: env.DRY_RUN != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/auto_queue.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Weekly bestsellers update"
+          git pull --rebase --autostash
+          git push

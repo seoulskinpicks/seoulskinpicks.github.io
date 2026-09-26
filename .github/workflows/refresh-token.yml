@@ -1,0 +1,45 @@
+name: Refresh Instagram token
+
+# 인스타 토큰은 60일마다 만료돼요. 한 달에 두 번 자동으로 연장합니다.
+# GH_PAT 시크릿이 있으면 새 토큰을 IG_ACCESS_TOKEN 시크릿에 자동 저장해요.
+on:
+  schedule:
+    - cron: "23 2 1,15 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Refresh token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$IG_ACCESS_TOKEN" ]; then echo "IG_ACCESS_TOKEN 이 아직 없어요. 건너뜀."; exit 0; fi
+          python -m bot refresh-token --out "$RUNNER_TEMP/token.txt"
+
+      - name: Save new token to secrets
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if [ ! -s "$RUNNER_TEMP/token.txt" ]; then exit 0; fi
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::GH_PAT 시크릿이 없어서 새 토큰을 자동 저장하지 못했어요. 토큰이 바뀌었다면 50일 안에 직접 새로 넣어주세요 (README 참고)."
+            exit 0
+          fi
+          gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" < "$RUNNER_TEMP/token.txt"
+          echo "새 토큰을 IG_ACCESS_TOKEN 에 저장했어요."

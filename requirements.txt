@@ -1,0 +1,4 @@
+pillow>=10.3
+pillow-heif>=0.16
+requests>=2.31
+tzdata
