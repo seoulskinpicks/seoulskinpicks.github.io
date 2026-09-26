@@ -282,10 +282,10 @@ class Tests(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertIn("gemini-2.5-flash:generateContent", calls[1])
         self.assertEqual(cp.slide4, {"kind": "take", "text": reply["comment_en"]})
-        self.assertEqual(cfg.ai_name, "")   # env patch is gone again
+        self.assertEqual(cp.ai_provider, "Gemini")
 
     def test_gemini_key_check(self):
-        from bot.copywriter import ai_check
+        from bot import ai
         cfg = make_cfg(self.tmp, [])
 
         class S:
@@ -296,10 +296,53 @@ class Tests(unittest.TestCase):
                                             {"name": "models/gemini-2.5-flash-preview-tts"}]})
 
         with mock.patch.dict("os.environ", {"GEMINI_API_KEY": "gm-test"}):
-            self.assertIn("2개", ai_check(cfg, session=S()))
+            self.assertIn("2개", ai.check(cfg, session=S())[0])
         with mock.patch.dict("os.environ", {"GEMINI_API_KEY": "wrong"}):
-            with self.assertRaises(ValueError):
-                ai_check(cfg, session=S())
+            line = ai.check(cfg, session=S())[0]
+        self.assertTrue(line.startswith("❌"))
+        self.assertNotIn("wrong", line)
+
+    def test_ai_retries_then_uses_backup_provider(self):
+        import copy
+        cfg = make_cfg(self.tmp, [])
+        cand = copy.deepcopy(DEMO_KBEAUTY[0])
+        reply = {"hook": "The toner Seoul keeps restocking", "brand_en": "Hanbit Lab", "product_en": "Rice Water Glow Toner"}
+        waits, hits = [], {"gemini": 0, "github": 0}
+
+        class Flaky:
+            def post(self, url, headers=None, json=None, timeout=None):
+                if "generativelanguage" in url:
+                    hits["gemini"] += 1
+                    return FakeResp({"error": {"message": "The model is overloaded"}}, status=503)
+                assert url.startswith("https://models.github.ai/")
+                assert headers["Authorization"] == "Bearer gh-test"
+                hits["github"] += 1
+                return FakeResp({"choices": [{"message": {"content": __import__("json").dumps(reply)}}]})
+
+        env = {"GEMINI_API_KEY": "gm-test", "GITHUB_MODELS_TOKEN": "gh-test"}
+        with mock.patch.dict("os.environ", env):
+            cp = make_copy(cand, 7, cfg, session=Flaky(), sleep=waits.append)
+        self.assertEqual(waits, [5, 60, 300])                 # 5 s → 1 min → 5 min
+        self.assertEqual(hits["gemini"], 4 * 3)               # 4 tries x 3 model names
+        self.assertEqual(hits["github"], 1)
+        self.assertTrue(cp.ai_used)
+        self.assertEqual(cp.ai_provider, "GitHub Models")
+        self.assertEqual(cp.hook, reply["hook"])
+
+    def test_bad_key_skips_retries(self):
+        import copy
+        cfg = make_cfg(self.tmp, [])
+        cand = copy.deepcopy(DEMO_KBEAUTY[0])
+        waits = []
+
+        class BadKey:
+            def post(self, url, headers=None, json=None, timeout=None):
+                return FakeResp({"error": {"message": "API key not valid"}}, status=400)
+
+        with mock.patch.dict("os.environ", {"GEMINI_API_KEY": "gm-test"}):
+            cp = make_copy(cand, 7, cfg, session=BadKey(), sleep=waits.append)
+        self.assertEqual(waits, [])          # permanent error: no waiting, straight to template
+        self.assertFalse(cp.ai_used)
 
     def test_ai_failure_falls_back_to_template(self):
         import copy
@@ -311,8 +354,10 @@ class Tests(unittest.TestCase):
             def post(self, *a, **k):
                 raise RuntimeError("503")
 
+        waits = []
         with mock.patch.dict("os.environ", {"ANTHROPIC_API_KEY": "sk-test"}):
-            cp = make_copy(cand, 7, cfg, session=Down())
+            cp = make_copy(cand, 7, cfg, session=Down(), sleep=waits.append)
+        self.assertEqual(waits, [5, 60, 300])
         self.assertFalse(cp.ai_used)
         self.assertEqual(cp.slide4["kind"], "routine")   # Korean comment dropped, routine slide instead
 

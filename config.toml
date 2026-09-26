@@ -54,10 +54,15 @@ tools = [
 extra_blocked_words = []    # 추가로 걸러낼 단어 (예: ["unicorn", "cartoon"])
 
 [copy]
-# AI 키가 있으면 카피를 다듬고 한국어 한줄평을 영어로 번역해요. 없으면 내장 템플릿으로 작성해요 (무료).
-#  - GEMINI_API_KEY    : Google AI Studio 무료 키 (하루 1번 게시라 무료 한도로 충분)
-#  - ANTHROPIC_API_KEY : Claude (유료, 두 키가 다 있으면 Claude 우선)
+# AI가 카피를 다듬고 한국어 한줄평을 영어로 번역해요. 아래 순서로 시도하고, 모두 실패하면 내장 템플릿으로 게시해요.
+#  - claude : ANTHROPIC_API_KEY (유료, 키를 넣었을 때만)
+#  - gemini : GEMINI_API_KEY (Google AI Studio 무료 키)
+#  - github : GitHub Models (무료, 따로 가입·키 필요 없음 — 워크플로가 자동으로 연결)
+ai_order = ["claude", "gemini", "github"]
+retry_delays = [5, 60, 300]            # 일시 오류일 때 다시 시도하는 간격(초): 5초 → 1분 → 5분, 그래도 안 되면 다음 AI
 gemini_model = "gemini-flash-latest"   # 보통 그대로 두세요. 안 되면 자동으로 다른 Flash 모델로 바꿔 시도해요.
+github_model = "openai/gpt-4.1-mini"   # GitHub Models 백업용 모델
+github_models = true                   # 백업 AI를 끄려면 false
 ai_model = "claude-haiku-4-5-20251001"
 hashtags_common = ["#kbeauty", "#koreanskincare", "#skincareroutine", "#kbeautytips", "#seoulbeauty"]
 hashtags_kbeauty = ["#oliveyoung", "#oliveyoungglobal", "#kbeautyfavorites", "#koreanbeauty"]

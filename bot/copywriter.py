@@ -1,7 +1,7 @@
 """Turns a Candidate into card text + an Instagram caption.
 
-Template mode (free) uses bot/knowledge.py. If GEMINI_API_KEY (Google AI Studio, free tier)
-or ANTHROPIC_API_KEY is set, the AI polishes the hook and translates Korean notes (한줄평, 특징, 순위, 리뷰 요약) into English,
+Template mode (free) uses bot/knowledge.py. If an AI is available (see bot/ai.py: Gemini free
+key, GitHub Models via the workflow token, or Claude), it polishes the hook and translates Korean notes (한줄평, 특징, 순위, 리뷰 요약) into English,
 using only the facts given — it never invents ingredients or results.
 """
 from __future__ import annotations
@@ -31,6 +31,7 @@ class Copy:
     shop_label: str
     caption: str = ""
     ai_used: bool = False
+    ai_provider: str = ""
     hashtags: list[str] = field(default_factory=list)
     store_line: str = ""          # "4.8 · 12,345 reviews on Olive Young" (cover + caption)
     reviews: dict | None = None   # "What reviewers say" slide
@@ -255,83 +256,7 @@ SYSTEM_PROMPT = (
 )
 
 
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-GEMINI_FALLBACK_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
-
-
-def _ask_claude(system: str, user: str, cfg, http) -> str:
-    resp = http.post(
-        "https://api.anthropic.com/v1/messages",
-        headers={"x-api-key": cfg.anthropic_key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={
-            "model": cfg.copy.get("ai_model", "claude-haiku-4-5-20251001"),
-            "max_tokens": 700,
-            "system": system,
-            "messages": [{"role": "user", "content": user}],
-        },
-        timeout=60,
-    )
-    resp.raise_for_status()
-    return "".join(b.get("text", "") for b in resp.json().get("content", []) if b.get("type") == "text")
-
-
-def _ask_gemini(system: str, user: str, cfg, http) -> str:
-    """Google Gemini (AI Studio key, free tier is enough for one post a day).
-    Model names change often, so try the configured one first and fall back to known aliases."""
-    models = []
-    for m in [cfg.copy.get("gemini_model", "").strip(), *GEMINI_FALLBACK_MODELS]:
-        if m and m not in models:
-            models.append(m)
-    body = {
-        "system_instruction": {"parts": [{"text": system}]},
-        "contents": [{"role": "user", "parts": [{"text": user}]}],
-        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.7, "maxOutputTokens": 8192},
-    }
-    last = ""
-    for model in models:
-        resp = http.post(
-            GEMINI_URL.format(model=model),
-            headers={"x-goog-api-key": cfg.gemini_key, "content-type": "application/json"},
-            json=body,
-            timeout=90,
-        )
-        if resp.status_code in (400, 403, 404, 429) and model != models[-1]:
-            # unknown/retired model name, or no free quota for this model → try the next one
-            try:
-                last = str(resp.json().get("error", {}).get("message", ""))[:120]
-            except Exception:
-                last = f"HTTP {resp.status_code}"
-            warn(f"Gemini 모델 {model} 사용 불가 ({last}) → 다음 모델로 시도")
-            continue
-        resp.raise_for_status()
-        cands = resp.json().get("candidates") or []
-        parts = (cands[0].get("content", {}).get("parts") if cands else None) or []
-        text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
-        if not text:
-            raise ValueError(f"Gemini 응답이 비었어요 ({model})")
-        return text
-    raise ValueError(f"사용할 수 있는 Gemini 모델이 없어요: {last}")
-
-
-def ai_check(cfg, session=None) -> str:
-    """Cheap key check for `python -m bot check` (no text generation)."""
-    if not cfg.gemini_key or cfg.anthropic_key:
-        return "키 있음"
-    http = session or requests
-    resp = http.get("https://generativelanguage.googleapis.com/v1beta/models",
-                    headers={"x-goog-api-key": cfg.gemini_key}, params={"pageSize": 200}, timeout=30)
-    if resp.status_code != 200:
-        try:
-            msg = resp.json().get("error", {}).get("message", "")
-        except Exception:
-            msg = ""
-        raise ValueError(f"Gemini 키 확인 실패 (HTTP {resp.status_code}) {msg[:120]}")
-    names = [m.get("name", "").split("/")[-1] for m in resp.json().get("models", [])]
-    flash = [n for n in names if "flash" in n and "image" not in n and "tts" not in n and "live" not in n]
-    return f"키 확인됨 (Flash 모델 {len(flash)}개 사용 가능)"
-
-
-def ai_polish(c: Candidate, cp: Copy, cfg, session=None) -> Copy:
+def ai_polish(c: Candidate, cp: Copy, cfg, session=None, sleep=None) -> Copy:
     if not cfg.ai_enabled:
         return cp
     facts = {
@@ -357,9 +282,9 @@ def ai_polish(c: Candidate, cp: Copy, cfg, session=None) -> Copy:
     }
     user = "Facts:\n" + json.dumps(facts, ensure_ascii=False) + "\n\nReturn JSON with these keys:\n" + json.dumps(instructions)
     try:
-        http = session or requests
-        ask = _ask_claude if cfg.anthropic_key else _ask_gemini
-        text = ask(SYSTEM_PROMPT, user, cfg, http)
+        from . import ai
+        kw = {"sleep": sleep} if sleep else {}
+        text, provider = ai.ask(SYSTEM_PROMPT, user, cfg, session=session, **kw)
         data = json.loads(text[text.index("{"): text.rindex("}") + 1])
     except Exception as exc:
         warn(f"AI 카피 실패, 템플릿으로 진행: {str(exc)[:200]}")
@@ -400,13 +325,14 @@ def ai_polish(c: Candidate, cp: Copy, cfg, session=None) -> Copy:
         if name:
             cp.display_name = name
     cp.ai_used = True
-    log(f"AI 카피 적용 완료 ({cfg.ai_name})")
+    cp.ai_provider = provider
+    log(f"AI 카피 적용 완료 ({provider})")
     return cp
 
 
-def make_copy(c: Candidate, number: int, cfg, session=None) -> Copy:
+def make_copy(c: Candidate, number: int, cfg, session=None, sleep=None) -> Copy:
     cp = build_template(c, number, cfg)
-    cp = ai_polish(c, cp, cfg, session=session)
+    cp = ai_polish(c, cp, cfg, session=session, sleep=sleep)
     if not cp.ai_used and c.source == "kbeauty":
         # No AI (or it failed): Korean notes can't go on English cards, so drop them.
         from .sources.kbeauty import _drop_korean

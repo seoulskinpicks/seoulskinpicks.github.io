@@ -148,7 +148,7 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     add_summary(
         f"### {'[미리보기] ' if args.dry_run else ''}No.{number} · {kind}\n"
         f"- 제품: **{post['brand']} {post['name']}**\n- 링크: {post['link']}\n"
-        f"- 카피: {cfg.ai_name + ' AI' if cp.ai_used else '템플릿'}\n\n"
+        f"- 카피: {cp.ai_provider + ' AI' if cp.ai_used else '템플릿'}\n\n"
         f"카드 이미지는 이 페이지 아래 **Artifacts → preview-images** 에서 받을 수 있어요.\n\n"
         f"<details><summary>캡션 보기</summary>\n\n```\n{cp.caption}\n```\n</details>\n"
     )
@@ -219,12 +219,10 @@ def cmd_check(args, cfg=None) -> int:
         lines.append("- 알리 API: 키 없음 → 알리 도구는 건너뜀 (승인 후 추가)")
 
     if cfg.ai_enabled:
-        try:
-            from .copywriter import ai_check
-            lines.append(f"- AI 카피: {cfg.ai_name} 켜짐 — {ai_check(cfg)}")
-        except Exception as exc:
-            ok = False
-            lines.append(f"- ❌ AI 카피 키 오류 ({cfg.ai_name}): {scrub(str(exc), cfg.gemini_key)}")
+        from . import ai
+        lines.append(f"- AI 카피: 켜짐 ({cfg.ai_name} 순서로 시도, 모두 실패하면 템플릿)")
+        for line in ai.check(cfg):
+            lines.append(f"  - {line}")
     else:
         lines.append("- AI 카피: 꺼짐 (템플릿 사용)")
 

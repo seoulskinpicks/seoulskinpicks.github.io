@@ -86,12 +86,20 @@ class Config:
         return os.environ.get("GEMINI_API_KEY", "").strip()
 
     @property
+    def github_models_token(self) -> str:
+        # The workflow passes its own GITHUB_TOKEN here (free GitHub Models). Off if [copy] github_models = false.
+        if not self.copy.get("github_models", True):
+            return ""
+        return os.environ.get("GITHUB_MODELS_TOKEN", "").strip()
+
+    @property
     def ai_enabled(self) -> bool:
-        return bool(self.anthropic_key or self.gemini_key)
+        return bool(self.anthropic_key or self.gemini_key or self.github_models_token)
 
     @property
     def ai_name(self) -> str:
-        return "Claude" if self.anthropic_key else "Gemini" if self.gemini_key else ""
+        from .ai import describe
+        return describe(self)
 
     @property
     def ig_token(self) -> str:
