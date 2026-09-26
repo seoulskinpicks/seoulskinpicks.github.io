@@ -94,9 +94,19 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     state = State(cfg.state_file)
     today = _today(cfg, args.date)
     set_output("has_post", "false")
+    set_output("deploy", "false")
     out = Path(args.out)
     if out.exists():
         shutil.rmtree(out)
+    if args.source == "site":
+        # 링크 페이지·핀터레스트 피드만 다시 만들어요. 새 게시물·인스타 게시 없음.
+        posts = state.published
+        build_link_page(posts, cfg, out, updated=today.isoformat())
+        build_pinterest(posts, cfg, out, _site_url(cfg), pins_dir=cfg.root / "pins")
+        set_output("deploy", "true")
+        log(f"링크 페이지만 준비했어요 (게시물 {len(posts)}개, 인스타 게시 없음).")
+        add_summary(f"### 링크 페이지만 새로 올려요\n- 지금까지 게시물 {len(posts)}개\n- 인스타에는 아무것도 올리지 않아요.")
+        return 0
     if not args.dry_run and state.published_on(today.isoformat()):
         log(f"{today} 에는 이미 게시했어요 (하루 1개). 건너뜀.")
         return 0
@@ -131,6 +141,7 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
             state.remember_tool(cand.category, cand.product_id)
         state.save()
     set_output("has_post", "true")
+    set_output("deploy", "false" if args.dry_run else "true")
     set_output("number", str(number))
     kind = "K뷰티" if cand.source == "kbeauty" else "알리 도구"
     log(f"No.{number} 준비 완료 ({kind}): {post['brand']} {post['name']}")
@@ -291,7 +302,7 @@ def main(argv=None) -> int:
     a = sub.add_parser("prepare")
     a.add_argument("--out", default="site")
     a.add_argument("--dry-run", action="store_true")
-    a.add_argument("--source", default="auto", choices=["auto", "kbeauty", "tools"])
+    a.add_argument("--source", default="auto", choices=["auto", "kbeauty", "tools", "site"])
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)

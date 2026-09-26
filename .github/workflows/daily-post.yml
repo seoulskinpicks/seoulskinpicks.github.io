@@ -12,9 +12,9 @@ on:
         type: boolean
         default: true
       source:
-        description: "올릴 종류 (auto = 설정대로 번갈아)"
+        description: "올릴 종류 (auto = 설정대로 번갈아 · site = 링크 페이지만 새로 올리기, 인스타 게시 없음)"
         type: choice
-        options: [auto, kbeauty, tools]
+        options: [auto, kbeauty, tools, site]
         default: auto
 
 permissions:
@@ -88,14 +88,14 @@ jobs:
           retention-days: 14
 
       - name: Upload link page + images
-        if: steps.prepare.outputs.has_post == 'true' && env.DRY_RUN != 'true'
+        if: steps.prepare.outputs.deploy == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        if: steps.prepare.outputs.has_post == 'true' && env.DRY_RUN != 'true'
+        if: steps.prepare.outputs.deploy == 'true'
         uses: actions/deploy-pages@v4
 
       - name: Publish to Instagram

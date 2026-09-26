@@ -219,6 +219,21 @@ class Tests(unittest.TestCase):
         self.assertTrue((self.tmp / "site" / "posts" / "001" / "1.jpg").exists())
         self.assertFalse(cfg.state_file.exists())
 
+    def test_site_only_builds_link_page_without_posting(self):
+        cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])
+        out = self.tmp / "site"
+        outputs = self.tmp / "gh_out"
+        with mock.patch.dict("os.environ", {"GITHUB_OUTPUT": str(outputs)}):
+            rc = cmd_prepare(Namespace(out=str(out), dry_run=True, source="site", date="2026-09-26"), cfg=cfg)
+        self.assertEqual(rc, 0)
+        self.assertIn("coming soon", (out / "index.html").read_text())
+        self.assertTrue((out / "feed.xml").exists())
+        self.assertFalse((out / "posts").exists())
+        self.assertFalse(cfg.state_file.exists())
+        text = outputs.read_text()
+        self.assertIn("deploy=true", text)
+        self.assertNotIn("has_post=true", text)
+
     def test_ai_translates_korean_comment(self):
         import copy
         cfg = make_cfg(self.tmp, [])
