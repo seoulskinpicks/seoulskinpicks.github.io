@@ -37,6 +37,7 @@ class Copy:
     reviews: dict | None = None   # "What reviewers say" slide
     my_rating: float | None = None
     deal: dict | None = None      # price slide for K-beauty items linked to AliExpress
+    star: dict | None = None      # "Star ingredient" slide (from content/skin.toml or hair.toml)
 
 
 def _stars_text(r: float) -> str:
@@ -219,6 +220,9 @@ def build_caption(c: Candidate, cp: Copy, number: int, cfg) -> str:
         if stats:
             lines.append(f"🛒 {stats} on AliExpress")
     lines += ["", f"✨ {cp.why_title}"] + [f"• {b}" for b in cp.why_bullets]
+    if cp.star:
+        nick = f" ({cp.star['nickname']})" if cp.star.get("nickname") else ""
+        lines += ["", f"🧪 Star ingredient: {cp.star['name']}{nick}", cp.star["what_it_is"]]
     if cp.reviews:
         lines += ["", f"🗣 What {cp.reviews['source']} reviewers mention"] + [f"• {b}" for b in cp.reviews["items"]]
     lines += ["", "🧴 How to use"] + [f"{i}. {s}" for i, s in enumerate(cp.how_steps, 1)]
@@ -330,7 +334,7 @@ def ai_polish(c: Candidate, cp: Copy, cfg, session=None, sleep=None) -> Copy:
     return cp
 
 
-def make_copy(c: Candidate, number: int, cfg, session=None, sleep=None) -> Copy:
+def make_copy(c: Candidate, number: int, cfg, session=None, sleep=None, lib=None) -> Copy:
     cp = build_template(c, number, cfg)
     cp = ai_polish(c, cp, cfg, session=session, sleep=sleep)
     if not cp.ai_used and c.source == "kbeauty":
@@ -338,6 +342,9 @@ def make_copy(c: Candidate, number: int, cfg, session=None, sleep=None) -> Copy:
         from .sources.kbeauty import _drop_korean
         _drop_korean(c, c.brand)
         cp = build_template(c, number, cfg)
+    if lib is not None:
+        from .editorial import star_ingredient
+        cp.star = star_ingredient(c, lib)
     # Final guard: nothing Korean may reach the cards or caption.
     texts = [c.brand, cp.display_name, cp.hook, cp.kicker, *cp.why_bullets, *cp.how_steps,
              str(cp.slide4.get("text", "")), *cp.slide4.get("items", []), *((cp.reviews or {}).get("items", []))]

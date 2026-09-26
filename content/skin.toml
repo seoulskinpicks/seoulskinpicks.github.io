@@ -1,0 +1,1131 @@
+# ─────────────────────────────────────────────────────────────
+#  피부 성분 101 (Skin ingredients)
+#  봇이 'skin' 게시물을 만들 때 쓰는 내용이에요. 위에서부터 순서대로 올라가요.
+#  (카드에 그대로 들어가니 영어로, 짧게. 글자 수 제한은 tests/test_smoke.py 가 검사해요)
+#
+#  heat      : korea = 한국에서 특히 뜨는 것 / global = 해외에서 특히 뜨는 것 / both = 둘 다
+#  keywords  : 올리브영 글로벌 베스트셀러 제품명에서 찾을 단어 (찾으면 '어디서 사나' 카드에 자동으로 들어가요)
+#  examples  : 베스트셀러에서 못 찾을 때 대신 보여줄 실제 제품 (링크 없음)
+#  sources   : 근거 자료 (핀터레스트 상세 페이지 맨 아래에 표시)
+#  새 성분을 추가하려면 [[ingredient]] 블록 하나를 복사해서 고치면 돼요.
+# ─────────────────────────────────────────────────────────────
+
+[[ingredient]]
+id = "pdrn"
+name = "PDRN"
+full_name = "Polydeoxyribonucleotide"
+nickname = "Salmon DNA"
+area = "skin"
+heat = "both"
+heat_note = "Olive Young searches +695% YoY (Sept 2025)"
+hot_since = 2024
+hook = "Salmon DNA in your serum? Here's the real story"
+what_it_is = "PDRN is a purified blend of DNA fragments, usually from salmon. It started in clinic injections and is now one of K-beauty's most popular serum ingredients."
+origin = "Mostly salmon sperm cells; some brands use plant DNA"
+benefits = [
+  "Helps skin feel hydrated, bouncy and comfortable",
+  "Supports a calm, healthy-looking skin barrier",
+  "May help skin look smoother and more radiant",
+]
+best_for = ["Dull or tired-looking skin", "Dry, dehydrated skin", "Early fine lines"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after toner, on slightly damp skin",
+  "Pat in 2–3 drops gently; no need to rub",
+  "Seal with moisturizer; add SPF in the morning",
+]
+pairs_with = ["Hyaluronic acid", "Peptides", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "Most PDRN research is on injections; serum results are gentler and less studied.",
+  "Usually salmon-derived: skip it or patch test first if you have a fish allergy.",
+  "Labels list it as 'Sodium DNA', and some 'PDRN' is plant-derived. Check the source.",
+]
+myth = "A PDRN serum works like a PDRN or Rejuran injection."
+fact = "Injections place DNA fragments deep in skin. Serums stay near the surface: think hydration, not a procedure."
+keywords = ["pdrn", "salmon dna", "c-pdrn"]
+examples = [
+  {brand = "medicube", product = "PDRN Pink Peptide Serum"},
+  {brand = "Anua", product = "PDRN Hyaluronic Acid Capsule 100 Serum"},
+  {brand = "VT", product = "PDRN Essence 100"},
+  {brand = "Cell Fusion C", product = "Salmon PDRN Ampoule"},
+]
+hashtags = ["#pdrn", "#salmondna", "#pdrnskincare", "#kbeauty"]
+sources = [
+  "https://newsroom.cj.net/k-beauty-trends-highlights-from-latest-olive-young-sale/",
+  "https://jcasonline.com/polynucleotides-and-polydeoxyribonucleotides-in-dermatology-a-narrative-review/",
+  "https://chemistconfessions.com/blogs/pdrn-skincare-hype-vs-reality",
+  "https://cosmeticsbusiness.com/same-inci-different-origins-why-pdrn-sourcing-matters",
+]
+
+[[ingredient]]
+id = "nad"
+name = "NAD+"
+full_name = "Nicotinamide adenine dinucleotide"
+nickname = "The longevity molecule"
+area = "skin"
+heat = "global"
+heat_note = "Mintel: NAD+ social mentions up 186% (2024)"
+hot_since = 2025
+hook = "NAD+: the 'longevity' buzzword, in a bottle"
+what_it_is = "NAD+ is a coenzyme your cells use to make energy and maintain DNA. Levels are thought to dip with age, so 'longevity' skincare now features it."
+origin = "Made in the body; cosmetic NAD+ is lab-made"
+benefits = [
+  "Supports skin's natural energy and resilience",
+  "May help skin look firmer and more radiant",
+  "Helps tired-looking skin look fresher",
+]
+best_for = ["Tired, dull-looking skin", "Early signs of aging", "Sensitive skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply as a serum or essence after toner",
+  "Layer with niacinamide or peptides for extra support",
+  "Finish with moisturizer, plus SPF in the morning",
+]
+pairs_with = ["Niacinamide", "Peptides", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "NAD+ is a large molecule; dermatologists say it's poorly absorbed through skin.",
+  "Precursors like niacinamide may help skin make its own NAD+.",
+  "Topical NAD+ research is early; oral and IV NAD+ are different things.",
+]
+myth = "Rubbing on NAD+ refills your skin's NAD+ levels."
+fact = "NAD+ struggles to penetrate. Surface-level support is realistic; precursors like niacinamide may do more."
+keywords = ["nad+", "nad bio", "nad pdrn", "egf nad", "nad egf", "no.9 nad"]
+examples = [
+  {brand = "numbuzin", product = "No.9 NAD Bio Lifting-sil Essence"},
+  {brand = "numbuzin", product = "No.9 NAD PDRN Glow Boosting Toner"},
+  {brand = "medicube", product = "EGF NAD Firming Serum"},
+]
+hashtags = ["#nad", "#nadplus", "#longevityskincare"]
+sources = [
+  "https://www.nbcnews.com/select/shopping/nad-skin-care-rcna259545",
+  "https://www.cosmorning.com/news/article.html?no=51144",
+  "https://www.newsis.com/view/NISX20251002_0003354775",
+  "https://incidecoder.com/products/numbuzin-no-9-nad-bio-lifting-sil-essence",
+]
+
+[[ingredient]]
+id = "bdrn"
+name = "BDRN"
+full_name = "'Banana PDRN' (a brand-coined term)"
+nickname = "Plant / vegan PDRN"
+area = "skin"
+heat = "korea"
+heat_note = "Reported sell-out of MUMUKI's BDRN cushion"
+hot_since = 2025
+hook = "BDRN: what 'banana PDRN' really means"
+what_it_is = "BDRN is a brand name for 'banana PDRN', a plant-sourced take on salmon PDRN. On ingredient lists you'll usually see Sodium DNA plus banana extract."
+origin = "Banana, per brands; listed as Sodium DNA + banana extract"
+benefits = [
+  "Helps skin feel plump, soft and hydrated",
+  "Supports a dewy, healthy-looking glow",
+  "Marketed as a fish-free, vegan-friendly PDRN option",
+]
+best_for = ["Dry or dull skin", "Vegan routines", "PDRN-curious beginners"]
+when = "AM & PM"
+how_to_use = [
+  "Use after toner as your serum or ampoule step",
+  "Pat in 2–3 drops, then follow with moisturizer",
+  "Wear sunscreen in the daytime as usual",
+]
+pairs_with = ["Hyaluronic acid", "Ceramides", "Collagen"]
+avoid_with = []
+good_to_know = [
+  "BDRN isn't a scientific term, and brands describe it in different ways.",
+  "As of mid-2025, no published human trials on topical plant PDRN existed.",
+  "Plant PDRN can't borrow salmon PDRN's research; expect hydration and glow.",
+]
+myth = "BDRN is a stronger, upgraded version of salmon PDRN."
+fact = "No head-to-head studies compare them. 'Stronger' claims come from brands, not independent research."
+keywords = ["bdrn", "plant pdrn", "vegan pdrn", "banana pdrn"]
+examples = [
+  {brand = "MUMUKI", product = "Honey Banana BDRN Capsule Ampoule"},
+  {brand = "MUMUKI", product = "Honey Banana BDRN Capsule Cream"},
+  {brand = "TIRTIR", product = "Banana BDRN Eye Serum"},
+]
+hashtags = ["#bdrn", "#veganpdrn", "#plantpdrn"]
+sources = [
+  "https://tirtir.global/products/banana-bdrn-eye-serum",
+  "https://trymumuki.com/blogs/glow-skin-science/pdrn-vs-bdrn-which-one-is-actually-better-for-your-skin",
+  "https://www.drrachelho.com/blog/vegan-plant-phyto-pdrn-skincare/",
+  "https://www.gukjenews.com/news/articleView.html?idxno=3488021",
+]
+
+[[ingredient]]
+id = "snail-mucin"
+name = "Snail mucin"
+full_name = "Snail secretion filtrate"
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "Korea boom c.2014; COSRX #1 on Amazon in 2023"
+hot_since = 2014
+hook = "Why is everyone putting snail slime on their face?"
+what_it_is = "The filtered mucus snails make to protect their bodies. It naturally carries glycoproteins, hyaluronic acid, glycolic acid and allantoin, giving it a light, gel-like feel."
+origin = "Filtered mucus secreted by snails"
+benefits = [
+  "Helps skin hold on to moisture for a bouncy feel",
+  "Known for a soothing, comforting feel on dry patches",
+  "May support a smoother, glowier-looking complexion",
+]
+best_for = ["Dry or dehydrated skin", "Dull, tired-looking skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after toner on slightly damp skin",
+  "Pat 2–3 pumps in and let it sink in for a minute",
+  "Seal with moisturizer, plus SPF in the morning",
+]
+pairs_with = ["Niacinamide", "Centella asiatica", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Allergic to dust mites or shellfish? Patch test first: snail proteins may cross-react.",
+  "Not vegan: it's collected from snails.",
+  "Research looks promising, but large human studies are still limited.",
+]
+myth = "Snail mucin is backed by big clinical trials."
+fact = "Lab and small studies look promising, but reviewers say larger, rigorous human trials are still needed."
+keywords = ["snail", "mucin"]
+examples = [
+  {brand = "COSRX", product = "Advanced Snail 96 Mucin Power Essence"},
+  {brand = "COSRX", product = "Advanced Snail 92 All in one Cream"},
+  {brand = "SOME BY MI", product = "Snail Truecica Miracle Repair Serum"},
+]
+hashtags = ["#snailmucin", "#kbeauty", "#glassskin"]
+sources = [
+  "https://www.etnews.com/20141218000341?m=1",
+  "https://www.prnewswire.com/news-releases/tiktok-viral-cosrx-snail-essence-secures-1-best-seller-position-in-amazons-beauty--personal-care-category-and-just-got-restocked-301828494.html",
+  "https://www.dermatologytimes.com/view/current-clinical-and-aesthetic-applications-of-snail-mucin",
+  "https://www.refinery29.com/en-us/snail-mucin-benefits-allergy",
+]
+
+[[ingredient]]
+id = "spicule"
+name = "Spicules"
+full_name = "Hydrolyzed sponge (microspicules)"
+nickname = "Liquid microneedles"
+area = "skin"
+heat = "both"
+heat_note = "Reedle Shot won Olive Young Global Awards 2025"
+hot_since = 2024
+hook = "The 'microneedle' serum that tingles, explained"
+what_it_is = "Spicules are microscopic, needle-shaped mineral bits from sea sponges. In serums they gently prickle the surface to exfoliate and help products absorb."
+origin = "Marine sponge skeletons (silica or calcium)"
+benefits = [
+  "Gently exfoliates for smoother-feeling texture",
+  "May help the products you apply next absorb better",
+  "Helps skin look brighter and more refined",
+]
+best_for = ["Rough texture, visible pores", "Dull skin", "Healthy, non-sensitive skin"]
+when = "PM, 2–3x a week"
+how_to_use = [
+  "Start with the lowest strength (e.g. 100) on clean, dry skin",
+  "Pat or massage in gently; mild tingling is normal",
+  "Follow with a soothing moisturizer, and SPF next day",
+]
+pairs_with = ["Centella (cica)", "Hyaluronic acid", "Panthenol"]
+avoid_with = ["Retinoids same night", "AHA/BHA same night"]
+good_to_know = [
+  "Skip on broken skin, eczema, rosacea or active irritation.",
+  "Stronger isn't better: stop if burning or redness lasts.",
+  "Human studies are few, and overuse can weaken the skin barrier.",
+]
+myth = "More tingling means it's working better."
+fact = "Tingling is just spicules in the surface layer. Strong burning or lasting redness means back off."
+keywords = ["reedle", "spicule", "microneedle", "micro-needle"]
+examples = [
+  {brand = "VT", product = "Reedle Shot 100 Essence"},
+  {brand = "VT", product = "Reedle Shot 300 Essence"},
+  {brand = "APLB", product = "Spicule Niacinamide Shot 260 Serum"},
+]
+hashtags = ["#spicules", "#reedleshot", "#liquidmicroneedling"]
+sources = [
+  "https://www.drrachelho.com/blog/micro-spicule-skincare-review/",
+  "https://chemistconfessions.com/blogs/reedle-shot-deep-dive-science-of-spicules-in-skincare",
+  "https://www.marieclaire.co.uk/beauty/skincare/spicules-skincare",
+  "https://oneeyebeauty.com/olive-young-awards-2025-top-10-well-aging-skincare-winners/",
+]
+
+[[ingredient]]
+id = "txa"
+name = "TXA"
+full_name = "Tranexamic acid"
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "US Amazon TXA searches +122% YoY (Nov 2025)"
+hot_since = 2025
+hook = "TXA: the brightening 'acid' that doesn't exfoliate"
+what_it_is = "Tranexamic acid is a lab-made amino-acid derivative. In skincare it's used to help calm the look of dark spots and uneven tone without peeling."
+origin = "Synthetic derivative of the amino acid lysine"
+benefits = [
+  "Helps fade the look of dark spots over time",
+  "Supports a more even, brighter-looking tone",
+  "Gentle: it isn't an exfoliating acid",
+]
+best_for = ["Dark spots, uneven tone", "Post-acne marks", "Sensitive skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply serum after toner on clean skin",
+  "Use daily for 8+ weeks before judging results",
+  "Wear SPF daily: sun exposure brings spots back",
+]
+pairs_with = ["Niacinamide", "Vitamin C", "Arbutin"]
+avoid_with = []
+good_to_know = [
+  "Despite the name, TXA doesn't exfoliate, so it suits most skin types.",
+  "Topical TXA is a cosmetic ingredient; oral TXA is a prescription medicine.",
+  "Patch test first, and stop if stinging or redness persists.",
+]
+myth = "TXA is an acid, so it will peel or sensitize your skin."
+fact = "It's an amino-acid derivative, not an exfoliant, and is generally well tolerated."
+keywords = ["txa", "tranexamic"]
+examples = [
+  {brand = "Anua", product = "Niacinamide 10% + TXA 4% Dark Spot Correcting Serum"},
+  {brand = "APRILSKIN", product = "TXA Niacinamide Toning Shot 99 Serum"},
+  {brand = "Mary & May", product = "Tranexamic Acid + Glutathione Eye Cream"},
+]
+hashtags = ["#tranexamicacid", "#txa", "#darkspots"]
+sources = [
+  "https://www.sisajournal-e.com/news/articleView.html?idxno=423873",
+  "https://incidecoder.com/ingredients/tranexamic-acid",
+  "https://oneeyebeauty.com/olive-young-awards-2025-top-10-well-aging-skincare-winners/",
+  "https://skinsort.com/products/products-with-tranexamic-acid-from-korean-brands",
+]
+
+[[ingredient]]
+id = "mugwort"
+name = "Mugwort"
+full_name = "Artemisia (mugwort) extract"
+nickname = "Ssuk"
+area = "skin"
+heat = "korea"
+heat_note = "Olive Young mugwort sales +470% in late 2018"
+hot_since = 2018
+hook = "Korea's go-to herb for calm-looking skin"
+what_it_is = "An aromatic herb (ssuk) used for centuries in Korean food and folk remedies. Skincare extracts, often from Artemisia princeps, are loved for calming irritated-looking skin."
+origin = "Leaves of Artemisia plants, e.g. Korean A. princeps"
+benefits = [
+  "Helps calm the look of redness and irritation",
+  "Antioxidant-rich; may help defend against daily stress",
+  "Lab studies suggest it may support barrier proteins",
+]
+best_for = ["Sensitive, red-prone skin", "Blemish-prone skin"]
+when = "AM & PM"
+how_to_use = [
+  "Use a mugwort essence or toner right after cleansing",
+  "Pat on a few thin layers for a light, calming boost",
+  "Try a mugwort wash-off mask once or twice a week",
+]
+pairs_with = ["Centella asiatica", "Panthenol", "Heartleaf"]
+avoid_with = []
+good_to_know = [
+  "It's in the daisy family: if you're allergic to ragweed, patch test first.",
+  "Human studies are few; most evidence comes from lab and animal research.",
+  "'Artemisia' on a label (e.g. Artemisia princeps) means mugwort.",
+]
+myth = "Plant-based means it's allergy-free."
+fact = "Mugwort is in the daisy (Asteraceae) family; people allergic to ragweed-type plants can react to it."
+keywords = ["mugwort", "artemisia"]
+examples = [
+  {brand = "I'm from", product = "Mugwort Essence"},
+  {brand = "HANYUL", product = "Pure Artemisia Watery Calming Toner"},
+  {brand = "ROUND LAB", product = "Mugwort Calming Toner"},
+]
+hashtags = ["#mugwort", "#kbeauty", "#sensitiveskin"]
+sources = [
+  "https://www.newsis.com/view/NISX20181127_0000484975",
+  "https://dermapproved.com/ingredients/mugwort/",
+]
+
+[[ingredient]]
+id = "glutathione"
+name = "Glutathione"
+full_name = ""
+nickname = "The master antioxidant"
+area = "skin"
+heat = "global"
+heat_note = "IV 'glow drips' made it famous; serums followed"
+hot_since = 2025
+hook = "Glutathione: the glow antioxidant, minus the hype"
+what_it_is = "Glutathione is a small antioxidant made of three amino acids, found naturally in your cells. In skincare it's used to support a brighter, more even look."
+origin = "Made in the body; cosmetic grades via fermentation"
+benefits = [
+  "Helps skin look brighter and more even",
+  "Antioxidant support against daily stressors",
+  "May help soften the look of dark spots",
+]
+best_for = ["Dull skin", "Uneven tone, dark spots"]
+when = "AM & PM"
+how_to_use = [
+  "Apply serum after toner, before cream",
+  "Use consistently for several weeks to judge results",
+  "Always finish with SPF in the morning",
+]
+pairs_with = ["Vitamin C", "Niacinamide", "Tranexamic acid"]
+avoid_with = []
+good_to_know = [
+  "Only a few small trials support topical and oral use; results are modest.",
+  "IV glutathione for lightening lacks evidence and has drawn safety warnings.",
+  "It can oxidize easily, so airtight packaging helps keep it fresh.",
+]
+myth = "Glutathione serums work like glutathione IV drips."
+fact = "IV drips lack proof and carry risks. Topicals offer gentle, gradual glow support alongside daily SPF."
+keywords = ["glutathione", "glutathiosome"]
+examples = [
+  {brand = "medicube", product = "PDRN Pink Glutathione Serum Mist"},
+  {brand = "Genabelle", product = "Glutathione Vita Glow Spicule Shot"},
+  {brand = "Abib", product = "Glutathiosome Dark Spot Serum Vita Drop"},
+  {brand = "Mary & May", product = "Tranexamic Acid + Glutathione Eye Cream"},
+]
+hashtags = ["#glutathione", "#glowskin", "#brighteningskincare"]
+sources = [
+  "https://pubmed.ncbi.nlm.nih.gov/27088927/",
+  "https://www.yesstyle.com/en/medicube-pdrn-pink-glutathione-serum-mist-100ml/info.html/pid.1137573729",
+  "https://www.amazon.com/Genabelle-Glutathione-Vita-Glow-Spicule/dp/B0DGX7X33Z",
+  "https://skinsort.com/products/products-with-glutathione-from-korean-brands",
+]
+
+[[ingredient]]
+id = "heartleaf"
+name = "Heartleaf"
+full_name = "Houttuynia cordata"
+nickname = "Eoseongcho / fish mint"
+area = "skin"
+heat = "both"
+heat_note = "Korean staple that went viral abroad"
+hot_since = 2023
+hook = "Heartleaf: the calming herb behind a viral toner"
+what_it_is = "Heartleaf is an Asian herb called eoseongcho in Korea. Its extract is rich in flavonoids and is used to calm and hydrate stressed or oily skin."
+origin = "Leaves of an Asian plant known for its fishy smell"
+benefits = [
+  "Helps calm the look of redness and irritation",
+  "Antioxidant support from flavonoids like quercetin",
+  "Lightweight hydration for oily, blemish-prone skin",
+]
+best_for = ["Oily or blemish-prone skin", "Sensitive, easily red skin"]
+when = "AM & PM"
+how_to_use = [
+  "Use as a toner after cleansing, patted in by hand or pad",
+  "Soak cotton pads and rest on warm, flushed areas for 5 min",
+  "Layer serum and moisturizer on top",
+]
+pairs_with = ["Centella (cica)", "Niacinamide", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Extract strength varies by plant part and method, so % alone isn't potency.",
+  "Most evidence is lab-based; think soothing helper, not an acne fix.",
+  "Patch test if you tend to react to botanical extracts.",
+]
+myth = "A higher % of heartleaf always means a stronger effect."
+fact = "Label % is the extract's share, not its active content; formula and extraction method matter more."
+keywords = ["heartleaf", "houttuynia", "eoseongcho"]
+examples = [
+  {brand = "Anua", product = "Heartleaf 77% Soothing Toner"},
+  {brand = "Anua", product = "Heartleaf Pore Control Cleansing Oil"},
+]
+hashtags = ["#heartleaf", "#anua", "#koreanskincare"]
+sources = [
+  "https://incidecoder.com/ingredients/houttuynia-cordata-extract",
+  "https://en.wikipedia.org/wiki/Houttuynia_cordata",
+  "https://anua.com/products/heartleaf-77-soothing-toner",
+  "https://skinsort.com/products/products-with-houttuynia-cordata-extract-from-korean-brands",
+]
+
+[[ingredient]]
+id = "retinal"
+name = "Retinal"
+full_name = "Retinaldehyde"
+nickname = "Retinol's faster cousin"
+area = "skin"
+heat = "global"
+heat_note = "Western favorite, now in K-beauty retinal shots"
+hot_since = 2023
+hook = "Retinal vs retinol: the one-step-faster vitamin A"
+what_it_is = "Retinal is a form of vitamin A that's one conversion step from retinoic acid, the form skin actually uses. Retinol needs two steps to get there."
+origin = "Vitamin A family; lab-made for skincare"
+benefits = [
+  "Helps skin look smoother and more even-toned",
+  "Supports renewal for a fresher-looking surface",
+  "May help reduce the look of fine lines",
+]
+best_for = ["Fine lines, uneven texture", "Retinol users ready for more", "Breakout-prone skin"]
+when = "PM"
+how_to_use = [
+  "Start 2–3 nights a week on clean, dry skin",
+  "Use a pea-size amount; go gently around eyes and lips",
+  "Moisturize after, and wear SPF every morning",
+]
+pairs_with = ["Niacinamide", "Ceramides", "Peptides"]
+avoid_with = ["AHA/BHA same night", "Other retinoids"]
+good_to_know = [
+  "Dryness or flaking can happen at first; build up slowly.",
+  "Avoid during pregnancy or breastfeeding, as with other retinoids.",
+  "It makes skin more sun-sensitive, so daily SPF is a must.",
+]
+myth = "Retinal is just a harsher retinol that most people can't use."
+fact = "It works in fewer steps, but low strengths introduced slowly suit many skin types."
+keywords = ["retinal", "retinaldehyde"]
+examples = [
+  {brand = "Beauty of Joseon", product = "Revive Eye Serum : Ginseng + Retinal"},
+  {brand = "celimax", product = "The Vita-A Retinal Shot Tightening Booster"},
+  {brand = "K-Secret", product = "Seoul 1988 Serum : Retinal Liposome 2% + Black Ginseng"},
+]
+hashtags = ["#retinal", "#retinaldehyde", "#retinalvsretinol"]
+sources = [
+  "https://en.wikipedia.org/wiki/Retinal",
+  "https://dermnetnz.org/topics/topical-retinoids",
+  "https://www.koreanskincarecoach.com/blog/the-complete-guide-to-spicule-skincare",
+  "https://skinsort.com/products/products-with-retinal-from-korean-brands",
+]
+
+[[ingredient]]
+id = "panthenol"
+name = "Panthenol"
+full_name = "Panthenol (provitamin B5)"
+nickname = "Vitamin B5"
+area = "skin"
+heat = "korea"
+heat_note = "OY panthenol skincare sales +34% (summer 2019)"
+hot_since = 2019
+hook = "The soothing B5 in Korea's cult calming creams"
+what_it_is = "A provitamin that skin converts into pantothenic acid (vitamin B5). It's a humectant that draws in water and is known for comforting dry, irritated-feeling skin."
+origin = "Lab-made provitamin B5"
+benefits = [
+  "Helps draw in and hold moisture",
+  "Known for comforting dry, irritated-feeling skin",
+  "Supports a healthy-feeling skin barrier",
+]
+best_for = ["Dry or sensitive skin", "Sun- or wind-stressed skin", "Skin using strong actives"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a panthenol toner or serum after cleansing",
+  "Use a panthenol cream as your moisturizer step",
+  "Reapply a thin layer on dry, tight spots as needed",
+]
+pairs_with = ["Centella asiatica", "Ceramides", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "Rated non-irritating and non-comedogenic in cosmetic ingredient databases.",
+  "5% dexpanthenol is a long-used standard in post-procedure skin ointments.",
+  "Some Korean creams tout 10%; data on levels above 5% is more limited.",
+]
+myth = "Panthenol is a heavy, pore-clogging ingredient."
+fact = "It's a water-loving humectant rated non-comedogenic, found in light toners and gels as well as creams."
+keywords = ["panthenol"]
+examples = [
+  {brand = "Atopalm", product = "Panthenol Cream"},
+  {brand = "ROUND LAB", product = "Soybean Panthenol Cream"},
+  {brand = "SOME BY MI", product = "Beta Panthenol Repair Toner"},
+  {brand = "Purito Seoul", product = "Mighty Bamboo Panthenol Cream"},
+]
+hashtags = ["#panthenol", "#kbeauty", "#skinbarrier"]
+sources = [
+  "https://www.greened.kr/news/articleView.html?idxno=204679",
+  "https://www.mdpi.com/1424-8247/13/7/138",
+  "https://incidecoder.com/ingredients/panthenol",
+]
+
+[[ingredient]]
+id = "galactomyces"
+name = "Galactomyces"
+full_name = "Galactomyces ferment filtrate"
+nickname = "Yeast ferment"
+area = "skin"
+heat = "global"
+heat_note = "Loved abroad as budget SK-II essence 'dupes'"
+hot_since = 2023
+hook = "The yeast ferment behind that 'glass skin' glow"
+what_it_is = "The clear liquid left after Galactomyces yeast ferments, with the yeast filtered out. It carries amino acids, organic acids, vitamins and minerals that help skin look smooth and bright."
+origin = "Yeast fermentation; its fame traces back to sake brewing"
+benefits = [
+  "Helps skin look brighter and more even",
+  "Supports a smoother-looking texture",
+  "Adds light, watery hydration that layers easily",
+]
+best_for = ["Dull-looking skin", "Uneven texture", "Oily or combination skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply as your first leave-on step after cleansing",
+  "Pat into slightly damp skin with your palms",
+  "Start once daily, then go twice a day if skin is happy",
+]
+pairs_with = ["Niacinamide", "Vitamin C", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Prone to yeast-related (fungal) breakouts? Check the full formula and patch test first.",
+  "Results vary with ferment quality and concentration: think steady, not overnight.",
+  "Evidence is still small-scale, e.g. a 20-person 2014 study of a 97% essence.",
+]
+myth = "Galactomyces means putting live yeast on your face."
+fact = "It's a filtrate: the clear liquid collected after fermentation, with the yeast and solids removed."
+keywords = ["galactomyces", "galactomy", "galac niacin"]
+examples = [
+  {brand = "mixsoon", product = "Galactomyces Ferment Essence"},
+  {brand = "ma:nyo", product = "Galac Niacin 3.0 Essence"},
+  {brand = "SOME BY MI", product = "Galactomyces Pure Vitamin C Glow Serum"},
+]
+hashtags = ["#galactomyces", "#fermentedskincare", "#kbeauty"]
+sources = [
+  "https://www.mirai-skin.com/blogs/news/galactomyces-ferment-filtrate",
+  "https://www.mamamia.com.au/mixsoon-galactomyces-ferment-essence-sk-ii-essence-dupe/",
+  "https://www.e-ajbc.org/journal/view.php?number=697",
+  "https://dermapproved.com/blog/fermented-ingredients-and-rice-tradition-vs-evidence/",
+]
+
+[[ingredient]]
+id = "centella"
+name = "Centella"
+full_name = "Centella asiatica (incl. madecassoside)"
+nickname = "Cica / tiger grass"
+area = "skin"
+heat = "both"
+heat_note = "Madecassoside pad: OY Awards 2025 winner"
+hot_since = 2017
+hook = "The 'tiger grass' behind calm-looking K-beauty skin"
+what_it_is = "A leafy herb long used in Asian traditional remedies. Its key compounds (madecassoside, asiaticoside, asiatic acid and madecassic acid) are prized for calming skin."
+origin = "Leaves of the Centella asiatica plant (gotu kola)"
+benefits = [
+  "Helps calm the look of redness and irritation",
+  "Supports a stronger-feeling moisture barrier",
+  "May help blemish-prone skin look more balanced",
+]
+best_for = ["Sensitive or reactive skin", "Blemish-prone skin", "Skin stressed by actives"]
+when = "AM & PM"
+how_to_use = [
+  "Swipe on a centella toner or pad after cleansing",
+  "Follow with a centella ampoule or cream",
+  "Gentle enough for most skin to use twice a day",
+]
+pairs_with = ["Panthenol", "Ceramides", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "'Cica' is a marketing nickname; check the INCI list for centella or madecassoside.",
+  "Much research is lab or animal-based; long-term human trials are still limited.",
+  "Also sold as gotu kola or Indian pennywort in herbal products.",
+]
+myth = "Every 'cica' product is packed with centella."
+fact = "'Cica' is just a nickname. Amounts vary, so look for centella or madecassoside high on the ingredient list."
+keywords = ["centella", "cica", "madecassoside", "tiger grass"]
+examples = [
+  {brand = "SKIN1004", product = "Madagascar Centella Ampoule"},
+  {brand = "SKIN1004", product = "Madagascar Centella Soothing Cream"},
+  {brand = "MEDIHEAL", product = "Madecassoside Blemish Pad"},
+]
+hashtags = ["#cica", "#centella", "#kbeauty"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC8627341",
+  "https://themonodist.com/olive-young-awards-2025/",
+  "https://www.scmp.com/magazines/style/beauty/beauty-news/article/3288343/what-cica-or-centella-asiatica-and-it-beautys-latest-hero-used-traditional-medicine-centuries",
+  "https://btyaly.com/focus-on/focus-on-centella-asiatica-and-the-cica-trend/",
+]
+
+[[ingredient]]
+id = "beta-glucan"
+name = "Beta-glucan"
+full_name = ""
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "UK press named it a 2026 barrier-care hero"
+hot_since = 2026
+hook = "A soothing hydrator from oats, yeast & mushrooms"
+what_it_is = "A natural sugar molecule (polysaccharide) found in oats, yeast and mushrooms. In skincare it draws in water and forms a light film, leaving skin hydrated and calm."
+origin = "Oats, yeast or mushrooms (oat is most common)"
+benefits = [
+  "Helps skin attract and hold on to moisture",
+  "Known for soothing easily irritated-looking skin",
+  "Supports a comfortable, resilient-feeling barrier",
+]
+best_for = ["Dry or dehydrated skin", "Sensitive or reactive skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a beta-glucan serum or essence after toner",
+  "Layer with hyaluronic acid; the two work well together",
+  "Seal with a moisturizer to lock in hydration",
+]
+pairs_with = ["Hyaluronic acid", "Ceramides", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Generally well tolerated and non-comedogenic, even for oily skin.",
+  "Sensitive to oats or yeast? Check which source your product uses.",
+  "Look for it high on the ingredient list, not buried at the end.",
+]
+myth = "Beta-glucan is just a hyaluronic acid replacement."
+fact = "They work differently and layer well: HA mainly pulls in water; beta-glucan also helps skin feel soothed."
+keywords = ["beta-glucan", "beta glucan"]
+examples = [
+  {brand = "iUNIK", product = "Beta-Glucan Power Moisture Serum"},
+  {brand = "mixsoon", product = "Beta-Glucan Essence"},
+]
+hashtags = ["#betaglucan", "#hydration", "#kbeauty"]
+sources = [
+  "https://www.janeyoomd.com/k-beauty/beta-glucan-in-skincare-what-it-does-and-who-its-for/",
+  "https://www.dermalogica.com/blogs/living-skin/beta-glucan-for-hydration",
+  "https://cosmeticsbusiness.com/beta-glucan-is-the-skin-barrier-hero-of",
+  "https://luxurylondon.co.uk/wellbeing/the-trending-skincare-ingredients-to-have-on-your-radar-in-2026/",
+]
+
+[[ingredient]]
+id = "green-tea"
+name = "Green tea"
+full_name = "Camellia sinensis leaf extract"
+nickname = ""
+area = "skin"
+heat = "korea"
+heat_note = "Innisfree green tea serum: 25M+ sold since 2010"
+hot_since = 2010
+hook = "Jeju's tea fields, bottled: what green tea does"
+what_it_is = "An extract of tea leaves rich in catechins like EGCG, among the most studied plant antioxidants. It's used to soothe, balance oily skin and help defend against daily stress."
+origin = "Tea plant leaves; Innisfree grows its tea on Jeju"
+benefits = [
+  "Antioxidants may help defend against daily stressors",
+  "Helps calm the look of redness",
+  "May help oily skin look more balanced",
+]
+best_for = ["Oily or combination skin", "Blemish-prone skin", "Red-prone skin"]
+when = "AM & PM"
+how_to_use = [
+  "Use a green tea toner after cleansing",
+  "Follow with a green tea serum for extra hydration",
+  "In the AM, layer it under sunscreen for antioxidant backup",
+]
+pairs_with = ["Hyaluronic acid", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "'Camellia sinensis leaf extract' on a label means green tea.",
+  "Among the most studied plant antioxidants, with thousands of papers on PubMed.",
+  "Antioxidants complement sunscreen but never replace it.",
+]
+myth = "Green tea skincare can stand in for sunscreen."
+fact = "Its antioxidants may help against UV-related stress, but they provide no SPF, so keep wearing sunscreen."
+keywords = ["green tea"]
+examples = [
+  {brand = "innisfree", product = "Green Tea Seed Hyaluronic Serum"},
+  {brand = "Isntree", product = "Green Tea Fresh Toner"},
+  {brand = "Isntree", product = "Green Tea Fresh Serum"},
+]
+hashtags = ["#greentea", "#kbeauty", "#jeju"]
+sources = [
+  "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8B%88%EC%8A%A4%ED%94%84%EB%A6%AC",
+  "https://incidecoder.com/ingredients/camellia-sinensis-leaf-extract",
+  "https://us.innisfree.com/products/green-tea-seed-hyaluronic-serum",
+]
+
+[[ingredient]]
+id = "exosome"
+name = "Exosomes"
+full_name = "Extracellular vesicles"
+nickname = "Cell messengers"
+area = "skin"
+heat = "both"
+heat_note = "US at-home boom; on Allure Korea's 2026 radar"
+hot_since = 2024
+hook = "Exosomes: skin's tiny messengers, explained"
+what_it_is = "Exosomes are tiny bubbles cells use to send signals. Skincare versions are usually plant- or bacteria-derived 'exosome-like' vesicles, not human cells."
+origin = "Plants, probiotic bacteria or lab-grown cells"
+benefits = [
+  "May help skin look smoother and more even",
+  "Supports a hydrated, healthy-looking glow",
+  "Early data suggest help with elasticity and hydration",
+]
+best_for = ["Dull or uneven texture", "Early signs of aging"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after toner as a serum or ampoule",
+  "If it contains spicules, start with 2–3 nights a week",
+  "Follow with moisturizer; use SPF by day",
+]
+pairs_with = ["PDRN", "Niacinamide", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "No exosome product is FDA-approved; shop serums differ from clinic exosomes.",
+  "Most research is lab-based; larger human trials are still needed.",
+  "Many 'exosome shots' also contain spicules, which can tingle.",
+]
+myth = "Exosome serums work like in-clinic stem-cell exosome procedures."
+fact = "Most shop serums use plant or bacterial 'exosome-like' vesicles, which are different and less studied."
+keywords = ["exosome"]
+examples = [
+  {brand = "medicube", product = "Zero One Day Exosome Shot 2000"},
+  {brand = "DERMALINE", product = "D'LEXO Milk Exosomes Solution Ampoule"},
+  {brand = "Dr.nineteen", product = "Porexsome ReDRN Exosome Ampoule"},
+]
+hashtags = ["#exosomes", "#exosomeskincare", "#kbeauty"]
+sources = [
+  "https://www.dermatologytimes.com/view/social-media-mythbusters-exosomes-in-skin-care",
+  "https://www.nbcnews.com/select/amp/rcna206299",
+  "https://www.allurekorea.com/2025/12/24/%EB%B7%B0%ED%8B%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EB%93%A4%EC%9D%B4-%EA%B3%B5%ED%86%B5%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%A7%9A%EC%9D%80-2026-%EB%B7%B0%ED%8B%B0-%ED%8A%B8%EB%A0%8C%EB%93%9C/",
+  "https://www.today.com/shop/medicube-one-day-exosome-shot-review-rcna220056",
+]
+
+[[ingredient]]
+id = "peptide"
+name = "Peptides"
+full_name = ""
+nickname = "Blue & pink peptides"
+area = "skin"
+heat = "both"
+heat_note = "Olive Young peptide searches +72% (Sept 2025)"
+hot_since = 2025
+hook = "Pink peptide, blue peptide: what's the difference?"
+what_it_is = "Peptides are short chains of amino acids that act like messages to skin. Copper peptide (GHK-Cu) is the 'blue' one; 'pink peptide' is mostly branding."
+origin = "Lab-made amino-acid chains; GHK-Cu occurs in human plasma"
+benefits = [
+  "Helps skin look firmer and more elastic",
+  "Supports a smoother, well-hydrated feel",
+  "Gentle enough for most daily routines",
+]
+best_for = ["Early fine lines", "Loss of bounce or firmness", "Sensitive skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply serum after toner, before heavier creams",
+  "Use daily; results build gradually over several weeks",
+  "Finish with moisturizer, plus SPF by day",
+]
+pairs_with = ["Hyaluronic acid", "Niacinamide", "PDRN"]
+avoid_with = []
+good_to_know = [
+  "'Peptide' covers many molecules; results depend on the type and amount.",
+  "Many peptide studies are small or unpublished; expect subtle changes.",
+  "Copper peptides are often kept apart from pure vitamin C and strong acids.",
+]
+myth = "All peptides do the same thing."
+fact = "Signal, carrier (like copper) and other peptide types each do different jobs in skincare."
+keywords = ["peptide", "copper peptide", "ghk-cu"]
+examples = [
+  {brand = "medicube", product = "PDRN Pink Peptide Serum"},
+  {brand = "COSRX", product = "The 6 Peptide Skin Booster Serum"},
+  {brand = "AMPLE:N", product = "Peptide Shot Ampoule"},
+]
+hashtags = ["#peptides", "#copperpeptides", "#bluepeptide", "#peptideserum"]
+sources = [
+  "https://newsroom.cj.net/k-beauty-trends-highlights-from-latest-olive-young-sale/",
+  "https://www.mdpi.com/2079-9284/4/2/16",
+  "https://www.sisajournal-e.com/news/articleView.html?idxno=423873",
+  "https://skinsort.com/products/products-with-copper-tripeptide-1-from-korean-brands",
+]
+
+[[ingredient]]
+id = "rice"
+name = "Rice"
+full_name = "Oryza sativa (rice) extract & ferment"
+nickname = "Rice water"
+area = "skin"
+heat = "both"
+heat_note = "I'm From Rice Toner: 3M+ sold globally by 2024"
+hot_since = 2021
+hook = "From rice bowl to toner: what rice does for skin"
+what_it_is = "Extracts, bran water or ferments made from rice. They bring ferulic acid, gamma-oryzanol, vitamin E-family antioxidants and starches that leave skin soft and dewy."
+origin = "Rice grains and rice bran, used raw or fermented"
+benefits = [
+  "Helps hydrate for a soft, milky-smooth feel",
+  "Antioxidants may help defend against daily stressors",
+  "Known for a healthy-looking, even glow",
+]
+best_for = ["Dull or uneven-looking skin", "Dry to normal skin"]
+when = "AM & PM"
+how_to_use = [
+  "Pat a milky rice toner onto skin after cleansing",
+  "Layer a rice serum or cream for extra softness",
+  "Finish with SPF in the morning (rice sunscreens exist too)",
+]
+pairs_with = ["Ceramides", "Niacinamide", "Probiotics"]
+avoid_with = []
+good_to_know = [
+  "DIY rice water isn't standardized or preserved; formulated extracts are more reliable.",
+  "Allergic to rice or very reactive? Patch test first.",
+  "Fermenting breaks rice into smaller compounds; most evidence is still from lab models.",
+]
+myth = "Homemade rice water works just like rice skincare."
+fact = "Kitchen rice water isn't standardized or preserved; formulated extracts and ferments are more consistent."
+keywords = ["rice"]
+examples = [
+  {brand = "I'm From", product = "Rice Toner"},
+  {brand = "Beauty of Joseon", product = "Relief Sun: Rice + Probiotics"},
+  {brand = "Anua", product = "Rice 70 Glow Milky Toner"},
+]
+hashtags = ["#ricetoner", "#riceskincare", "#kbeauty"]
+sources = [
+  "https://v.daum.net/v/20260702050333694",
+  "https://dermapproved.com/blog/fermented-ingredients-and-rice-tradition-vs-evidence/",
+  "https://www.nbcnews.com/select/amp/rcna165970",
+  "https://www.malaymail.com/news/life/2021/09/12/this-weeks-tiktok-beauty-trend-is-rice-water-the-latest-miracle-ingredient/2004871",
+]
+
+[[ingredient]]
+id = "niacinamide"
+name = "Niacinamide"
+full_name = "Nicotinamide (vitamin B3)"
+nickname = "Vitamin B3"
+area = "skin"
+heat = "both"
+heat_note = "#2 TikTok active (2025 study); OY searches +65%"
+hot_since = 2020
+hook = "The multitasking vitamin hiding in half your shelf"
+what_it_is = "A form of vitamin B3 that skin can use directly. It's a true multitasker: it supports the barrier, helps balance oil and helps even out the look of skin tone."
+origin = "Lab-made form of vitamin B3"
+benefits = [
+  "Helps even out the look of dark spots and dullness",
+  "Supports a healthy-feeling barrier and moisture",
+  "May help oil look balanced and pores look refined",
+]
+best_for = ["Oily or combination skin", "Uneven-looking tone", "Visible pores"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a serum after toner, before moisturizer",
+  "Start around 2–5%; go higher only if skin stays comfortable",
+  "Wear SPF daily for the best-looking results",
+]
+pairs_with = ["Vitamin C", "Ceramides", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "In Korea, 2–5% niacinamide can carry an official 'brightening' functional claim.",
+  "Most products use 5% or less; a higher % isn't automatically better.",
+  "Rarely, it may cause redness or itching, so patch test if sensitive.",
+]
+myth = "You can't use niacinamide with vitamin C."
+fact = "They can be used together, in one formula or layered, and dermatologists often pair them."
+keywords = ["niacinamide"]
+examples = [
+  {brand = "COSRX", product = "The Niacinamide 15 Serum"},
+  {brand = "Anua", product = "Niacinamide 10 TXA 4 Serum"},
+  {brand = "numbuzin", product = "No.5+ Vitamin-Niacinamide Concentrated Pad"},
+]
+hashtags = ["#niacinamide", "#kbeauty", "#skincareingredients"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11977857/",
+  "https://corp.oliveyoung.com/ko/news/88",
+  "https://health.clevelandclinic.org/niacinamide",
+  "https://www.kmjournal.net/news/articleView.html?idxno=13503",
+]
+
+[[ingredient]]
+id = "collagen"
+name = "Collagen"
+full_name = ""
+nickname = "Skin's support protein"
+area = "skin"
+heat = "both"
+heat_note = "Biodance's collagen mask: a US 'cult favorite'"
+hot_since = 2024
+hook = "Can collagen on your skin boost collagen in it?"
+what_it_is = "Collagen is the protein that gives skin its structure. In skincare it's used mainly as a hydrator that forms a smooth, moisture-holding film."
+origin = "Fish or animal sources; 'vegan collagen' is lab-made"
+benefits = [
+  "Helps skin feel plump, smooth and hydrated",
+  "Forms a moisture-holding film on the surface",
+  "Supports a glowy, bouncy look, especially in masks",
+]
+best_for = ["Dry or dehydrated skin", "Dull, tired-looking skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply collagen creams or serums as a final hydrating step",
+  "Use sheet or hydrogel masks 1–3 times a week",
+  "Wear SPF by day to help protect your own collagen",
+]
+pairs_with = ["Peptides", "Vitamin C", "Retinal"]
+avoid_with = []
+good_to_know = [
+  "Whole collagen is too big to reach deep skin layers: think hydration.",
+  "Oral collagen has more research behind it than collagen creams do.",
+  "Often fish- or animal-derived; check labels if you avoid animal ingredients.",
+]
+myth = "Collagen creams add new collagen to your skin."
+fact = "Topical collagen mainly hydrates the surface. Retinoids, vitamin C and SPF help support your own collagen."
+keywords = ["collagen"]
+examples = [
+  {brand = "Biodance", product = "Bio-Collagen Real Deep Mask"},
+  {brand = "medicube", product = "Collagen Jelly Cream"},
+  {brand = "APLB", product = "Spicule Collagen Shot 300 Serum"},
+]
+hashtags = ["#collagen", "#collagenmask", "#biocollagen"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7070905/",
+  "https://www.marieclaire.com/beauty/skincare/best-korean-beauty-products-olive-young/",
+  "https://www.trendier.ai/en/blog/skin-longevity-on-olive-young-pdrn-nmn-and-cica-are-rewriting-koreas-anti-aging-playbook",
+  "https://skinsort.com/products/medicube/collagen-jelly-cream",
+]
+
+[[ingredient]]
+id = "ceramides"
+name = "Ceramides"
+full_name = ""
+nickname = ""
+area = "skin"
+heat = "both"
+heat_note = "#ceramides 104M TikTok views; OY Award winners"
+hot_since = 2020
+hook = "Meet the 'grout' holding your skin barrier together"
+what_it_is = "Waxy lipids that make up about half of the fats in skin's outer layer. Skincare adds skin-identical, lab-made ceramides to top up what dryness and age wear down."
+origin = "Mostly lab-made, matching lipids skin makes itself"
+benefits = [
+  "Helps reinforce a comfortable, resilient barrier",
+  "Helps skin hold moisture and feel less tight",
+  "Helps skin feel protected in dry, harsh weather",
+]
+best_for = ["Dry or tight skin", "Sensitive or reactive skin", "Skin using retinoids or acids"]
+when = "AM & PM"
+how_to_use = [
+  "Apply on damp skin, ideally within ~3 minutes of cleansing",
+  "Use a ceramide cream as your last step before SPF",
+  "Look for formulas that also add cholesterol and fatty acids",
+]
+pairs_with = ["Cholesterol", "Fatty acids", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Aging and eczema-prone skin tend to have fewer of their own ceramides.",
+  "Skincare ceramides are usually synthetic, so no animal source is needed.",
+  "On labels, look for names like ceramide NP, AP or EOP.",
+]
+myth = "Ceramides are only for very dry skin."
+fact = "All skin types rely on ceramides for their barrier; light lotions and gels suit oily skin too."
+keywords = ["ceramide", "ceramidin"]
+examples = [
+  {brand = "ILLIYOON", product = "Ceramide Ato Concentrate Cream"},
+  {brand = "Torriden", product = "SOLID IN Ceramide Cream"},
+  {brand = "Dr.Jart+", product = "Ceramidin Skin Barrier Moisturizing Cream"},
+]
+hashtags = ["#ceramides", "#skinbarrier", "#kbeauty"]
+sources = [
+  "https://health.clevelandclinic.org/ceramides",
+  "https://www.glossy.co/beauty/tiktok-gen-z-skin-barrier-went-mainstream/",
+  "https://themonodist.com/olive-young-awards-2025/",
+]
+
+[[ingredient]]
+id = "propolis"
+name = "Propolis"
+full_name = "Propolis extract"
+nickname = "Bee glue"
+area = "skin"
+heat = "both"
+heat_note = "CNP ampoule: 6.5M+ sold; trending on TikTok"
+hot_since = 2016
+hook = "The resin bees use to guard their hive, on skin"
+what_it_is = "A sticky resin bees make from tree sap, beeswax and their own saliva to seal the hive. It's rich in flavonoids and other antioxidants, and loved for a soothing, honeyed glow."
+origin = "Honeybee hives: tree resin mixed with beeswax"
+benefits = [
+  "Known for a soothing, comforting feel",
+  "Antioxidants may help defend against daily stressors",
+  "Helps skin look nourished, dewy and glowy",
+]
+best_for = ["Dull or dry-feeling skin", "Blemish-prone skin"]
+when = "AM & PM"
+how_to_use = [
+  "Patch test on your inner arm for a few days first",
+  "Apply a propolis ampoule or serum after toner",
+  "Top with moisturizer; it can feel sticky, so use a thin layer",
+]
+pairs_with = ["Niacinamide", "Honey", "Centella asiatica"]
+avoid_with = []
+good_to_know = [
+  "Known contact allergen: skip it if you react to bee products, balsam of Peru or poplar.",
+  "Not vegan, since it's made by bees.",
+  "Evidence is mostly lab and small studies; results vary with the propolis source.",
+]
+myth = "Natural bee ingredients can't cause allergies."
+fact = "Propolis is a well-documented contact allergen; in European patch tests, 1.2–6.6% of people react to it."
+keywords = ["propolis"]
+examples = [
+  {brand = "CNP", product = "Propolis Energy Active Ampule"},
+  {brand = "COSRX", product = "Full Fit Propolis Light Ampoule"},
+  {brand = "Beauty of Joseon", product = "Glow Serum: Propolis + Niacinamide"},
+]
+hashtags = ["#propolis", "#kbeauty", "#honeyglow"]
+sources = [
+  "https://www.etoday.co.kr/news/view/2310412",
+  "https://www.whowhatwear.com/what-is-propolis",
+  "https://dermnetnz.org/topics/contact-allergy-to-propolis",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10380968/",
+]
+
+[[ingredient]]
+id = "azelaic-acid"
+name = "Azelaic acid"
+full_name = ""
+nickname = ""
+area = "skin"
+heat = "both"
+heat_note = "357M TikTok views; a 2025 Seoul trend pick"
+hot_since = 2025
+hook = "Why Seoul's blemish routines now feature this acid"
+what_it_is = "A dicarboxylic acid made naturally by a yeast that lives on skin. Skincare versions help blemish-prone skin look clearer, calmer and more even in tone."
+origin = "Made by skin yeast (Malassezia); lab-made for skincare"
+benefits = [
+  "Helps blemish-prone skin look clearer",
+  "May help calm the look of redness",
+  "Helps even out the look of post-blemish marks",
+]
+best_for = ["Blemish-prone skin", "Red-prone skin", "Uneven-looking tone"]
+when = "AM & PM"
+how_to_use = [
+  "Start once daily on clean, dry skin; build up to twice",
+  "Apply a thin layer before moisturizer",
+  "Wear SPF daily and give it several weeks to show results",
+]
+pairs_with = ["Niacinamide", "Centella asiatica", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "A mild tingle or itch at first is common; stop if it burns or a rash appears.",
+  "Serums are usually up to 10%; 15% gels and 20% creams are medicines in many countries.",
+  "Results build over weeks to months, so give it time.",
+]
+myth = "Azelaic acid is just another AHA or BHA exfoliant."
+fact = "It's a dicarboxylic acid with its own way of working. It's not an AHA or BHA, though it can still tingle."
+keywords = ["azelaic"]
+examples = [
+  {brand = "Anua", product = "Azelaic Acid 10 Hyaluron Redness Soothing Serum"},
+  {brand = "Cos De BAHA", product = "AZ Azelaic Acid 10 Serum"},
+  {brand = "Purito Seoul", product = "Azelaic Acid 10 Kojic Tea Tree Serum"},
+]
+hashtags = ["#azelaicacid", "#kbeauty", "#blemishcare"]
+sources = [
+  "https://dermnetnz.org/topics/azelaic-acid",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11977857/",
+  "https://www.aol.com/articles/flew-6-000-miles-discover-184300862.html",
+  "https://incidecoder.com/products/anua-azelaic-acid-10-hyaluron-redness-soothing-serum",
+]
+
+[[ingredient]]
+id = "pn"
+name = "PN"
+full_name = "Polynucleotide"
+nickname = "Long-chain salmon DNA"
+area = "skin"
+heat = "both"
+heat_note = "Big as an injectable in Korea and the UK"
+hot_since = 2024
+hook = "PN vs PDRN: same salmon, different job"
+what_it_is = "PN is a longer-chain cousin of PDRN, also made from salmon DNA. It's best known as the base of in-clinic skin boosters such as Rejuran."
+origin = "Salmon DNA, in longer chains than PDRN"
+benefits = [
+  "Helps skin feel hydrated and cushioned",
+  "May support a smoother, bouncier look",
+  "Supports a calm, comfortable-feeling complexion",
+]
+best_for = ["Dry or dehydrated skin", "Dull, tired-looking skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after cleansing and toner",
+  "Pat in gently, layering lighter textures first",
+  "Follow with moisturizer, plus SPF by day",
+]
+pairs_with = ["PDRN", "Hyaluronic acid", "Peptides"]
+avoid_with = []
+good_to_know = [
+  "PN is mainly an injectable; skincare sold as 'PN' is rare and little studied.",
+  "Clinic PN boosters are medical procedures, not the same thing as a cream.",
+  "Salmon-derived: patch test first, and skip it if you have a fish allergy.",
+]
+myth = "A PN cream gives the same results as a PN skin booster shot."
+fact = "Injected PN sits deep in skin. Topicals have limited penetration, so results are gentler and surface-level."
+keywords = ["polynucleotide", "pn booster", "pn ampoule", "pn serum", "pn cream"]
+examples = []
+hashtags = ["#polynucleotides", "#pnskinbooster", "#salmondna"]
+sources = [
+  "https://jcasonline.com/polynucleotides-and-polydeoxyribonucleotides-in-dermatology-a-narrative-review/",
+  "https://mariehayagmd.com/blogs/news/pn-vs-pdrn",
+  "https://thetweakmentsguide.com/blog/polynucleotide-skincare/",
+  "https://www.hitnews.co.kr/news/articleView.html?idxno=64910",
+]

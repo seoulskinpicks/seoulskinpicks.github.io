@@ -12,9 +12,9 @@ on:
         type: boolean
         default: true
       source:
-        description: "올릴 종류 (auto = 설정대로 번갈아 · site = 링크 페이지만 새로 올리기, 인스타 게시 없음)"
+        description: "올릴 종류 (auto = 요일별 계획대로 · skin/hair/versus/history = 정보 글 · product/kbeauty/tools = 제품 · site = 링크 페이지만)"
         type: choice
-        options: [auto, kbeauty, tools, site]
+        options: [auto, skin, hair, versus, history, product, kbeauty, tools, site]
         default: auto
 
 permissions:

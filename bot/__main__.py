@@ -2,7 +2,7 @@
 
   python -m bot demo                 # preview cards with sample data (no keys needed)
   python -m bot check                # test sheet / AliExpress / Instagram connections
-  python -m bot prepare [--dry-run]  # pick today's product, write site/ (cards + link page)
+  python -m bot prepare [--dry-run]  # today's post (weekly plan: product / ingredient / hair / versus / history)
   python -m bot publish --site-url https://you.github.io/repo/
   python -m bot refresh-token --out token.txt
 """
@@ -18,6 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from . import editorial
 from .config import load_config
 from .copywriter import make_copy
 from .instagram import Instagram, wait_for_urls
@@ -89,6 +90,70 @@ def _render_pin(cand, cp, number: int, cfg, out: Path, dry_run: bool, product_im
 
 
 # ---------------------------------------------------------------------------
+PRODUCT_SOURCES = ("kbeauty", "tools")
+
+
+def _plan(source: str | None, cfg, today: Date) -> tuple[str, list[str]]:
+    """(what today is meant to be, the order to try). A manual `--source` wins over the weekly plan."""
+    if source in PRODUCT_SOURCES:
+        return "product", ["product"]
+    if source in editorial.PLAN_TOKENS:
+        return source, editorial.fallback_order(source)
+    plan = editorial.plan_for(cfg, today)
+    return plan, editorial.fallback_order(plan)
+
+
+def _make_product(args, cfg, state, today: Date, number: int, out: Path, lib, ali_client=None) -> dict | None:
+    forced = args.source if args.source in PRODUCT_SOURCES else None
+    for src in source_order(cfg.mode, state.last_source(), forced):
+        try:
+            cand = _fetch(src, cfg, state, today, ali_client)
+            if not cand:
+                continue
+            cp = make_copy(cand, number, cfg, lib=lib)
+            paths = render_post(cand, cp, number, cfg.handle, out / "posts" / f"{number:03d}")
+        except Exception as exc:
+            warn(f"{'K뷰티' if src == 'kbeauty' else '알리 도구'} 준비 중 오류, 다른 쪽으로 넘어가요: {exc}")
+            continue
+        post = _post_record(cand, cp, number, today, len(paths))
+        _render_pin(cand, cp, number, cfg, out, args.dry_run)
+        kind = "K뷰티" if cand.source == "kbeauty" else "알리 도구"
+        star = f" · 핵심 성분 카드: {cp.star['name']}" if cp.star else ""
+        return {
+            "post": post, "kind": f"제품 픽 ({kind})", "cand": cand,
+            "summary": (f"- 제품: **{post['brand']} {post['name']}**\n- 링크: {post['link']}\n"
+                        f"- 카피: {cp.ai_provider + ' AI' if cp.ai_used else '템플릿'}{star}\n"),
+        }
+    return None
+
+
+def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path, lib, ali_client=None) -> dict | None:
+    from .render_info import render_info_pin, render_info_post
+
+    topic = editorial.next_topic(step, lib, state, today, cfg)
+    if topic is None:
+        return None
+    try:
+        products = editorial.find_products(topic, cfg, editorial.load_catalog(cfg), ali_client)
+        info = editorial.build_info_copy(topic, number, cfg, products)
+        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years)
+    except Exception as exc:
+        warn(f"{editorial.describe(topic)} 준비 중 오류, 다른 종류로 넘어가요: {exc}")
+        return None
+    target = (out / "pins" if args.dry_run else cfg.root / "pins") / f"{number:03d}.jpg"
+    try:
+        render_info_pin(topic, info, number, cfg.handle, target)
+    except Exception as exc:
+        warn(f"핀터레스트 이미지를 만들지 못했어요 (인스타 게시는 계속): {exc}")
+    post = editorial.post_record(info, number, today, len(paths))
+    shop = ", ".join(f"{p['brand']} {p['name']}" + ("" if p["links"] else " (링크 없음)") for p in info.products)
+    return {
+        "post": post, "kind": editorial.describe(topic), "cand": None,
+        "summary": (f"- 주제: **{topic.title}**\n" + (f"- 소개한 제품: {shop}\n" if shop else "")
+                    + "- 내용: content/ 폴더의 조사 자료 (AI가 지어내지 않음)\n"),
+    }
+
+
 def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     cfg = cfg or load_config()
     state = State(cfg.state_file)
@@ -112,47 +177,55 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
         return 0
     state.drop_unpublished()
     number = state.next_number()
+    lib = editorial.load_library(cfg)
 
-    chosen = None
-    for src in source_order(cfg.mode, state.last_source(), args.source):
-        try:
-            cand = _fetch(src, cfg, state, today, ali_client)
-            if not cand:
-                continue
-            cp = make_copy(cand, number, cfg)
-            paths = render_post(cand, cp, number, cfg.handle, out / "posts" / f"{number:03d}")
-            chosen = (cand, cp, paths)
+    plan, order = _plan(args.source, cfg, today)
+    log(f"오늘({today}, {'월화수목금토일'[today.weekday()]}) 계획: {editorial.KIND_KO.get(plan, plan)}")
+    made = None
+    for step in order:
+        if step == "product":
+            made = _make_product(args, cfg, state, today, number, out, lib, ali_client)
+        else:
+            made = _make_info(step, args, cfg, state, today, number, out, lib, ali_client)
+        if made:
+            if step != order[0]:
+                log(f"'{editorial.KIND_KO.get(order[0], order[0])}' 은 올릴 게 없어서 '{editorial.KIND_KO.get(step, step)}' 로 대신 올려요")
             break
-        except Exception as exc:
-            warn(f"{'K뷰티' if src == 'kbeauty' else '알리 도구'} 준비 중 오류, 다른 쪽으로 넘어가요: {exc}")
-    if not chosen:
-        warn("오늘 올릴 상품이 없어요. 구글 시트에 K뷰티 제품을 추가하거나 알리 API 키를 확인해주세요.")
-        add_summary("### 오늘은 게시할 상품이 없어요\n구글 시트(K뷰티 목록)에 새 제품을 추가하거나, 알리 API 키 설정을 확인해주세요.")
+    if not made:
+        warn("오늘 올릴 게 없어요. 구글 시트에 K뷰티 제품을 추가하거나 content/ 폴더에 정보 글을 추가해주세요.")
+        add_summary("### 오늘은 게시할 내용이 없어요\n구글 시트(K뷰티 목록)에 제품을 추가하거나 content/ 폴더에 정보 글을 추가해주세요.")
         return 0
 
-    cand, cp, paths = chosen
-    post = _post_record(cand, cp, number, today, len(paths))
-    _render_pin(cand, cp, number, cfg, out, args.dry_run)
+    post = made["post"]
     build_link_page(state.published + [post], cfg, out, updated=today.isoformat())
-    build_pinterest(state.published + [post], cfg, out, _site_url(cfg), pins_dir=None if args.dry_run else cfg.root / "pins")
+    build_pinterest(state.published + [post], cfg, out, _site_url(cfg),
+                    pins_dir=None if args.dry_run else cfg.root / "pins", lib=lib)
     if not args.dry_run:
         state.posts.append(post)
-        if cand.source == "tools":
+        cand = made["cand"]
+        if cand is not None and cand.source == "tools":
             state.remember_tool(cand.category, cand.product_id)
         state.save()
+    left = editorial.log_remaining(lib, state if not args.dry_run else _with(state, post))
     set_output("has_post", "true")
     set_output("deploy", "false" if args.dry_run else "true")
     set_output("number", str(number))
-    kind = "K뷰티" if cand.source == "kbeauty" else "알리 도구"
-    log(f"No.{number} 준비 완료 ({kind}): {post['brand']} {post['name']}")
+    log(f"No.{number} 준비 완료 ({made['kind']}): {post['name']}")
     add_summary(
-        f"### {'[미리보기] ' if args.dry_run else ''}No.{number} · {kind}\n"
-        f"- 제품: **{post['brand']} {post['name']}**\n- 링크: {post['link']}\n"
-        f"- 카피: {cp.ai_provider + ' AI' if cp.ai_used else '템플릿'}\n\n"
+        f"### {'[미리보기] ' if args.dry_run else ''}No.{number} · {made['kind']}\n"
+        + made["summary"]
+        + f"- 남은 정보 글: {left}\n\n"
         f"카드 이미지는 이 페이지 아래 **Artifacts → preview-images** 에서 받을 수 있어요.\n\n"
-        f"<details><summary>캡션 보기</summary>\n\n```\n{cp.caption}\n```\n</details>\n"
+        f"<details><summary>캡션 보기</summary>\n\n```\n{post['caption']}\n```\n</details>\n"
     )
     return 0
+
+
+def _with(state, post):
+    """A copy of the state with `post` counted as published (for the 'remaining' note on previews)."""
+    clone = copy.copy(state)
+    clone.data = dict(state.data, posts=state.published + [dict(post, status="published")])
+    return clone
 
 
 def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
@@ -237,6 +310,14 @@ def cmd_check(args, cfg=None) -> int:
     else:
         lines.append("- 인스타: 토큰 없음 → 게시 없이 미리보기만")
 
+    lib = editorial.load_library(cfg)
+    plan = editorial.plan_for(cfg, today)
+    lines.append(f"- 오늘 계획: {editorial.KIND_KO.get(plan, plan)}")
+    lines.append(f"- 정보 글 자료: 피부 성분 {len(lib.skin)} · 모발 {len(lib.hair)} · 비교 {len(lib.versus)} · 연도 {len(lib.years)}")
+    lines.append(f"  - 아직 안 올린 것: {editorial.log_remaining(lib, state)}")
+    catalog = editorial.load_catalog(cfg)
+    lines.append(f"- 성분 글용 제품 목록: {len(catalog)}개" if catalog else
+                 "- 성분 글용 제품 목록: 아직 없음 → 'Find bestsellers' 가 월요일에 만들어요 (그 전엔 예시 제품을 링크 없이 보여줘요)")
     lines.append(f"- 지금까지 게시: {len(state.published)}개")
     text = "\n".join(lines)
     log(text)
@@ -280,10 +361,11 @@ def cmd_demo(args) -> int:
     if out.exists():
         shutil.rmtree(out)
     records, all_paths = [], []
+    lib = editorial.load_library(cfg)
     samples = [(1, demo.DEMO_KBEAUTY[0]), (2, demo.DEMO_TOOL), (3, demo.DEMO_KBEAUTY[1]), (4, demo.DEMO_KBEAUTY_ALI)]
     for number, sample in samples:
         cand = copy.deepcopy(sample)
-        cp = make_copy(cand, number, cfg)
+        cp = make_copy(cand, number, cfg, lib=lib)
         if cand.source == "tools":
             img = demo.demo_product_image()
         elif cand.store == "aliexpress":
@@ -296,8 +378,24 @@ def cmd_demo(args) -> int:
         render_pin(cand, cp, number, cfg.handle, out / "pins" / f"{number:03d}.jpg", product_img=img)
         records.append(_post_record(cand, cp, number, _today(cfg, None), len(paths)))
         all_paths += paths
+    # information posts: one of each kind, straight from the content library
+    from .render_info import render_info_pin, render_info_post
+    number = len(samples)
+    for kind in ("skin", "hair", "versus", "history"):
+        topics = editorial.all_topics(kind, lib)
+        if not topics:
+            continue
+        number += 1
+        topic = topics[0]
+        info = editorial.build_info_copy(topic, number, cfg, editorial.find_products(topic, cfg, editorial.load_catalog(cfg)))
+        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years)
+        contact_sheet(paths, out / f"preview_No{number}.jpg", cols=4)
+        (out / f"caption_No{number}.txt").write_text(info.caption, encoding="utf-8")
+        render_info_pin(topic, info, number, cfg.handle, out / "pins" / f"{number:03d}.jpg")
+        records.append(editorial.post_record(info, number, _today(cfg, None), len(paths)))
+        all_paths += paths
     build_link_page(records, cfg, out, updated=_today(cfg, None).isoformat())
-    build_pinterest(records, cfg, out, _site_url(cfg) or "https://your-name.github.io/")
+    build_pinterest(records, cfg, out, _site_url(cfg) or "https://your-name.github.io/", lib=lib)
     log(f"데모 완료 → {out}/ (카드 {len(all_paths)}장, 링크 페이지 index.html)")
     return 0
 
@@ -308,7 +406,9 @@ def main(argv=None) -> int:
     a = sub.add_parser("prepare")
     a.add_argument("--out", default="site")
     a.add_argument("--dry-run", action="store_true")
-    a.add_argument("--source", default="auto", choices=["auto", "kbeauty", "tools", "site"])
+    a.add_argument("--source", default="auto",
+                   choices=["auto", "product", "kbeauty", "tools", "skin", "skin_korea", "skin_global", "hair",
+                            "versus", "history", "site"])
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)

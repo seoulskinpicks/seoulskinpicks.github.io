@@ -10,7 +10,21 @@ tagline = "Real K-beauty picks, chosen in Korea"  # 링크 페이지 한 줄 소
 timezone = "Asia/Seoul"                           # 날짜 기준 시간대
 
 [schedule]
-# alternate     : K뷰티와 알리 도구를 하루씩 번갈아 (한쪽이 비면 다른 쪽)
+# 요일별로 올릴 종류 (월 화 수 목 금 토 일 순서, 한국 날짜 기준). 정보가 주, 제품은 곁들이는 방향.
+#   skin_korea  : 피부 성분 101 — 한국에서 뜨는 성분 먼저 (예: PDRN, 쑥, 판테놀)
+#   skin_global : 피부 성분 101 — 해외에서 뜨는 성분 먼저 (예: NAD+, 달팽이, TXA)
+#   skin        : 피부 성분 101 — 순서대로 아무거나
+#   hair        : 모발·두피 성분 101 (예: 로즈마리, LPP, 두피 스케일링)
+#   versus      : 서울 vs 해외 — 한국에서 뜨는 것과 해외에서 뜨는 것 비교
+#   history     : K뷰티 타임머신 — 연도별로 뭐가 유행했는지 (처음엔 전체 타임라인)
+#   product     : 제품 픽 (아래 mode 순서로 K뷰티 / 알리 도구)
+# 성분·비교 글에도 그 성분이 들어간 올리브영 인기 제품이 자동으로 붙어요.
+# 내용은 content/ 폴더의 skin.toml · hair.toml · trends.toml (조사·출처 확인한 자료)에서 가져와요.
+weekly = ["skin_korea", "product", "hair", "versus", "skin_global", "history", "product"]
+repeat_after_days = 120   # 정보 글을 다 쓰면, 올린 지 이 날짜가 지난 것부터 다시 올려요
+
+# 제품 픽 날의 순서:
+# alternate     : K뷰티와 알리 도구를 번갈아 (한쪽이 비면 다른 쪽)
 # kbeauty_first : K뷰티 목록이 남아 있으면 항상 K뷰티, 비면 알리 도구
 # tools_first   : 알리 도구 우선, 안 되면 K뷰티
 mode = "alternate"
@@ -37,6 +51,9 @@ max_new = 10        # 한 번에 새로 추가할 최대 개수
 min_rating = 4.5    # 평점 이보다 낮으면 제외
 min_reviews = 30    # 리뷰 수 이보다 적으면 제외
 skip_brands = []    # 빼고 싶은 브랜드 (예: ["BRAND A"])
+# 성분 글의 '어디서 사나' 카드용으로 저장할 베스트셀러 목록 (data/oy_catalog.json)
+catalog_lists = ["Skincare", "Suncare", "Face Masks", "Hair"]
+catalog_top_n = 100
 
 [aliexpress]
 ship_to_country = "US"      # 가격·배송 기준 국가 (US, GB, AU, CA ...)

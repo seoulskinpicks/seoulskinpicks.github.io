@@ -95,13 +95,15 @@ def balanced(d, text: str, f, max_w: float) -> list[str]:
     n = len(lines)
     if n <= 1:
         return lines
+    words = (text or "").split()
+    whole = " ".join(lines).split() == words  # greedy wrap kept every word intact
     w = max_w
     best = lines
     while w > max_w * 0.5:
         w -= 12
         trial = wrap(d, text, f, w)
-        if len(trial) != n:
-            break
+        if len(trial) != n or (whole and " ".join(trial).split() != words):
+            break  # never split a word just to even out the lines
         best = trial
     return best
 
@@ -640,14 +642,16 @@ def slide_reviews(t: Theme, rv: dict, handle: str, idx: int, n_slides: int = 5) 
 
 # ---------------------------------------------------------------------------
 def render_post(cand, cp, number: int, handle: str, out_dir: Path, product_img=None) -> list[Path]:
-    """Render the carousel (5 slides, 6 with a reviews slide). Returns image paths in order."""
+    """Render the carousel (5-8 slides: optional star ingredient, reviews and price slides). Returns image paths."""
     t = THEMES["kbeauty" if cand.source == "kbeauty" else "tools"]
     reviews = getattr(cp, "reviews", None)
     s4 = cp.slide4
     kind = s4.get("kind")
 
     deal = getattr(cp, "deal", None)
-    plan = ["cover", "why"] + (["reviews"] if reviews else []) + ["how", "s4"] + (["deal"] if deal else []) + ["cta"]
+    star = getattr(cp, "star", None)
+    plan = (["cover", "why"] + (["star"] if star else []) + (["reviews"] if reviews else []) + ["how", "s4"]
+            + (["deal"] if deal else []) + ["cta"])
     n = len(plan)
     slides = []
     for idx, name in enumerate(plan, 1):
@@ -677,6 +681,9 @@ def render_post(cand, cp, number: int, handle: str, out_dir: Path, product_img=N
                                          product_img if product_img is not None else cand.image_url, n_slides=n)
         elif name == "why":
             card = slide_bullets(t, cp.why_label, cp.why_title, cp.why_bullets, handle, idx, n_slides=n)
+        elif name == "star":
+            from .render_info import slide_star
+            card = slide_star(t, star, handle, idx, n)
         elif name == "deal":
             card = slide_deal(t, deal, handle, idx, n_slides=n)
         elif name == "reviews":

@@ -2,6 +2,9 @@
 
 The daily post job reads this file after your own Google Sheet rows (your picks always go first).
 You can delete any row on GitHub to skip it.
+
+The same run also saves the full bestseller lists (incl. Hair) to data/oy_catalog.json, which the
+ingredient posts use for their "Where to find it" card.
 """
 from __future__ import annotations
 
@@ -69,8 +72,16 @@ def run_discover(cfg, state, today: str, ali_client=None, session=None, sleep=ti
         warn("올리브영 글로벌 robots.txt 가 더 이상 수집을 허용하지 않거나 읽을 수 없어요. 자동 수집을 멈춰요.")
         return []
 
-    items = oy.fetch_bestsellers(d.get("lists", ["Skincare", "Suncare", "Face Masks"]), int(d.get("top_n", 20)),
-                                 session=session, sleep=sleep)
+    queue_lists = d.get("lists", ["Skincare", "Suncare", "Face Masks"])
+    catalog_lists = d.get("catalog_lists", ["Skincare", "Suncare", "Face Masks", "Hair"])
+    top_n = int(d.get("top_n", 20))
+    fetched = oy.fetch_bestsellers(list(dict.fromkeys(queue_lists + catalog_lists)), int(d.get("catalog_top_n", 100)),
+                                   session=session, sleep=sleep)
+    if fetched and not dry_run:
+        from .editorial import save_catalog
+        save_catalog(cfg, [it for it in fetched if it["list"] in catalog_lists], today)
+        log(f"성분 글용 제품 목록 저장: {sum(1 for it in fetched if it['list'] in catalog_lists)}개 (data/oy_catalog.json)")
+    items = [it for it in fetched if it["list"] in queue_lists and it["rank"] <= top_n]
     min_rating = float(d.get("min_rating", 4.5))
     min_reviews = int(d.get("min_reviews", 30))
     skip = {b.lower() for b in d.get("skip_brands", [])}

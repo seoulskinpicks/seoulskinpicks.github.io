@@ -1,4 +1,7 @@
-"""Builds the "link in bio" page (GitHub Pages): every pick, newest first, with its number."""
+"""Builds the "link in bio" page (GitHub Pages): every post, newest first, with its number.
+
+Product picks get shop buttons. Information posts (ingredients, trends, history) list the products
+they mention with shop buttons, or link to the full guide page when there's nothing to buy."""
 from __future__ import annotations
 
 import html
@@ -11,7 +14,7 @@ TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title} · Shop the picks</title>
+<title>{title} · Picks & guides</title>
 <meta name="description" content="{tagline}">
 <meta name="robots" content="index,follow">
 {verify}
@@ -52,6 +55,12 @@ li.tools .tag{{background:var(--sage-soft);color:var(--sage)}}
 .brand{{font-size:13px;color:var(--muted);margin-top:2px}}
 .go{{font-weight:700;font-size:14px;color:var(--accent);white-space:nowrap}}
 li.tools .go{{color:var(--sage)}}
+li.guide .num{{color:var(--ink)}}
+li.guide .tag{{background:var(--ink);color:var(--bg)}}
+.prod{{display:block;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}}
+.prod .pname{{display:block;font-size:14px;font-weight:600;line-height:1.3}}
+.brand a{{color:var(--accent);font-weight:600}}
+.prod .btns{{margin-top:6px}}
 .empty{{text-align:center;color:var(--muted);padding:36px 0}}
 footer{{text-align:center;font-size:12px;color:var(--muted);margin-top:28px}}
 </style>
@@ -64,7 +73,7 @@ footer{{text-align:center;font-size:12px;color:var(--muted);margin-top:28px}}
   <p class="handle"><a href="https://www.instagram.com/{handle}/">@{handle}</a></p>
   <p class="tagline">{tagline}</p>
 </header>
-<p class="note">Find the number from the post (like <b>No.12</b>) below. These are affiliate links: I may earn a small commission if you buy, at no extra cost to you. Prices and availability can change.{us_note}</p>
+<p class="note">Find the number from the post (like <b>No.12</b>) below. Guides (ingredients, trends) list the products they mention. These are affiliate links: I may earn a small commission if you buy, at no extra cost to you. Prices and availability can change.{us_note}</p>
 <input class="search" id="q" type="search" inputmode="search" placeholder="Search a number or product…" aria-label="Search picks">
 <ul id="list">
 {items}
@@ -87,12 +96,17 @@ def build_link_page(posts: list[dict], cfg, out_dir: Path, updated: str) -> Path
     rows = []
     oy_name = cfg.kbeauty.get("shop_name", "Olive Young Global")
     ordered = sorted(posts, key=lambda p: p["number"], reverse=True)
-    any_oy = any((p.get("links") or {}).get("oliveyoung") for p in posts)
+    any_oy = any((p.get("links") or {}).get("oliveyoung") for p in posts) or any(
+        (x.get("links") or {}).get("oliveyoung") for p in posts for x in p.get("products") or [])
     us_note = (f" <b>In the US?</b> Use the AliExpress button: {esc(oy_name)} doesn't ship to the US." if any_oy else "")
     code = cfg.kbeauty.get("oliveyoung_code", "")
     if code and any_oy:
         us_note += f" {esc(oy_name)} code: <b>{esc(code)}</b>"
+    from .editorial import INFO_KINDS, KIND_LABEL
     for i, p in enumerate(ordered):
+        if p["source"] in INFO_KINDS:
+            rows.append(_guide_row(p, i == 0, KIND_LABEL.get(p["source"], "Guide"), oy_name))
+            continue
         tools = p["source"] == "tools"
         tag = "Tool pick" if tools else "K-beauty"
         brand = p.get("brand") or ("AliExpress" if tools else "")
@@ -139,3 +153,33 @@ def build_link_page(posts: list[dict], cfg, out_dir: Path, updated: str) -> Path
     path.write_text(page, encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     return path
+
+
+def _guide_row(p: dict, newest: bool, tag: str, oy_name: str) -> str:
+    esc = html.escape
+    folder = p.get("folder") or f"{p['number']:03d}"
+    products = p.get("products") or []
+    search = " ".join([str(p["number"]), p["name"]] + [f"{x['brand']} {x['name']}" for x in products]).lower()
+    new_tag = '<span class="tag new">New</span>' if newest else ""
+    def head(read_link: bool) -> str:
+        read = f' · <a href="p/{folder}.html">Read the guide</a>' if read_link else ""
+        return (f'<span class="num">No.{p["number"]}</span>'
+                f'<span class="meta"><span class="tag">{esc(tag)}</span>{new_tag}'
+                f'<span class="name">{esc(p["name"])}</span>'
+                f'<span class="brand">{esc(p.get("date", ""))}{read}</span>')
+    blocks = []
+    for x in products:
+        links = x.get("links") or {}
+        btns = []
+        if links.get("aliexpress"):
+            btns.append(f'<a class="ali" href="{esc(links["aliexpress"])}" target="_blank" rel="sponsored noopener">AliExpress →<small>US · worldwide</small></a>')
+        if links.get("oliveyoung"):
+            btns.append(f'<a href="{esc(links["oliveyoung"])}" target="_blank" rel="sponsored noopener">{esc(oy_name)} →<small>outside the US</small></a>')
+        if btns:
+            blocks.append(f'<span class="prod"><span class="pname">{esc(x["brand"])} {esc(x["name"])}</span>'
+                          f'<span class="btns">{"".join(btns)}</span></span>')
+    if blocks:
+        return (f'<li class="guide" data-num="{p["number"]}" data-s="{esc(search)}"><div class="card">{head(True)}'
+                + "".join(blocks) + "</span></div></li>")
+    return (f'<li class="guide" data-num="{p["number"]}" data-s="{esc(search)}"><a href="p/{folder}.html">{head(False)}</span>'
+            f'<span class="go">Read →</span></a></li>')

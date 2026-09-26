@@ -1,0 +1,419 @@
+# ─────────────────────────────────────────────────────────────
+#  K뷰티 트렌드: 연도별 변화 + 서울 vs 해외 비교
+#  [[year]]   : 'history' 게시물 (K뷰티 타임머신). 처음엔 전체 타임라인 1편, 그다음 연도순으로 1편씩.
+#  [[versus]] : 'versus' 게시물 (서울에서 뜨는 것 vs 해외에서 뜨는 것). 위에서부터 순서대로.
+#  카드에 그대로 들어가니 영어로, 짧게. 새 연도(예: 2027)는 [[year]] 블록을 추가하면 돼요.
+# ─────────────────────────────────────────────────────────────
+
+[[year]]
+year = 2012
+headline = "BB cream goes West"
+summary = "After Sephora stocked Dr. Jart+ BB creams in 2011, big Western brands launched their own in 2012, putting Korea's all-in-one base on the map."
+hero_ingredients = ["Built-in SPF"]
+hero_products = ["BB cream"]
+buzzwords = ["Blemish balm", "All-in-one"]
+now = "Its all-in-one idea lives on in 2026's 'skincare makeup' trend flagged by Olive Young."
+sources = [
+  "https://en.wikipedia.org/wiki/BB_cream",
+  "https://www.nbcnews.com/news/asian-america/korean-beauty-products-once-niche-are-entering-u-s-mainstream-n489841",
+  "https://www.koreaherald.com/article/10640106",
+]
+
+[[year]]
+year = 2013
+headline = "Cushion fever at home"
+summary = "Amorepacific's cushion compact (2008) became a Korean must-have: a 2013 survey found 75% of Korean women used one. CC creams followed BB in the US."
+hero_ingredients = ["Built-in SPF"]
+hero_products = ["Cushion compact", "CC cream"]
+buzzwords = ["Cushion", "Color correcting"]
+now = "Still a Korean base staple: SPF cushion foundations were winners again at the 2025 Olive Young Awards."
+sources = [
+  "https://stories.amorepacific.com/en/koreas-cushion-boom-changes-global-beauty-trends/",
+  "https://www.gcimagazine.com/brands-products/color-cosmetics/article/21849890/the-anatomy-of-bb-creams",
+  "https://themonodist.com/olive-young-awards-2025/",
+]
+
+[[year]]
+year = 2014
+headline = "Cushions boom, '10 steps' born"
+summary = "Amorepacific cushion sales doubled to 26M units; a US beauty site coined the '10-step Korean routine'; K-drama My Love from the Star lifted sales."
+hero_ingredients = ["Built-in SPF"]
+hero_products = ["Cushion compact", "Lipstick"]
+buzzwords = ["10-step routine", "K-drama effect"]
+now = "Debunked: data shows Koreans use far fewer products (about 3 by 2021), but '10 steps' still sells abroad."
+sources = [
+  "https://stories.amorepacific.com/en/koreas-cushion-boom-changes-global-beauty-trends/",
+  "https://themonodist.com/the-10-step-korean-skin-care-routine-is-not-real-and-never-was/",
+  "https://en.wikipedia.org/wiki/K-beauty",
+]
+
+[[year]]
+year = 2015
+headline = "K-beauty lands at Sephora"
+summary = "Sephora launched a K-beauty campaign, sheet masks became US selfie staples, and masks and cushions filled Olive Young's bestseller lists."
+hero_ingredients = ["Tea tree", "Rose water"]
+hero_products = ["Sheet masks", "Cushion compact"]
+buzzwords = ["K-beauty", "Sheet-mask selfie"]
+now = "Masks still boom: packs & masks were the fastest-growing Korean skincare export in 2025 (+28.3%)."
+sources = [
+  "https://www.nbcnews.com/news/asian-america/korean-beauty-products-once-niche-are-entering-u-s-mainstream-n489841",
+  "https://themonodist.com/olive-young-awards-2015/",
+  "https://www.koreabiomed.com/news/articleView.html?idxno=31790",
+]
+
+[[year]]
+year = 2016
+headline = "One sheet mask a day"
+summary = "Koreans embraced '1-day-1-pack' daily sheet masking, while bubble masks, fermented formulas and dewy, no-contour makeup trended."
+hero_ingredients = ["Vitamin C", "Centella", "Fermented extracts"]
+hero_products = ["Sheet masks", "Bubble masks", "Cushion compact"]
+buzzwords = ["1-day-1-pack", "Dewy skin", "Non-touring"]
+now = "The mask habit evolved: searches for wash-off 'pack cleansers' jumped 1,700% at Olive Young in 2025."
+sources = [
+  "https://www.klairscosmetics.com/news/kbeauty-2016-wrapup/",
+  "https://www.bustle.com/articles/137916-these-big-korean-beauty-trends-for-2016-will-keep-you-ahead-of-the-curve",
+  "https://corp.oliveyoung.com/ko/news/88",
+]
+
+[[year]]
+year = 2017
+headline = "The year of glass skin"
+summary = "'Glass skin' (poreless, translucent, deeply hydrated) took off online via layering; in Korea, barrier creams and peeling boosters sold big."
+hero_ingredients = ["Ceramides", "Exfoliants"]
+hero_products = ["Hydrating serums", "Barrier cream", "Peeling booster"]
+buzzwords = ["Glass skin", "Layering"]
+now = "Still the West's K-beauty shorthand: 2026 Prime Day guides use it to sell devices and PDRN serums."
+sources = [
+  "https://www.vice.com/en/article/glass-skin-s-the-latest-korean-beauty-trend-to-take-over-the-internet/",
+  "https://themonodist.com/olive-young-awards-2017/",
+  "https://www.hollywoodreporter.com/lifestyle/shopping/best-k-beauty-korean-skin-care-products-deals-online-1236171629/",
+]
+
+[[year]]
+year = 2018
+headline = "Skip-care vs. the 7 skin method"
+summary = "Two opposite moves: 'skip-care' cut steps with multitasking products, while the '7 skin method' layered toner up to seven times for hydration."
+hero_ingredients = ["Galactomyces", "Centella"]
+hero_products = ["Toners & essences", "Multitasking creams"]
+buzzwords = ["Skip-care", "7 skin method"]
+now = "Skip-care won out: Olive Young's 2026 trends favor flexible steps matched to skin, not a fixed count."
+sources = [
+  "https://www.cosmo.ph/beauty/skin/korean-skincare-skip-care-a1014-20181029",
+  "https://thechrisellefactor.com/2018/02/the-korean-7-skin-method/",
+  "https://www.dealmoon.com/en/2026-k-beauty-trends-olive-young-full-moon-report/5646512.html",
+]
+
+[[year]]
+year = 2019
+headline = "Cica takes over"
+summary = "Soothing centella ('cica') creams and toner pads were Olive Young hits; Estee Lauder agreed to buy Dr. Jart+'s parent at a ~$1.7bn valuation."
+hero_ingredients = ["Centella (cica)", "Hyaluronic acid", "Propolis"]
+hero_products = ["Cica cream", "Toner pads"]
+buzzwords = ["Cica", "Soothing"]
+now = "Centella went global: a centella sunscreen is among foreign shoppers' top 3 Korean SPFs (2025)."
+sources = [
+  "https://themonodist.com/olive-young-awards-2019/",
+  "https://beautymatter.com/articles/the-estee-lauder-companies-to-acquire-dr-jart",
+  "https://www.koreajoongangdaily.com/business/i-would-go-for-this-every-time-why-korean-sunscreens-are-dominating-the-market/11387411",
+]
+
+[[year]]
+year = 2020
+headline = "Mask life, soothing skin"
+summary = "Face masks irritated skin: Olive Young saw panthenol, tea tree, cica and heartleaf skincare sales rise 30%, plus transfer-proof 'founda-free' makeup."
+hero_ingredients = ["Panthenol", "Tea tree", "Centella"]
+hero_products = ["Soothing toners", "Barrier creams", "Transfer-proof base"]
+buzzwords = ["Mask beauty", "Founda-free", "Inner beauty"]
+now = "Masks are gone but barrier care stayed: a ceramide cream was Olive Young's best cream in 2024 and 2025."
+sources = [
+  "https://themonodist.com/2020/11/24/olive-young-awards-2020-the-beauty-retailer-reveals-the-best-korean-beauty-products-of-2020/",
+  "https://themonodist.com/olive-young-awards-2024/",
+  "https://themonodist.com/olive-young-awards-2025/",
+]
+
+[[year]]
+year = 2021
+headline = "Barrier care & indie brands"
+summary = "Heartleaf, ceramide and propolis care led; 70% of Olive Young Award winners came from small and mid-sized brands; the US became Korea's No. 2 market."
+hero_ingredients = ["Heartleaf", "Ceramides", "Propolis"]
+hero_products = ["Toner pads", "Soothing toners", "Barrier creams"]
+buzzwords = ["Barrier care", "Clean beauty", "Indie brands"]
+now = "The US climb continued: in 2025 it overtook China as Korea's top cosmetics export market ($2.2bn)."
+sources = [
+  "https://themonodist.com/olive-young-awards-2021/",
+  "https://www.latitude-37.com/en/2021/02/15/insidebeauty-olive-young-with-clean-beauty/",
+  "https://www.koreaherald.com/article/10652928",
+]
+
+[[year]]
+year = 2022
+headline = "Heartleaf's breakout year"
+summary = "A 77% heartleaf toner led Olive Young's awards as soothing, barrier and hyaluronic hydration ruled; collagen supplements rode the inner-beauty wave."
+hero_ingredients = ["Heartleaf", "Hyaluronic acid", "Ceramides"]
+hero_products = ["Heartleaf toner", "Lip tints", "Collagen supplements"]
+buzzwords = ["Soothing", "Inner beauty", "Blur finish"]
+now = "Heartleaf went global: a heartleaf cleansing oil features in 2026 US Prime Day K-beauty guides."
+sources = [
+  "https://themonodist.com/olive-young-awards-2022/",
+  "https://www.hollywoodreporter.com/lifestyle/shopping/best-k-beauty-korean-skin-care-products-deals-online-1236171629/",
+]
+
+[[year]]
+year = 2023
+headline = "Snail mucin conquers Amazon"
+summary = "A TikTok-viral snail mucin essence hit No. 1 in Amazon US Beauty & Personal Care; in Korea, heartleaf and hyaluronic toners and calming pads led."
+hero_ingredients = ["Snail mucin", "Heartleaf", "Hyaluronic acid"]
+hero_products = ["Snail essence", "Toner pads", "Soothing toners"]
+buzzwords = ["Snail mucin", "TikTok viral", "Soothing"]
+now = "Still loved, but COSRX fell out of Amazon Prime Day's top-10 beauty brands in 2025 as rivals rose."
+sources = [
+  "https://www.prnewswire.com/news-releases/tiktok-viral-cosrx-snail-essence-secures-1-best-seller-position-in-amazons-beauty--personal-care-category-and-just-got-restocked-301828494.html",
+  "https://themonodist.com/olive-young-awards-2023/",
+  "https://www.kedglobal.com/beauty-cosmetics/newsView/ked202507210002",
+]
+
+[[year]]
+year = 2024
+headline = "The rise of slow aging"
+summary = "'Slow aging' hit skincare: Olive Young's slow-aging sales rose 60%+, and half of US tourists' top-10 Olive Young buys were sunscreens."
+hero_ingredients = ["Madecassoside", "Vitamin C", "Hyaluronic acid"]
+hero_products = ["Toner pads", "Sun cream", "Vitamin C serum"]
+buzzwords = ["Slow aging", "Jeosok nohwa", "Well-aging"]
+now = "Now a broad 'well-aging' lifestyle trend in Korea, well beyond a skincare claim."
+sources = [
+  "https://newsroom.cj.net/cj-olive-young-reports-over-60-annual-sales-growth-in-slow-aging-products/",
+  "https://themonodist.com/olive-young-awards-2024/",
+  "https://www.koreatimes.co.kr/business/companies/20250226/olive-young-attracts-94-mil-customers-from-189-countries-in-2024",
+]
+
+[[year]]
+year = 2025
+headline = "The PDRN (salmon DNA) boom"
+summary = "PDRN searches jumped 695% at Olive Young, peptides rose 72%, and a Korean brand led Amazon Prime Day beauty sales with toner pads and a device."
+hero_ingredients = ["PDRN", "Peptides", "Collagen"]
+hero_products = ["PDRN serums", "Toner pads", "Mask cleansers"]
+buzzwords = ["Salmon DNA", "Seongbun beauty"]
+now = "Still rising: PDRN is a featured ingredient at Olive Young's first US store (Pasadena, May 2026)."
+sources = [
+  "https://corp.oliveyoung.com/ko/news/88",
+  "https://www.kedglobal.com/beauty-cosmetics/newsView/ked202507210002",
+  "https://www.koreaherald.com/article/10742777",
+]
+
+[[year]]
+year = 2026
+headline = "Wellness era, US storefronts"
+summary = "Olive Young's 2026 'FULL MOON' report puts wellness first (sleep supplements +300%); it opened its first US store and began curating for Sephora."
+hero_ingredients = ["PDRN", "Hyaluronic acid", "Melatonin"]
+hero_products = ["Skincare makeup", "Sleep supplements", "Post-procedure care"]
+buzzwords = ["Full moon", "Early wellness", "Healthy pleasure"]
+now = "Unfolding now: Sephora x Olive Young adds four Asian markets in 2026, then the UK and Australia in 2027."
+sources = [
+  "https://www.koreaherald.com/article/10640106",
+  "https://www.koreaherald.com/article/10742777",
+  "https://newsroom.sephora.com/sephora-introduces-olive-young-curated-k-beauty-to-u-s-consumers-beginning-august-20/",
+]
+
+[[versus]]
+id = "ingredients-2026"
+year = 2026
+topic = "Beauty & wellness"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "Korea's 2026 twist: beauty goes inner-wellness"
+korea = [
+  {name = "PDRN", why = "PDRN serum won at Olive Young; tipped as 2026's core"},
+  {name = "Hyaluronic acid", why = "HA serum and mask keep topping Olive Young awards"},
+  {name = "Melatonin & GABA", why = "Sleep supplements sold 300%+ more at Olive Young"},
+  {name = "Magnesium", why = "A recovery mineral in Olive Young's sleep-care trend"},
+  {name = "Vitamins & minerals", why = "'Wellness-infused' skin, body and hair care"},
+]
+global = [
+  {name = "PDRN", why = "'Salmon DNA' is the standout K-ingredient in US guides"},
+  {name = "Spicules", why = "Micro-needle-like 'reedle' serums for smoother texture"},
+  {name = "Exosomes", why = "Clinic buzzword now showing up in at-home serums"},
+  {name = "Collagen", why = "Overnight collagen masks stay a Prime Day favorite"},
+  {name = "Ceramides", why = "Korean barrier creams feature in 2026 sale guides"},
+]
+both = ["PDRN"]
+next = [
+  {name = "Skincare makeup", why = "Skincare terms in makeup searches +150% at Olive Young"},
+  {name = "Clinic-to-home care", why = "Pro treatments + at-home recovery, an Olive Young trend"},
+]
+basis = "Based on Olive Young's 2026 report & awards, Korean trade press, 2026 US shopping press"
+sources = [
+  "https://www.koreaherald.com/article/10640106",
+  "https://www.personalcareinsights.com/news/olive-young-k-beauty-trends.html",
+  "https://themonodist.com/olive-young-awards-2025/",
+  "https://www.i-boss.co.kr/ab-74668-5051",
+  "https://www.whowhatwear.com/beauty/skin/amazon-prime-day-korean-skincare-products-summer-2026",
+]
+
+[[versus]]
+id = "hair-care"
+year = 2026
+topic = "Hair care"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "Korean shelves vs. what K-hair fans buy overseas"
+korea = [
+  {name = "LPP protein", why = "7 of Hwahae's top 15 hair packs are protein (9/2026)"},
+  {name = "Panthenol (B5)", why = "8grow B5 ampoules rank #5–6 in Hwahae hair-loss care"},
+  {name = "Probiotics", why = "In Labo-H, Olive Young's #1 shampoo six years running"},
+  {name = "Menthol", why = "A cooling salt pack is #1 in Hwahae scalp care (9/2026)"},
+  {name = "Rosemary", why = "Named in 2026's scalp 'skinification' trend in Korea"},
+]
+global = [
+  {name = "Rosemary", why = "Ryo's US Amazon listing leads with rosemary & caffeine"},
+  {name = "Rice water", why = "Daeng Gi Meo Ri's rice line sells on iHerb and Amazon"},
+  {name = "Caffeine", why = "Ryo and Kundal lead US-facing listings with caffeine"},
+  {name = "Peptides", why = "COSRX's Peptide 132 hair line sells on Amazon US"},
+  {name = "Argan oil", why = "Mise en Scène's argan serum topped Amazon hair oils '25"},
+]
+both = ["Rosemary"]
+next = [
+  {name = "Scalp ampoules", why = "Olive Young: scalp ampoules +52% YoY vs +12% shampoo"},
+  {name = "Hair vinegar", why = "Hair vinegars hold 4 of Hwahae's top 8 scalp packs"},
+  {name = "PDRN", why = "Skincare's salmon-DNA star now in Labo-H's top shampoo"},
+]
+basis = "Hwahae rankings (Sep 2026), Olive Young data in Korean press, US retail listings"
+sources = [
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4539",
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4541",
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4542",
+  "https://v.daum.net/v/3t0HyhgREM",
+  "https://www.glowolive.net/ko/scalp-shampoo-top5/",
+  "https://www.malaymail.com/news/life/2026/03/14/global-craze-for-korean-hair-care-drives-exports-to-record-478m/212652",
+]
+
+[[versus]]
+id = "sun-care"
+year = 2026
+topic = "Sun care"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "How Korea wears SPF vs. what fans abroad stock up on"
+korea = [
+  {name = "Sun sticks", why = "Keyring, bag-charm sun sticks trended on Hwahae (2025)"},
+  {name = "Multi-format SPF", why = "Shoppers mixing sticks, cushions, sprays: +26% (2025)"},
+  {name = "Tone-up sunscreen", why = "A tone-up sun cream ranked No. 2 at Olive Young 2024"},
+  {name = "Cooling sun care", why = "Cooling, sebum-control sticks led Hwahae's May 2025 list"},
+  {name = "Sun serums & gels", why = "Gel, serum and ampoule SPF formats are on the rise"},
+]
+global = [
+  {name = "Rice sunscreen", why = "No. 1 Korean SPF with Olive Young's foreign shoppers"},
+  {name = "Birch juice SPF", why = "No. 2 with foreign shoppers; a moisturizing daily SPF"},
+  {name = "Centella SPF", why = "No. 3 with foreign shoppers; calming, light daily wear"},
+  {name = "Sun sticks", why = "A sun stick also made foreign shoppers' top 5"},
+  {name = "Korean formulas", why = "Filters like Tinosorb S/M lure fans to KR versions"},
+]
+both = ["Sun sticks"]
+next = [
+  {name = "Sun patches", why = "Part of Korea's growing multi-format SPF habit"},
+]
+basis = "Based on Olive Young & Hwahae data, Olive Young foreign-shopper bestsellers, Korean press"
+sources = [
+  "https://business.hwahae.co.kr/insight/en-monthly-ranking-2025-05-suncare/",
+  "https://corp.oliveyoung.com/ko/news/88",
+  "https://www.meconomynews.com/news/articleView.html?idxno=125244",
+  "https://themonodist.com/olive-young-awards-2024/",
+  "https://www.koreajoongangdaily.com/business/i-would-go-for-this-every-time-why-korean-sunscreens-are-dominating-the-market/11387411",
+]
+
+[[versus]]
+id = "ingredients-2025"
+year = 2025
+topic = "Ingredients"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "What Korea searched for vs. what fans abroad bought"
+korea = [
+  {name = "PDRN", why = "Olive Young searches up 695% year on year (Sept 2025)"},
+  {name = "Peptides", why = "Searches +72% as 'slow aging' care got targeted"},
+  {name = "Niacinamide + zinc", why = "Pore-and-sebum pair; Olive Young searches +65%"},
+  {name = "Ceramides", why = "A ceramide cream was again Olive Young's best cream"},
+  {name = "Collagen", why = "Collagen masks won Hwahae and Olive Young awards"},
+]
+global = [
+  {name = "PDRN", why = "'Salmon DNA' serums and masks crossed over to the US"},
+  {name = "Collagen", why = "An overnight collagen mask brand made Prime Day's top 10"},
+  {name = "Exfoliating acids", why = "AHA/BHA toner pads powered Prime Day's No. 1 K-brand"},
+  {name = "Spicules", why = "US editors flagged the 'spicule surge' seen in Seoul"},
+  {name = "Centella", why = "Gentle, centella-led acne care over harsh actives"},
+]
+both = ["PDRN", "Collagen"]
+next = [
+  {name = "Mask cleansers", why = "Wash-off mask cleansers: searches up 1,700% in Korea"},
+  {name = "Scalp ampoules", why = "Scalp-care searches +80%: scalp treated like skin"},
+]
+basis = "Based on Olive Young sale & awards data, Hwahae awards, Prime Day reports, US beauty press"
+sources = [
+  "https://corp.oliveyoung.com/ko/news/88",
+  "https://themonodist.com/olive-young-awards-2025/",
+  "https://byline.network/2025/05/521302/",
+  "https://www.kedglobal.com/beauty-cosmetics/newsView/ked202507210002",
+  "https://www.aol.com/articles/flew-6-000-miles-discover-184300862.html",
+]
+
+[[versus]]
+id = "skincare-habits"
+year = 2026
+topic = "Skincare habits"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "How Koreans really do skincare vs. the K-routine abroad"
+korea = [
+  {name = "Slow aging", why = "Olive Young's slow-aging sales rose 60%+ in 2024"},
+  {name = "Fewer steps", why = "Most use about 3 products in the morning (2021 survey)"},
+  {name = "Prevention first", why = "Long-term prevention over quick fixes; derm on call"},
+  {name = "Clinic-to-home care", why = "Pro treatments + at-home recovery, an Olive Young trend"},
+  {name = "Sleep & wellness", why = "Sleep supplements +300%: beauty as whole-body care"},
+]
+global = [
+  {name = "10-step routine", why = "Popularized abroad by a 2015 book; not the Korean norm"},
+  {name = "Glass skin", why = "A social-media ideal fueled by influencer campaigns"},
+  {name = "At-home devices", why = "A booster device helped Medicube lead Prime Day 2025"},
+  {name = "K-sunscreen hauls", why = "Half of US tourists' Olive Young top 10 was sunscreen"},
+  {name = "Seoul beauty trips", why = "9.4M foreign purchases at Olive Young in 2024"},
+]
+both = []
+next = [
+  {name = "Healthy pleasure", why = "Easy, fun wellness habits over strict regimens"},
+]
+basis = "Based on Olive Young data & 2026 trend report, Prime Day reports and science/beauty press"
+sources = [
+  "https://newsroom.cj.net/cj-olive-young-reports-over-60-annual-sales-growth-in-slow-aging-products/",
+  "https://www.sciencefocus.com/science/korean-skincare-truth",
+  "https://www.koreaherald.com/article/10640106",
+  "https://www.kedglobal.com/beauty-cosmetics/newsView/ked202507210002",
+  "https://www.koreatimes.co.kr/business/companies/20250226/olive-young-attracts-94-mil-customers-from-189-countries-in-2024",
+]
+
+[[versus]]
+id = "ingredients-2024"
+year = 2024
+topic = "Ingredients"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "Korea's award-winning actives vs. the West's viral picks"
+korea = [
+  {name = "Heartleaf", why = "Heartleaf toners, pads, oils and SPF all won in 2024"},
+  {name = "Hyaluronic acid", why = "Low-molecular HA serum and mask were award favorites"},
+  {name = "Vitamin C", why = "A green-tangerine vitamin C serum won best serum"},
+  {name = "Ceramides", why = "A ceramide barrier cream won best cream at Olive Young"},
+  {name = "Centella", why = "Madecassoside blemish pads won best toner pad"},
+]
+global = [
+  {name = "Snail mucin", why = "A snail mucin essence was Prime Day's No. 1 beauty seller"},
+  {name = "Rice", why = "A rice + probiotics sunscreen became a TikTok cult pick"},
+  {name = "Centella", why = "Centella brand Skin1004's sales jumped 321%, 98% abroad"},
+  {name = "Modern UV filters", why = "Fans chase filters the FDA hadn't approved since 1999"},
+  {name = "Ginseng", why = "Ginseng + retinal eye serum: a key hit for a viral brand"},
+]
+both = ["Centella"]
+next = [
+  {name = "Toner pads", why = "Own award category in Korea; a Prime Day hit by 2025"},
+  {name = "Collagen masks", why = "No. 3 face mask in Korea in 2024; Prime Day top 10 in 2025"},
+]
+basis = "Based on Olive Young Awards 2024, Amazon Prime Day reports and US beauty/business press"
+sources = [
+  "https://themonodist.com/olive-young-awards-2024/",
+  "https://www.kedglobal.com/beauty-cosmetics/newsView/ked202507210002",
+  "https://fashionista.com/2024/11/beauty-of-joseon-k-beauty-skin-care-us-launch-strategy",
+  "https://www.koreatimes.co.kr/business/companies/20260324/kolmar-korea-goodai-global-renew-partnership-to-target-global-sunscreen-market",
+  "https://www.marketplace.org/story/2024/07/08/korean-sunscreen-popularity",
+]

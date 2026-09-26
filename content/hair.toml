@@ -1,0 +1,570 @@
+# ─────────────────────────────────────────────────────────────
+#  모발·두피 성분 101 (Hair & scalp ingredients)
+#  봇이 'hair' 게시물을 만들 때 쓰는 내용이에요. 위에서부터 순서대로 올라가요.
+#  (카드에 그대로 들어가니 영어로, 짧게. 글자 수 제한은 tests/test_smoke.py 가 검사해요)
+#
+#  heat      : korea = 한국에서 특히 뜨는 것 / global = 해외에서 특히 뜨는 것 / both = 둘 다
+#  keywords  : 올리브영 글로벌 베스트셀러 제품명에서 찾을 단어 (찾으면 '어디서 사나' 카드에 자동으로 들어가요)
+#  examples  : 베스트셀러에서 못 찾을 때 대신 보여줄 실제 제품 (링크 없음)
+#  sources   : 근거 자료 (핀터레스트 상세 페이지 맨 아래에 표시)
+#  새 성분을 추가하려면 [[ingredient]] 블록 하나를 복사해서 고치면 돼요.
+# ─────────────────────────────────────────────────────────────
+
+[[ingredient]]
+id = "rosemary"
+name = "Rosemary"
+full_name = "Rosemary leaf extract & oil"
+nickname = ""
+area = "hair"
+heat = "both"
+heat_note = "Korean 2026 scalp trend; leads Ryo's US listing"
+hot_since = 2022
+hook = "Why rosemary is in so many K-scalp shampoos"
+what_it_is = "An herb from the mint family. Hair products use its leaf extract or essential oil, mostly in scalp shampoos, tonics and sprays."
+origin = "Mediterranean herb; now a K-scalp-care staple"
+benefits = [
+  "Helps refresh an oily, buildup-prone scalp",
+  "Known for antioxidant plant compounds like rosmarinic acid",
+  "May support a healthier-looking scalp and fuller-looking roots",
+]
+best_for = ["Oily or flaky scalp", "Thinning-looking hair", "Styling-product buildup"]
+when = "Every wash"
+how_to_use = [
+  "Massage rosemary shampoo into the scalp; leave on 1–2 minutes",
+  "Mist a rosemary tonic onto the scalp after washing; don't rinse",
+  "Using pure rosemary oil? Dilute it in a carrier oil first",
+]
+pairs_with = ["Caffeine", "Salicylic acid", "Scalp massage"]
+avoid_with = []
+good_to_know = [
+  "Undiluted essential oil can irritate skin. Dilute it and patch test first.",
+  "The hype traces to one small 2015 study; larger studies are still needed.",
+  "Keep tonics and oils away from your eyes.",
+]
+myth = "Rosemary oil is a proven swap for hair-loss medication."
+fact = "A small 2015 trial saw results similar to 2% minoxidil after 6 months. Bigger studies are still needed."
+keywords = ["rosemary"]
+examples = [
+  {brand = "AROMATICA", product = "Rosemary Scalp Scaling Shampoo"},
+  {brand = "AROMATICA", product = "Rosemary Root Enhancer"},
+  {brand = "AROMATICA", product = "Rosemary Scalp Scrub"},
+]
+hashtags = ["#rosemary", "#rosemaryoil", "#scalpcare", "#koreanhaircare"]
+sources = [
+  "https://olivekollection.com/products/aromatica-rosemary-scalp-scaling-shampoo",
+  "https://www.nbcnews.com/select/shopping/best-korean-hair-care-rcna344094",
+  "https://v.daum.net/v/3t0HyhgREM",
+  "https://business.hwahae.co.kr/insight/monthly-ranking-2025-09-haircare/",
+]
+
+[[ingredient]]
+id = "lpp-protein"
+name = "LPP protein"
+full_name = "LPP ('low poly peptide') proteins"
+nickname = "Korea's salon protein"
+area = "hair"
+heat = "korea"
+heat_note = "7 of Hwahae's top 15 hair packs are protein"
+hot_since = 2015
+hook = "What 'LPP' on Korean hair packs actually means"
+what_it_is = "LPP stands for 'low poly peptide': small, hydrolyzed proteins such as keratin, collagen and silk. Korean salons and damage-care packs use them on bleached or heat-styled hair."
+origin = "Korean salon term; keratin, collagen and silk proteins"
+benefits = [
+  "Helps fill and smooth damaged, porous spots on strands",
+  "Helps hair feel stronger and less prone to breakage",
+  "Adds slip and shine after bleaching or heat styling",
+]
+best_for = ["Bleached or colored hair", "Heat-damaged ends", "Porous, frizzy hair"]
+when = "1–2x a week"
+how_to_use = [
+  "After shampoo, gently squeeze water out of your lengths",
+  "Apply to mid-lengths and ends; leave on 3–5 minutes",
+  "Rinse, then seal with a hair oil or essence",
+]
+pairs_with = ["Argan oil", "Panthenol", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "Too much protein can make hair stiff or straw-like. Alternate with moisture.",
+  "Results fade with washing, so regular use keeps the effect.",
+  "Unove's viral Deep Damage Treatment EX blends 31 proteins and amino acids.",
+]
+myth = "Protein treatments permanently repair damaged hair."
+fact = "Hair lengths are non-living keratin. Proteins temporarily fill and smooth damage, so the effect washes out."
+keywords = ["lpp", "protein", "keratin"]
+examples = [
+  {brand = "Lador", product = "Hydro LPP Treatment"},
+  {brand = "KUNDAL", product = "Protein Bonding Treatment"},
+  {brand = "Hair Plus", product = "Protein Bond Treatment"},
+]
+hashtags = ["#lpp", "#proteintreatment", "#damagecare", "#koreanhaircare"]
+sources = [
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4539",
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4540",
+  "https://skinsort.com/products/lador/hydro-lpp-treatment",
+  "https://www.whowhatwear.com/beauty/hair/best-korean-haircare-products",
+]
+
+[[ingredient]]
+id = "rice-water"
+name = "Rice water"
+full_name = "Rice water & hydrolyzed rice protein"
+nickname = "Ssal-tteumul in Korean"
+area = "hair"
+heat = "global"
+heat_note = "Daeng Gi Meo Ri sells a rice line on iHerb"
+hot_since = 2021
+hook = "The old rice rinse, now in K-shampoo bottles"
+what_it_is = "The starchy water left after soaking or rinsing rice. Hair products use rice water, rice extract or hydrolyzed rice protein."
+origin = "Used as a hair rinse across East Asia for centuries"
+benefits = [
+  "Helps hair feel smoother and look shinier",
+  "Rice protein may help coat and soften rough ends",
+  "A gentle, familiar option for dull, frizzy lengths",
+]
+best_for = ["Dull or frizzy lengths", "Fine, limp hair"]
+when = "2–3x a week"
+how_to_use = [
+  "Use a rice water shampoo or treatment like your usual one",
+  "Leave treatments on mid-lengths and ends 2–3 minutes; rinse",
+  "DIY rinse? Use it fresh, leave 5–10 minutes, rinse well",
+]
+pairs_with = ["Argan oil", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Too much can leave starch or protein buildup, so hair may feel stiff or dry.",
+  "Fermented DIY rice water can smell sour and may irritate a sensitive scalp.",
+  "Most support is traditional use and small lab studies, not clinical trials.",
+]
+myth = "Rice water makes hair grow faster."
+fact = "There's no solid human evidence that it speeds growth. It may help hair look smoother and shinier."
+keywords = ["rice water", "rice protein", "rice"]
+examples = [
+  {brand = "Daeng Gi Meo Ri", product = "Rice Water Shampoo"},
+  {brand = "Daeng Gi Meo Ri", product = "Rice Water Treatment"},
+  {brand = "Daeng Gi Meo Ri", product = "Rice Water Mist"},
+  {brand = "THE FACE SHOP", product = "Rice Water Bright Essential Shampoo"},
+]
+hashtags = ["#ricewater", "#ricewaterhair", "#kbeautyhair"]
+sources = [
+  "https://www.iherb.com/pr/daeng-gi-meo-ri-rice-water-shampoo-for-bushy-and-damaged-hair-13-5-fl-oz-400-ml/151120",
+  "https://en.wikipedia.org/wiki/Rice_water",
+  "https://skinsort.com/products/the-face-shop/rice-water-bright-essential-shampoo/dupes",
+  "https://k-kare.com/blogs/news/korean-scalp-haircare-guide-ingredients-treatments-top-picks",
+]
+
+[[ingredient]]
+id = "salicylic-acid"
+name = "Salicylic acid"
+full_name = "Salicylic acid (BHA)"
+nickname = "The 'scalp scaling' acid"
+area = "hair"
+heat = "korea"
+heat_note = "Key acid in Korea's 'scalp scaling' shampoos"
+hot_since = 2019
+hook = "Korea's 'scalp scaling' secret is an acne acid"
+what_it_is = "An oil-soluble beta hydroxy acid (BHA). On the scalp it helps loosen flakes, excess oil and product buildup so they rinse away."
+origin = "First found in willow bark; now made in labs"
+benefits = [
+  "Helps loosen flakes and buildup around the roots",
+  "Helps an oily scalp feel cleaner for longer",
+  "Part of an approved hair-loss care formula in Korea",
+]
+best_for = ["Oily scalp", "Flakes and buildup", "Clogged-feeling scalp"]
+when = "1–2x a week"
+how_to_use = [
+  "Apply scaling shampoo to a wet scalp, section by section",
+  "Massage gently with fingertips; leave on 2–3 minutes",
+  "Rinse well and follow with a soothing scalp tonic",
+]
+pairs_with = ["Panthenol", "Menthol"]
+avoid_with = ["Other exfoliants"]
+good_to_know = [
+  "Overuse can dry or irritate the scalp. Start once a week.",
+  "Skip it on broken, sunburned or freshly bleached skin.",
+  "Allergic to aspirin (a salicylate)? Check with a doctor first.",
+]
+myth = "'Scaling' means scrubbing your scalp hard."
+fact = "In Korea, 'scaling' usually means gentle chemical exfoliation with acids like BHA, not harsh scrubbing."
+keywords = ["salicylic", "bha", "scaling"]
+examples = [
+  {brand = "AROMATICA", product = "Rosemary Scalp Scaling Shampoo"},
+  {brand = "Masil", product = "Vegan 5 Probiotics Scalp Scaling Shampoo"},
+  {brand = "Dr.Ceuracle", product = "Scalp DX Scaling Shampoo"},
+]
+hashtags = ["#scalpscaling", "#salicylicacid", "#bha", "#scalpcare"]
+sources = [
+  "https://olivekollection.com/products/aromatica-rosemary-scalp-scaling-shampoo",
+  "https://skinsort.com/products/dr-ceuracle/scalp-dx-scaling-shampoo",
+  "https://skinsort.com/products/masil/vegan-5-probiotics-scalp-scaling-shampoo",
+  "https://www.k-health.com/news/articleView.html?idxno=57042",
+]
+
+[[ingredient]]
+id = "dexpanthenol"
+name = "Panthenol"
+full_name = "Dexpanthenol (provitamin B5)"
+nickname = "Pro-vitamin B5"
+area = "hair"
+heat = "korea"
+heat_note = "8grow B5 ampoules rank #5–6 in Hwahae hair-loss"
+hot_since = 2017
+hook = "The B5 behind Korea's hair-loss care shampoos"
+what_it_is = "A provitamin the body turns into vitamin B5. It draws in moisture and is a core ingredient in Korea's certified hair-loss care formulas."
+origin = "Lab-made form of vitamin B5; a pharmacy classic"
+benefits = [
+  "Helps hair hold moisture for softness and flexibility",
+  "Soothes and conditions a dry, tight-feeling scalp",
+  "One of 4 MFDS-listed hair-loss care ingredients in Korea",
+]
+best_for = ["Dry, tight scalp", "Thinning-looking hair", "Dry, brittle lengths"]
+when = "Daily"
+how_to_use = [
+  "Wash with a B5 scalp shampoo, massaging for 1–2 minutes",
+  "Apply a B5 tonic or ampoule to the scalp after washing",
+  "Leave it in and style as usual",
+]
+pairs_with = ["Biotin", "Niacinamide", "Salicylic acid"]
+avoid_with = []
+good_to_know = [
+  "Korea's certified 'hair-loss care' shampoos help reduce shedding; they don't regrow hair.",
+  "Look for the Korean 'functional cosmetic' (gineungseong) mark on the box.",
+  "Rarely, panthenol causes contact allergy. Patch test if you're sensitive.",
+]
+myth = "A certified hair-loss shampoo will regrow hair."
+fact = "In Korea it's a functional-cosmetic claim: helps ease hair-loss symptoms like shedding. It isn't a medicine."
+keywords = ["panthenol", "pro-vit b5", "provitamin b5", "b5"]
+examples = [
+  {brand = "8Grow", product = "Pro-Vit B5 Hair Tonic"},
+  {brand = "8Grow", product = "Pro-Vit B5 Shampoo"},
+]
+hashtags = ["#panthenol", "#vitaminb5", "#hairlosscare", "#koreanhaircare"]
+sources = [
+  "https://www.ulta.com/p/pro-vit-b5-hair-tonic-mkt77004402?sku=77007065",
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4542",
+  "https://v.daum.net/v/1YjPCISrk1",
+  "https://www.k-health.com/news/articleView.html?idxno=57042",
+]
+
+[[ingredient]]
+id = "caffeine"
+name = "Caffeine"
+full_name = ""
+nickname = ""
+area = "hair"
+heat = "global"
+heat_note = "Ryo & Kundal lead US listings with caffeine"
+hot_since = 2020
+hook = "Caffeine for your scalp, not your cup"
+what_it_is = "The same stimulant found in coffee and tea. In hair care it's added to scalp shampoos, tonics and leave-on serums."
+origin = "From coffee, tea or guarana, or made in labs"
+benefits = [
+  "Known for energizing, refreshing scalp formulas",
+  "Lab studies suggest it can reach the hair follicle area",
+  "May help roots look fuller with consistent use",
+]
+best_for = ["Thinning-looking hair", "Flat, limp roots"]
+when = "Daily"
+how_to_use = [
+  "Massage caffeine shampoo into the scalp; leave on 2 minutes",
+  "Apply a leave-on caffeine serum to a clean, dry scalp",
+  "Be patient: scalp routines take months, not days",
+]
+pairs_with = ["Ginseng", "Rosemary", "Biotin"]
+avoid_with = []
+good_to_know = [
+  "Leave-on tonics and serums give caffeine more contact time than a rinse.",
+  "Most evidence is from lab and small studies; results vary.",
+  "Sudden or patchy hair loss needs a doctor, not a new shampoo.",
+]
+myth = "Caffeine shampoo works like hair-loss medication."
+fact = "Lab tests show caffeine can travel toward follicles, but it isn't a substitute for medical treatment."
+keywords = ["caffeine"]
+examples = [
+  {brand = "KUNDAL", product = "Natural Caffeine & Intensive Scalp Care+ Scalp Shampoo"},
+  {brand = "KUNDAL", product = "10X Caffeine Strengthening Scalp Serum"},
+]
+hashtags = ["#caffeineshampoo", "#scalpcare", "#koreanhaircare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA220916149",
+  "https://skinsort.com/products/labo-h/scalp-strengthening-shampoo",
+  "https://www.whowhatwear.com/beauty/hair/best-korean-haircare-products",
+]
+
+[[ingredient]]
+id = "menthol"
+name = "Menthol"
+full_name = "L-menthol & peppermint"
+nickname = "The scalp chill"
+area = "hair"
+heat = "korea"
+heat_note = "A cooling salt pack tops Hwahae scalp care"
+hot_since = 2019
+hook = "Why Korean scalp shampoos feel ice-cold"
+what_it_is = "A cooling compound from mint plants. It triggers the skin's cold receptors, creating a fresh, tingly feeling on the scalp."
+origin = "Peppermint and other mints; also made in labs"
+benefits = [
+  "Gives an instant cooling, refreshing scalp feel",
+  "May help ease the feeling of scalp itch",
+  "L-menthol is an MFDS-listed hair-loss care ingredient",
+]
+best_for = ["Oily, sweaty scalp", "Itchy-feeling scalp", "Hot, humid months"]
+when = "Daily in summer"
+how_to_use = [
+  "Massage cooling shampoo into the scalp; leave on 1–2 minutes",
+  "Rinse with lukewarm water to keep the chill comfortable",
+  "Mist on a mint scalp tonic after washing for extra refresh",
+]
+pairs_with = ["Salicylic acid", "Panthenol", "Tea tree"]
+avoid_with = []
+good_to_know = [
+  "Strong tingling can sting a dry or sensitive scalp. Switch if it burns.",
+  "The chill is a sensation; it doesn't really lower scalp temperature.",
+  "Keep lather out of your eyes and rinse it off your face.",
+]
+myth = "The stronger the tingle, the better it works."
+fact = "The tingle is menthol switching on cold receptors. It's not a sign of deeper cleaning or better results."
+keywords = ["menthol", "peppermint", "cooling", "mint"]
+examples = [
+  {brand = "KUNDAL", product = "Cool & Clear Scalp Refreshing Cool Shampoo #Aqua Mint"},
+  {brand = "Ryo", product = "Deep Cleansing & Cooling Shampoo"},
+  {brand = "TOUN28", product = "Shampoo Bar S20 Menthol + Peppermint"},
+]
+hashtags = ["#coolingshampoo", "#menthol", "#scalpcare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250329587",
+  "https://skinsort.com/compare/kundal-scalp-refreshing-cool-shampoo-aqua-mint-vs-head-shoulders-cool-menthol-anti-dandruff-shampoo",
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4541",
+  "https://v.daum.net/v/1YjPCISrk1",
+]
+
+[[ingredient]]
+id = "scalp-peptides"
+name = "Peptides"
+full_name = "Peptides (short amino-acid chains)"
+nickname = ""
+area = "hair"
+heat = "both"
+heat_note = "In Korea's 2026 scalp trend & COSRX's hair line"
+hot_since = 2024
+hook = "Skincare's favorite peptides move to the scalp"
+what_it_is = "Short chains of amino acids, the building blocks of protein. Scalp formulas use them at the roots; bonding formulas use them to reinforce damaged strands."
+origin = "Lab-made; borrowed from anti-aging skincare"
+benefits = [
+  "Scalp peptides may support a healthier root environment",
+  "Bonding peptides help reinforce and smooth damaged strands",
+  "Usually gentle and well tolerated",
+]
+best_for = ["Thinning-looking hair", "Damaged, brittle hair"]
+when = "Every wash"
+how_to_use = [
+  "Massage a peptide scalp shampoo into the roots for 1–2 minutes",
+  "Apply a leave-on peptide tonic to a clean scalp",
+  "Use bonding treatments on mid-lengths and ends",
+]
+pairs_with = ["Panthenol", "Niacinamide", "Centella"]
+avoid_with = []
+good_to_know = [
+  "'Peptide' is a family, not one ingredient. Check which ones are listed.",
+  "Copper tripeptide-1 is a common scalp peptide in Korean tonics.",
+  "Leave-on formats give peptides more contact time than rinse-offs.",
+]
+myth = "All peptides in hair care do the same job."
+fact = "Scalp peptides target the root area, while bonding peptides coat and reinforce damaged lengths."
+keywords = ["peptide"]
+examples = [
+  {brand = "COSRX", product = "Peptide 132 Ultra Perfect Hair Bonding Shampoo"},
+  {brand = "COSRX", product = "Peptide 132 Ultra Perfect Hair Bonding Treatment"},
+  {brand = "SOME BY MI", product = "Cica Peptide Anti Hair Loss Derma Scalp Shampoo"},
+  {brand = "SOME BY MI", product = "Cica Peptide Anti Hair Loss Derma Scalp Tonic"},
+]
+hashtags = ["#peptides", "#peptidehaircare", "#scalpcare"]
+sources = [
+  "https://skinsort.com/products/cosrx/peptide-132-ultra-perfect-hair-bonding-shampoo",
+  "https://skinsort.com/compare/some-by-mi-cica-peptide-anti-hair-loss-derma-scalp-shampoo-vs-ogx-beauty-teatree-mint-extra-strength-shampoo",
+  "https://v.daum.net/v/3t0HyhgREM",
+  "https://www.ulta.com/p/pro-vit-b5-hair-tonic-mkt77004402?sku=77007065",
+]
+
+[[ingredient]]
+id = "ginseng"
+name = "Ginseng"
+full_name = "Korean ginseng (Panax ginseng)"
+nickname = "Insam in Korean"
+area = "hair"
+heat = "korea"
+heat_note = "Signature of Ryo, a Korean supermarket staple"
+hot_since = 2008
+hook = "Korea's heritage root, made for your scalp"
+what_it_is = "The root of Panax ginseng, a prized Korean herbal ingredient. Hair care uses its extract, which is rich in compounds called ginsenosides."
+origin = "Korean herbal (hanbang) tradition"
+benefits = [
+  "Known in hanbang for nourishing, revitalizing care",
+  "Antioxidant ginsenosides may support scalp health",
+  "Often paired with caffeine in Ryo's newer formulas",
+]
+best_for = ["Thinning-looking hair", "Weak, fragile strands"]
+when = "Every wash"
+how_to_use = [
+  "Massage ginseng shampoo into the scalp; leave on 1–2 minutes",
+  "Follow with conditioner on the lengths only",
+  "Want more? Add a ginseng scalp essence to a dry scalp",
+]
+pairs_with = ["Caffeine", "Rosemary", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Most ginseng hair research so far is lab work or small human studies.",
+  "Herbal extracts can irritate sensitive skin. Patch test first.",
+  "Red ginseng is ginseng that's been steamed and dried; both show up in K-hair care.",
+]
+myth = "Ginseng shampoo is a traditional cure for hair loss."
+fact = "Ginseng is a hanbang classic, and lab research on ginsenosides is promising, but human evidence is limited."
+keywords = ["ginseng"]
+examples = [
+  {brand = "Daeng Gi Meo Ri", product = "Kigold Ginseng Blossom Shampoo"},
+  {brand = "Ryo", product = "Damage Care & Nourishing Shampoo with Korean Ginseng & Caffeine"},
+]
+hashtags = ["#ginseng", "#hanbang", "#koreanhaircare"]
+sources = [
+  "https://www.epickor.com/blog/239",
+  "https://skinsort.com/products/daeng-gi-meo-ri",
+  "https://www.whowhatwear.com/beauty/hair/best-korean-haircare-products",
+  "https://v.daum.net/v/3t0HyhgREM",
+]
+
+[[ingredient]]
+id = "probiotics"
+name = "Probiotics"
+full_name = "Probiotic ferments & lysates"
+nickname = "Scalp microbiome care"
+area = "hair"
+heat = "korea"
+heat_note = "In Labo-H, Olive Young's #1 shampoo 6 yrs"
+hot_since = 2020
+hook = "Why K-shampoos care about your scalp microbiome"
+what_it_is = "Ingredients made from friendly bacteria like Lactobacillus, usually as ferments or lysates (broken-down cells). They're used to support a balanced scalp."
+origin = "Fermentation, as in kimchi and yogurt; a K-beauty staple"
+benefits = [
+  "Helps support a balanced, comfortable scalp",
+  "May help strengthen the scalp's moisture barrier",
+  "A gentle option for scalps that react to harsh formulas",
+]
+best_for = ["Sensitive scalp", "Dry, itchy-feeling scalp"]
+when = "Every wash"
+how_to_use = [
+  "Lather into the scalp and leave on 1–2 minutes",
+  "Rinse well; condition the lengths only",
+  "On dry-scalp days, add a gentle scalp serum",
+]
+pairs_with = ["Ceramides", "Niacinamide", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Most are lysates or ferments, not live bacteria, so they're shelf-stable.",
+  "Scalp-microbiome science is still early. Think 'support', not 'fix'.",
+  "Fragrance-free versions suit very reactive scalps best.",
+]
+myth = "Probiotic shampoos put live bacteria on your scalp."
+fact = "Most use ferment filtrates or lysates (broken-down bacteria) rather than live cultures."
+keywords = ["probiotic", "probiotics", "ferment", "microbiome"]
+examples = [
+  {brand = "Masil", product = "5 Probiotics Apple Vinegar Shampoo"},
+  {brand = "Masil", product = "Vegan 5 Probiotics Scalp Scaling Shampoo"},
+]
+hashtags = ["#probiotics", "#scalpmicrobiome", "#fermentedbeauty"]
+sources = [
+  "https://www.glowolive.net/ko/scalp-shampoo-top5/",
+  "https://skinsort.com/products/masil/5-probiotics-apple-vinegar-shampoo",
+  "https://skinsort.com/products/labo-h/scalp-strengthening-shampoo",
+  "https://gravelai.com/blog/korea-hair-care-trends-2026",
+]
+
+[[ingredient]]
+id = "biotin"
+name = "Biotin"
+full_name = "Biotin (vitamin B7)"
+nickname = "Vitamin H"
+area = "hair"
+heat = "global"
+heat_note = "Headliner of Dr. Groot's US thickening line"
+hot_since = 2017
+hook = "Biotin in shampoo: what it can and can't do"
+what_it_is = "A B vitamin (B7) the body uses in protein metabolism, including keratin. In hair care it's a supporting ingredient in scalp shampoos and tonics."
+origin = "Found in eggs, nuts and seeds; lab-made for cosmetics"
+benefits = [
+  "Helps condition scalp and hair as part of a formula",
+  "One of 4 MFDS-listed hair-loss care ingredients in Korea",
+  "Often teamed with panthenol and niacinamide in K-shampoos",
+]
+best_for = ["Thinning-looking hair", "Fine, fragile strands"]
+when = "Every wash"
+how_to_use = [
+  "Lather biotin shampoo into the scalp, not just the lengths",
+  "Leave it on 1–3 minutes before rinsing",
+  "For more, follow with a leave-on scalp tonic",
+]
+pairs_with = ["Panthenol", "Niacinamide", "Caffeine"]
+avoid_with = []
+good_to_know = [
+  "Biotin mainly helps if you're low in it, which is uncommon.",
+  "High-dose biotin pills can skew some lab tests. Tell your doctor you take them.",
+  "Research on biotin applied to the scalp is limited.",
+]
+myth = "More biotin means more hair for everyone."
+fact = "Biotin mostly helps people who are low in it. In shampoo, it's a supporting player, not a fix."
+keywords = ["biotin"]
+examples = [
+  {brand = "Dr. Groot", product = "Scalp Revitalizing Shampoo with Biotin, Centella, and Prebiotics"},
+  {brand = "Dr. Groot", product = "Hair Thickening Shampoo with Biotin & Rosemary Oil"},
+]
+hashtags = ["#biotin", "#biotinshampoo", "#scalpcare"]
+sources = [
+  "https://v.daum.net/v/1YjPCISrk1",
+  "https://tdawi.com/en-us/dr-groot-scalp-revitalizing-shampoo-with-biotin-centella-and-prebiotics-moisturizing-korean-kbeauty-solution-for-dry-scalp",
+  "https://skinsort.com/ingredients/biotin",
+  "https://www.nbcnews.com/select/shopping/best-korean-hair-care-rcna344094",
+]
+
+[[ingredient]]
+id = "argan-oil"
+name = "Argan oil"
+full_name = "Argan kernel oil"
+nickname = ""
+area = "hair"
+heat = "both"
+heat_note = "Key oil in Mise en Scène's Amazon-topping serum"
+hot_since = 2010
+hook = "The oil inside Korea's best-known hair serum"
+what_it_is = "A plant oil pressed from the kernels of Morocco's argan tree. Korean hair essences and serums use it to smooth strands and add shine."
+origin = "Argan tree kernels, southwestern Morocco"
+benefits = [
+  "Helps smooth frizz and flyaways",
+  "Adds soft shine without much weight",
+  "Helps reduce friction when brushing and styling",
+]
+best_for = ["Frizzy or dry lengths", "Color- or heat-damaged ends"]
+when = "After each wash"
+how_to_use = [
+  "Warm 1–2 pumps between your palms",
+  "Apply to damp mid-lengths and ends, not the roots",
+  "Add a drop to dry hair to tame flyaways",
+]
+pairs_with = ["LPP protein", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Too much can look greasy. Fine hair needs just a drop.",
+  "Oils seal in moisture but don't add water, so apply to damp hair.",
+  "Many K-hair serums blend argan with other oils and silicones.",
+]
+myth = "Hair oil moisturizes hair on its own."
+fact = "Oils lock in water and smooth the cuticle; the hydration itself comes from water and humectants."
+keywords = ["argan"]
+examples = [
+  {brand = "Raip", product = "R3 Argan Hair Oil"},
+  {brand = "Tosowoong", product = "Morocco Argan Hair Oil"},
+]
+hashtags = ["#arganoil", "#hairserum", "#hairessence", "#koreanhaircare"]
+sources = [
+  "https://www.whowhatwear.com/beauty/hair/best-korean-haircare-products",
+  "https://www.malaymail.com/news/life/2026/03/14/global-craze-for-korean-hair-care-drives-exports-to-record-478m/212652",
+  "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4540",
+  "https://skinsort.com/products/hair-oils-from-korean-brands",
+]

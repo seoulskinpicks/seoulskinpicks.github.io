@@ -37,7 +37,9 @@ class State:
         return {p["key"] for p in self.published}
 
     def last_source(self) -> str | None:
-        return self.published[-1]["source"] if self.published else None
+        """Last PRODUCT source (kbeauty / tools); information posts don't count."""
+        products = [p for p in self.published if p.get("source") in ("kbeauty", "tools")]
+        return products[-1]["source"] if products else None
 
     def published_on(self, date: str) -> dict | None:
         for p in self.published:

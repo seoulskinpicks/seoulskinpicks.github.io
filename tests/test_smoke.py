@@ -100,10 +100,15 @@ def ali_product(pid, title, price="5.80", rating="97.0%", orders=5000, link=True
 HEADER = "brand,product,category,link,rank,key_points,my_comment,hook,date\n"
 
 
-def make_cfg(tmp: Path, rows: list[str], header: str = HEADER, **env) -> Config:
+def make_cfg(tmp: Path, rows: list[str], header: str = HEADER, library: bool = False, **env) -> Config:
+    """Product-only config by default (every weekday = product, no content library), so the older
+    tests keep testing the product flow. library=True uses the real content/ folder + weekly plan."""
     base = load_config()
     raw = json.loads(json.dumps(base.raw))
     raw["kbeauty"]["sheet_csv_url"] = ""
+    if not library:
+        raw["schedule"]["weekly"] = ["product"] * 7
+        raw.setdefault("editorial", {})["content_dir"] = str(tmp / "no_content")
     (tmp / "data").mkdir(parents=True, exist_ok=True)
     (tmp / "data" / "kbeauty_queue.csv").write_text(header + "\n".join(rows) + "\n", encoding="utf-8")
     return Config(raw=raw, root=tmp)
