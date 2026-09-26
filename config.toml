@@ -64,7 +64,7 @@ hashtags_tools = ["#skincaretools", "#selfcaretools", "#aliexpressfinds", "#beau
 [pinterest]
 # 핀터레스트 비즈니스 계정 → 설정 → 소유권 확인(Claimed accounts) → 웹사이트 → "HTML 태그" 에서
 # content="..." 안의 값만 복사해서 넣으세요. 링크 페이지에 인증 태그가 자동으로 들어가요.
-domain_verify = ""
+domain_verify = "c27d4dbaf78a403d088508fcd4693e47"
 # 보통 비워두세요 (GitHub가 자동으로 알려줘요). 직접 도메인을 쓰면 적어요: "https://example.com/"
 site_url = ""
 
