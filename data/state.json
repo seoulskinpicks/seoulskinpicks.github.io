@@ -1,6 +1,33 @@
 {
   "version": 1,
-  "posts": [],
+  "posts": [
+    {
+      "number": 1,
+      "date": "2026-09-26",
+      "source": "kbeauty",
+      "key": "kb-20698cae56c0",
+      "brand": "Dr. Althea",
+      "name": "345 Relief Cream 50ml",
+      "link": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559",
+      "links": {
+        "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559"
+      },
+      "category": "moisturizer",
+      "folder": "001",
+      "slides": 5,
+      "caption": "The moisturizer trending in Korea right now 🇰🇷\n#ad | affiliate link in bio → No.1\n\nDr. Althea 345 Relief Cream 50ml\n📈 Olive Young Global · #1 Skincare\n⭐ 4.9 average · 1,241 reviews on Olive Young\n\n✨ What a moisturizer does\n• The step that locks in everything underneath\n• Korean creams come in textures from airy gel to rich cream\n• Keeps skin comfortable through the day or night\n\n🧴 How to use\n1. Warm a small amount between your fingertips\n2. Press it over your face and neck\n3. In the morning, follow with sunscreen\n\n🔗 Want it? Tap the link in my bio and find No.1 (Olive Young Global)\n🔖 Save this for your next haul\n\nI may earn a small commission if you buy through my link, at no extra cost to you.\n.\n#kbeauty #koreanskincare #skincareroutine #kbeautytips #seoulbeauty #oliveyoung #oliveyoungglobal #kbeautyfavorites #koreanbeauty #moisturizer #koreancream",
+      "hook": "The moisturizer trending in Korea right now",
+      "bullets": [
+        "The step that locks in everything underneath",
+        "Korean creams come in textures from airy gel to rich cream",
+        "Keeps skin comfortable through the day or night"
+      ],
+      "status": "published",
+      "ig_media_id": "18113415182099788",
+      "permalink": "https://www.instagram.com/p/DdvXt8-m_i8/",
+      "published_at": "2026-09-26T15:16+09:00"
+    }
+  ],
   "tool_history": [],
   "ali_used": []
 }
