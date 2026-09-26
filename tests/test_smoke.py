@@ -255,6 +255,52 @@ class Tests(unittest.TestCase):
         self.assertEqual(cp.slide4, {"kind": "take", "text": reply["comment_en"]})
         self.assertIn("My take", cp.caption)
 
+    def test_gemini_translates_and_falls_back_to_next_model(self):
+        import copy
+        cfg = make_cfg(self.tmp, [])
+        cand = copy.deepcopy(DEMO_KBEAUTY[0])
+        cand.comment = "자기 전에 바르면 다음날 피부가 편안해요"
+        reply = {"hook": "The toner Seoul keeps restocking", "brand_en": "Hanbit Lab", "product_en": "Rice Water Glow Toner",
+                 "rank_en": "#1 Toner", "key_points_en": ["Watery, fast-absorbing"],
+                 "comment_en": "I use it before bed and my skin feels calm the next day."}
+        calls = []
+
+        class FakeGemini:
+            def post(self, url, headers=None, json=None, timeout=None):
+                calls.append(url)
+                assert headers["x-goog-api-key"] == "gm-test"
+                assert "key=" not in url                      # key never goes into the URL
+                if "gemini-flash-latest" in url:
+                    return FakeResp({"error": {"message": "model not found"}}, status=404)
+                return FakeResp({"candidates": [{"content": {"parts": [
+                    {"text": "thinking...", "thought": True},
+                    {"text": __import__("json").dumps(reply)}]}}]})
+
+        with mock.patch.dict("os.environ", {"GEMINI_API_KEY": "gm-test"}):
+            cp = make_copy(cand, 7, cfg, session=FakeGemini())
+        self.assertTrue(cp.ai_used)
+        self.assertEqual(len(calls), 2)
+        self.assertIn("gemini-2.5-flash:generateContent", calls[1])
+        self.assertEqual(cp.slide4, {"kind": "take", "text": reply["comment_en"]})
+        self.assertEqual(cfg.ai_name, "")   # env patch is gone again
+
+    def test_gemini_key_check(self):
+        from bot.copywriter import ai_check
+        cfg = make_cfg(self.tmp, [])
+
+        class S:
+            def get(self, url, headers=None, params=None, timeout=None):
+                if headers["x-goog-api-key"] != "gm-test":
+                    return FakeResp({"error": {"message": "API key not valid"}}, status=400)
+                return FakeResp({"models": [{"name": "models/gemini-2.5-flash"}, {"name": "models/gemini-flash-latest"},
+                                            {"name": "models/gemini-2.5-flash-preview-tts"}]})
+
+        with mock.patch.dict("os.environ", {"GEMINI_API_KEY": "gm-test"}):
+            self.assertIn("2개", ai_check(cfg, session=S()))
+        with mock.patch.dict("os.environ", {"GEMINI_API_KEY": "wrong"}):
+            with self.assertRaises(ValueError):
+                ai_check(cfg, session=S())
+
     def test_ai_failure_falls_back_to_template(self):
         import copy
         cfg = make_cfg(self.tmp, [])

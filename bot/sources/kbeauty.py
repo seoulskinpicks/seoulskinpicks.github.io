@@ -225,7 +225,7 @@ def next_candidate(cfg, state, today: Date, can_translate: bool, ali_client=None
 def _drop_korean(c: Candidate, where: str) -> None:
     """Without AI translation, Korean text can't go on English cards — drop it with a note."""
     if has_hangul(c.comment):
-        warn(f"{where}: 한줄평이 한국어라 뺐어요. 영어로 적거나 ANTHROPIC_API_KEY 를 설정하면 자동 번역돼요.")
+        warn(f"{where}: 한줄평이 한국어라 뺐어요. 영어로 적거나 AI 키(GEMINI_API_KEY 또는 ANTHROPIC_API_KEY)를 설정하면 자동 번역돼요.")
         c.comment = ""
     if has_hangul(c.rank):
         warn(f"{where}: 순위 문구가 한국어라 뺐어요 (예: '#1 Toner' 처럼 영어로).")
@@ -238,5 +238,5 @@ def _drop_korean(c: Candidate, where: str) -> None:
     c.key_points = kept
     kept = [p for p in c.review_highlights if not has_hangul(p)]
     if len(kept) != len(c.review_highlights):
-        warn(f"{where}: 한국어 리뷰 요약은 뺐어요 (영어로 적거나 ANTHROPIC_API_KEY 설정).")
+        warn(f"{where}: 한국어 리뷰 요약은 뺐어요 (영어로 적거나 AI 키 설정).")
     c.review_highlights = kept

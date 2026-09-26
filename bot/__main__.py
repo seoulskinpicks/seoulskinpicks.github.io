@@ -51,7 +51,7 @@ def source_order(mode: str, last: str | None, forced: str | None) -> list[str]:
 
 def _fetch(src: str, cfg, state, today: Date, ali_client=None):
     if src == "kbeauty":
-        return kb_source.next_candidate(cfg, state, today, can_translate=bool(cfg.anthropic_key), ali_client=ali_client)
+        return kb_source.next_candidate(cfg, state, today, can_translate=cfg.ai_enabled, ali_client=ali_client)
     return ali_source.next_candidate(cfg, state, client=ali_client)
 
 
@@ -148,7 +148,7 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     add_summary(
         f"### {'[미리보기] ' if args.dry_run else ''}No.{number} · {kind}\n"
         f"- 제품: **{post['brand']} {post['name']}**\n- 링크: {post['link']}\n"
-        f"- 카피: {'Claude AI' if cp.ai_used else '템플릿'}\n\n"
+        f"- 카피: {cfg.ai_name + ' AI' if cp.ai_used else '템플릿'}\n\n"
         f"카드 이미지는 이 페이지 아래 **Artifacts → preview-images** 에서 받을 수 있어요.\n\n"
         f"<details><summary>캡션 보기</summary>\n\n```\n{cp.caption}\n```\n</details>\n"
     )
@@ -201,7 +201,7 @@ def cmd_check(args, cfg=None) -> int:
         rows = kb_source.read_rows(cfg)
         src = "구글 시트" if cfg.sheet_csv_url else "data/kbeauty_queue.csv"
         lines.append(f"- K뷰티 목록 ({src}): {len(rows)}줄 읽음")
-        cand = kb_source.next_candidate(cfg, state, today, can_translate=bool(cfg.anthropic_key))
+        cand = kb_source.next_candidate(cfg, state, today, can_translate=cfg.ai_enabled)
         lines.append(f"  - 다음 K뷰티: {cand.brand + ' ' + cand.name if cand else '없음 (목록이 비었거나 모두 게시됨)'}")
     except Exception as exc:
         ok = False
@@ -218,7 +218,15 @@ def cmd_check(args, cfg=None) -> int:
     else:
         lines.append("- 알리 API: 키 없음 → 알리 도구는 건너뜀 (승인 후 추가)")
 
-    lines.append(f"- Claude AI 카피: {'켜짐' if cfg.anthropic_key else '꺼짐 (템플릿 사용)'}")
+    if cfg.ai_enabled:
+        try:
+            from .copywriter import ai_check
+            lines.append(f"- AI 카피: {cfg.ai_name} 켜짐 — {ai_check(cfg)}")
+        except Exception as exc:
+            ok = False
+            lines.append(f"- ❌ AI 카피 키 오류 ({cfg.ai_name}): {scrub(str(exc), cfg.gemini_key)}")
+    else:
+        lines.append("- AI 카피: 꺼짐 (템플릿 사용)")
 
     if cfg.ig_token:
         try:

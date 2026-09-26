@@ -54,8 +54,10 @@ tools = [
 extra_blocked_words = []    # 추가로 걸러낼 단어 (예: ["unicorn", "cartoon"])
 
 [copy]
-# GitHub Secret ANTHROPIC_API_KEY 가 있으면 Claude가 카피를 다듬고 한국어 한줄평을 영어로 번역해요.
-# 없으면 내장 템플릿으로 작성해요 (무료).
+# AI 키가 있으면 카피를 다듬고 한국어 한줄평을 영어로 번역해요. 없으면 내장 템플릿으로 작성해요 (무료).
+#  - GEMINI_API_KEY    : Google AI Studio 무료 키 (하루 1번 게시라 무료 한도로 충분)
+#  - ANTHROPIC_API_KEY : Claude (유료, 두 키가 다 있으면 Claude 우선)
+gemini_model = "gemini-flash-latest"   # 보통 그대로 두세요. 안 되면 자동으로 다른 Flash 모델로 바꿔 시도해요.
 ai_model = "claude-haiku-4-5-20251001"
 hashtags_common = ["#kbeauty", "#koreanskincare", "#skincareroutine", "#kbeautytips", "#seoulbeauty"]
 hashtags_kbeauty = ["#oliveyoung", "#oliveyoungglobal", "#kbeautyfavorites", "#koreanbeauty"]

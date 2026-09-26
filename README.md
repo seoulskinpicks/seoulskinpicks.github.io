@@ -88,7 +88,7 @@ GitHub(무료)에서 돌아가서 컴퓨터를 켜둘 필요가 없어요.
 - **리뷰 요약:** 리뷰를 몇 개 읽고 자주 나오는 이야기를 **내 말로** 요약해 적어요. 카드에는 "요약이며 직접 인용이 아님" 표시가 자동으로 들어가요.
 - **내 후기:** 직접 써본 제품만 `my_comment`와 `my_rating`을 적어주세요.
 
-> 💡 카드뉴스가 영어라서 **브랜드와 제품명은 영어로** 적어주세요. 한줄평·특징·순위를 한국어로 적었다면, Claude AI 키(선택 사항, 아래 참고)가 있을 때는 자동 번역되고 없을 때는 빠지고 올라가요.
+> 💡 카드뉴스가 영어라서 **브랜드와 제품명은 영어로** 적어주세요. 한줄평·특징·순위를 한국어로 적었다면, AI 키(Gemini 무료 또는 Claude, 아래 참고)가 있을 때는 자동 번역되고 없을 때는 빠지고 올라가요.
 
 ---
 
@@ -216,7 +216,14 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 
 ## 선택 사항
 
-**Claude AI 카피 (`ANTHROPIC_API_KEY`)**
+**AI 카피 — Gemini 무료 (`GEMINI_API_KEY`) · 추천**
+- **하는 일:** 표지 제목을 더 자연스럽게 다듬고, 한국어로 적은 한줄평·특징·순위를 영어로 번역해요.
+- **발급:** [aistudio.google.com/apikey](https://aistudio.google.com/apikey)에 구글 계정으로 로그인해서 **Create API key**를 누르고, 만든 키를 `GEMINI_API_KEY` Secret에 넣어요. 카드 등록은 필요 없어요.
+- **비용:** 무료 한도로 충분해요 (하루 1번만 불러요).
+- **참고:** 무료 버전은 구글이 입력 내용을 서비스 개선에 쓸 수 있어요. 봇이 보내는 건 제품명과 설명뿐이라 괜찮아요.
+- **모델:** `config.toml`의 `gemini_model`(기본 `gemini-flash-latest`)을 쓰고, 안 되면 다른 Flash 모델로 자동으로 바꿔 시도해요.
+
+**Claude AI 카피 (`ANTHROPIC_API_KEY`)** — Gemini 대신 쓰고 싶을 때 (두 키가 다 있으면 Claude 우선)
 - **하는 일:** 표지 제목을 더 자연스럽게 다듬고, 한국어로 적은 한줄평·특징·순위를 영어로 번역해요.
 - **발급:** [console.anthropic.com](https://console.anthropic.com)에서 API 키를 만들어 Secret에 넣으면 돼요.
 - **비용:** 하루 1개 기준으로 한 달에 1달러도 안 들어요. 단, 처음에 최소 충전 금액이 있어요.
@@ -236,7 +243,8 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 | `KBEAUTY_SHEET_CSV_URL` | 권장 | 구글 시트 주소 (없으면 `data/kbeauty_queue.csv` 사용) |
 | `IG_ACCESS_TOKEN` | 게시하려면 필수 | 인스타 게시 |
 | `ALI_APP_KEY` / `ALI_APP_SECRET` / `ALI_TRACKING_ID` | 알리 쓸 때 | 알리 인기 도구 + 제휴 링크 |
-| `ANTHROPIC_API_KEY` | 선택 | AI 카피·번역 |
+| `GEMINI_API_KEY` | 선택 (추천) | AI 카피·번역 (무료) |
+| `ANTHROPIC_API_KEY` | 선택 | AI 카피·번역 (유료) |
 | `GH_PAT` | 선택 | 인스타 토큰 자동 저장 |
 | `IG_USER_ID` | 거의 불필요 | 페이스북 로그인 방식 API를 쓸 때만 |
 

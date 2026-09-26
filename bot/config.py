@@ -82,6 +82,18 @@ class Config:
         return os.environ.get("ANTHROPIC_API_KEY", "").strip()
 
     @property
+    def gemini_key(self) -> str:
+        return os.environ.get("GEMINI_API_KEY", "").strip()
+
+    @property
+    def ai_enabled(self) -> bool:
+        return bool(self.anthropic_key or self.gemini_key)
+
+    @property
+    def ai_name(self) -> str:
+        return "Claude" if self.anthropic_key else "Gemini" if self.gemini_key else ""
+
+    @property
     def ig_token(self) -> str:
         return os.environ.get("IG_ACCESS_TOKEN", "").strip()
 
