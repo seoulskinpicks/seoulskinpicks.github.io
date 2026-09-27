@@ -5,6 +5,7 @@
   python -m bot prepare [--dry-run]  # today's post (weekly plan: product / ingredient / hair / versus / history)
   python -m bot publish --site-url https://you.github.io/repo/
   python -m bot refresh-token --out token.txt
+  python -m bot research             # monthly Gemini research drafts -> content/drafts/
 """
 from __future__ import annotations
 
@@ -353,6 +354,15 @@ def cmd_discover(args, cfg=None, ali_client=None, session=None, sleep=None) -> i
     return 0
 
 
+def cmd_research(args, cfg=None, session=None, sleep=None) -> int:
+    from .research import run_research
+
+    cfg = cfg or load_config()
+    kw = {"sleep": sleep} if sleep else {}
+    run_research(cfg, _today(cfg, args.date), session=session, **kw)
+    return 0
+
+
 def cmd_demo(args) -> int:
     from . import demo
 
@@ -417,6 +427,8 @@ def main(argv=None) -> int:
     r.add_argument("--out", required=True)
     ds = sub.add_parser("discover")
     ds.add_argument("--dry-run", action="store_true")
+    rs = sub.add_parser("research")
+    rs.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     dm = sub.add_parser("demo")
     dm.add_argument("--out", default="demo_output")
     args = p.parse_args(argv)
@@ -429,6 +441,7 @@ def main(argv=None) -> int:
         "refresh-token": cmd_refresh_token,
         "demo": cmd_demo,
         "discover": cmd_discover,
+        "research": cmd_research,
     }[args.cmd](args)
 
 

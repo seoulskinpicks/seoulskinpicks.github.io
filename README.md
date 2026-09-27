@@ -45,6 +45,13 @@ GitHub(무료)에서 돌아가서 컴퓨터를 켜둘 필요가 없어요.
 - **다 올리면?** 새 자료가 없으면 올린 지 120일이 지난 것부터 다시 올려요 (`repeat_after_days`). 그 사이엔 다른 정보 글이나 제품 픽으로 채워요. 남은 개수는 매 실행 요약에 나와요.
 - **순서 바꾸기:** `config.toml`의 `[schedule] weekly`를 고치면 돼요. 예) 제품을 하루 더: `["skin_korea", "product", "hair", "versus", "skin_global", "product", "product"]`
 - **자료 추가하기:** `content/skin.toml`·`hair.toml`·`trends.toml`에서 블록 하나를 복사해 고치면 돼요 (영어로, 짧게). 저에게 "성분 10개 더 조사해서 추가해줘"라고 해도 돼요.
+- **새 자료는 매달 자동으로 채워져요 (두 가지 방식을 비교 중):**
+  - **매달 28일 · 제미나이 (`Gemini research`):** 새 성분·트렌드 초안을 `content/drafts/`에 만들어요. 게시되지는 않아요.
+    - *무료 방식:* 올리브영 글로벌 베스트셀러 제품명 + 위키백과 + PubMed 논문 제목을 봇이 모아주면, 제미나이가 그 자료로만 써요. 출처도 그 자료에서만 나와요.
+    - *구글 검색 방식:* `GEMINI_SEARCH_API_KEY`가 있을 때만. 구글 검색 기능은 무료 등급에서 막혀 있어서, 결제가 켜진 프로젝트의 키가 필요해요 (검색 월 5,000번까지 무료라 실제 비용은 거의 0원. 예산 한도를 꼭 걸어두세요).
+    - 초안은 자동 검사(글자 수, 과장·의학 표현, 한글, 출처 2개 이상, 베스트셀러 제품명에 실제로 있는 성분인지)를 거쳐 PASS/FAIL이 표시돼요.
+  - **매달 1일 · Claude (예약 작업):** 직접 조사해서 새 자료를 추가하고, 제미나이 초안을 하나하나 사실 확인해서 점수를 매긴 비교표(`content/drafts/compare-YYYY-MM.md`)를 남겨요.
+  - **Claude 구독을 끊으면:** `content/`가 40일 넘게 Claude(또는 직접) 업데이트되지 않으면, 자동 검사를 통과한 제미나이 초안이 알아서 자료에 추가돼요 (`config.toml [research] auto_add`). 따로 설정을 바꿀 필요 없어요.
 - **특정 종류를 바로 올려보기:** Actions → `Daily post` → Run workflow → `source`에서 `skin`/`hair`/`versus`/`history` 선택 (미리보기 체크하면 카드만 만들어요).
 
 ---
@@ -275,7 +282,8 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 | `KBEAUTY_SHEET_CSV_URL` | 권장 | 구글 시트 주소 (없으면 `data/kbeauty_queue.csv` 사용) |
 | `IG_ACCESS_TOKEN` | 게시하려면 필수 | 인스타 게시 |
 | `ALI_APP_KEY` / `ALI_APP_SECRET` / `ALI_TRACKING_ID` | 알리 쓸 때 | 알리 인기 도구 + 제휴 링크 |
-| `GEMINI_API_KEY` | 선택 (추천) | AI 카피·번역 (무료) |
+| `GEMINI_API_KEY` | 선택 (추천) | AI 카피·번역 + 매달 제미나이 무료 조사 (무료) |
+| `GEMINI_SEARCH_API_KEY` | 선택 | 제미나이 구글 검색 조사 (결제가 켜진 프로젝트의 키) |
 | `BACKUP_AI_KEY` | 선택 (추천) | 백업 AI (Groq 무료) |
 | `ANTHROPIC_API_KEY` | 선택 | AI 카피·번역 (유료) |
 | `GH_PAT` | 선택 | 인스타 토큰 자동 저장 |
@@ -355,6 +363,7 @@ config.toml              ← 계정·게시 설정 (요일별 순서 포함)
 content/skin.toml        ← 피부 성분 101 자료 (위에서부터 순서대로 올라가요)
 content/hair.toml        ← 모발·두피 성분 101 자료
 content/trends.toml      ← 연도별 K뷰티 변화 + 서울 vs 해외 비교 자료
+content/drafts/          ← 제미나이 조사 초안·보고서, Claude 비교표 (게시 안 됨)
 data/oy_catalog.json     ← 매주 저장하는 올리브영 글로벌 베스트셀러 (성분 글의 제품 찾기용)
 data/kbeauty_queue.csv   ← (시트 대신 쓸 때) K뷰티 목록
 data/state.json          ← 게시 기록 (봇이 자동 관리, 직접 수정 X)

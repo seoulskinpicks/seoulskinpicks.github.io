@@ -86,6 +86,11 @@ class Config:
         return os.environ.get("GEMINI_API_KEY", "").strip()
 
     @property
+    def gemini_search_key(self) -> str:
+        # Key from a Google AI Studio project with billing on (Google Search grounding isn't on the free tier).
+        return os.environ.get("GEMINI_SEARCH_API_KEY", "").strip()
+
+    @property
     def backup_ai_key(self) -> str:
         # Backup AI (OpenAI-compatible, Groq by default) used when Gemini keeps failing.
         return os.environ.get("BACKUP_AI_KEY", "").strip()

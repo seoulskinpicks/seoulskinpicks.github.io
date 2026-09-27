@@ -278,5 +278,150 @@ class EditorialTests(unittest.TestCase):
         self.assertNotIn("Rosemary", queue)  # hair isn't in the product queue lists
 
 
+
+# ---------------------------------------------------------------------------
+# Gemini research (monthly drafts, compared by Claude, fallback auto-add)
+# ---------------------------------------------------------------------------
+def good_entry(name="Bakuchiol", **over):
+    e = {"name": name, "full_name": "", "nickname": "Plant retinol alternative", "heat": "global",
+         "heat_note": "In several Olive Young Global bestsellers", "hot_since": 2024,
+         "hook": "The plant ingredient people call gentle retinol",
+         "what_it_is": "A plant compound from babchi seeds, used in serums as a gentler option for smoother-looking skin.",
+         "origin": "Seeds of the babchi plant", "benefits": ["Helps skin look smoother", "Supports an even-looking tone",
+                                                              "Known for being gentle"],
+         "best_for": ["Sensitive skin", "Retinol beginners"], "when": "AM & PM",
+         "how_to_use": ["Apply after toner", "Use 2-3 drops", "Follow with moisturizer"],
+         "pairs_with": ["Niacinamide", "Ceramides"], "avoid_with": [], "good_to_know": ["Evidence is from small studies."],
+         "myth": "It works exactly like retinol.", "fact": "Small studies are promising, but it is not the same molecule.",
+         "keywords": ["bakuchiol"], "hashtags": ["#bakuchiol"],
+         "sources": ["https://en.wikipedia.org/wiki/Bakuchiol", "https://pubmed.ncbi.nlm.nih.gov/111/"]}
+    e.update(over)
+    return e
+
+
+class FakeGemini:
+    """generateContent (plain + google_search), Wikipedia, PubMed and redirect resolving."""
+
+    def __init__(self, search_status=200):
+        self.calls = []
+        self.search_status = search_status
+
+    def post(self, url, headers=None, json=None, timeout=None):
+        from tests.test_smoke import FakeResp
+        prompt = json["contents"][0]["parts"][0]["text"]
+        self.calls.append(("POST", url, "tools" in json))
+        if "tools" in json:
+            if self.search_status != 200:
+                return FakeResp({"error": {"message": "Search grounding is not available on the free tier"}}, status=self.search_status)
+            body = {"skin": [dict(good_entry("Bakuchiol"), source_sites=["allure.com", "byrdie.com"]),
+                             dict(good_entry("Cure-All Oil", keywords=["cure-all"], hook="The oil that cures acne"),
+                                  source_sites=["allure.com"])],
+                    "hair": [], "versus": {"id": "ingredients-2026-10", "year": 2026, "topic": "Ingredients",
+                                           "title": "Hot in Seoul vs. hot abroad", "subtitle": "October check-in",
+                                           "korea": [{"name": f"K{i}", "why": "Olive Young ranking"} for i in range(5)],
+                                           "global": [{"name": f"G{i}", "why": "US coverage"} for i in range(5)],
+                                           "both": [], "next": [], "basis": "Search results", "source_sites": ["allure.com", "byrdie.com"]}}
+            meta = {"webSearchQueries": ["k-beauty trends"], "groundingChunks": [
+                {"web": {"uri": "https://vertexaisearch.cloud.google.com/r/1", "title": "allure.com"}},
+                {"web": {"uri": "https://vertexaisearch.cloud.google.com/r/2", "title": "byrdie.com"}}]}
+            return FakeResp({"candidates": [{"content": {"parts": [{"text": __import__("json").dumps(body)}]}, "groundingMetadata": meta}]})
+        if "Pick up to" in prompt:
+            body = {"skin": [{"name": "Bakuchiol", "wiki_title": "Bakuchiol", "pubmed_query": "bakuchiol skin", "keywords": ["bakuchiol"]},
+                             {"name": "Unicorn Dust", "wiki_title": "Unicorn", "pubmed_query": "x", "keywords": ["unicorn dust"]}],
+                    "hair": []}
+        else:
+            body = good_entry("Bakuchiol", sources=["https://en.wikipedia.org/wiki/Bakuchiol", "https://pubmed.ncbi.nlm.nih.gov/111/",
+                                                    "https://made-up.example/fake"])
+        return FakeResp({"candidates": [{"content": {"parts": [{"text": __import__("json").dumps(body)}]}}]})
+
+    def get(self, url, params=None, headers=None, timeout=None):
+        from tests.test_smoke import FakeResp
+        self.calls.append(("GET", url))
+        if "wikipedia" in url:
+            return FakeResp({"type": "standard", "extract": "Bakuchiol is a meroterpene from Psoralea corylifolia.",
+                             "content_urls": {"desktop": {"page": "https://en.wikipedia.org/wiki/Bakuchiol"}}})
+        if "esearch" in url:
+            return FakeResp({"esearchresult": {"idlist": ["111"]}})
+        return FakeResp({"result": {"111": {"title": "Bakuchiol vs retinol trial", "pubdate": "2019"}}})
+
+    def head(self, url, allow_redirects=True, timeout=None, headers=None):
+        class R:
+            pass
+        r = R()
+        r.url = {"https://vertexaisearch.cloud.google.com/r/1": "https://www.allure.com/story/bakuchiol",
+                 "https://vertexaisearch.cloud.google.com/r/2": "https://www.byrdie.com/bakuchiol"}.get(url, url)
+        return r
+
+
+class ResearchTests(unittest.TestCase):
+    tearDown = EditorialTests.tearDown
+
+    def setUp(self):
+        EditorialTests.setUp(self)
+        content = self.tmp / "content"
+        shutil.copytree(ed.ROOT / "content", content, ignore=shutil.ignore_patterns("drafts"))
+        self.cfg.raw.setdefault("editorial", {})["content_dir"] = str(content)
+        self.lib = ed.load_library(self.cfg)
+        write_catalog(self.cfg, [catalog_item("Beauty of Joseon", "Revive Serum Bakuchiol", no="B1"),
+                                 catalog_item("VT", "PDRN Essence 100", no="B2")])
+
+    def run_research(self, env, last_update, search_status=200):
+        from bot.research import run_research
+        fake = FakeGemini(search_status)
+        with mock.patch.dict("os.environ", env):
+            res = run_research(self.cfg, date(2026, 10, 28), session=fake, sleep=lambda s: None, last_update=last_update)
+        return res, fake
+
+    def test_existing_library_passes_the_same_checks(self):
+        for e in self.lib.skin + self.lib.hair:
+            others = ed.Library()  # compare against an empty library so "already exists" doesn't fire
+            self.assertEqual(ed.check_ingredient(e, others), [], e["id"])
+
+    def test_free_and_search_drafts_are_checked_but_not_added(self):
+        res, fake = self.run_research({"GEMINI_API_KEY": "KEY_FREE_123", "GEMINI_SEARCH_API_KEY": "KEY_SEARCH_456"}, date(2026, 10, 20))
+        free, search = res["results"]["free"], res["results"]["search"]
+        self.assertEqual([e["name"] for e in free["entries"]], ["Bakuchiol"])
+        self.assertNotIn("https://made-up.example/fake", free["entries"][0]["sources"])  # only evidence URLs
+        self.assertEqual(free["entries"][0]["examples"], [{"brand": "Beauty of Joseon", "product": "Revive Serum Bakuchiol"}])
+        self.assertTrue(any("Unicorn" in n for n in free["notes"]))                        # not in bestsellers
+        self.assertEqual(free["entries"][0]["_problems"], [])
+        s_ok = next(e for e in search["entries"] if e["name"] == "Bakuchiol")
+        self.assertEqual(s_ok["sources"], ["https://www.allure.com/story/bakuchiol", "https://www.byrdie.com/bakuchiol"])
+        bad = next(e for e in search["entries"] if e["name"] == "Cure-All Oil")
+        self.assertTrue(any("과장" in p for p in bad["_problems"]))
+        self.assertTrue(any("출처" in p for p in bad["_problems"]))
+        self.assertEqual(res["added"], [])
+        drafts = self.lib_dir() / "drafts"
+        self.assertTrue((drafts / "gemini-free-2026-10.toml").exists())
+        self.assertIn("FAIL", (drafts / "gemini-search-2026-10.toml").read_text())
+        import tomllib
+        tomllib.loads((drafts / "gemini-search-2026-10.toml").read_text())  # valid TOML
+        self.assertNotIn("Bakuchiol", (self.lib_dir() / "skin.toml").read_text())
+        for f in drafts.iterdir():  # API keys never end up in the files
+            self.assertNotIn("KEY_FREE_123", f.read_text())
+            self.assertNotIn("KEY_SEARCH_456", f.read_text())
+
+    def test_fallback_adds_passing_drafts_after_claude_stops(self):
+        publish(self.cfg, "ing-pdrn", date(2026, 9, 28))
+        res, _ = self.run_research({"GEMINI_API_KEY": "KEY_FREE_123", "GEMINI_SEARCH_API_KEY": "KEY_SEARCH_456"}, date(2026, 9, 1))
+        self.assertIn("skin: Bakuchiol (search)", res["added"])
+        self.assertIn("versus: ingredients-2026-10 (search)", res["added"])
+        lib = ed.load_library(self.cfg)
+        ids = [e["id"] for e in lib.skin]
+        self.assertEqual(ids[:2], ["pdrn", "bakuchiol"])       # right after the last published one
+        self.assertEqual(ids.count("bakuchiol"), 1)             # free-mode duplicate skipped
+        self.assertNotIn("cure-all-oil", ids)
+        st = State(self.cfg.state_file)
+        self.assertEqual(ed.next_topic("skin_global", lib, st, date(2026, 10, 30), self.cfg).key, "ing-bakuchiol")
+
+    def test_search_without_billing_is_reported_and_free_still_runs(self):
+        res, _ = self.run_research({"GEMINI_API_KEY": "KEY_FREE_123", "GEMINI_SEARCH_API_KEY": "KEY_SEARCH_456"}, date(2026, 10, 20), search_status=400)
+        self.assertTrue(any("결제" in n for n in res["results"]["search"]["notes"]))
+        self.assertEqual(len(res["results"]["free"]["entries"]), 1)
+
+    def lib_dir(self):
+        return ed.content_dir(self.cfg)
+
+
 if __name__ == "__main__":
     unittest.main()

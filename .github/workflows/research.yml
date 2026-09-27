@@ -1,0 +1,54 @@
+name: Gemini research
+
+# 매달 28일 제미나이가 새 성분·트렌드 초안을 content/drafts/ 에 만들어요 (게시 안 됨).
+# 매달 1일 Claude가 초안을 사실 확인해서 비교하고, Claude 업데이트가 40일 넘게 없으면
+# 자동 검사를 통과한 초안이 content/ 에 자동으로 들어가요 (config.toml [research]).
+on:
+  schedule:
+    - cron: "7 18 27 * *"   # 매달 28일 한국 03:07
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/research.yml"]   # 이 파일을 고치면 한 번 실행 (점검용)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0   # 마지막 Claude 업데이트 날짜를 확인하려고 전체 기록을 받아요
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Gemini research
+        id: research
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_SEARCH_API_KEY: ${{ secrets.GEMINI_SEARCH_API_KEY }}
+        run: python -m bot research
+
+      - name: Save drafts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content
+          if [ -f data/oy_catalog.json ]; then git add data/oy_catalog.json; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "${{ steps.research.outputs.commit_message || 'Gemini research drafts' }}"
+          git pull --rebase --autostash
+          git push

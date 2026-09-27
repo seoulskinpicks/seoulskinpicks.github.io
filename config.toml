@@ -55,6 +55,20 @@ skip_brands = []    # 빼고 싶은 브랜드 (예: ["BRAND A"])
 catalog_lists = ["Skincare", "Suncare", "Face Masks", "Hair"]
 catalog_top_n = 100
 
+[research]
+# 매달 28일 제미나이가 새 주제 초안을 content/drafts/ 에 만들어요. (게시되지 않아요)
+# 매달 1일 Claude가 그 초안을 사실 확인해서 점수를 매기고, 자기 조사와 비교해요.
+free_mode = true          # 무료: 올리브영 베스트셀러 + 위키백과 + PubMed 자료로만 쓰기 (GEMINI_API_KEY)
+search_mode = true        # 구글 검색 사용 (GEMINI_SEARCH_API_KEY 가 있을 때만. 결제가 켜진 프로젝트의 키)
+# 초안을 실제 자료(content/*.toml)에 넣을지:
+#   never    : 넣지 않음 (초안만)
+#   fallback : Claude나 내가 content/ 를 fallback_after_days 동안 안 고쳤으면 (예: 구독 해지) 자동 검사 통과한 것만 넣음
+#   always   : 매달 자동 검사 통과한 것을 바로 넣음
+auto_add = "fallback"
+fallback_after_days = 40
+max_skin = 6
+max_hair = 3
+
 [aliexpress]
 ship_to_country = "US"      # 가격·배송 기준 국가 (US, GB, AU, CA ...)
 currency = "USD"

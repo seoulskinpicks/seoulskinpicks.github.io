@@ -494,3 +494,136 @@ def log_remaining(lib: Library, state) -> str:
     text = " · ".join(f"{KIND_KO[k]} {v}개" for k, v in left.items())
     log(f"아직 안 올린 정보 글: {text}")
     return text
+
+
+# ---------------------------------------------------------------------------
+# checking + writing library entries (used by the Gemini research job and the tests)
+# ---------------------------------------------------------------------------
+ING_KEYS = ["id", "name", "full_name", "nickname", "area", "heat", "heat_note", "hot_since", "hook", "what_it_is",
+            "origin", "benefits", "best_for", "when", "how_to_use", "pairs_with", "avoid_with", "good_to_know", "myth",
+            "fact", "keywords", "examples", "hashtags", "sources"]
+VS_KEYS = ["id", "year", "topic", "title", "subtitle", "korea", "global", "both", "next", "basis", "sources"]
+LIMITS = {"name": 16, "full_name": 42, "nickname": 26, "heat_note": 50, "hook": 54, "what_it_is": 195, "origin": 62,
+          "when": 18, "myth": 80, "fact": 110}
+LIST_LIMITS = {"benefits": 64, "best_for": 32, "how_to_use": 70, "pairs_with": 22, "avoid_with": 30, "good_to_know": 90}
+BANNED = ("cure", "cures", "treats", "treatment for", "heals", "clinically proven", "regrow", "regrows", "removes wrinkles",
+          "erases", "miracle", "guaranteed", "stops hair loss", "anti-aging cure")
+
+
+def slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")[:40]
+
+
+def _has_banned(text: str) -> str:
+    low = f" {text.lower()} "
+    for b in BANNED:
+        if re.search(r"(?<![a-z])" + re.escape(b) + r"(?![a-z])", low):
+            return b
+    return ""
+
+
+def check_ingredient(e: dict, lib: Library, catalog: list[dict] | None = None) -> list[str]:
+    """Problems that would make an entry unsafe or break the cards. Empty list = OK."""
+    from .util import has_hangul
+    p = []
+    area = e.get("area")
+    if area not in ("skin", "hair"):
+        p.append("area 가 skin/hair 가 아님")
+    if e.get("heat") not in ("korea", "global", "both"):
+        p.append("heat 값 오류")
+    for k in ("id", "name", "hook", "what_it_is", "origin", "when"):
+        if not str(e.get(k, "")).strip():
+            p.append(f"{k} 비어 있음")
+    for k, limit in LIMITS.items():
+        if len(str(e.get(k, ""))) > limit:
+            p.append(f"{k} 너무 김 ({len(str(e.get(k, '')))}>{limit})")
+    for k, limit in LIST_LIMITS.items():
+        for x in e.get(k, []) or []:
+            if len(str(x)) > limit:
+                p.append(f"{k} 항목 너무 김: {str(x)[:30]}…")
+    if len(e.get("benefits", []) or []) != 3 or len(e.get("how_to_use", []) or []) != 3:
+        p.append("benefits / how_to_use 는 정확히 3개")
+    if not e.get("keywords"):
+        p.append("keywords 없음")
+    srcs = [s for s in e.get("sources", []) or [] if str(s).startswith("http")]
+    if len(srcs) < 2:
+        p.append("출처(URL) 2개 미만")
+    text = json.dumps(e, ensure_ascii=False)
+    if has_hangul(text):
+        p.append("한글 포함")
+    bad = _has_banned(" ".join(str(e.get(k, "")) for k in ("hook", "what_it_is", "heat_note", "fact"))
+                      + " " + " ".join(e.get("benefits", []) or []))
+    if bad:
+        p.append(f"과장·의학 표현: '{bad}'")
+    names = {x["name"].lower() for x in lib.ingredients(area or "skin")} | {x["id"] for x in lib.ingredients(area or "skin")}
+    if str(e.get("name", "")).lower() in names or e.get("id") in names:
+        p.append("이미 자료에 있는 성분")
+    if catalog is not None and catalog:
+        if not match_catalog(e, catalog, min_rating=0, min_reviews=0):
+            p.append("올리브영 베스트셀러 제품명에서 이 성분을 못 찾음")
+    return p
+
+
+def check_versus(v: dict, lib: Library) -> list[str]:
+    from .util import has_hangul
+    p = []
+    if len(v.get("korea", [])) != 5 or len(v.get("global", [])) != 5:
+        p.append("korea/global 은 각각 5개")
+    for side in ("korea", "global", "next"):
+        for x in v.get(side, []):
+            if len(x.get("name", "")) > 22 or len(x.get("why", "")) > 60 or not x.get("why"):
+                p.append(f"{side} 항목 길이 오류: {x.get('name', '')[:20]}")
+    names = {x["name"] for x in v.get("korea", [])} & {x["name"] for x in v.get("global", [])}
+    if not set(v.get("both", [])) <= names:
+        p.append("both 가 양쪽 목록에 없음")
+    if len([s for s in v.get("sources", []) if str(s).startswith("http")]) < 2:
+        p.append("출처(URL) 2개 미만")
+    if has_hangul(json.dumps(v, ensure_ascii=False)):
+        p.append("한글 포함")
+    if v.get("id") in {x["id"] for x in lib.versus}:
+        p.append("이미 있는 id")
+    return p
+
+
+def _toml_val(v) -> str:
+    if isinstance(v, bool):
+        return "true" if v else "false"
+    if isinstance(v, (int, float)):
+        return str(v)
+    if isinstance(v, str):
+        return json.dumps(v, ensure_ascii=False)
+    if isinstance(v, dict):
+        return "{" + ", ".join(f"{k} = {_toml_val(x)}" for k, x in v.items()) + "}"
+    if isinstance(v, list):
+        if not v:
+            return "[]"
+        inner = [_toml_val(x) for x in v]
+        one = "[" + ", ".join(inner) + "]"
+        if len(one) <= 100 and not any(isinstance(x, dict) for x in v):
+            return one
+        return "[\n" + "".join(f"  {x},\n" for x in inner) + "]"
+    raise TypeError(type(v))
+
+
+def toml_block(table: str, entry: dict, keys: list[str]) -> str:
+    lines = [f"[[{table}]]"] + [f"{k} = {_toml_val(entry[k])}" for k in keys if k in entry and entry[k] is not None]
+    return "\n".join(lines) + "\n"
+
+
+def insert_blocks(path: Path, table: str, blocks: list[str], published_ids: set[str], id_key: str = "id") -> None:
+    """Insert new [[table]] blocks right after the last already-published one (so they go out next)."""
+    text = path.read_text(encoding="utf-8")
+    marker = f"[[{table}]]"
+    parts = text.split(marker)
+    head, entries = parts[0], parts[1:]
+    last = -1
+    for i, body in enumerate(entries):
+        m = re.search(rf'^{id_key}\s*=\s*"?([^"\n]+)"?', body, re.M)
+        if m and m.group(1).strip() in published_ids:
+            last = i
+    new = [b[len(marker):] if b.startswith(marker) else b for b in blocks]
+    new = [b if b.endswith("\n\n") else b.rstrip("\n") + "\n\n" for b in new]
+    if entries and not entries[last if last >= 0 else 0].endswith("\n\n") and last >= 0:
+        entries[last] = entries[last].rstrip("\n") + "\n\n"
+    merged = entries[:last + 1] + new + entries[last + 1:]
+    path.write_text(head + "".join(marker + b for b in merged), encoding="utf-8")
