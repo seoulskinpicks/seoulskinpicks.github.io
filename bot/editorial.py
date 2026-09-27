@@ -315,10 +315,13 @@ def match_catalog(entry: dict, catalog: list[dict], limit: int = 3, min_rating: 
 def find_products(topic: Topic, cfg, catalog: list[dict], ali_client=None) -> list[dict]:
     from .discover import _oy_link
     if topic.kind == "weekly":
+        rows = topic.data.get("products", [])[:10]
+        if not any(c.get("prev_rank") for c in rows):  # first list ever: no "last week" to compare with
+            rows = [dict(c, prev_rank=c.get("rank")) for c in rows]
         return [{"brand": c["brand"], "name": c["product"],
                  "links": {"oliveyoung": _oy_link(cfg, {"url": c["url"], "prdt_no": c.get("prdt_no", "")})} if c.get("url") else {},
                  "rating": c.get("store_rating"), "reviews": c.get("review_count"), "rank": c.get("rank"),
-                 "prev_rank": c.get("prev_rank"), "from": "catalog"} for c in topic.data.get("products", [])[:10]]
+                 "prev_rank": c.get("prev_rank"), "from": "catalog"} for c in rows]
     if topic.kind not in ("skin", "hair"):
         return []
 
