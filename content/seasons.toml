@@ -1,0 +1,97 @@
+# Seasonal skin & hair guides ("Seoul seasons" series)
+#
+# One guide per Korean season. The bot posts the guide for the current season once a year,
+# early in the season. `key` = ingredient ids from skin.toml / hair.toml (cards + matched products).
+# Weather notes are general Seoul climate facts; keep advice gentle and non-medical.
+
+[[season]]
+id = "spring"
+months = [3, 4, 5]
+name = "Spring"
+title = "Spring skin in Seoul"
+hook = "Dust days, pollen and UV that climbs fast"
+weather = [
+  "Yellow dust and fine-dust days leave grime on skin and hair",
+  "Big day-to-night temperature swings",
+  "UV rises quickly from April, even on cool days",
+]
+skin = [
+  "Double cleanse on dusty days, gently",
+  "Keep a soothing toner handy for redness",
+  "Switch to a lighter moisturizer as it warms",
+  "Make SPF 30+ a daily habit again",
+]
+hair = [
+  "Wash off dust in the evening, not the next morning",
+  "Brush before washing to loosen buildup",
+]
+key = ["centella", "panthenol", "heartleaf"]
+
+[[season]]
+id = "summer"
+months = [6, 7, 8]
+name = "Summer"
+title = "Summer skin in Seoul"
+hook = "Monsoon humidity, sweat and peak UV"
+weather = [
+  "Jangma, the monsoon season, brings weeks of humid, rainy days",
+  "Hot, sticky days mean more oil and sweat",
+  "UV is at its strongest of the year",
+]
+skin = [
+  "Swap creams for gels and water-light lotions",
+  "Use a sweat-resistant SPF and reapply outdoors",
+  "Oil-balancing toner or niacinamide serum",
+  "Cool down skin after sun with a soothing mask",
+]
+hair = [
+  "Cooling menthol shampoo for sweaty scalps",
+  "Dry the scalp fully; damp roots in humidity feel itchy",
+]
+key = ["niacinamide", "green-tea", "menthol"]
+
+[[season]]
+id = "autumn"
+months = [9, 10, 11]
+name = "Autumn"
+title = "Autumn skin in Seoul"
+hook = "Clear skies, dry winds and summer's leftover spots"
+weather = [
+  "Air turns dry and clear after the humid summer",
+  "Sunny days keep UV high into October",
+  "Summer's tan and spots start to show",
+]
+skin = [
+  "Layer a hydrating toner before moisturizer",
+  "Brightening serum for leftover summer spots",
+  "Gentle exfoliation once or twice a week",
+  "Keep daily SPF; autumn sun still counts",
+]
+hair = [
+  "Protein or hair mask for sun-dried lengths",
+  "Scalp care for extra seasonal shedding",
+]
+key = ["txa", "beta-glucan", "lpp-protein"]
+
+[[season]]
+id = "winter"
+months = [12, 1, 2]
+name = "Winter"
+title = "Winter skin in Seoul"
+hook = "Freezing wind outside, dry heated air inside"
+weather = [
+  "Cold, dry wind with sub-zero days",
+  "Ondol floor heating dries indoor air",
+  "Low humidity leaves skin tight and flaky",
+]
+skin = [
+  "Swap foaming cleansers for creamy ones",
+  "Ceramide cream, plus a sleeping mask at night",
+  "Run a humidifier while you sleep",
+  "Keep SPF on; snow reflects UV",
+]
+hair = [
+  "Lukewarm, not hot, water for scalp and lengths",
+  "Argan oil on ends against static and dryness",
+]
+key = ["ceramides", "panthenol", "argan-oil"]

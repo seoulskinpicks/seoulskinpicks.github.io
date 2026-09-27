@@ -1,0 +1,217 @@
+# Routines by concern ("Routine builder" series)
+#
+# Plain, widely agreed routine basics: cleanse → water-based layers → moisturizer → SPF in the morning.
+# `key` lists ingredient ids from skin.toml / hair.toml: the cards show them, the "where to find it" card
+# matches Olive Young Global bestsellers that contain them, and the article page links their sources.
+# Keep steps short (≤ 58 characters) and never promise results ("treats", "cures" ...).
+#
+# Posted top to bottom. Add a new [[routine]] block to add a concern.
+
+[[routine]]
+id = "dull"
+area = "skin"
+concern = "Dull, tired-looking skin"
+title = "The glow routine"
+hook = "Glow is mostly water, smooth texture and SPF"
+why = "Dullness usually comes from dehydration, a rough surface layer and uneven tone, so the routine targets all three gently."
+am = [
+  "Rinse with water or a gentle gel cleanser",
+  "Hydrating toner, patted in",
+  "Niacinamide serum for tone and oil balance",
+  "Light gel moisturizer",
+  "Sunscreen SPF 30+, the real glow-keeper",
+]
+pm = [
+  "Double cleanse: oil or balm, then gel cleanser",
+  "Ferment toner (galactomyces or rice)",
+  "PDRN or peptide serum",
+  "Moisturizer to seal it all in",
+  "2–3 nights a week: mild AHA/PHA instead of serum",
+]
+key = ["galactomyces", "niacinamide", "pdrn"]
+tips = [
+  "Give a new serum 4–8 weeks before you judge it.",
+  "Exfoliating every night makes skin look duller, not brighter.",
+]
+
+[[routine]]
+id = "dehydrated"
+area = "skin"
+concern = "Tight, dehydrated skin"
+title = "The hydration routine"
+hook = "Oily outside, tight inside? That's sokgeonjo"
+why = "Dehydrated skin lacks water, not always oil. Layering light hydrating steps and sealing them in works better than one heavy cream."
+am = [
+  "Rinse with lukewarm water, no foaming wash",
+  "Hydrating toner in 2–3 thin layers",
+  "Beta-glucan or hyaluronic acid serum on damp skin",
+  "Moisturizer with ceramides",
+  "Hydrating sunscreen SPF 30+",
+]
+pm = [
+  "Gentle, low-foam cleanser",
+  "Hydrating toner, patted in",
+  "Panthenol or beta-glucan serum",
+  "Ceramide cream",
+  "Dry air? A sleeping mask as the last step",
+]
+key = ["beta-glucan", "panthenol", "ceramides"]
+tips = [
+  "Apply serums to damp skin, then seal with moisturizer within a minute.",
+  "Hot water and squeaky-clean foam washes make tightness worse.",
+]
+
+[[routine]]
+id = "sensitive"
+area = "skin"
+concern = "Red, easily irritated skin"
+title = "The calm-down routine"
+hook = "Fewer steps, calmer skin"
+why = "Reactive skin does best with short routines, soothing ingredients and a strong barrier. Add one new product at a time."
+am = [
+  "Rinse with water or a creamy cleanser",
+  "Soothing toner (centella or mugwort)",
+  "Panthenol serum",
+  "Barrier cream",
+  "Mineral or gentle sunscreen SPF 30+",
+]
+pm = [
+  "Mild cleanser; skip scrubs and cleansing brushes",
+  "Soothing toner or essence",
+  "Cica or heartleaf serum",
+  "Ceramide or panthenol cream",
+]
+key = ["centella", "panthenol", "mugwort"]
+tips = [
+  "Patch test new products behind the ear or on the jaw for a few days.",
+  "Fragrance and strong actives are the usual suspects when skin flares.",
+]
+
+[[routine]]
+id = "breakouts"
+area = "skin"
+concern = "Oily, breakout-prone skin"
+title = "The clear-skin routine"
+hook = "Oily skin still needs moisture"
+why = "Stripping oil makes skin feel tight and can backfire. Balance oil, keep pores clear gently and don't skip moisturizer."
+am = [
+  "Gentle gel cleanser",
+  "Heartleaf or green tea toner",
+  "Niacinamide serum",
+  "Oil-free gel moisturizer",
+  "Lightweight sunscreen SPF 30+",
+]
+pm = [
+  "Double cleanse if you wore sunscreen or makeup",
+  "Soothing toner",
+  "Azelaic acid on alternate nights",
+  "Light moisturizer",
+  "Hands off: no picking or popping",
+]
+key = ["heartleaf", "niacinamide", "azelaic-acid"]
+tips = [
+  "Change pillowcases often and clean your phone screen.",
+  "Painful, deep or scarring acne is a job for a dermatologist.",
+]
+
+[[routine]]
+id = "dark-spots"
+area = "skin"
+concern = "Dark spots & post-acne marks"
+title = "The even-tone routine"
+hook = "No sunscreen, no fading. It's that simple"
+why = "Marks fade slowly and UV keeps darkening them, so daily SPF matters as much as any brightening serum."
+am = [
+  "Gentle cleanser",
+  "Hydrating toner",
+  "Vitamin C or glutathione serum",
+  "Moisturizer",
+  "Sunscreen SPF 50, reapplied outdoors",
+]
+pm = [
+  "Double cleanse to remove sunscreen",
+  "Hydrating toner",
+  "Tranexamic acid or niacinamide serum",
+  "Moisturizer",
+]
+key = ["txa", "niacinamide", "glutathione"]
+tips = [
+  "Expect slow progress: think months, not days.",
+  "Picking at spots leaves more marks to fade.",
+]
+
+[[routine]]
+id = "early-aging"
+area = "skin"
+concern = "Early fine lines & lost bounce"
+title = "The bounce routine"
+hook = "Start slow, stay consistent, never skip SPF"
+why = "Retinoids at night, supportive peptides and daily sunscreen are the most talked-about basics for early lines."
+am = [
+  "Gentle cleanser",
+  "Hydrating toner",
+  "Peptide or PDRN serum",
+  "Moisturizer",
+  "Sunscreen SPF 30+ every day",
+]
+pm = [
+  "Double cleanse",
+  "Retinal 2–3 nights a week, building up slowly",
+  "Other nights: peptide serum",
+  "Rich moisturizer or ceramide cream",
+]
+key = ["retinal", "peptide", "pdrn"]
+tips = [
+  "Avoid retinoids if pregnant or breastfeeding; ask your doctor.",
+  "Pair retinal nights with extra moisturizer, not extra acids.",
+]
+
+[[routine]]
+id = "oily-scalp"
+area = "hair"
+concern = "Oily, flaky scalp"
+title = "The scalp reset routine"
+hook = "Treat your scalp like the skin it is"
+why = "An oily, flaky scalp likes regular washing, gentle exfoliation and a light hand with heavy products at the roots."
+am = [
+  "Wash in the evening if you sweat a lot during the day",
+  "Menthol or cooling scalp spray on hot days",
+  "Keep heavy oils and butters off the roots",
+]
+pm = [
+  "Brush dry hair to loosen buildup",
+  "Shampoo twice: first to cleanse, then to treat",
+  "1–2x a week: salicylic acid scalp scaler",
+  "Conditioner on lengths only",
+  "Dry the scalp fully before bed",
+]
+key = ["salicylic-acid", "menthol", "rosemary"]
+tips = [
+  "Thick yellow flakes, redness or itching that won't settle: see a dermatologist.",
+  "Scrubbing hard with nails irritates the scalp more.",
+]
+
+[[routine]]
+id = "damaged-hair"
+area = "hair"
+concern = "Bleached, frizzy lengths"
+title = "The repair routine"
+hook = "Lengths can't heal, but they can be protected"
+why = "Hair lengths are non-living, so care means filling damage, adding slip and preventing new damage from heat and friction."
+am = [
+  "Leave-in with panthenol on damp lengths",
+  "Heat protectant before any hot tool",
+  "A drop of argan oil on the ends",
+]
+pm = [
+  "Gentle shampoo on the scalp only",
+  "Conditioner on mid-lengths to ends",
+  "1–2x a week: LPP protein treatment",
+  "Towel-blot, don't rub",
+  "Silk or satin pillowcase for less friction",
+]
+key = ["lpp-protein", "argan-oil", "dexpanthenol"]
+tips = [
+  "Turn hot tools down; very high heat damages hair faster.",
+  "A trim is the only true fix for split ends.",
+]

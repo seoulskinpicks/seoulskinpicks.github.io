@@ -21,8 +21,9 @@ from .util import clean_space, log, warn
 
 ROOT = Path(__file__).resolve().parent.parent
 
-INFO_KINDS = ("skin", "hair", "versus", "history", "weekly")
-PLAN_TOKENS = ("product", "skin", "skin_korea", "skin_global", "hair", "versus", "history", "weekly")
+NEW_KINDS = ("routine", "myth", "combo", "season", "words", "recap", "industry")
+INFO_KINDS = ("skin", "hair", "versus", "history", "weekly") + NEW_KINDS
+PLAN_TOKENS = ("product", "skin", "skin_korea", "skin_global", "hair", "versus", "history", "weekly") + NEW_KINDS
 DEFAULT_WEEKLY = ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"]
 FALLBACK = {
     "product": ["product", "skin", "hair", "history", "versus"],
@@ -33,12 +34,17 @@ FALLBACK = {
     "versus": ["versus", "skin", "hair", "history", "product"],
     "history": ["history", "skin", "hair", "versus", "product"],
     "weekly": ["weekly", "versus", "skin", "hair", "history", "product"],
+    **{k: [k, "skin", "hair", "product"] for k in NEW_KINDS},
 }
 KIND_LABEL = {"skin": "Ingredient 101", "hair": "Hair & scalp 101", "versus": "Seoul vs. abroad",
-              "history": "K-beauty history", "weekly": "This week in K-beauty"}
+              "history": "K-beauty history", "weekly": "This week in K-beauty", "routine": "Routine builder",
+              "myth": "Myth vs. fact", "combo": "Mix & match", "season": "Seoul seasons", "words": "Speak K-beauty",
+              "recap": "Monthly bestsellers", "industry": "Industry watch"}
 KIND_KO = {"product": "제품 픽", "skin": "피부 성분 101", "skin_korea": "피부 성분 101 (한국에서 뜨는 것)",
            "skin_global": "피부 성분 101 (해외에서 뜨는 것)", "hair": "모발·두피 성분 101",
-           "versus": "서울 vs 해외", "history": "K뷰티 연도별 변화", "weekly": "이번 주 K뷰티 TOP"}
+           "versus": "서울 vs 해외", "history": "K뷰티 연도별 변화", "weekly": "이번 주 K뷰티 TOP",
+           "routine": "고민별 루틴", "myth": "오해 vs 사실", "combo": "같이 써도 될까", "season": "서울 계절 가이드",
+           "words": "K뷰티 단어", "recap": "지난달 베스트셀러", "industry": "업계가 미는 성분"}
 HEAT_LABEL = {"korea": "Hot in Korea", "global": "Trending abroad", "both": "Hot in Korea & abroad"}
 PREFIX = {"skin": "ing-", "hair": "hair-", "versus": "vs-"}
 
@@ -57,6 +63,10 @@ class Library:
     hair: list[dict] = field(default_factory=list)
     years: list[dict] = field(default_factory=list)
     versus: list[dict] = field(default_factory=list)
+    routines: list[dict] = field(default_factory=list)
+    seasons: list[dict] = field(default_factory=list)
+    words: list[dict] = field(default_factory=list)
+    industry: list[dict] = field(default_factory=list)
 
     def ingredients(self, area: str) -> list[dict]:
         return self.hair if area == "hair" else self.skin
@@ -87,6 +97,10 @@ def load_library(cfg) -> Library:
         hair=read("hair.toml").get("ingredient", []),
         years=sorted(trends.get("year", []), key=lambda y: int(y["year"])),
         versus=trends.get("versus", []),
+        routines=read("routines.toml").get("routine", []),
+        seasons=read("seasons.toml").get("season", []),
+        words=read("words.toml").get("set", []),
+        industry=read("industry.toml").get("issue", []),
     )
 
 
@@ -112,6 +126,9 @@ class Topic:
             return f"K-beauty through the years, {first}–{last}"
         if self.kind == "weekly":
             return f"This week in K-beauty ({week_label(self.data)})"
+        if self.kind in NEW_KINDS:
+            from .series import title_of
+            return title_of(self)
         return f"{self.data['year']}: {self.data['headline']}"
 
 
@@ -144,6 +161,10 @@ def all_topics(kind: str, lib: Library) -> list[Topic]:
             out.append(Topic(kind, "tl-overview", {"years": lib.years}, variant="timeline"))
         out += [Topic(kind, f"yr-{y['year']}", y, variant="year") for y in lib.years]
         return out
+    if kind == "routine":
+        return [Topic(kind, f"rt-{r['id']}", r) for r in lib.routines if r.get("am") and r.get("pm")]
+    if kind == "words":
+        return [Topic(kind, f"kw-{w['id']}", w) for w in lib.words if len(w.get("words", [])) >= 2]
     return []
 
 
@@ -166,6 +187,9 @@ def next_topic(token: str, lib: Library, state, today: Date, cfg) -> Topic | Non
     used = last_used(state)
     if kind == "weekly":
         return weekly_topic(cfg, today, used)
+    if kind in ("myth", "combo", "season", "recap", "industry"):
+        from . import series
+        return series.next_topic(kind, lib, state, today, cfg, used)
     heat = {"skin_korea": {"korea", "both"}, "skin_global": {"global", "both"}}.get(token)
     topics = [t for t in all_topics(kind, lib) if not heat or t.data.get("heat") in heat]
     fresh = trend_order([t for t in topics if t.key not in used], token, cfg)
@@ -230,7 +254,13 @@ def trend_order(topics: list[Topic], token: str, cfg) -> list[Topic]:
 
 def remaining(lib: Library, state) -> dict[str, int]:
     used = last_used(state)
-    return {k: sum(1 for t in all_topics(k, lib) if t.key not in used) for k in INFO_KINDS if k != "weekly"}
+    out = {k: sum(1 for t in all_topics(k, lib) if t.key not in used)
+           for k in ("skin", "hair", "versus", "history", "routine", "words")}
+    from .series import _group_used
+    for kind, prefix, field_ in (("myth", "my-", "myth"), ("combo", "cb-", "pairs_with")):
+        seen = _group_used(prefix, used)
+        out[kind] = sum(1 for e in lib.skin + lib.hair if e.get(field_) and e["id"] not in seen)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -312,7 +342,7 @@ def match_catalog(entry: dict, catalog: list[dict], limit: int = 3, min_rating: 
     return picked[:limit]
 
 
-def find_products(topic: Topic, cfg, catalog: list[dict], ali_client=None) -> list[dict]:
+def find_products(topic: Topic, cfg, catalog: list[dict], ali_client=None, lib: Library | None = None) -> list[dict]:
     from .discover import _oy_link
     if topic.kind == "weekly":
         rows = topic.data.get("products", [])[:10]
@@ -322,6 +352,9 @@ def find_products(topic: Topic, cfg, catalog: list[dict], ali_client=None) -> li
                  "links": {"oliveyoung": _oy_link(cfg, {"url": c["url"], "prdt_no": c.get("prdt_no", "")})} if c.get("url") else {},
                  "rating": c.get("store_rating"), "reviews": c.get("review_count"), "rank": c.get("rank"),
                  "prev_rank": c.get("prev_rank"), "from": "catalog"} for c in rows]
+    if topic.kind in NEW_KINDS:
+        from . import series
+        return series.products(topic, cfg, catalog, lib)
     if topic.kind not in ("skin", "hair"):
         return []
 
@@ -404,7 +437,10 @@ def _tags(cfg, topic: Topic) -> list[str]:
              "hair": ["#koreanhaircare", "#scalpcare", "#haircareroutine"],
              "versus": ["#kbeautytrends", "#seoulbeauty", "#koreanbeautytrends"],
              "history": ["#kbeautyhistory", "#kbeautytrends", "#beautyhistory"],
-             "weekly": ["#kbeautytrends", "#oliveyoungglobal", "#kbeautybestsellers", "#trendingnow"]}[topic.kind]
+             "weekly": ["#kbeautytrends", "#oliveyoungglobal", "#kbeautybestsellers", "#trendingnow"]}.get(topic.kind)
+    if extra is None:
+        from .series import TAGS
+        extra = TAGS.get(topic.kind, [])
     own = topic.data.get("hashtags", []) if topic.kind in ("skin", "hair") else []
     tags = list(dict.fromkeys(own + extra + c.get("hashtags_common", [])))
     return [t for t in tags if t.startswith("#") and " " not in t][:20]
@@ -417,12 +453,15 @@ def _product_line(p: dict) -> str:
     return line
 
 
-def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None = None) -> InfoCopy:
+def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None = None, lib: Library | None = None) -> InfoCopy:
     products = products or []
     d = topic.data
     handle = cfg.handle
     lines: list[str] = []
-    if topic.kind in ("skin", "hair"):
+    if topic.kind in NEW_KINDS:
+        from .series import copy_lines
+        hook, lines, bullets = copy_lines(topic, number, products, lib)
+    elif topic.kind in ("skin", "hair"):
         area = "hair" if topic.kind == "hair" else "skin"
         hook = d["hook"]
         head = f"{KIND_LABEL[topic.kind]} · {d['name']}" + (f" ({d['full_name']})" if d.get("full_name") else "")
@@ -494,7 +533,7 @@ def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None 
     tail = ["", "🔖 Save this for later · Follow @" + handle + " for daily K-beauty know-how"]
     if has_links:
         tail.append(f"#ad | affiliate links in bio → No.{number}. I may earn a small commission at no extra cost to you.")
-    if topic.kind in ("skin", "hair"):
+    if topic.kind in ("skin", "hair", "routine", "myth", "combo", "season"):
         tail.append(NOT_ADVICE)
     tail += [".", " ".join(tags)]
     caption = _fit_caption(lines, tail)
@@ -526,6 +565,7 @@ def post_record(info: InfoCopy, number: int, today: Date, slides: int) -> dict:
         "links": {},
         "products": [{"brand": p["brand"], "name": p["name"], "links": p["links"]} for p in info.products],
         **({"weekly": t.data} if t.kind == "weekly" else {}),
+        **({"data": t.data} if t.kind in ("myth", "combo", "recap") else {}),
         "category": t.variant or t.kind,
         "folder": f"{number:03d}",
         "slides": slides,
@@ -539,8 +579,11 @@ def post_record(info: InfoCopy, number: int, today: Date, slides: int) -> dict:
 # ---------------------------------------------------------------------------
 # article text for the Pinterest landing page (/p/NNN.html)
 # ---------------------------------------------------------------------------
-def find_topic(key: str, lib: Library) -> Topic | None:
-    for kind in INFO_KINDS:
+def find_topic(key: str, lib: Library, post: dict | None = None) -> Topic | None:
+    if key[:3] in ("my-", "cb-", "rc-", "rt-", "kw-", "ss-", "in-"):
+        from .series import find_topic as series_topic
+        return series_topic(key, lib, post)
+    for kind in ("skin", "hair", "versus", "history"):
         for t in all_topics(kind, lib):
             if t.key == key:
                 return t
@@ -552,7 +595,11 @@ def article_html(post: dict, lib: Library, products_html: str = "") -> str:
     esc = html.escape
     if post.get("weekly"):
         return _weekly_html(post["weekly"], products_html)
-    t = find_topic(post.get("key", ""), lib)
+    t = find_topic(post.get("key", ""), lib, post)
+    if t is not None and t.kind in NEW_KINDS:
+        from . import series
+        body = series.article(t, lib, products_html, NOT_ADVICE)
+        return body + _sources_html(series.sources(t, lib))
     if t is None:  # removed from the library: show the caption text
         body = esc(post.get("caption", "")).split("\n.\n")[0].replace("\n", "<br>")
         return f"<p>{body}</p>{products_html}"
@@ -592,11 +639,16 @@ def article_html(post: dict, lib: Library, products_html: str = "") -> str:
     if products_html:
         out.append(products_html)
     srcs = d.get("sources") or [s for y in d.get("years", []) for s in y.get("sources", [])][:8]
-    if srcs:
-        out.append("<details><summary>Sources</summary><ul class=\"src\">" + "".join(
-            f"<li><a href=\"{esc(s)}\" rel=\"nofollow noopener\" target=\"_blank\">{esc(_host(s))}</a></li>" for s in srcs)
-            + "</ul></details>")
-    return "\n".join(out)
+    return "\n".join(out) + _sources_html(srcs)
+
+
+def _sources_html(srcs: list[str]) -> str:
+    esc = html.escape
+    if not srcs:
+        return ""
+    return ("\n<details><summary>Sources</summary><ul class=\"src\">" + "".join(
+        f"<li><a href=\"{esc(s)}\" rel=\"nofollow noopener\" target=\"_blank\">{esc(_host(s))}</a></li>" for s in srcs)
+        + "</ul></details>")
 
 
 def _weekly_html(d: dict, products_html: str) -> str:

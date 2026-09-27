@@ -94,12 +94,18 @@ def _render_pin(cand, cp, number: int, cfg, out: Path, dry_run: bool, product_im
 PRODUCT_SOURCES = ("kbeauty", "tools")
 
 
-def _plan(source: str | None, cfg, today: Date) -> tuple[str, list[str]]:
-    """(what today is meant to be, the order to try). A manual `--source` wins over the weekly plan."""
+def _plan(source: str | None, cfg, today: Date, state=None) -> tuple[str, list[str]]:
+    """(what today is meant to be, the order to try). A manual `--source` wins over the schedule:
+    config [series] (monthly targets per series), or the older weekday plan [schedule] weekly."""
     if source in PRODUCT_SOURCES:
         return "product", ["product"]
     if source in editorial.PLAN_TOKENS:
         return source, editorial.fallback_order(source)
+    if state is not None:
+        from .series import plan_order
+        planned = plan_order(cfg, state, today)
+        if planned:
+            return planned
     plan = editorial.plan_for(cfg, today)
     return plan, editorial.fallback_order(plan)
 
@@ -137,9 +143,9 @@ def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path,
     if topic.kind == "weekly":
         topic.data = dict(topic.data, spotlight=editorial.weekly_spotlight(topic.data, lib))
     try:
-        products = editorial.find_products(topic, cfg, editorial.load_catalog(cfg), ali_client)
-        info = editorial.build_info_copy(topic, number, cfg, products)
-        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years)
+        products = editorial.find_products(topic, cfg, editorial.load_catalog(cfg), ali_client, lib=lib)
+        info = editorial.build_info_copy(topic, number, cfg, products, lib=lib)
+        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years, lib=lib)
     except Exception as exc:
         warn(f"{editorial.describe(topic)} 준비 중 오류, 다른 종류로 넘어가요: {exc}")
         return None
@@ -182,8 +188,9 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     number = state.next_number()
     lib = editorial.load_library(cfg)
 
-    plan, order = _plan(args.source, cfg, today)
-    log(f"오늘({today}, {'월화수목금토일'[today.weekday()]}) 계획: {editorial.KIND_KO.get(plan, plan)}")
+    plan, order = _plan(args.source, cfg, today, state)
+    log(f"오늘({today}, {'월화수목금토일'[today.weekday()]}) 계획: {editorial.KIND_KO.get(plan, plan)}"
+        f" → 순서: {', '.join(editorial.KIND_KO.get(s, s) for s in order[:6])}")
     made = None
     for step in order:
         if step == "product":
@@ -200,6 +207,17 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
         return 0
 
     post = made["post"]
+    from . import reels
+    reel_note = ""
+    if reels.is_reel_day(cfg, today, getattr(args, "reel", None)):
+        slides = sorted((out / "posts" / post["folder"]).glob("*.jpg"), key=lambda p: int(p.stem))
+        rec = reels.make_for_post(cfg, post, slides, out, manual=reels.settings(cfg)["mode"] == "manual")
+        if rec:
+            post["reel"] = rec
+            site = _site_url(cfg).rstrip("/")
+            reel_note = (f"- 릴스: {rec['seconds']}초 · 음악 {rec['track'] or '없음'} → 릴스 먼저, 이어서 카드뉴스 게시\n"
+                         if rec["mode"] == "auto" else
+                         f"- 릴스(수동): 음악 없는 영상 → {site + '/' if site else ''}{rec['video']} 를 받아 인스타 앱에서 음악을 붙여 올려주세요\n")
     build_link_page(state.published + [post], cfg, out, updated=today.isoformat())
     build_pinterest(state.published + [post], cfg, out, _site_url(cfg),
                     pins_dir=None if args.dry_run else cfg.root / "pins", lib=lib)
@@ -217,6 +235,7 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     add_summary(
         f"### {'[미리보기] ' if args.dry_run else ''}No.{number} · {made['kind']}\n"
         + made["summary"]
+        + reel_note
         + f"- 남은 정보 글: {left}\n\n"
         f"카드 이미지는 이 페이지 아래 **Artifacts → preview-images** 에서 받을 수 있어요.\n\n"
         f"<details><summary>캡션 보기</summary>\n\n```\n{post['caption']}\n```\n</details>\n"
@@ -244,14 +263,24 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
     site = args.site_url.rstrip("/") + "/"
     urls = [f"{site}posts/{post['folder']}/{i}.jpg" for i in range(1, post["slides"] + 1)]
     kw = {"sleep": sleep} if sleep else {}
+    reel = post.get("reel") or {}
+    reel_done = reel.get("status") == "published"
     try:
         wait_for_urls(urls, session=session, **kw)
         ig = Instagram(cfg.ig_token, cfg.instagram.get("api_host", "graph.instagram.com"),
                        cfg.instagram.get("api_version", "v24.0"), session=session, **kw)
         ig_id = cfg.ig_user_id or ig.account_id()[0]
+        if reel.get("mode") == "auto" and not reel_done:
+            reel_done = _publish_reel(cfg, ig, ig_id, post, site, state, session, kw)
         res = ig.publish_carousel(ig_id, urls, post["caption"])
     except Exception as exc:
         msg = scrub(str(exc), cfg.ig_token)
+        if reel_done:  # the Reel is live, so the topic counts as posted; only the card version is missing
+            post.update(status="published", carousel_error=msg[:300],
+                        published_at=datetime.now(ZoneInfo(cfg.timezone)).isoformat(timespec="minutes"))
+            state.save()
+            add_summary(f"### ⚠️ 릴스는 올라갔는데 카드뉴스 게시 실패\n`{msg}`")
+            return 1
         post.update(status="failed", error=msg[:300])
         state.save()
         print(f"::error::인스타 게시 실패: {msg}" if os.environ.get("GITHUB_ACTIONS") else f"인스타 게시 실패: {msg}")
@@ -263,6 +292,28 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
     state.save()
     add_summary(f"### ✅ 인스타 게시 완료: No.{post['number']}\n{res['permalink'] or res['media_id']}")
     return 0
+
+
+def _publish_reel(cfg, ig, ig_id: str, post: dict, site: str, state, session, kw) -> bool:
+    """Posts the Reel before the carousel. A failed Reel never blocks the card post."""
+    from .reels import reel_caption, settings
+    reel = post["reel"]
+    try:
+        wait_for_urls([site + reel["video"]], session=session, kinds=("video/",), **kw)
+        res = ig.publish_reel(ig_id, site + reel["video"], reel_caption(post["caption"]),
+                              cover_url=site + reel["cover"], audio_name=settings(cfg)["audio_name"])
+    except Exception as exc:
+        msg = scrub(str(exc), cfg.ig_token)
+        reel.update(status="failed", error=msg[:300])
+        state.save()
+        warn(f"릴스 게시 실패 (카드뉴스는 계속 올려요): {msg}")
+        add_summary(f"### ⚠️ 릴스 게시 실패 (카드뉴스는 계속)\n`{msg}`")
+        return False
+    reel.update(status="published", media_id=res["media_id"], permalink=res["permalink"])
+    reel.pop("error", None)
+    state.save()
+    add_summary(f"### 🎬 릴스 게시 완료\n{res['permalink'] or res['media_id']}")
+    return True
 
 
 def cmd_check(args, cfg=None) -> int:
@@ -314,13 +365,23 @@ def cmd_check(args, cfg=None) -> int:
         lines.append("- 인스타: 토큰 없음 → 게시 없이 미리보기만")
 
     lib = editorial.load_library(cfg)
-    plan = editorial.plan_for(cfg, today)
+    plan, _ = _plan(None, cfg, today, state)
     lines.append(f"- 오늘 계획: {editorial.KIND_KO.get(plan, plan)}")
-    lines.append(f"- 정보 글 자료: 피부 성분 {len(lib.skin)} · 모발 {len(lib.hair)} · 비교 {len(lib.versus)} · 연도 {len(lib.years)}")
+    from .series import month_summary, series_cfg
+    if series_cfg(cfg):
+        lines.append(f"- 이번 달 진행 (올림/목표): {month_summary(cfg, state, today)}")
+    lines.append(f"- 정보 글 자료: 피부 성분 {len(lib.skin)} · 모발 {len(lib.hair)} · 비교 {len(lib.versus)} · 연도 {len(lib.years)}"
+                 f" · 루틴 {len(lib.routines)} · 계절 {len(lib.seasons)} · 단어 {len(lib.words)} · 업계 {len(lib.industry)}")
     lines.append(f"  - 아직 안 올린 것: {editorial.log_remaining(lib, state)}")
     catalog = editorial.load_catalog(cfg)
     lines.append(f"- 성분 글용 제품 목록: {len(catalog)}개" if catalog else
                  "- 성분 글용 제품 목록: 아직 없음 → 'Find bestsellers' 가 월요일에 만들어요 (그 전엔 예시 제품을 링크 없이 보여줘요)")
+    from . import reels
+    rs = reels.settings(cfg)
+    if rs["mode"] != "off":
+        days = "".join("월화수목금토일"[d] for d in rs["days"])
+        lines.append(f"- 릴스: {rs['mode']} · {days}요일 · 음악 {len(reels.tracks())}곡"
+                     + (f" · 오늘 릴스 날" if reels.is_reel_day(cfg, today) else ""))
     lines.append(f"- 지금까지 게시: {len(state.published)}개")
     text = "\n".join(lines)
     log(text)
@@ -393,14 +454,20 @@ def cmd_demo(args) -> int:
     # information posts: one of each kind, straight from the content library
     from .render_info import render_info_pin, render_info_post
     number = len(samples)
-    for kind in ("skin", "hair", "versus", "history"):
-        topics = editorial.all_topics(kind, lib)
-        if not topics:
-            continue
+    from . import series
+    from .state import State as _State
+    empty = _State(out / "_demo_state.json")
+    today = _today(cfg, None)
+    topics = [editorial.all_topics(k, lib)[:1] for k in ("skin", "hair", "versus", "history", "routine", "words")]
+    topics = [t[0] for t in topics if t]
+    for k in ("myth", "combo", "season", "industry"):
+        t = series.next_topic(k, lib, empty, today, cfg, {})
+        if t:
+            topics.append(t)
+    for topic in topics:
         number += 1
-        topic = topics[0]
-        info = editorial.build_info_copy(topic, number, cfg, editorial.find_products(topic, cfg, editorial.load_catalog(cfg)))
-        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years)
+        info = editorial.build_info_copy(topic, number, cfg, editorial.find_products(topic, cfg, editorial.load_catalog(cfg), lib=lib), lib=lib)
+        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years, lib=lib)
         contact_sheet(paths, out / f"preview_No{number}.jpg", cols=4)
         (out / f"caption_No{number}.txt").write_text(info.caption, encoding="utf-8")
         render_info_pin(topic, info, number, cfg.handle, out / "pins" / f"{number:03d}.jpg")
@@ -420,8 +487,11 @@ def main(argv=None) -> int:
     a.add_argument("--dry-run", action="store_true")
     a.add_argument("--source", default="auto",
                    choices=["auto", "product", "kbeauty", "tools", "skin", "skin_korea", "skin_global", "hair",
-                            "versus", "history", "weekly", "site"])
+                            "versus", "history", "weekly", "routine", "myth", "combo", "season", "words", "recap",
+                            "industry", "site"])
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
+    a.add_argument("--reel", default="auto", choices=["auto", "yes", "no"],
+                   help="릴스도 만들지 (auto = config [reels] 요일대로)")
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)
     sub.add_parser("check")
@@ -436,6 +506,8 @@ def main(argv=None) -> int:
     args = p.parse_args(argv)
     if getattr(args, "source", None) == "auto":
         args.source = None
+    if getattr(args, "reel", None) == "auto":
+        args.reel = None
     return {
         "prepare": cmd_prepare,
         "publish": cmd_publish,

@@ -49,6 +49,8 @@ class FakeIG:
         self.calls.append(("GET", url, dict(params or {})))
         if url.endswith(".jpg"):
             return FakeResp(None, headers={"content-type": "image/jpeg"})
+        if url.endswith(".mp4"):
+            return FakeResp(None, headers={"content-type": "video/mp4"})
         if url.endswith("/me"):
             return FakeResp({"user_id": "17840000", "username": "seoul.skin.picks", "id": "app1"})
         if params and params.get("fields") == "status_code,status":
@@ -100,12 +102,17 @@ def ali_product(pid, title, price="5.80", rating="97.0%", orders=5000, link=True
 HEADER = "brand,product,category,link,rank,key_points,my_comment,hook,date\n"
 
 
-def make_cfg(tmp: Path, rows: list[str], header: str = HEADER, library: bool = False, **env) -> Config:
+def make_cfg(tmp: Path, rows: list[str], header: str = HEADER, library: bool = False, series: bool = False,
+             reels: str = "off", **env) -> Config:
     """Product-only config by default (every weekday = product, no content library), so the older
-    tests keep testing the product flow. library=True uses the real content/ folder + weekly plan."""
+    tests keep testing the product flow. library=True uses the real content/ folder + weekday plan;
+    series=True also keeps the monthly topic schedule from config.toml [series]."""
     base = load_config()
     raw = json.loads(json.dumps(base.raw))
     raw["kbeauty"]["sheet_csv_url"] = ""
+    if not series:
+        raw.pop("series", None)
+    raw.setdefault("reels", {})["mode"] = reels
     if not library:
         raw["schedule"]["weekly"] = ["product"] * 7
         raw.setdefault("editorial", {})["content_dir"] = str(tmp / "no_content")

@@ -1,0 +1,62 @@
+# K-beauty words ("Speak K-beauty" series): Korean beauty words you'll see on labels, reviews and in Olive Young.
+#
+# ko  : the word in Hangul (shown big on the card; the bundled Korean font covers all Hangul syllables)
+# rom : Revised Romanization, how to say it
+# en  : short English meaning (≤ 34 characters)
+# note: one line of context (≤ 120 characters)
+# One [[set]] = one post (3–4 words). Posted top to bottom.
+
+[[set]]
+id = "glow"
+title = "Glow words"
+hook = "4 ways Koreans describe glowing skin"
+words = [
+  { ko = "물광", rom = "mulgwang", en = "water glow", note = "A dewy, hydrated shine, like skin that just drank a glass of water." },
+  { ko = "꿀광", rom = "kkulgwang", en = "honey glow", note = "A richer, glossier glow than mulgwang, often from oils or balms." },
+  { ko = "유리 피부", rom = "yuri pibu", en = "glass skin", note = "Skin so smooth and clear it looks like glass. The look that went viral abroad." },
+  { ko = "꿀피부", rom = "kkulpibu", en = "honey skin", note = "Smooth, flawless-looking skin. A big compliment in Korea." },
+]
+
+[[set]]
+id = "skin-type"
+title = "Skin-type talk"
+hook = "Read Korean reviews like a local"
+words = [
+  { ko = "속건조", rom = "sokgeonjo", en = "inner dryness", note = "Skin that looks oily on top but feels tight and dehydrated underneath." },
+  { ko = "수부지", rom = "subuji", en = "dehydrated oily skin", note = "Short for 'water-lacking oily skin'. A very common review tag." },
+  { ko = "피부결", rom = "pibugyeol", en = "skin texture", note = "How smooth your skin looks and feels. 'Gyeol' is the grain, like wood." },
+  { ko = "모공", rom = "mogong", en = "pores", note = "You'll see it on pore-care toners, pads and clay masks." },
+]
+
+[[set]]
+id = "texture"
+title = "Texture words"
+hook = "How Korean reviews describe the feel"
+words = [
+  { ko = "쫀쫀", rom = "jjonjjon", en = "bouncy, springy", note = "A firm, elastic texture, or skin that feels plump after applying." },
+  { ko = "촉촉", rom = "chokchok", en = "moist, dewy", note = "The sound-word for moisture. Probably the most-used word in K-beauty ads." },
+  { ko = "산뜻", rom = "santteut", en = "fresh, light", note = "Light and non-sticky. Look for it when shopping for summer or oily skin." },
+  { ko = "흡수", rom = "heupsu", en = "absorption", note = "'Fast heupsu' means it sinks in quickly without a sticky layer." },
+]
+
+[[set]]
+id = "shopping"
+title = "Shopping words"
+hook = "Words to know before your Olive Young haul"
+words = [
+  { ko = "올영세일", rom = "olyeong seil", en = "Olive Young sale", note = "Olive Young's big seasonal sale. Many Koreans stock up only then." },
+  { ko = "기능성", rom = "gineungseong", en = "functional (certified)", note = "Products certified in Korea for claims like brightening, wrinkles or UV protection." },
+  { ko = "톤업", rom = "toneup", en = "tone-up", note = "A cream or sunscreen that instantly brightens how skin looks." },
+  { ko = "한방", rom = "hanbang", en = "Korean herbal", note = "Skincare inspired by traditional Korean herbal medicine, like ginseng." },
+]
+
+[[set]]
+id = "troubles"
+title = "Skin trouble words"
+hook = "What to search when your skin acts up"
+words = [
+  { ko = "트러블", rom = "teureobeul", en = "breakouts", note = "Literally 'trouble'. Koreans use it for pimples and flare-ups." },
+  { ko = "각질", rom = "gakjil", en = "dead skin, flakes", note = "Dead skin cells on the surface. 'Gakjil care' means gentle exfoliation." },
+  { ko = "진정", rom = "jinjeong", en = "calming, soothing", note = "On a label, it means the product is made to calm redness and irritation." },
+  { ko = "두피 스케일링", rom = "dupi seukeilling", en = "scalp scaling", note = "Gentle chemical exfoliation for the scalp, a salon and at-home favorite." },
+]

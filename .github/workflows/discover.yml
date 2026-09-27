@@ -55,6 +55,7 @@ jobs:
           git add data/auto_queue.csv
           if [ -f data/oy_catalog.json ]; then git add data/oy_catalog.json; fi
           if [ -f data/trend_latest.json ]; then git add data/trend_latest.json; fi
+          if [ -d data/oy_history ]; then git add -A data/oy_history; fi
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Weekly bestsellers update"
           git pull --rebase --autostash

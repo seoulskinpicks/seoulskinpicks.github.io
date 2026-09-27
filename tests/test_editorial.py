@@ -108,11 +108,13 @@ class EditorialTests(unittest.TestCase):
             for t in ed.all_topics(kind, self.lib):
                 prods = [{"brand": "Brand", "name": "A fairly long product name for layout checks 50ml",
                           "links": {"oliveyoung": "https://x.example/p"}, "rating": 4.8, "reviews": 12345}] * 3
-                info = ed.build_info_copy(t, 123, self.cfg, prods if kind in ("skin", "hair") else [])
+                info = ed.build_info_copy(t, 123, self.cfg, prods if kind in ("skin", "hair", "routine") else [], lib=self.lib)
                 self.assertLessEqual(len(info.caption), 2200, t.key)
                 self.assertLessEqual(len(info.hashtags), 20, t.key)
-                self.assertFalse(has_hangul(info.caption), t.key)
-                paths = render_info_post(t, info, 123, "seoul.skin.picks", self.tmp / "r" / t.key, lib_years=self.lib.years)
+                if kind != "words":  # the words series teaches Korean on purpose
+                    self.assertFalse(has_hangul(info.caption), t.key)
+                paths = render_info_post(t, info, 123, "seoul.skin.picks", self.tmp / "r" / t.key, lib_years=self.lib.years,
+                                         lib=self.lib)
                 self.assertGreaterEqual(len(paths), 5, t.key)
                 self.assertLessEqual(len(paths), 10, t.key)
                 render_info_pin(t, info, 123, "seoul.skin.picks", self.tmp / "r" / f"{t.key}.jpg")

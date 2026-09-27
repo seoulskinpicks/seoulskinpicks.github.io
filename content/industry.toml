@@ -1,0 +1,18 @@
+# Industry watch ("What the K-beauty industry is betting on" series)
+#
+# Written once a month by the monthly Claude research task (1st of the month): what Korean
+# manufacturers (ODMs like Kolmar Korea, Cosmax), beauty expos (CPHI, in-cosmetics, Cosmoprof Asia)
+# and trade press are pushing now, before it reaches shelves.
+# The bot posts the newest issue once, if it is less than 45 days old.
+#
+# Format (add the newest issue at the TOP):
+#
+# [[issue]]
+# id = "2026-10"                      # year-month
+# date = "2026-10-01"
+# title = "What the K-beauty industry is betting on"
+# hook = "Ingredients makers are pitching for 2027"   # ≤ 54 characters
+# items = [
+#   { name = "Ingredient or tech", signal = "Where it showed up (≤ 70 chars)", why = "Why it matters to shoppers (≤ 140 chars)" },
+# ]                                    # 3–4 items
+# sources = ["https://...", "https://..."]            # at least 2 public pages

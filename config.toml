@@ -9,18 +9,39 @@ brand_name = "Seoul Skin Picks"                   # 링크 페이지 제목
 tagline = "Real K-beauty picks, chosen in Korea"  # 링크 페이지 한 줄 소개
 timezone = "Asia/Seoul"                           # 날짜 기준 시간대
 
+[series]
+# 주제별로 "한 달에 몇 번" 올릴지 정해요. 매일 이번 달 목표에서 가장 뒤처진 주제를 골라 올려요.
+#   per_month : 한 달 목표 횟수 (0 이면 끔)
+#   gap       : 같은 주제 사이 최소 간격 (일)
+#   day       : 이 요일에만 올림 ("mon" "tue" "wed" "thu" "fri" "sat" "sun")
+# 올릴 게 없는 주제는 자동으로 건너뛰고 다음 순서로 넘어가요.
+skin     = { per_month = 8, gap = 2 }        # 피부 성분 101 (한국에서 뜨는 것 ↔ 해외에서 뜨는 것 번갈아)
+product  = { per_month = 7, gap = 2 }        # 제품 픽 (K뷰티 / 알리 도구)
+weekly   = { per_month = 4, day = "thu" }    # 이번 주 K뷰티 TOP (네이버 검색 + 올리브영 글로벌), 매주 목요일
+hair     = { per_month = 3, gap = 5 }        # 모발·두피 성분 101
+routine  = { per_month = 2, gap = 10 }       # 고민별 루틴 (content/routines.toml)
+myth     = { per_month = 1, gap = 20 }       # 오해 vs 사실 4개 (성분 자료에서 자동)
+combo    = { per_month = 1, gap = 20 }       # 같이 써도 될까? 성분 궁합 (성분 자료에서 자동)
+industry = { per_month = 1, gap = 20 }       # 업계가 미는 성분 (매달 1일 Claude 조사 → content/industry.toml)
+recap    = { per_month = 1, gap = 20 }       # 지난달 베스트셀러 결산 (매달 1~10일, 주간 기록으로 자동)
+history  = { per_month = 1, gap = 20 }       # K뷰티 타임머신 (연도별 유행)
+versus   = { per_month = 1, gap = 20 }       # 서울 vs 해외
+season   = { per_month = 1, gap = 20 }       # 서울 계절 가이드 (계절이 바뀔 때 한 번)
+words    = { per_month = 1, gap = 20 }       # K뷰티 단어 (한글 + 읽는 법)
+
+[reels]
+# 릴스: 카드뉴스를 세로 영상(9:16)으로 만들어 음악과 함께 올리고, 바로 뒤에 같은 카드뉴스도 올려요 (그날 게시물 2개).
+#   auto   : 봇이 저작권 걱정 없는 자체 제작 음악(assets/music/)을 넣어 자동으로 올려요
+#   manual : 음악 없는 영상만 만들어 링크 페이지에 올려둬요 → 휴대폰으로 받아 인스타 앱에서 인기 음악을 붙여 직접 올리기
+#            (인스타 API로는 인스타 음악 라이브러리의 곡을 붙일 수 없어요). 카드뉴스는 그대로 자동 게시.
+#   off    : 릴스 안 만듦
+mode = "auto"
+days = ["tue", "thu", "sat"]      # 릴스 올리는 요일 (주 2~3번 추천)
+seconds_per_slide = 4.2          # 카드 한 장당 보여주는 시간 (초)
+audio_name = "Seoul Skin Picks · original sound"   # 릴스 소리 이름 (인스타에 표시)
+
 [schedule]
-# 요일별로 올릴 종류 (월 화 수 목 금 토 일 순서, 한국 날짜 기준). 정보가 주, 제품은 곁들이는 방향.
-#   skin_korea  : 피부 성분 101 — 한국에서 뜨는 성분 먼저 (예: PDRN, 쑥, 판테놀)
-#   skin_global : 피부 성분 101 — 해외에서 뜨는 성분 먼저 (예: NAD+, 달팽이, TXA)
-#   skin        : 피부 성분 101 — 순서대로 아무거나
-#   hair        : 모발·두피 성분 101 (예: 로즈마리, LPP, 두피 스케일링)
-#   weekly      : 이번 주 K뷰티 TOP — 네이버 검색 성분 TOP10 + 올리브영 글로벌 베스트셀러 TOP10 (우리 링크)
-#   versus      : 서울 vs 해외 — 조사해 둔 비교 (weekly 데이터가 없을 때 대신 올라가요)
-#   history     : K뷰티 타임머신 — 연도별로 뭐가 유행했는지 (처음엔 전체 타임라인)
-#   product     : 제품 픽 (아래 mode 순서로 K뷰티 / 알리 도구)
-# 성분·비교 글에도 그 성분이 들어간 올리브영 인기 제품이 자동으로 붙어요.
-# 내용은 content/ 폴더의 skin.toml · hair.toml · trends.toml (조사·출처 확인한 자료)에서 가져와요.
+# [series] 가 있으면 위 설정대로 올리고, 아래 weekly 는 [series] 를 지웠을 때만 써요 (요일별 계획).
 weekly = ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"]
 repeat_after_days = 120   # 정보 글을 다 쓰면, 올린 지 이 날짜가 지난 것부터 다시 올려요
 

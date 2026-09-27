@@ -396,11 +396,12 @@ def ing_know(t: Theme, d: dict, handle: str, idx: int, n: int) -> Card:
     return c
 
 
-def ing_products(t: Theme, d: dict, products: list[dict], number: int, handle: str, idx: int, n: int) -> Card:
+def ing_products(t: Theme, d: dict, products: list[dict], number: int, handle: str, idx: int, n: int,
+                 title: str | None = None) -> Card:
     c = Card(t)
     c.header(handle, idx, n)
     linked = any(p["links"] for p in products)
-    y = _title(c, "Where to find it", f"Products with {d['name']}", max_lines=2, size=76) + 44
+    y = _title(c, "Where to find it", title or f"Products with {d['name']}", max_lines=2, size=76) + 44
     items = products[:3]
     avail = H - 150 - y - (130 if linked else 100)
     gap = 26
@@ -830,8 +831,13 @@ def render_history(topic: Topic, info: InfoCopy, number: int, handle: str, lib_y
 
 
 # ---------------------------------------------------------------------------
-def render_info_post(topic: Topic, info: InfoCopy, number: int, handle: str, out_dir: Path, lib_years=None) -> list[Path]:
-    if topic.kind in ("skin", "hair"):
+def render_info_post(topic: Topic, info: InfoCopy, number: int, handle: str, out_dir: Path, lib_years=None,
+                     lib=None) -> list[Path]:
+    from .editorial import NEW_KINDS
+    if topic.kind in NEW_KINDS:
+        from .render_series import render_series_post
+        cards = render_series_post(topic, info, number, handle, lib)
+    elif topic.kind in ("skin", "hair"):
         cards = render_ingredient(topic, info, number, handle)
     elif topic.kind == "versus":
         cards = render_versus(topic, info, number, handle)
@@ -898,8 +904,12 @@ def _pin_footer(c: Card, text: str, handle: str, note: str):
 
 
 def render_info_pin(topic: Topic, info: InfoCopy, number: int, handle: str, out_path: Path) -> Path:
+    from .editorial import NEW_KINDS
     d = topic.data
-    if topic.kind in ("skin", "hair"):
+    if topic.kind in NEW_KINDS:
+        from .render_series import render_series_pin
+        c = render_series_pin(topic, info, number, handle)
+    elif topic.kind in ("skin", "hair"):
         t = ingredient_theme(d)
         c = Card(t, size=(PW, PH))
         _motif(c, d.get("area", "skin"), scale=0.95)

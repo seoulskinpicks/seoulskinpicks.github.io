@@ -61,7 +61,7 @@ class Instagram:
             data = self._req("GET", "me", fields="id,username")
         return str(data.get("user_id") or data["id"]), data.get("username", "")
 
-    def wait_ready(self, container_id: str, timeout: int = 300) -> None:
+    def wait_ready(self, container_id: str, timeout: int = 300, step: int = 5) -> None:
         waited = 0
         while True:
             data = self._req("GET", container_id, fields="status_code,status")
@@ -71,9 +71,9 @@ class Instagram:
             if code in ("ERROR", "EXPIRED"):
                 raise IGError(f"컨테이너 처리 실패: {data.get('status', code)}")
             if waited >= timeout:
-                raise IGError("인스타 처리 시간이 너무 오래 걸려요 (5분 초과)")
-            self.sleep(5)
-            waited += 5
+                raise IGError(f"인스타 처리 시간이 너무 오래 걸려요 ({timeout // 60}분 초과)")
+            self.sleep(step)
+            waited += step
 
     def publish_carousel(self, ig_id: str, image_urls: list[str], caption: str) -> dict:
         if not 2 <= len(image_urls) <= 10:
@@ -96,6 +96,27 @@ class Instagram:
         log(f"인스타 게시 완료: {permalink or media_id}")
         return {"media_id": media_id, "permalink": permalink}
 
+    def publish_reel(self, ig_id: str, video_url: str, caption: str, cover_url: str = "", audio_name: str = "",
+                     share_to_feed: bool = True) -> dict:
+        """Video Reel (also shown on the profile grid). Instagram downloads and processes the video first."""
+        params = {"media_type": "REELS", "video_url": video_url, "caption": caption,
+                  "share_to_feed": "true" if share_to_feed else "false"}
+        if cover_url:
+            params["cover_url"] = cover_url
+        if audio_name:
+            params["audio_name"] = audio_name
+        container = self._req("POST", f"{ig_id}/media", **params)
+        self.wait_ready(container["id"], timeout=900, step=10)
+        published = self._req("POST", f"{ig_id}/media_publish", creation_id=container["id"])
+        media_id = published["id"]
+        permalink = ""
+        try:
+            permalink = self._req("GET", media_id, fields="permalink").get("permalink", "")
+        except IGError:
+            pass
+        log(f"릴스 게시 완료: {permalink or media_id}")
+        return {"media_id": media_id, "permalink": permalink}
+
     def refresh_token(self) -> dict:
         """Extends a long-lived Instagram token by another 60 days."""
         r = self.http.get(
@@ -109,8 +130,8 @@ class Instagram:
         return data
 
 
-def wait_for_urls(urls: list[str], timeout: int = 300, session=None, sleep=time.sleep) -> None:
-    """GitHub Pages can take a minute after deploy; make sure every image is live first."""
+def wait_for_urls(urls: list[str], timeout: int = 300, session=None, sleep=time.sleep, kinds=("image/",)) -> None:
+    """GitHub Pages can take a minute after deploy; make sure every image (or video) is live first."""
     http = session or requests
     waited = 0
     pending = list(urls)
@@ -119,7 +140,7 @@ def wait_for_urls(urls: list[str], timeout: int = 300, session=None, sleep=time.
         for u in pending:
             try:
                 r = http.get(u, timeout=20)
-                if r.status_code == 200 and r.headers.get("content-type", "").startswith("image/"):
+                if r.status_code == 200 and r.headers.get("content-type", "").startswith(kinds):
                     continue
             except Exception:
                 pass

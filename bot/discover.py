@@ -80,6 +80,8 @@ def run_discover(cfg, state, today: str, ali_client=None, session=None, sleep=ti
     if fetched and not dry_run:
         from .editorial import save_catalog
         save_catalog(cfg, [it for it in fetched if it["list"] in catalog_lists], today)
+        from .series import save_snapshot
+        save_snapshot(cfg, [it for it in fetched if it["list"] in catalog_lists], today)  # for the monthly recap
         log(f"성분 글용 제품 목록 저장: {sum(1 for it in fetched if it['list'] in catalog_lists)}개 (data/oy_catalog.json)")
     items = [it for it in fetched if it["list"] in queue_lists and it["rank"] <= top_n]
     if not dry_run:  # this week's numbers for the Thursday post (Naver search trends + bestseller moves)

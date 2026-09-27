@@ -12,9 +12,14 @@ on:
         type: boolean
         default: true
       source:
-        description: "올릴 종류 (auto = 요일별 계획대로 · skin/hair/versus/history = 정보 글 · product/kbeauty/tools = 제품 · site = 링크 페이지만)"
+        description: "올릴 종류 (auto = config [series] 계획대로 · 나머지 = 그 종류로 · site = 링크 페이지만)"
         type: choice
-        options: [auto, weekly, skin, hair, versus, history, product, kbeauty, tools, site]
+        options: [auto, weekly, skin, hair, routine, myth, combo, season, words, recap, industry, versus, history, product, kbeauty, tools, site]
+        default: auto
+      reel:
+        description: "릴스 (auto = config [reels] 요일대로 · yes = 오늘 릴스도 · no = 카드뉴스만)"
+        type: choice
+        options: [auto, "yes", "no"]
         default: auto
 
 permissions:
@@ -29,7 +34,7 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 45   # AI 재시도(5초·1분·5분) 여유 포함
+    timeout-minutes: 60   # AI 재시도(5초·1분·5분) + 릴스 영상 처리(최대 15분) 여유 포함
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -64,7 +69,7 @@ jobs:
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
-          ARGS="--out site --source ${{ inputs.source || 'auto' }}"
+          ARGS="--out site --source ${{ inputs.source || 'auto' }} --reel ${{ inputs.reel || 'auto' }}"
           if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           python -m bot prepare $ARGS
 
@@ -90,6 +95,7 @@ jobs:
           path: |
             site/posts
             site/pins
+            site/reels
             pins/*.jpg
           retention-days: 14
 
