@@ -1,95 +1,46 @@
-# Gemini (free) research drafts, 2026-09-27. NOT posted unless merged into content/.
+# Gemini (free) research drafts, 2026-09-28. NOT posted unless merged into content/.
 
-# PASS
-[[ingredient]]
-id = "hyaluronic-acid"
-name = "Hyaluronic Acid"
-full_name = "Hyaluronic Acid"
-nickname = "Hyaluronan"
-area = "skin"
-heat = "global"
-heat_note = "A top seller in global K-beauty serums and toners"
-hot_since = 2023
-hook = "A natural component found widely in epithelial tissue"
-what_it_is = "An anionic, nonsulfated glycosaminoglycan naturally distributed throughout the body's connective and epithelial tissues, popular in global skincare serums and toners."
-origin = "Naturally occurring in human epithelial tissues"
-benefits = [
-  "Supports epithelial tissues, including the outer skin layer",
-  "Helps supplement the body's natural glycosaminoglycans",
-  "May assist skin when applied via low molecular serums",
-]
-best_for = ["Epithelial tissue support", "Topical serum applications", "K-beauty routine integration"]
-when = "AM & PM"
-how_to_use = [
-  "Apply as a low molecular serum or toner to the skin",
-  "Gently pat into epithelial skin tissues until absorbed",
-  "Follow with a water-fit sun serum during daytime use",
-]
-pairs_with = ["Centella", "PDRN"]
-avoid_with = []
-good_to_know = [
-  "It is unique among glycosaminoglycans as it is non-sulfated",
-  "Naturally forms in the plasma membrane instead of the Golgi apparatus",
-  "Topical products use various forms like low molecular weight",
-]
-myth = "It only exists as a synthetic ingredient manufactured for skincare products"
-fact = "It is a natural substance distributed widely throughout human connective, epithelial, and neural tissues"
-keywords = ["hyaluronic", "hyalu", "hyaluron"]
-examples = [
-  {brand = "Anua", product = "PDRN Hyaluronic Capsule 100 Serum 30ml Refill"},
-  {brand = "Torriden", product = "Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill"},
-  {brand = "WELLAGE", product = "Real Hyaluronic 100 Toner 300mL"},
-]
-hashtags = ["#hyaluronicacid", "#hyaluronan", "#kbeauty", "#skincare"]
-sources = [
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA230518746",
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969",
-  "https://en.wikipedia.org/wiki/Hyaluronic_acid",
-]
-
-# FAIL: heat_note 너무 김 (60>50)
+# FAIL: heat_note 너무 김 (51>50)
 [[ingredient]]
 id = "squalane"
 name = "Squalane"
 full_name = "Squalane"
-nickname = "Skin hydrator"
+nickname = "Saturated squalene"
 area = "skin"
 heat = "global"
-heat_note = "Featured in bestselling essentials and creams on Olive Young"
+heat_note = "Featured in Olive Young Global bestseller formulas."
 hot_since = 2023
-hook = "Why this gentle hydrator suits modern skin routines."
-what_it_is = "A colorless hydrocarbon and hydrogenated derivative of squalene used in cosmetics as an emollient and moisturizer."
-origin = "Derived from nature"
+hook = "A stable emollient that locks in skin moisture."
+what_it_is = "Squalane is a colorless, fully saturated hydrocarbon derived from nature. It is widely utilized as an effective emollient and moisturizer in cosmetics."
+origin = "Naturally derived hydrogenated squalene."
 benefits = [
-  "Acts as an emollient to soften skin",
-  "Moisturizes the skin surface",
-  "Provides reliable hydration without easy oxidation",
+  "Acts as an emollient to soften and condition skin.",
+  "Helps moisturize and nourish the skin surface.",
+  "Provides stable hydration resistant to auto-oxidation.",
 ]
-best_for = ["Dry skin", "Daily moisturization"]
+best_for = ["Dry skin", "Dehydrated skin"]
 when = "AM & PM"
 how_to_use = [
-  "Dispense a suitable amount of your squalane product.",
-  "Apply evenly across your face.",
-  "Gentle pat into skin until fully absorbed.",
+  "Dispense a few drops of serum onto cleansed skin.",
+  "Smooth evenly over the face and neck area.",
+  "Follow with a moisturizing cream to seal in hydration.",
 ]
-pairs_with = []
+pairs_with = ["Aqua", "Water"]
 avoid_with = []
 good_to_know = [
-  "It is not subject to auto-oxidation due to complete saturation.",
-  "Commercial samples are derived from nature.",
-  "It serves as a cost-effective cosmetic ingredient.",
+  "Unlike squalene, it is completely saturated and does not oxidize easily.",
+  "Commercial cosmetic squalane is commonly derived from nature.",
 ]
-myth = "Squalane easily oxidizes on the skin surface like raw squalene."
-fact = "Unlike squalene, the complete saturation of squalane means it is not subject to auto-oxidation."
+myth = "Squalane quickly oxidizes and degrades when exposed to air."
+fact = "Because squalane is fully saturated, it is not subject to auto-oxidation like squalene."
 keywords = ["squalane"]
 examples = [
   {brand = "S.NATURE", product = "Aqua Squalane Essentials"},
   {brand = "S.NATURE", product = "Aqua Squalane Moisturizing Cream 60ml"},
   {brand = "S.NATURE", product = "Aqua Squalane Serum 50mL"},
 ]
-hashtags = ["#Squalane", "#SkinHydration", "#Moisturizer"]
+hashtags = ["#squalane", "#emollient", "#moisturizer"]
 sources = [
-  "https://global.oliveyoung.com/product/detail?prdtNo=GS260943907",
   "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
   "https://global.oliveyoung.com/product/detail?prdtNo=GA230719556",
   "https://en.wikipedia.org/wiki/Squalane",
@@ -97,84 +48,125 @@ sources = [
 
 # PASS
 [[ingredient]]
-id = "birch-sap"
-name = "Birch Sap"
-full_name = "Birch Juice"
-nickname = "Birch Water"
+id = "hyaluronic-acid"
+name = "Hyaluronic Acid"
+full_name = "Hyaluronan"
+nickname = "HA"
 area = "skin"
 heat = "global"
-heat_note = "Featured in top-selling global sun and pad lines"
-hot_since = 2022
-hook = "The natural tree sap that floods skin with hydration"
-what_it_is = "A nutrient-rich sap directly tapped from birch trees, used in skincare to deliver deep, lightweight moisture to the skin."
-origin = "Tapped directly from birch trees like Betula pendula"
+heat_note = "Featured in top Global Olive Young bestsellers"
+hot_since = 2018
+hook = "Can this naturally occurring molecule plump skin?"
+what_it_is = "A naturally occurring glycosaminoglycan found throughout the body's connective and epithelial tissues, widely used in hydrating cosmetics."
+origin = "Found naturally in human connective tissues"
 benefits = [
-  "Helps deliver deep, lightweight hydration to dry skin",
-  "Supports a refreshed and moisturized skin barrier",
-  "May help soothe and cool skin when used in pads or serums",
+  "Supports skin hydration and moisture retention",
+  "Helps improve skin elasticity and texture",
+  "May help reduce the appearance of wrinkle depth",
 ]
-best_for = ["Dehydrated skin", "Dry skin types", "Sensitive skin"]
+best_for = ["Dehydrated skin", "Loss of skin elasticity", "Uneven skin texture"]
 when = "AM & PM"
 how_to_use = [
-  "Apply a birch juice serum or moisturizer to clean skin",
-  "Gently pat into the skin to support absorption",
-  "Follow with a birch juice sunscreen during the day",
+  "Apply a toner or serum containing hyaluronic acid to clean skin",
+  "Gently pat into the face until fully absorbed",
+  "Follow with a moisturizer or sun serum to lock in hydration",
 ]
-pairs_with = ["Sunscreen", "Moisturizers"]
+pairs_with = ["Centella", "PDRN", "Vitamin C"]
 avoid_with = []
 good_to_know = [
-  "It is a popular ingredient in global bestselling sunscreens and soothing pads",
-  "Directly tapped from various birch tree species like Betula pubescens",
-  "Scientific evidence on its long-term skin benefits remains limited",
+  "Formulas vary, including low molecular weight options designed for skin absorption.",
+  "Often combined with ingredients like centella or PDRN in bestselling daily serums.",
 ]
-myth = "Birch sap is only useful as a drinking beverage and has no topical benefits."
-fact = "It serves as an excellent, lightweight hydrating base in modern global skincare products."
+myth = "All hyaluronic acid skincare acts identically regardless of molecular size."
+fact = "Formulations utilize different forms, such as low molecular weights, which may affect product performance."
+keywords = ["hyaluronic", "hyalu", "hyaluron"]
+examples = [
+  {brand = "Anua", product = "PDRN Hyaluronic Capsule 100 Serum 30ml Refill"},
+  {brand = "Torriden", product = "Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill"},
+  {brand = "WELLAGE", product = "Real Hyaluronic 100 Toner 300mL"},
+]
+hashtags = ["#hyaluronicacid", "#skinhydration", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969",
+  "https://pubmed.ncbi.nlm.nih.gov/40911749/",
+  "https://pubmed.ncbi.nlm.nih.gov/30287361/",
+]
+
+# FAIL: heat_note 너무 김 (51>50); fact 너무 김 (111>110); good_to_know 항목 너무 김: Evidence is thin regarding spe…
+[[ingredient]]
+id = "birch-juice"
+name = "Birch Juice"
+full_name = "Betula Platyphylla Japonica Juice"
+nickname = "Asian White Birch"
+area = "skin"
+heat = "global"
+heat_note = "Featured in Olive Young Global bestseller products."
+hot_since = 2022
+hook = "Is Birch Juice the secret to lasting skin moisture?"
+what_it_is = "Birch juice is a botanical extract derived from birch trees. It is commonly used in K-beauty formulations to help hydrate and nourish the skin."
+origin = "Asia"
+benefits = ["Supports skin hydration", "Nourishes the skin barrier", "Provides moisturizing benefits"]
+best_for = ["Dry skin", "Dehydrated skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after cleansing your face.",
+  "Gently pat into skin until absorbed.",
+  "Follow with your favorite moisturizer or sunscreen.",
+]
+pairs_with = ["Sunscreen", "Serum", "Moisturizer"]
+avoid_with = []
+good_to_know = [
+  "Sourced from the Betula platyphylla tree species found in temperate and subarctic Asia.",
+  "Evidence is thin regarding specific active constituents beyond basic moisturizing properties.",
+]
+myth = "Birch juice completely replaces the need for drinking water."
+fact = "Betula platyphylla, known as the Asian white birch, grows up to 30 metres tall in regions like Korea and Japan."
 keywords = ["birch juice"]
 examples = [
   {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sunscreen 50ml"},
   {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sun Serum 50ml"},
   {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sun Cushion 15g"},
 ]
-hashtags = ["#birchsap", "#birchjuice", "#kbeauty", "#hydration"]
+hashtags = ["#BirchJuice", "#KBeauty", "#SkinHydration"]
 sources = [
   "https://global.oliveyoung.com/product/detail?prdtNo=GA250430113",
   "https://global.oliveyoung.com/product/detail?prdtNo=GA260238011",
-  "https://en.wikipedia.org/wiki/Birch_sap",
+  "https://en.wikipedia.org/wiki/Betula_platyphylla",
 ]
 
 # PASS
 [[ingredient]]
 id = "mung-bean"
 name = "Mung Bean"
-full_name = "Mung Bean Extract"
+full_name = "Vigna Radiata Seed Extract"
 nickname = "Green Gram"
 area = "skin"
 heat = "global"
-heat_note = "Featured in top-selling global cleansing products"
+heat_note = "Powers top-selling global K-beauty cleansers"
 hot_since = 2021
-hook = "The traditional legume powering modern daily cleansers"
-what_it_is = "A plant species in the legume family native to Asia, traditionally used in food and now featured in popular pore-clearing and pH-balanced cleansing skincare."
+hook = "The gentle legume powering your daily deep cleanse"
+what_it_is = "An extract from the green gram legume, traditionally grown in Asia, now popular in skincare for its soothing and purifying properties."
 origin = "East, Southeast, and South Asia"
 benefits = [
-  "Helps support a gentle, pH-balanced daily cleanse",
-  "May assist in clearing pores when used in clay masks",
-  "Supports double cleansing routines to remove impurities",
+  "Helps support antioxidant protection for the skin",
+  "May help soothe skin with anti-inflammatory properties",
+  "Supports gentle pore purification and cleansing",
 ]
-best_for = ["Gentle daily cleansing", "Pore care routines", "Double cleansing"]
+best_for = ["Congested skin", "Sensitive skin", "Daily cleansing"]
 when = "AM & PM"
 how_to_use = [
-  "Apply a mung bean cleansing foam to damp skin",
-  "Gently massage in circular motions to cleanse pores",
+  "Apply a mung bean cleanser to damp skin",
+  "Gently massage in circular motions to lift impurities",
   "Rinse thoroughly with lukewarm water",
 ]
-pairs_with = ["Clay", "Cleansing oil"]
+pairs_with = ["Clay", "Water"]
 avoid_with = []
 good_to_know = [
-  "Clinical evidence for its topical skin benefits remains limited in major databases.",
-  "Commonly formulated in wash-off products like cleansing foams and clay masks.",
+  "Commonly featured in pH-balanced cleansing foams and pore clay masks",
+  "Polysaccharides in its skin are known for antioxidant and soothing benefits",
 ]
-myth = "Mung beans can instantly cure acne or permanently shrink your pores."
-fact = "While popular in cleansers, topical mung bean benefits are mostly supported by user reviews, not clinicals."
+myth = "Mung bean skincare is only useful for oily or acne-prone skin types"
+fact = "Its pH-balanced and soothing properties make it highly suitable for dry and sensitive skin too"
 keywords = ["mung bean"]
 examples = [
   {brand = "beplain", product = "Mung Bean pH-Balanced Cleansing Foam 160ML+40ML"},
@@ -185,226 +177,232 @@ hashtags = ["#mungbean", "#kbeauty", "#doublecleansing"]
 sources = [
   "https://global.oliveyoung.com/product/detail?prdtNo=GS260943993",
   "https://global.oliveyoung.com/product/detail?prdtNo=GA230719603",
+  "https://pubmed.ncbi.nlm.nih.gov/40334879/",
   "https://en.wikipedia.org/wiki/Mung_bean",
 ]
 
 # PASS
 [[ingredient]]
-id = "aloe-vera"
-name = "Aloe vera"
-full_name = "Aloe Vera"
-nickname = "Succulent plant extract"
+id = "carrot"
+name = "Carrot"
+full_name = "Carrot Carotene"
+nickname = "Beta-Carotene"
 area = "skin"
 heat = "global"
-heat_note = "A global bestseller in soothing gels and creams"
-hot_since = 2021
-hook = "The classic succulent for soothing and moisture"
-what_it_is = "A widely distributed succulent plant species of the genus Aloe known for its moisture-storing properties."
-origin = "Widely distributed succulent plant"
+heat_note = "Bestselling product on Olive Young Global"
+hot_since = 2024
+hook = "Soften and calm skin with carrot"
+what_it_is = "A root vegetable extract rich in beta-carotene, which is a natural source of vitamin A used in calming skincare formulas."
+origin = "Root vegetable in the umbellifer family Apiaceae"
 benefits = [
-  "Helps soothe and calm irritated skin",
-  "Supports skin moisture retention",
-  "May provide a cooling sensation to the skin",
+  "Supports skin calming and soothing",
+  "Provides rich vitamin A nourishment",
+  "Helps maintain comfortable skin",
 ]
-best_for = ["Dry skin", "Sun-exposed skin", "Sensitive skin"]
+best_for = ["Calming care", "Daily soothing"]
 when = "AM & PM"
 how_to_use = [
-  "Apply evenly to areas needing moisture or soothing",
-  "Gently pat into the skin for better absorption",
-  "Use daily as part of your skincare routine",
+  "Take a calming water pad from the container.",
+  "Gently place or wipe over the skin.",
+  "Pat remaining essence gently until absorbed.",
 ]
-pairs_with = ["Sunscreen", "Soothing Gel"]
+pairs_with = ["Water"]
 avoid_with = []
 good_to_know = [
-  "It is considered an invasive species in many regions of the world",
-  "Commonly formulated in global bestselling soothing gels and sun creams",
+  "Carrots are typically orange due to beta-carotene content.",
+  "Heirloom variants may be white, yellow, red, purple, or black.",
 ]
-myth = "Aloe vera is only useful after sunburns"
-fact = "It is a widely distributed succulent that provides daily moisture and soothing benefits"
-keywords = ["aloe"]
+myth = "Carrot skincare instantly cures all skin irritations overnight."
+fact = "Carrots are biennial plants and serve as a rich source of vitamin A derived from beta-carotene."
+keywords = ["carrot"]
 examples = [
-  {brand = "COSRX", product = "Aloe Soothing Sun Cream SPF50+"},
-  {brand = "Shingmulnara", product = "Jeju Aloe Moisture Soothing Gel Double Set 200mL"},
+  {brand = "SKINFOOD", product = "Carrot Carotene Calming Water Pad 60P"},
+  {brand = "SKINFOOD", product = "Carrot Carotene Calming Water Pad 60P Double Pack"},
 ]
-hashtags = ["#aloevera", "#soothingskin", "#moisturegel"]
+hashtags = ["#CarrotCarotene", "#Skincare", "#CalmingWaterPad"]
 sources = [
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA210000531",
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA240121623",
-  "https://en.wikipedia.org/wiki/Aloe_vera",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240624146",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260539895",
+  "https://en.wikipedia.org/wiki/Carrot",
 ]
 
 # PASS
 [[ingredient]]
-id = "camellia"
-name = "Camellia"
-full_name = "Camellia Extract"
-nickname = "Asian Tea Flower"
+id = "retinol"
+name = "Retinol"
+full_name = "Retinol"
+nickname = "Vitamin A"
 area = "skin"
 heat = "global"
-heat_note = "Featured in Olive Young Global bestsellers"
+heat_note = "A top-selling ingredient in global K-beauty."
 hot_since = 2023
-hook = "A traditional Asian botanical for gentle skin support"
-what_it_is = "Camellia is a genus of flowering plants native to Asia, used in skincare products like sun sticks and sheet masks to support the skin."
-origin = "Tropical and subtropical areas in eastern and southern Asia"
+hook = "The gold standard for supporting naturally aging skin"
+what_it_is = "A fat-soluble form of vitamin A used in skincare. It acts as an antioxidant to help support skin health and improve the appearance of naturally aging skin."
+origin = "Derived as a metabolite of retinyl esters."
 benefits = [
-  "Used in matte sun sticks to help support a non-greasy finish",
-  "Featured in lifting gel masks to help support skin elasticity",
-  "Provides gentle botanical care suitable for daily routines",
+  "Helps improve the appearance of naturally aged skin",
+  "Supports skin health as a potent antioxidant",
+  "May help support skin tightening and lifting effects",
 ]
-best_for = ["Those seeking matte finishes", "Lifting and firming routines"]
-when = "AM & PM"
+best_for = ["Naturally aging skin", "Loss of skin elasticity", "Dull skin"]
+when = "Daily"
 how_to_use = [
-  "Apply as part of a matte sun stick during your morning routine",
-  "Use within a lifting gel mask sheet for targeted skin support",
-  "Pat any remaining essence gently into the skin until absorbed",
+  "Apply a small amount of retinol serum or cream to clean skin.",
+  "Gently pat around the face or eye area until fully absorbed.",
+  "Follow with a moisturizer to keep the skin hydrated.",
 ]
-pairs_with = ["Mugwort", "Collagen"]
+pairs_with = ["Collagen", "NAD"]
 avoid_with = []
 good_to_know = [
-  "Specific clinical skin benefits of camellia are not detailed in the provided sources.",
-  "It is a popular ornamental and tea plant cultivated in Asia for centuries.",
+  "It is a fat-soluble vitamin valued for its antioxidant properties.",
+  "Commonly featured in lifting masks, eye creams, and serums.",
 ]
-myth = "Camellia can instantly erase wrinkles or permanently lift sagging skin."
-fact = "It is a botanical extract that supports skin comfort when formulated in masks and sunscreens."
-keywords = ["camelia", "camellia"]
+myth = "Retinol is only beneficial when consumed through dietary food sources."
+fact = "Topical retinol helps support skin health and helps improve the appearance of naturally aging skin."
+keywords = ["retinol"]
 examples = [
-  {brand = "ROUND LAB", product = "Camellia Deep Collagen V Lifting Gel Mask Sheet 4ea"},
+  {brand = "numbuzin", product = "No.9 NAD Retinol Volumetox Eye Cream 10ml"},
+  {brand = "MEDIHEAL", product = "Retinol Collagen Cream Lifting Mask Sheet 4P"},
+  {brand = "celimax", product = "The Vita A Retinol Shot Tightening Serum 30ml"},
 ]
-hashtags = ["#camellia", "#kbeauty", "#skincare"]
+hashtags = ["#retinol", "#kbeauty", "#antiaging", "#skincare"]
 sources = [
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA230117319",
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA250631260",
-  "https://en.wikipedia.org/wiki/Camellia",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250631809",
+  "https://pubmed.ncbi.nlm.nih.gov/38002296/",
+  "https://pubmed.ncbi.nlm.nih.gov/17515510/",
 ]
 
 # PASS
 [[ingredient]]
 id = "algae"
 name = "Algae"
-full_name = "Algae Extract"
+full_name = "Macroalgae"
 nickname = "Seaweed"
 area = "hair"
 heat = "global"
-heat_note = "Featured in Olive Young Global bestsellers."
+heat_note = "Olive Young Global bestseller in hair treatments"
 hot_since = 2024
-hook = "The marine secret to mineral-rich hair care."
-what_it_is = "Algae are diverse photosynthetic aquatic organisms, ranging from microscopic microalgae to large seaweeds, known for their mineral-rich properties in hair care."
-origin = "Aquatic environments, including oceans and freshwater"
+hook = "Can ocean algae upgrade your daily hair wash routine?"
+what_it_is = "Algae refers to marine organisms, including red, brown, and green seaweeds, featured in hair care products like mineral shampoos and leave-in treatments."
+origin = "Marine environments (red, brown, and green seaweeds)"
 benefits = [
-  "Helps deliver essential marine minerals to the hair",
-  "Supports hair therapy through mineral-rich formulas",
-  "Provides gentle aquatic nourishment for daily care",
+  "Cleanses hair and scalp when formulated in shampoos",
+  "Helps condition strands in leave-in hair treatments",
+  "Delivers mineral-based care to hair routines",
 ]
-best_for = ["Mineral hair therapy", "Daily hair care"]
+best_for = ["Daily hair cleansing", "Leave-in hair care", "Mineral scalp routines"]
 when = "Every wash"
 how_to_use = [
-  "Apply the algae-infused mineral shampoo to wet hair and lather",
-  "Rinse thoroughly with lukewarm water",
-  "Follow with a no-wash algae treatment on damp hair",
+  "Apply shampoo to wet scalp and hair, massaging gently",
+  "Rinse thoroughly with water before conditioning",
+  "Apply no-wash treatment evenly to damp strands without rinsing",
 ]
-pairs_with = ["Sea Silt", "Marine Minerals"]
+pairs_with = ["Minerals", "Kelp"]
 avoid_with = []
 good_to_know = [
-  "Evidence on specific hair benefits is limited, but it is popular in mineral therapy.",
-  "Algae ranges from microscopic unicellular microalgae to large seaweeds.",
+  "Specific hair care evidence remains limited in general listings.",
+  "Available in both rinse-off shampoo and no-wash treatment forms.",
 ]
-myth = "All algae used in hair products are harvested from the deep ocean."
-fact = "Some algae are freshwater species, such as Charophyta, rather than marine seaweeds."
+myth = "Algae can instantly transform or repair damaged hair."
+fact = "Algae is a marine ingredient utilized in shampoos and treatments to support regular hair care routines."
 keywords = ["algae"]
 examples = [
   {brand = "growus", product = "Algae Therapy Mineral Shampoo 500ml"},
   {brand = "growus", product = "Algae Therapy Mineral No-Wash Treatment 150ml"},
 ]
-hashtags = ["#algae", "#hairtherapy", "#mineralshampoo"]
+hashtags = ["#algae", "#haircare", "#scalpcare"]
 sources = [
   "https://global.oliveyoung.com/product/detail?prdtNo=GA240925617",
   "https://global.oliveyoung.com/product/detail?prdtNo=GA240925616",
-  "https://en.wikipedia.org/wiki/Algae",
+  "https://en.wikipedia.org/wiki/Seaweed",
 ]
 
 # PASS
 [[ingredient]]
-id = "tea-tree-oil"
-name = "Tea Tree Oil"
-full_name = "Melaleuca Alternifolia Leaf Oil"
-nickname = "Melaleuca Oil"
+id = "amino-acids"
+name = "Amino Acids"
+full_name = "Amino Acids"
+nickname = "Protein Building Blocks"
 area = "hair"
 heat = "global"
-heat_note = "Bestselling scalp scaler ingredient on Olive Young"
-hot_since = 2023
-hook = "The refreshing essential oil for scalp scaling"
-what_it_is = "An essential oil derived from the leaves of the Australian Melaleuca alternifolia tree, known for its fresh, camphoraceous odor and use in scalp care."
-origin = "Queensland and New South Wales, Australia"
+heat_note = "A global bestseller in hair repair treatments"
+hot_since = 2025
+hook = "The building blocks for stronger-looking hair"
+what_it_is = "Organic compounds that serve as the building blocks of proteins, helping to support keratin structure stabilization and hair fiber repair."
+origin = "Organic compounds found in nature and proteins"
 benefits = [
-  "Helps refresh the scalp with its natural camphoraceous scent",
-  "Supports scalp scaling to help cleanse the hair roots",
-  "May help clarify the scalp when formulated in water scalers",
+  "Helps support keratin structure stabilization",
+  "Supports hair fiber repair",
+  "Helps maintain healthy-looking hair proteins",
 ]
-best_for = ["Scalp buildup", "Scalp care"]
-when = "Weekly"
-how_to_use = [
-  "Apply the tea tree scaler directly to your wet scalp",
-  "Gently massage the scalp to help scale away buildup",
-  "Rinse thoroughly with warm water before shampooing",
-]
-pairs_with = ["Water", "Cleansing agents"]
-avoid_with = []
-good_to_know = [
-  "Its composition changes and it oxidizes if exposed to air",
-  "Derived from the leaves of the Melaleuca alternifolia tree",
-  "Store in a tightly sealed container to prevent oxidation",
-]
-myth = "Tea tree oil is completely stable and never changes its composition"
-fact = "The oil oxidizes and its chemical composition changes when it is exposed to air"
-keywords = ["tea tree", "tea-tree"]
-examples = [
-  {brand = "STEAMBASE", product = "Tea Tree Scalp Water Scaler 250mL"},
-]
-hashtags = ["#teatreeoil", "#scalpcare", "#scalpscaling"]
-sources = [
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA230819985",
-  "https://en.wikipedia.org/wiki/Tea_tree_oil",
-]
-
-# PASS
-[[ingredient]]
-id = "moringa"
-name = "Moringa"
-full_name = "Moringa Oleifera"
-nickname = "Drumstick Tree"
-area = "hair"
-heat = "global"
-heat_note = "Featured in Olive Young Global bestsellers."
-hot_since = 2023
-hook = "A natural extract for scalp and hair care."
-what_it_is = "An extract from the Moringa oleifera tree, native to northern India, used in modern hair care formulations like scalp vinegars."
-origin = "Northern India"
-benefits = [
-  "Helps support a clean and refreshed scalp environment.",
-  "May assist in maintaining overall hair and scalp health.",
-  "Known to complement scalp-purifying hair care routines.",
-]
-best_for = ["Scalp care", "Hair care routines"]
+best_for = ["Damaged hair", "Weak hair fibers"]
 when = "Every wash"
 how_to_use = [
-  "Apply directly to the scalp after shampooing.",
-  "Gently massage into the scalp and hair.",
-  "Rinse thoroughly with lukewarm water.",
+  "Apply to wet hair after shampooing",
+  "Massage gently into hair fibers",
+  "Rinse thoroughly with water",
 ]
-pairs_with = ["Hair vinegar", "Shampoo"]
+pairs_with = ["Peptides", "Collagen"]
 avoid_with = []
 good_to_know = [
-  "Specific clinical studies on moringa for hair are limited in the provided text.",
-  "Derived from a drought-resistant tree native to northern India.",
+  "Often paired with collagen peptides to support hair fiber repair",
+  "Only 22 of the over 500 natural amino acids are built into proteins",
 ]
-myth = "Moringa can instantly regrow hair or cure scalp conditions."
-fact = "Moringa is featured in global scalp care products, but scientific evidence for hair is still limited."
-keywords = ["moringa"]
+myth = "All amino acids found in nature are used to build hair proteins"
+fact = "While over 500 amino acids exist, only 22 specific alpha-amino acids are incorporated into proteins"
+keywords = ["amino"]
 examples = [
-  {brand = "ORJENA", product = "Moringa Scalp Perfect Hair Vinegar 190ml"},
+  {brand = "ELASTINE", product = "Amino Peptide Treatment 300ml"},
 ]
-hashtags = ["#moringa", "#scalpcare", "#haircare"]
+hashtags = ["#aminoacids", "#hairrepair", "#haircare"]
 sources = [
-  "https://global.oliveyoung.com/product/detail?prdtNo=GA260741556",
-  "https://en.wikipedia.org/wiki/Moringa_oleifera",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250530912",
+  "https://en.wikipedia.org/wiki/Amino_acid",
+  "https://pubmed.ncbi.nlm.nih.gov/40219297/",
+]
+
+# PASS
+[[ingredient]]
+id = "keratin"
+name = "Keratin"
+full_name = "Keratin"
+nickname = "Hair Structural Protein"
+area = "hair"
+heat = "global"
+heat_note = "Featured in Olive Young Global bestseller booster."
+hot_since = 2023
+hook = "The secret to restoring hair strength and surface."
+what_it_is = "A tough, structural fibrous protein naturally found in hair and skin that helps protect cells from damage and stress."
+origin = "Animal-derived or plant-based alternatives"
+benefits = [
+  "Helps support hair fiber repair",
+  "May restore the hair surface and strength",
+  "Helps protect cells from damage and stress",
+]
+best_for = ["Damaged hair", "Weak hair fibers"]
+when = "Every wash"
+how_to_use = [
+  "Mix the keratin booster powder with your hair treatment",
+  "Apply evenly to wet hair after shampooing",
+  "Rinse thoroughly with water after use",
+]
+pairs_with = ["Amino acids", "Collagen peptides"]
+avoid_with = []
+good_to_know = [
+  "Naturally extremely insoluble in water and organic solvents",
+  "Can be paired with collagen peptides to stabilize hair structure",
+  "Plant-based keratin alternatives can also support surface restoration",
+]
+myth = "Keratin is completely water-soluble and easily washes away."
+fact = "Keratin is highly insoluble in water, helping it remain in hair to support structural repair."
+keywords = ["keratin"]
+examples = [
+  {brand = "FROMLABS", product = "Hair Treatment Booster Powder for Intensive Keratin Care 2g"},
+]
+hashtags = ["#keratin", "#hairrepair", "#haircare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA251236004",
+  "https://en.wikipedia.org/wiki/Keratin",
+  "https://pubmed.ncbi.nlm.nih.gov/37177356/",
+  "https://pubmed.ncbi.nlm.nih.gov/40219297/",
 ]
