@@ -67,6 +67,52 @@ class SeriesTests(unittest.TestCase):
         for a, b in zip(picks, picks[1:]):
             self.assertFalse(a == b and a != "weekly", (a, b))
 
+    def test_two_posts_a_day(self):
+        self.cfg.raw["schedule"]["posts_per_day"] = 2
+        st = State(self.tmp / "sim2.json")
+        d = date(2026, 10, 1)
+        for i in range(31):
+            day_series = []
+            for slot in range(2):
+                plan, steps = series.plan_order(self.cfg, st, d)
+                season_done = any(p["source"] == "season" for p in st.posts)
+                pick = next(s for s in steps if s not in ("industry", "recap") and not (s == "season" and season_done))
+                src = {"skin_korea": "skin", "skin_global": "skin", "product": "kbeauty"}.get(pick, pick)
+                st.posts.append({"date": d.isoformat(), "source": src, "status": "published", "key": f"k{i}-{slot}", "number": i})
+                day_series.append(series.series_of(st.posts[-1]))
+            self.assertNotEqual(day_series[0], day_series[1], d)  # never the same series twice in one day
+            d += timedelta(days=1)
+        count = Counter(series.series_of(p) for p in st.posts)
+        self.assertEqual(sum(count.values()), 62)
+        self.assertEqual(count["weekly"], 5)       # still once a week
+        self.assertGreaterEqual(count["skin"], 15)
+        self.assertGreaterEqual(count["product"], 13)
+        self.assertGreaterEqual(count["routine"], 4)
+
+    def test_daily_limit_and_morning_slot(self):
+        write_catalog(self.cfg, [catalog_item("Anua", "Niacinamide 10 TXA 4 Serum", no="N1")])
+        out = self.tmp / "site"
+
+        def run(slot, cfg):
+            rc = cmd_prepare(Namespace(out=str(out), dry_run=False, source=None, date=TUESDAY.isoformat(), reel="no",
+                                       slot=slot), cfg=cfg)
+            st = State(cfg.state_file)
+            if st.posts and st.posts[-1]["status"] == "prepared":
+                st.posts[-1]["status"] = "published"
+                st.save()
+            return len(State(cfg.state_file).published)
+
+        self.assertEqual(run("morning", self.cfg), 0)  # 1 a day: the morning run does nothing
+        self.assertEqual(run("evening", self.cfg), 1)
+        self.assertEqual(run("evening", self.cfg), 1)  # already posted today
+        cfg2 = make_cfg(self.tmp / "two", [], library=True, series=True, posts_per_day=2)
+        write_catalog(cfg2, [catalog_item("Anua", "Niacinamide 10 TXA 4 Serum", no="N1")])
+        self.assertEqual(run("morning", cfg2), 1)
+        self.assertEqual(run("evening", cfg2), 2)
+        self.assertEqual(run("evening", cfg2), 2)  # two is the limit
+        a, b = State(cfg2.state_file).published
+        self.assertNotEqual(a["key"], b["key"])
+
     def test_gap_is_respected(self):
         publish(self.cfg, "rt-dull", TUESDAY - timedelta(days=3), source="routine")
         _, steps = series.plan_order(self.cfg, State(self.cfg.state_file), TUESDAY)

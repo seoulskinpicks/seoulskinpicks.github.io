@@ -181,8 +181,14 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
         log(f"링크 페이지만 준비했어요 (게시물 {len(posts)}개, 인스타 게시 없음).")
         add_summary(f"### 링크 페이지만 새로 올려요\n- 지금까지 게시물 {len(posts)}개\n- 인스타에는 아무것도 올리지 않아요.")
         return 0
-    if not args.dry_run and state.published_on(today.isoformat()):
-        log(f"{today} 에는 이미 게시했어요 (하루 1개). 건너뜀.")
+    from .series import posts_per_day
+    ppd = posts_per_day(cfg)
+    if ppd == 1 and getattr(args, "slot", None) == "morning":
+        log("하루 1개 설정이라 아침 게시는 건너뛰어요 (밤에 올려요).")
+        return 0
+    done_today = sum(1 for p in state.published if p.get("date") == today.isoformat())
+    if not args.dry_run and done_today >= ppd:
+        log(f"{today} 에는 이미 {done_today}개 게시했어요 (하루 {ppd}개). 건너뜀.")
         return 0
     state.drop_unpublished()
     number = state.next_number()
@@ -209,7 +215,9 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     post = made["post"]
     from . import reels
     reel_note = ""
-    if reels.is_reel_day(cfg, today, getattr(args, "reel", None)):
+    reel_ok = getattr(args, "slot", None) != "morning" and not any(
+        p.get("date") == today.isoformat() and (p.get("reel") or {}).get("status") == "published" for p in state.published)
+    if reel_ok and reels.is_reel_day(cfg, today, getattr(args, "reel", None)):
         slides = sorted((out / "posts" / post["folder"]).glob("*.jpg"), key=lambda p: int(p.stem))
         rec = reels.make_for_post(cfg, post, slides, out, manual=reels.settings(cfg)["mode"] == "manual")
         if rec:
@@ -492,6 +500,8 @@ def main(argv=None) -> int:
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     a.add_argument("--reel", default="auto", choices=["auto", "yes", "no"],
                    help="릴스도 만들지 (auto = config [reels] 요일대로)")
+    a.add_argument("--slot", default="evening", choices=["morning", "evening"],
+                   help="하루 2개일 때 어느 시간대인지 (릴스는 저녁에만)")
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)
     sub.add_parser("check")

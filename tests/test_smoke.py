@@ -113,6 +113,7 @@ def make_cfg(tmp: Path, rows: list[str], header: str = HEADER, library: bool = F
     if not series:
         raw.pop("series", None)
     raw.setdefault("reels", {})["mode"] = reels
+    raw["schedule"]["posts_per_day"] = env.pop("posts_per_day", 1)
     if not library:
         raw["schedule"]["weekly"] = ["product"] * 7
         raw.setdefault("editorial", {})["content_dir"] = str(tmp / "no_content")

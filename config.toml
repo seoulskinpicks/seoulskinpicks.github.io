@@ -10,7 +10,8 @@ tagline = "Real K-beauty picks, chosen in Korea"  # 링크 페이지 한 줄 소
 timezone = "Asia/Seoul"                           # 날짜 기준 시간대
 
 [series]
-# 주제별로 "한 달에 몇 번" 올릴지 정해요. 매일 이번 달 목표에서 가장 뒤처진 주제를 골라 올려요.
+# 주제별로 "한 달에 몇 번" 올릴지 정해요 (하루 1개 기준. [schedule] posts_per_day = 2 이면 자동으로 두 배).
+# 매번 이번 달 목표에서 가장 뒤처진 주제를 골라 올려요.
 #   per_month : 한 달 목표 횟수 (0 이면 끔)
 #   gap       : 같은 주제 사이 최소 간격 (일)
 #   day       : 이 요일에만 올림 ("mon" "tue" "wed" "thu" "fri" "sat" "sun")
@@ -41,6 +42,9 @@ seconds_per_slide = 4.2          # 카드 한 장당 보여주는 시간 (초)
 audio_name = "Seoul Skin Picks · original sound"   # 릴스 소리 이름 (인스타에 표시)
 
 [schedule]
+# 하루에 몇 개 올릴지 (1 또는 2). 2 이면 한국 아침 9시(미국 동부 저녁 8시)와 밤 10시(미국 동부 아침 9시)에 하나씩,
+# [series] 의 한 달 횟수도 자동으로 두 배가 돼요 (목요일 TOP 10 같은 요일 고정 주제는 그대로 주 1번). 릴스는 밤 게시 때만.
+posts_per_day = 2
 # [series] 가 있으면 위 설정대로 올리고, 아래 weekly 는 [series] 를 지웠을 때만 써요 (요일별 계획).
 weekly = ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"]
 repeat_after_days = 120   # 정보 글을 다 쓰면, 올린 지 이 날짜가 지난 것부터 다시 올려요

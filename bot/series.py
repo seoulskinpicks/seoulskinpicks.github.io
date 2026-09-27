@@ -61,12 +61,25 @@ def series_of(post: dict) -> str:
     return "product" if src in ("kbeauty", "tools") else src
 
 
+def posts_per_day(cfg) -> int:
+    try:
+        return max(1, int(cfg.raw.get("schedule", {}).get("posts_per_day", 1)))
+    except (TypeError, ValueError):
+        return 1
+
+
 def plan_order(cfg, state, today: Date) -> tuple[str, list[str]] | None:
-    """(today's series, the steps to try in order), or None when [series] isn't set (weekday plan)."""
+    """(this slot's series, the steps to try in order), or None when [series] isn't set (weekday plan).
+
+    With [schedule] posts_per_day = 2 the monthly targets double (fixed-day series like the Thursday
+    top 10 stay once a week) and the minimum gaps halve, so the mix stays the same, just faster."""
     sc = series_cfg(cfg)
     if not sc:
         return None
-    pubs = [p for p in state.published if p.get("date", "") < today.isoformat()]
+    ppd = posts_per_day(cfg)
+    iso = today.isoformat()
+    pubs = [p for p in state.published if p.get("date", "") <= iso]
+    today_posts = [series_of(p) for p in pubs if p.get("date") == iso]
     month = today.strftime("%Y-%m")
     count = Counter(series_of(p) for p in pubs if p.get("date", "").startswith(month))
     last: dict[str, Date] = {}
@@ -75,21 +88,24 @@ def plan_order(cfg, state, today: Date) -> tuple[str, list[str]] | None:
             d = Date.fromisoformat(p["date"])
         except (KeyError, ValueError):
             continue
-        s = series_of(p)
-        if s not in last or d > last[s]:
-            last[s] = d
-    frac = today.day / calendar.monthrange(today.year, today.month)[1]
+        s_ = series_of(p)
+        if s_ not in last or d > last[s_]:
+            last[s_] = d
+    slot = min(len(today_posts), ppd - 1)
+    frac = (today.day - 1 + (slot + 1) / ppd) / calendar.monthrange(today.year, today.month)[1]
     fixed, ready, waiting = [], [], []
     for i, (name, c) in enumerate(sc.items()):
         if c["per_month"] <= 0:
             continue
         if c["day"] is not None:
-            if today.weekday() == c["day"]:
+            if today.weekday() == c["day"] and name not in today_posts:
                 fixed.append(name)
             continue
-        deficit = c["per_month"] * frac - count[name]
-        gap_ok = name not in last or (today - last[name]).days >= c["gap"]
-        room = count[name] < math.ceil(c["per_month"])
+        target = c["per_month"] * ppd
+        gap = math.ceil(c["gap"] / ppd)
+        deficit = target * frac - count[name]
+        gap_ok = name not in today_posts and (name not in last or (today - last[name]).days >= gap)
+        room = count[name] < math.ceil(target)
         (ready if gap_ok and room else waiting).append((-deficit, i, name))
     order = fixed + [n for *_, n in sorted(ready)] + [n for *_, n in sorted(waiting)]
     if "product" not in order:
@@ -109,7 +125,9 @@ def month_summary(cfg, state, today: Date) -> str:
     sc = series_cfg(cfg) or {}
     month = today.strftime("%Y-%m")
     count = Counter(series_of(p) for p in state.published if p.get("date", "").startswith(month))
-    return " · ".join(f"{n} {count[n]}/{c['per_month']:g}" for n, c in sc.items() if c["per_month"] > 0)
+    ppd = posts_per_day(cfg)
+    return " · ".join(f"{n} {count[n]}/{c['per_month'] * (1 if c['day'] is not None else ppd):g}"
+                      for n, c in sc.items() if c["per_month"] > 0)
 
 
 # ---------------------------------------------------------------------------

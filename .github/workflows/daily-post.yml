@@ -2,9 +2,11 @@ name: Daily post
 
 on:
   schedule:
-    # 매일 13:07 UTC = 한국 22:07 · 미국 동부 09:07 · 영국 14:07
+    # 밤: 13:07 UTC = 한국 22:07 · 미국 동부 09:07 · 영국 14:07 (릴스는 이때만)
+    # 아침: 00:07 UTC = 한국 09:07 · 미국 동부 20:07 (config.toml posts_per_day = 2 일 때만 게시, 1이면 그냥 건너뛰어요)
     # (GitHub 사정으로 10~30분 늦게 시작될 수 있어요)
     - cron: "7 13 * * *"
+    - cron: "7 0 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -69,7 +71,9 @@ jobs:
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
-          ARGS="--out site --source ${{ inputs.source || 'auto' }} --reel ${{ inputs.reel || 'auto' }}"
+          SLOT=evening
+          if [ "${{ github.event.schedule }}" = "7 0 * * *" ]; then SLOT=morning; fi
+          ARGS="--out site --source ${{ inputs.source || 'auto' }} --reel ${{ inputs.reel || 'auto' }} --slot $SLOT"
           if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           python -m bot prepare $ARGS
 
