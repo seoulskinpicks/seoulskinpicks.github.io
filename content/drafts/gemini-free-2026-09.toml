@@ -1,0 +1,400 @@
+# Gemini (free) research drafts, 2026-09-27. NOT posted unless merged into content/.
+
+# PASS
+[[ingredient]]
+id = "squalane"
+name = "Squalane"
+full_name = "Squalane"
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "A bestseller among global Olive Young shoppers."
+hot_since = 2026
+hook = "A stable, natural emollient for lasting moisture."
+what_it_is = "A colorless hydrocarbon and hydrogenated derivative of squalene, commonly derived from nature and used in cosmetics as a stable emollient and moisturizer."
+origin = "Derived from nature as a hydrogenated squalene derivative"
+benefits = [
+  "Helps moisturize the skin",
+  "Functions as an effective emollient",
+  "Resists auto-oxidation due to complete saturation",
+]
+best_for = ["Dry skin", "Moisture retention"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a few drops of squalane serum to clean skin",
+  "Follow with a squalane moisturizing cream",
+  "Use daily to help lock in moisture",
+]
+pairs_with = ["Water", "Squalene"]
+avoid_with = []
+good_to_know = [
+  "Unlike squalene, squalane is completely saturated and not subject to auto-oxidation.",
+  "It is a colorless hydrocarbon that is highly stable and cost-effective.",
+]
+myth = "Squalane easily oxidizes on the skin like squalene does."
+fact = "Because squalane is completely saturated, it is highly stable and not subject to auto-oxidation."
+keywords = ["squalane"]
+examples = [
+  {brand = "S.NATURE", product = "Aqua Squalane Essentials"},
+  {brand = "S.NATURE", product = "Aqua Squalane Moisturizing Cream 60ml"},
+  {brand = "S.NATURE", product = "Aqua Squalane Serum 50mL"},
+]
+hashtags = ["#squalane", "#moisturizer", "#emollient"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GS260943907",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230719556",
+  "https://en.wikipedia.org/wiki/Squalane",
+]
+
+# PASS
+[[ingredient]]
+id = "birch-sap"
+name = "Birch Sap"
+full_name = "Birch Sap"
+nickname = "Birch Juice"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller products"
+hot_since = 2022
+hook = "What is birch sap in skin care?"
+what_it_is = "Birch sap, also known as birch water or birch juice, is the sap directly tapped from birch trees."
+origin = "Birch trees"
+benefits = ["Supports skin moisture", "Provides hydration in sun care", "Used in moisturizing pads"]
+best_for = ["Dry skin", "Daily hydration"]
+when = "AM & PM"
+how_to_use = ["Apply after cleansing", "Pat gently into the skin", "Follow with sunscreen or moisturizer"]
+pairs_with = []
+avoid_with = []
+good_to_know = [
+  "Tapped directly from birch tree species like Betula pendula and Betula pubescens.",
+  "Featured in popular global moisturizing sunscreens and pads.",
+]
+myth = "Birch sap instantly cures all skin conditions."
+fact = "Birch sap is tapped directly from birch trees including Betula pendula and Betula lenta."
+keywords = ["birch juice"]
+examples = [
+  {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sunscreen 50ml"},
+  {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sun Serum 50ml"},
+  {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sun Cushion 15g"},
+]
+hashtags = ["#BirchSap", "#BirchJuice"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250430113",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260238011",
+  "https://en.wikipedia.org/wiki/Birch_sap",
+]
+
+# PASS
+[[ingredient]]
+id = "mung-bean"
+name = "Mung Bean"
+full_name = "Mung Bean"
+nickname = "Green Gram"
+area = "skin"
+heat = "global"
+heat_note = "Featured in multiple global bestselling cleansers."
+hot_since = 2021
+hook = "A traditional legume powering global bestsellers"
+what_it_is = "A plant species in the legume family that is mainly cultivated in East, Southeast, and South Asia. It is commonly used in savoury and sweet dishes and global skincare products."
+origin = "East, Southeast, and South Asia"
+benefits = [
+  "Commonly featured in pH-balanced cleansing formulas",
+  "Used in clay masks to help support pore care",
+  "Supports daily double cleansing routines",
+]
+best_for = ["pH-balanced cleansing", "Pore care routines", "Double cleansing"]
+when = "Every wash"
+how_to_use = [
+  "Apply a mung bean cleansing foam to wet skin",
+  "Gently massage to cleanse the face",
+  "Rinse thoroughly with lukewarm water",
+]
+pairs_with = ["Clay", "Water"]
+avoid_with = []
+good_to_know = [
+  "Commonly used as a culinary ingredient in sweet and savoury dishes.",
+  "Skin benefits are primarily represented in global cleansing bestsellers.",
+  "Scientific evidence for specific skin benefits in the provided text is limited.",
+]
+myth = "Mung bean skincare is only used in traditional Asian sweet dishes."
+fact = "It is a popular ingredient in modern global bestselling cleansing foams and pore clay masks."
+keywords = ["mung bean"]
+examples = [
+  {brand = "beplain", product = "Mung Bean pH-Balanced Cleansing Foam 160ML+40ML"},
+  {brand = "beplain", product = "Mung Bean pH-Balanced Cleansing Foam 80ml"},
+  {brand = "beplain", product = "Mung Bean Pore Clay Mask Pack 120mL"},
+]
+hashtags = ["#mungbean", "#cleansingfoam", "#poreclaymask", "#doublecleansing"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GS260943993",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230719603",
+  "https://en.wikipedia.org/wiki/Mung_bean",
+]
+
+# PASS
+[[ingredient]]
+id = "hyaluronic-acid"
+name = "Hyaluronic Acid"
+full_name = "Hyaluronan"
+nickname = "Hyaluronan"
+area = "skin"
+heat = "global"
+heat_note = "Featured in top-reviewed global bestsellers"
+hot_since = 2023
+hook = "A unique nonsulfated glycosaminoglycan for skin"
+what_it_is = "Hyaluronic acid is an anionic, nonsulfated glycosaminoglycan distributed widely throughout connective, epithelial, and neural tissues."
+origin = "Found naturally in human connective and epithelial tissues"
+benefits = [
+  "Supports skin moisturization in daily creams",
+  "Featured in hydrating water-fit serums",
+  "Formulated in low molecular serums to support hydration",
+]
+best_for = ["Daily moisturization", "Hydrating serum routines"]
+when = "AM & PM"
+how_to_use = [
+  "Apply serum or moisturizing cream to clean skin.",
+  "Gently spread across the face until absorbed.",
+  "Follow with sun protection when used in the daytime.",
+]
+pairs_with = ["Centella", "Cica", "PDRN"]
+avoid_with = []
+good_to_know = [
+  "Forms in the plasma membrane instead of the Golgi apparatus.",
+  "Molecules can be very large, averaging up to 7 MDa in humans.",
+  "Evidence in skin care is observed from topical cosmetic formulas.",
+]
+myth = "All glycosaminoglycans are sulfated molecules."
+fact = "Hyaluronic acid is unique among glycosaminoglycans because it is non-sulfated."
+keywords = ["hyaluronic acid", "hyalu-cica", "hyaluron"]
+examples = [
+  {brand = "SKIN1004", product = "Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 50mL"},
+  {brand = "Anua", product = "PDRN Hyaluronic Acid 100 Moisturizing Cream 60ml"},
+  {brand = "Torriden", product = "Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill"},
+]
+hashtags = ["#hyaluronicacid", "#hyaluronan", "#moisturizing"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230518746",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250732564",
+  "https://en.wikipedia.org/wiki/Hyaluronic_acid",
+]
+
+# FAIL: heat_note 너무 김 (52>50)
+[[ingredient]]
+id = "nmn"
+name = "NMN"
+full_name = "Nicotinamide Mononucleotide"
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "Featured in Olive Young Global bestselling products."
+hot_since = 2024
+hook = "A nucleotide derivative featured in pore care trends."
+what_it_is = "A nucleotide derived from ribose, nicotinamide, nicotinamide riboside, and niacin. In humans, several enzymes use it to generate nicotinamide adenine dinucleotide (NADH)."
+origin = "Derived from ribose, nicotinamide, and niacin."
+benefits = [
+  "Helps generate nicotinamide adenine dinucleotide (NADH)",
+  "Featured in skincare products designed for pore lifting",
+  "Featured in peeling pads to support pore care",
+]
+best_for = ["Pore care support", "Skin lifting formulas", "Peeling and exfoliating"]
+when = "AM & PM"
+how_to_use = [
+  "Apply as part of an ampoule or peeling pad routine.",
+  "Gently wipe skin with a peeling pad to support pore care.",
+  "Pat a lifting ampoule into the skin for absorption.",
+]
+pairs_with = ["Green Tomato", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "Most research on its absorption mechanisms has been conducted on mice, not humans.",
+  "Mice studies regarding its absorption via the small intestine remain unsettled.",
+  "Skincare benefits are primarily based on its inclusion in trendy pore care products.",
+]
+myth = "Its absorption pathway via specific transporters is fully proven in humans."
+fact = "Its absorption mechanism remains unsettled, and human enzymes use it to generate NADH."
+keywords = ["nmn"]
+examples = [
+  {brand = "SUNGBOON EDITOR", product = "Green Tomato NMN Pore Lifting Amoule 40ml Double Pack"},
+  {brand = "SUNGBOON EDITOR", product = "Green Tomato NMN Pore Peeling Pad 60P"},
+]
+hashtags = ["#nmnskincare", "#porecare", "#greentomato"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250933423",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250631716",
+  "https://en.wikipedia.org/wiki/Nicotinamide_mononucleotide",
+]
+
+# FAIL: when 비어 있음; benefits / how_to_use 는 정확히 3개
+[[ingredient]]
+id = "vitamin-c"
+name = "Vitamin C"
+full_name = "Ascorbic Acid"
+nickname = "Ascorbate"
+area = "skin"
+heat = "global"
+heat_note = "In several Olive Young Global bestseller products"
+hot_since = 2026
+hook = "An essential antioxidant for your skincare routine"
+what_it_is = "A water-soluble vitamin and antioxidant found in citrus fruits, berries, and vegetables. It is also known as ascorbic acid and is an essential nutrient for humans."
+origin = "Citrus fruits, berries, and vegetables"
+benefits = [
+  "Supports the natural formation of collagen",
+  "Acts as an antioxidant to protect the skin",
+  "Involved in the essential repair of tissue",
+]
+best_for = ["Supporting collagen", "Antioxidant protection", "Tissue repair support"]
+when = ""
+how_to_use = []
+pairs_with = ["Retinal", "Centella Asiatica", "PDRN"]
+avoid_with = []
+good_to_know = [
+  "Humans cannot synthesize vitamin C and must acquire it externally",
+  "Most animals are actually able to synthesize their own vitamin C",
+]
+myth = "Only humans must acquire vitamin C from external sources"
+fact = "Higher primates, most bats, and guinea pigs also cannot synthesize their own vitamin C"
+keywords = ["vitamin c", "vita-c", "vita"]
+examples = [
+  {brand = "celimax", product = "The Vita A Retinal Shot Tightening Booster 15ml"},
+  {brand = "Beauty of Joseon", product = "Centella Asiatica Vita Serum 30mL"},
+  {brand = "Genabelle", product = "PDRN Vita Toning Ampoule 30ml"},
+]
+hashtags = ["#vitaminc", "#antioxidant", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260339051",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230819772",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240624303",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230619237",
+]
+
+# PASS
+[[ingredient]]
+id = "algae-extract"
+name = "Algae Extract"
+full_name = "Algae Extract"
+nickname = "Seaweed Extract"
+area = "hair"
+heat = "global"
+heat_note = "Olive Young Global bestseller ingredient"
+hot_since = 2024
+hook = "Can aquatic organisms transform daily hair care?"
+what_it_is = "Algae extract is derived from diverse photosynthetic aquatic organisms, ranging from microscopic unicellular microalgae to multicellular seaweeds."
+origin = "Aquatic habitats, both freshwater and marine"
+benefits = [
+  "Used in mineral shampoo formulas for daily cleansing",
+  "Provides aquatic plant-derived care in leave-in treatments",
+  "Supports hair therapy regimens through topical application",
+]
+best_for = ["Shampoo cleansing routines", "No-wash hair therapy"]
+when = "Every wash"
+how_to_use = [
+  "Apply algae-infused shampoo directly to damp hair and scalp",
+  "Lather gently and rinse hair thoroughly with water",
+  "Apply no-wash treatment evenly through damp hair ends",
+]
+pairs_with = ["Minerals", "Water"]
+avoid_with = []
+good_to_know = [
+  "Evidence on specific clinical hair benefits is currently limited.",
+  "Organisms can be microscopic or grow as macroalgae up to 50 meters.",
+]
+myth = "All algae types in hair care are large ocean seaweeds."
+fact = "Algae encompass diverse forms, from unicellular microalgae to massive seaweeds."
+keywords = ["algae"]
+examples = [
+  {brand = "growus", product = "Algae Therapy Mineral Shampoo 500ml"},
+  {brand = "growus", product = "Algae Therapy Mineral No-Wash Treatment 150ml"},
+]
+hashtags = ["#algaehaircare", "#hairtherapy", "#scalpcare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240925617",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240925616",
+  "https://en.wikipedia.org/wiki/Algae",
+]
+
+# PASS
+[[ingredient]]
+id = "tea-tree-oil"
+name = "Tea Tree Oil"
+full_name = "Melaleuca Oil"
+nickname = "Melaleuca oil"
+area = "hair"
+heat = "global"
+heat_note = "Featured in a global bestseller scalp scaler."
+hot_since = 1920
+hook = "A fresh essential oil for scalp care."
+what_it_is = "An essential oil with a fresh, camphoraceous odour, ranging from pale yellow to nearly colourless, derived from Melaleuca alternifolia leaves."
+origin = "Southeast Queensland and New South Wales, Australia"
+benefits = [
+  "May help support scalp care as a scaler ingredient",
+  "Provides a fresh, camphoraceous aroma",
+  "Used in popular global scalp scaling products",
+]
+best_for = ["Scalp care", "Fresh aroma preference"]
+when = "During washing"
+how_to_use = [
+  "Select a scalp product containing tea tree oil",
+  "Apply the formula to your scalp",
+  "Follow the product's specific rinse instructions",
+]
+pairs_with = ["Water", "Scalp formulas"]
+avoid_with = []
+good_to_know = [
+  "Its chemical composition changes if it is exposed to air and oxidises.",
+  "Commercial use of this oil was pioneered in the 1920s by Arthur Penfold.",
+]
+myth = "Tea tree oil composition remains completely stable once bottled."
+fact = "The oil's composition actually changes if it is exposed to air and oxidises."
+keywords = ["tea tree", "tea-tree"]
+examples = [
+  {brand = "STEAMBASE", product = "Tea Tree Scalp Water Scaler 250mL"},
+]
+hashtags = ["#teatreeoil", "#scalpcare", "#haircare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230819985",
+  "https://en.wikipedia.org/wiki/Tea_tree_oil",
+]
+
+# PASS
+[[ingredient]]
+id = "rose-oil"
+name = "Rose Oil"
+full_name = "Rose Essential Oil"
+nickname = ""
+area = "hair"
+heat = "global"
+heat_note = "Featured in Olive Young Global bestsellers."
+hot_since = 2024
+hook = "A timeless, fragrant oil for silky hair care."
+what_it_is = "An essential oil extracted from rose petals, either through steam distillation as rose ottos or solvent extraction as rose absolutes, widely used for its fragrance."
+origin = "Iran (where the production technique originated)"
+benefits = [
+  "Helps provide an airy, silky finish to hair",
+  "May support hair care with a classic fragrance",
+  "Known for its widely used aromatic properties",
+]
+best_for = ["Silky hair finishes", "Aromatic hair care"]
+when = "Every wash"
+how_to_use = [
+  "Apply a small amount of the oil to your hands.",
+  "Gently work it through damp or dry hair.",
+  "Style your hair as desired for an airy, silky finish.",
+]
+pairs_with = ["Rose Otto", "Rose Absolute"]
+avoid_with = []
+good_to_know = [
+  "Rose oil is highly valued and widely used despite its high price.",
+  "Rose ottos use steam distillation, while absolutes use solvent extraction.",
+]
+myth = "All rose oils are extracted using the exact same distillation method."
+fact = "Rose ottos are steam distilled, whereas rose absolutes are obtained through solvent extraction."
+keywords = ["rose"]
+examples = [
+  {brand = "Longtake", product = "Rose Remains Airy Silky Hair Oil 40ml"},
+]
+hashtags = ["#roseoil", "#haircare", "#silkyhair"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260842947",
+  "https://en.wikipedia.org/wiki/Rose_oil",
+]
