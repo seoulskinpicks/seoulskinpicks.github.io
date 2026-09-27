@@ -106,6 +106,99 @@ sources = [
 ]
 
 [[ingredient]]
+id = "copper-peptide"
+name = "Copper peptide"
+full_name = "GHK-Cu (copper tripeptide-1)"
+nickname = "Blue peptide"
+area = "skin"
+heat = "both"
+heat_note = "Peptide therapy +281% on Google (Glossy, 2026)"
+hot_since = 2026
+hook = "Why skincare is turning blue: copper peptides"
+what_it_is = "GHK-Cu is a tiny three-amino-acid peptide bound to copper, first found in human blood in 1973. The copper gives serums a blue tint, hence 'blue peptide'."
+origin = "Found in human plasma; cosmetic GHK-Cu is lab-made"
+benefits = [
+  "May help skin look firmer and more elastic",
+  "Supports the look of smoother, less lined skin",
+  "Helps tired skin look more even and refreshed",
+]
+best_for = ["Early fine lines", "Loss of firmness or bounce", "Dull, tired-looking skin"]
+when = "Mostly PM"
+how_to_use = [
+  "Apply after toner, before thicker creams",
+  "Use it at night if you use vitamin C in the morning",
+  "Start every other night, then build up if skin is happy",
+]
+pairs_with = ["Hyaluronic acid", "Ceramides", "Panthenol"]
+avoid_with = ["Pure vitamin C, same time", "Strong AHA/BHA, same time"]
+good_to_know = [
+  "Most copper peptide research is lab work or small studies; expect subtle changes.",
+  "It's charged and water-loving, so how much a serum delivers deep into skin is unclear.",
+  "The blue tint is normal. Patch test, and stop if irritation lingers.",
+]
+myth = "A copper peptide serum works like a clinic peptide treatment."
+fact = "Clinic routes deliver it deeper. From a serum only a little gets in, so results are milder and slower."
+keywords = ["copper peptide", "blue peptide", "copper tripeptide", "ghk-cu"]
+examples = [
+  {brand = "Peach & Lily", product = "Copper Peptide Pro Firming Serum"},
+  {brand = "The Ordinary", product = "Multi-Peptide + Copper Peptides 1% Serum"},
+]
+hashtags = ["#copperpeptide", "#bluepeptide", "#ghkcu", "#peptideskincare"]
+sources = [
+  "https://en.wikipedia.org/wiki/Copper_peptide_GHK-Cu",
+  "https://www.mdpi.com/2079-9284/5/2/29",
+  "https://nayawell.com/skin-laser/ghk-copper-peptide-skin-delivery/",
+  "https://www.glossy.co/beauty/the-beauty-industry-welcomes-a-flood-of-new-peptide-products-as-peptide-therapy-trends-online/",
+  "https://www.sisajournal-e.com/news/articleView.html?idxno=423873",
+]
+
+[[ingredient]]
+id = "nmn"
+name = "NMN"
+full_name = "Nicotinamide mononucleotide"
+nickname = "The NAD+ building block"
+area = "skin"
+heat = "korea"
+heat_note = "Tipped as 'next after PDRN' in Korea (2026)"
+hot_since = 2026
+hook = "NMN: the NAD+ booster moving into skincare"
+what_it_is = "NMN is a nucleotide your cells turn into NAD+, the energy molecule behind 'longevity' skincare. Known from supplements, it's now showing up in K-beauty ampoules."
+origin = "Made in the body; cosmetic NMN is lab-made or fermented"
+benefits = [
+  "May help skin look more energized and radiant",
+  "Supports the look of firmer, bouncier skin",
+  "Helps tired, dull-looking skin look fresher",
+]
+best_for = ["Dull, tired-looking skin", "Early signs of aging", "Longevity-routine fans"]
+when = "AM & PM"
+how_to_use = [
+  "Apply as a serum or ampoule after toner",
+  "Layer under moisturizer; pairs well with niacinamide",
+  "Wear SPF in the morning, as with any glow routine",
+]
+pairs_with = ["Niacinamide", "Peptides", "NAD+"]
+avoid_with = []
+good_to_know = [
+  "Skin research on NMN is early: lab and animal studies, few human trials.",
+  "It slowly breaks down into niacinamide, so well-sealed, fresh packs matter.",
+  "NMN supplements are a separate topic; ask a doctor before taking them.",
+]
+myth = "Putting NMN on your skin works like taking NMN supplements."
+fact = "Different routes. Skin studies are early, so treat NMN serums as glow support, not an anti-aging fix."
+keywords = ["nmn"]
+examples = [
+  {brand = "SUNGBOON EDITOR", product = "Green Tomato NMN Pore Lifting Ampoule"},
+  {brand = "Nutricore", product = "Hypercell NMN Cell Prime Ampoule"},
+]
+hashtags = ["#nmn", "#nadplus", "#skinlongevity", "#kbeauty"]
+sources = [
+  "https://en.wikipedia.org/wiki/Nicotinamide_mononucleotide",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12048825/",
+  "https://www.etoday.co.kr/news/view/2596456",
+  "https://www.enetnews.co.kr/news/articleView.html?idxno=49099",
+]
+
+[[ingredient]]
 id = "bdrn"
 name = "BDRN"
 full_name = "'Banana PDRN' (a brand-coined term)"

@@ -161,7 +161,9 @@ def _pick_group(pool: list[dict], prefix: str, used: dict, today: Date, days: in
     if not fresh:
         return [], False
     area = fresh[0].get("area", "skin")
-    group = [e for e in fresh if e.get("area", "skin") == area][:GROUP]
+    same = [e for e in fresh if e.get("area", "skin") == area]
+    extra = len(same) - GROUP
+    group = same[:GROUP + extra] if 0 < extra < 3 else same[:GROUP]  # don't leave 1-2 stragglers behind
     if len(group) < 3:
         group = fresh[:GROUP]
     return (group, repeat) if len(group) >= 3 else ([], False)

@@ -163,7 +163,7 @@ class SeriesTests(unittest.TestCase):
             t = series.next_topic("myth", self.lib, st, TUESDAY, self.cfg, ed.last_used(st))
             self.assertIsNotNone(t, i)
             ids = [x["id"] for x in t.data["items"]]
-            self.assertTrue(3 <= len(ids) <= 4)
+            self.assertTrue(3 <= len(ids) <= 6)
             self.assertEqual(len({x["area"] for x in t.data["items"]}), 1, ids)
             self.assertFalse(seen & set(ids))
             seen |= set(ids)

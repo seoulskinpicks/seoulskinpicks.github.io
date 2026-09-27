@@ -30,6 +30,18 @@ area = "skin"
 keywords = ["NAD 크림", "NAD 세럼", "NAD 앰플", "NAD+ 화장품"]
 
 [[term]]
+id = "copper-peptide"
+name = "Copper peptide"
+area = "skin"
+keywords = ["구리펩타이드", "구리 펩타이드", "블루펩타이드", "블루 펩타이드", "GHK-Cu", "카퍼 펩타이드"]
+
+[[term]]
+id = "nmn"
+name = "NMN"
+area = "skin"
+keywords = ["NMN 앰플", "NMN 크림", "NMN 세럼", "NMN 화장품", "NMN 토너"]
+
+[[term]]
 id = "exosome"
 name = "Exosomes"
 area = "skin"
@@ -57,7 +69,7 @@ keywords = ["레티놀 크림", "레티놀 세럼", "레티놀 앰플"]
 id = "peptide"
 name = "Peptides"
 area = "skin"
-keywords = ["펩타이드 앰플", "펩타이드 크림", "펩타이드 세럼", "구리펩타이드"]
+keywords = ["펩타이드 앰플", "펩타이드 크림", "펩타이드 세럼"]
 
 [[term]]
 id = "collagen"

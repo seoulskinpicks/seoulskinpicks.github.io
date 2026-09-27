@@ -32,6 +32,7 @@ COLORS = {
     "rosemary": "#557A5C", "lpp-protein": "#9C6B4E", "rice-water": "#A89A74", "salicylic-acid": "#4C8DAE",
     "dexpanthenol": "#4A90A4", "caffeine": "#7B5236", "menthol": "#2E9C8F", "scalp-peptides": "#B5657F",
     "ginseng": "#B0793A", "probiotics": "#6C8EBF", "biotin": "#8C6BB1", "argan-oil": "#C08A3E",
+    "copper-peptide": "#2C6FB5", "nmn": "#A0527A",
 }
 FALLBACK_COLORS = ["#C0584F", "#3F7F9F", "#6E8B3D", "#8A5FB0", "#C0873A", "#3E8E7E", "#B25C84"]
 
