@@ -285,7 +285,7 @@ class Tests(unittest.TestCase):
             cp = make_copy(cand, 7, cfg, session=FakeGemini())
         self.assertTrue(cp.ai_used)
         self.assertEqual(len(calls), 2)
-        self.assertIn("gemini-2.5-flash:generateContent", calls[1])
+        self.assertIn("gemini-3.5-flash:generateContent", calls[1])
         self.assertEqual(cp.slide4, {"kind": "take", "text": reply["comment_en"]})
         self.assertEqual(cp.ai_provider, "Gemini")
 
@@ -329,7 +329,7 @@ class Tests(unittest.TestCase):
         with mock.patch.dict("os.environ", env):
             cp = make_copy(cand, 7, cfg, session=Flaky(), sleep=waits.append)
         self.assertEqual(waits, [5, 60, 300])                 # 5 s → 1 min → 5 min
-        self.assertEqual(hits["gemini"], 4 * 3)               # 4 tries x 3 model names
+        self.assertEqual(hits["gemini"], 4 * 4)               # 4 tries x 4 model names
         self.assertEqual(hits["backup"], 1)
         self.assertTrue(cp.ai_used)
         self.assertEqual(cp.ai_provider, "Groq")

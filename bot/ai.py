@@ -22,7 +22,7 @@ TRANSIENT_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 DEFAULT_RETRY_DELAYS = [5, 60, 300]
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-GEMINI_FALLBACK_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
+GEMINI_FALLBACK_MODELS = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
 BACKUP_DEFAULTS = {
     "backup_ai_name": "Groq",
     "backup_ai_url": "https://api.groq.com/openai/v1/chat/completions",

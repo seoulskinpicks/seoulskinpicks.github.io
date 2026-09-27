@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/research.yml"]   # 이 파일을 고치면 한 번 실행 (점검용)
+    paths: [".github/workflows/research.yml", "bot/research.py"]   # 조사 코드를 고치면 한 번 실행 (점검용)
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v5
         with:

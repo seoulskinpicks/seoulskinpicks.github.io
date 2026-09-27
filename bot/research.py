@@ -51,21 +51,17 @@ good_to_know or fact). Never invent studies, numbers, awards, rankings or produc
 # ---------------------------------------------------------------------------
 def _call(key: str, cfg, body: dict, http, sleep=time.sleep, tries: int = 2) -> dict:
     """generateContent on the first Flash model that answers. Returns the raw response JSON."""
-    last = ""
+    errors: list[str] = []
     for attempt in range(tries):
         for model in _gemini_models(cfg):
             try:
                 return _post(http, GEMINI_URL.format(model=model), {"x-goog-api-key": key, "content-type": "application/json"},
-                             body, 120, (key,))
-            except AIUnavailable as exc:
-                last = f"{model}: {exc}"
-                continue
-            except AITemporary as exc:
-                last = f"{model}: {exc}"
-                continue
+                             body, 240, (key,))
+            except (AIUnavailable, AITemporary) as exc:
+                errors.append(f"{model}: {str(exc)[:110]}")
         if attempt + 1 < tries:
             sleep(60)
-    raise RuntimeError(last or "Gemini 응답 없음")
+    raise RuntimeError(" | ".join(dict.fromkeys(errors)) or "Gemini 응답 없음")
 
 
 def _text(data: dict) -> str:
@@ -307,7 +303,7 @@ def run_research(cfg, today: Date, session=None, sleep=time.sleep, last_update: 
             ents, notes = research_free(cfg, lib, catalog, http, sleep, n_skin, n_hair)
             results["free"].update(entries=ents, notes=notes)
         except Exception as exc:
-            results["free"]["notes"].append(f"실패: {scrub(str(exc), cfg.gemini_key)[:160]}")
+            results["free"]["notes"].append(f"실패: {scrub(str(exc), cfg.gemini_key)[:600]}")
     elif r.get("free_mode", True):
         results["free"]["notes"].append("GEMINI_API_KEY 없음")
     search_key = cfg.gemini_search_key
