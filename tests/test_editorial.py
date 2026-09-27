@@ -120,7 +120,7 @@ class EditorialTests(unittest.TestCase):
     # ------------------------------------------------------------------ plan
     def test_weekly_plan_and_topic_order(self):
         plan = [ed.plan_for(self.cfg, MONDAY + timedelta(days=i)) for i in range(7)]
-        self.assertEqual(plan, ["skin_korea", "product", "hair", "versus", "skin_global", "history", "product"])
+        self.assertEqual(plan, ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"])
         st = State(self.cfg.state_file)
         self.assertEqual(ed.next_topic("skin_korea", self.lib, st, MONDAY, self.cfg).key, "ing-pdrn")
         self.assertEqual(ed.next_topic("skin_global", self.lib, st, MONDAY, self.cfg).key, "ing-pdrn")  # 'both'
@@ -361,6 +361,7 @@ class ResearchTests(unittest.TestCase):
         content = self.tmp / "content"
         shutil.copytree(ed.ROOT / "content", content, ignore=shutil.ignore_patterns("drafts"))
         self.cfg.raw.setdefault("editorial", {})["content_dir"] = str(content)
+        self.cfg.raw.setdefault("research", {})["search_mode"] = True  # off in config.toml (terms), tested here
         self.lib = ed.load_library(self.cfg)
         write_catalog(self.cfg, [catalog_item("Beauty of Joseon", "Revive Serum Bakuchiol", no="B1"),
                                  catalog_item("VT", "PDRN Essence 100", no="B2")])
@@ -421,6 +422,86 @@ class ResearchTests(unittest.TestCase):
 
     def lib_dir(self):
         return ed.content_dir(self.cfg)
+
+
+
+class FakeNaver:
+    """Naver DataLab: every group gets a flat daily series; PDRN (anchor) = 10/day, others differ."""
+
+    def __init__(self):
+        self.bodies = []
+
+    def post(self, url, json=None, headers=None, timeout=None):
+        from datetime import date as D, timedelta as TD
+        from tests.test_smoke import FakeResp
+        assert headers["X-Naver-Client-Id"] == "NID" and len(json["keywordGroups"]) <= 5
+        self.bodies.append(json)
+        end = D.fromisoformat(json["endDate"])
+        per = {"pdrn": (10, 5), "spicule": (6, 3), "mugwort": (2, 4), "exosome": (20, 20)}
+        results = []
+        for g in json["keywordGroups"]:
+            now, prev = per.get(g["groupName"], (1, 1))
+            data = [{"period": (end - TD(days=i)).isoformat(), "ratio": now if i < 7 else prev} for i in range(14)]
+            results.append({"title": g["groupName"], "keywords": g["keywords"], "data": data})
+        return FakeResp({"results": results})
+
+
+class WeeklyTests(unittest.TestCase):
+    tearDown = EditorialTests.tearDown
+
+    def setUp(self):
+        EditorialTests.setUp(self)
+        ed.save_catalog(self.cfg, [catalog_item("VT", f"Product {i}", rank=i, no=f"P{i}") for i in range(1, 13)], "2026-09-21")
+        ed.save_catalog(self.cfg, [catalog_item("VT", "Product 3", rank=1, no="P3"), catalog_item("VT", "Product 1", rank=2, no="P1"),
+                                   catalog_item("NEWB", "New Serum", rank=3, no="PN")], "2026-09-28")
+        self.fake = FakeNaver()
+
+    def test_naver_ranking_uses_anchor_and_week_change(self):
+        from bot import weekly
+        with mock.patch.dict("os.environ", {"NAVER_CLIENT_ID": "NID", "NAVER_CLIENT_SECRET": "SEC"}):
+            rows = weekly.naver_trends(self.cfg, THURSDAY, session=self.fake)
+        by = {r["id"]: r for r in rows}
+        self.assertEqual(rows[0]["id"], "exosome")                 # 20/day vs PDRN 10/day
+        self.assertEqual(by["exosome"]["index"], 100)
+        self.assertEqual(by["pdrn"]["index"], 50)
+        self.assertEqual(by["pdrn"]["change"], 100)                 # 10 vs 5 per day
+        self.assertEqual(by["mugwort"]["change"], -50)
+        self.assertTrue(all(b["keywordGroups"][0]["groupName"] == "pdrn" for b in self.fake.bodies))
+        self.assertEqual(self.fake.bodies[0]["endDate"], "2026-09-27")  # last full week (Mon-Sun)
+
+    def test_thursday_post_with_links_then_versus_next_time(self):
+        from bot import weekly
+        with mock.patch.dict("os.environ", {"NAVER_CLIENT_ID": "NID", "NAVER_CLIENT_SECRET": "SEC"}), \
+             mock.patch.object(weekly, "requests", self.fake):
+            out = EditorialTests.prepare(self, THURSDAY)
+        post = State(self.cfg.state_file).posts[-1]
+        self.assertEqual((post["source"], post["key"]), ("weekly", "wk-2026-09-27"))
+        self.assertEqual(len(list((out / "posts" / "001").glob("*.jpg"))), 5)  # cover, Korea, products, riser, cta
+        self.assertIn("Exosomes · 100", post["caption"])
+        self.assertIn("VT Product 3 (▲2)", post["caption"])   # #3 last week -> #1
+        self.assertIn("VT Product 1 (▼1)", post["caption"])
+        self.assertIn("(new)", post["caption"])
+        self.assertIn("#ad", post["caption"])
+        self.assertEqual(post["weekly"]["spotlight"]["id"], "pdrn")  # +100%
+        self.assertIn("prdtNo=P3", (out / "index.html").read_text())
+        self.assertIn("Most-searched ingredients in Korea", (out / "p" / "001.html").read_text())
+        # same week again -> the researched comparison instead
+        out = EditorialTests.prepare(self, FRIDAY, source="weekly")
+        self.assertEqual(State(self.cfg.state_file).posts[-1]["source"], "versus")
+
+    def test_without_naver_key_shows_bestsellers_only(self):
+        out = EditorialTests.prepare(self, THURSDAY)
+        post = State(self.cfg.state_file).posts[-1]
+        self.assertEqual(post["source"], "weekly")
+        self.assertEqual(len(list((out / "posts" / "001").glob("*.jpg"))), 3)  # cover, products, cta
+
+    def test_korea_trends_reorder_ingredient_days(self):
+        from bot import weekly
+        weekly.save(self.cfg, {"week_start": "2026-09-21", "week_end": "2026-09-27",
+                               "korea": [{"id": "mugwort", "name": "Mugwort", "index": 90, "change": 40},
+                                         {"id": "pdrn", "name": "PDRN", "index": 40, "change": -10}], "products": []})
+        st = State(self.cfg.state_file)
+        self.assertEqual(ed.next_topic("skin_korea", self.lib, st, MONDAY, self.cfg).key, "ing-mugwort")
 
 
 if __name__ == "__main__":

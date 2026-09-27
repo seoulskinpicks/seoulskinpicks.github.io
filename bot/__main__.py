@@ -134,6 +134,8 @@ def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path,
     topic = editorial.next_topic(step, lib, state, today, cfg)
     if topic is None:
         return None
+    if topic.kind == "weekly":
+        topic.data = dict(topic.data, spotlight=editorial.weekly_spotlight(topic.data, lib))
     try:
         products = editorial.find_products(topic, cfg, editorial.load_catalog(cfg), ali_client)
         info = editorial.build_info_copy(topic, number, cfg, products)
@@ -418,7 +420,7 @@ def main(argv=None) -> int:
     a.add_argument("--dry-run", action="store_true")
     a.add_argument("--source", default="auto",
                    choices=["auto", "product", "kbeauty", "tools", "skin", "skin_korea", "skin_global", "hair",
-                            "versus", "history", "site"])
+                            "versus", "history", "weekly", "site"])
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)

@@ -1,0 +1,252 @@
+# ─────────────────────────────────────────────────────────────
+#  네이버 검색 트렌드로 볼 성분 키워드 (목요일 '이번 주 K뷰티' 게시물 + 성분 101 순서 정하기)
+#  id       : content/skin.toml · hair.toml 의 id 와 같으면 그 설명을 같이 써요 (없어도 돼요)
+#  name     : 카드에 나오는 영어 이름
+#  keywords : 한국 사람이 네이버에서 검색하는 말. '쑥'처럼 음식과 겹치는 말은 '쑥 토너'처럼 화장품 말과 붙여서 (최대 20개)
+# ─────────────────────────────────────────────────────────────
+
+[[term]]
+id = "pdrn"
+name = "PDRN"
+area = "skin"
+keywords = ["PDRN", "피디알엔", "PDRN 앰플", "PDRN 세럼", "PDRN 크림", "연어 앰플"]
+
+[[term]]
+id = "bdrn"
+name = "BDRN"
+area = "skin"
+keywords = ["BDRN", "비디알엔", "바나나 PDRN"]
+
+[[term]]
+id = "pn"
+name = "PN"
+area = "skin"
+keywords = ["PN 앰플", "PN 크림", "폴리뉴클레오타이드 크림"]
+
+[[term]]
+id = "nad"
+name = "NAD+"
+area = "skin"
+keywords = ["NAD 크림", "NAD 세럼", "NAD 앰플", "NAD+ 화장품"]
+
+[[term]]
+id = "exosome"
+name = "Exosomes"
+area = "skin"
+keywords = ["엑소좀 앰플", "엑소좀 크림", "엑소좀 세럼", "엑소좀 화장품"]
+
+[[term]]
+id = "spicule"
+name = "Spicules"
+area = "skin"
+keywords = ["스피큘", "리들샷", "스피큘 앰플", "마이크로니들 앰플"]
+
+[[term]]
+id = "retinal"
+name = "Retinal"
+area = "skin"
+keywords = ["레티날", "레티날 세럼", "레티날 크림"]
+
+[[term]]
+id = "retinol"
+name = "Retinol"
+area = "skin"
+keywords = ["레티놀 크림", "레티놀 세럼", "레티놀 앰플"]
+
+[[term]]
+id = "peptide"
+name = "Peptides"
+area = "skin"
+keywords = ["펩타이드 앰플", "펩타이드 크림", "펩타이드 세럼", "구리펩타이드"]
+
+[[term]]
+id = "collagen"
+name = "Collagen"
+area = "skin"
+keywords = ["콜라겐 크림", "콜라겐 마스크", "콜라겐 앰플", "콜라겐 팩"]
+
+[[term]]
+id = "glutathione"
+name = "Glutathione"
+area = "skin"
+keywords = ["글루타치온 크림", "글루타치온 앰플", "글루타치온 세럼"]
+
+[[term]]
+id = "txa"
+name = "TXA"
+area = "skin"
+keywords = ["트라넥삼산", "트라넥삼산 세럼", "TXA 세럼"]
+
+[[term]]
+id = "vitamin-c"
+name = "Vitamin C"
+area = "skin"
+keywords = ["비타민C 세럼", "비타민C 앰플", "비타민씨 세럼", "비타민C 크림"]
+
+[[term]]
+id = "hyaluronic-acid"
+name = "Hyaluronic acid"
+area = "skin"
+keywords = ["히알루론산 앰플", "히알루론산 세럼", "히알루론산 크림", "히알루론산 토너"]
+
+[[term]]
+id = "heartleaf"
+name = "Heartleaf"
+area = "skin"
+keywords = ["어성초 토너", "어성초 패드", "어성초 크림", "어성초 앰플"]
+
+[[term]]
+id = "snail-mucin"
+name = "Snail mucin"
+area = "skin"
+keywords = ["달팽이 크림", "달팽이 에센스", "스네일 에센스", "달팽이 점액"]
+
+[[term]]
+id = "centella"
+name = "Centella"
+area = "skin"
+keywords = ["병풀 크림", "병풀 앰플", "시카 크림", "마데카소사이드", "센텔라 앰플"]
+
+[[term]]
+id = "rice"
+name = "Rice"
+area = "skin"
+keywords = ["쌀 토너", "쌀 선크림", "라이스 토너", "쌀 세럼"]
+
+[[term]]
+id = "niacinamide"
+name = "Niacinamide"
+area = "skin"
+keywords = ["나이아신아마이드", "나이아신아마이드 세럼", "나이아신아마이드 앰플"]
+
+[[term]]
+id = "ceramides"
+name = "Ceramides"
+area = "skin"
+keywords = ["세라마이드 크림", "세라마이드 로션", "세라마이드"]
+
+[[term]]
+id = "propolis"
+name = "Propolis"
+area = "skin"
+keywords = ["프로폴리스 앰플", "프로폴리스 세럼", "프로폴리스 크림"]
+
+[[term]]
+id = "mugwort"
+name = "Mugwort"
+area = "skin"
+keywords = ["쑥 토너", "쑥 에센스", "쑥 크림", "쑥 팩"]
+
+[[term]]
+id = "galactomyces"
+name = "Galactomyces"
+area = "skin"
+keywords = ["갈락토미세스", "갈락토미세스 에센스"]
+
+[[term]]
+id = "beta-glucan"
+name = "Beta-glucan"
+area = "skin"
+keywords = ["베타글루칸 앰플", "베타글루칸 세럼", "베타글루칸 크림"]
+
+[[term]]
+id = "panthenol"
+name = "Panthenol"
+area = "skin"
+keywords = ["판테놀 크림", "판테놀 토너", "판테놀 앰플"]
+
+[[term]]
+id = "azelaic-acid"
+name = "Azelaic acid"
+area = "skin"
+keywords = ["아젤라익산", "아젤라익애씨드", "아젤라산 세럼"]
+
+[[term]]
+id = "green-tea"
+name = "Green tea"
+area = "skin"
+keywords = ["녹차 토너", "녹차 세럼", "녹차 크림"]
+
+[[term]]
+id = "bakuchiol"
+name = "Bakuchiol"
+area = "skin"
+keywords = ["바쿠치올", "바쿠치올 세럼"]
+
+[[term]]
+id = "squalane"
+name = "Squalane"
+area = "skin"
+keywords = ["스쿠알란", "스쿠알란 오일", "스쿠알란 크림"]
+
+[[term]]
+id = "rosemary"
+name = "Rosemary"
+area = "hair"
+keywords = ["로즈마리 샴푸", "로즈마리 두피", "로즈마리 헤어"]
+
+[[term]]
+id = "lpp-protein"
+name = "LPP protein"
+area = "hair"
+keywords = ["LPP 트리트먼트", "단백질 트리트먼트", "LPP 헤어팩"]
+
+[[term]]
+id = "rice-water"
+name = "Rice water"
+area = "hair"
+keywords = ["쌀뜨물 샴푸", "쌀 샴푸"]
+
+[[term]]
+id = "salicylic-acid"
+name = "Scalp scaling"
+area = "hair"
+keywords = ["두피 스케일링", "두피스케일링", "스케일링 샴푸"]
+
+[[term]]
+id = "dexpanthenol"
+name = "Panthenol (B5)"
+area = "hair"
+keywords = ["덱스판테놀", "판테놀 샴푸", "비타민B5 샴푸"]
+
+[[term]]
+id = "caffeine"
+name = "Caffeine"
+area = "hair"
+keywords = ["카페인 샴푸"]
+
+[[term]]
+id = "menthol"
+name = "Menthol"
+area = "hair"
+keywords = ["쿨링 샴푸", "멘톨 샴푸", "쿨링 두피"]
+
+[[term]]
+id = "scalp-peptides"
+name = "Peptides (scalp)"
+area = "hair"
+keywords = ["펩타이드 샴푸", "두피 펩타이드"]
+
+[[term]]
+id = "ginseng"
+name = "Ginseng"
+area = "hair"
+keywords = ["인삼 샴푸", "홍삼 샴푸"]
+
+[[term]]
+id = "probiotics"
+name = "Probiotics"
+area = "hair"
+keywords = ["유산균 샴푸", "프로바이오틱스 샴푸"]
+
+[[term]]
+id = "biotin"
+name = "Biotin"
+area = "hair"
+keywords = ["비오틴 샴푸"]
+
+[[term]]
+id = "argan-oil"
+name = "Argan oil"
+area = "hair"
+keywords = ["아르간 오일", "아르간 헤어오일"]

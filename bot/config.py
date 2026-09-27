@@ -91,6 +91,12 @@ class Config:
         return os.environ.get("GEMINI_SEARCH_API_KEY", "").strip()
 
     @property
+    def naver_keys(self) -> tuple[str, str] | None:
+        cid = os.environ.get("NAVER_CLIENT_ID", "").strip()
+        sec = os.environ.get("NAVER_CLIENT_SECRET", "").strip()
+        return (cid, sec) if cid and sec else None
+
+    @property
     def backup_ai_key(self) -> str:
         # Backup AI (OpenAI-compatible, Groq by default) used when Gemini keeps failing.
         return os.environ.get("BACKUP_AI_KEY", "").strip()

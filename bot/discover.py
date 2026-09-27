@@ -82,6 +82,16 @@ def run_discover(cfg, state, today: str, ali_client=None, session=None, sleep=ti
         save_catalog(cfg, [it for it in fetched if it["list"] in catalog_lists], today)
         log(f"성분 글용 제품 목록 저장: {sum(1 for it in fetched if it['list'] in catalog_lists)}개 (data/oy_catalog.json)")
     items = [it for it in fetched if it["list"] in queue_lists and it["rank"] <= top_n]
+    if not dry_run:  # this week's numbers for the Thursday post (Naver search trends + bestseller moves)
+        try:
+            from datetime import date as _D
+            from . import weekly
+            data = weekly.compute(cfg, _D.fromisoformat(today), session=None)
+            if data.get("korea") or data.get("products"):
+                weekly.save(cfg, data)
+                log(f"이번 주 트렌드 저장: 한국 검색 {len(data.get('korea', []))}개 · 베스트셀러 {len(data.get('products', []))}개")
+        except Exception as exc:
+            warn(f"이번 주 트렌드 계산 실패 (다음 작업은 계속): {exc}")
     min_rating = float(d.get("min_rating", 4.5))
     min_reviews = int(d.get("min_reviews", 30))
     skip = {b.lower() for b in d.get("skip_brands", [])}

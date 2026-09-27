@@ -835,6 +835,8 @@ def render_info_post(topic: Topic, info: InfoCopy, number: int, handle: str, out
         cards = render_ingredient(topic, info, number, handle)
     elif topic.kind == "versus":
         cards = render_versus(topic, info, number, handle)
+    elif topic.kind == "weekly":
+        cards = render_weekly(topic, info, number, handle)
     else:
         cards = render_history(topic, info, number, handle, lib_years or [])
     paths = []
@@ -950,6 +952,30 @@ def render_info_pin(topic: Topic, info: InfoCopy, number: int, handle: str, out_
                 draw_lines(c.d, x0 + 80, yy, lines, f, c.ink, int(s * 1.2))
                 yy += max(96, len(lines) * int(s * 1.2) + 50)
         _pin_footer(c, "Tap to see why", handle, "K-beauty trends")
+    elif topic.kind == "weekly":
+        from .editorial import week_label
+        t = WEEKLY
+        c = Card(t, size=(PW, PH))
+        y = 110
+        c.pill(M, y, f"THIS WEEK · {week_label(d).upper()}", F(SANS_SB, 24), rgb(t.on_accent), rgb(t.accent), padx=22, pady=14)
+        y += 100
+        y = _text_block(c, M, y, "This week in K-beauty", SERIF, PW - 2 * M, 2, 96, 64, c.ink, lh=1.02) + 30
+        sections = []
+        kor = [r for r in d.get("korea", []) if r.get("index")][:5]
+        if kor:
+            sections.append(("Most searched in Korea", [r["name"] for r in kor]))
+        if info.products:
+            sections.append(("Top sellers abroad", [f"{p['brand']} {p['name']}" for p in info.products[:5]]))
+        for label, names in sections:
+            c.label(M, y, label, color=rgb(t.accent), size=24)
+            y += 50
+            for k, nm in enumerate(names, 1):
+                c.d.text((M, y + 22), str(k), font=F(SERIF, 40), fill=rgb(t.accent), anchor="lm")
+                f, lines, _ = fit(c.d, nm, SANS_M, PW - 2 * M - 60, 1, 32, 22, balance=False)
+                c.d.text((M + 56, y + 22), lines[0], font=f, fill=c.ink, anchor="lm")
+                y += 58
+            y += 30
+        _pin_footer(c, "Tap for the full top 10", handle, "#ad affiliate links" if info.has_links else "K-beauty trends")
     elif topic.variant == "timeline":
         t = HISTORY
         c = Card(t, size=(PW, PH))
@@ -986,3 +1012,205 @@ def render_info_pin(topic: Topic, info: InfoCopy, number: int, handle: str, out_
     out_path.parent.mkdir(parents=True, exist_ok=True)
     c.img.save(out_path, "JPEG", quality=88, optimize=True, progressive=True)
     return out_path
+
+
+# ---------------------------------------------------------------------------
+# This week in K-beauty (Thursday): Korea search chart + Olive Young Global bestsellers
+# ---------------------------------------------------------------------------
+WEEKLY = theme_from("#3A56C5")
+UP, DOWN = "#1E8E5A", "#B4474F"
+
+
+def _tri(c: Card, x, cy, s, up: bool, color):
+    pts = [(x, cy + s * 0.5), (x + s, cy + s * 0.5), (x + s / 2, cy - s * 0.5)] if up else \
+          [(x, cy - s * 0.5), (x + s, cy - s * 0.5), (x + s / 2, cy + s * 0.5)]
+    c.d.polygon(pts, fill=rgb(color))
+
+
+def _delta(c: Card, x_right, cy, text, up: bool | None, f):
+    """Right-aligned '▲ 12%' / '▼ 3' / 'NEW' label."""
+    if up is None:
+        w = tw(c.d, text, f) + 24
+        c.d.rounded_rectangle((x_right - w, cy - 17, x_right, cy + 17), 17, fill=rgb(c.t.accent))
+        c.d.text((x_right - w / 2, cy + 1), text, font=f, fill=rgb(c.t.on_accent), anchor="mm")
+        return
+    color = UP if up else DOWN
+    tw_ = tw(c.d, text, f)
+    c.d.text((x_right, cy + 1), text, font=f, fill=rgb(color), anchor="rm")
+    _tri(c, x_right - tw_ - 26, cy, 18, up, color)
+
+
+def wk_cover(d: dict, number: int, handle: str, n: int, products: list[dict]) -> Card:
+    from .editorial import week_label
+    t = WEEKLY
+    c = Card(t)
+    c.header(handle, 1, n)
+    # rising bars motif
+    for i, h in enumerate((90, 150, 120, 210, 280)):
+        x = W - M - 5 * 58 + i * 58
+        c.d.rounded_rectangle((x, 400 - h, x + 40, 400), 12, fill=rgb(t.accent, 90 + i * 30))
+    y = 190
+    _, ph = c.pill(M, y, f"THIS WEEK · NO.{number}", F(SANS_SB, 24), rgb(t.on_accent), rgb(t.accent), padx=22, pady=14)
+    c.label(M, y + ph + 34, week_label(d), size=24)
+    y = 430
+    y = _text_block(c, M, y, "This week in K-beauty", SERIF, W - 2 * M, 2, 124, 90, c.ink, lh=1.0) + 26
+    y = _text_block(c, M, y, "What Korea searched and what K-beauty fans abroad bought", SANS, W - 2 * M, 2, 36, 28, c.muted, lh=1.3) + 40
+    kor = [r for r in d.get("korea", []) if r.get("index")]
+    stats = []
+    if kor:
+        stats.append(("Most searched in Korea", kor[0]["name"]))
+    if products:
+        stats.append(("#1 bestseller abroad", f"{products[0]['brand']} {products[0]['name']}"))
+    for label, value in stats:
+        box = (M, y, W - M, y + 128)
+        c.shadow_box(box, 30, t.surface, blur=18, dy=8, alpha=18)
+        c.label(M + 36, y + 30, label, color=rgb(t.accent), size=21)
+        fv, vl, _ = fit(c.d, value, SANS_B, W - 2 * M - 72, 1, 40, 26, balance=False)
+        c.d.text((M + 36, y + 88), vl[0], font=fv, fill=c.ink, anchor="lm")
+        y += 146
+    if y < H - 175:
+        _swipe(c, "Swipe for the full top 10")
+    c.dots(1, n)
+    return c
+
+
+def wk_korea(d: dict, handle: str, idx: int, n: int) -> Card:
+    from .editorial import week_label
+    t = WEEKLY
+    c = Card(t)
+    c.header(handle, idx, n)
+    y = _title(c, "Korea · search interest", "Most-searched ingredients", max_lines=1, size=74) + 30
+    rows = [r for r in d.get("korea", []) if r.get("index")][:10]
+    bottom = H - 190
+    row_h = (bottom - y) / max(len(rows), 1)
+    fn, fr, fd = F(SANS_SB, 34), F(SERIF, 44), F(SANS_B, 26)
+    bar_x0, bar_x1 = M + 380, W - M - 170
+    for i, r in enumerate(rows):
+        cy = y + row_h * i + row_h / 2
+        c.d.text((M, cy + 2), str(i + 1), font=fr, fill=rgb(t.accent), anchor="lm")
+        f, nl, _ = fit(c.d, r["name"], SANS_SB, bar_x0 - M - 90, 1, 34, 24, balance=False)
+        c.d.text((M + 70, cy), nl[0], font=f, fill=c.ink, anchor="lm")
+        c.d.rounded_rectangle((bar_x0, cy - 11, bar_x1, cy + 11), 11, fill=rgb(t.soft))
+        c.d.rounded_rectangle((bar_x0, cy - 11, bar_x0 + max(22, (bar_x1 - bar_x0) * r["index"] / 100), cy + 11), 11, fill=rgb(t.accent))
+        ch = r.get("change")
+        if ch is None:
+            _delta(c, W - M, cy, "NEW", None, F(SANS_B, 20))
+        elif ch == 0:
+            c.d.text((W - M, cy), "0%", font=fd, fill=c.muted, anchor="rm")
+        else:
+            _delta(c, W - M, cy, f"{abs(ch)}%", ch > 0, fd)
+    note = f"Naver search data (Korea), {week_label(d)} vs the week before. Top ingredient = 100."
+    ff, lines, s = fit(c.d, note, SANS, W - 2 * M, 2, 25, 20)
+    draw_lines(c.d, M, H - 175, lines, ff, c.muted, int(s * 1.35))
+    c.dots(idx, n)
+    return c
+
+
+def wk_products(products: list[dict], number: int, handle: str, idx: int, n: int) -> Card:
+    t = WEEKLY
+    c = Card(t)
+    c.header(handle, idx, n)
+    y = _title(c, "Abroad · Olive Young Global", "Top bestsellers this week", max_lines=1, size=74) + 30
+    items = products[:10]
+    linked = any(p["links"] for p in items)
+    bottom = H - (230 if linked else 190)
+    row_h = (bottom - y) / max(len(items), 1)
+    fr, fb, fd = F(SERIF, 44), F(SANS_B, 20), F(SANS_B, 26)
+    for i, p in enumerate(items):
+        top = y + row_h * i
+        cy = top + row_h / 2
+        if i % 2 == 0:
+            c.d.rounded_rectangle((M - 16, top + 3, W - M + 16, top + row_h - 3), 18, fill=rgb(t.surface, 170))
+        c.d.text((M, cy + 2), str(p.get("rank") or i + 1), font=fr, fill=rgb(t.accent), anchor="lm")
+        x = M + 80
+        tracked(c.d, x, cy - 10, p["brand"].upper()[:28], fb, c.muted, 1.6)
+        f, nl, _ = fit(c.d, p["name"], SANS_M, W - M - x - 150, 1, 29, 22, balance=False)
+        c.d.text((x, cy + 2), nl[0], font=f, fill=c.ink, anchor="la")
+        r, pr = p.get("rank"), p.get("prev_rank")
+        if r and pr is None:
+            _delta(c, W - M, cy, "NEW", None, F(SANS_B, 20))
+        elif r and pr and pr != r:
+            _delta(c, W - M, cy, str(abs(pr - r)), pr > r, fd)
+        else:
+            c.d.text((W - M, cy), "–", font=fd, fill=c.muted, anchor="rm")
+    if linked:
+        label = f"Links in my bio: No.{number}"
+        fl = F(SANS_B, 32)
+        yy = H - 205
+        c.d.rounded_rectangle((M, yy, M + tw(c.d, label, fl) + 140, yy + 80), 40, fill=rgb(t.accent))
+        c.d.text((M + 40, yy + 40), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
+        c.arrow(M + 40 + tw(c.d, label, fl) + 22, yy + 41, 44, rgb(t.on_accent), 5)
+    else:
+        c.d.text((M, H - 170), "Olive Young Global bestseller list, this week.", font=F(SANS, 25), fill=c.muted, anchor="la")
+    c.dots(idx, n)
+    return c
+
+
+def wk_spotlight(sp: dict, handle: str, idx: int, n: int) -> Card:
+    t = WEEKLY
+    c = Card(t)
+    c.header(handle, idx, n)
+    y = _title(c, "Rising this week", "Why everyone's searching it", max_lines=2, size=74) + 50
+    c.pill(M, y, f"+{sp['change']}% IN KOREA" if sp.get("change") is not None else "NEW IN KOREA", F(SANS_B, 26),
+           rgb(t.on_accent), rgb(UP), padx=24, pady=16, tr=1.5)
+    y += 110
+    fn, nl, ns = fit_words(c, sp["name"], SERIF, W - 2 * M, 2, 150, 80)
+    y = draw_name(c, M, y, nl, fn, rgb(t.accent), int(ns * 0.98), gap=30)
+    if sp.get("what_it_is"):
+        y = _text_block(c, M, y, sp["what_it_is"], SANS, W - 2 * M, 5, 42, 30, c.ink, lh=1.36) + 40
+    for b in sp.get("benefits", [])[:2]:
+        fb = F(SANS, 36)
+        bl = wrap(c.d, b, fb, W - 2 * M - 70)[:2]
+        if y + len(bl) * 48 > H - 220:
+            break
+        c.d.ellipse((M, y + 2, M + 44, y + 46), fill=rgb(t.soft))
+        c.check(M + 22, y + 24, 22, rgb(t.accent), 4)
+        draw_lines(c.d, M + 66, y, bl, fb, c.ink, 48)
+        y += len(bl) * 48 + 22
+    if sp.get("more"):
+        c.d.text((M, H - 180), sp["more"], font=F(SANS_M, 28), fill=c.muted, anchor="la")
+    c.dots(idx, n)
+    return c
+
+
+def wk_cta(handle: str, idx: int, n: int, linked: bool) -> Card:
+    t = WEEKLY
+    c = Card(t, dark=True)
+    c.header(handle, idx, n)
+    for i, h in enumerate((120, 200, 160, 280, 360)):
+        x = W - M - 5 * 64 + i * 64
+        c.d.rounded_rectangle((x, 520 - h, x + 44, 520), 14, fill=rgb(t.accent, 120 + i * 25))
+    y = 600
+    c.d.text((M, y), "See you next", font=F(SERIF, 110), fill=c.ink, anchor="la")
+    c.d.text((M, y + 120), "Thursday", font=F(SERIF, 110), fill=rgb(t.dark_muted), anchor="la")
+    y += 290
+    c.bookmark(M, y, 34, 46, c.ink)
+    c.d.text((M + 60, y + 23), "Save this week's list", font=F(SANS_M, 36), fill=c.ink, anchor="lm")
+    c.d.text((M, y + 90), f"Follow @{handle} for the weekly top 10", font=F(SANS_B, 36), fill=c.ink, anchor="la")
+    disc = "#ad · Product links are affiliate links; I may earn a small commission at no extra cost to you." if linked else \
+        "Rankings come from public data: Naver search trends and Olive Young Global bestsellers."
+    f, lines, s = fit(c.d, disc, SANS, W - 2 * M, 2, 26, 21)
+    draw_lines(c.d, M, H - 196, lines, f, c.muted, int(s * 1.4))
+    c.dots(idx, n)
+    return c
+
+
+def render_weekly(topic: Topic, info: InfoCopy, number: int, handle: str) -> list[Card]:
+    d = topic.data
+    has_kor = any(r.get("index") for r in d.get("korea", []))
+    sp = d.get("spotlight")
+    plan = ["cover"] + (["korea"] if has_kor else []) + (["products"] if info.products else []) + (["spot"] if sp else []) + ["cta"]
+    n = len(plan)
+    out = []
+    for idx, name in enumerate(plan, 1):
+        if name == "cover":
+            out.append(wk_cover(d, number, handle, n, info.products))
+        elif name == "korea":
+            out.append(wk_korea(d, handle, idx, n))
+        elif name == "products":
+            out.append(wk_products(info.products, number, handle, idx, n))
+        elif name == "spot":
+            out.append(wk_spotlight(sp, handle, idx, n))
+        else:
+            out.append(wk_cta(handle, idx, n, info.has_links))
+    return out

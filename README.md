@@ -34,7 +34,7 @@ GitHub(무료)에서 돌아가서 컴퓨터를 켜둘 필요가 없어요.
 | 월 | 🧪 피부 성분 101 · 한국에서 뜨는 것 | PDRN, BDRN, 스피큘, 쑥, 판테놀 … |
 | 화 | 🛍 제품 픽 | 지금처럼 제품 소개 + **제품명에 든 핵심 성분 카드**가 자동으로 한 장 추가돼요 |
 | 수 | 💇 모발·두피 성분 101 | 로즈마리, LPP, 쌀뜨물, 두피 스케일링(살리실산), 판테놀 … |
-| 목 | 🇰🇷 vs 🌍 서울 vs 해외 | 한국에서 뜨는 것 5개 vs 해외에서 뜨는 것 5개, 겹치는 것(벤 다이어그램), 다음에 뜰 것 |
+| 목 | 📈 이번 주 K뷰티 TOP | **네이버 검색 성분 TOP 10**(지난주 대비 ▲▼) + **올리브영 글로벌 베스트셀러 TOP 10**(순위 변화, 링크 페이지로 연결) + 이번 주 급상승 성분 설명. 데이터가 없으면 조사해 둔 '서울 vs 해외' 비교로 대신 올라가요 |
 | 금 | 🧪 피부 성분 101 · 해외에서 뜨는 것 | NAD+, 달팽이 점액, TXA, 글루타치온, 레티날 … |
 | 토 | 🕰 K뷰티 타임머신 | 처음엔 2012→2026 전체 타임라인, 그다음 한 해씩 (2012년 BB크림 → 2025년 PDRN …) |
 | 일 | 🛍 제품 픽 | 화요일과 같아요 |
@@ -282,6 +282,7 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 | `KBEAUTY_SHEET_CSV_URL` | 권장 | 구글 시트 주소 (없으면 `data/kbeauty_queue.csv` 사용) |
 | `IG_ACCESS_TOKEN` | 게시하려면 필수 | 인스타 게시 |
 | `ALI_APP_KEY` / `ALI_APP_SECRET` / `ALI_TRACKING_ID` | 알리 쓸 때 | 알리 인기 도구 + 제휴 링크 |
+| `NAVER_CLIENT_ID` / `NAVER_CLIENT_SECRET` | 선택 (추천) | 목요일 '이번 주 TOP'의 한국 검색 순위 (네이버 데이터랩, 무료) |
 | `GEMINI_API_KEY` | 선택 (추천) | AI 카피·번역 + 매달 제미나이 무료 조사 (무료) |
 | `BACKUP_AI_KEY` | 선택 (추천) | 백업 AI (Groq 무료) |
 | `ANTHROPIC_API_KEY` | 선택 | AI 카피·번역 (유료) |
@@ -362,6 +363,8 @@ config.toml              ← 계정·게시 설정 (요일별 순서 포함)
 content/skin.toml        ← 피부 성분 101 자료 (위에서부터 순서대로 올라가요)
 content/hair.toml        ← 모발·두피 성분 101 자료
 content/trends.toml      ← 연도별 K뷰티 변화 + 서울 vs 해외 비교 자료
+content/keywords.toml    ← 네이버에서 볼 성분 검색어 (한국어)
+data/trend_latest.json   ← 이번 주 네이버 검색 순위 + 베스트셀러 변화 (매주 월요일 자동)
 content/drafts/          ← 제미나이 조사 초안·보고서, Claude 비교표 (게시 안 됨)
 data/oy_catalog.json     ← 매주 저장하는 올리브영 글로벌 베스트셀러 (성분 글의 제품 찾기용)
 data/kbeauty_queue.csv   ← (시트 대신 쓸 때) K뷰티 목록

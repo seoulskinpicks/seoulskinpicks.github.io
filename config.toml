@@ -15,12 +15,13 @@ timezone = "Asia/Seoul"                           # 날짜 기준 시간대
 #   skin_global : 피부 성분 101 — 해외에서 뜨는 성분 먼저 (예: NAD+, 달팽이, TXA)
 #   skin        : 피부 성분 101 — 순서대로 아무거나
 #   hair        : 모발·두피 성분 101 (예: 로즈마리, LPP, 두피 스케일링)
-#   versus      : 서울 vs 해외 — 한국에서 뜨는 것과 해외에서 뜨는 것 비교
+#   weekly      : 이번 주 K뷰티 TOP — 네이버 검색 성분 TOP10 + 올리브영 글로벌 베스트셀러 TOP10 (우리 링크)
+#   versus      : 서울 vs 해외 — 조사해 둔 비교 (weekly 데이터가 없을 때 대신 올라가요)
 #   history     : K뷰티 타임머신 — 연도별로 뭐가 유행했는지 (처음엔 전체 타임라인)
 #   product     : 제품 픽 (아래 mode 순서로 K뷰티 / 알리 도구)
 # 성분·비교 글에도 그 성분이 들어간 올리브영 인기 제품이 자동으로 붙어요.
 # 내용은 content/ 폴더의 skin.toml · hair.toml · trends.toml (조사·출처 확인한 자료)에서 가져와요.
-weekly = ["skin_korea", "product", "hair", "versus", "skin_global", "history", "product"]
+weekly = ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"]
 repeat_after_days = 120   # 정보 글을 다 쓰면, 올린 지 이 날짜가 지난 것부터 다시 올려요
 
 # 제품 픽 날의 순서:

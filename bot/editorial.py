@@ -21,9 +21,9 @@ from .util import clean_space, log, warn
 
 ROOT = Path(__file__).resolve().parent.parent
 
-INFO_KINDS = ("skin", "hair", "versus", "history")
-PLAN_TOKENS = ("product", "skin", "skin_korea", "skin_global", "hair", "versus", "history")
-DEFAULT_WEEKLY = ["skin_korea", "product", "hair", "versus", "skin_global", "history", "product"]
+INFO_KINDS = ("skin", "hair", "versus", "history", "weekly")
+PLAN_TOKENS = ("product", "skin", "skin_korea", "skin_global", "hair", "versus", "history", "weekly")
+DEFAULT_WEEKLY = ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"]
 FALLBACK = {
     "product": ["product", "skin", "hair", "history", "versus"],
     "skin": ["skin", "hair", "history", "versus", "product"],
@@ -32,12 +32,13 @@ FALLBACK = {
     "hair": ["hair", "skin", "history", "versus", "product"],
     "versus": ["versus", "skin", "hair", "history", "product"],
     "history": ["history", "skin", "hair", "versus", "product"],
+    "weekly": ["weekly", "versus", "skin", "hair", "history", "product"],
 }
 KIND_LABEL = {"skin": "Ingredient 101", "hair": "Hair & scalp 101", "versus": "Seoul vs. abroad",
-              "history": "K-beauty history"}
+              "history": "K-beauty history", "weekly": "This week in K-beauty"}
 KIND_KO = {"product": "제품 픽", "skin": "피부 성분 101", "skin_korea": "피부 성분 101 (한국에서 뜨는 것)",
            "skin_global": "피부 성분 101 (해외에서 뜨는 것)", "hair": "모발·두피 성분 101",
-           "versus": "서울 vs 해외", "history": "K뷰티 연도별 변화"}
+           "versus": "서울 vs 해외", "history": "K뷰티 연도별 변화", "weekly": "이번 주 K뷰티 TOP"}
 HEAT_LABEL = {"korea": "Hot in Korea", "global": "Trending abroad", "both": "Hot in Korea & abroad"}
 PREFIX = {"skin": "ing-", "hair": "hair-", "versus": "vs-"}
 
@@ -109,7 +110,14 @@ class Topic:
         if self.variant == "timeline":
             first, last = self.data["years"][0]["year"], self.data["years"][-1]["year"]
             return f"K-beauty through the years, {first}–{last}"
+        if self.kind == "weekly":
+            return f"This week in K-beauty ({week_label(self.data)})"
         return f"{self.data['year']}: {self.data['headline']}"
+
+
+def week_label(d: dict) -> str:
+    a, b = Date.fromisoformat(d["week_start"]), Date.fromisoformat(d["week_end"])
+    return f"{a:%b} {a.day}–{b.day}" if a.month == b.month else f"{a:%b} {a.day} – {b:%b} {b.day}"
 
 
 def plan_for(cfg, today: Date) -> str:
@@ -155,12 +163,14 @@ def next_topic(token: str, lib: Library, state, today: Date, cfg) -> Topic | Non
     """First unused topic in library order; once all are used, the one used longest ago
     (if it was more than [schedule] repeat_after_days ago)."""
     kind = token.split("_")[0]
+    used = last_used(state)
+    if kind == "weekly":
+        return weekly_topic(cfg, today, used)
     heat = {"skin_korea": {"korea", "both"}, "skin_global": {"global", "both"}}.get(token)
     topics = [t for t in all_topics(kind, lib) if not heat or t.data.get("heat") in heat]
-    used = last_used(state)
-    for t in topics:
-        if t.key not in used:
-            return t
+    fresh = trend_order([t for t in topics if t.key not in used], token, cfg)
+    if fresh:
+        return fresh[0]
     days = int(cfg.raw.get("schedule", {}).get("repeat_after_days", 120))
     old = sorted((t for t in topics if (today - used[t.key]).days >= days), key=lambda t: used[t.key])
     if old:
@@ -169,9 +179,58 @@ def next_topic(token: str, lib: Library, state, today: Date, cfg) -> Topic | Non
     return None
 
 
+def weekly_topic(cfg, today: Date, used: dict) -> Topic | None:
+    from . import weekly
+    data = weekly.latest(cfg, today)
+    if not data or not (data.get("korea") or data.get("products")):
+        return None
+    key = f"wk-{data['week_end']}"
+    if key in used:
+        return None
+    return Topic("weekly", key, data)
+
+
+def weekly_spotlight(d: dict, lib: Library) -> dict | None:
+    """Biggest riser in Korea this week (among reasonably searched terms), with its library explanation."""
+    rows = [r for r in d.get("korea", []) if (r.get("index") or 0) >= 10 and r.get("change") is not None]
+    if not rows:
+        return None
+    r = max(rows, key=lambda x: x["change"])
+    if r["change"] <= 0:
+        return None
+    entry = next((e for e in lib.skin + lib.hair if e["id"] == r["id"]), None)
+    sp = {"id": r["id"], "name": r["name"], "change": r["change"]}
+    if entry:
+        sp.update(what_it_is=entry["what_it_is"], benefits=entry["benefits"][:2],
+                  more="Full guide coming in our Ingredient 101 series")
+    return sp
+
+
+def trend_order(topics: list[Topic], token: str, cfg) -> list[Topic]:
+    """Put this week's hot ingredients first (Korea: Naver search; abroad: Olive Young Global bestsellers)."""
+    if not topics or cfg is None:
+        return topics
+    try:
+        if token in ("skin_korea", "hair"):
+            from .weekly import korea_scores
+            scores = korea_scores(cfg)
+        elif token == "skin_global":
+            cat = load_catalog(cfg)
+            scores = {t.data["id"]: sum(1.0 / (c.get("rank") or 100) for c in match_catalog(t.data, cat, limit=20, min_rating=0, min_reviews=0))
+                      for t in topics} if cat else {}
+        else:
+            scores = {}
+    except Exception:
+        scores = {}
+    if not any(scores.get(t.data.get("id")) for t in topics):
+        return topics
+    order = {id(t): i for i, t in enumerate(topics)}
+    return sorted(topics, key=lambda t: (-(scores.get(t.data.get("id")) or 0), order[id(t)]))
+
+
 def remaining(lib: Library, state) -> dict[str, int]:
     used = last_used(state)
-    return {k: sum(1 for t in all_topics(k, lib) if t.key not in used) for k in INFO_KINDS}
+    return {k: sum(1 for t in all_topics(k, lib) if t.key not in used) for k in INFO_KINDS if k != "weekly"}
 
 
 # ---------------------------------------------------------------------------
@@ -196,8 +255,22 @@ def save_catalog(cfg, items: list[dict], today: str) -> Path:
     keep = ("brand", "product", "prdt_no", "url", "list", "rank", "store_rating", "review_count")
     path = catalog_path(cfg)
     path.parent.mkdir(parents=True, exist_ok=True)
-    data = {"updated": today, "source": "Olive Young Global bestsellers",
-            "items": [{k: it.get(k) for k in keep} for it in items]}
+    old = {}
+    if path.exists():
+        try:
+            prev = json.loads(path.read_text(encoding="utf-8"))
+            if prev.get("updated") != today:
+                old = {(o.get("list"), o.get("prdt_no")): o.get("rank") for o in prev.get("items", [])}
+            else:  # same day re-run: keep the earlier comparison
+                old = {(o.get("list"), o.get("prdt_no")): o.get("prev_rank") for o in prev.get("items", [])}
+        except Exception:
+            old = {}
+    rows = []
+    for it in items:
+        row = {k: it.get(k) for k in keep}
+        row["prev_rank"] = old.get((it.get("list"), it.get("prdt_no")))
+        rows.append(row)
+    data = {"updated": today, "source": "Olive Young Global bestsellers", "items": rows}
     path.write_text(json.dumps(data, ensure_ascii=False, indent=0), encoding="utf-8")
     return path
 
@@ -240,9 +313,14 @@ def match_catalog(entry: dict, catalog: list[dict], limit: int = 3, min_rating: 
 
 
 def find_products(topic: Topic, cfg, catalog: list[dict], ali_client=None) -> list[dict]:
+    from .discover import _oy_link
+    if topic.kind == "weekly":
+        return [{"brand": c["brand"], "name": c["product"],
+                 "links": {"oliveyoung": _oy_link(cfg, {"url": c["url"], "prdt_no": c.get("prdt_no", "")})} if c.get("url") else {},
+                 "rating": c.get("store_rating"), "reviews": c.get("review_count"), "rank": c.get("rank"),
+                 "prev_rank": c.get("prev_rank"), "from": "catalog"} for c in topic.data.get("products", [])[:10]]
     if topic.kind not in ("skin", "hair"):
         return []
-    from .discover import _oy_link
 
     items = match_catalog(topic.data, catalog)
     products = [{
@@ -300,12 +378,30 @@ class InfoCopy:
         return any(p["links"] for p in self.products)
 
 
+def _pct(ch) -> str:
+    if ch is None:
+        return " (new this week)"
+    if ch == 0:
+        return " (no change)"
+    return f" ({'+' if ch > 0 else ''}{ch}% vs last week)"
+
+
+def _move(p: dict) -> str:
+    r, pr = p.get("rank"), p.get("prev_rank")
+    if not r:
+        return ""
+    if pr is None:
+        return " (new)"
+    return f" (▲{pr - r})" if pr > r else (f" (▼{r - pr})" if pr < r else "")
+
+
 def _tags(cfg, topic: Topic) -> list[str]:
     c = cfg.copy
     extra = {"skin": ["#skincareingredients", "#kbeautyingredients", "#skincarescience"],
              "hair": ["#koreanhaircare", "#scalpcare", "#haircareroutine"],
              "versus": ["#kbeautytrends", "#seoulbeauty", "#koreanbeautytrends"],
-             "history": ["#kbeautyhistory", "#kbeautytrends", "#beautyhistory"]}[topic.kind]
+             "history": ["#kbeautyhistory", "#kbeautytrends", "#beautyhistory"],
+             "weekly": ["#kbeautytrends", "#oliveyoungglobal", "#kbeautybestsellers", "#trendingnow"]}[topic.kind]
     own = topic.data.get("hashtags", []) if topic.kind in ("skin", "hair") else []
     tags = list(dict.fromkeys(own + extra + c.get("hashtags_common", [])))
     return [t for t in tags if t.startswith("#") and " " not in t][:20]
@@ -344,6 +440,23 @@ def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None 
             title = f"🛍 Where to find it (links in bio → No.{number})" if linked else "🛍 Where you'll find it"
             lines += ["", title] + [_product_line(p) for p in products]
         bullets = list(d["benefits"][:3])
+    elif topic.kind == "weekly":
+        wk = week_label(d)
+        hook = f"This week in K-beauty: {wk}"
+        kor = [r for r in d.get("korea", []) if r.get("index")][:10]
+        lines += [f"{hook} 📈", "What Korea searched and what K-beauty fans abroad bought, last week.", ""]
+        if kor:
+            lines.append("🇰🇷 Most-searched skincare & hair ingredients in Korea (Naver search, top = 100)")
+            lines += [f"{i}. {r['name']} · {r['index']}" + _pct(r.get("change")) for i, r in enumerate(kor, 1)]
+            lines.append("")
+        if products:
+            linked = any(p["links"] for p in products)
+            lines.append(f"🛍 Top bestsellers on Olive Young Global" + (f" (links in bio → No.{number})" if linked else ""))
+            lines += [f"{i}. {p['brand']} {p['name']}" + _move(p) for i, p in enumerate(products, 1)]
+            lines.append("")
+        lines.append("Which one are you trying next? Tell me below 👇")
+        bullets = ([f"Most searched in Korea: {kor[0]['name']}"] if kor else []) + \
+                  ([f"#1 on Olive Young Global: {products[0]['brand']} {products[0]['name']}"] if products else [])
     elif topic.kind == "versus":
         hook = f"{d['title']}: {d['topic'].lower()}, {d['year']}"
         lines += [f"{hook} 🇰🇷🌍", d["subtitle"], "", "🇰🇷 Hot in Seoul"]
@@ -409,6 +522,7 @@ def post_record(info: InfoCopy, number: int, today: Date, slides: int) -> dict:
         "link": first_link,
         "links": {},
         "products": [{"brand": p["brand"], "name": p["name"], "links": p["links"]} for p in info.products],
+        **({"weekly": t.data} if t.kind == "weekly" else {}),
         "category": t.variant or t.kind,
         "folder": f"{number:03d}",
         "slides": slides,
@@ -433,6 +547,8 @@ def find_topic(key: str, lib: Library) -> Topic | None:
 def article_html(post: dict, lib: Library, products_html: str = "") -> str:
     """The guide as HTML; products_html (the 'Where to find it' block) goes before the sources."""
     esc = html.escape
+    if post.get("weekly"):
+        return _weekly_html(post["weekly"], products_html)
     t = find_topic(post.get("key", ""), lib)
     if t is None:  # removed from the library: show the caption text
         body = esc(post.get("caption", "")).split("\n.\n")[0].replace("\n", "<br>")
@@ -477,6 +593,19 @@ def article_html(post: dict, lib: Library, products_html: str = "") -> str:
         out.append("<details><summary>Sources</summary><ul class=\"src\">" + "".join(
             f"<li><a href=\"{esc(s)}\" rel=\"nofollow noopener\" target=\"_blank\">{esc(_host(s))}</a></li>" for s in srcs)
             + "</ul></details>")
+    return "\n".join(out)
+
+
+def _weekly_html(d: dict, products_html: str) -> str:
+    esc = html.escape
+    out = [f"<p class=\"lead\">What Korea searched and what K-beauty fans abroad bought, {esc(week_label(d))}.</p>"]
+    kor = [r for r in d.get("korea", []) if r.get("index")][:10]
+    if kor:
+        out.append("<h2>Most-searched ingredients in Korea</h2><ol>" + "".join(
+            f"<li><b>{esc(r['name'])}</b> · {r['index']}{esc(_pct(r.get('change')))}</li>" for r in kor) + "</ol>")
+        out.append("<p class=\"note\">Search interest from Naver DataLab (Korea's largest search engine), last full week vs the week before. Top ingredient = 100.</p>")
+    if products_html:
+        out.append(products_html.replace("Where to find it", "Top bestsellers on Olive Young Global"))
     return "\n".join(out)
 
 
