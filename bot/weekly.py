@@ -1,6 +1,7 @@
 """'This week in K-beauty' (Thursday post) and trend-aware topic order.
 
-Korea  : Naver DataLab search trend API (official, free: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET).
+Korea  : Naver search trend API via NAVER API HUB (official, free up to 30,000 calls:
+         NAVER_CLIENT_ID / NAVER_CLIENT_SECRET = the API HUB Client ID / Client Secret).
          Weekly search interest for ~40 ingredients (content/keywords.toml), last full week (Mon-Sun)
          vs the week before. Every request carries PDRN as an anchor so all terms share one scale.
 Abroad : Olive Young Global bestsellers (weekly list saved by 'Find bestsellers'), with rank moves
@@ -19,7 +20,7 @@ import requests
 
 from .util import log, scrub, warn
 
-NAVER_URL = "https://openapi.naver.com/v1/datalab/search"
+NAVER_URL = "https://naverapihub.apigw.ntruss.com/search-trend/v1/search"  # NAVER API HUB (Naver Cloud)
 ANCHOR = "pdrn"
 
 
@@ -63,7 +64,7 @@ def naver_trends(cfg, today: Date, session=None) -> list[dict]:
                 "keywordGroups": [{"groupName": t["id"], "keywords": t["keywords"][:20]} for t in batch]}
         try:
             r = http.post(NAVER_URL, json=body, timeout=30, headers={
-                "X-Naver-Client-Id": keys[0], "X-Naver-Client-Secret": keys[1], "Content-Type": "application/json"})
+                "X-NCP-APIGW-API-KEY-ID": keys[0], "X-NCP-APIGW-API-KEY": keys[1], "Content-Type": "application/json"})
             if r.status_code != 200:
                 raise RuntimeError(f"HTTP {r.status_code} {str(getattr(r, 'text', ''))[:120]}")
             results = r.json().get("results", [])

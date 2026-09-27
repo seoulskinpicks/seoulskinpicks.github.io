@@ -434,7 +434,9 @@ class FakeNaver:
     def post(self, url, json=None, headers=None, timeout=None):
         from datetime import date as D, timedelta as TD
         from tests.test_smoke import FakeResp
-        assert headers["X-Naver-Client-Id"] == "NID" and len(json["keywordGroups"]) <= 5
+        assert url == "https://naverapihub.apigw.ntruss.com/search-trend/v1/search"
+        assert headers["X-NCP-APIGW-API-KEY-ID"] == "NID" and headers["X-NCP-APIGW-API-KEY"] == "SEC"
+        assert len(json["keywordGroups"]) <= 5 and all(len(g["keywords"]) <= 20 for g in json["keywordGroups"])
         self.bodies.append(json)
         end = D.fromisoformat(json["endDate"])
         per = {"pdrn": (10, 5), "spicule": (6, 3), "mugwort": (2, 4), "exosome": (20, 20)}

@@ -282,7 +282,7 @@ AliExpress 포털 승인 후 [AliExpress Open Platform](https://openservice.alie
 | `KBEAUTY_SHEET_CSV_URL` | 권장 | 구글 시트 주소 (없으면 `data/kbeauty_queue.csv` 사용) |
 | `IG_ACCESS_TOKEN` | 게시하려면 필수 | 인스타 게시 |
 | `ALI_APP_KEY` / `ALI_APP_SECRET` / `ALI_TRACKING_ID` | 알리 쓸 때 | 알리 인기 도구 + 제휴 링크 |
-| `NAVER_CLIENT_ID` / `NAVER_CLIENT_SECRET` | 선택 (추천) | 목요일 '이번 주 TOP'의 한국 검색 순위 (네이버 데이터랩, 무료) |
+| `NAVER_CLIENT_ID` / `NAVER_CLIENT_SECRET` | 선택 (추천) | 목요일 '이번 주 TOP'의 한국 검색 순위. 네이버 클라우드 **NAVER API HUB → 검색어트렌드**의 Client ID / Client Secret (월 30,000건 무료) |
 | `GEMINI_API_KEY` | 선택 (추천) | AI 카피·번역 + 매달 제미나이 무료 조사 (무료) |
 | `BACKUP_AI_KEY` | 선택 (추천) | 백업 AI (Groq 무료) |
 | `ANTHROPIC_API_KEY` | 선택 | AI 카피·번역 (유료) |
