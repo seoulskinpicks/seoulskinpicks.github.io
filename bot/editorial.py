@@ -559,9 +559,18 @@ def check_ingredient(e: dict, lib: Library, catalog: list[dict] | None = None) -
     if str(e.get("name", "")).lower() in names or e.get("id") in names:
         p.append("이미 자료에 있는 성분")
     if catalog is not None and catalog:
-        if not match_catalog(e, catalog, min_rating=0, min_reviews=0):
+        hits = match_catalog(e, catalog, limit=10, min_rating=0, min_reviews=0)
+        if not hits:
             p.append("올리브영 베스트셀러 제품명에서 이 성분을 못 찾음")
+        elif not [h for h in hits if names_ingredient(e, h["product"])]:
+            p.append("매칭된 제품명에 성분 이름이 없음 (키워드가 너무 넓음)")
     return p
+
+
+def names_ingredient(e: dict, product: str) -> bool:
+    """The product name really names this ingredient (e.g. 'Vita Serum' is NOT vitamin C)."""
+    first = (str(e.get("name", "")).split() or [""])[0].lower()
+    return len(first) >= 3 and _pattern(first).search(product.lower()) is not None
 
 
 def check_versus(v: dict, lib: Library) -> list[str]:

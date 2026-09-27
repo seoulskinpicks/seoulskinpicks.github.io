@@ -162,6 +162,9 @@ def research_free(cfg, lib: ed.Library, catalog: list[dict], http, sleep, n_skin
                 continue
             prompt = (
                 f"Write ONE Ingredient 101 entry about '{name}' for {area} care, using ONLY the evidence below. "
+                "Write for skincare shoppers: explain what it does for the skin or hair, who it suits and how to use it. "
+                "Skip encyclopedic trivia (history, inventors, chemistry details unrelated to use). Benefits must be effects "
+                "on skin/hair, not facts about the molecule or product. Myths must be common consumer misconceptions. "
                 "If the evidence does not support a statement, leave it out. heat must be \"global\" (these are bestsellers "
                 "with shoppers abroad) unless the evidence says it is hot in Korea. sources must be URLs copied from the evidence.\n"
                 f"{SCHEMA_NOTE}\n{RULES}\n\nEVIDENCE:\n" + "\n".join(f"[{x['url']}] {x['text']}" for x in evidence)
@@ -175,7 +178,8 @@ def research_free(cfg, lib: ed.Library, catalog: list[dict], http, sleep, n_skin
                 e = e[0] if e else {}
             allowed = {x["url"] for x in evidence}
             e["sources"] = [s for s in e.get("sources", []) if s in allowed][:4]
-            e["examples"] = [{"brand": m["brand"], "product": m["product"]} for m in matches[:3]]
+            e["examples"] = [{"brand": m["brand"], "product": m["product"]} for m in matches
+                             if ed.names_ingredient({"name": name}, m["product"])][:3]
             e["keywords"] = probe["keywords"]
             out.append(_normalize(e, area, "gemini-free"))
             sleep(2)
