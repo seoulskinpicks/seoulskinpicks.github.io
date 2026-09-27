@@ -10,7 +10,8 @@
 "list": "Skincare",
 "rank": 1,
 "store_rating": 4.9,
-"review_count": 1248
+"review_count": 1248,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -20,7 +21,8 @@
 "list": "Skincare",
 "rank": 2,
 "store_rating": 4.8,
-"review_count": 313
+"review_count": 314,
+"prev_rank": null
 },
 {
 "brand": "S.NATURE",
@@ -30,7 +32,8 @@
 "list": "Skincare",
 "rank": 3,
 "store_rating": 4.8,
-"review_count": 1540
+"review_count": 1541,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -40,7 +43,8 @@
 "list": "Skincare",
 "rank": 4,
 "store_rating": 4.7,
-"review_count": 983
+"review_count": 984,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -50,7 +54,8 @@
 "list": "Skincare",
 "rank": 5,
 "store_rating": 4.8,
-"review_count": 571
+"review_count": 571,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -60,7 +65,8 @@
 "list": "Skincare",
 "rank": 6,
 "store_rating": 5.0,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -70,7 +76,8 @@
 "list": "Skincare",
 "rank": 7,
 "store_rating": 5.0,
-"review_count": 39
+"review_count": 39,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -80,7 +87,8 @@
 "list": "Skincare",
 "rank": 8,
 "store_rating": 4.9,
-"review_count": 2353
+"review_count": 2353,
+"prev_rank": null
 },
 {
 "brand": "BIOHEAL BOH",
@@ -90,7 +98,8 @@
 "list": "Skincare",
 "rank": 9,
 "store_rating": 4.8,
-"review_count": 319
+"review_count": 319,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -100,7 +109,8 @@
 "list": "Skincare",
 "rank": 10,
 "store_rating": 4.8,
-"review_count": 4084
+"review_count": 4085,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -110,7 +120,8 @@
 "list": "Skincare",
 "rank": 11,
 "store_rating": 4.7,
-"review_count": 493
+"review_count": 493,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -120,7 +131,8 @@
 "list": "Skincare",
 "rank": 12,
 "store_rating": 4.8,
-"review_count": 2407
+"review_count": 2407,
+"prev_rank": null
 },
 {
 "brand": "manyo",
@@ -130,7 +142,8 @@
 "list": "Skincare",
 "rank": 13,
 "store_rating": 4.8,
-"review_count": 1193
+"review_count": 1193,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -140,7 +153,8 @@
 "list": "Skincare",
 "rank": 14,
 "store_rating": 4.8,
-"review_count": 208
+"review_count": 208,
+"prev_rank": null
 },
 {
 "brand": "Arencia",
@@ -150,7 +164,8 @@
 "list": "Skincare",
 "rank": 15,
 "store_rating": 4.7,
-"review_count": 102
+"review_count": 102,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -160,7 +175,8 @@
 "list": "Skincare",
 "rank": 16,
 "store_rating": 4.8,
-"review_count": 1632
+"review_count": 1632,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -170,7 +186,8 @@
 "list": "Skincare",
 "rank": 17,
 "store_rating": 4.8,
-"review_count": 607
+"review_count": 607,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -180,7 +197,8 @@
 "list": "Skincare",
 "rank": 18,
 "store_rating": 4.8,
-"review_count": 562
+"review_count": 564,
+"prev_rank": null
 },
 {
 "brand": "d'Alba",
@@ -190,7 +208,8 @@
 "list": "Skincare",
 "rank": 19,
 "store_rating": 4.9,
-"review_count": 80
+"review_count": 80,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -200,7 +219,8 @@
 "list": "Skincare",
 "rank": 20,
 "store_rating": 5.0,
-"review_count": 40
+"review_count": 40,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -210,7 +230,8 @@
 "list": "Skincare",
 "rank": 21,
 "store_rating": 4.8,
-"review_count": 639
+"review_count": 640,
+"prev_rank": null
 },
 {
 "brand": "makeprem",
@@ -220,7 +241,8 @@
 "list": "Skincare",
 "rank": 22,
 "store_rating": 4.9,
-"review_count": 108
+"review_count": 108,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -230,7 +252,8 @@
 "list": "Skincare",
 "rank": 23,
 "store_rating": 4.8,
-"review_count": 834
+"review_count": 834,
+"prev_rank": null
 },
 {
 "brand": "PURCELL",
@@ -240,7 +263,8 @@
 "list": "Skincare",
 "rank": 24,
 "store_rating": 4.8,
-"review_count": 271
+"review_count": 271,
+"prev_rank": null
 },
 {
 "brand": "BANILA CO",
@@ -250,7 +274,8 @@
 "list": "Skincare",
 "rank": 25,
 "store_rating": 4.9,
-"review_count": 172
+"review_count": 172,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -260,7 +285,8 @@
 "list": "Skincare",
 "rank": 26,
 "store_rating": 4.8,
-"review_count": 205
+"review_count": 205,
+"prev_rank": null
 },
 {
 "brand": "PHYSIOGEL",
@@ -270,7 +296,8 @@
 "list": "Skincare",
 "rank": 27,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "Dr. Althea",
@@ -280,7 +307,8 @@
 "list": "Skincare",
 "rank": 28,
 "store_rating": 4.8,
-"review_count": 363
+"review_count": 363,
+"prev_rank": null
 },
 {
 "brand": "BRINGGREEN",
@@ -290,7 +318,8 @@
 "list": "Skincare",
 "rank": 29,
 "store_rating": 4.8,
-"review_count": 38
+"review_count": 38,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -300,7 +329,8 @@
 "list": "Skincare",
 "rank": 30,
 "store_rating": 4.7,
-"review_count": 799
+"review_count": 799,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -310,7 +340,8 @@
 "list": "Skincare",
 "rank": 31,
 "store_rating": 4.8,
-"review_count": 420
+"review_count": 420,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -320,7 +351,8 @@
 "list": "Skincare",
 "rank": 32,
 "store_rating": 4.9,
-"review_count": 87
+"review_count": 87,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -330,7 +362,8 @@
 "list": "Skincare",
 "rank": 33,
 "store_rating": 4.9,
-"review_count": 1371
+"review_count": 1371,
+"prev_rank": null
 },
 {
 "brand": "goodal",
@@ -340,7 +373,8 @@
 "list": "Skincare",
 "rank": 34,
 "store_rating": 5.0,
-"review_count": 22
+"review_count": 22,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -350,7 +384,8 @@
 "list": "Skincare",
 "rank": 35,
 "store_rating": 5.0,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "It's skin",
@@ -360,7 +395,8 @@
 "list": "Skincare",
 "rank": 36,
 "store_rating": 4.8,
-"review_count": 150
+"review_count": 150,
+"prev_rank": null
 },
 {
 "brand": "S.NATURE",
@@ -370,7 +406,8 @@
 "list": "Skincare",
 "rank": 37,
 "store_rating": 4.8,
-"review_count": 1917
+"review_count": 1918,
+"prev_rank": null
 },
 {
 "brand": "ilso",
@@ -380,7 +417,8 @@
 "list": "Skincare",
 "rank": 38,
 "store_rating": 4.7,
-"review_count": 1333
+"review_count": 1333,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -390,7 +428,8 @@
 "list": "Skincare",
 "rank": 39,
 "store_rating": 4.8,
-"review_count": 87
+"review_count": 87,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -400,7 +439,8 @@
 "list": "Skincare",
 "rank": 40,
 "store_rating": 4.7,
-"review_count": 264
+"review_count": 265,
+"prev_rank": null
 },
 {
 "brand": "Dr.G",
@@ -410,7 +450,8 @@
 "list": "Skincare",
 "rank": 41,
 "store_rating": 4.8,
-"review_count": 100
+"review_count": 101,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -420,7 +461,8 @@
 "list": "Skincare",
 "rank": 42,
 "store_rating": 4.9,
-"review_count": 181
+"review_count": 181,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -430,7 +472,8 @@
 "list": "Skincare",
 "rank": 43,
 "store_rating": 4.7,
-"review_count": 722
+"review_count": 722,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -440,7 +483,8 @@
 "list": "Skincare",
 "rank": 44,
 "store_rating": 4.7,
-"review_count": 1221
+"review_count": 1222,
+"prev_rank": null
 },
 {
 "brand": "LANEIGE",
@@ -450,7 +494,8 @@
 "list": "Skincare",
 "rank": 45,
 "store_rating": 4.8,
-"review_count": 506
+"review_count": 506,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -460,7 +505,8 @@
 "list": "Skincare",
 "rank": 46,
 "store_rating": 4.7,
-"review_count": 170
+"review_count": 171,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -470,7 +516,8 @@
 "list": "Skincare",
 "rank": 47,
 "store_rating": 4.7,
-"review_count": 128
+"review_count": 128,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -480,7 +527,8 @@
 "list": "Skincare",
 "rank": 48,
 "store_rating": 4.8,
-"review_count": 200
+"review_count": 200,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -490,7 +538,8 @@
 "list": "Skincare",
 "rank": 49,
 "store_rating": 4.8,
-"review_count": 2642
+"review_count": 2642,
+"prev_rank": null
 },
 {
 "brand": "Genabelle",
@@ -500,7 +549,8 @@
 "list": "Skincare",
 "rank": 50,
 "store_rating": 4.8,
-"review_count": 342
+"review_count": 342,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -510,7 +560,8 @@
 "list": "Skincare",
 "rank": 51,
 "store_rating": 4.8,
-"review_count": 2678
+"review_count": 2678,
+"prev_rank": null
 },
 {
 "brand": "Purito Seoul",
@@ -520,7 +571,8 @@
 "list": "Skincare",
 "rank": 52,
 "store_rating": 4.8,
-"review_count": 1472
+"review_count": 1472,
+"prev_rank": null
 },
 {
 "brand": "AXIS-Y",
@@ -530,7 +582,8 @@
 "list": "Skincare",
 "rank": 53,
 "store_rating": 4.7,
-"review_count": 2950
+"review_count": 2950,
+"prev_rank": null
 },
 {
 "brand": "ongredients",
@@ -540,7 +593,8 @@
 "list": "Skincare",
 "rank": 54,
 "store_rating": 4.9,
-"review_count": 62
+"review_count": 62,
+"prev_rank": null
 },
 {
 "brand": "LANEIGE",
@@ -550,7 +604,8 @@
 "list": "Skincare",
 "rank": 55,
 "store_rating": 4.8,
-"review_count": 107
+"review_count": 107,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -560,7 +615,8 @@
 "list": "Skincare",
 "rank": 56,
 "store_rating": 4.7,
-"review_count": 382
+"review_count": 382,
+"prev_rank": null
 },
 {
 "brand": "Dr.Jart+",
@@ -570,7 +626,8 @@
 "list": "Skincare",
 "rank": 57,
 "store_rating": 4.8,
-"review_count": 12
+"review_count": 12,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -580,7 +637,8 @@
 "list": "Skincare",
 "rank": 58,
 "store_rating": 4.8,
-"review_count": 305
+"review_count": 305,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -590,7 +648,8 @@
 "list": "Skincare",
 "rank": 59,
 "store_rating": 4.8,
-"review_count": 34
+"review_count": 34,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -600,7 +659,8 @@
 "list": "Skincare",
 "rank": 60,
 "store_rating": 4.7,
-"review_count": 217
+"review_count": 217,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -610,7 +670,8 @@
 "list": "Skincare",
 "rank": 61,
 "store_rating": 5.0,
-"review_count": 4
+"review_count": 4,
+"prev_rank": null
 },
 {
 "brand": "BIOHEAL BOH",
@@ -620,7 +681,8 @@
 "list": "Skincare",
 "rank": 62,
 "store_rating": 4.8,
-"review_count": 1419
+"review_count": 1419,
+"prev_rank": null
 },
 {
 "brand": "Ariul",
@@ -630,7 +692,8 @@
 "list": "Skincare",
 "rank": 63,
 "store_rating": 4.6,
-"review_count": 358
+"review_count": 358,
+"prev_rank": null
 },
 {
 "brand": "fully",
@@ -640,7 +703,8 @@
 "list": "Skincare",
 "rank": 64,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -650,7 +714,8 @@
 "list": "Skincare",
 "rank": 65,
 "store_rating": 4.9,
-"review_count": 115
+"review_count": 115,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -660,7 +725,8 @@
 "list": "Skincare",
 "rank": 66,
 "store_rating": 4.7,
-"review_count": 366
+"review_count": 366,
+"prev_rank": null
 },
 {
 "brand": "Dr.Different",
@@ -670,7 +736,8 @@
 "list": "Skincare",
 "rank": 67,
 "store_rating": 4.8,
-"review_count": 37
+"review_count": 37,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -680,7 +747,8 @@
 "list": "Skincare",
 "rank": 68,
 "store_rating": 4.7,
-"review_count": 1491
+"review_count": 1491,
+"prev_rank": null
 },
 {
 "brand": "HANYUL",
@@ -690,7 +758,8 @@
 "list": "Skincare",
 "rank": 69,
 "store_rating": 4.9,
-"review_count": 20
+"review_count": 20,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -700,7 +769,8 @@
 "list": "Skincare",
 "rank": 70,
 "store_rating": 4.7,
-"review_count": 1566
+"review_count": 1566,
+"prev_rank": null
 },
 {
 "brand": "WELLAGE",
@@ -710,7 +780,8 @@
 "list": "Skincare",
 "rank": 71,
 "store_rating": 4.7,
-"review_count": 48
+"review_count": 48,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -720,7 +791,8 @@
 "list": "Skincare",
 "rank": 72,
 "store_rating": 4.8,
-"review_count": 29
+"review_count": 29,
+"prev_rank": null
 },
 {
 "brand": "Purito Seoul",
@@ -730,7 +802,8 @@
 "list": "Skincare",
 "rank": 73,
 "store_rating": 4.8,
-"review_count": 1002
+"review_count": 1002,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -740,7 +813,8 @@
 "list": "Skincare",
 "rank": 74,
 "store_rating": 4.9,
-"review_count": 114
+"review_count": 114,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -750,7 +824,8 @@
 "list": "Skincare",
 "rank": 75,
 "store_rating": 4.8,
-"review_count": 13
+"review_count": 13,
+"prev_rank": null
 },
 {
 "brand": "SUNGBOON EDITOR",
@@ -760,7 +835,8 @@
 "list": "Skincare",
 "rank": 76,
 "store_rating": 4.7,
-"review_count": 454
+"review_count": 454,
+"prev_rank": null
 },
 {
 "brand": "The Ordinary",
@@ -770,7 +846,8 @@
 "list": "Skincare",
 "rank": 77,
 "store_rating": 4.7,
-"review_count": 9
+"review_count": 9,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -780,7 +857,8 @@
 "list": "Skincare",
 "rank": 78,
 "store_rating": 4.8,
-"review_count": 94
+"review_count": 94,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -790,7 +868,8 @@
 "list": "Skincare",
 "rank": 79,
 "store_rating": 4.9,
-"review_count": 142
+"review_count": 142,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -800,7 +879,8 @@
 "list": "Skincare",
 "rank": 80,
 "store_rating": 4.8,
-"review_count": 1459
+"review_count": 1459,
+"prev_rank": null
 },
 {
 "brand": "Arencia",
@@ -810,7 +890,8 @@
 "list": "Skincare",
 "rank": 81,
 "store_rating": 4.7,
-"review_count": 187
+"review_count": 187,
+"prev_rank": null
 },
 {
 "brand": "idplacosmetic",
@@ -820,7 +901,8 @@
 "list": "Skincare",
 "rank": 82,
 "store_rating": 4.9,
-"review_count": 416
+"review_count": 416,
+"prev_rank": null
 },
 {
 "brand": "Purito Seoul",
@@ -830,7 +912,8 @@
 "list": "Skincare",
 "rank": 83,
 "store_rating": 4.9,
-"review_count": 371
+"review_count": 371,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -840,7 +923,8 @@
 "list": "Skincare",
 "rank": 84,
 "store_rating": 4.8,
-"review_count": 859
+"review_count": 859,
+"prev_rank": null
 },
 {
 "brand": "Dr.G",
@@ -850,7 +934,8 @@
 "list": "Skincare",
 "rank": 85,
 "store_rating": 4.8,
-"review_count": 1008
+"review_count": 1008,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -860,7 +945,8 @@
 "list": "Skincare",
 "rank": 86,
 "store_rating": 4.8,
-"review_count": 1245
+"review_count": 1245,
+"prev_rank": null
 },
 {
 "brand": "ZEROID",
@@ -870,7 +956,8 @@
 "list": "Skincare",
 "rank": 87,
 "store_rating": 4.9,
-"review_count": 14
+"review_count": 14,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -880,7 +967,8 @@
 "list": "Skincare",
 "rank": 88,
 "store_rating": 4.8,
-"review_count": 3423
+"review_count": 3423,
+"prev_rank": null
 },
 {
 "brand": "Dr.Jart+",
@@ -890,7 +978,8 @@
 "list": "Skincare",
 "rank": 89,
 "store_rating": 5.0,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -900,7 +989,8 @@
 "list": "Skincare",
 "rank": 90,
 "store_rating": 4.7,
-"review_count": 2952
+"review_count": 2952,
+"prev_rank": null
 },
 {
 "brand": "BIOHEAL BOH",
@@ -910,7 +1000,8 @@
 "list": "Skincare",
 "rank": 91,
 "store_rating": 4.8,
-"review_count": 111
+"review_count": 111,
+"prev_rank": null
 },
 {
 "brand": "S.NATURE",
@@ -920,7 +1011,8 @@
 "list": "Skincare",
 "rank": 92,
 "store_rating": 4.8,
-"review_count": 339
+"review_count": 339,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -930,7 +1022,8 @@
 "list": "Skincare",
 "rank": 93,
 "store_rating": 4.9,
-"review_count": 128
+"review_count": 128,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -940,7 +1033,8 @@
 "list": "Skincare",
 "rank": 94,
 "store_rating": 4.7,
-"review_count": 57
+"review_count": 57,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -950,7 +1044,8 @@
 "list": "Skincare",
 "rank": 95,
 "store_rating": 4.8,
-"review_count": 852
+"review_count": 852,
+"prev_rank": null
 },
 {
 "brand": "Arencia",
@@ -960,7 +1055,8 @@
 "list": "Skincare",
 "rank": 96,
 "store_rating": 4.7,
-"review_count": 746
+"review_count": 746,
+"prev_rank": null
 },
 {
 "brand": "AXIS-Y",
@@ -970,7 +1066,8 @@
 "list": "Skincare",
 "rank": 97,
 "store_rating": 4.6,
-"review_count": 618
+"review_count": 618,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -980,7 +1077,8 @@
 "list": "Skincare",
 "rank": 98,
 "store_rating": 4.8,
-"review_count": 92
+"review_count": 92,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -990,7 +1088,8 @@
 "list": "Skincare",
 "rank": 99,
 "store_rating": 4.8,
-"review_count": 37
+"review_count": 37,
+"prev_rank": null
 },
 {
 "brand": "PURCELL",
@@ -1000,7 +1099,8 @@
 "list": "Skincare",
 "rank": 100,
 "store_rating": 4.9,
-"review_count": 53
+"review_count": 53,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -1010,7 +1110,8 @@
 "list": "Suncare",
 "rank": 1,
 "store_rating": 4.9,
-"review_count": 10559
+"review_count": 10559,
+"prev_rank": null
 },
 {
 "brand": "Purito Seoul",
@@ -1020,7 +1121,8 @@
 "list": "Suncare",
 "rank": 2,
 "store_rating": 5.0,
-"review_count": 221
+"review_count": 221,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1030,7 +1132,8 @@
 "list": "Suncare",
 "rank": 3,
 "store_rating": 4.9,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1040,7 +1143,8 @@
 "list": "Suncare",
 "rank": 4,
 "store_rating": 4.9,
-"review_count": 1499
+"review_count": 1499,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1050,7 +1154,8 @@
 "list": "Suncare",
 "rank": 5,
 "store_rating": 4.9,
-"review_count": 1546
+"review_count": 1546,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -1060,7 +1165,8 @@
 "list": "Suncare",
 "rank": 6,
 "store_rating": 4.6,
-"review_count": 9
+"review_count": 9,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1070,7 +1176,8 @@
 "list": "Suncare",
 "rank": 7,
 "store_rating": 4.9,
-"review_count": 328
+"review_count": 328,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -1080,7 +1187,8 @@
 "list": "Suncare",
 "rank": 8,
 "store_rating": 4.9,
-"review_count": 1676
+"review_count": 1676,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -1090,7 +1198,8 @@
 "list": "Suncare",
 "rank": 9,
 "store_rating": 4.8,
-"review_count": 31
+"review_count": 31,
+"prev_rank": null
 },
 {
 "brand": "Purito Seoul",
@@ -1100,7 +1209,8 @@
 "list": "Suncare",
 "rank": 10,
 "store_rating": 4.9,
-"review_count": 1044
+"review_count": 1044,
+"prev_rank": null
 },
 {
 "brand": "d'Alba",
@@ -1110,7 +1220,8 @@
 "list": "Suncare",
 "rank": 11,
 "store_rating": 4.3,
-"review_count": 4
+"review_count": 4,
+"prev_rank": null
 },
 {
 "brand": "SKIN&LAB",
@@ -1120,7 +1231,8 @@
 "list": "Suncare",
 "rank": 12,
 "store_rating": 4.5,
-"review_count": 20
+"review_count": 20,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1130,7 +1242,8 @@
 "list": "Suncare",
 "rank": 13,
 "store_rating": 4.7,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "House of Hur",
@@ -1140,7 +1253,8 @@
 "list": "Suncare",
 "rank": 14,
 "store_rating": 4.7,
-"review_count": 251
+"review_count": 251,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -1150,7 +1264,8 @@
 "list": "Suncare",
 "rank": 15,
 "store_rating": 4.6,
-"review_count": 134
+"review_count": 135,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1160,7 +1275,8 @@
 "list": "Suncare",
 "rank": 16,
 "store_rating": 4.8,
-"review_count": 588
+"review_count": 590,
+"prev_rank": null
 },
 {
 "brand": "CHASIN' RABBITS",
@@ -1170,7 +1286,8 @@
 "list": "Suncare",
 "rank": 17,
 "store_rating": 4.5,
-"review_count": 300
+"review_count": 300,
+"prev_rank": null
 },
 {
 "brand": "FROMRIER",
@@ -1180,7 +1297,8 @@
 "list": "Suncare",
 "rank": 18,
 "store_rating": 4.8,
-"review_count": 143
+"review_count": 143,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -1190,7 +1308,8 @@
 "list": "Suncare",
 "rank": 19,
 "store_rating": 4.8,
-"review_count": 16
+"review_count": 16,
+"prev_rank": null
 },
 {
 "brand": "d'Alba",
@@ -1200,7 +1319,8 @@
 "list": "Suncare",
 "rank": 20,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1210,7 +1330,8 @@
 "list": "Suncare",
 "rank": 21,
 "store_rating": 4.6,
-"review_count": 51
+"review_count": 51,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1220,7 +1341,8 @@
 "list": "Suncare",
 "rank": 22,
 "store_rating": 4.6,
-"review_count": 2193
+"review_count": 2193,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -1230,7 +1352,8 @@
 "list": "Suncare",
 "rank": 23,
 "store_rating": 4.6,
-"review_count": 111
+"review_count": 111,
+"prev_rank": null
 },
 {
 "brand": "d'Alba",
@@ -1240,7 +1363,8 @@
 "list": "Suncare",
 "rank": 24,
 "store_rating": 4.7,
-"review_count": 946
+"review_count": 947,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1250,7 +1374,8 @@
 "list": "Suncare",
 "rank": 25,
 "store_rating": 4.9,
-"review_count": 328
+"review_count": 328,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1260,7 +1385,8 @@
 "list": "Suncare",
 "rank": 26,
 "store_rating": 4.5,
-"review_count": 30
+"review_count": 30,
+"prev_rank": null
 },
 {
 "brand": "TOCOBO",
@@ -1270,7 +1396,8 @@
 "list": "Suncare",
 "rank": 27,
 "store_rating": 4.8,
-"review_count": 153
+"review_count": 153,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1280,7 +1407,8 @@
 "list": "Suncare",
 "rank": 28,
 "store_rating": 4.9,
-"review_count": 249
+"review_count": 249,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -1290,7 +1418,8 @@
 "list": "Suncare",
 "rank": 29,
 "store_rating": 4.8,
-"review_count": 509
+"review_count": 509,
+"prev_rank": null
 },
 {
 "brand": "AHC",
@@ -1300,7 +1429,8 @@
 "list": "Suncare",
 "rank": 30,
 "store_rating": 5.0,
-"review_count": 5
+"review_count": 5,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1310,7 +1440,8 @@
 "list": "Suncare",
 "rank": 31,
 "store_rating": 4.8,
-"review_count": 1371
+"review_count": 1371,
+"prev_rank": null
 },
 {
 "brand": "CHASIN' RABBITS",
@@ -1320,7 +1451,8 @@
 "list": "Suncare",
 "rank": 32,
 "store_rating": 4.7,
-"review_count": 123
+"review_count": 123,
+"prev_rank": null
 },
 {
 "brand": "HERA",
@@ -1330,7 +1462,8 @@
 "list": "Suncare",
 "rank": 33,
 "store_rating": 4.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "LANEIGE",
@@ -1340,7 +1473,8 @@
 "list": "Suncare",
 "rank": 34,
 "store_rating": 4.8,
-"review_count": 63
+"review_count": 63,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -1350,7 +1484,8 @@
 "list": "Suncare",
 "rank": 35,
 "store_rating": 4.4,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "AESTURA",
@@ -1360,7 +1495,8 @@
 "list": "Suncare",
 "rank": 36,
 "store_rating": 4.7,
-"review_count": 21
+"review_count": 21,
+"prev_rank": null
 },
 {
 "brand": "Dr.G",
@@ -1370,7 +1506,8 @@
 "list": "Suncare",
 "rank": 37,
 "store_rating": 4.8,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -1380,7 +1517,8 @@
 "list": "Suncare",
 "rank": 38,
 "store_rating": 4.7,
-"review_count": 206
+"review_count": 206,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1390,7 +1528,8 @@
 "list": "Suncare",
 "rank": 39,
 "store_rating": 4.3,
-"review_count": 393
+"review_count": 393,
+"prev_rank": null
 },
 {
 "brand": "Dr.G",
@@ -1400,7 +1539,8 @@
 "list": "Suncare",
 "rank": 40,
 "store_rating": 4.5,
-"review_count": 46
+"review_count": 46,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -1410,7 +1550,8 @@
 "list": "Suncare",
 "rank": 41,
 "store_rating": 4.8,
-"review_count": 32
+"review_count": 32,
+"prev_rank": null
 },
 {
 "brand": "fully",
@@ -1420,7 +1561,8 @@
 "list": "Suncare",
 "rank": 42,
 "store_rating": 4.8,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "makeprem",
@@ -1430,7 +1572,8 @@
 "list": "Suncare",
 "rank": 43,
 "store_rating": 4.7,
-"review_count": 106
+"review_count": 106,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1440,7 +1583,8 @@
 "list": "Suncare",
 "rank": 44,
 "store_rating": 4.7,
-"review_count": 106
+"review_count": 106,
+"prev_rank": null
 },
 {
 "brand": "Shingmulnara",
@@ -1450,7 +1594,8 @@
 "list": "Suncare",
 "rank": 45,
 "store_rating": 4.7,
-"review_count": 47
+"review_count": 47,
+"prev_rank": null
 },
 {
 "brand": "Scinic",
@@ -1460,7 +1605,8 @@
 "list": "Suncare",
 "rank": 46,
 "store_rating": 4.7,
-"review_count": 374
+"review_count": 374,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1470,7 +1616,8 @@
 "list": "Suncare",
 "rank": 47,
 "store_rating": 4.6,
-"review_count": 235
+"review_count": 235,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -1480,7 +1627,8 @@
 "list": "Suncare",
 "rank": 48,
 "store_rating": 4.9,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "INNISFREE",
@@ -1490,7 +1638,8 @@
 "list": "Suncare",
 "rank": 49,
 "store_rating": 4.8,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -1500,7 +1649,8 @@
 "list": "Suncare",
 "rank": 50,
 "store_rating": 4.8,
-"review_count": 367
+"review_count": 367,
+"prev_rank": null
 },
 {
 "brand": "BIOHEAL BOH",
@@ -1510,7 +1660,8 @@
 "list": "Suncare",
 "rank": 51,
 "store_rating": 4.8,
-"review_count": 424
+"review_count": 424,
+"prev_rank": null
 },
 {
 "brand": "COSRX",
@@ -1520,7 +1671,8 @@
 "list": "Suncare",
 "rank": 52,
 "store_rating": 4.7,
-"review_count": 473
+"review_count": 473,
+"prev_rank": null
 },
 {
 "brand": "FROMRIER",
@@ -1530,7 +1682,8 @@
 "list": "Suncare",
 "rank": 53,
 "store_rating": 4.7,
-"review_count": 18
+"review_count": 18,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1540,7 +1693,8 @@
 "list": "Suncare",
 "rank": 54,
 "store_rating": 4.7,
-"review_count": 27
+"review_count": 27,
+"prev_rank": null
 },
 {
 "brand": "TOCOBO",
@@ -1550,7 +1704,8 @@
 "list": "Suncare",
 "rank": 55,
 "store_rating": 4.8,
-"review_count": 368
+"review_count": 368,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -1560,7 +1715,8 @@
 "list": "Suncare",
 "rank": 56,
 "store_rating": 4.6,
-"review_count": 88
+"review_count": 88,
+"prev_rank": null
 },
 {
 "brand": "PURCELL",
@@ -1570,7 +1726,8 @@
 "list": "Suncare",
 "rank": 57,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -1580,7 +1737,8 @@
 "list": "Suncare",
 "rank": 58,
 "store_rating": 4.8,
-"review_count": 21
+"review_count": 21,
+"prev_rank": null
 },
 {
 "brand": "S.NATURE",
@@ -1590,7 +1748,8 @@
 "list": "Suncare",
 "rank": 59,
 "store_rating": 4.9,
-"review_count": 124
+"review_count": 124,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -1600,7 +1759,8 @@
 "list": "Suncare",
 "rank": 60,
 "store_rating": 4.3,
-"review_count": 34
+"review_count": 34,
+"prev_rank": null
 },
 {
 "brand": "goodal",
@@ -1610,7 +1770,8 @@
 "list": "Suncare",
 "rank": 61,
 "store_rating": 4.8,
-"review_count": 516
+"review_count": 516,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1620,7 +1781,8 @@
 "list": "Suncare",
 "rank": 62,
 "store_rating": 4.8,
-"review_count": 136
+"review_count": 136,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1630,7 +1792,8 @@
 "list": "Suncare",
 "rank": 63,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "goodal",
@@ -1640,7 +1803,8 @@
 "list": "Suncare",
 "rank": 64,
 "store_rating": 4.6,
-"review_count": 301
+"review_count": 301,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -1650,7 +1814,8 @@
 "list": "Suncare",
 "rank": 65,
 "store_rating": 4.6,
-"review_count": 15
+"review_count": 15,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -1660,7 +1825,8 @@
 "list": "Suncare",
 "rank": 66,
 "store_rating": 4.6,
-"review_count": 21
+"review_count": 21,
+"prev_rank": null
 },
 {
 "brand": "goodal",
@@ -1670,7 +1836,8 @@
 "list": "Suncare",
 "rank": 67,
 "store_rating": 5.0,
-"review_count": 10
+"review_count": 10,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1680,7 +1847,8 @@
 "list": "Suncare",
 "rank": 68,
 "store_rating": 4.8,
-"review_count": 1156
+"review_count": 1156,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1690,7 +1858,8 @@
 "list": "Suncare",
 "rank": 69,
 "store_rating": 4.9,
-"review_count": 51
+"review_count": 51,
+"prev_rank": null
 },
 {
 "brand": "Dr.G",
@@ -1700,7 +1869,8 @@
 "list": "Suncare",
 "rank": 70,
 "store_rating": 4.8,
-"review_count": 417
+"review_count": 417,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -1710,7 +1880,8 @@
 "list": "Suncare",
 "rank": 71,
 "store_rating": 4.7,
-"review_count": 540
+"review_count": 540,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -1720,7 +1891,8 @@
 "list": "Suncare",
 "rank": 72,
 "store_rating": 4.8,
-"review_count": 45
+"review_count": 45,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1730,7 +1902,8 @@
 "list": "Suncare",
 "rank": 73,
 "store_rating": 4.6,
-"review_count": 130
+"review_count": 130,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1740,7 +1913,8 @@
 "list": "Suncare",
 "rank": 74,
 "store_rating": 4.6,
-"review_count": 66
+"review_count": 66,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1750,7 +1924,8 @@
 "list": "Suncare",
 "rank": 75,
 "store_rating": 4.8,
-"review_count": 86
+"review_count": 86,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -1760,7 +1935,8 @@
 "list": "Suncare",
 "rank": 76,
 "store_rating": 4.5,
-"review_count": 101
+"review_count": 101,
+"prev_rank": null
 },
 {
 "brand": "Scinic",
@@ -1770,7 +1946,8 @@
 "list": "Suncare",
 "rank": 77,
 "store_rating": 4.5,
-"review_count": 78
+"review_count": 78,
+"prev_rank": null
 },
 {
 "brand": "Shingmulnara",
@@ -1780,7 +1957,8 @@
 "list": "Suncare",
 "rank": 78,
 "store_rating": 4.5,
-"review_count": 51
+"review_count": 51,
+"prev_rank": null
 },
 {
 "brand": "CHASIN' RABBITS",
@@ -1790,7 +1968,8 @@
 "list": "Suncare",
 "rank": 79,
 "store_rating": 4.6,
-"review_count": 20
+"review_count": 20,
+"prev_rank": null
 },
 {
 "brand": "Shingmulnara",
@@ -1800,7 +1979,8 @@
 "list": "Suncare",
 "rank": 80,
 "store_rating": 4.7,
-"review_count": 69
+"review_count": 69,
+"prev_rank": null
 },
 {
 "brand": "COSRX",
@@ -1810,7 +1990,8 @@
 "list": "Suncare",
 "rank": 81,
 "store_rating": 4.7,
-"review_count": 129
+"review_count": 129,
+"prev_rank": null
 },
 {
 "brand": "P.CALM",
@@ -1820,7 +2001,8 @@
 "list": "Suncare",
 "rank": 82,
 "store_rating": 5.0,
-"review_count": 7
+"review_count": 7,
+"prev_rank": null
 },
 {
 "brand": "Shingmulnara",
@@ -1830,7 +2012,8 @@
 "list": "Suncare",
 "rank": 83,
 "store_rating": 4.6,
-"review_count": 113
+"review_count": 113,
+"prev_rank": null
 },
 {
 "brand": "Shingmulnara",
@@ -1840,7 +2023,8 @@
 "list": "Suncare",
 "rank": 84,
 "store_rating": 4.7,
-"review_count": 160
+"review_count": 160,
+"prev_rank": null
 },
 {
 "brand": "Scinic",
@@ -1850,7 +2034,8 @@
 "list": "Suncare",
 "rank": 85,
 "store_rating": 4.7,
-"review_count": 15
+"review_count": 15,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1860,7 +2045,8 @@
 "list": "Suncare",
 "rank": 86,
 "store_rating": 4.7,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -1870,7 +2056,8 @@
 "list": "Suncare",
 "rank": 87,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "Dominas",
@@ -1880,7 +2067,8 @@
 "list": "Suncare",
 "rank": 88,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "NIVEA",
@@ -1890,7 +2078,8 @@
 "list": "Suncare",
 "rank": 89,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "HERA",
@@ -1900,7 +2089,8 @@
 "list": "Suncare",
 "rank": 90,
 "store_rating": 4.3,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "ataga",
@@ -1910,7 +2100,8 @@
 "list": "Suncare",
 "rank": 91,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "HERA",
@@ -1920,7 +2111,8 @@
 "list": "Suncare",
 "rank": 92,
 "store_rating": 5.0,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "IUNIK",
@@ -1930,17 +2122,19 @@
 "list": "Suncare",
 "rank": 93,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
-"product": "Birch Juice Moisturizing Tone-up Sunscreen 50ml",
+"product": "Birch Juice Moisturizing Tone-up Sun serum 50ml",
 "prdt_no": "GA260641127",
 "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260641127",
 "list": "Suncare",
 "rank": 94,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "The phi",
@@ -1950,7 +2144,8 @@
 "list": "Suncare",
 "rank": 95,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "The phi",
@@ -1960,7 +2155,8 @@
 "list": "Suncare",
 "rank": 96,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "FREBITS",
@@ -1970,7 +2166,8 @@
 "list": "Suncare",
 "rank": 97,
 "store_rating": 4.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "O HUI",
@@ -1980,7 +2177,8 @@
 "list": "Suncare",
 "rank": 98,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "WELLAGE",
@@ -1990,7 +2188,8 @@
 "list": "Suncare",
 "rank": 99,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -2000,7 +2199,8 @@
 "list": "Suncare",
 "rank": 100,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2010,7 +2210,8 @@
 "list": "Face Masks",
 "rank": 1,
 "store_rating": 4.9,
-"review_count": 7600
+"review_count": 7604,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -2020,7 +2221,8 @@
 "list": "Face Masks",
 "rank": 2,
 "store_rating": 4.9,
-"review_count": 130
+"review_count": 130,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2030,7 +2232,8 @@
 "list": "Face Masks",
 "rank": 3,
 "store_rating": 4.9,
-"review_count": 275
+"review_count": 276,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -2040,7 +2243,8 @@
 "list": "Face Masks",
 "rank": 4,
 "store_rating": 4.8,
-"review_count": 1586
+"review_count": 1586,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2050,7 +2254,8 @@
 "list": "Face Masks",
 "rank": 5,
 "store_rating": 4.9,
-"review_count": 1875
+"review_count": 1875,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2060,7 +2265,8 @@
 "list": "Face Masks",
 "rank": 6,
 "store_rating": 4.8,
-"review_count": 428
+"review_count": 429,
+"prev_rank": null
 },
 {
 "brand": "House of B",
@@ -2070,7 +2276,8 @@
 "list": "Face Masks",
 "rank": 7,
 "store_rating": 4.8,
-"review_count": 83
+"review_count": 83,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -2080,7 +2287,8 @@
 "list": "Face Masks",
 "rank": 8,
 "store_rating": 4.8,
-"review_count": 197
+"review_count": 197,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2090,7 +2298,8 @@
 "list": "Face Masks",
 "rank": 9,
 "store_rating": 4.8,
-"review_count": 6581
+"review_count": 6581,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2100,7 +2309,8 @@
 "list": "Face Masks",
 "rank": 10,
 "store_rating": 4.7,
-"review_count": 233
+"review_count": 233,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2110,7 +2320,8 @@
 "list": "Face Masks",
 "rank": 11,
 "store_rating": 4.9,
-"review_count": 96
+"review_count": 96,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2120,7 +2331,8 @@
 "list": "Face Masks",
 "rank": 12,
 "store_rating": 4.9,
-"review_count": 254
+"review_count": 254,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2130,7 +2342,8 @@
 "list": "Face Masks",
 "rank": 13,
 "store_rating": 4.8,
-"review_count": 48
+"review_count": 48,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -2140,7 +2353,8 @@
 "list": "Face Masks",
 "rank": 14,
 "store_rating": 4.9,
-"review_count": 187
+"review_count": 187,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2150,7 +2364,8 @@
 "list": "Face Masks",
 "rank": 15,
 "store_rating": 4.8,
-"review_count": 37
+"review_count": 37,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2160,7 +2375,8 @@
 "list": "Face Masks",
 "rank": 16,
 "store_rating": 4.7,
-"review_count": 164
+"review_count": 164,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2170,7 +2386,8 @@
 "list": "Face Masks",
 "rank": 17,
 "store_rating": 4.7,
-"review_count": 1118
+"review_count": 1118,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2180,7 +2397,8 @@
 "list": "Face Masks",
 "rank": 18,
 "store_rating": 4.8,
-"review_count": 86
+"review_count": 86,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2190,7 +2408,8 @@
 "list": "Face Masks",
 "rank": 19,
 "store_rating": 4.9,
-"review_count": 61
+"review_count": 61,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -2200,7 +2419,8 @@
 "list": "Face Masks",
 "rank": 20,
 "store_rating": 4.8,
-"review_count": 118
+"review_count": 118,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2210,7 +2430,8 @@
 "list": "Face Masks",
 "rank": 21,
 "store_rating": 4.9,
-"review_count": 270
+"review_count": 270,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2220,7 +2441,8 @@
 "list": "Face Masks",
 "rank": 22,
 "store_rating": 4.8,
-"review_count": 271
+"review_count": 271,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2230,7 +2452,8 @@
 "list": "Face Masks",
 "rank": 23,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -2240,7 +2463,8 @@
 "list": "Face Masks",
 "rank": 24,
 "store_rating": 4.8,
-"review_count": 429
+"review_count": 430,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -2250,7 +2474,8 @@
 "list": "Face Masks",
 "rank": 25,
 "store_rating": 4.7,
-"review_count": 1488
+"review_count": 1489,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2260,7 +2485,8 @@
 "list": "Face Masks",
 "rank": 26,
 "store_rating": 4.7,
-"review_count": 485
+"review_count": 485,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -2270,7 +2496,8 @@
 "list": "Face Masks",
 "rank": 27,
 "store_rating": 4.8,
-"review_count": 848
+"review_count": 848,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2280,7 +2507,8 @@
 "list": "Face Masks",
 "rank": 28,
 "store_rating": 4.8,
-"review_count": 1103
+"review_count": 1103,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -2290,7 +2518,8 @@
 "list": "Face Masks",
 "rank": 29,
 "store_rating": 4.6,
-"review_count": 38
+"review_count": 38,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2300,7 +2529,8 @@
 "list": "Face Masks",
 "rank": 30,
 "store_rating": 5.0,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2310,7 +2540,8 @@
 "list": "Face Masks",
 "rank": 31,
 "store_rating": 4.8,
-"review_count": 546
+"review_count": 546,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2320,7 +2551,8 @@
 "list": "Face Masks",
 "rank": 32,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -2330,7 +2562,8 @@
 "list": "Face Masks",
 "rank": 33,
 "store_rating": 4.6,
-"review_count": 1414
+"review_count": 1414,
+"prev_rank": null
 },
 {
 "brand": "MENOKIN",
@@ -2340,7 +2573,8 @@
 "list": "Face Masks",
 "rank": 34,
 "store_rating": 4.7,
-"review_count": 328
+"review_count": 328,
+"prev_rank": null
 },
 {
 "brand": "SKINFOOD",
@@ -2350,7 +2584,8 @@
 "list": "Face Masks",
 "rank": 35,
 "store_rating": 4.8,
-"review_count": 414
+"review_count": 414,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2360,7 +2595,8 @@
 "list": "Face Masks",
 "rank": 36,
 "store_rating": 5.0,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2370,7 +2606,8 @@
 "list": "Face Masks",
 "rank": 37,
 "store_rating": 4.8,
-"review_count": 310
+"review_count": 310,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2380,7 +2617,8 @@
 "list": "Face Masks",
 "rank": 38,
 "store_rating": 4.9,
-"review_count": 76
+"review_count": 76,
+"prev_rank": null
 },
 {
 "brand": "MENOKIN",
@@ -2390,7 +2628,8 @@
 "list": "Face Masks",
 "rank": 39,
 "store_rating": 4.7,
-"review_count": 53
+"review_count": 53,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2400,7 +2639,8 @@
 "list": "Face Masks",
 "rank": 40,
 "store_rating": 4.7,
-"review_count": 127
+"review_count": 127,
+"prev_rank": null
 },
 {
 "brand": "LANEIGE",
@@ -2410,7 +2650,8 @@
 "list": "Face Masks",
 "rank": 41,
 "store_rating": 4.6,
-"review_count": 5
+"review_count": 5,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2420,7 +2661,8 @@
 "list": "Face Masks",
 "rank": 42,
 "store_rating": 4.7,
-"review_count": 1797
+"review_count": 1797,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2430,7 +2672,8 @@
 "list": "Face Masks",
 "rank": 43,
 "store_rating": 4.8,
-"review_count": 2169
+"review_count": 2170,
+"prev_rank": null
 },
 {
 "brand": "Primera",
@@ -2440,7 +2683,8 @@
 "list": "Face Masks",
 "rank": 44,
 "store_rating": 4.9,
-"review_count": 15
+"review_count": 15,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -2450,7 +2694,8 @@
 "list": "Face Masks",
 "rank": 45,
 "store_rating": 4.9,
-"review_count": 481
+"review_count": 481,
+"prev_rank": null
 },
 {
 "brand": "numbuzin",
@@ -2460,7 +2705,8 @@
 "list": "Face Masks",
 "rank": 46,
 "store_rating": 4.8,
-"review_count": 805
+"review_count": 805,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -2470,7 +2716,8 @@
 "list": "Face Masks",
 "rank": 47,
 "store_rating": 4.7,
-"review_count": 519
+"review_count": 519,
+"prev_rank": null
 },
 {
 "brand": "Beauty of Joseon",
@@ -2480,7 +2727,8 @@
 "list": "Face Masks",
 "rank": 48,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2490,7 +2738,8 @@
 "list": "Face Masks",
 "rank": 49,
 "store_rating": 4.7,
-"review_count": 139
+"review_count": 139,
+"prev_rank": null
 },
 {
 "brand": "AROCELL",
@@ -2500,7 +2749,8 @@
 "list": "Face Masks",
 "rank": 50,
 "store_rating": 4.8,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "SKINFOOD",
@@ -2510,7 +2760,8 @@
 "list": "Face Masks",
 "rank": 51,
 "store_rating": 4.8,
-"review_count": 249
+"review_count": 249,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -2520,7 +2771,8 @@
 "list": "Face Masks",
 "rank": 52,
 "store_rating": 4.4,
-"review_count": 5
+"review_count": 5,
+"prev_rank": null
 },
 {
 "brand": "Genabelle",
@@ -2530,7 +2782,8 @@
 "list": "Face Masks",
 "rank": 53,
 "store_rating": 4.9,
-"review_count": 119
+"review_count": 119,
+"prev_rank": null
 },
 {
 "brand": "S.NATURE",
@@ -2540,7 +2793,8 @@
 "list": "Face Masks",
 "rank": 54,
 "store_rating": 4.9,
-"review_count": 169
+"review_count": 169,
+"prev_rank": null
 },
 {
 "brand": "SKIN1004",
@@ -2550,7 +2804,8 @@
 "list": "Face Masks",
 "rank": 55,
 "store_rating": 4.8,
-"review_count": 1921
+"review_count": 1921,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2560,7 +2815,8 @@
 "list": "Face Masks",
 "rank": 56,
 "store_rating": 4.5,
-"review_count": 205
+"review_count": 205,
+"prev_rank": null
 },
 {
 "brand": "House of B",
@@ -2570,7 +2826,8 @@
 "list": "Face Masks",
 "rank": 57,
 "store_rating": 4.9,
-"review_count": 18
+"review_count": 18,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2580,7 +2837,8 @@
 "list": "Face Masks",
 "rank": 58,
 "store_rating": 4.9,
-"review_count": 42
+"review_count": 42,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -2590,7 +2848,8 @@
 "list": "Face Masks",
 "rank": 59,
 "store_rating": 4.8,
-"review_count": 17
+"review_count": 17,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -2600,7 +2859,8 @@
 "list": "Face Masks",
 "rank": 60,
 "store_rating": 4.7,
-"review_count": 108
+"review_count": 108,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -2610,7 +2870,8 @@
 "list": "Face Masks",
 "rank": 61,
 "store_rating": 5.0,
-"review_count": 13
+"review_count": 13,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2620,7 +2881,8 @@
 "list": "Face Masks",
 "rank": 62,
 "store_rating": 4.8,
-"review_count": 229
+"review_count": 229,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -2630,7 +2892,8 @@
 "list": "Face Masks",
 "rank": 63,
 "store_rating": 4.7,
-"review_count": 98
+"review_count": 98,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2640,7 +2903,8 @@
 "list": "Face Masks",
 "rank": 64,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "B:VID",
@@ -2650,7 +2914,8 @@
 "list": "Face Masks",
 "rank": 65,
 "store_rating": 4.6,
-"review_count": 39
+"review_count": 39,
+"prev_rank": null
 },
 {
 "brand": "Torriden",
@@ -2660,7 +2925,8 @@
 "list": "Face Masks",
 "rank": 66,
 "store_rating": 4.9,
-"review_count": 7
+"review_count": 7,
+"prev_rank": null
 },
 {
 "brand": "House of Hur",
@@ -2670,7 +2936,8 @@
 "list": "Face Masks",
 "rank": 67,
 "store_rating": 4.7,
-"review_count": 103
+"review_count": 103,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2680,7 +2947,8 @@
 "list": "Face Masks",
 "rank": 68,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2690,7 +2958,8 @@
 "list": "Face Masks",
 "rank": 69,
 "store_rating": 4.8,
-"review_count": 247
+"review_count": 247,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2700,7 +2969,8 @@
 "list": "Face Masks",
 "rank": 70,
 "store_rating": 4.8,
-"review_count": 199
+"review_count": 199,
+"prev_rank": null
 },
 {
 "brand": "SUNGBOON EDITOR",
@@ -2710,7 +2980,8 @@
 "list": "Face Masks",
 "rank": 71,
 "store_rating": 4.3,
-"review_count": 19
+"review_count": 19,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2720,7 +2991,8 @@
 "list": "Face Masks",
 "rank": 72,
 "store_rating": 4.7,
-"review_count": 47
+"review_count": 47,
+"prev_rank": null
 },
 {
 "brand": "Torhop",
@@ -2730,7 +3002,8 @@
 "list": "Face Masks",
 "rank": 73,
 "store_rating": 4.7,
-"review_count": 36
+"review_count": 36,
+"prev_rank": null
 },
 {
 "brand": "BIOHEAL BOH",
@@ -2740,7 +3013,8 @@
 "list": "Face Masks",
 "rank": 74,
 "store_rating": 4.7,
-"review_count": 514
+"review_count": 514,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2750,7 +3024,8 @@
 "list": "Face Masks",
 "rank": 75,
 "store_rating": 4.7,
-"review_count": 195
+"review_count": 195,
+"prev_rank": null
 },
 {
 "brand": "MENOKIN",
@@ -2760,7 +3035,8 @@
 "list": "Face Masks",
 "rank": 76,
 "store_rating": 4.7,
-"review_count": 101
+"review_count": 101,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2770,7 +3046,8 @@
 "list": "Face Masks",
 "rank": 77,
 "store_rating": 4.8,
-"review_count": 156
+"review_count": 156,
+"prev_rank": null
 },
 {
 "brand": "BEGINS By JUNGSAEMMOOL",
@@ -2780,7 +3057,8 @@
 "list": "Face Masks",
 "rank": 78,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "LANEIGE",
@@ -2790,7 +3068,8 @@
 "list": "Face Masks",
 "rank": 79,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "REJURAN",
@@ -2800,7 +3079,8 @@
 "list": "Face Masks",
 "rank": 80,
 "store_rating": 4.8,
-"review_count": 85
+"review_count": 85,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2810,7 +3090,8 @@
 "list": "Face Masks",
 "rank": 81,
 "store_rating": 4.8,
-"review_count": 218
+"review_count": 218,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2820,7 +3101,8 @@
 "list": "Face Masks",
 "rank": 82,
 "store_rating": 4.6,
-"review_count": 119
+"review_count": 119,
+"prev_rank": null
 },
 {
 "brand": "beplain",
@@ -2830,7 +3112,8 @@
 "list": "Face Masks",
 "rank": 83,
 "store_rating": 4.7,
-"review_count": 606
+"review_count": 606,
+"prev_rank": null
 },
 {
 "brand": "BIODANCE",
@@ -2840,7 +3123,8 @@
 "list": "Face Masks",
 "rank": 84,
 "store_rating": 4.8,
-"review_count": 254
+"review_count": 254,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2850,7 +3134,8 @@
 "list": "Face Masks",
 "rank": 85,
 "store_rating": 5.0,
-"review_count": 5
+"review_count": 5,
+"prev_rank": null
 },
 {
 "brand": "MEDIHEAL",
@@ -2860,7 +3145,8 @@
 "list": "Face Masks",
 "rank": 86,
 "store_rating": 4.9,
-"review_count": 470
+"review_count": 470,
+"prev_rank": null
 },
 {
 "brand": "celimax",
@@ -2870,7 +3156,8 @@
 "list": "Face Masks",
 "rank": 87,
 "store_rating": 4.7,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "Purito Seoul",
@@ -2880,7 +3167,8 @@
 "list": "Face Masks",
 "rank": 88,
 "store_rating": 4.7,
-"review_count": 22
+"review_count": 22,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -2890,7 +3178,8 @@
 "list": "Face Masks",
 "rank": 89,
 "store_rating": 4.9,
-"review_count": 265
+"review_count": 266,
+"prev_rank": null
 },
 {
 "brand": "ROUND LAB",
@@ -2900,7 +3189,8 @@
 "list": "Face Masks",
 "rank": 90,
 "store_rating": 4.4,
-"review_count": 65
+"review_count": 65,
+"prev_rank": null
 },
 {
 "brand": "SUNGBOON EDITOR",
@@ -2910,7 +3200,8 @@
 "list": "Face Masks",
 "rank": 91,
 "store_rating": 4.8,
-"review_count": 34
+"review_count": 34,
+"prev_rank": null
 },
 {
 "brand": "BIOHEAL BOH",
@@ -2920,7 +3211,8 @@
 "list": "Face Masks",
 "rank": 92,
 "store_rating": 5.0,
-"review_count": 2
+"review_count": 2,
+"prev_rank": null
 },
 {
 "brand": "ilso",
@@ -2930,7 +3222,8 @@
 "list": "Face Masks",
 "rank": 93,
 "store_rating": 4.5,
-"review_count": 31
+"review_count": 31,
+"prev_rank": null
 },
 {
 "brand": "COSRX",
@@ -2940,7 +3233,8 @@
 "list": "Face Masks",
 "rank": 94,
 "store_rating": 4.7,
-"review_count": 32
+"review_count": 32,
+"prev_rank": null
 },
 {
 "brand": "Centellian24",
@@ -2950,7 +3244,8 @@
 "list": "Face Masks",
 "rank": 95,
 "store_rating": 4.8,
-"review_count": 193
+"review_count": 193,
+"prev_rank": null
 },
 {
 "brand": "Abib",
@@ -2960,7 +3255,8 @@
 "list": "Face Masks",
 "rank": 96,
 "store_rating": 4.7,
-"review_count": 822
+"review_count": 822,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -2970,7 +3266,8 @@
 "list": "Face Masks",
 "rank": 97,
 "store_rating": 4.9,
-"review_count": 57
+"review_count": 57,
+"prev_rank": null
 },
 {
 "brand": "medicube",
@@ -2980,7 +3277,8 @@
 "list": "Face Masks",
 "rank": 98,
 "store_rating": 4.7,
-"review_count": 108
+"review_count": 108,
+"prev_rank": null
 },
 {
 "brand": "Anua",
@@ -2990,7 +3288,8 @@
 "list": "Face Masks",
 "rank": 99,
 "store_rating": 4.6,
-"review_count": 136
+"review_count": 136,
+"prev_rank": null
 },
 {
 "brand": "LINDSAY",
@@ -3000,7 +3299,8 @@
 "list": "Face Masks",
 "rank": 100,
 "store_rating": 4.9,
-"review_count": 9
+"review_count": 9,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3010,7 +3310,8 @@
 "list": "Hair",
 "rank": 1,
 "store_rating": 4.8,
-"review_count": 3738
+"review_count": 3739,
+"prev_rank": null
 },
 {
 "brand": "lilyeve",
@@ -3020,7 +3321,8 @@
 "list": "Hair",
 "rank": 2,
 "store_rating": 4.7,
-"review_count": 415
+"review_count": 416,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3030,7 +3332,8 @@
 "list": "Hair",
 "rank": 3,
 "store_rating": 4.8,
-"review_count": 1697
+"review_count": 1698,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3040,7 +3343,8 @@
 "list": "Hair",
 "rank": 4,
 "store_rating": 4.8,
-"review_count": 1191
+"review_count": 1192,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3050,7 +3354,8 @@
 "list": "Hair",
 "rank": 5,
 "store_rating": 4.8,
-"review_count": 2261
+"review_count": 2263,
+"prev_rank": null
 },
 {
 "brand": "Dr.FORHAIR",
@@ -3060,7 +3365,8 @@
 "list": "Hair",
 "rank": 6,
 "store_rating": 4.6,
-"review_count": 65
+"review_count": 65,
+"prev_rank": null
 },
 {
 "brand": "Dr.FORHAIR",
@@ -3070,7 +3376,8 @@
 "list": "Hair",
 "rank": 7,
 "store_rating": 4.8,
-"review_count": 83
+"review_count": 83,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3080,7 +3387,8 @@
 "list": "Hair",
 "rank": 8,
 "store_rating": 4.7,
-"review_count": 13
+"review_count": 13,
+"prev_rank": null
 },
 {
 "brand": "Seapuri",
@@ -3090,7 +3398,8 @@
 "list": "Hair",
 "rank": 9,
 "store_rating": 4.7,
-"review_count": 177
+"review_count": 177,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3100,7 +3409,8 @@
 "list": "Hair",
 "rank": 10,
 "store_rating": 4.9,
-"review_count": 11
+"review_count": 11,
+"prev_rank": null
 },
 {
 "brand": "narka",
@@ -3110,7 +3420,8 @@
 "list": "Hair",
 "rank": 11,
 "store_rating": 4.6,
-"review_count": 110
+"review_count": 110,
+"prev_rank": null
 },
 {
 "brand": "vodana",
@@ -3120,7 +3431,8 @@
 "list": "Hair",
 "rank": 12,
 "store_rating": 5.0,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "vodana",
@@ -3130,7 +3442,8 @@
 "list": "Hair",
 "rank": 13,
 "store_rating": 4.8,
-"review_count": 4
+"review_count": 4,
+"prev_rank": null
 },
 {
 "brand": "vodana",
@@ -3140,7 +3453,8 @@
 "list": "Hair",
 "rank": 14,
 "store_rating": 4.9,
-"review_count": 17
+"review_count": 17,
+"prev_rank": null
 },
 {
 "brand": "La'dor",
@@ -3150,7 +3464,8 @@
 "list": "Hair",
 "rank": 15,
 "store_rating": 4.7,
-"review_count": 1078
+"review_count": 1078,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3160,7 +3475,8 @@
 "list": "Hair",
 "rank": 16,
 "store_rating": 5.0,
-"review_count": 20
+"review_count": 20,
+"prev_rank": null
 },
 {
 "brand": "lilyeve",
@@ -3170,7 +3486,8 @@
 "list": "Hair",
 "rank": 17,
 "store_rating": 4.8,
-"review_count": 121
+"review_count": 121,
+"prev_rank": null
 },
 {
 "brand": "growus",
@@ -3180,7 +3497,8 @@
 "list": "Hair",
 "rank": 18,
 "store_rating": 4.9,
-"review_count": 41
+"review_count": 43,
+"prev_rank": null
 },
 {
 "brand": "AROMATICA",
@@ -3190,7 +3508,8 @@
 "list": "Hair",
 "rank": 19,
 "store_rating": 4.7,
-"review_count": 138
+"review_count": 138,
+"prev_rank": null
 },
 {
 "brand": "Ryo",
@@ -3200,7 +3519,8 @@
 "list": "Hair",
 "rank": 20,
 "store_rating": 4.8,
-"review_count": 143
+"review_count": 143,
+"prev_rank": null
 },
 {
 "brand": "Dr. Groot",
@@ -3210,7 +3530,8 @@
 "list": "Hair",
 "rank": 21,
 "store_rating": 4.7,
-"review_count": 174
+"review_count": 174,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3220,7 +3541,8 @@
 "list": "Hair",
 "rank": 22,
 "store_rating": 4.6,
-"review_count": 317
+"review_count": 317,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3230,7 +3552,8 @@
 "list": "Hair",
 "rank": 23,
 "store_rating": 4.8,
-"review_count": 2238
+"review_count": 2239,
+"prev_rank": null
 },
 {
 "brand": "narka",
@@ -3240,7 +3563,8 @@
 "list": "Hair",
 "rank": 24,
 "store_rating": 4.6,
-"review_count": 16
+"review_count": 16,
+"prev_rank": null
 },
 {
 "brand": "STEAMBASE",
@@ -3250,7 +3574,8 @@
 "list": "Hair",
 "rank": 25,
 "store_rating": 4.7,
-"review_count": 39
+"review_count": 39,
+"prev_rank": null
 },
 {
 "brand": "CURLYSHYLL",
@@ -3260,7 +3585,8 @@
 "list": "Hair",
 "rank": 26,
 "store_rating": 5.0,
-"review_count": 2
+"review_count": 2,
+"prev_rank": null
 },
 {
 "brand": "Dr. Groot",
@@ -3270,7 +3596,8 @@
 "list": "Hair",
 "rank": 27,
 "store_rating": 4.8,
-"review_count": 59
+"review_count": 59,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3280,7 +3607,8 @@
 "list": "Hair",
 "rank": 28,
 "store_rating": 4.7,
-"review_count": 20
+"review_count": 20,
+"prev_rank": null
 },
 {
 "brand": "FROMLABS",
@@ -3290,7 +3618,8 @@
 "list": "Hair",
 "rank": 29,
 "store_rating": 4.8,
-"review_count": 32
+"review_count": 32,
+"prev_rank": null
 },
 {
 "brand": "VT",
@@ -3300,7 +3629,8 @@
 "list": "Hair",
 "rank": 30,
 "store_rating": 4.6,
-"review_count": 262
+"review_count": 262,
+"prev_rank": null
 },
 {
 "brand": "Dr.FORHAIR",
@@ -3310,7 +3640,8 @@
 "list": "Hair",
 "rank": 31,
 "store_rating": 4.9,
-"review_count": 9
+"review_count": 9,
+"prev_rank": null
 },
 {
 "brand": "AROMATICA",
@@ -3320,7 +3651,8 @@
 "list": "Hair",
 "rank": 32,
 "store_rating": 4.7,
-"review_count": 2586
+"review_count": 2590,
+"prev_rank": null
 },
 {
 "brand": "narka",
@@ -3330,7 +3662,8 @@
 "list": "Hair",
 "rank": 33,
 "store_rating": 4.6,
-"review_count": 53
+"review_count": 53,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3340,7 +3673,8 @@
 "list": "Hair",
 "rank": 34,
 "store_rating": 4.9,
-"review_count": 26
+"review_count": 26,
+"prev_rank": null
 },
 {
 "brand": "MODAMODA",
@@ -3350,7 +3684,8 @@
 "list": "Hair",
 "rank": 35,
 "store_rating": 4.6,
-"review_count": 21
+"review_count": 21,
+"prev_rank": null
 },
 {
 "brand": "8grow",
@@ -3360,7 +3695,8 @@
 "list": "Hair",
 "rank": 36,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "rooton",
@@ -3370,7 +3706,8 @@
 "list": "Hair",
 "rank": 37,
 "store_rating": 4.8,
-"review_count": 108
+"review_count": 108,
+"prev_rank": null
 },
 {
 "brand": "Dr.FORHAIR",
@@ -3380,7 +3717,8 @@
 "list": "Hair",
 "rank": 38,
 "store_rating": 4.8,
-"review_count": 94
+"review_count": 94,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3390,7 +3728,8 @@
 "list": "Hair",
 "rank": 39,
 "store_rating": 4.8,
-"review_count": 57
+"review_count": 57,
+"prev_rank": null
 },
 {
 "brand": "Head & Shoulders",
@@ -3400,7 +3739,8 @@
 "list": "Hair",
 "rank": 40,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "HAIRPLUS",
@@ -3410,7 +3750,8 @@
 "list": "Hair",
 "rank": 41,
 "store_rating": 4.7,
-"review_count": 23
+"review_count": 23,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3420,7 +3761,8 @@
 "list": "Hair",
 "rank": 42,
 "store_rating": 4.7,
-"review_count": 74
+"review_count": 74,
+"prev_rank": null
 },
 {
 "brand": "AROMATICA",
@@ -3430,7 +3772,8 @@
 "list": "Hair",
 "rank": 43,
 "store_rating": 4.6,
-"review_count": 463
+"review_count": 463,
+"prev_rank": null
 },
 {
 "brand": "narka",
@@ -3440,7 +3783,8 @@
 "list": "Hair",
 "rank": 44,
 "store_rating": 4.8,
-"review_count": 27
+"review_count": 27,
+"prev_rank": null
 },
 {
 "brand": "roobliss",
@@ -3450,7 +3794,8 @@
 "list": "Hair",
 "rank": 45,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "Prooted",
@@ -3460,7 +3805,8 @@
 "list": "Hair",
 "rank": 46,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3470,7 +3816,8 @@
 "list": "Hair",
 "rank": 47,
 "store_rating": 4.7,
-"review_count": 23
+"review_count": 23,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3480,7 +3827,8 @@
 "list": "Hair",
 "rank": 48,
 "store_rating": 4.8,
-"review_count": 21
+"review_count": 21,
+"prev_rank": null
 },
 {
 "brand": "rooton",
@@ -3490,7 +3838,8 @@
 "list": "Hair",
 "rank": 49,
 "store_rating": 4.7,
-"review_count": 29
+"review_count": 29,
+"prev_rank": null
 },
 {
 "brand": "DASHU",
@@ -3500,7 +3849,8 @@
 "list": "Hair",
 "rank": 50,
 "store_rating": 5.0,
-"review_count": 2
+"review_count": 2,
+"prev_rank": null
 },
 {
 "brand": "Mise-en-Scene",
@@ -3510,7 +3860,8 @@
 "list": "Hair",
 "rank": 51,
 "store_rating": 4.6,
-"review_count": 157
+"review_count": 157,
+"prev_rank": null
 },
 {
 "brand": "YURICA",
@@ -3520,7 +3871,8 @@
 "list": "Hair",
 "rank": 52,
 "store_rating": 4.9,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "rooton",
@@ -3530,7 +3882,8 @@
 "list": "Hair",
 "rank": 53,
 "store_rating": 4.7,
-"review_count": 43
+"review_count": 43,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3540,7 +3893,8 @@
 "list": "Hair",
 "rank": 54,
 "store_rating": 4.8,
-"review_count": 153
+"review_count": 153,
+"prev_rank": null
 },
 {
 "brand": "Prooted",
@@ -3550,7 +3904,8 @@
 "list": "Hair",
 "rank": 55,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "LABO-H",
@@ -3560,7 +3915,8 @@
 "list": "Hair",
 "rank": 56,
 "store_rating": 4.7,
-"review_count": 41
+"review_count": 41,
+"prev_rank": null
 },
 {
 "brand": "COSRX",
@@ -3570,7 +3926,8 @@
 "list": "Hair",
 "rank": 57,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "COSRX",
@@ -3580,7 +3937,8 @@
 "list": "Hair",
 "rank": 58,
 "store_rating": 5.0,
-"review_count": 2
+"review_count": 2,
+"prev_rank": null
 },
 {
 "brand": "CHUNGMIJUNG",
@@ -3590,7 +3948,8 @@
 "list": "Hair",
 "rank": 59,
 "store_rating": 5.0,
-"review_count": 4
+"review_count": 4,
+"prev_rank": null
 },
 {
 "brand": "narka",
@@ -3600,7 +3959,8 @@
 "list": "Hair",
 "rank": 60,
 "store_rating": 4.6,
-"review_count": 108
+"review_count": 108,
+"prev_rank": null
 },
 {
 "brand": "growus",
@@ -3610,7 +3970,8 @@
 "list": "Hair",
 "rank": 61,
 "store_rating": 4.6,
-"review_count": 82
+"review_count": 82,
+"prev_rank": null
 },
 {
 "brand": "AROMATICA",
@@ -3620,7 +3981,8 @@
 "list": "Hair",
 "rank": 62,
 "store_rating": 4.8,
-"review_count": 145
+"review_count": 145,
+"prev_rank": null
 },
 {
 "brand": "CURLYSHYLL",
@@ -3630,7 +3992,8 @@
 "list": "Hair",
 "rank": 63,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "UNOVE",
@@ -3640,7 +4003,8 @@
 "list": "Hair",
 "rank": 64,
 "store_rating": 4.6,
-"review_count": 1075
+"review_count": 1077,
+"prev_rank": null
 },
 {
 "brand": "growus",
@@ -3650,7 +4014,8 @@
 "list": "Hair",
 "rank": 65,
 "store_rating": 4.4,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "Longtake",
@@ -3660,7 +4025,8 @@
 "list": "Hair",
 "rank": 66,
 "store_rating": 4.8,
-"review_count": 257
+"review_count": 257,
+"prev_rank": null
 },
 {
 "brand": "Ryo",
@@ -3670,7 +4036,8 @@
 "list": "Hair",
 "rank": 67,
 "store_rating": 5.0,
-"review_count": 5
+"review_count": 5,
+"prev_rank": null
 },
 {
 "brand": "HAIRPLUS",
@@ -3680,7 +4047,8 @@
 "list": "Hair",
 "rank": 68,
 "store_rating": 4.7,
-"review_count": 123
+"review_count": 123,
+"prev_rank": null
 },
 {
 "brand": "KUNDAL",
@@ -3690,7 +4058,8 @@
 "list": "Hair",
 "rank": 69,
 "store_rating": 5.0,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "Dr. Groot",
@@ -3700,7 +4069,8 @@
 "list": "Hair",
 "rank": 70,
 "store_rating": 4.7,
-"review_count": 68
+"review_count": 68,
+"prev_rank": null
 },
 {
 "brand": "ORJENA",
@@ -3710,7 +4080,8 @@
 "list": "Hair",
 "rank": 71,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "MOO100",
@@ -3720,7 +4091,8 @@
 "list": "Hair",
 "rank": 72,
 "store_rating": 4.6,
-"review_count": 15
+"review_count": 15,
+"prev_rank": null
 },
 {
 "brand": "Mise-en-Scene",
@@ -3730,7 +4102,8 @@
 "list": "Hair",
 "rank": 73,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "growus",
@@ -3740,7 +4113,8 @@
 "list": "Hair",
 "rank": 74,
 "store_rating": 4.8,
-"review_count": 28
+"review_count": 28,
+"prev_rank": null
 },
 {
 "brand": "vodana",
@@ -3750,7 +4124,8 @@
 "list": "Hair",
 "rank": 75,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "YAO",
@@ -3760,7 +4135,8 @@
 "list": "Hair",
 "rank": 76,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "Longtake",
@@ -3770,7 +4146,8 @@
 "list": "Hair",
 "rank": 77,
 "store_rating": 4.8,
-"review_count": 25
+"review_count": 26,
+"prev_rank": null
 },
 {
 "brand": "Longtake",
@@ -3780,7 +4157,8 @@
 "list": "Hair",
 "rank": 78,
 "store_rating": 4.8,
-"review_count": 359
+"review_count": 359,
+"prev_rank": null
 },
 {
 "brand": "Healingbird",
@@ -3790,7 +4168,8 @@
 "list": "Hair",
 "rank": 79,
 "store_rating": 4.7,
-"review_count": 44
+"review_count": 44,
+"prev_rank": null
 },
 {
 "brand": "Salon.Zip",
@@ -3800,7 +4179,8 @@
 "list": "Hair",
 "rank": 80,
 "store_rating": 4.7,
-"review_count": 188
+"review_count": 188,
+"prev_rank": null
 },
 {
 "brand": "CURLYSHYLL",
@@ -3810,7 +4190,8 @@
 "list": "Hair",
 "rank": 81,
 "store_rating": 4.0,
-"review_count": 3
+"review_count": 3,
+"prev_rank": null
 },
 {
 "brand": "Dr.FORHAIR",
@@ -3820,7 +4201,8 @@
 "list": "Hair",
 "rank": 82,
 "store_rating": 4.9,
-"review_count": 26
+"review_count": 26,
+"prev_rank": null
 },
 {
 "brand": "DALEAF",
@@ -3830,7 +4212,8 @@
 "list": "Hair",
 "rank": 83,
 "store_rating": 4.5,
-"review_count": 8
+"review_count": 8,
+"prev_rank": null
 },
 {
 "brand": "Mise-en-Scene",
@@ -3840,7 +4223,8 @@
 "list": "Hair",
 "rank": 84,
 "store_rating": 4.8,
-"review_count": 1342
+"review_count": 1342,
+"prev_rank": null
 },
 {
 "brand": "Mise-en-Scene",
@@ -3850,7 +4234,8 @@
 "list": "Hair",
 "rank": 85,
 "store_rating": 5.0,
-"review_count": 2
+"review_count": 2,
+"prev_rank": null
 },
 {
 "brand": "DASHU",
@@ -3860,7 +4245,8 @@
 "list": "Hair",
 "rank": 86,
 "store_rating": 4.6,
-"review_count": 38
+"review_count": 38,
+"prev_rank": null
 },
 {
 "brand": "AROMATICA",
@@ -3870,7 +4256,8 @@
 "list": "Hair",
 "rank": 87,
 "store_rating": 4.5,
-"review_count": 77
+"review_count": 77,
+"prev_rank": null
 },
 {
 "brand": "ANAZE",
@@ -3880,7 +4267,8 @@
 "list": "Hair",
 "rank": 88,
 "store_rating": 4.7,
-"review_count": 26
+"review_count": 26,
+"prev_rank": null
 },
 {
 "brand": "Treecell",
@@ -3890,7 +4278,8 @@
 "list": "Hair",
 "rank": 89,
 "store_rating": 4.5,
-"review_count": 49
+"review_count": 49,
+"prev_rank": null
 },
 {
 "brand": "Ryo",
@@ -3900,7 +4289,8 @@
 "list": "Hair",
 "rank": 90,
 "store_rating": 4.7,
-"review_count": 89
+"review_count": 89,
+"prev_rank": null
 },
 {
 "brand": "SOME BY MI",
@@ -3910,7 +4300,8 @@
 "list": "Hair",
 "rank": 91,
 "store_rating": 5.0,
-"review_count": 6
+"review_count": 6,
+"prev_rank": null
 },
 {
 "brand": "ORJENA",
@@ -3920,7 +4311,8 @@
 "list": "Hair",
 "rank": 92,
 "store_rating": 5.0,
-"review_count": 1
+"review_count": 1,
+"prev_rank": null
 },
 {
 "brand": "COSRX",
@@ -3930,7 +4322,8 @@
 "list": "Hair",
 "rank": 93,
 "store_rating": 0.0,
-"review_count": null
+"review_count": null,
+"prev_rank": null
 },
 {
 "brand": "Head & Shoulders",
@@ -3940,7 +4333,8 @@
 "list": "Hair",
 "rank": 94,
 "store_rating": 3.8,
-"review_count": 4
+"review_count": 4,
+"prev_rank": null
 },
 {
 "brand": "Elizavecca",
@@ -3950,7 +4344,8 @@
 "list": "Hair",
 "rank": 95,
 "store_rating": 4.7,
-"review_count": 172
+"review_count": 172,
+"prev_rank": null
 },
 {
 "brand": "Fillimilli",
@@ -3960,7 +4355,8 @@
 "list": "Hair",
 "rank": 96,
 "store_rating": 4.8,
-"review_count": 4
+"review_count": 4,
+"prev_rank": null
 },
 {
 "brand": "HAIRPLUS",
@@ -3970,7 +4366,8 @@
 "list": "Hair",
 "rank": 97,
 "store_rating": 4.7,
-"review_count": 35
+"review_count": 35,
+"prev_rank": null
 },
 {
 "brand": "TOOLIF",
@@ -3980,7 +4377,8 @@
 "list": "Hair",
 "rank": 98,
 "store_rating": 4.4,
-"review_count": 7
+"review_count": 7,
+"prev_rank": null
 },
 {
 "brand": "ezn",
@@ -3990,7 +4388,8 @@
 "list": "Hair",
 "rank": 99,
 "store_rating": 5.0,
-"review_count": 2
+"review_count": 2,
+"prev_rank": null
 },
 {
 "brand": "ELASTINE",
@@ -4000,7 +4399,8 @@
 "list": "Hair",
 "rank": 100,
 "store_rating": 4.8,
-"review_count": 46
+"review_count": 46,
+"prev_rank": null
 }
 ]
 }
