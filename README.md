@@ -76,6 +76,12 @@ GitHub(무료)에서 돌아가서 컴퓨터를 켜둘 필요가 없어요.
   - **Claude 구독을 끊으면:** `content/`가 40일 넘게 Claude(또는 직접) 업데이트되지 않으면, 자동 검사를 통과한 제미나이 초안이 알아서 자료에 추가돼요 (`config.toml [research] auto_add`). 따로 설정을 바꿀 필요 없어요.
 - **특정 종류를 바로 올려보기:** Actions → `Daily post` → Run workflow → `source`에서 `skin`/`routine`/`myth`/`words` 등 선택, `reel`에서 `yes`를 고르면 릴스도 (미리보기 체크하면 카드·영상만 만들어요).
 
+### 📊 인사이트 (얼마나 보였는지)
+- 매일 밤 23:37(한국)에 `Instagram insights` 작업이 최근 30일 게시물의 **조회·도달·좋아요·저장·공유·댓글**과 계정 전체 **최근 7일 도달·프로필 링크 클릭 수**, 팔로워 수를 가져와요.
+- 보는 법: Actions → `Instagram insights` → 가장 최근 실행 → 요약(Summary)의 표. 바로 보고 싶으면 **Run workflow**.
+- 날짜별 기록은 `data/insights.json`에 쌓여서, 게시물이 며칠에 걸쳐 어떻게 퍼졌는지 비교할 수 있어요 (120일 보관).
+- **"권한이 없어요"가 나오면:** 토큰에 `instagram_business_manage_insights` 권한이 빠진 거예요. Meta 개발자 앱 → Instagram → Instagram 로그인을 통한 API 설정 → 권한에 인사이트를 추가한 뒤 **액세스 토큰을 다시 생성**해서 `IG_ACCESS_TOKEN` Secret을 바꿔주세요. 게시는 이 권한 없이도 계속 돼요.
+
 ---
 
 ## 내가 할 일: 없어도 돼요 (하고 싶을 때만)

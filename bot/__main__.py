@@ -397,6 +397,13 @@ def cmd_check(args, cfg=None) -> int:
     return 0 if ok else 1
 
 
+def cmd_insights(args, cfg=None, session=None) -> int:
+    from . import insights
+
+    cfg = cfg or load_config()
+    return insights.run(cfg, State(cfg.state_file), _today(cfg, None), session=session, days=args.days)
+
+
 def cmd_refresh_token(args) -> int:
     cfg = load_config()
     if not cfg.ig_token:
@@ -505,6 +512,8 @@ def main(argv=None) -> int:
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)
     sub.add_parser("check")
+    ins = sub.add_parser("insights")
+    ins.add_argument("--days", type=int, default=30, help="최근 며칠 게시물까지 볼지")
     r = sub.add_parser("refresh-token")
     r.add_argument("--out", required=True)
     ds = sub.add_parser("discover")
@@ -522,6 +531,7 @@ def main(argv=None) -> int:
         "prepare": cmd_prepare,
         "publish": cmd_publish,
         "check": cmd_check,
+        "insights": cmd_insights,
         "refresh-token": cmd_refresh_token,
         "demo": cmd_demo,
         "discover": cmd_discover,
