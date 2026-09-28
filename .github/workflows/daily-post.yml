@@ -73,6 +73,8 @@ jobs:
         run: |
           SLOT=evening
           if [ "${{ github.event.schedule }}" = "7 0 * * *" ]; then SLOT=morning; fi
+          # 손으로 실행하면 지금 날짜 그대로 (늦게 시작한 밤 게시만 어제 몫으로 쳐요)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then SLOT=now; fi
           ARGS="--out site --source ${{ inputs.source || 'auto' }} --reel ${{ inputs.reel || 'auto' }} --slot $SLOT"
           if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           python -m bot prepare $ARGS

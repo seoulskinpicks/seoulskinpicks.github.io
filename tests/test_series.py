@@ -113,6 +113,18 @@ class SeriesTests(unittest.TestCase):
         a, b = State(cfg2.state_file).published
         self.assertNotEqual(a["key"], b["key"])
 
+    def test_late_evening_run_counts_for_yesterday(self):
+        import bot.__main__ as m
+        write_catalog(self.cfg, [catalog_item("Anua", "Niacinamide 10 TXA 4 Serum", no="N1")])
+        args = dict(out=str(self.tmp / "site"), dry_run=False, source=None, date=None, reel="no")
+        today = m._today(self.cfg, None)
+        with mock.patch.object(m, "_local_hour", return_value=3):
+            cmd_prepare(Namespace(slot="evening", **args), cfg=self.cfg)
+            self.assertEqual(State(self.cfg.state_file).posts[-1]["date"], (today - timedelta(days=1)).isoformat())
+            State(self.cfg.state_file).drop_unpublished()
+            cmd_prepare(Namespace(slot="now", **args), cfg=self.cfg)  # a manual run keeps today's date
+            self.assertEqual(State(self.cfg.state_file).posts[-1]["date"], today.isoformat())
+
     def test_gap_is_respected(self):
         publish(self.cfg, "rt-dull", TUESDAY - timedelta(days=3), source="routine")
         _, steps = series.plan_order(self.cfg, State(self.cfg.state_file), TUESDAY)

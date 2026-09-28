@@ -3,7 +3,7 @@ from datetime import date
 
 from bot import insights
 from bot.state import State
-from test_smoke import FakeResp, make_cfg
+from tests.test_smoke import FakeResp, make_cfg
 
 
 class FakeInsightsIG:

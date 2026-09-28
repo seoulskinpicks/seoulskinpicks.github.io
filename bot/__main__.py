@@ -15,7 +15,7 @@ import os
 import shutil
 import sys
 from datetime import date as Date
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -32,6 +32,13 @@ from .state import State
 from .util import add_summary, log, scrub, set_output, warn
 
 SLIDES = 5
+
+
+LATE_EVENING_UNTIL = 9  # an evening run that starts before 09:00 local time is yesterday's
+
+
+def _local_hour(cfg) -> int:
+    return datetime.now(ZoneInfo(cfg.timezone)).hour
 
 
 def _today(cfg, override: str | None) -> Date:
@@ -167,6 +174,11 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
     cfg = cfg or load_config()
     state = State(cfg.state_file)
     today = _today(cfg, args.date)
+    if not args.date and getattr(args, "slot", None) == "evening" and _local_hour(cfg) < LATE_EVENING_UNTIL:
+        # GitHub often starts the 22:07 run hours late. Past midnight it still belongs to yesterday's
+        # evening slot, so it must not use up today's posts (or today's Reel).
+        today -= timedelta(days=1)
+        log(f"밤 게시가 늦게 시작돼서 어제({today}) 밤 몫으로 올려요.")
     set_output("has_post", "false")
     set_output("deploy", "false")
     out = Path(args.out)
@@ -507,7 +519,7 @@ def main(argv=None) -> int:
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     a.add_argument("--reel", default="auto", choices=["auto", "yes", "no"],
                    help="릴스도 만들지 (auto = config [reels] 요일대로)")
-    a.add_argument("--slot", default="evening", choices=["morning", "evening"],
+    a.add_argument("--slot", default="evening", choices=["morning", "evening", "now"],
                    help="하루 2개일 때 어느 시간대인지 (릴스는 저녁에만)")
     b = sub.add_parser("publish")
     b.add_argument("--site-url", required=True)
