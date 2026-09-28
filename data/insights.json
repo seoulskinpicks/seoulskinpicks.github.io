@@ -1,0 +1,85 @@
+{
+ "account": {
+  "2026-09-29": {
+   "followers": 3,
+   "last_7_days": {
+    "accounts_engaged": 1,
+    "profile_links_taps": 0,
+    "reach": 2,
+    "total_interactions": 1,
+    "views": 6
+   },
+   "media_count": 4
+  }
+ },
+ "media": {
+  "18110509913585753": {
+   "history": {
+    "2026-09-29": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 1,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 2
+    }
+   },
+   "number": 3,
+   "permalink": "https://www.instagram.com/p/DdzLFcgmFQa/",
+   "posted": "2026-09-27",
+   "type": "carousel"
+  },
+  "18113415182099788": {
+   "history": {
+    "2026-09-29": {
+     "comments": 2,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 2,
+     "views": 0
+    }
+   },
+   "number": 1,
+   "permalink": "https://www.instagram.com/p/DdvXt8-m_i8/",
+   "posted": "2026-09-26",
+   "type": "carousel"
+  },
+  "18221595562340531": {
+   "history": {
+    "2026-09-29": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    }
+   },
+   "number": 2,
+   "permalink": "https://www.instagram.com/p/Ddwi4xYIH6f/",
+   "posted": "2026-09-26",
+   "type": "carousel"
+  },
+  "18625480069049950": {
+   "history": {
+    "2026-09-29": {
+     "comments": 2,
+     "likes": 1,
+     "reach": 2,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 3,
+     "views": 4
+    }
+   },
+   "number": 4,
+   "permalink": "https://www.instagram.com/p/Dd0aUSYEQL1/",
+   "posted": "2026-09-28",
+   "type": "carousel"
+  }
+ }
+}
