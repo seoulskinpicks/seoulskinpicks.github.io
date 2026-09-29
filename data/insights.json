@@ -10,9 +10,55 @@
     "views": 6
    },
    "media_count": 4
+  },
+  "2026-09-30": {
+   "followers": 3,
+   "last_7_days": {
+    "accounts_engaged": 1,
+    "profile_links_taps": 0,
+    "reach": 2,
+    "total_interactions": 1,
+    "views": 15
+   },
+   "media_count": 7
   }
  },
  "media": {
+  "18082493564703270": {
+   "history": {
+    "2026-09-30": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    }
+   },
+   "number": 6,
+   "permalink": "https://www.instagram.com/p/Dd4a3L-HfiC/",
+   "posted": "2026-09-29",
+   "type": "carousel"
+  },
+  "18102253898525578": {
+   "history": {
+    "2026-09-30": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    }
+   },
+   "number": 6,
+   "permalink": "https://www.instagram.com/reel/Dd4axdXifR4/",
+   "posted": "2026-09-29",
+   "type": "reel"
+  },
   "18110509913585753": {
    "history": {
     "2026-09-29": {
@@ -23,6 +69,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 2
+    },
+    "2026-09-30": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 2,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 6
     }
    },
    "number": 3,
@@ -40,6 +95,15 @@
      "shares": 0,
      "total_interactions": 2,
      "views": 0
+    },
+    "2026-09-30": {
+     "comments": 2,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 2,
+     "views": 0
     }
    },
    "number": 1,
@@ -47,9 +111,35 @@
    "posted": "2026-09-26",
    "type": "carousel"
   },
+  "18126992906311447": {
+   "history": {
+    "2026-09-30": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 2,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 5
+    }
+   },
+   "number": 5,
+   "permalink": "https://www.instagram.com/p/Dd3BjTymwoV/",
+   "posted": "2026-09-29",
+   "type": "carousel"
+  },
   "18221595562340531": {
    "history": {
     "2026-09-29": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-09-30": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -67,6 +157,15 @@
   "18625480069049950": {
    "history": {
     "2026-09-29": {
+     "comments": 2,
+     "likes": 1,
+     "reach": 2,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 3,
+     "views": 4
+    },
+    "2026-09-30": {
      "comments": 2,
      "likes": 1,
      "reach": 2,
