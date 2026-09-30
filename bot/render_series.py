@@ -132,7 +132,7 @@ def _cta(c: Card, big: str, sub: str, handle: str, idx: int, n: int, follow: str
     c.d.ellipse((W - 330, -90, W + 130, 370), fill=rgb(t.dark))
     fbig, bl, bs = fit(c.d, big, SERIF, W - 2 * M, 2, 120, 80)
     fsub, sl, ss = fit(c.d, sub, SANS_M, W - 2 * M, 2, 42, 30)
-    need = len(bl) * int(bs * 1.02) + 44 + len(sl) * int(ss * 1.3) + 70 + 110 + 110 + (100 if linked else 0)
+    need = len(bl) * int(bs * 1.02) + 44 + len(sl) * int(ss * 1.3) + 70 + 110 + 110 + (120 if linked else 0)
     y = min(500, H - 240 - need)
     y = draw_lines(c.d, M, y, bl, fbig, c.ink, int(bs * 1.02)) + 44
     y = draw_lines(c.d, M, y, sl, fsub, c.muted, int(ss * 1.3)) + 70
@@ -143,10 +143,10 @@ def _cta(c: Card, big: str, sub: str, handle: str, idx: int, n: int, follow: str
     c.d.text((M, y + 58), follow, font=F(SANS, 34), fill=c.muted, anchor="la")
     y += 120
     if linked:
-        label = f"Products: link in bio, No.{number}"
-        fl = F(SANS_B, 32)
-        c.d.rounded_rectangle((M, y, M + tw(c.d, label, fl) + 80, y + 80), 40, fill=rgb(t.accent))
-        c.d.text((M + 40, y + 40), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
+        label = f"Shop: link in bio → No.{number}"
+        fl = F(SANS_B, 38)
+        c.d.rounded_rectangle((M, y, M + tw(c.d, label, fl) + 90, y + 96), 48, fill=rgb(t.accent))
+        c.d.text((M + 45, y + 48), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
     disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if linked else "") + disclaimer
     if disc.strip():
         f, lines, s = fit(c.d, disc.strip(), SANS, W - 2 * M, 2, 26, 21)

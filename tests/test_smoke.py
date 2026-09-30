@@ -538,7 +538,7 @@ class Tests(unittest.TestCase):
         self.assertEqual(post["link"], "https://s.click.aliexpress.com/e/_fake")   # affiliate link, not the raw URL
         self.assertEqual(post["slides"], 6)                                       # + price slide
         self.assertIn("$12.40 on AliExpress", post["caption"])
-        self.assertIn("find No.1 (AliExpress)", post["caption"])
+        self.assertIn("tap No.1 (AliExpress)", post["caption"])
         self.assertNotIn("#oliveyoung", post["caption"])
 
     def test_ali_row_without_keys_is_skipped(self):

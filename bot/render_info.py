@@ -461,10 +461,10 @@ def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linke
     c.d.text((M, y + 58), "for a K-beauty lesson every day", font=F(SANS, 34), fill=c.muted, anchor="la")
     y += 150
     if linked:
-        label = f"Products: link in bio, No.{number}"
-        fl = F(SANS_B, 32)
-        c.d.rounded_rectangle((M, y, M + tw(c.d, label, fl) + 80, y + 80), 40, fill=rgb(t.accent))
-        c.d.text((M + 40, y + 40), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
+        label = f"Shop: link in bio → No.{number}"
+        fl = F(SANS_B, 38)
+        c.d.rounded_rectangle((M, y, M + tw(c.d, label, fl) + 90, y + 96), 48, fill=rgb(t.accent))
+        c.d.text((M + 45, y + 48), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
     disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if linked else "") + NOT_ADVICE
     f, lines, s = fit(c.d, disc, SANS, W - 2 * M, 2, 26, 21)
     draw_lines(c.d, M, H - 196, lines, f, c.muted, int(s * 1.4))
@@ -1184,7 +1184,7 @@ def wk_spotlight(sp: dict, handle: str, idx: int, n: int) -> Card:
     return c
 
 
-def wk_cta(handle: str, idx: int, n: int, linked: bool) -> Card:
+def wk_cta(handle: str, idx: int, n: int, linked: bool, number: int = 0) -> Card:
     t = WEEKLY
     c = Card(t, dark=True)
     c.header(handle, idx, n)
@@ -1198,6 +1198,11 @@ def wk_cta(handle: str, idx: int, n: int, linked: bool) -> Card:
     c.bookmark(M, y, 34, 46, c.ink)
     c.d.text((M + 60, y + 23), "Save this week's list", font=F(SANS_M, 36), fill=c.ink, anchor="lm")
     c.d.text((M, y + 90), f"Follow @{handle} for the weekly top 10", font=F(SANS_B, 36), fill=c.ink, anchor="la")
+    if linked:
+        label = "Shop the top 10: link in bio → " + f"No.{number}" if number else "Shop the top 10: link in bio"
+        fl = F(SANS_B, 38)
+        c.d.rounded_rectangle((M, y + 148, M + tw(c.d, label, fl) + 90, y + 240), 46, fill=rgb(t.accent))
+        c.d.text((M + 45, y + 194), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
     disc = "#ad · Product links are affiliate links; I may earn a small commission at no extra cost to you." if linked else \
         "Rankings come from public data: Naver search trends and Olive Young Global bestsellers."
     f, lines, s = fit(c.d, disc, SANS, W - 2 * M, 2, 26, 21)
@@ -1223,5 +1228,5 @@ def render_weekly(topic: Topic, info: InfoCopy, number: int, handle: str) -> lis
         elif name == "spot":
             out.append(wk_spotlight(sp, handle, idx, n))
         else:
-            out.append(wk_cta(handle, idx, n, info.has_links))
+            out.append(wk_cta(handle, idx, n, info.has_links, number))
     return out

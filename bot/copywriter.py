@@ -204,7 +204,7 @@ def build_caption(c: Candidate, cp: Copy, number: int, cfg) -> str:
         tags = [t for t in tags if "oliveyoung" not in t]
     tags = tags[:20]
     cp.hashtags = tags
-    lines = [f"{cp.hook} {'🇰🇷' if c.source == 'kbeauty' else '✨'}", f"#ad | affiliate link in bio → No.{number}", ""]
+    lines = [f"{cp.hook} {'🇰🇷' if c.source == 'kbeauty' else '✨'}", f"#ad | 🛍 Shop: link in bio → tap No.{number}", ""]
     if c.source == "kbeauty":
         lines.append(f"{c.brand} {cp.display_name}")
         if c.rank:
@@ -238,7 +238,7 @@ def build_caption(c: Candidate, cp: Copy, number: int, cfg) -> str:
     code_line = [f"🎟 {oy_name} code: {code}"] if code and on_oy else []
     lines += [
         "",
-        f"🔗 Want it? Tap the link in my bio and find No.{number} ({where})",
+        f"🔗 Want it? Tap the link in my bio, then tap No.{number} ({where})",
         *code_line,
         "🔖 Save this for your next haul",
         "",

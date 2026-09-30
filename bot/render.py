@@ -522,7 +522,7 @@ def slide_cta(t: Theme, number: int, shop_label: str, handle: str, idx: int, n_s
     y += 190
     d.text((M, y), "Tap the link in my bio", font=F(SANS_M, 48), fill=c.ink, anchor="la")
     y += 64
-    d.text((M, y), "and find this number:", font=F(SANS, 40), fill=c.muted, anchor="la")
+    d.text((M, y), "then tap this number:", font=F(SANS, 40), fill=c.muted, anchor="la")
     y += 90
     nf = F(SERIF, 96)
     label = f"No.{number}"

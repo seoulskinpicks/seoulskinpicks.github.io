@@ -485,7 +485,7 @@ def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None 
             lines += ["", f"❌ Myth: {d['myth']}", f"✅ Fact: {d['fact']}"]
         if products:
             linked = any(p["links"] for p in products)
-            title = f"🛍 Where to find it (links in bio → No.{number})" if linked else "🛍 Where you'll find it"
+            title = f"🛍 Where to find it (link in bio → tap No.{number})" if linked else "🛍 Where you'll find it"
             lines += ["", title] + [_product_line(p) for p in products]
         bullets = list(d["benefits"][:3])
     elif topic.kind == "weekly":
@@ -499,7 +499,7 @@ def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None 
             lines.append("")
         if products:
             linked = any(p["links"] for p in products)
-            lines.append(f"🛍 Top bestsellers on Olive Young Global" + (f" (links in bio → No.{number})" if linked else ""))
+            lines.append(f"🛍 Top bestsellers on Olive Young Global" + (f" (link in bio → tap No.{number})" if linked else ""))
             lines += [f"{i}. {p['brand']} {p['name']}" + _move(p) for i, p in enumerate(products, 1)]
             lines.append("")
         lines.append("Which one are you trying next? Tell me below 👇")
@@ -538,7 +538,7 @@ def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None 
     has_links = any(p["links"] for p in products)
     tail = ["", "🔖 Save this for later · Follow @" + handle + " for daily K-beauty know-how"]
     if has_links:
-        tail.append(f"#ad | affiliate links in bio → No.{number}. I may earn a small commission at no extra cost to you.")
+        tail.append(f"#ad | 🛍 Shop: link in bio → tap No.{number}. I may earn a small commission at no extra cost to you.")
     if topic.kind in ("skin", "hair", "routine", "myth", "combo", "season"):
         tail.append(NOT_ADVICE)
     tail += [".", " ".join(tags)]

@@ -439,7 +439,7 @@ def copy_lines(topic, number: int, products_: list[dict], lib=None) -> tuple[str
     """(hook, caption body lines, bullets for the link page)."""
     d = topic.data
     linked = any(p["links"] for p in products_)
-    shop_title = f"🛍 Where to find them (links in bio → No.{number})" if linked else "🛍 Where you'll find them"
+    shop_title = f"🛍 Where to find them (link in bio → tap No.{number})" if linked else "🛍 Where you'll find them"
     if topic.kind == "routine":
         hook = d["hook"]
         names = key_names(d, lib)
@@ -506,7 +506,7 @@ def copy_lines(topic, number: int, products_: list[dict], lib=None) -> tuple[str
             frm = f"#{c['from']}" if c.get("from") else "outside the top 30"
             lines += ["", f"🚀 Biggest climber: {c['brand']} {c['product']} ({frm} → #{c['to']})"]
         if linked:
-            lines += ["", f"🛍 Links in bio → No.{number}"]
+            lines += ["", f"🛍 Link in bio → tap No.{number}"]
         lines += ["", "Did any of these make it into your cart? 👇"]
         bullets = [f"{p['brand']} {p['name']}" for p in top[:3]]
     elif topic.kind == "spotlight":
