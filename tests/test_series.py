@@ -48,7 +48,7 @@ class SeriesTests(unittest.TestCase):
             else:
                 self.assertNotIn("weekly", steps)
             season_done = any(p["source"] == "season" for p in st.posts)
-            pick = next(s for s in steps if s not in ("industry", "recap") and not (s == "season" and season_done))
+            pick = next(s for s in steps if s not in ("industry", "recap", "spotlight") and not (s == "season" and season_done))
             src = {"skin_korea": "skin", "skin_global": "skin", "product": "kbeauty"}.get(pick, pick)
             st.posts.append({"date": d.isoformat(), "source": src, "status": "published", "key": f"k{i}", "number": i})
             picks.append(pick)
@@ -76,7 +76,7 @@ class SeriesTests(unittest.TestCase):
             for slot in range(2):
                 plan, steps = series.plan_order(self.cfg, st, d)
                 season_done = any(p["source"] == "season" for p in st.posts)
-                pick = next(s for s in steps if s not in ("industry", "recap") and not (s == "season" and season_done))
+                pick = next(s for s in steps if s not in ("industry", "recap", "spotlight") and not (s == "season" and season_done))
                 src = {"skin_korea": "skin", "skin_global": "skin", "product": "kbeauty"}.get(pick, pick)
                 st.posts.append({"date": d.isoformat(), "source": src, "status": "published", "key": f"k{i}-{slot}", "number": i})
                 day_series.append(series.series_of(st.posts[-1]))
@@ -166,6 +166,19 @@ class SeriesTests(unittest.TestCase):
                 self.assertLessEqual(len(it["signal"]), 70, it)
                 self.assertLessEqual(len(it["why"]), 140, it)
             self.assertFalse(has_hangul(json.dumps(i, ensure_ascii=False)), i["id"])
+        ids_seen = set()
+        for i in self.lib.spotlight:  # Japan / US / filings issues written by the monthly research
+            self.assertNotIn(i["id"], ids_seen)
+            ids_seen.add(i["id"])
+            self.assertIn(i.get("region"), series.REGION_ORDER, i["id"])
+            self.assertTrue(3 <= len(i["items"]) <= 5, i["id"])
+            self.assertGreaterEqual(len(i.get("sources", [])), 2, i["id"])
+            self.assertLessEqual(len(i.get("hook", "")), 54, i["id"])
+            for it in i["items"]:
+                self.assertLessEqual(len(it["name"]), 28, it)
+                self.assertLessEqual(len(it["signal"]), 70, it)
+                self.assertLessEqual(len(it["why"]), 140, it)
+            self.assertFalse(has_hangul(json.dumps(i, ensure_ascii=False)), i["id"])
 
     # ------------------------------------------------------------------ topics
     def test_myth_and_combo_groups(self):
@@ -225,6 +238,39 @@ class SeriesTests(unittest.TestCase):
         info = ed.build_info_copy(t, 50, self.cfg, prods, lib=self.lib)
         self.assertIn("September", info.caption)
         self.assertIn("#ad", info.caption)
+
+    def test_spotlight_issues_render(self):
+        from bot.render_series import render_series_pin, render_series_post
+        (self.tmp / "content").mkdir(exist_ok=True)
+        for f in ed.content_dir(self.cfg).glob("*.toml"):
+            shutil.copy(f, self.tmp / "content" / f.name)
+        self.cfg.raw.setdefault("editorial", {})["content_dir"] = str(self.tmp / "content")
+        issues = ""
+        for region, day in (("us", "03"), ("japan", "01"), ("filings", "02")):
+            issues += (f'[[issue]]\nid = "2026-10-{region}"\nregion = "{region}"\ndate = "2026-10-{day}"\n'
+                       f'hook = "Test hook {region}"\nitems = [{{ name = "Thing A", signal = "Ranking press", why = "Because" }},'
+                       ' { name = "Thing B", signal = "Filing", why = "Because" }, { name = "Thing C", signal = "News", why = "Because" }]\n'
+                       'sources = ["https://a.example/1", "https://b.example/2"]\n\n')
+        (self.tmp / "content" / "spotlight.toml").write_text(issues, encoding="utf-8")
+        lib = ed.load_library(self.cfg)
+        used: set[str] = set()
+        order = []
+        for _ in range(4):
+            t = series.next_topic("spotlight", lib, None, date(2026, 10, 5), self.cfg, used)
+            if not t:
+                break
+            order.append(t.key)
+            used.add(t.key)
+            info = ed.build_info_copy(t, 60, self.cfg, [], lib=lib)
+            self.assertIn("#ad" if "#ad" in info.caption else "Thing A", info.caption)
+            self.assertLessEqual(len(info.caption), 2200)
+            cards = render_series_post(t, info, 60, "seoul.skin.picks", lib=lib)
+            self.assertEqual(len(cards), 5)
+            render_series_pin(t, info, 60, "seoul.skin.picks")
+            self.assertIn("Thing A", series.article(t, lib, "", ed.NOT_ADVICE))
+            self.assertEqual(series.find_topic(t.key, lib).key, t.key)
+        self.assertEqual(order, ["sp-2026-10-japan", "sp-2026-10-filings", "sp-2026-10-us"])  # oldest first
+        self.assertIsNone(series.next_topic("spotlight", lib, None, date(2026, 12, 1), self.cfg, set()))  # too old
 
     def test_industry_issue_and_words(self):
         (self.tmp / "content").mkdir(exist_ok=True)

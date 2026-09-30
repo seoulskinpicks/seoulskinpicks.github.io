@@ -391,7 +391,7 @@ def cmd_check(args, cfg=None) -> int:
     if series_cfg(cfg):
         lines.append(f"- 이번 달 진행 (올림/목표): {month_summary(cfg, state, today)}")
     lines.append(f"- 정보 글 자료: 피부 성분 {len(lib.skin)} · 모발 {len(lib.hair)} · 비교 {len(lib.versus)} · 연도 {len(lib.years)}"
-                 f" · 루틴 {len(lib.routines)} · 계절 {len(lib.seasons)} · 단어 {len(lib.words)} · 업계 {len(lib.industry)}")
+                 f" · 루틴 {len(lib.routines)} · 계절 {len(lib.seasons)} · 단어 {len(lib.words)} · 업계 {len(lib.industry)} · 해외·특허 {len(lib.spotlight)}")
     lines.append(f"  - 아직 안 올린 것: {editorial.log_remaining(lib, state)}")
     catalog = editorial.load_catalog(cfg)
     lines.append(f"- 성분 글용 제품 목록: {len(catalog)}개" if catalog else
@@ -487,7 +487,7 @@ def cmd_demo(args) -> int:
     today = _today(cfg, None)
     topics = [editorial.all_topics(k, lib)[:1] for k in ("skin", "hair", "versus", "history", "routine", "words")]
     topics = [t[0] for t in topics if t]
-    for k in ("myth", "combo", "season", "industry"):
+    for k in ("myth", "combo", "season", "industry", "spotlight"):
         t = series.next_topic(k, lib, empty, today, cfg, {})
         if t:
             topics.append(t)
@@ -515,7 +515,7 @@ def main(argv=None) -> int:
     a.add_argument("--source", default="auto",
                    choices=["auto", "product", "kbeauty", "tools", "skin", "skin_korea", "skin_global", "hair",
                             "versus", "history", "weekly", "routine", "myth", "combo", "season", "words", "recap",
-                            "industry", "site"])
+                            "industry", "spotlight", "site"])
     a.add_argument("--date", default=None, help="YYYY-MM-DD (테스트용)")
     a.add_argument("--reel", default="auto", choices=["auto", "yes", "no"],
                    help="릴스도 만들지 (auto = config [reels] 요일대로)")

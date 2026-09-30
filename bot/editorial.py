@@ -21,7 +21,7 @@ from .util import clean_space, log, warn
 
 ROOT = Path(__file__).resolve().parent.parent
 
-NEW_KINDS = ("routine", "myth", "combo", "season", "words", "recap", "industry")
+NEW_KINDS = ("routine", "myth", "combo", "season", "words", "recap", "industry", "spotlight")
 INFO_KINDS = ("skin", "hair", "versus", "history", "weekly") + NEW_KINDS
 PLAN_TOKENS = ("product", "skin", "skin_korea", "skin_global", "hair", "versus", "history", "weekly") + NEW_KINDS
 DEFAULT_WEEKLY = ["skin_korea", "product", "hair", "weekly", "skin_global", "history", "product"]
@@ -39,12 +39,13 @@ FALLBACK = {
 KIND_LABEL = {"skin": "Ingredient 101", "hair": "Hair & scalp 101", "versus": "Seoul vs. abroad",
               "history": "K-beauty history", "weekly": "This week in K-beauty", "routine": "Routine builder",
               "myth": "Myth vs. fact", "combo": "Mix & match", "season": "Seoul seasons", "words": "Speak K-beauty",
-              "recap": "Monthly bestsellers", "industry": "Industry watch"}
+              "recap": "Monthly bestsellers", "industry": "Industry watch", "spotlight": "Around the world"}
 KIND_KO = {"product": "제품 픽", "skin": "피부 성분 101", "skin_korea": "피부 성분 101 (한국에서 뜨는 것)",
            "skin_global": "피부 성분 101 (해외에서 뜨는 것)", "hair": "모발·두피 성분 101",
            "versus": "서울 vs 해외", "history": "K뷰티 연도별 변화", "weekly": "이번 주 K뷰티 TOP",
            "routine": "고민별 루틴", "myth": "오해 vs 사실", "combo": "같이 써도 될까", "season": "서울 계절 가이드",
-           "words": "K뷰티 단어", "recap": "지난달 베스트셀러", "industry": "업계가 미는 성분"}
+           "words": "K뷰티 단어", "recap": "지난달 베스트셀러", "industry": "업계가 미는 성분",
+           "spotlight": "일본·미국 화제 / 새 특허·원료"}
 HEAT_LABEL = {"korea": "Hot in Korea", "global": "Trending abroad", "both": "Hot in Korea & abroad"}
 PREFIX = {"skin": "ing-", "hair": "hair-", "versus": "vs-"}
 
@@ -67,6 +68,7 @@ class Library:
     seasons: list[dict] = field(default_factory=list)
     words: list[dict] = field(default_factory=list)
     industry: list[dict] = field(default_factory=list)
+    spotlight: list[dict] = field(default_factory=list)
 
     def ingredients(self, area: str) -> list[dict]:
         return self.hair if area == "hair" else self.skin
@@ -101,6 +103,7 @@ def load_library(cfg) -> Library:
         seasons=read("seasons.toml").get("season", []),
         words=read("words.toml").get("set", []),
         industry=read("industry.toml").get("issue", []),
+        spotlight=read("spotlight.toml").get("issue", []),
     )
 
 
@@ -187,7 +190,7 @@ def next_topic(token: str, lib: Library, state, today: Date, cfg) -> Topic | Non
     used = last_used(state)
     if kind == "weekly":
         return weekly_topic(cfg, today, used)
-    if kind in ("myth", "combo", "season", "recap", "industry"):
+    if kind in ("myth", "combo", "season", "recap", "industry", "spotlight"):
         from . import series
         return series.next_topic(kind, lib, state, today, cfg, used)
     heat = {"skin_korea": {"korea", "both"}, "skin_global": {"global", "both"}}.get(token)
@@ -442,6 +445,9 @@ def _tags(cfg, topic: Topic) -> list[str]:
         from .series import TAGS
         extra = TAGS.get(topic.kind, [])
     own = topic.data.get("hashtags", []) if topic.kind in ("skin", "hair") else []
+    if topic.kind == "spotlight":
+        from .series import region_of
+        own = region_of(topic.data)["hashtags"]
     tags = list(dict.fromkeys(own + extra + c.get("hashtags_common", [])))
     return [t for t in tags if t.startswith("#") and " " not in t][:20]
 

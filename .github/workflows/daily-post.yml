@@ -16,7 +16,7 @@ on:
       source:
         description: "올릴 종류 (auto = config [series] 계획대로 · 나머지 = 그 종류로 · site = 링크 페이지만)"
         type: choice
-        options: [auto, weekly, skin, hair, routine, myth, combo, season, words, recap, industry, versus, history, product, kbeauty, tools, site]
+        options: [auto, weekly, skin, hair, routine, myth, combo, season, words, recap, industry, spotlight, versus, history, product, kbeauty, tools, site]
         default: auto
       reel:
         description: "릴스 (auto = config [reels] 요일대로 · yes = 오늘 릴스도 · no = 카드뉴스만)"

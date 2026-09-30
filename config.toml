@@ -24,6 +24,7 @@ routine  = { per_month = 2, gap = 10 }       # 고민별 루틴 (content/routine
 myth     = { per_month = 1, gap = 20 }       # 오해 vs 사실 4개 (성분 자료에서 자동)
 combo    = { per_month = 1, gap = 20 }       # 같이 써도 될까? 성분 궁합 (성분 자료에서 자동)
 industry = { per_month = 1, gap = 20 }       # 업계가 미는 성분 (매달 1일 Claude 조사 → content/industry.toml)
+spotlight = { per_month = 1.5, gap = 8 }     # 일본·미국 화제 / 새 특허·원료 등록 (매달 1일 Claude 조사 → content/spotlight.toml, 하루 2개면 달에 3개)
 recap    = { per_month = 1, gap = 20 }       # 지난달 베스트셀러 결산 (매달 1~10일, 주간 기록으로 자동)
 history  = { per_month = 1, gap = 20 }       # K뷰티 타임머신 (연도별 유행)
 versus   = { per_month = 1, gap = 20 }       # 서울 vs 해외

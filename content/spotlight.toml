@@ -1,0 +1,27 @@
+# Around the world ("What's hot in Japan / the US" and "New patents and ingredient filings")
+#
+# Written once a month by the monthly Claude research task (1st of the month), from public news,
+# beauty-media rankings and patent / raw-material registration records. Never scrape retailer pages
+# that forbid it (for example amazon.com): use press coverage that quotes the rankings.
+# The bot posts each issue once, in order of date, while it is less than 45 days old.
+#
+# Format (add the newest issues at the TOP):
+#
+# [[issue]]
+# id = "2026-10-japan"                # year-month + region
+# region = "japan"                    # japan / us / filings
+# date = "2026-10-01"
+# title = "What's hot in Japan right now"         # optional (each region has a default title)
+# hook = "Three K-beauty ideas Japan is buzzing about"   # <= 54 characters
+# items = [
+#   { name = "Ingredient, product type or filing", signal = "Where it showed up (<= 70 chars)", why = "Why it matters to shoppers (<= 140 chars)" },
+# ]                                    # 3-4 items
+# sources = ["https://...", "https://..."]            # at least 2 public pages you actually read
+#
+# region = "japan"   : rankings, viral products and ingredient buzz in Japan (@cosme, Rakuten, Japanese beauty media)
+# region = "us"      : the same for the US (Sephora / Ulta / Amazon coverage in the press, TikTok and Reddit coverage)
+# region = "filings" : new patents and raw-material registrations from Korean makers (KIPRIS, KFDA/MFDS
+#                      cosmetic raw-material lists, INCI registrations). Say "filed" or "registered",
+#                      never "approved" or "proven"; a filing is not a product.
+#
+# English only (no Hangul). Claim-safe wording (helps, supports, known for, may).

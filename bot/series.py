@@ -14,6 +14,8 @@ Series added here
   words    : Speak K-beauty, Korean beauty words (content/words.toml)
   recap    : last month's Olive Young Global bestsellers, from the weekly snapshots (data/oy_history/)
   industry : what makers and expos are pushing (content/industry.toml, written by the monthly research)
+  spotlight: what is hot in Japan / the US, and new patents and raw-material filings
+             (content/spotlight.toml, written by the monthly research; region = japan / us / filings)
 """
 from __future__ import annotations
 
@@ -28,9 +30,9 @@ from pathlib import Path
 
 from .util import warn
 
-SERIES_NAMES = ("skin", "product", "weekly", "hair", "routine", "myth", "combo", "industry", "recap", "history",
-                "versus", "season", "words")
-NEW_KINDS = ("routine", "myth", "combo", "season", "words", "recap", "industry")
+SERIES_NAMES = ("skin", "product", "weekly", "hair", "routine", "myth", "combo", "industry", "spotlight", "recap",
+                "history", "versus", "season", "words")
+NEW_KINDS = ("routine", "myth", "combo", "season", "words", "recap", "industry", "spotlight")
 DAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
 GROUP = 4  # myths / combos per post
 HISTORY_DIR = "oy_history"
@@ -227,6 +229,23 @@ def next_topic(kind: str, lib, state, today: Date, cfg, used: dict):
         if key in used or age > 45 or age < 0:
             return None
         return Topic("industry", key, top)
+    if kind == "spotlight":
+        fresh = []
+        for i in lib.spotlight:
+            if not i.get("items") or f"sp-{i['id']}" in used:
+                continue
+            try:
+                age = (today - Date.fromisoformat(str(i["date"]))).days
+            except (KeyError, ValueError):
+                continue
+            if 0 <= age <= 45:
+                fresh.append(i)
+        if not fresh:
+            return None
+        # oldest fresh issue first, so nothing is left to expire; alternate regions when dates tie
+        pick = sorted(fresh, key=lambda i: (str(i["date"]), REGION_ORDER.index(i.get("region", "japan"))
+                                            if i.get("region") in REGION_ORDER else 9))[0]
+        return Topic("spotlight", f"sp-{pick['id']}", pick)
     return None
 
 
@@ -249,6 +268,9 @@ def find_topic(key: str, lib, post: dict | None = None):
     if key.startswith("in-"):
         i = next((i for i in lib.industry if f"in-{i['id']}" == key), None)
         return Topic("industry", key, i) if i else None
+    if key.startswith("sp-"):
+        i = next((i for i in lib.spotlight if f"sp-{i['id']}" == key), None)
+        return Topic("spotlight", key, i) if i else None
     return None
 
 
@@ -268,7 +290,30 @@ def title_of(topic) -> str:
         return f"{d['label']}'s K-beauty bestsellers"
     if topic.kind == "industry":
         return f"{d.get('title', 'Industry watch')} ({month_label(d)})"
+    if topic.kind == "spotlight":
+        return f"{region_of(d)['title']} ({month_label(d)})" if not d.get("title") else f"{d['title']} ({month_label(d)})"
     return topic.key
+
+
+REGION_ORDER = ("japan", "us", "filings")
+REGIONS = {
+    "japan": {"title": "What's hot in Japan right now", "tag": "JAPAN SPOTLIGHT", "seen": "Seen in Japan", "emoji": "🇯🇵",
+              "intro": "What Japanese shoppers, rankings and beauty media are talking about.",
+              "note": "Rankings and trends reported by Japanese beauty media. Not a guarantee of results.",
+              "cta": "Would you try it?", "hashtags": ["#jbeauty", "#japanesebeauty", "#beautytrends"]},
+    "us": {"title": "What's hot in the US right now", "tag": "US SPOTLIGHT", "seen": "Seen in the US", "emoji": "🇺🇸",
+           "intro": "What American shoppers, retailers and beauty media are talking about.",
+           "note": "Trends reported by US beauty media and retailers. Not a guarantee of results.",
+           "cta": "Are you seeing this too?", "hashtags": ["#beautytrends", "#usbeauty", "#skincaretrends"]},
+    "filings": {"title": "New patents and ingredient filings", "tag": "NEW FILINGS", "seen": "Filed / registered",
+                "emoji": "🔬", "intro": "New patents and raw-material registrations from Korean beauty makers.",
+                "note": "A filing is not an approval or a product, and some never reach shelves.",
+                "cta": "Which one would you try?", "hashtags": ["#kbeautytrends", "#cosmeticscience", "#beautyinnovation"]},
+}
+
+
+def region_of(d: dict) -> dict:
+    return REGIONS.get(str(d.get("region", "")).lower(), REGIONS["japan"])
 
 
 def month_label(d: dict) -> str:
@@ -464,6 +509,14 @@ def copy_lines(topic, number: int, products_: list[dict], lib=None) -> tuple[str
             lines += ["", f"🛍 Links in bio → No.{number}"]
         lines += ["", "Did any of these make it into your cart? 👇"]
         bullets = [f"{p['brand']} {p['name']}" for p in top[:3]]
+    elif topic.kind == "spotlight":
+        r = region_of(d)
+        hook = d.get("hook") or r["title"]
+        lines = [f"{hook} {r['emoji']}", f"{r['tag'].title()} · {month_label(d)}", r["intro"], ""]
+        for it in d["items"]:
+            lines += [f"🧪 {it['name']}", f"📍 {it['signal']}", it["why"], ""]
+        lines += [r["note"], f"{r['cta']} 👇"]
+        bullets = [f"{it['name']}: {it['signal']}" for it in d["items"][:3]]
     else:  # industry
         hook = d.get("hook") or "What K-beauty makers are betting on next"
         lines = [f"{hook} 🔭", f"Industry watch · {month_label(d)}",
@@ -537,6 +590,12 @@ def article(topic, lib, products_html: str, not_advice: str) -> str:
         for it in d["items"]:
             out.append(f"<h2>{esc(it['name'])}</h2><p><i>{esc(it['signal'])}</i><br>{esc(it['why'])}</p>")
         out.append("<p class=\"note\">Early signals, not guarantees.</p>")
+    elif topic.kind == "spotlight":
+        r = region_of(d)
+        out.append(f"<p class=\"lead\">{esc(r['intro'])}</p>")
+        for it in d["items"]:
+            out.append(f"<h2>{esc(it['name'])}</h2><p><i>{esc(it['signal'])}</i><br>{esc(it['why'])}</p>")
+        out.append(f"<p class=\"note\">{esc(r['note'])}</p>")
     if topic.kind in ("routine", "myth", "combo", "season"):
         out.append(f"<p class=\"note\">{esc(not_advice)}</p>")
     if products_html:
@@ -552,4 +611,5 @@ TAGS = {
     "words": ["#learnkorean", "#koreanwords", "#kbeautytips"],
     "recap": ["#kbeautybestsellers", "#oliveyoungglobal", "#kbeautyfavorites"],
     "industry": ["#kbeautytrends", "#beautyindustry", "#cosmeticsindustry"],
+    "spotlight": ["#beautytrends", "#kbeautytrends", "#skincaretrends"],
 }

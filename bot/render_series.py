@@ -30,6 +30,7 @@ COMBO = theme_from("#2F7F8F")
 WORDS = theme_from("#7A4FB5")
 RECAP = theme_from("#A87A22")
 INDUSTRY = theme_from("#2D6A7F")
+SPOTLIGHT = {"japan": theme_from("#B23A48"), "us": theme_from("#2B4C8C"), "filings": theme_from("#5B4E9E")}
 
 
 def _color_theme(table: dict, ident: str) -> Theme:
@@ -43,6 +44,8 @@ def series_theme(topic: Topic) -> Theme:
         return _color_theme(ROUTINE_COLORS, topic.data.get("id", ""))
     if k == "season":
         return _color_theme(SEASON_COLORS, topic.data.get("id", ""))
+    if k == "spotlight":
+        return SPOTLIGHT.get(str(topic.data.get("region", "")).lower(), SPOTLIGHT["japan"])
     return {"myth": MYTH, "combo": COMBO, "words": WORDS, "recap": RECAP, "industry": INDUSTRY}[k]
 
 
@@ -677,31 +680,30 @@ def render_recap(topic, info, number, handle) -> list[Card]:
 # ---------------------------------------------------------------------------
 # Industry watch
 # ---------------------------------------------------------------------------
-def in_cover(d, number, handle, n) -> Card:
+def in_cover(d, number, handle, n, t=INDUSTRY, tag="INDUSTRY WATCH", default_title="What the K-beauty industry is betting on",
+             swipe="Swipe for the signals") -> Card:
     from .series import month_label
-    t = INDUSTRY
     c = Card(t)
     c.header(handle, 1, n)
     for i in range(4):  # radar rings
         r = 50 + i * 45
         c.d.ellipse((W - 250 - r, 360 - r, W - 250 + r, 360 + r), outline=rgb(t.accent, 180 - i * 35), width=6)
     c.d.ellipse((W - 270, 340, W - 230, 380), fill=rgb(t.accent))
-    y = _kicker(c, 196, f"INDUSTRY WATCH · NO.{number}") + 30
+    y = _kicker(c, 196, f"{tag} · NO.{number}") + 30
     c.label(M, y, month_label(d), size=24)
     y = 560
-    y = _text_block(c, M, y, d.get("title") or "What the K-beauty industry is betting on", SERIF, W - 2 * M, 3, 112, 80,
+    y = _text_block(c, M, y, d.get("title") or default_title, SERIF, W - 2 * M, 3, 112, 80,
                     c.ink, lh=1.02) + 40
     y = _text_block(c, M, y, d.get("hook", ""), SANS_M, W - 2 * M, 2, 40, 30, c.muted, lh=1.3) + 40
     names = [i["name"] for i in d["items"][:4]]
     if y + _chips_height(c, names, W - 2 * M, F(SANS_M, 30)) < H - 200:
         _chips(c, M, y, names, W - 2 * M, F(SANS_M, 30), c.ink, bg=rgb(t.soft))
-    _swipe(c, "Swipe for the signals")
+    _swipe(c, swipe)
     c.dots(1, n)
     return c
 
 
-def in_item(it, k, handle, idx, n) -> Card:
-    t = INDUSTRY
+def in_item(it, k, handle, idx, n, t=INDUSTRY, seen="Spotted at") -> Card:
     c = Card(t)
     c.header(handle, idx, n)
     y = 180
@@ -712,7 +714,7 @@ def in_item(it, k, handle, idx, n) -> Card:
     fs, sl, ss = fit(c.d, it["signal"], SANS_M, W - 2 * M - 80, 3, 34, 26, balance=False)
     h = 90 + len(sl) * int(ss * 1.3) + 30
     c.shadow_box((M, y, W - M, y + h), 30, t.surface, blur=18, dy=8, alpha=18)
-    c.label(M + 40, y + 34, "Spotted at", color=rgb(t.accent), size=22)
+    c.label(M + 40, y + 34, seen, color=rgb(t.accent), size=22)
     draw_lines(c.d, M + 40, y + 80, sl, fs, c.ink, int(ss * 1.3))
     y += h + 50
     c.label(M, y, "Why it matters", color=rgb(t.accent), size=22)
@@ -733,6 +735,21 @@ def render_industry(topic, info, number, handle) -> list[Card]:
     return out
 
 
+def render_spotlight(topic, info, number, handle) -> list[Card]:
+    """Japan / US trend spotlight and new patents / raw-material filings: the industry-watch layout in its own colors."""
+    from .series import region_of
+    d = topic.data
+    r = region_of(d)
+    t = series_theme(topic)
+    items = d["items"][:5]
+    n = len(items) + 2
+    out = [in_cover(d, number, handle, n, t=t, tag=r["tag"], default_title=r["title"], swipe="Swipe to see what's new")]
+    out += [in_item(it, k, handle, k + 1, n, t=t, seen=r["seen"]) for k, it in enumerate(items, 1)]
+    out.append(_cta(Card(t, dark=True), r["cta"], "Tell me what you think.", handle, n, n, "for more K-beauty trend updates",
+                    disclaimer=r["note"]))
+    return out
+
+
 # ---------------------------------------------------------------------------
 def render_series_post(topic: Topic, info: InfoCopy, number: int, handle: str, lib=None) -> list[Card]:
     k = topic.kind
@@ -748,11 +765,13 @@ def render_series_post(topic: Topic, info: InfoCopy, number: int, handle: str, l
         return render_words(topic, info, number, handle)
     if k == "recap":
         return render_recap(topic, info, number, handle)
+    if k == "spotlight":
+        return render_spotlight(topic, info, number, handle)
     return render_industry(topic, info, number, handle)
 
 
 PIN_KICKER = {"routine": "ROUTINE BUILDER", "myth": "MYTH VS. FACT", "combo": "MIX & MATCH", "season": "SEOUL SEASONS",
-              "words": "SPEAK K-BEAUTY", "recap": "MONTHLY RECAP", "industry": "INDUSTRY WATCH"}
+              "words": "SPEAK K-BEAUTY", "recap": "MONTHLY RECAP", "industry": "INDUSTRY WATCH", "spotlight": "AROUND THE WORLD"}
 
 
 def render_series_pin(topic: Topic, info: InfoCopy, number: int, handle: str) -> Card:
@@ -760,11 +779,16 @@ def render_series_pin(topic: Topic, info: InfoCopy, number: int, handle: str) ->
     t = series_theme(topic)
     c = Card(t, size=(PW, PH))
     y = 110
-    c.pill(M, y, PIN_KICKER[topic.kind], F(SANS_SB, 24), rgb(t.on_accent), rgb(t.accent), padx=22, pady=14)
+    kicker = PIN_KICKER[topic.kind]
+    if topic.kind == "spotlight":
+        from .series import region_of
+        kicker = region_of(d)["tag"]
+    c.pill(M, y, kicker, F(SANS_SB, 24), rgb(t.on_accent), rgb(t.accent), padx=22, pady=14)
     y += 100
     head = {"routine": d.get("title", ""), "myth": "Myth or fact?", "combo": "What to layer, what to space out",
             "season": d.get("title", ""), "words": f"Speak K-beauty: {d.get('title', '').lower()}",
-            "recap": f"{d.get('label', '')}'s bestsellers", "industry": "What K-beauty makers are betting on"}[topic.kind]
+            "recap": f"{d.get('label', '')}'s bestsellers", "industry": "What K-beauty makers are betting on",
+            "spotlight": d.get("title") or __import__("bot.series", fromlist=["x"]).region_of(d)["title"]}[topic.kind]
     y = _text_block(c, M, y, head, SERIF, PW - 2 * M, 3, 96, 64, c.ink, lh=1.03) + 40
     if topic.kind == "words":
         for w in d["words"][:4]:
