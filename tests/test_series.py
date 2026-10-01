@@ -184,7 +184,10 @@ class SeriesTests(unittest.TestCase):
     def test_myth_and_combo_groups(self):
         st = State(self.cfg.state_file)
         seen = set()
-        for i in range(9):
+        all_ids = {e["id"] for e in self.lib.skin + self.lib.hair}
+        for i in range(len(all_ids)):  # one group per post until every ingredient has been used
+            if seen == all_ids:
+                break
             t = series.next_topic("myth", self.lib, st, TUESDAY, self.cfg, ed.last_used(st))
             self.assertIsNotNone(t, i)
             ids = [x["id"] for x in t.data["items"]]

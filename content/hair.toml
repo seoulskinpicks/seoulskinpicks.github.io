@@ -58,6 +58,144 @@ sources = [
 ]
 
 [[ingredient]]
+id = "pdrn-scalp"
+name = "PDRN scalp care"
+full_name = "PDRN (polydeoxyribonucleotide) for scalp"
+nickname = "Salmon DNA shampoo"
+area = "hair"
+heat = "both"
+heat_note = "5 PDRN hair picks in Olive Young Global top 100"
+hot_since = 2026
+hook = "Salmon DNA moved from serums to shampoos. Why?"
+what_it_is = "PDRN is a blend of DNA fragments, usually from salmon, made famous by Korean skin clinics. In 2026 it jumped into shampoos, scalp serums and tonics for thinning-looking hair."
+origin = "Usually salmon-derived; some brands use plant DNA"
+benefits = [
+  "Helps condition a dry or tired-feeling scalp",
+  "Supports a healthier-looking scalp environment",
+  "Part of routines aimed at fuller-looking roots",
+]
+best_for = ["Thinning-looking hair", "Dry, tight scalp", "Scalp-care fans"]
+when = "Every wash"
+how_to_use = [
+  "Massage PDRN shampoo into the scalp; leave on 1–2 minutes",
+  "Apply a PDRN scalp serum to a dry scalp for leave-on contact",
+  "Give it several weeks of steady use before judging",
+]
+pairs_with = ["Rosemary", "Caffeine", "Scalp peptides"]
+avoid_with = []
+good_to_know = [
+  "Hair studies mostly test injected PDRN; shampoo evidence is thin.",
+  "Usually salmon-derived: not vegan, and check first if you have a fish allergy.",
+  "A rinse-off shampoo has brief contact; leave-on serums stay on longer.",
+]
+myth = "PDRN shampoo works like a clinic PDRN scalp injection."
+fact = "Studies test injections. A shampoo rinses off in minutes, so expect scalp conditioning, not a procedure."
+keywords = ["pdrn"]
+examples = [
+  {brand = "AROMATICA", product = "Rosemary PDRN Scalp Serum"},
+  {brand = "lilyeve", product = "SCALP:TURN Cica PDRN Deep Clean Shampoo"},
+  {brand = "VT", product = "PDRN Reedle Shot Brush Hair Serum"},
+]
+hashtags = ["#pdrn", "#scalpcare", "#koreanhaircare", "#salmondna"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GS260842768",
+  "https://m.news.nate.com/view/20260611n30261",
+  "https://biz.heraldcorp.com/article/10766050",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13318850/",
+]
+
+[[ingredient]]
+id = "black-bean"
+name = "Black bean"
+full_name = "Black soybean (Glycine max) extract"
+nickname = "The black shampoo bean"
+area = "hair"
+heat = "both"
+heat_note = "Black bean shampoo trending on TikTok (NewBeauty)"
+hot_since = 2025
+hook = "Black bean shampoo: Korea's old favorite goes viral"
+what_it_is = "Black soybean is a Korean food staple long linked with dark, healthy hair. Its extract, rich in plant compounds called anthocyanins, is a classic in Korean scalp shampoos."
+origin = "Black soybean; a traditional Korean hair-care food"
+benefits = [
+  "Helps nourish and condition hair",
+  "Known for antioxidant plant compounds (anthocyanins)",
+  "Supports a comfortable, cared-for scalp",
+]
+best_for = ["Thinning-looking hair", "Dull, brittle hair", "Fans of herbal shampoos"]
+when = "Every wash"
+how_to_use = [
+  "Lather on the scalp and leave on 1–2 minutes before rinsing",
+  "Follow with conditioner on the lengths if hair feels squeaky",
+  "Use it as your regular shampoo rather than a one-off",
+]
+pairs_with = ["Caffeine", "Ginseng", "Scalp massage"]
+avoid_with = []
+good_to_know = [
+  "Research is mostly lab and animal work, plus one small case series.",
+  "Soy or legume allergy? Patch test first.",
+  "Some 'black' shampoos also add color pigments; check the label.",
+]
+myth = "Black bean shampoo works like hair-loss medication."
+fact = "Studies are early and mostly in the lab. In shampoo, black bean is a nourishing extra, not a medicine."
+keywords = ["black bean", "black soybean"]
+examples = [
+  {brand = "Nature Republic", product = "Black Bean Anti-Hair Loss Shampoo"},
+]
+hashtags = ["#blackbean", "#blackbeanshampoo", "#koreanhaircare", "#scalpcare"]
+sources = [
+  "https://www.newbeauty.com/view/black-bean-shampoo",
+  "https://pubmed.ncbi.nlm.nih.gov/35371589/",
+  "https://pubmed.ncbi.nlm.nih.gov/40678337/",
+  "https://www.costco.com/p/-/nature-republic-black-bean-anti-hair-loss-shampoo-338-fl-oz/4000262719",
+]
+
+[[ingredient]]
+id = "bond-building"
+name = "Bond-building"
+full_name = "Bond-building and bonding hair care"
+nickname = "Bonding care"
+area = "hair"
+heat = "both"
+heat_note = "COSRX, Dr.Melaxin bonding shampoos on OY Global"
+hot_since = 2026
+hook = "'Bonding' shampoo: what it means for damaged hair"
+what_it_is = "Hair's strength comes from bonds inside each strand, which bleach, color and heat break. Bonding products pair proteins or peptides with ingredients designed to support those bonds."
+origin = "Salon color-care tech, now in K-beauty shampoos"
+benefits = [
+  "Helps damaged hair feel stronger and less brittle",
+  "Supports smoother, less frizzy-looking lengths",
+  "Helps bleached or colored hair look healthier",
+]
+best_for = ["Bleached or colored hair", "Heat-styled hair", "Breakage-prone ends"]
+when = "Every wash"
+how_to_use = [
+  "Focus bonding shampoo and treatment on mid-lengths and ends",
+  "Leave treatments on for the time on the label, then rinse",
+  "Use a heat protectant before styling",
+]
+pairs_with = ["LPP protein", "Argan oil", "Heat protectant"]
+avoid_with = []
+good_to_know = [
+  "Evidence is thin: mostly brand tests on hair strands, few independent studies.",
+  "Too much protein can make fine hair stiff; alternate with moisture masks.",
+  "Split ends don't knit back together; only a trim removes them.",
+]
+myth = "Bonding shampoo permanently repairs split ends."
+fact = "It may help damaged hair feel stronger between washes, but split ends only go away with a trim."
+keywords = ["bonding", "bond repair", "protein bond"]
+examples = [
+  {brand = "COSRX", product = "PEPTIDE-132 Ultra Perfect Hair Bonding Shampoo"},
+  {brand = "Dr.Melaxin", product = "Bondex Protein Bonding Remodeling Shampoo"},
+  {brand = "HAIRPLUS", product = "Protein Bond Water Essence"},
+]
+hashtags = ["#bondbuilding", "#damagedhair", "#koreanhaircare", "#hairrepair"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260741437",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260641237",
+  "https://oemkorea.com/products/hair-treatment",
+]
+
+[[ingredient]]
 id = "lpp-protein"
 name = "LPP protein"
 full_name = "LPP ('low poly peptide') proteins"

@@ -106,6 +106,365 @@ sources = [
 ]
 
 [[ingredient]]
+id = "azulene"
+name = "Azulene"
+full_name = "Azulene (guaiazulene, chamazulene)"
+nickname = "The blue calming oil"
+area = "skin"
+heat = "korea"
+heat_note = "WWD: among Korea's top 10 trending ingredients"
+hot_since = 2026
+hook = "The blue ingredient tipped as Korea's next PDRN"
+what_it_is = "Azulene is a deep-blue compound found in chamomile oil (chamazulene) or made as guaiazulene. It tints toners, pads and creams blue and is used for calming, comfort-first care."
+origin = "Chamomile and other plant oils; also made in the lab"
+benefits = [
+  "Known for a calming, comforting feel on stressed skin",
+  "Helps flushed or irritated-looking skin look more even",
+  "Supports a gentle routine after sun or heat exposure",
+]
+best_for = ["Redness-prone skin", "Sensitive skin", "Skin stressed by heat or sun"]
+when = "AM & PM"
+how_to_use = [
+  "Swipe an azulene pad or toner over clean skin",
+  "Follow with a soothing serum or cream",
+  "Add SPF in the morning; heat and sun can trigger redness",
+]
+pairs_with = ["Centella", "Panthenol", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "Research on azulene in skincare is limited; think comfort, not a fix for redness.",
+  "The blue tint can stain fabric or pillowcases before it dries.",
+  "Patch test first: plant-derived oils can bother very sensitive skin.",
+]
+myth = "The bluer the product, the more calming it is."
+fact = "The color only shows azulene is there. How a formula feels depends on the whole recipe, not the shade of blue."
+keywords = ["azulene", "guaiazulene"]
+examples = []
+hashtags = ["#azulene", "#blueskincare", "#calmingskincare", "#kbeauty"]
+sources = [
+  "https://wwd.com/beauty-industry-news/beauty-features/pdrn-korea-azulene-beauty-skin-care-ingredient-trends-1239069353/",
+  "https://v.daum.net/v/20260908141623686",
+  "https://www.wwdkorea.com/news/articleView.html?idxno=20033",
+]
+
+[[ingredient]]
+id = "hyaluronic-acid"
+name = "Hyaluronic acid"
+full_name = "Hyaluronic acid (sodium hyaluronate)"
+nickname = "The water magnet"
+area = "skin"
+heat = "both"
+heat_note = "#4 Olive Young Global skincare (Torriden, 2026)"
+hot_since = 2015
+hook = "Hyaluronic acid: why 'low molecular' is on the label"
+what_it_is = "Hyaluronic acid is a sugar-like molecule your skin already makes to hold water. Serums use it in different sizes: larger ones sit on top, smaller ones aim a little deeper."
+origin = "Found in skin; cosmetic HA is made by fermentation"
+benefits = [
+  "Helps skin attract and hold surface moisture",
+  "Supports a plumper, smoother-looking surface",
+  "Helps skin feel comfortable right after cleansing",
+]
+best_for = ["Dehydrated skin", "Tight skin after cleansing", "Any skin type"]
+when = "AM & PM"
+how_to_use = [
+  "Apply to slightly damp skin, right after toner",
+  "Seal it in with a moisturizer so water doesn't evaporate",
+  "Layer under sunscreen in the morning",
+]
+pairs_with = ["Ceramides", "Panthenol", "PDRN"]
+avoid_with = []
+good_to_know = [
+  "Human studies suggest topical HA may help hydration; results depend on the formula.",
+  "In dry air, always top it with cream so it doesn't leave skin feeling tight.",
+  "Labels may say sodium hyaluronate or 'low molecular' for smaller forms.",
+]
+myth = "More layers of hyaluronic acid mean more hydration."
+fact = "HA needs water around it and a cream on top. Extra layers rarely help; sealing it in does."
+keywords = ["hyaluronic", "hyaluron", "hyalu"]
+examples = [
+  {brand = "Torriden", product = "Dive In Low Molecular Hyaluronic Acid Serum"},
+  {brand = "Anua", product = "PDRN Hyaluronic Capsule 100 Serum"},
+  {brand = "Isntree", product = "Hyaluronic Acid Toner"},
+]
+hashtags = ["#hyaluronicacid", "#hydration", "#torriden", "#kbeauty"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10078143/",
+  "https://pubmed.ncbi.nlm.nih.gov/35833366/",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969",
+]
+
+[[ingredient]]
+id = "squalane"
+name = "Squalane"
+full_name = "Squalane (hydrogenated squalene)"
+nickname = "The weightless oil"
+area = "skin"
+heat = "global"
+heat_note = "#1 Olive Young Global skincare (S.NATURE, 2026)"
+hot_since = 2023
+hook = "Squalane: the oil even oily-skin fans reach for"
+what_it_is = "Squalane is a stable form of squalene, a lipid in skin's own oil. Fully saturated, it doesn't go rancid easily. Today it is mostly made from olives or sugarcane."
+origin = "Olives or sugarcane; once taken from shark liver"
+benefits = [
+  "Helps soften skin and reduce moisture loss",
+  "Known for a light, non-greasy feel",
+  "Supports barrier comfort in dry or tight skin",
+]
+best_for = ["Dry skin", "Combination skin", "Anyone who hates heavy creams"]
+when = "AM & PM"
+how_to_use = [
+  "Use a squalane cream as your last step at night",
+  "Or mix 1–2 drops of squalane oil into your moisturizer",
+  "Layer over a hydrating serum to lock moisture in",
+]
+pairs_with = ["Hyaluronic acid", "Ceramides", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Most squalane research is lab-based; its job in skincare is simple softening.",
+  "Squalane (with an 'a') is the stable form; squalene oxidizes much faster.",
+  "Plant-derived squalane is common now; check the label if that matters to you.",
+]
+myth = "All squalane comes from sharks."
+fact = "It once did, but cosmetic squalane today is mostly made from olives or sugarcane."
+keywords = ["squalane"]
+examples = [
+  {brand = "S.NATURE", product = "Aqua Squalane Moisturizing Cream"},
+  {brand = "S.NATURE", product = "Aqua Squalane Serum"},
+]
+hashtags = ["#squalane", "#moisturizer", "#dryskin", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
+  "https://en.wikipedia.org/wiki/Squalane",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12073650/",
+]
+
+[[ingredient]]
+id = "alpha-arbutin"
+name = "Alpha arbutin"
+full_name = "Alpha-arbutin"
+nickname = "The gentle brightener"
+area = "skin"
+heat = "global"
+heat_note = "COSRX arbutin serum: #1 at Qoo10 Japan awards"
+hot_since = 2025
+hook = "The brightening serum Japan voted No.1 this year"
+what_it_is = "Alpha arbutin is a lab-made relative of a compound found in bearberry leaves. Brightening serums use it to target the look of dark spots and uneven tone."
+origin = "Inspired by bearberry; cosmetic alpha arbutin is lab-made"
+benefits = [
+  "Helps the look of dark spots fade over time",
+  "Supports a more even-looking skin tone",
+  "Known as a gentler brightening option",
+]
+best_for = ["Dark spots", "Uneven tone", "Post-breakout marks"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a few drops after toner, before cream",
+  "Use it daily for several weeks; tone changes take time",
+  "Wear SPF every morning or spots come back",
+]
+pairs_with = ["Niacinamide", "TXA", "Sunscreen"]
+avoid_with = []
+good_to_know = [
+  "Human studies on arbutin serums are limited; much of the data is from the lab.",
+  "Without daily sunscreen, any brightening serum struggles to show results.",
+  "Patch test first if your skin reacts easily to new actives.",
+]
+myth = "A brightening serum lightens your natural skin color."
+fact = "Brightening serums target the look of spots and patchiness, not your natural skin tone."
+keywords = ["arbutin"]
+examples = [
+  {brand = "COSRX", product = "Alpha Arbutin Serum"},
+]
+hashtags = ["#alphaarbutin", "#darkspots", "#brightening", "#kbeauty"]
+sources = [
+  "https://www.fashionsnap.com/article/2026-08-12/qoo10-mega-beauty-award-26-july/",
+  "https://www.value-press.com/pressrelease/377808",
+  "https://www.etnews.com/20260722000319",
+]
+
+[[ingredient]]
+id = "mung-bean"
+name = "Mung bean"
+full_name = "Mung bean (Vigna radiata) extract"
+nickname = "The pore-care bean"
+area = "skin"
+heat = "korea"
+heat_note = "5 beplain mung bean picks on Olive Young Global"
+hot_since = 2021
+hook = "Why a Korean pantry bean is in pore cleansers"
+what_it_is = "Mung bean is a small green legume Koreans have long ground into face washes. Today its extract and powder appear in pH-balanced cleansers, clay masks and pore toners."
+origin = "Green legume; a traditional Korean face-wash ingredient"
+benefits = [
+  "Helps cleanse gently without a stripped feeling",
+  "Supports a fresher, less congested-looking skin surface",
+  "Known for antioxidant plant compounds",
+]
+best_for = ["Oily or combination skin", "Congested pores", "Sensitive skin"]
+when = "AM & PM"
+how_to_use = [
+  "Lather a mung bean cleanser and massage for 30–60 seconds",
+  "Use a mung bean clay mask 1–2 times a week on oily areas",
+  "Follow with a hydrating toner so skin doesn't feel tight",
+]
+pairs_with = ["Heartleaf", "Centella", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "Mung bean research is mostly lab studies; its role is gentle cleansing and care.",
+  "Clay masks can dry skin: keep them on oily areas and don't overuse.",
+  "Legume allergy? Patch test first.",
+]
+myth = "Mung bean skincare is only for oily skin."
+fact = "It's popular in pore care, but gentle, pH-balanced mung bean cleansers suit many skin types."
+keywords = ["mung bean"]
+examples = [
+  {brand = "beplain", product = "Mung Bean pH-Balanced Cleansing Foam"},
+  {brand = "beplain", product = "Mung Bean Pore Clay Mask"},
+]
+hashtags = ["#mungbean", "#porecare", "#beplain", "#kbeauty"]
+sources = [
+  "https://www.newbeauty.com/view/mung-bean-ingredient",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230619360",
+  "https://pubmed.ncbi.nlm.nih.gov/30263307/",
+  "https://pubmed.ncbi.nlm.nih.gov/40334879/",
+]
+
+[[ingredient]]
+id = "birch-juice"
+name = "Birch juice"
+full_name = "Birch sap (Betula juice)"
+nickname = "Tree water"
+area = "skin"
+heat = "both"
+heat_note = "#3 Olive Young Global suncare (Round Lab, 2026)"
+hot_since = 2020
+hook = "Birch juice: the 'tree water' in Korea's top sunscreen"
+what_it_is = "Birch juice is sap tapped from birch trees in early spring. K-beauty uses it in place of plain water as a light, hydrating base in sunscreens, toners and creams."
+origin = "Sap tapped from birch trees in early spring"
+benefits = [
+  "Helps add lightweight hydration",
+  "Known for a fresh, watery texture",
+  "Supports comfortable skin under sunscreen",
+]
+best_for = ["Dry or dehydrated skin", "Sensitive skin", "People who dislike heavy SPF"]
+when = "AM & PM"
+how_to_use = [
+  "Use a birch juice sunscreen as the last morning step",
+  "Apply about two finger-lengths for face and neck",
+  "Reapply every 2 hours when you're outdoors",
+]
+pairs_with = ["Hyaluronic acid", "Panthenol", "Sunscreen"]
+avoid_with = []
+good_to_know = [
+  "Evidence is thin: one small human study and some lab work. Think hydrating base.",
+  "In sunscreen, the SPF filters do the protecting, not the birch juice.",
+  "Tree pollen or birch allergy? Patch test first.",
+]
+myth = "Birch juice is a powerful active ingredient."
+fact = "It's mainly a gentle, hydrating base. The other ingredients in the formula do most of the work."
+keywords = ["birch juice", "birch"]
+examples = [
+  {brand = "ROUND LAB", product = "Birch Juice Moisturizing Sunscreen"},
+  {brand = "ROUND LAB", product = "Birch Juice Moisturizing Cream"},
+]
+hashtags = ["#birchjuice", "#roundlab", "#koreansunscreen", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250430113",
+  "https://pubmed.ncbi.nlm.nih.gov/36961534/",
+  "https://www.mdpi.com/2079-9284/12/6/282",
+]
+
+[[ingredient]]
+id = "retinol"
+name = "Retinol"
+full_name = "Retinol (vitamin A)"
+nickname = "The classic night active"
+area = "skin"
+heat = "global"
+heat_note = "In 3 top-100 Olive Young Global skincare picks"
+hot_since = 2018
+hook = "Retinol 101: how to start without the peeling"
+what_it_is = "Retinol is a form of vitamin A that skin converts into its active form, retinoic acid. It's the over-the-counter cousin of prescription tretinoin and a classic for texture and lines."
+origin = "Vitamin A; cosmetic retinol is lab-made"
+benefits = [
+  "Known for helping fine lines look softer over time",
+  "Supports a smoother, more even-looking texture",
+  "May help the look of pores and dullness",
+]
+best_for = ["Early fine lines", "Uneven texture", "Dull-looking skin"]
+when = "PM only"
+how_to_use = [
+  "Start 2–3 nights a week with a pea-sized amount",
+  "Apply on dry skin; buffer with moisturizer if you're sensitive",
+  "Wear SPF every morning while you use it",
+]
+pairs_with = ["Ceramides", "Panthenol", "Peptides"]
+avoid_with = ["Strong exfoliating acids", "Other retinoids"]
+good_to_know = [
+  "Reviews and human trials support OTC retinol for photoaging, at a slower pace.",
+  "Dryness and flaking early on are common; go slower rather than quitting.",
+  "Pregnant or trying? Skip retinoids and ask your doctor.",
+]
+myth = "Retinol thins your skin."
+fact = "The flaking is temporary irritation. Studies link retinoids with a thicker outer skin layer over time."
+keywords = ["retinol"]
+examples = [
+  {brand = "celimax", product = "The Vita A Retinol Shot Tightening Serum"},
+  {brand = "IOPE", product = "Retinol Expert 0.1%"},
+  {brand = "Beauty of Joseon", product = "Revive Eye Serum: Ginseng + Retinol"},
+]
+hashtags = ["#retinol", "#vitamina", "#antiaging", "#kbeauty"]
+sources = [
+  "https://jcadonline.com/efficacy-of-over-the-counter-vitamin-a/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11608876/",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250329696",
+]
+
+[[ingredient]]
+id = "vitamin-c"
+name = "Vitamin C"
+full_name = "Vitamin C (ascorbic acid and derivatives)"
+nickname = "The morning brightener"
+area = "skin"
+heat = "global"
+heat_note = "Arencia Vitamin C Booster: OY Global top 30"
+hot_since = 2016
+hook = "Vitamin C: the morning serum that works with SPF"
+what_it_is = "Vitamin C is an antioxidant. Serums use pure L-ascorbic acid or gentler derivatives to brighten a dull look and back up sunscreen against daily environmental stress."
+origin = "Found in fruit; cosmetic vitamin C is lab-made"
+benefits = [
+  "Helps brighten a dull-looking complexion",
+  "Supports a more even-looking tone and dark spots",
+  "Helps back up sunscreen with antioxidant support",
+]
+best_for = ["Dull skin", "Dark spots", "City or sun exposure"]
+when = "AM"
+how_to_use = [
+  "Apply in the morning after toner, before moisturizer",
+  "Always follow with sunscreen",
+  "Store it closed, cool and away from light",
+]
+pairs_with = ["Sunscreen", "Niacinamide", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Reviews of human studies support topical vitamin C; strength and form matter.",
+  "Pure L-ascorbic acid can sting; derivatives are gentler but slower.",
+  "A serum that turned dark orange or brown has oxidized; replace it.",
+]
+myth = "Vitamin C serum replaces sunscreen."
+fact = "It adds antioxidant support under SPF but doesn't block UV. Keep the sunscreen."
+keywords = ["vitamin c", "vita c"]
+examples = [
+  {brand = "Arencia", product = "Vitamin C Booster Shot"},
+  {brand = "GOODAL", product = "Green Tangerine Vita C Dark Spot Care Serum"},
+]
+hashtags = ["#vitaminc", "#brightening", "#morningroutine", "#kbeauty"]
+sources = [
+  "https://pubmed.ncbi.nlm.nih.gov/29104718/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13588479",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260439702",
+]
+
+[[ingredient]]
 id = "copper-peptide"
 name = "Copper peptide"
 full_name = "GHK-Cu (copper tripeptide-1)"

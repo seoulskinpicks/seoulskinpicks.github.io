@@ -25,3 +25,63 @@
 #                      never "approved" or "proven"; a filing is not a product.
 #
 # English only (no Hangul). Claim-safe wording (helps, supports, known for, may).
+
+[[issue]]
+id = "2026-10-japan"
+region = "japan"
+date = "2026-10-01"
+title = "What's hot in Japan right now"
+hook = "Japan's 2026 beauty awards went very K-beauty"
+items = [
+  { name = "COSRX Alpha Arbutin Serum", signal = "Qoo10 Mega Beauty Awards 2026 (first half): #1 overall", why = "A brightening serum aimed at the look of dark spots. Japanese shoppers voted it top of all 50 winners." },
+  { name = "K-brands sweep Qoo10 awards", signal = "Qoo10 Japan awards: K-brands took the top 4 overall spots", why = "COSRX, Anua, Celimax and Aprilskin led the list: a sign of how much Japanese shoppers trust Korean skincare now." },
+  { name = "Anua (PDRN serum)", signal = "@cosme Best Cosmetics Awards 2026 (first half): 7 awards", why = "Anua's PDRN and heartleaf lines are known for a dewy, hydrated look, and Japan's biggest beauty site noticed." },
+  { name = "Keratin hair repair", signal = "Daleaf keratin repair set: #1 in hair during Qoo10 Megawari", why = "Protein and keratin packs may help damaged hair look smoother. K-haircare is a growing category in Japan." },
+]
+sources = [
+  "https://www.fashionsnap.com/article/2026-08-12/qoo10-mega-beauty-award-26-july/",
+  "https://www.value-press.com/pressrelease/377808",
+  "https://www.etnews.com/20260722000319",
+  "https://prtimes.jp/main/html/rd/p/000000054.000126707.html",
+  "https://www.cosmorning.com/news/article.html?no=53488",
+]
+
+[[issue]]
+id = "2026-10-us"
+region = "us"
+date = "2026-10-01"
+title = "What's hot in the US right now"
+hook = "K-beauty is going mainstream in US stores"
+items = [
+  { name = "Medicube", signal = "#1 search term of Amazon Prime Day, July 2026 (Korean press)", why = "Medicube's PDRN and collagen lines are known for a plump, glowy look. US shoppers searched it more than an iPad." },
+  { name = "Sephora x Olive Young", signal = "Olive Young-curated K-beauty in ~580 US Sephora stores (Aug 20)", why = "19 Korean brands picked by Olive Young are now on mainstream US shelves, so K-skincare is easier to try in person." },
+  { name = "PDRN eye cream", signal = "Centellian24 PDRN eye cream: #1 in its Prime Day category", why = "PDRN plus centella for the eye area. It may help under-eyes look smoother and more hydrated." },
+  { name = "Blessmoon", signal = "Online-born K-brand expanding to ~500 Ulta stores (Sept 2026)", why = "A brand built on social media fandom is moving into mass US retail: new K-names are reaching shoppers faster." },
+]
+sources = [
+  "https://www.asiae.co.kr/article/2026070308431359182",
+  "https://newsroom.sephora.com/sephora-introduces-olive-young-curated-k-beauty-to-u-s-consumers-beginning-august-20/",
+  "https://www.koreajoongangdaily.com/business/olive-young-products-to-be-sold-at-580-us-sephora-stores/12809027",
+  "https://m.news.nate.com/view/20260713n24673",
+  "https://www.kukinews.com/article/view/kuk202609220168",
+]
+
+[[issue]]
+id = "2026-10-filings"
+region = "filings"
+date = "2026-10-01"
+title = "New patents and ingredient filings"
+hook = "3 new filings from Korean beauty labs"
+items = [
+  { name = "AI hair-loss risk model", signal = "Patent filed by Cosmax, Sept 2026", why = "Trained on 22 million health-checkup records to estimate hair-loss risk for personalized hair care. A filing, not a product yet." },
+  { name = "E&Cell ingredient 'N1'", signal = "Listed in the International Cosmetic Ingredient Dictionary, Aug 2026", why = "A biotech firm's anti-aging material got an official INCI name. A listing is a name, not proof it works; no products yet." },
+  { name = "Lab-made collagen type III", signal = "BioPlus HUGRO collagen gets an INCI name, 2026", why = "A recombinant human-type collagen made in the lab, not from animals. A raw-material listing; no named consumer product yet." },
+]
+sources = [
+  "https://view.asiae.co.kr/article/2026093009263191655",
+  "https://www.fnnews.com/news/202609300947320987",
+  "https://www.newspim.com/news/view/20260818000103",
+  "https://www.hankyung.com/article/202608186526i",
+  "https://www.pharmnews.com/news/articleView.html?idxno=306539",
+  "https://www.thebionews.net/news/articleView.html?idxno=28494",
+]

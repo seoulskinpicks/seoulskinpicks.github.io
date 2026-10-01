@@ -249,6 +249,41 @@ sources = [
 ]
 
 [[versus]]
+id = "trending-2026-10"
+year = 2026
+topic = "Ingredients"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "Autumn 2026: PDRN rules both, the rest splits"
+korea = [
+  {name = "PDRN", why = "Top tracked ingredient in Naver searches, +26% in a week"},
+  {name = "Hyaluronic acid", why = "Naver searches up 13% in late September"},
+  {name = "Azulene", why = "Blue calming ingredient tipped as 'the next PDRN'"},
+  {name = "Mugwort", why = "Fastest riser in Naver searches, +28% in a week"},
+  {name = "Retinal", why = "Celimax retinal cream in Olive Young weekly top 5"},
+]
+global = [
+  {name = "PDRN", why = "Medicube: #1 Amazon Prime Day search term (July 2026)"},
+  {name = "Squalane", why = "S.NATURE squalane cream #1 at Olive Young Global"},
+  {name = "Alpha arbutin", why = "COSRX arbutin serum won Qoo10 Japan's 2026 award"},
+  {name = "Collagen", why = "Collagen gel masks in Prime Day 2026 K-beauty picks"},
+  {name = "Birch juice", why = "Round Lab birch SPF #3 in Olive Young Global suncare"},
+]
+both = ["PDRN"]
+next = [
+  {name = "Neurocosmetics", why = "Skin-nerve care flagged by Korean press, Sept 2026"},
+  {name = "Euglena", why = "Microalgae ingredient launched by Daebong LS"},
+  {name = "Cooling actives", why = "Kolmar Korea's long-lasting cooling sun care"},
+]
+basis = "Naver search data (late Sept 2026), Olive Young Global ranks, Prime Day and Qoo10 press"
+sources = [
+  "https://www.asiae.co.kr/article/2026070308431359182",
+  "https://www.fashionsnap.com/article/2026-08-12/qoo10-mega-beauty-award-26-july/",
+  "https://wwd.com/beauty-industry-news/beauty-features/pdrn-korea-azulene-beauty-skin-care-ingredient-trends-1239069353/",
+  "https://www.whowhatwear.com/beauty/skin/amazon-prime-day-korean-skincare-products-summer-2026",
+  "https://en.sedaily.com/finance/2026/09/15/neurocosmetics-emerge-as-new-growth-frontier-for-beauty",
+]
+
+[[versus]]
 id = "hair-care"
 year = 2026
 topic = "Hair care"

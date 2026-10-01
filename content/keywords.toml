@@ -262,3 +262,45 @@ id = "argan-oil"
 name = "Argan oil"
 area = "hair"
 keywords = ["아르간 오일", "아르간 헤어오일"]
+
+[[term]]
+id = "azulene"
+name = "Azulene"
+area = "skin"
+keywords = ["아줄렌", "아줄렌 토너", "아줄렌 패드", "아줄렌 크림", "아줄렌 앰플", "아줄렌 세럼"]
+
+[[term]]
+id = "alpha-arbutin"
+name = "Alpha arbutin"
+area = "skin"
+keywords = ["알부틴 세럼", "알파 알부틴", "알부틴 앰플", "알부틴 크림"]
+
+[[term]]
+id = "mung-bean"
+name = "Mung bean"
+area = "skin"
+keywords = ["녹두 클렌징폼", "녹두 폼클렌징", "녹두 팩", "녹두 토너", "녹두 클레이 마스크"]
+
+[[term]]
+id = "birch-juice"
+name = "Birch juice"
+area = "skin"
+keywords = ["자작나무 선크림", "자작나무 수분 선크림", "자작나무 크림", "자작나무 토너"]
+
+[[term]]
+id = "pdrn-scalp"
+name = "PDRN scalp care"
+area = "hair"
+keywords = ["PDRN 샴푸", "PDRN 탈모샴푸", "PDRN 두피 세럼", "PDRN 두피 앰플", "PDRN 두피 토닉"]
+
+[[term]]
+id = "black-bean"
+name = "Black bean"
+area = "hair"
+keywords = ["검은콩 샴푸", "검은콩 탈모샴푸", "검은콩 샴푸바", "블랙빈 샴푸", "검은콩 트리트먼트"]
+
+[[term]]
+id = "bond-building"
+name = "Bond-building"
+area = "hair"
+keywords = ["본딩 샴푸", "본딩 트리트먼트", "본딩 헤어팩", "프로틴 본딩"]
