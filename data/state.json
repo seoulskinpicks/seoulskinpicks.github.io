@@ -274,6 +274,661 @@
       "ig_media_id": "18143368630509359",
       "permalink": "https://www.instagram.com/p/Dd6-YomHReM/",
       "published_at": "2026-10-01T03:26+09:00"
+    },
+    {
+      "number": 9,
+      "date": "2026-10-01",
+      "source": "weekly",
+      "key": "wk-2026-09-27",
+      "brand": "",
+      "name": "This week in K-beauty (Sep 21–27)",
+      "link": "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
+      "links": {},
+      "products": [
+        {
+          "brand": "S.NATURE",
+          "name": "Aqua Squalane Moisturizing Cream 60ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124"
+          }
+        },
+        {
+          "brand": "Dr. Althea",
+          "name": "345 Relief Cream 50ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559"
+          }
+        },
+        {
+          "brand": "celimax",
+          "name": "The Vita A Retinal Shot Tightening Booster 15ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260339051"
+          }
+        },
+        {
+          "brand": "Torriden",
+          "name": "Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969"
+          }
+        },
+        {
+          "brand": "S.NATURE",
+          "name": "Aqua Squalane Essentials",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GS260943907"
+          }
+        },
+        {
+          "brand": "Anua",
+          "name": "PDRN Hyaluronic Acid 100 Moisturizing Cream 60ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA250732564"
+          }
+        },
+        {
+          "brand": "BIOHEAL BOH",
+          "name": "Probioderm 3D Lifting Cream 50mL",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338983"
+          }
+        },
+        {
+          "brand": "AESTURA",
+          "name": "Atobarrier 365 Cream 80mL",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA240121573"
+          }
+        },
+        {
+          "brand": "numbuzin",
+          "name": "No.9 NAD Bio Lifting-sil Essence 50ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA250127641"
+          }
+        },
+        {
+          "brand": "Anua",
+          "name": "PDRN Hyaluronic Capsule 100 Serum 30ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439734"
+          }
+        }
+      ],
+      "weekly": {
+        "week_start": "2026-09-21",
+        "week_end": "2026-09-27",
+        "made": "2026-09-28",
+        "korea": [
+          {
+            "id": "pdrn",
+            "name": "PDRN",
+            "area": "skin",
+            "level": 1.0,
+            "this_week": 245.45,
+            "last_week": 195.3,
+            "change": 26,
+            "index": 100
+          },
+          {
+            "id": "niacinamide",
+            "name": "Niacinamide",
+            "area": "skin",
+            "level": 0.9876779785323223,
+            "this_week": 231.93,
+            "last_week": 237.01,
+            "change": -2,
+            "index": 99
+          },
+          {
+            "id": "hyaluronic-acid",
+            "name": "Hyaluronic acid",
+            "area": "skin",
+            "level": 0.5172364117489632,
+            "this_week": 126.96,
+            "last_week": 112.69,
+            "change": 13,
+            "index": 52
+          },
+          {
+            "id": "snail-mucin",
+            "name": "Snail mucin",
+            "area": "skin",
+            "level": 0.31239306255388655,
+            "this_week": 73.36,
+            "last_week": 76.84,
+            "change": -5,
+            "index": 31
+          },
+          {
+            "id": "txa",
+            "name": "TXA",
+            "area": "skin",
+            "level": 0.2659543310082182,
+            "this_week": 65.28,
+            "last_week": 76.98,
+            "change": -15,
+            "index": 27
+          },
+          {
+            "id": "salicylic-acid",
+            "name": "Scalp scaling",
+            "area": "hair",
+            "level": 0.24237888315843126,
+            "this_week": 59.49,
+            "last_week": 64.0,
+            "change": -7,
+            "index": 24
+          },
+          {
+            "id": "nmn",
+            "name": "NMN",
+            "area": "skin",
+            "level": 0.23376054487652312,
+            "this_week": 57.38,
+            "last_week": 84.62,
+            "change": -32,
+            "index": 23
+          },
+          {
+            "id": "spicule",
+            "name": "Spicules",
+            "area": "skin",
+            "level": 0.23326204110081336,
+            "this_week": 57.26,
+            "last_week": 61.5,
+            "change": -7,
+            "index": 23
+          },
+          {
+            "id": "vitamin-c",
+            "name": "Vitamin C",
+            "area": "skin",
+            "level": 0.21353260121396833,
+            "this_week": 52.41,
+            "last_week": 54.23,
+            "change": -3,
+            "index": 21
+          },
+          {
+            "id": "retinol",
+            "name": "Retinol",
+            "area": "skin",
+            "level": 0.20434462581274226,
+            "this_week": 50.16,
+            "last_week": 57.76,
+            "change": -13,
+            "index": 20
+          },
+          {
+            "id": "ceramides",
+            "name": "Ceramides",
+            "area": "skin",
+            "level": 0.19544142823042854,
+            "this_week": 47.97,
+            "last_week": 52.64,
+            "change": -9,
+            "index": 20
+          },
+          {
+            "id": "retinal",
+            "name": "Retinal",
+            "area": "skin",
+            "level": 0.19401696876541402,
+            "this_week": 47.62,
+            "last_week": 45.72,
+            "change": 4,
+            "index": 19
+          },
+          {
+            "id": "panthenol",
+            "name": "Panthenol",
+            "area": "skin",
+            "level": 0.19337587237651488,
+            "this_week": 47.46,
+            "last_week": 49.76,
+            "change": -5,
+            "index": 19
+          },
+          {
+            "id": "centella",
+            "name": "Centella",
+            "area": "skin",
+            "level": 0.1815526459078384,
+            "this_week": 42.63,
+            "last_week": 50.94,
+            "change": -16,
+            "index": 18
+          },
+          {
+            "id": "collagen",
+            "name": "Collagen",
+            "area": "skin",
+            "level": 0.16752122419751014,
+            "this_week": 41.12,
+            "last_week": 44.13,
+            "change": -7,
+            "index": 17
+          },
+          {
+            "id": "argan-oil",
+            "name": "Argan oil",
+            "area": "hair",
+            "level": 0.08767799784978487,
+            "this_week": 21.52,
+            "last_week": 29.27,
+            "change": -26,
+            "index": 9
+          },
+          {
+            "id": "azelaic-acid",
+            "name": "Azelaic acid",
+            "area": "skin",
+            "level": 0.08283457492795712,
+            "this_week": 20.33,
+            "last_week": 21.96,
+            "change": -7,
+            "index": 8
+          },
+          {
+            "id": "bakuchiol",
+            "name": "Bakuchiol",
+            "area": "skin",
+            "level": 0.055982796975292896,
+            "this_week": 13.74,
+            "last_week": 15.14,
+            "change": -9,
+            "index": 6
+          },
+          {
+            "id": "lpp-protein",
+            "name": "LPP protein",
+            "area": "hair",
+            "level": 0.06061237171808332,
+            "this_week": 14.88,
+            "last_week": 21.36,
+            "change": -30,
+            "index": 6
+          },
+          {
+            "id": "dexpanthenol",
+            "name": "Panthenol (B5)",
+            "area": "hair",
+            "level": 0.059757630853880014,
+            "this_week": 14.67,
+            "last_week": 17.95,
+            "change": -18,
+            "index": 6
+          },
+          {
+            "id": "peptide",
+            "name": "Peptides",
+            "area": "skin",
+            "level": 0.04814794399174006,
+            "this_week": 11.82,
+            "last_week": 14.95,
+            "change": -21,
+            "index": 5
+          },
+          {
+            "id": "copper-peptide",
+            "name": "Copper peptide",
+            "area": "skin",
+            "level": 0.036823238652245585,
+            "this_week": 9.04,
+            "last_week": 11.36,
+            "change": -20,
+            "index": 4
+          },
+          {
+            "id": "heartleaf",
+            "name": "Heartleaf",
+            "area": "skin",
+            "level": 0.03767793877570227,
+            "this_week": 9.25,
+            "last_week": 8.97,
+            "change": 3,
+            "index": 4
+          },
+          {
+            "id": "exosome",
+            "name": "Exosomes",
+            "area": "skin",
+            "level": 0.032407267644012736,
+            "this_week": 7.95,
+            "last_week": 10.45,
+            "change": -24,
+            "index": 3
+          },
+          {
+            "id": "squalane",
+            "name": "Squalane",
+            "area": "skin",
+            "level": 0.029487052407389053,
+            "this_week": 7.24,
+            "last_week": 7.9,
+            "change": -8,
+            "index": 3
+          },
+          {
+            "id": "caffeine",
+            "name": "Caffeine",
+            "area": "hair",
+            "level": 0.03290585290121579,
+            "this_week": 8.08,
+            "last_week": 8.67,
+            "change": -7,
+            "index": 3
+          },
+          {
+            "id": "galactomyces",
+            "name": "Galactomyces",
+            "area": "skin",
+            "level": 0.01930190649175686,
+            "this_week": 4.74,
+            "last_week": 6.45,
+            "change": -27,
+            "index": 2
+          },
+          {
+            "id": "menthol",
+            "name": "Menthol",
+            "area": "hair",
+            "level": 0.021937180946481692,
+            "this_week": 5.38,
+            "last_week": 6.52,
+            "change": -17,
+            "index": 2
+          },
+          {
+            "id": "biotin",
+            "name": "Biotin",
+            "area": "hair",
+            "level": 0.01844720636830018,
+            "this_week": 4.53,
+            "last_week": 4.72,
+            "change": -4,
+            "index": 2
+          },
+          {
+            "id": "glutathione",
+            "name": "Glutathione",
+            "area": "skin",
+            "level": 0.012321875853900587,
+            "this_week": 3.02,
+            "last_week": 3.58,
+            "change": -16,
+            "index": 1
+          },
+          {
+            "id": "rice",
+            "name": "Rice",
+            "area": "skin",
+            "level": 0.005769096624990535,
+            "this_week": 1.35,
+            "last_week": 1.84,
+            "change": -26,
+            "index": 1
+          },
+          {
+            "id": "propolis",
+            "name": "Propolis",
+            "area": "skin",
+            "level": 0.0068374787654136,
+            "this_week": 1.68,
+            "last_week": 1.73,
+            "change": -3,
+            "index": 1
+          },
+          {
+            "id": "mugwort",
+            "name": "Mugwort",
+            "area": "skin",
+            "level": 0.01253552032920479,
+            "this_week": 3.08,
+            "last_week": 2.41,
+            "change": 28,
+            "index": 1
+          },
+          {
+            "id": "bdrn",
+            "name": "BDRN",
+            "area": "skin",
+            "level": 0.0003561148662536288,
+            "this_week": 0.09,
+            "last_week": 0.12,
+            "change": -29,
+            "index": 0
+          },
+          {
+            "id": "pn",
+            "name": "PN",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "nad",
+            "name": "NAD+",
+            "area": "skin",
+            "level": 0.0012108149897103134,
+            "this_week": 0.3,
+            "last_week": 0.35,
+            "change": -15,
+            "index": 0
+          },
+          {
+            "id": "beta-glucan",
+            "name": "Beta-glucan",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "green-tea",
+            "name": "Green tea",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0.1,
+            "change": -100,
+            "index": 0
+          },
+          {
+            "id": "rosemary",
+            "name": "Rosemary",
+            "area": "hair",
+            "level": 0.004558278436195775,
+            "this_week": 1.12,
+            "last_week": 1.15,
+            "change": -3,
+            "index": 0
+          },
+          {
+            "id": "rice-water",
+            "name": "Rice water",
+            "area": "hair",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "scalp-peptides",
+            "name": "Peptides (scalp)",
+            "area": "hair",
+            "level": 0.002065433631673747,
+            "this_week": 0.51,
+            "last_week": 0.19,
+            "change": 164,
+            "index": 0
+          },
+          {
+            "id": "ginseng",
+            "name": "Ginseng",
+            "area": "hair",
+            "level": 0.0009259149485580853,
+            "this_week": 0.23,
+            "last_week": 0.12,
+            "change": 86,
+            "index": 0
+          },
+          {
+            "id": "probiotics",
+            "name": "Probiotics",
+            "area": "hair",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0.09,
+            "change": -100,
+            "index": 0
+          }
+        ],
+        "products": [
+          {
+            "brand": "S.NATURE",
+            "product": "Aqua Squalane Moisturizing Cream 60ml",
+            "prdt_no": "GA231121124",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
+            "rank": 1,
+            "prev_rank": 3,
+            "store_rating": 4.8,
+            "review_count": 1545,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Dr. Althea",
+            "product": "345 Relief Cream 50ml",
+            "prdt_no": "GA260136559",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559",
+            "rank": 2,
+            "prev_rank": 1,
+            "store_rating": 4.9,
+            "review_count": 1255,
+            "list": "Skincare"
+          },
+          {
+            "brand": "celimax",
+            "product": "The Vita A Retinal Shot Tightening Booster 15ml",
+            "prdt_no": "GA260339051",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260339051",
+            "rank": 3,
+            "prev_rank": 4,
+            "store_rating": 4.7,
+            "review_count": 990,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Torriden",
+            "product": "Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill",
+            "prdt_no": "GA260539969",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969",
+            "rank": 4,
+            "prev_rank": 5,
+            "store_rating": 4.8,
+            "review_count": 577,
+            "list": "Skincare"
+          },
+          {
+            "brand": "S.NATURE",
+            "product": "Aqua Squalane Essentials",
+            "prdt_no": "GS260943907",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GS260943907",
+            "rank": 5,
+            "prev_rank": 37,
+            "store_rating": 4.8,
+            "review_count": 1923,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Anua",
+            "product": "PDRN Hyaluronic Acid 100 Moisturizing Cream 60ml",
+            "prdt_no": "GA250732564",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250732564",
+            "rank": 6,
+            "prev_rank": 23,
+            "store_rating": 4.8,
+            "review_count": 836,
+            "list": "Skincare"
+          },
+          {
+            "brand": "BIOHEAL BOH",
+            "product": "Probioderm 3D Lifting Cream 50mL",
+            "prdt_no": "GA260338983",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338983",
+            "rank": 7,
+            "prev_rank": 9,
+            "store_rating": 4.8,
+            "review_count": 322,
+            "list": "Skincare"
+          },
+          {
+            "brand": "AESTURA",
+            "product": "Atobarrier 365 Cream 80mL",
+            "prdt_no": "GA240121573",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240121573",
+            "rank": 8,
+            "prev_rank": 33,
+            "store_rating": 4.9,
+            "review_count": 1371,
+            "list": "Skincare"
+          },
+          {
+            "brand": "numbuzin",
+            "product": "No.9 NAD Bio Lifting-sil Essence 50ml",
+            "prdt_no": "GA250127641",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250127641",
+            "rank": 9,
+            "prev_rank": 8,
+            "store_rating": 4.9,
+            "review_count": 2356,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Anua",
+            "product": "PDRN Hyaluronic Capsule 100 Serum 30ml",
+            "prdt_no": "GA260439734",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439734",
+            "rank": 10,
+            "prev_rank": 2,
+            "store_rating": 4.8,
+            "review_count": 320,
+            "list": "Skincare"
+          }
+        ],
+        "spotlight": {
+          "id": "pdrn",
+          "name": "PDRN",
+          "change": 26,
+          "what_it_is": "PDRN is a purified blend of DNA fragments, usually from salmon. It started in clinic injections and is now one of K-beauty's most popular serum ingredients.",
+          "benefits": [
+            "Helps skin feel hydrated, bouncy and comfortable",
+            "Supports a calm, healthy-looking skin barrier"
+          ],
+          "more": "Full guide coming in our Ingredient 101 series"
+        }
+      },
+      "category": "weekly",
+      "folder": "009",
+      "slides": 5,
+      "caption": "This week in K-beauty: Sep 21–27 📈\nWhat Korea searched and what K-beauty fans abroad bought, last week.\n\n🇰🇷 Most-searched skincare & hair ingredients in Korea (Naver search, top = 100)\n1. PDRN · 100 (+26% vs last week)\n2. Niacinamide · 99 (-2% vs last week)\n3. Hyaluronic acid · 52 (+13% vs last week)\n4. Snail mucin · 31 (-5% vs last week)\n5. TXA · 27 (-15% vs last week)\n6. Scalp scaling · 24 (-7% vs last week)\n7. NMN · 23 (-32% vs last week)\n8. Spicules · 23 (-7% vs last week)\n9. Vitamin C · 21 (-3% vs last week)\n10. Retinol · 20 (-13% vs last week)\n\n🛍 Top bestsellers on Olive Young Global (link in bio → tap No.9)\n1. S.NATURE Aqua Squalane Moisturizing Cream 60ml (▲2)\n2. Dr. Althea 345 Relief Cream 50ml (▼1)\n3. celimax The Vita A Retinal Shot Tightening Booster 15ml (▲1)\n4. Torriden Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill (▲1)\n5. S.NATURE Aqua Squalane Essentials (▲32)\n6. Anua PDRN Hyaluronic Acid 100 Moisturizing Cream 60ml (▲17)\n7. BIOHEAL BOH Probioderm 3D Lifting Cream 50mL (▲2)\n8. AESTURA Atobarrier 365 Cream 80mL (▲25)\n9. numbuzin No.9 NAD Bio Lifting-sil Essence 50ml (▼1)\n10. Anua PDRN Hyaluronic Capsule 100 Serum 30ml (▼8)\n\nWhich one are you trying next? Tell me below 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\n#ad | 🛍 Shop: link in bio → tap No.9. I may earn a small commission at no extra cost to you.\n.\n#kbeautytrends #oliveyoungglobal #kbeautybestsellers #trendingnow #kbeauty #koreanskincare #skincareroutine #kbeautytips #seoulbeauty",
+      "hook": "This week in K-beauty: Sep 21–27",
+      "bullets": [
+        "Most searched in Korea: PDRN",
+        "#1 on Olive Young Global: S.NATURE Aqua Squalane Moisturizing Cream 60ml"
+      ],
+      "status": "published",
+      "ig_media_id": "18095609057120653",
+      "permalink": "https://www.instagram.com/p/Dd8LtfkFuvQ/",
+      "published_at": "2026-10-01T14:42+09:00"
     }
   ],
   "tool_history": [],
