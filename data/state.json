@@ -1176,6 +1176,51 @@
       },
       "carousel_error": "Application request limit reached (code 4/2207051)",
       "published_at": "2026-10-07T03:55+09:00"
+    },
+    {
+      "number": 16,
+      "date": "2026-10-07",
+      "source": "skin",
+      "key": "ing-rice",
+      "brand": "",
+      "name": "Rice",
+      "link": "https://global.oliveyoung.com/product/detail?prdtNo=GA220615265",
+      "links": {},
+      "products": [
+        {
+          "brand": "Beauty of Joseon",
+          "name": "Relief Sun: Rice + Probiotics Double Pack 50mL",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA220615265"
+          }
+        },
+        {
+          "brand": "Arencia",
+          "name": "Fresh Green Rice Mochi Cleanser 120g",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA240624282"
+          }
+        },
+        {
+          "brand": "Anua",
+          "name": "Rice 70 Glow Milky Toner 250ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA250329702"
+          }
+        }
+      ],
+      "category": "skin",
+      "folder": "016",
+      "slides": 7,
+      "caption": "From rice bowl to toner: what rice does for skin 🧪\nIngredient 101 · Rice (Oryza sativa (rice) extract & ferment)\n📍 Hot in Korea & abroad: I'm From Rice Toner: 3M+ sold globally by 2024\n\nExtracts, bran water or ferments made from rice. They bring ferulic acid, gamma-oryzanol, vitamin E-family antioxidants and starches that leave skin soft and dewy.\n\n✨ What it does\n• Helps hydrate for a soft, milky-smooth feel\n• Antioxidants may help defend against daily stressors\n• Known for a healthy-looking, even glow\n\n👤 Best for: Dull or uneven-looking skin, Dry to normal skin\n🕐 When: AM & PM\n\n🧴 How to use\n1. Pat a milky rice toner onto skin after cleansing\n2. Layer a rice serum or cream for extra softness\n3. Finish with SPF in the morning (rice sunscreens exist too)\n🤝 Pairs well with: Ceramides, Niacinamide, Probiotics\n\n⚠️ Good to know\n• DIY rice water isn't standardized or preserved; formulated extracts are more reliable.\n• Allergic to rice or very reactive? Patch test first.\n• Fermenting breaks rice into smaller compounds; most evidence is still from lab models.\n\n❌ Myth: Homemade rice water works just like rice skincare.\n✅ Fact: Kitchen rice water isn't standardized or preserved; formulated extracts and ferments are more consistent.\n\n🛍 Where to find it (link in bio → tap No.16)\n• Beauty of Joseon Relief Sun: Rice + Probiotics Double Pack 50mL (⭐ 4.9, 8,845 reviews)\n• Arencia Fresh Green Rice Mochi Cleanser 120g (⭐ 4.7, 799 reviews)\n• Anua Rice 70 Glow Milky Toner 250ml (⭐ 4.8, 564 reviews)\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\n#ad | 🛍 Shop: link in bio → tap No.16. I may earn a small commission at no extra cost to you.\nInfo only, not medical advice. Patch test new products.\n.\n#ricetoner #riceskincare #kbeauty #skincareingredients #kbeautyingredients #skincarescience #koreanskincare #skincareroutine #kbeautytips #seoulbeauty",
+      "hook": "From rice bowl to toner: what rice does for skin",
+      "bullets": [
+        "Helps hydrate for a soft, milky-smooth feel",
+        "Antioxidants may help defend against daily stressors",
+        "Known for a healthy-looking, even glow"
+      ],
+      "status": "failed",
+      "error": "Application request limit reached (code 4/2207051)"
     }
   ],
   "tool_history": [],
