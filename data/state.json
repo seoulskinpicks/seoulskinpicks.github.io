@@ -1897,8 +1897,19 @@
         "Most searched in Korea: PDRN",
         "#1 on Olive Young Global: Dr. Althea 345 Relief Cream 50ml"
       ],
-      "status": "failed",
-      "error": "Application request limit reached (code 4/2207051)"
+      "status": "published",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/016.mp4",
+        "cover": "reels/016.jpg",
+        "seconds": 20.7,
+        "track": "han-river",
+        "status": "published",
+        "media_id": "18020033531939035",
+        "permalink": "https://www.instagram.com/reel/DePqaHOjca_/"
+      },
+      "carousel_error": "Application request limit reached (code 4/2207051)",
+      "published_at": "2026-10-09T04:16+09:00"
     }
   ],
   "tool_history": [],
