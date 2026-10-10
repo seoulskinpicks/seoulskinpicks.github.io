@@ -428,6 +428,28 @@ class Tests(unittest.TestCase):
         self.assertEqual(sign, expect)
         self.assertEqual(sent["url"], "https://api-sg.aliexpress.com/sync")
 
+    def test_ali_empty_result_is_not_an_error_and_retries_shorter_queries(self):
+        from bot.sources import Candidate as candidate_cls
+        queries = []
+
+        class S:
+            def post(self, url, params=None, data=None, timeout=None):
+                queries.append(data["keywords"])
+                if len(queries) < 3:
+                    return FakeResp({"aliexpress_affiliate_product_query_response": {"resp_result": {
+                        "resp_code": 405, "resp_msg": "The result is empty"}}})
+                return FakeResp({"aliexpress_affiliate_product_query_response": {"resp_result": {
+                    "resp_code": 200, "resp_msg": "ok",
+                    "result": {"products": {"product": [ali_product("9", "Other")]}}}}})
+
+        client = ali_source.AliClient("KEY", "SECRET", "TRACK", session=S())
+        self.assertEqual(client.call("aliexpress.affiliate.product.query", keywords="x"), {})
+        queries.clear()
+        cand = candidate_cls(source="kbeauty", key="k", brand="Anua", name="PDRN Hyaluronic Capsule 100 Serum 30ml",
+                         link="https://example.com", category="serum")
+        self.assertFalse(ali_source.auto_find(cand, client, {}))   # nothing official -> no link, no exception
+        self.assertEqual(queries, ["Anua PDRN Hyaluronic Capsule 100 Serum 30ml", "Anua pdrn hyaluronic capsule", "Anua"])
+
     def test_ig_error_message_is_scrubbed(self):
         class S(FakeIG):
             def get(self, url, params=None, timeout=None):

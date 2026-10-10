@@ -57,7 +57,10 @@ class AliClient:
             raise AliError(f"{err.get('code')} {err.get('msg')} {err.get('sub_msg', '')}".strip())
         key = method.replace(".", "_") + "_response"
         result = payload.get(key, {}).get("resp_result", {})
-        if int(result.get("resp_code", 0) or 0) != 200:
+        code = int(result.get("resp_code", 0) or 0)
+        if code == 405:
+            return {}   # "The result is empty": the key worked, the search simply found nothing
+        if code != 200:
             raise AliError(f"resp_code {result.get('resp_code')}: {result.get('resp_msg')}")
         return result.get("result") or {}
 
@@ -186,8 +189,14 @@ def auto_find(cand: Candidate, client, cfg_ali: dict) -> bool:
              if len(w) > 1 and w not in _MATCH_NOISE and not re.fullmatch(r"\d+(ml|g|ea|oz|pcs|sheets?)?", w)]
     if not brand or not words:
         return False
-    results = client.find(f"{cand.brand} {cand.name}", cfg_ali.get("ship_to_country", "US"),
-                          cfg_ali.get("currency", "USD"), cfg_ali.get("language", "EN"))
+    results: list[dict] = []
+    # Full names rarely match the API's keyword search, so also try shorter queries.
+    queries = [f"{cand.brand} {cand.name}", f"{cand.brand} {' '.join(words[:3])}", cand.brand]
+    for q in dict.fromkeys(queries):
+        results = client.find(q, cfg_ali.get("ship_to_country", "US"),
+                              cfg_ali.get("currency", "USD"), cfg_ali.get("language", "EN"))
+        if results:
+            break
     if results and not any(r.get("shop_name") for r in results):
         log(f"  {cand.brand}: 알리 API가 판매자 이름을 주지 않아 공식 스토어를 확인할 수 없어요 → 올리브영만")
         return False
