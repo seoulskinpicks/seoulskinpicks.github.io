@@ -227,10 +227,16 @@ def _trend_up(c: Card, x, y, s, color):
 # ---------------------------------------------------------------------------
 # Ingredient 101
 # ---------------------------------------------------------------------------
-def ing_cover(t: Theme, d: dict, number: int, handle: str, n: int) -> Card:
+def ing_cover(t: Theme, d: dict, number: int, handle: str, n: int, photo=None) -> Card:
     area = d.get("area", "skin")
-    c = Card(t)
-    _motif(c, area)
+    if photo is not None:  # photo cover: full-bleed picture, shaded, light text
+        from .stock import cover_bg
+        c = Card(t, dark=True)
+        c.img.paste(cover_bg(photo, (W, H)), (0, 0))
+        c.d = ImageDraw.Draw(c.img, "RGBA")
+    else:
+        c = Card(t)
+        _motif(c, area)
     c.header(handle, 1, n)
     y = 196
     kind = "HAIR & SCALP 101" if area == "hair" else "INGREDIENT 101"
@@ -238,7 +244,7 @@ def ing_cover(t: Theme, d: dict, number: int, handle: str, n: int) -> Card:
     y += ph + 18
     heat = HEAT_LABEL.get(d.get("heat", ""), "")
     if heat:
-        _, h2 = _outline_pill(c, M, y, heat.upper(), F(SANS_SB, 22), rgb(t.accent))
+        _, h2 = _outline_pill(c, M, y, heat.upper(), F(SANS_SB, 22), c.ink if photo is not None else rgb(t.accent))
         y += h2
     y += 56
     limit = H - 270
@@ -257,14 +263,14 @@ def ing_cover(t: Theme, d: dict, number: int, handle: str, n: int) -> Card:
         y += 50
     if d.get("nickname"):
         fk, kl, _ = fit(c.d, f"a.k.a. {d['nickname']}", SERIF_I, W - 2 * M, 1, 46, 32, balance=False)
-        c.d.text((M, y), kl[0], font=fk, fill=rgb(t.accent), anchor="la")
+        c.d.text((M, y), kl[0], font=fk, fill=c.ink if photo is not None else rgb(t.accent), anchor="la")
         y += 62
     y += 30
     c.d.rectangle((M, y, M + 96, y + 6), fill=rgb(t.accent))
     y += 50
     draw_lines(c.d, M, y, hl, fh, c.ink, int(hs * 1.1))
     if d.get("heat_note"):
-        _trend_up(c, M, H - 232, 30, rgb(t.accent))
+        _trend_up(c, M, H - 232, 30, c.ink if photo is not None else rgb(t.accent))
         fnote, nl2, _ = fit(c.d, d["heat_note"], SANS_M, W - 2 * M - 60, 1, 28, 22, balance=False)
         c.d.text((M + 52, H - 214), nl2[0], font=fnote, fill=c.muted, anchor="lm")
     _swipe(c)
@@ -472,7 +478,7 @@ def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linke
     return c
 
 
-def render_ingredient(topic: Topic, info: InfoCopy, number: int, handle: str) -> list[Card]:
+def render_ingredient(topic: Topic, info: InfoCopy, number: int, handle: str, photo=None) -> list[Card]:
     d = topic.data
     t = ingredient_theme(d)
     plan = ["cover", "what", "does", "how", "know"] + (["where"] if info.products else []) + ["cta"]
@@ -481,7 +487,7 @@ def render_ingredient(topic: Topic, info: InfoCopy, number: int, handle: str) ->
     out = []
     for idx, name in enumerate(plan, 1):
         if name == "cover":
-            out.append(ing_cover(t, d, number, handle, n))
+            out.append(ing_cover(t, d, number, handle, n, photo))
         elif name == "what":
             out.append(ing_what(t, d, handle, idx, n))
         elif name == "does":
@@ -833,13 +839,13 @@ def render_history(topic: Topic, info: InfoCopy, number: int, handle: str, lib_y
 
 # ---------------------------------------------------------------------------
 def render_info_post(topic: Topic, info: InfoCopy, number: int, handle: str, out_dir: Path, lib_years=None,
-                     lib=None) -> list[Path]:
+                     lib=None, photo=None) -> list[Path]:
     from .editorial import NEW_KINDS
     if topic.kind in NEW_KINDS:
         from .render_series import render_series_post
         cards = render_series_post(topic, info, number, handle, lib)
     elif topic.kind in ("skin", "hair"):
-        cards = render_ingredient(topic, info, number, handle)
+        cards = render_ingredient(topic, info, number, handle, photo)
     elif topic.kind == "versus":
         cards = render_versus(topic, info, number, handle)
     elif topic.kind == "weekly":

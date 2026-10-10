@@ -422,3 +422,6 @@ pip install -r requirements.txt
 python -m bot demo          # demo_output/ 폴더에 샘플 카드와 링크 페이지 생성
 python -m unittest discover tests
 ```
+
+## 성분 글 표지 사진
+성분(skin/hair) 글 표지는 사진이 있으면 사진 위에 제목을 얹어요. 사진은 ① `photos/library/<성분id>.jpg`(직접 올린 것·AI 이미지) → ② Pexels 무료 사진(`PEXELS_API_KEY` 시크릿이 있을 때, 사진가 크레딧을 캡션에 표기) 순서로 찾고, 없으면 기존 일러스트 표지를 써요. 자세한 내용은 `photos/library/README.md`.

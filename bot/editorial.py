@@ -411,6 +411,7 @@ class InfoCopy:
     bullets: list[str]
     products: list[dict] = field(default_factory=list)
     hashtags: list[str] = field(default_factory=list)
+    photo_credit: str = ""
 
     @property
     def has_links(self) -> bool:
@@ -578,6 +579,7 @@ def post_record(info: InfoCopy, number: int, today: Date, slides: int) -> dict:
         "hook": info.hook,
         "bullets": info.bullets,
         "status": "prepared",
+        **({"photo_credit": info.photo_credit} if info.photo_credit else {}),
     }
 
 

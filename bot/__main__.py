@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import editorial
+from . import editorial, stock
 from .config import load_config
 from .copywriter import make_copy
 from .instagram import Instagram, wait_for_urls
@@ -152,7 +152,12 @@ def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path,
     try:
         products = editorial.find_products(topic, cfg, editorial.load_catalog(cfg), ali_client, lib=lib)
         info = editorial.build_info_copy(topic, number, cfg, products, lib=lib)
-        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years, lib=lib)
+        photo = stock.find(topic.data, cfg) if topic.kind in ("skin", "hair") else None
+        if photo is not None:
+            info.caption = stock.add_credit(info.caption, photo)
+            info.photo_credit = photo.credit
+        paths = render_info_post(topic, info, number, cfg.handle, out / "posts" / f"{number:03d}", lib_years=lib.years,
+                                 lib=lib, photo=photo.image if photo else None)
     except Exception as exc:
         warn(f"{editorial.describe(topic)} 준비 중 오류, 다른 종류로 넘어가요: {exc}")
         return None
@@ -166,6 +171,7 @@ def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path,
     return {
         "post": post, "kind": editorial.describe(topic), "cand": None,
         "summary": (f"- 주제: **{topic.title}**\n" + (f"- 소개한 제품: {shop}\n" if shop else "")
+                    + (f"- 표지 사진: {photo.credit or '직접 넣은 사진'}\n" if photo else "")
                     + "- 내용: content/ 폴더의 조사 자료 (AI가 지어내지 않음)\n"),
     }
 

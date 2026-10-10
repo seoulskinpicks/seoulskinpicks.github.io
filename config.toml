@@ -143,3 +143,9 @@ site_url = ""
 # 'Instagram 로그인' 방식 API (페이스북 페이지 불필요). 보통은 그대로 두세요.
 api_host = "graph.instagram.com"
 api_version = "v24.0"
+
+[photos]
+# 성분 글(skin/hair) 표지에 사진을 넣어요.
+#  1) photos/library/<성분id>.jpg 가 있으면 그걸 쓰고 (직접 올린 사진·AI 이미지)
+#  2) 없으면 PEXELS_API_KEY 시크릿이 있을 때 Pexels 무료 사진을 가져와요 (사진가 크레딧을 캡션에 적어요)
+stock = true
