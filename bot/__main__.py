@@ -292,6 +292,15 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
         ig_id = cfg.ig_user_id or ig.account_id()[0]
         if reel.get("mode") == "auto" and not reel_done:
             reel_done = _publish_reel(cfg, ig, ig_id, post, site, state, session, kw)
+        if reel_done and not _reels_settings(cfg)["twin_card"]:
+            # The Reel is the post: no second, identical card version in the feed.
+            post.update(status="published", ig_media_id=reel.get("media_id", ""), permalink=reel.get("permalink", ""),
+                        card_skipped=True,
+                        published_at=datetime.now(ZoneInfo(cfg.timezone)).isoformat(timespec="minutes"))
+            post.pop("error", None)
+            state.save()
+            add_summary(f"### ✅ 인스타 게시 완료: No.{post['number']} (릴스만 올림, 같은 내용의 카드뉴스는 올리지 않아요)\n{reel.get('permalink') or reel.get('media_id')}")
+            return 0
         res = ig.publish_carousel(ig_id, urls, post["caption"])
     except Exception as exc:
         msg = scrub(str(exc), cfg.ig_token)
@@ -314,13 +323,18 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
     return 0
 
 
+def _reels_settings(cfg) -> dict:
+    from .reels import settings
+    return settings(cfg)
+
+
 def _publish_reel(cfg, ig, ig_id: str, post: dict, site: str, state, session, kw) -> bool:
     """Posts the Reel before the carousel. A failed Reel never blocks the card post."""
     from .reels import reel_caption, settings
     reel = post["reel"]
     try:
         wait_for_urls([site + reel["video"]], session=session, kinds=("video/",), **kw)
-        res = ig.publish_reel(ig_id, site + reel["video"], reel_caption(post["caption"]),
+        res = ig.publish_reel(ig_id, site + reel["video"], reel_caption(post["caption"], settings(cfg)["twin_card"]),
                               cover_url=site + reel["cover"], audio_name=settings(cfg)["audio_name"])
     except Exception as exc:
         msg = scrub(str(exc), cfg.ig_token)

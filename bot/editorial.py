@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from datetime import date as Date
 from pathlib import Path
 
-from .util import clean_space, log, warn
+from .util import clean_space, limit_tags, log, max_hashtags, warn
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -448,8 +448,7 @@ def _tags(cfg, topic: Topic) -> list[str]:
     if topic.kind == "spotlight":
         from .series import region_of
         own = region_of(topic.data)["hashtags"]
-    tags = list(dict.fromkeys(own + extra + c.get("hashtags_common", [])))
-    return [t for t in tags if t.startswith("#") and " " not in t][:20]
+    return limit_tags([own, extra, c.get("hashtags_common", [])], max_hashtags(cfg))
 
 
 def _product_line(p: dict) -> str:

@@ -311,6 +311,30 @@ class SeriesTests(unittest.TestCase):
         self.assertNotIn("reel", post)
 
 
+class HashtagTests(unittest.TestCase):
+    def test_limit_tags_mixes_specific_and_broad(self):
+        from bot.util import limit_tags
+        tags = limit_tags([["#niacinamide", "#vitaminb3"], ["#skincareingredients", "#kbeautyingredients"], ["#kbeauty", "#koreanskincare"]], 4)
+        self.assertEqual(tags, ["#niacinamide", "#skincareingredients", "#kbeauty", "#vitaminb3"])
+        self.assertEqual(limit_tags([["#a", "#a"], ["#a"]], 5), ["#a"])      # no duplicates
+        self.assertEqual(limit_tags([["bad tag", "#ok"]], 3), ["#ok"])       # only real hashtags
+
+    def test_captions_have_at_most_five_hashtags(self):
+        import re
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            with mock.patch.dict("os.environ", ENV):
+                cfg = make_cfg(tmp, [], library=True, series=True, reels="off")
+                rc = cmd_prepare(Namespace(out=str(tmp / "site"), dry_run=False, source="myth",
+                                           date=TUESDAY.isoformat(), reel="no"), cfg=cfg)
+                self.assertEqual(rc, 0)
+                caption = State(cfg.state_file).posts[-1]["caption"]
+            tags = re.findall(r"(?<!\w)#[A-Za-z][\w]*", caption)
+            self.assertTrue(1 <= len(tags) <= 5, tags)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 class ReelTests(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
@@ -321,9 +345,10 @@ class ReelTests(unittest.TestCase):
         self.env.stop()
         shutil.rmtree(self.tmp, ignore_errors=True)
 
-    def _prepare(self, mode):
+    def _prepare(self, mode, twin_card=False):
         cfg = make_cfg(self.tmp, [], library=True, series=True, reels=mode)
         cfg.raw["reels"]["seconds_per_slide"] = 1.2
+        cfg.raw["reels"]["twin_card"] = twin_card
         out = self.tmp / "site"
         rc = cmd_prepare(Namespace(out=str(out), dry_run=False, source="myth", date=TUESDAY.isoformat(), reel=None), cfg=cfg)
         self.assertEqual(rc, 0)
@@ -335,7 +360,7 @@ class ReelTests(unittest.TestCase):
 
     def test_auto_reel_then_carousel(self):
         self.assertTrue(reels.tracks(), "assets/music/ has the original tracks")
-        cfg, out, post = self._prepare("auto")
+        cfg, out, post = self._prepare("auto", twin_card=True)
         rec = post["reel"]
         self.assertEqual(rec["mode"], "auto")
         video = out / rec["video"]
@@ -358,6 +383,20 @@ class ReelTests(unittest.TestCase):
         st = State(cfg.state_file)
         self.assertEqual(st.posts[-1]["status"], "published")
         self.assertEqual(st.posts[-1]["reel"]["status"], "published")
+
+    def test_reel_day_posts_only_the_reel_by_default(self):
+        cfg, out, post = self._prepare("auto")   # twin_card off
+        ig = FakeIG()
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_X"}):
+            rc = cmd_publish(Namespace(site_url="https://u.github.io/repo"), cfg=cfg, session=ig, sleep=lambda s: None)
+        self.assertEqual(rc, 0)
+        creates = [c[2] for c in ig.calls if c[0] == "POST" and c[1].endswith("/media")]
+        self.assertEqual([c["media_type"] for c in creates], ["REELS"])   # no identical second post
+        self.assertNotIn("card version", creates[0]["caption"])
+        last = State(cfg.state_file).posts[-1]
+        self.assertEqual(last["status"], "published")
+        self.assertTrue(last["card_skipped"])
+        self.assertTrue(last["permalink"])
 
     def test_failed_reel_does_not_block_cards(self):
         cfg, out, post = self._prepare("auto")
@@ -389,7 +428,7 @@ class ReelTests(unittest.TestCase):
     def test_reel_days(self):
         cfg = make_cfg(self.tmp, [], library=True, series=True, reels="auto")
         days = [reels.is_reel_day(cfg, TUESDAY + timedelta(days=i)) for i in range(7)]
-        self.assertEqual(days, [True, False, True, False, True, False, False])  # tue thu sat
+        self.assertEqual(days, [True] * 7)   # every day (config.toml default)
         self.assertFalse(reels.is_reel_day(make_cfg(self.tmp / "o", [], reels="off"), TUESDAY))
         self.assertTrue(reels.is_reel_day(cfg, TUESDAY + timedelta(days=1), "yes"))
 

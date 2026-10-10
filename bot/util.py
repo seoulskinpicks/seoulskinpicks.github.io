@@ -59,3 +59,28 @@ def scrub(text: str, *secrets: str | None) -> str:
         if s:
             out = out.replace(s, "***")
     return re.sub(r"(access_token=)[^&\s\"']+", r"\1***", out)
+
+
+def limit_tags(groups: list[list[str]], limit: int = 4) -> list[str]:
+    """Picks at most `limit` hashtags, taking one from each group in turn (most specific group first),
+    so a post gets its own topic tag, a category tag and a broad tag instead of 20 generic ones.
+    Instagram now treats more than 5 hashtags as noise, and '#ad' in the text counts as one of them."""
+    out: list[str] = []
+    depth = 0
+    while len(out) < limit and any(depth < len(g) for g in groups):
+        for g in groups:
+            if depth < len(g) and g[depth] not in out and g[depth].startswith("#") and " " not in g[depth]:
+                out.append(g[depth])
+                if len(out) >= limit:
+                    break
+        depth += 1
+    return out
+
+
+def max_hashtags(cfg) -> int:
+    """How many topic hashtags a caption gets: config [copy] max_hashtags (default 5) minus the '#ad' disclosure."""
+    try:
+        total = int(cfg.copy.get("max_hashtags", 5))
+    except (TypeError, ValueError):
+        total = 5
+    return max(1, total - 1)

@@ -13,7 +13,7 @@ import requests
 
 from .knowledge import CATEGORIES, TOOLS, detect_material
 from .sources import Candidate
-from .util import clean_space, has_hangul, log, warn
+from .util import clean_space, has_hangul, limit_tags, log, max_hashtags, warn
 
 DISCLOSURE = "I may earn a small commission if you buy through my link, at no extra cost to you."
 
@@ -194,15 +194,12 @@ def _tools_template(c: Candidate, number: int, cfg) -> Copy:
 def build_caption(c: Candidate, cp: Copy, number: int, cfg) -> str:
     on_ali = c.source == "tools" or bool(c.ali_link) or c.store == "aliexpress"
     on_oy = c.source == "kbeauty" and (bool(c.oy_link) or not on_ali)
-    tags = list(dict.fromkeys(
-        cfg.copy.get("hashtags_common", [])
-        + cfg.copy.get("hashtags_kbeauty" if c.source == "kbeauty" else "hashtags_tools", [])
-        + (CATEGORIES.get(c.category, {}) if c.source == "kbeauty" else TOOLS.get(c.category, {})).get("tags", [])
-        + (["#aliexpressfinds"] if on_ali else [])
-    ))
-    if not on_oy:  # Olive Young tags would be misleading on an AliExpress-only item
-        tags = [t for t in tags if "oliveyoung" not in t]
-    tags = tags[:20]
+    cat_tags = (CATEGORIES.get(c.category, {}) if c.source == "kbeauty" else TOOLS.get(c.category, {})).get("tags", [])
+    store_tags = [t for t in cfg.copy.get("hashtags_kbeauty" if c.source == "kbeauty" else "hashtags_tools", [])
+                  if on_oy or "oliveyoung" not in t]   # Olive Young tags would be misleading on an AliExpress-only item
+    if on_ali:
+        store_tags = ["#aliexpressfinds"] + store_tags
+    tags = limit_tags([cat_tags, store_tags, cfg.copy.get("hashtags_common", [])], max_hashtags(cfg))
     cp.hashtags = tags
     lines = [f"{cp.hook} {'🇰🇷' if c.source == 'kbeauty' else '✨'}", f"#ad | 🛍 Shop: link in bio → tap No.{number}", ""]
     if c.source == "kbeauty":

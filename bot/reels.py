@@ -46,7 +46,8 @@ def settings(cfg) -> dict:
     return {"mode": mode if mode in ("auto", "manual", "off") else "off",
             "days": [DAYS[d[:3].lower()] for d in r.get("days", []) if d[:3].lower() in DAYS],
             "seconds": float(r.get("seconds_per_slide", 3.6)),
-            "audio_name": str(r.get("audio_name", "")).strip()}
+            "audio_name": str(r.get("audio_name", "")).strip(),
+            "twin_card": bool(r.get("twin_card", False))}
 
 
 def is_reel_day(cfg, today: Date, override: str | None = None) -> bool:
@@ -152,8 +153,10 @@ def make_for_post(cfg, post: dict, slides: list[Path], out: Path, manual: bool |
             "track": music.stem if music else "", "status": "prepared"}
 
 
-def reel_caption(caption: str) -> str:
-    """The carousel caption with a pointer to the card version (posted right after the Reel)."""
+def reel_caption(caption: str, twin_card: bool = False) -> str:
+    """The carousel caption; with a pointer to the card version only when that version is posted too."""
+    if not twin_card:
+        return caption[:2200]
     head, _, rest = caption.partition("\n")
     note = "📌 Prefer to swipe? The card version is on our profile too. Save it for later."
     return f"{head}\n{note}\n{rest}"[:2200]

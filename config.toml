@@ -32,13 +32,15 @@ season   = { per_month = 1, gap = 20 }       # 서울 계절 가이드 (계절�
 words    = { per_month = 1, gap = 20 }       # K뷰티 단어 (한글 + 읽는 법)
 
 [reels]
-# 릴스: 카드뉴스를 세로 영상(9:16)으로 만들어 음악과 함께 올리고, 바로 뒤에 같은 카드뉴스도 올려요 (그날 게시물 2개).
+# 릴스: 카드뉴스를 세로 영상(9:16)으로 만들어 음악과 함께 올려요. 릴스는 계정을 모르는 사람에게 더 많이 보여서 새 팔로워를 모으는 데 좋아요.
+#   twin_card = false 면 릴스 날에는 같은 내용의 카드뉴스를 또 올리지 않아요 (피드에 똑같은 글이 두 번 보이지 않게). true 면 예전처럼 바로 뒤에 카드뉴스도 올려요.
 #   auto   : 봇이 저작권 걱정 없는 자체 제작 음악(assets/music/)을 넣어 자동으로 올려요
 #   manual : 음악 없는 영상만 만들어 링크 페이지에 올려둬요 → 휴대폰으로 받아 인스타 앱에서 인기 음악을 붙여 직접 올리기
 #            (인스타 API로는 인스타 음악 라이브러리의 곡을 붙일 수 없어요). 카드뉴스는 그대로 자동 게시.
 #   off    : 릴스 안 만듦
 mode = "auto"
-days = ["tue", "thu", "sat"]      # 릴스 올리는 요일 (주 2~3번 추천)
+days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]   # 릴스 올리는 요일 (밤 게시 때만. 아침 게시는 카드뉴스)
+twin_card = false
 seconds_per_slide = 4.2          # 카드 한 장당 보여주는 시간 (초)
 audio_name = "Seoul Skin Picks · original sound"   # 릴스 소리 이름 (인스타에 표시)
 
@@ -125,6 +127,7 @@ backup_ai_name = "Groq"
 backup_ai_url = "https://api.groq.com/openai/v1/chat/completions"
 backup_ai_model = "openai/gpt-oss-120b"
 ai_model = "claude-haiku-4-5-20251001"
+max_hashtags = 5   # 해시태그는 5개까지만 (인스타가 5개 넘으면 효과가 없거나 도달이 줄어든다고 해요). "#ad" 도 1개로 세요.
 hashtags_common = ["#kbeauty", "#koreanskincare", "#skincareroutine", "#kbeautytips", "#seoulbeauty"]
 hashtags_kbeauty = ["#oliveyoung", "#oliveyoungglobal", "#kbeautyfavorites", "#koreanbeauty"]
 hashtags_tools = ["#skincaretools", "#selfcaretools", "#aliexpressfinds", "#beautytools"]
