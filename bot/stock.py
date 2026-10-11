@@ -128,7 +128,7 @@ def cover_bg(photo: Image.Image, size: tuple[int, int]) -> Image.Image:
     def alpha(y: int) -> int:
         f = y / h
         if f < 0.14:
-            return int(105 - f / 0.14 * 55)          # soft top shade keeps the @handle readable
+            return int(150 - f / 0.14 * 100)          # soft top shade keeps the @handle readable
         return int(50 + min(1.0, max(0.0, (f - 0.30) / 0.52)) ** 0.9 * 170)
 
     col = Image.new("L", (1, h))

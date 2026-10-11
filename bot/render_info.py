@@ -237,7 +237,12 @@ def ing_cover(t: Theme, d: dict, number: int, handle: str, n: int, photo=None) -
     else:
         c = Card(t)
         _motif(c, area)
-    c.header(handle, 1, n)
+    if photo is not None:  # light photos: white header text on a slightly darker top edge
+        f = F(SANS_M, 28)
+        c.d.text((M, 78), f"@{handle}", font=f, fill=c.ink, anchor="la")
+        c.d.text((W - M, 78), f"1 / {n}", font=f, fill=c.ink, anchor="ra")
+    else:
+        c.header(handle, 1, n)
     y = 196
     kind = "HAIR & SCALP 101" if area == "hair" else "INGREDIENT 101"
     _, ph = c.pill(M, y, f"{kind} · NO.{number}", F(SANS_SB, 24), rgb(t.on_accent), rgb(t.accent), padx=22, pady=14)
