@@ -125,7 +125,8 @@ def _checks(c: Card, y, items: list[str], bottom: float, size=50, color=None) ->
 
 
 def _cta(c: Card, big: str, sub: str, handle: str, idx: int, n: int, follow: str, number: int = 0,
-         linked: bool = False, disclaimer: str = "") -> Card:
+         linked: bool = False, disclaimer: str = "", affiliate: bool | None = None) -> Card:
+    affiliate = linked if affiliate is None else affiliate
     t = c.t
     c.header(handle, idx, n)
     c.d.ellipse((W - 420, -180, W + 220, 460), fill=rgb(t.accent))
@@ -147,7 +148,7 @@ def _cta(c: Card, big: str, sub: str, handle: str, idx: int, n: int, follow: str
         fl = F(SANS_B, 38)
         c.d.rounded_rectangle((M, y, M + tw(c.d, label, fl) + 90, y + 96), 48, fill=rgb(t.accent))
         c.d.text((M + 45, y + 48), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
-    disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if linked else "") + disclaimer
+    disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if affiliate else "") + disclaimer
     if disc.strip():
         f, lines, s = fit(c.d, disc.strip(), SANS, W - 2 * M, 2, 26, 21)
         draw_lines(c.d, M, H - 196, lines, f, c.muted, int(s * 1.4))
@@ -260,7 +261,7 @@ def render_routine(topic, info, number, handle, lib) -> list[Card]:
                                     title="Where to find the key ingredients"))
         else:
             out.append(_cta(Card(t, dark=True), "Save this", "and build it one product at a time.", handle, idx, n,
-                            "for a new routine every other week", number, info.has_links, NOT_ADVICE))
+                            "for a new routine every other week", number, info.has_links, NOT_ADVICE, info.affiliate))
     return out
 
 
@@ -494,7 +495,7 @@ def render_season(topic, info, number, handle, lib) -> list[Card]:
                                     title=f"{d['name']} picks"))
         else:
             out.append(_cta(Card(t, dark=True), "Save for the season", f"and check back when {d['name'].lower()} ends.",
-                            handle, idx, n, "for Seoul-tested skin know-how", number, info.has_links, NOT_ADVICE))
+                            handle, idx, n, "for Seoul-tested skin know-how", number, info.has_links, NOT_ADVICE, info.affiliate))
     return out
 
 
@@ -673,7 +674,7 @@ def render_recap(topic, info, number, handle) -> list[Card]:
         else:
             out.append(_cta(Card(RECAP, dark=True), "Did any make your cart?", "Tell me your best buy of the month.",
                             handle, idx, n, "for the weekly and monthly top lists", number, info.has_links,
-                            "Rankings: Olive Young Global weekly bestseller lists."))
+                            "Rankings: Olive Young Global weekly bestseller lists.", info.affiliate))
     return out
 
 
@@ -820,5 +821,5 @@ def render_series_pin(topic: Topic, info: InfoCopy, number: int, handle: str) ->
             c.d.text((M, y + 22), str(k), font=F(SERIF, 44), fill=rgb(t.accent), anchor="lm")
             draw_lines(c.d, M + 66, y, bl, fb, c.ink, 46)
             y += len(bl) * 46 + 28
-    _pin_footer(c, "Tap for the full guide", handle, "#ad affiliate links" if info.has_links else "K-beauty 101")
+    _pin_footer(c, "Tap for the full guide", handle, "#ad affiliate links" if info.affiliate else "K-beauty 101")
     return c

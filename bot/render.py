@@ -511,7 +511,7 @@ def slide_deal(t: Theme, deal: dict, handle: str, idx: int, n_slides: int = 5) -
     return c
 
 
-def slide_cta(t: Theme, number: int, shop_label: str, handle: str, idx: int, n_slides: int = 5) -> Card:
+def slide_cta(t: Theme, number: int, shop_label: str, handle: str, idx: int, n_slides: int = 5, affiliate: bool = True) -> Card:
     c = Card(t, dark=True)
     d = c.d
     c.header(handle, idx, n_slides)
@@ -536,9 +536,10 @@ def slide_cta(t: Theme, number: int, shop_label: str, handle: str, idx: int, n_s
     y += 110
     c.bookmark(M, y, 34, 46, c.ink)
     d.text((M + 60, y + 23), "Save this for your next haul", font=F(SANS_M, 36), fill=c.ink, anchor="lm")
-    disc = "#ad · Affiliate link. I may earn a small commission at no extra cost to you."
-    f, lines, s = fit(d, disc, SANS, W - 2 * M, 2, 26, 22)
-    draw_lines(d, M, H - 190, lines, f, c.muted, int(s * 1.4))
+    if affiliate:
+        disc = "#ad · Affiliate link. I may earn a small commission at no extra cost to you."
+        f, lines, s = fit(d, disc, SANS, W - 2 * M, 2, 26, 22)
+        draw_lines(d, M, H - 190, lines, f, c.muted, int(s * 1.4))
     c.dots(idx, n_slides)
     return c
 
@@ -701,7 +702,7 @@ def render_post(cand, cp, number: int, handle: str, out_dir: Path, product_img=N
                 card = slide_bullets(t, "Good to know", s4.get("title", "Pro tips"), s4.get("items", []), handle, idx,
                                      icon="check", n_slides=n)
         else:
-            card = slide_cta(t, number, cp.shop_label, handle, idx, n_slides=n)
+            card = slide_cta(t, number, cp.shop_label, handle, idx, n_slides=n, affiliate=getattr(cp, "affiliate", True))
         slides.append(card)
     paths = []
     for i, card in enumerate(slides, 1):
@@ -777,7 +778,7 @@ def render_pin(cand, cp, number: int, handle: str, out_path: Path, product_img=N
     d.rectangle((0, footer_top, PW, PH), fill=rgb(t.dark))
     d.text((M, footer_top + 62), "Tap to see where to buy", font=F(SERIF, 52), fill=rgb(t.on_dark), anchor="lm")
     c.arrow(M + tw(d, "Tap to see where to buy", F(SERIF, 52)) + 26, footer_top + 64, 44, rgb(t.on_dark), 5)
-    d.text((M, footer_top + 122), f"@{handle}  ·  #ad affiliate links", font=F(SANS, 26), fill=rgb(t.dark_muted), anchor="lm")
+    d.text((M, footer_top + 122), f"@{handle}  ·  " + ("#ad affiliate links" if getattr(cp, "affiliate", True) else "K-beauty picks"), font=F(SANS, 26), fill=rgb(t.dark_muted), anchor="lm")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     c.img.save(out_path, "JPEG", quality=88, optimize=True, progressive=True)
     return out_path

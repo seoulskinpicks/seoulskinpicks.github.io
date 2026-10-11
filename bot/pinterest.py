@@ -15,6 +15,8 @@ from email.utils import format_datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from .disclosure import post_affiliate
+
 PAGE = """<!doctype html>
 <html lang="en">
 <head>
@@ -55,7 +57,7 @@ ul{{padding-left:20px;line-height:1.55}}
 <p class="sub">{brand_name}</p>
 <ul>{bullets}</ul>
 <div class="btns">{buttons}</div>
-<p class="note">#ad · These are affiliate links: I may earn a small commission if you buy, at no extra cost to you. Prices and availability can change.{extra_note}</p>
+<p class="note">{affiliate_note}Prices and availability can change.{extra_note}</p>
 </div></body></html>
 """
 
@@ -154,7 +156,7 @@ def _article_page(p: dict, cfg, lib, verify_tag: str, image_abs: str) -> str:
     esc = html.escape
     products, linked = _product_blocks(p, cfg)
     disclosure = ('<p class="note">#ad · Product links are affiliate links: I may earn a small commission if you buy, '
-                  "at no extra cost to you. Prices and availability can change.</p>") if linked else ""
+                  "at no extra cost to you. Prices and availability can change.</p>") if linked and post_affiliate(p, cfg) else ""
     title = p.get("hook") or p["name"]
     desc = " ".join(p.get("bullets") or [])[:300] or title
     return ARTICLE.format(
@@ -190,21 +192,22 @@ def build_pinterest(posts: list[dict], cfg, out_dir: Path, site_url: str, pins_d
             lib = lib or load_library(cfg)
             page = _article_page(p, cfg, lib, verify_tag, f"{base}pins/{folder}.jpg")
             (out_dir / "p" / f"{folder}.html").write_text(page, encoding="utf-8")
-            linked = any((x.get("links") or {}) for x in p.get("products") or [])
-            desc = " ".join(f"{b}." for b in (p.get("bullets") or [])[:3]) + (" #ad affiliate links" if linked else "")
+            desc = " ".join(f"{b}." for b in (p.get("bullets") or [])[:3]) + (" #ad affiliate links" if post_affiliate(p, cfg) else "")
             items.append(_feed_item(p, base, folder, title, desc, tz, out_dir))
             if len(items) >= 25:
                 break
             continue
         brand_name = " ".join(x for x in [p.get("brand", ""), p["name"]] if x)
         bullets = p.get("bullets") or []
-        desc = f"{brand_name}. " + " ".join(f"{b}." for b in bullets[:3]) + " #ad affiliate link"
+        desc = f"{brand_name}. " + " ".join(f"{b}." for b in bullets[:3]) + (" #ad affiliate link" if post_affiliate(p, cfg) else "")
         buttons, extra = _buttons(p, cfg)
         page = PAGE.format(
             number=p["number"], title=esc(title), site=esc(cfg.brand_name), desc=esc(desc[:300]), verify=verify_tag,
             image_abs=esc(f"{base}pins/{folder}.jpg"), handle=esc(cfg.handle), folder=folder,
             tag="Tool pick" if p["source"] == "tools" else "K-beauty", brand_name=esc(brand_name),
             bullets="".join(f"<li>{esc(b)}</li>" for b in bullets[:3]), buttons=buttons, extra_note=extra,
+            affiliate_note=("#ad · These are affiliate links: I may earn a small commission if you buy, at no extra cost to you. "
+                            if post_affiliate(p, cfg) else ""),
         )
         (out_dir / "p" / f"{folder}.html").write_text(page, encoding="utf-8")
         items.append(_feed_item(p, base, folder, title, desc, tz, out_dir))

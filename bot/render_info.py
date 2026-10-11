@@ -453,7 +453,9 @@ def ing_products(t: Theme, d: dict, products: list[dict], number: int, handle: s
     return c
 
 
-def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linked: bool, photo=None) -> Card:
+def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linked: bool, photo=None,
+            affiliate: bool | None = None) -> Card:
+    affiliate = linked if affiliate is None else affiliate
     c = Card(t, dark=True)
     if photo is not None:  # same photo as the cover, flipped and veiled dark
         from .stock import cover_bg
@@ -485,7 +487,7 @@ def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linke
         fl = F(SANS_B, 38)
         c.d.rounded_rectangle((M, y, M + tw(c.d, label, fl) + 90, y + 96), 48, fill=rgb(t.accent))
         c.d.text((M + 45, y + 48), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
-    disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if linked else "") + NOT_ADVICE
+    disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if affiliate else "") + NOT_ADVICE
     f, lines, s = fit(c.d, disc, SANS, W - 2 * M, 2, 26, 21)
     draw_lines(c.d, M, H - 196, lines, f, c.ink if photo is not None else c.muted, int(s * 1.4))
     c.dots(idx, n)
@@ -542,7 +544,7 @@ def render_ingredient(topic: Topic, info: InfoCopy, number: int, handle: str, ph
         elif name == "where":
             out.append(ing_products(t, d, info.products, number, handle, idx, n))
         else:
-            out.append(ing_cta(t, d, number, handle, idx, n, info.has_links, photo))
+            out.append(ing_cta(t, d, number, handle, idx, n, info.has_links, photo, info.affiliate))
     return out
 
 
@@ -986,7 +988,7 @@ def render_info_pin(topic: Topic, info: InfoCopy, number: int, handle: str, out_
             c.check(M + 22, y + 24, 22, rgb(t.accent), 4)
             draw_lines(c.d, M + 66, y, bl, fb, c.ink, 48)
             y += len(bl) * 48 + 24
-        _pin_footer(c, "Tap for the full guide", handle, "#ad affiliate links" if info.has_links else "K-beauty 101")
+        _pin_footer(c, "Tap for the full guide", handle, "#ad affiliate links" if info.affiliate else "K-beauty 101")
     elif topic.kind == "versus":
         t = VERSUS
         c = Card(t, size=(PW, PH))
@@ -1034,7 +1036,7 @@ def render_info_pin(topic: Topic, info: InfoCopy, number: int, handle: str, out_
                 c.d.text((M + 56, y + 22), lines[0], font=f, fill=c.ink, anchor="lm")
                 y += 58
             y += 30
-        _pin_footer(c, "Tap for the full top 10", handle, "#ad affiliate links" if info.has_links else "K-beauty trends")
+        _pin_footer(c, "Tap for the full top 10", handle, "#ad affiliate links" if info.affiliate else "K-beauty trends")
     elif topic.variant == "timeline":
         t = HISTORY
         c = Card(t, size=(PW, PH))
@@ -1232,7 +1234,8 @@ def wk_spotlight(sp: dict, handle: str, idx: int, n: int) -> Card:
     return c
 
 
-def wk_cta(handle: str, idx: int, n: int, linked: bool, number: int = 0) -> Card:
+def wk_cta(handle: str, idx: int, n: int, linked: bool, number: int = 0, affiliate: bool | None = None) -> Card:
+    affiliate = linked if affiliate is None else affiliate
     t = WEEKLY
     c = Card(t, dark=True)
     c.header(handle, idx, n)
@@ -1251,7 +1254,7 @@ def wk_cta(handle: str, idx: int, n: int, linked: bool, number: int = 0) -> Card
         fl = F(SANS_B, 38)
         c.d.rounded_rectangle((M, y + 148, M + tw(c.d, label, fl) + 90, y + 240), 46, fill=rgb(t.accent))
         c.d.text((M + 45, y + 194), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
-    disc = "#ad · Product links are affiliate links; I may earn a small commission at no extra cost to you." if linked else \
+    disc = "#ad · Product links are affiliate links; I may earn a small commission at no extra cost to you." if affiliate else \
         "Rankings come from public data: Naver search trends and Olive Young Global bestsellers."
     f, lines, s = fit(c.d, disc, SANS, W - 2 * M, 2, 26, 21)
     draw_lines(c.d, M, H - 196, lines, f, c.muted, int(s * 1.4))
@@ -1276,5 +1279,5 @@ def render_weekly(topic: Topic, info: InfoCopy, number: int, handle: str) -> lis
         elif name == "spot":
             out.append(wk_spotlight(sp, handle, idx, n))
         else:
-            out.append(wk_cta(handle, idx, n, info.has_links, number))
+            out.append(wk_cta(handle, idx, n, info.has_links, number, info.affiliate))
     return out

@@ -31,6 +31,7 @@ class SeriesTests(unittest.TestCase):
         self.env = mock.patch.dict("os.environ", ENV)
         self.env.start()
         self.cfg = make_cfg(self.tmp, [], library=True, series=True)
+        self.cfg.raw["kbeauty"]["oliveyoung_link_template"] = "{url}&ref=ME"   # an affiliate link shape: #ad applies
         self.lib = ed.load_library(self.cfg)
 
     def tearDown(self):

@@ -38,6 +38,7 @@ class Copy:
     my_rating: float | None = None
     deal: dict | None = None      # price slide for K-beauty items linked to AliExpress
     star: dict | None = None      # "Star ingredient" slide (from content/skin.toml or hair.toml)
+    affiliate: bool = True        # the shop link earns a commission -> #ad + disclosure (see disclosure.py)
 
 
 def _stars_text(r: float) -> str:
@@ -201,7 +202,10 @@ def build_caption(c: Candidate, cp: Copy, number: int, cfg) -> str:
         store_tags = ["#aliexpressfinds"] + store_tags
     tags = limit_tags([cat_tags, store_tags, cfg.copy.get("hashtags_common", [])], max_hashtags(cfg))
     cp.hashtags = tags
-    lines = [f"{cp.hook} {'🇰🇷' if c.source == 'kbeauty' else '✨'}", f"#ad | 🛍 Shop: link in bio → tap No.{number}", ""]
+    from .disclosure import candidate_affiliate
+    cp.affiliate = candidate_affiliate(c, cfg)
+    shop = f"🛍 Shop: link in bio → tap No.{number}"
+    lines = [f"{cp.hook} {'🇰🇷' if c.source == 'kbeauty' else '✨'}", f"#ad | {shop}" if cp.affiliate else shop, ""]
     if c.source == "kbeauty":
         lines.append(f"{c.brand} {cp.display_name}")
         if c.rank:
@@ -239,7 +243,7 @@ def build_caption(c: Candidate, cp: Copy, number: int, cfg) -> str:
         *code_line,
         "🔖 Save this for your next haul",
         "",
-        DISCLOSURE,
+        *([DISCLOSURE] if cp.affiliate else []),
         ".",
         " ".join(tags),
     ]

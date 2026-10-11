@@ -51,6 +51,7 @@ class EditorialTests(unittest.TestCase):
                                                    "GITHUB_STEP_SUMMARY": "", "GITHUB_ACTIONS": ""})
         self.env.start()
         self.cfg = make_cfg(self.tmp, [], library=True)
+        self.cfg.raw["kbeauty"]["oliveyoung_link_template"] = "{url}&ref=ME"   # an affiliate link shape: #ad applies
         self.lib = ed.load_library(self.cfg)
 
     def tearDown(self):
@@ -168,6 +169,16 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual(ed.match_catalog(retinal, cat), [])            # retinol is not retinal
         self.assertEqual(ed.match_catalog(rice, cat), [])               # "price" is not rice
         self.assertEqual([g["prdt_no"] for g in ed.match_catalog(rosemary, cat)], ["8"])  # hair list only
+
+    def test_plain_olive_young_links_get_no_ad_or_commission_claim(self):
+        self.cfg.raw["kbeauty"]["oliveyoung_link_template"] = "{url}"
+        write_catalog(self.cfg, [catalog_item("VT", "PDRN Essence 100", reviews=4000, no="GA8")])
+        out = self.prepare(MONDAY)
+        post = State(self.cfg.state_file).posts[-1]
+        self.assertIn("Shop: link in bio", post["caption"])
+        self.assertNotIn("#ad", post["caption"])
+        self.assertNotIn("commission", post["caption"])
+        self.assertNotIn("affiliate", (out / "p" / "001.html").read_text().lower().replace("affiliate links (", ""))
 
     def test_ingredient_day_with_catalog_products(self):
         write_catalog(self.cfg, [catalog_item("medicube", "PDRN Pink Peptide Serum", no="GA9"),

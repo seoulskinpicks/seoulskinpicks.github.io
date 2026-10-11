@@ -73,7 +73,7 @@ footer{{text-align:center;font-size:12px;color:var(--muted);margin-top:28px}}
   <p class="handle"><a href="https://www.instagram.com/{handle}/">@{handle}</a></p>
   <p class="tagline">{tagline}</p>
 </header>
-<p class="note">Find the number from the post (like <b>No.12</b>) below. Guides (ingredients, trends) list the products they mention. These are affiliate links: I may earn a small commission if you buy, at no extra cost to you. Prices and availability can change.{us_note}</p>
+<p class="note">Find the number from the post (like <b>No.12</b>) below. Guides (ingredients, trends) list the products they mention. Some links are affiliate links (those posts are marked #ad): I may earn a small commission if you buy, at no extra cost to you. Prices and availability can change.{us_note}</p>
 <input class="search" id="q" type="search" inputmode="search" placeholder="Search a number or product…" aria-label="Search picks">
 <ul id="list">
 {items}

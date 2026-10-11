@@ -412,6 +412,7 @@ class InfoCopy:
     products: list[dict] = field(default_factory=list)
     hashtags: list[str] = field(default_factory=list)
     photo_credit: str = ""
+    affiliate: bool = False       # some shop link really earns a commission -> #ad + disclosure
 
     @property
     def has_links(self) -> bool:
@@ -536,15 +537,18 @@ def build_info_copy(topic: Topic, number: int, cfg, products: list[dict] | None 
                    f"It-products: {', '.join(d['hero_products'])}", f"Buzzwords: {', '.join(d['buzzwords'])}"]
     tags = _tags(cfg, topic)
     has_links = any(p["links"] for p in products)
+    from .disclosure import any_affiliate
+    affiliate = any(any_affiliate(p["links"], cfg) for p in products)
     tail = ["", "🔖 Save this for later · Follow @" + handle + " for daily K-beauty know-how"]
     if has_links:
-        tail.append(f"#ad | 🛍 Shop: link in bio → tap No.{number}. I may earn a small commission at no extra cost to you.")
+        tail.append(f"#ad | 🛍 Shop: link in bio → tap No.{number}. I may earn a small commission at no extra cost to you."
+                    if affiliate else f"🛍 Shop: link in bio → tap No.{number}")
     if topic.kind in ("skin", "hair", "routine", "myth", "combo", "season"):
         tail.append(NOT_ADVICE)
     tail += [".", " ".join(tags)]
     caption = _fit_caption(lines, tail)
     return InfoCopy(topic=topic, number=number, hook=hook, caption=caption, bullets=bullets,
-                    products=products, hashtags=tags)
+                    products=products, hashtags=tags, affiliate=affiliate)
 
 
 def _fit_caption(lines: list[str], tail: list[str], limit: int = 2200) -> str:

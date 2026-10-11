@@ -789,7 +789,8 @@ class Tests(unittest.TestCase):
         self.assertEqual([i.find("link").text for i in items],
                          ["https://seoulskin.github.io/p/002.html", "https://seoulskin.github.io/p/001.html"])
         self.assertEqual(items[1].find("enclosure").get("url"), "https://seoulskin.github.io/pins/001.jpg")
-        self.assertIn("#ad", items[0].find("description").text)
+        self.assertNotIn("#ad", items[0].find("description").text)   # plain Olive Young link: no commission, no #ad
+        self.assertIn("#ad", items[1].find("description").text)      # AliExpress affiliate link
         self.assertTrue((out / "pins" / "001.jpg").exists() and (out / "pins" / "002.jpg").exists())
         page1 = (out / "p" / "001.html").read_text()
         self.assertIn("s.click.aliexpress.com", page1)

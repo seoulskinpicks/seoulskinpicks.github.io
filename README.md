@@ -425,3 +425,7 @@ python -m unittest discover tests
 
 ## 성분 글 표지 사진
 성분(skin/hair) 글 표지는 사진이 있으면 사진 위에 제목을 얹어요. 사진은 ① `photos/library/<성분id>.jpg`(직접 올린 것·AI 이미지) → ② Pexels 무료 사진(`PEXELS_API_KEY` 시크릿이 있을 때, 사진가 크레딧을 캡션에 표기) 순서로 찾고, 없으면 기존 일러스트 표지를 써요. 자세한 내용은 `photos/library/README.md`.
+
+## #ad / 수수료 문구는 "진짜 제휴 링크"일 때만
+캡션·카드·핀터레스트 페이지의 "#ad … I may earn a small commission"은 수수료가 실제로 나는 링크가 있을 때만 붙어요 (`bot/disclosure.py`).
+알리 API 링크(s.click.aliexpress.com)는 제휴, 올리브영은 `config.toml [kbeauty]`에 제휴용 `oliveyoung_link_template` 이나 `oliveyoung_code` 를 넣으면 제휴로 쳐요. 그냥 상품 링크는 "Shop: link in bio"만 보여요.
