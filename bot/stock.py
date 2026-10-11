@@ -121,11 +121,15 @@ def add_credit(caption: str, photo: Photo | None, limit: int = 2200) -> str:
     return out if len(out) <= limit else caption
 
 
-def cover_bg(photo: Image.Image, size: tuple[int, int]) -> Image.Image:
+def cover_bg(photo: Image.Image, size: tuple[int, int], flat: int | None = None, mirror: bool = False) -> Image.Image:
     """Photo cropped to fill the card, darkened from the middle down so white text stays readable."""
     w, h = size
-    pic = ImageOps.fit(photo, size, Image.LANCZOS, centering=(0.5, 0.4))
+    if mirror:  # last card: same photo, flipped, so the pair does not look like a copy
+        photo = ImageOps.mirror(photo)
+    pic = ImageOps.fit(photo, size, Image.LANCZOS, centering=(0.5, 0.4 if flat is None else 0.65))
     def alpha(y: int) -> int:
+        if flat is not None:  # even dark veil: the whole card carries text
+            return flat
         f = y / h
         if f < 0.14:
             return int(150 - f / 0.14 * 100)          # soft top shade keeps the @handle readable

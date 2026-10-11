@@ -453,23 +453,32 @@ def ing_products(t: Theme, d: dict, products: list[dict], number: int, handle: s
     return c
 
 
-def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linked: bool) -> Card:
+def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linked: bool, photo=None) -> Card:
     c = Card(t, dark=True)
-    c.header(handle, idx, n)
-    c.d.ellipse((W - 420, -180, W + 220, 460), fill=rgb(t.accent))
-    c.d.ellipse((W - 330, -90, W + 130, 370), fill=rgb(t.dark))
+    if photo is not None:  # same photo as the cover, flipped and veiled dark
+        from .stock import cover_bg
+        c.img.paste(cover_bg(photo, (W, H), flat=190, mirror=True), (0, 0))
+        c.d = ImageDraw.Draw(c.img, "RGBA")
+        f = F(SANS_M, 28)
+        c.d.text((M, 78), f"@{handle}", font=f, fill=c.ink, anchor="la")
+        c.d.text((W - M, 78), f"{idx} / {n}", font=f, fill=c.ink, anchor="ra")
+        c.d.rounded_rectangle((M, 150, M + 96, 156), 3, fill=rgb(t.accent))
+    else:
+        c.header(handle, idx, n)
+        c.d.ellipse((W - 420, -180, W + 220, 460), fill=rgb(t.accent))
+        c.d.ellipse((W - 330, -90, W + 130, 370), fill=rgb(t.dark))
     y = 330
     c.d.text((M, y), "Save this", font=F(SERIF, 140), fill=c.ink, anchor="la")
     y += 180
     c.d.text((M, y), f"so you remember {d['name']}", font=fit(c.d, f"so you remember {d['name']}", SANS_M, W - 2 * M, 1, 46, 30)[0], fill=c.ink, anchor="la")
     y += 76
-    c.d.text((M, y), "next time you shop.", font=F(SANS, 40), fill=c.muted, anchor="la")
+    c.d.text((M, y), "next time you shop.", font=F(SANS, 40), fill=c.ink if photo is not None else c.muted, anchor="la")
     y += 120
     c.bookmark(M, y, 34, 46, c.ink)
     c.d.text((M + 60, y + 23), "Save  ·  Share with a friend", font=F(SANS_M, 36), fill=c.ink, anchor="lm")
     y += 110
     c.d.text((M, y), f"Follow @{handle}", font=F(SANS_B, 40), fill=c.ink, anchor="la")
-    c.d.text((M, y + 58), "for a K-beauty lesson every day", font=F(SANS, 34), fill=c.muted, anchor="la")
+    c.d.text((M, y + 58), "for a K-beauty lesson every day", font=F(SANS, 34), fill=c.ink if photo is not None else c.muted, anchor="la")
     y += 150
     if linked:
         label = f"Shop: link in bio → No.{number}"
@@ -478,7 +487,7 @@ def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linke
         c.d.text((M + 45, y + 48), label, font=fl, fill=rgb(t.on_accent), anchor="lm")
     disc = ("#ad · Affiliate links. I may earn a small commission at no extra cost to you. " if linked else "") + NOT_ADVICE
     f, lines, s = fit(c.d, disc, SANS, W - 2 * M, 2, 26, 21)
-    draw_lines(c.d, M, H - 196, lines, f, c.muted, int(s * 1.4))
+    draw_lines(c.d, M, H - 196, lines, f, c.ink if photo is not None else c.muted, int(s * 1.4))
     c.dots(idx, n)
     return c
 
@@ -505,7 +514,7 @@ def render_ingredient(topic: Topic, info: InfoCopy, number: int, handle: str, ph
         elif name == "where":
             out.append(ing_products(t, d, info.products, number, handle, idx, n))
         else:
-            out.append(ing_cta(t, d, number, handle, idx, n, info.has_links))
+            out.append(ing_cta(t, d, number, handle, idx, n, info.has_links, photo))
     return out
 
 
