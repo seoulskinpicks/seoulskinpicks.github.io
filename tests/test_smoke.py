@@ -226,6 +226,52 @@ class Tests(unittest.TestCase):
         self.assertEqual(st.pending()["number"], 1)
         self.assertEqual(len(st.posts), 1)
 
+    def test_error_answer_for_a_post_that_went_live_is_not_reposted(self):
+        cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])
+        holder = {}
+
+        class LiveButError(FakeIG):
+            def get(self, url, params=None, timeout=None):
+                if url.endswith("/17840000/media") and params and "caption" in params.get("fields", ""):
+                    self.calls.append(("GET", url, dict(params)))
+                    return FakeResp({"data": [{"id": "live1", "caption": holder["caption"], "timestamp": "2026-09-26T10:00:00+0000",
+                                               "permalink": "https://www.instagram.com/p/LIVE/", "media_product_type": "FEED"}]})
+                return super().get(url, params, timeout)
+
+            def post(self, url, data=None, timeout=None):
+                if url.endswith("/media_publish"):
+                    self.calls.append(("POST", url, dict(data or {})))
+                    return FakeResp({"error": {"message": "Application request limit reached", "code": 4, "error_subcode": 2207051}}, status=400)
+                return super().post(url, data, timeout)
+
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_SECRET_123", "IG_USER_ID": "17840000"}):
+            cmd_prepare(Namespace(out=str(self.tmp / "site"), dry_run=False, source=None, date="2026-09-26"), cfg=cfg)
+            holder["caption"] = State(cfg.state_file).pending()["caption"]
+            rc = cmd_publish(Namespace(site_url="https://u.github.io/r/"), cfg=cfg, session=LiveButError(), sleep=lambda s: None)
+        self.assertEqual(rc, 0)
+        st = State(cfg.state_file)
+        self.assertIsNone(st.pending())
+        self.assertEqual(st.posts[0]["permalink"], "https://www.instagram.com/p/LIVE/")
+
+    def test_already_live_post_is_adopted_without_posting_again(self):
+        cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])
+        holder = {}
+
+        class AlreadyLive(FakeIG):
+            def get(self, url, params=None, timeout=None):
+                if url.endswith("/17840000/media") and params and "caption" in params.get("fields", ""):
+                    return FakeResp({"data": [{"id": "live1", "caption": holder["caption"], "timestamp": "2026-09-26T10:00:00+0000",
+                                               "permalink": "https://www.instagram.com/p/LIVE/", "media_product_type": "FEED"}]})
+                return super().get(url, params, timeout)
+
+        ig = AlreadyLive()
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_SECRET_123", "IG_USER_ID": "17840000"}):
+            cmd_prepare(Namespace(out=str(self.tmp / "site"), dry_run=False, source=None, date="2026-09-26"), cfg=cfg)
+            holder["caption"] = State(cfg.state_file).pending()["caption"]
+            rc = cmd_publish(Namespace(site_url="https://u.github.io/r/"), cfg=cfg, session=ig, sleep=lambda s: None)
+        self.assertEqual(rc, 0)
+        self.assertEqual([c for c in ig.calls if c[0] == "POST"], [])
+
     def test_dry_run_does_not_touch_state(self):
         cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])
         cmd_prepare(Namespace(out=str(self.tmp / "site"), dry_run=True, source=None, date="2026-09-26"), cfg=cfg)

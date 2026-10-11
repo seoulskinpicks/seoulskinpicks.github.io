@@ -117,6 +117,11 @@ class Instagram:
         log(f"릴스 게시 완료: {permalink or media_id}")
         return {"media_id": media_id, "permalink": permalink}
 
+    def recent_media(self, ig_id: str, limit: int = 15) -> list[dict]:
+        """Newest media first: id, caption, permalink, timestamp, media_product_type (1 API call)."""
+        data = self._req("GET", f"{ig_id}/media", fields="id,caption,permalink,timestamp,media_product_type", limit=limit)
+        return data.get("data", [])
+
     def refresh_token(self) -> dict:
         """Extends a long-lived Instagram token by another 60 days."""
         r = self.http.get(

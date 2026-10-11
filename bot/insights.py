@@ -58,7 +58,7 @@ def _metrics(ig: Instagram, path: str, names: list[str], **params) -> dict:
 
 
 def recent_media(ig: Instagram, ig_id: str, days: int, limit: int = 50) -> list[dict]:
-    data = ig._req("GET", f"{ig_id}/media", fields="id,media_type,media_product_type,permalink,timestamp", limit=limit)
+    data = ig._req("GET", f"{ig_id}/media", fields="id,media_type,media_product_type,permalink,timestamp,caption", limit=limit)
     since = datetime.now(timezone.utc) - timedelta(days=days)
     out = []
     for m in data.get("data", []):
@@ -82,6 +82,7 @@ def collect(ig: Instagram, ig_id: str, today: Date, days: int = 30) -> dict:
         reel = m.get("media_product_type") == "REELS"
         media.append({"id": m["id"], "type": "reel" if reel else ("carousel" if m.get("media_type") == "CAROUSEL_ALBUM" else "post"),
                       "permalink": m.get("permalink", ""), "posted": m.get("timestamp", "")[:10],
+                      "ts": m.get("timestamp", ""), "head": (m.get("caption") or "")[:70],
                       "metrics": _metrics(ig, f"{m['id']}/insights", REEL_METRICS if reel else FEED_METRICS)})
     return {"followers": prof.get("followers_count"), "media_count": prof.get("media_count"),
             "account": account, "media": media}
@@ -107,7 +108,7 @@ def save(path: Path, snap: dict, today: Date, numbers: dict) -> dict:
                             "last_7_days": snap["account"]}
     for m in snap["media"]:
         rec = hist["media"].setdefault(m["id"], {})
-        rec.update(type=m["type"], permalink=m["permalink"], posted=m["posted"],
+        rec.update(type=m["type"], permalink=m["permalink"], posted=m["posted"], ts=m.get("ts", ""), head=m.get("head", ""),
                    number=numbers.get(m["id"]) or numbers.get(m["permalink"]))
         rec.setdefault("history", {})[iso] = m["metrics"]
     cutoff = (today - timedelta(days=KEEP_DAYS)).isoformat()

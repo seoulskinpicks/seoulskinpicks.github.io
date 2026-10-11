@@ -14,6 +14,7 @@ import copy
 import os
 import shutil
 import sys
+import time
 from datetime import date as Date
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -311,11 +312,17 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
     kw = {"sleep": sleep} if sleep else {}
     reel = post.get("reel") or {}
     reel_done = reel.get("status") == "published"
+    ig = ig_id = None
     try:
         wait_for_urls(urls, session=session, **kw)
         ig = Instagram(cfg.ig_token, cfg.instagram.get("api_host", "graph.instagram.com"),
                        cfg.instagram.get("api_version", "v24.0"), session=session, **kw)
         ig_id = cfg.ig_user_id or ig.account_id()[0]
+        live = find_live(ig, ig_id, post)
+        if live:  # an earlier run already got it online; do not post it a second time
+            _adopt(post, live, cfg, state)
+            add_summary(f"### ✅ No.{post['number']} 은 이미 인스타에 올라가 있어서 다시 올리지 않았어요\n{live['permalink'] or live['media_id']}")
+            return 0
         if reel.get("mode") == "auto" and not reel_done:
             reel_done = _publish_reel(cfg, ig, ig_id, post, site, state, session, kw)
         if reel_done and not _reels_settings(cfg)["twin_card"]:
@@ -330,6 +337,11 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
         res = ig.publish_carousel(ig_id, urls, post["caption"])
     except Exception as exc:
         msg = scrub(str(exc), cfg.ig_token)
+        live = find_live(ig, ig_id, post, sleep=sleep, wait=20) if ig is not None and ig_id else None
+        if live:  # error answer, but the post is online
+            _adopt(post, live, cfg, state)
+            add_summary(f"### ⚠️ 오류 응답이 왔지만 글은 올라가 있어요 (중복 게시 방지)\n`{msg}`\n{live['permalink'] or live['media_id']}")
+            return 0
         if reel_done:  # the Reel is live, so the topic counts as posted; only the card version is missing
             post.update(status="published", carousel_error=msg[:300],
                         published_at=datetime.now(ZoneInfo(cfg.timezone)).isoformat(timespec="minutes"))
@@ -349,6 +361,41 @@ def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
     return 0
 
 
+def _head(text: str) -> str:
+    return " ".join((text or "").split())[:60]
+
+
+def find_live(ig, ig_id: str, post: dict, sleep=None, wait: float = 0) -> dict | None:
+    """Is this post already on Instagram? (Instagram can answer a publish with an error even though it went live,
+    and re-posting then makes duplicates.) Matches the newest feed/reel with the same caption opening."""
+    if wait:
+        (sleep or time.sleep)(wait)
+    try:
+        media = ig.recent_media(ig_id)
+    except Exception:
+        return None
+    head = _head(post.get("caption", ""))
+    if not head:
+        return None
+    for m in media:
+        if _head(m.get("caption", "")) == head:
+            return {"media_id": m["id"], "permalink": m.get("permalink", ""), "reel": m.get("media_product_type") == "REELS"}
+    return None
+
+
+def _adopt(post: dict, live: dict, cfg, state) -> None:
+    """Record a post that turned out to be live already."""
+    post.update(status="published", ig_media_id=live["media_id"], permalink=live["permalink"],
+                published_at=datetime.now(ZoneInfo(cfg.timezone)).isoformat(timespec="minutes"))
+    post.pop("error", None)
+    if live["reel"]:
+        post["card_skipped"] = True
+        reel = post.setdefault("reel", {})
+        reel.update(status="published", media_id=live["media_id"], permalink=live["permalink"])
+        reel.pop("error", None)
+    state.save()
+
+
 def _reels_settings(cfg) -> dict:
     from .reels import settings
     return settings(cfg)
@@ -364,6 +411,13 @@ def _publish_reel(cfg, ig, ig_id: str, post: dict, site: str, state, session, kw
                               cover_url=site + reel["cover"], audio_name=settings(cfg)["audio_name"])
     except Exception as exc:
         msg = scrub(str(exc), cfg.ig_token)
+        live = find_live(ig, ig_id, post, sleep=kw.get("sleep"), wait=20)
+        if live and live["reel"]:  # error answer, but the Reel is online
+            reel.update(status="published", media_id=live["media_id"], permalink=live["permalink"])
+            reel.pop("error", None)
+            state.save()
+            add_summary(f"### ⚠️ 릴스는 오류 응답이 왔지만 올라가 있어요\n`{msg}`\n{live['permalink'] or live['media_id']}")
+            return True
         reel.update(status="failed", error=msg[:300])
         state.save()
         warn(f"릴스 게시 실패 (카드뉴스는 계속 올려요): {msg}")
