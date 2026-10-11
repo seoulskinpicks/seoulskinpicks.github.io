@@ -270,7 +270,39 @@ class Tests(unittest.TestCase):
             holder["caption"] = State(cfg.state_file).pending()["caption"]
             rc = cmd_publish(Namespace(site_url="https://u.github.io/r/"), cfg=cfg, session=ig, sleep=lambda s: None)
         self.assertEqual(rc, 0)
-        self.assertEqual([c for c in ig.calls if c[0] == "POST"], [])
+        # nothing is posted again; only the story for the (already live) post may go out
+        self.assertEqual([c[2].get("media_type") for c in ig.calls if c[0] == "POST" and c[1].endswith("/media")], ["STORIES"])
+
+    def test_story_failure_never_changes_the_result(self):
+        cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])
+
+        class StoryFails(FakeIG):
+            def post(self, url, data=None, timeout=None):
+                if (data or {}).get("media_type") == "STORIES":
+                    self.calls.append(("POST", url, dict(data)))
+                    return FakeResp({"error": {"message": "story rejected", "code": 100}}, status=400)
+                return super().post(url, data, timeout)
+
+        ig = StoryFails()
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_SECRET_123", "IG_USER_ID": "17840000"}):
+            cmd_prepare(Namespace(out=str(self.tmp / "site"), dry_run=False, source=None, date="2026-09-26"), cfg=cfg)
+            rc = cmd_publish(Namespace(site_url="https://u.github.io/r/"), cfg=cfg, session=ig, sleep=lambda s: None)
+        self.assertEqual(rc, 0)
+        post = State(cfg.state_file).posts[-1]
+        self.assertEqual(post["status"], "published")
+        self.assertEqual(post["story"]["status"], "failed")
+        self.assertTrue((self.tmp / "site" / post["story"]["image"]).exists())
+
+    def test_stories_can_be_turned_off(self):
+        cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])
+        cfg.raw["stories"] = {"enabled": False}
+        ig = FakeIG()
+        with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_SECRET_123", "IG_USER_ID": "17840000"}):
+            cmd_prepare(Namespace(out=str(self.tmp / "site"), dry_run=False, source=None, date="2026-09-26"), cfg=cfg)
+            rc = cmd_publish(Namespace(site_url="https://u.github.io/r/"), cfg=cfg, session=ig, sleep=lambda s: None)
+        self.assertEqual(rc, 0)
+        self.assertNotIn("STORIES", [c[2].get("media_type") for c in ig.calls if c[0] == "POST"])
+        self.assertNotIn("story", State(cfg.state_file).posts[-1])
 
     def test_dry_run_does_not_touch_state(self):
         cfg = make_cfg(self.tmp, ["Hanbit Lab,Rice Water Glow Toner,toner,https://shop.example.org/1,,,,,"])

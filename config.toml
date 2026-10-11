@@ -150,3 +150,7 @@ api_version = "v24.0"
 #  1) photos/library/<성분id>.jpg 가 있으면 그걸 쓰고 (직접 올린 사진·AI 이미지)
 #  2) 없으면 PEXELS_API_KEY 시크릿이 있을 때 Pexels 무료 사진을 가져와요 (사진가 크레딧을 캡션에 적어요)
 stock = true
+
+[stories]
+# 글이 올라간 직후, 그 글의 표지로 만든 스토리(9:16)를 자동으로 올려요. (API로는 스티커·링크를 못 붙여요)
+enabled = true

@@ -374,7 +374,7 @@ class ReelTests(unittest.TestCase):
         with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_X"}):
             rc = cmd_publish(Namespace(site_url="https://u.github.io/repo"), cfg=cfg, session=ig, sleep=lambda s: None)
         self.assertEqual(rc, 0)
-        creates = [c[2] for c in ig.calls if c[0] == "POST" and c[1].endswith("/media")]
+        creates = [c[2] for c in ig.calls if c[0] == "POST" and c[1].endswith("/media") and c[2].get("media_type") != "STORIES"]
         self.assertEqual(creates[0]["media_type"], "REELS")  # Reel first ...
         self.assertTrue(creates[0]["video_url"].endswith(rec["video"]))
         self.assertEqual(creates[0]["share_to_feed"], "true")
@@ -391,13 +391,17 @@ class ReelTests(unittest.TestCase):
         with mock.patch.dict("os.environ", {"IG_ACCESS_TOKEN": "TOKEN_X"}):
             rc = cmd_publish(Namespace(site_url="https://u.github.io/repo"), cfg=cfg, session=ig, sleep=lambda s: None)
         self.assertEqual(rc, 0)
-        creates = [c[2] for c in ig.calls if c[0] == "POST" and c[1].endswith("/media")]
+        creates = [c[2] for c in ig.calls if c[0] == "POST" and c[1].endswith("/media") and c[2].get("media_type") != "STORIES"]
         self.assertEqual([c["media_type"] for c in creates], ["REELS"])   # no identical second post
         self.assertNotIn("card version", creates[0]["caption"])
         last = State(cfg.state_file).posts[-1]
         self.assertEqual(last["status"], "published")
         self.assertTrue(last["card_skipped"])
         self.assertTrue(last["permalink"])
+        stories = [c[2] for c in ig.calls if c[0] == "POST" and c[2].get("media_type") == "STORIES"]
+        self.assertEqual(len(stories), 1)                                  # one story for the post
+        self.assertTrue(stories[0]["image_url"].endswith(last["story"]["image"]))
+        self.assertEqual(last["story"]["status"], "published")
 
     def test_failed_reel_does_not_block_cards(self):
         cfg, out, post = self._prepare("auto")

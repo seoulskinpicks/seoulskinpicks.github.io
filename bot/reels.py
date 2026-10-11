@@ -71,7 +71,7 @@ def pick_track(number: int) -> Path | None:
     return ts[number % len(ts)] if ts else None
 
 
-def frame(slide: Path, out: Path, handle: str = "") -> Path:
+def frame(slide: Path, out: Path, handle: str = "", scale: float = CARD_SCALE, top: int = CARD_TOP) -> Path:
     from PIL import ImageDraw
     card = Image.open(slide).convert("RGB")
     base = card.getpixel((8, 8))
@@ -79,9 +79,9 @@ def frame(slide: Path, out: Path, handle: str = "") -> Path:
     bg = Image.new("RGB", (RW, RH), base)
     grad = Image.linear_gradient("L").resize((RW, RH))
     bg = Image.composite(Image.new("RGB", (RW, RH), darker), bg, grad)
-    w, h = int(card.width * CARD_SCALE), int(card.height * CARD_SCALE)
+    w, h = int(card.width * scale), int(card.height * scale)
     small = card.resize((w, h), Image.LANCZOS)
-    x, y = (RW - w) // 2, CARD_TOP
+    x, y = (RW - w) // 2, top
     shadow = Image.new("L", (RW, RH), 0)
     ImageDraw.Draw(shadow).rounded_rectangle((x, y + 18, x + w, y + h + 18), 36, fill=70)
     bg.paste((0, 0, 0), (0, 0), shadow.filter(ImageFilter.GaussianBlur(28)))

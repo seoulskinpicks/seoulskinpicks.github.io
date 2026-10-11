@@ -142,6 +142,49 @@ def _make_product(args, cfg, state, today: Date, number: int, out: Path, lib, al
     return None
 
 
+def _make_story(cfg, out: Path, post: dict) -> None:
+    """A 9:16 story image from the post's cover (published right after the post). Never blocks the post."""
+    from . import stories
+    if not stories.enabled(cfg):
+        return
+    try:
+        cover = out / "posts" / post["folder"] / "1.jpg"
+        stories.make_story(cover, out / "stories" / f"{post['folder']}.jpg", cfg.handle)
+        post["story"] = {"image": f"stories/{post['folder']}.jpg", "status": "prepared"}
+    except Exception as exc:
+        warn(f"스토리 이미지를 만들지 못했어요 (게시는 계속): {exc}")
+
+
+def _publish_story(args, cfg, session, sleep) -> None:
+    """After the post is live: the story for it (once). A failed story is only noted, never retried or blocking."""
+    from . import stories
+    if not stories.enabled(cfg) or not cfg.ig_token:
+        return
+    state = State(cfg.state_file)
+    post = next((p for p in reversed(state.posts) if p.get("status") == "published"
+                 and (p.get("story") or {}).get("status") == "prepared"), None)
+    if post is None:
+        return
+    story = post["story"]
+    site = args.site_url.rstrip("/") + "/"
+    kw = {"sleep": sleep} if sleep else {}
+    try:
+        wait_for_urls([site + story["image"]], session=session, **kw)
+        ig = Instagram(cfg.ig_token, cfg.instagram.get("api_host", "graph.instagram.com"),
+                       cfg.instagram.get("api_version", "v24.0"), session=session, **kw)
+        ig_id = cfg.ig_user_id or ig.account_id()[0]
+        res = ig.publish_story(ig_id, site + story["image"])
+        story.update(status="published", media_id=res["media_id"])
+        story.pop("error", None)
+        add_summary(f"### 📱 스토리도 올렸어요 (No.{post['number']})")
+    except Exception as exc:
+        msg = scrub(str(exc), cfg.ig_token)
+        story.update(status="failed", error=msg[:300])
+        warn(f"스토리 게시 실패 (글은 올라갔어요): {msg}")
+        add_summary(f"### ⚠️ 스토리 게시 실패 (글은 정상)\n`{msg}`")
+    state.save()
+
+
 def _reel_hook(made: dict, cfg, out: Path, post: dict) -> Path | None:
     """'Myth or fact?' opener card for ingredient Reels (None for other kinds or if anything goes wrong)."""
     topic = made.get("topic")
@@ -265,6 +308,7 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
             reel_note = (f"- 릴스: {rec['seconds']}초 · 음악 {rec['track'] or '없음'} → 릴스 먼저, 이어서 카드뉴스 게시\n"
                          if rec["mode"] == "auto" else
                          f"- 릴스(수동): 음악 없는 영상 → {site + '/' if site else ''}{rec['video']} 를 받아 인스타 앱에서 음악을 붙여 올려주세요\n")
+    _make_story(cfg, out, post)
     build_link_page(state.published + [post], cfg, out, updated=today.isoformat())
     build_pinterest(state.published + [post], cfg, out, _site_url(cfg),
                     pins_dir=None if args.dry_run else cfg.root / "pins", lib=lib)
@@ -299,6 +343,15 @@ def _with(state, post):
 
 def cmd_publish(args, cfg=None, session=None, sleep=None) -> int:
     cfg = cfg or load_config()
+    rc = _publish_post(args, cfg, session, sleep)
+    try:
+        _publish_story(args, cfg, session, sleep)
+    except Exception as exc:  # the story is a bonus
+        warn(f"스토리 단계에서 오류 (글은 영향 없음): {exc}")
+    return rc
+
+
+def _publish_post(args, cfg, session=None, sleep=None) -> int:
     state = State(cfg.state_file)
     post = state.pending()
     if not post:

@@ -117,6 +117,14 @@ class Instagram:
         log(f"릴스 게시 완료: {permalink or media_id}")
         return {"media_id": media_id, "permalink": permalink}
 
+    def publish_story(self, ig_id: str, image_url: str) -> dict:
+        """One image Story (the API cannot add stickers or links to it)."""
+        container = self._req("POST", f"{ig_id}/media", media_type="STORIES", image_url=image_url)
+        self.wait_ready(container["id"])
+        published = self._req("POST", f"{ig_id}/media_publish", creation_id=container["id"])
+        log(f"스토리 게시 완료: {published['id']}")
+        return {"media_id": published["id"]}
+
     def recent_media(self, ig_id: str, limit: int = 15) -> list[dict]:
         """Newest media first: id, caption, permalink, timestamp, media_product_type (1 API call)."""
         data = self._req("GET", f"{ig_id}/media", fields="id,caption,permalink,timestamp,media_product_type", limit=limit)
