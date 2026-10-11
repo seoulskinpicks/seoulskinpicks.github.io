@@ -26,6 +26,7 @@ CARD_SCALE = 0.9
 CARD_TOP = 250          # keeps the card clear of Instagram's top bar and the caption area at the bottom
 FPS = 30
 TRANSITION = 0.45
+HOOK_SECONDS = 2.6      # the 'myth or fact?' opener of ingredient Reels
 DAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
 
 
@@ -93,7 +94,7 @@ def frame(slide: Path, out: Path, handle: str = "") -> Path:
 
 
 def build_reel(slides: list[Path], out_video: Path, cover_out: Path, seconds: float = 3.6,
-               music: Path | None = None, ffmpeg: str | None = None) -> float:
+               music: Path | None = None, ffmpeg: str | None = None, lead: float | None = None) -> float:
     """Writes the MP4 (H.264 + AAC, 1080x1920, 30 fps) and a JPG cover. Returns the duration in seconds."""
     ff = ffmpeg or ffmpeg_path()
     work = out_video.parent / f".{out_video.stem}_frames"
@@ -102,6 +103,8 @@ def build_reel(slides: list[Path], out_video: Path, cover_out: Path, seconds: fl
     n = len(frames)
     first, last = seconds + 0.6, seconds + 0.9  # a beat longer on the cover and the last card
     lengths = [first] + [seconds] * (n - 2) + [last] if n > 1 else [first + 1]
+    if lead and n > 2:  # a short hook card in front: the original cover keeps its longer first beat
+        lengths = [lead, first] + [seconds] * (n - 3) + [last]
     total = sum(lengths) - TRANSITION * (n - 1)
     cmd = [ff, "-y", "-loglevel", "error"]
     for f, ln in zip(frames, lengths):
@@ -131,7 +134,8 @@ def build_reel(slides: list[Path], out_video: Path, cover_out: Path, seconds: fl
     return round(total, 2)
 
 
-def make_for_post(cfg, post: dict, slides: list[Path], out: Path, manual: bool | None = None) -> dict | None:
+def make_for_post(cfg, post: dict, slides: list[Path], out: Path, manual: bool | None = None,
+                  hook: Path | None = None) -> dict | None:
     """Builds site/reels/NNN.mp4 (+ cover) for a prepared post and returns the record to keep on the post."""
     s = settings(cfg)
     mode = "manual" if manual else (s["mode"] if s["mode"] != "off" else "auto")
@@ -142,7 +146,8 @@ def make_for_post(cfg, post: dict, slides: list[Path], out: Path, manual: bool |
     video = out / "reels" / f"{folder}.mp4"
     cover = out / "reels" / f"{folder}.jpg"
     try:
-        secs = build_reel(slides, video, cover, s["seconds"], music)
+        secs = build_reel(([hook] if hook else []) + list(slides), video, cover, s["seconds"], music,
+                          lead=HOOK_SECONDS if hook else None)
     except Exception as exc:
         err = getattr(exc, "stderr", b"") or b""
         warn(f"릴스 영상을 만들지 못했어요 (카드뉴스는 그대로 올려요): {exc} {err[-300:].decode(errors='ignore')}")

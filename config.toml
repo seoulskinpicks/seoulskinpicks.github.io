@@ -41,6 +41,7 @@ words    = { per_month = 1, gap = 20 }       # K뷰티 단어 (한글 + 읽는 �
 mode = "auto"
 days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]   # 릴스 올리는 요일 (밤 게시 때만. 아침 게시는 카드뉴스)
 twin_card = false
+hook_card = true      # 성분 릴스 맨 앞에 "Myth or fact?" 2.6초 카드 (첫 화면에서 멈추게)
 seconds_per_slide = 4.2          # 카드 한 장당 보여주는 시간 (초)
 audio_name = "Seoul Skin Picks · original sound"   # 릴스 소리 이름 (인스타에 표시)
 

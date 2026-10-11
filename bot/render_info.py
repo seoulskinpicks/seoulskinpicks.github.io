@@ -492,6 +492,34 @@ def ing_cta(t: Theme, d: dict, number: int, handle: str, idx: int, n: int, linke
     return c
 
 
+def reel_hook_card(topic: Topic, number: int, handle: str, photo=None) -> Card | None:
+    """First 2 seconds of an ingredient Reel: the 'myth' as a question, answered on the next cards."""
+    d = topic.data
+    myth = (d.get("myth") or "").strip()
+    if not myth:
+        return None
+    t = ingredient_theme(d)
+    c = Card(t, dark=True)
+    if photo is not None:
+        from .stock import cover_bg
+        c.img.paste(cover_bg(photo, (W, H), flat=170), (0, 0))
+        c.d = ImageDraw.Draw(c.img, "RGBA")
+    f = F(SANS_M, 28)
+    c.d.text((M, 78), f"@{handle}", font=f, fill=c.ink, anchor="la")
+    y = 250
+    _, ph = c.pill(M, y, "MYTH OR FACT?", F(SANS_SB, 28), rgb(t.on_accent), rgb(t.accent), padx=26, pady=16)
+    y += ph + 70
+    limit = H - 420
+    for size in (104, 96, 88, 80, 72, 64, 56):
+        fq, lines, ssz = fit(c.d, f"\u201c{myth}\u201d", SERIF_I, W - 2 * M, 7, size, size)
+        if y + len(lines) * int(ssz * 1.18) <= limit:
+            break
+    y = draw_lines(c.d, M, y, lines, fq, c.ink, int(ssz * 1.18))
+    c.d.text((M, H - 250), f"{d['name']}", font=F(SERIF, 64), fill=rgb(t.accent) if photo is None else c.ink, anchor="ls")
+    _swipe(c, "Watch for the answer", y=H - 150)
+    return c
+
+
 def render_ingredient(topic: Topic, info: InfoCopy, number: int, handle: str, photo=None) -> list[Card]:
     d = topic.data
     t = ingredient_theme(d)

@@ -141,6 +141,24 @@ def _make_product(args, cfg, state, today: Date, number: int, out: Path, lib, al
     return None
 
 
+def _reel_hook(made: dict, cfg, out: Path, post: dict) -> Path | None:
+    """'Myth or fact?' opener card for ingredient Reels (None for other kinds or if anything goes wrong)."""
+    topic = made.get("topic")
+    if topic is None or topic.kind not in ("skin", "hair") or not bool(cfg.raw.get("reels", {}).get("hook_card", True)):
+        return None
+    try:
+        from .render_info import reel_hook_card
+        card = reel_hook_card(topic, post["number"], cfg.handle, made.get("photo"))
+        if card is None:
+            return None
+        path = out / "reels" / f"{post['folder']}_hook.jpg"
+        card.save(path)
+        return path
+    except Exception as exc:
+        warn(f"릴스 첫 화면 카드를 만들지 못했어요 (기본 구성으로 계속): {exc}")
+        return None
+
+
 def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path, lib, ali_client=None) -> dict | None:
     from .render_info import render_info_pin, render_info_post
 
@@ -169,7 +187,8 @@ def _make_info(step: str, args, cfg, state, today: Date, number: int, out: Path,
     post = editorial.post_record(info, number, today, len(paths))
     shop = ", ".join(f"{p['brand']} {p['name']}" + ("" if p["links"] else " (링크 없음)") for p in info.products)
     return {
-        "post": post, "kind": editorial.describe(topic), "cand": None,
+        "post": post, "kind": editorial.describe(topic), "cand": None, "topic": topic,
+        "photo": photo.image if photo else None,
         "summary": (f"- 주제: **{topic.title}**\n" + (f"- 소개한 제품: {shop}\n" if shop else "")
                     + (f"- 표지 사진: {photo.credit or '직접 넣은 사진'}\n" if photo else "")
                     + "- 내용: content/ 폴더의 조사 자료 (AI가 지어내지 않음)\n"),
@@ -237,7 +256,8 @@ def cmd_prepare(args, cfg=None, ali_client=None) -> int:
         p.get("date") == today.isoformat() and (p.get("reel") or {}).get("status") == "published" for p in state.published)
     if reel_ok and reels.is_reel_day(cfg, today, getattr(args, "reel", None)):
         slides = sorted((out / "posts" / post["folder"]).glob("*.jpg"), key=lambda p: int(p.stem))
-        rec = reels.make_for_post(cfg, post, slides, out, manual=reels.settings(cfg)["mode"] == "manual")
+        hook = _reel_hook(made, cfg, out, post)
+        rec = reels.make_for_post(cfg, post, slides, out, manual=reels.settings(cfg)["mode"] == "manual", hook=hook)
         if rec:
             post["reel"] = rec
             site = _site_url(cfg).rstrip("/")

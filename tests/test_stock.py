@@ -69,3 +69,29 @@ def test_credit_goes_above_hashtags_and_respects_limit():
     assert stock.add_credit("body\n.\n#x", p) == "body\n📷 Photo: A / Pexels\n.\n#x"
     long = "a" * 2200
     assert stock.add_credit(long, p) == long
+
+
+def test_reel_hook_card_uses_the_myth_and_skips_topics_without_one():
+    from bot import editorial
+    from bot.config import load_config
+    from bot.render_info import reel_hook_card
+
+    cfg = load_config()
+    lib = editorial.load_library(cfg)
+    topic = editorial.all_topics("skin", lib)[0]
+    assert reel_hook_card(topic, 1, "x") is not None
+    topic.data = dict(topic.data, myth="")
+    assert reel_hook_card(topic, 1, "x") is None
+
+
+def test_build_reel_with_hook_lead_adds_a_short_first_card(tmp_path):
+    from bot import reels
+
+    paths = []
+    for i in range(4):
+        p = tmp_path / f"{i}.jpg"
+        Image.new("RGB", (1080, 1350), (40 * i, 80, 120)).save(p)
+        paths.append(p)
+    plain = reels.build_reel(paths[1:], tmp_path / "a.mp4", tmp_path / "a.jpg", 1.0)
+    hooked = reels.build_reel(paths, tmp_path / "b.mp4", tmp_path / "b.jpg", 1.0, lead=reels.HOOK_SECONDS)
+    assert hooked > plain
