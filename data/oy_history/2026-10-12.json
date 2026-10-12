@@ -1,0 +1,1205 @@
+{
+"date": "2026-10-12",
+"items": [
+{
+"brand": "Dr. Althea",
+"product": "345 Relief Cream 50ml",
+"prdt_no": "GA260136559",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559",
+"list": "Skincare",
+"rank": 1,
+"store_rating": 4.9,
+"review_count": 1364
+},
+{
+"brand": "Centellian24",
+"product": "Madeca Cream Time Reverse 50ml Double Pack",
+"prdt_no": "GA240423317",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240423317",
+"list": "Skincare",
+"rank": 2,
+"store_rating": 4.8,
+"review_count": 2438
+},
+{
+"brand": "celimax",
+"product": "The Vita A Retinal Shot Tightening Booster 15ml",
+"prdt_no": "GA260339051",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260339051",
+"list": "Skincare",
+"rank": 3,
+"store_rating": 4.7,
+"review_count": 1093
+},
+{
+"brand": "AESTURA",
+"product": "Atobarrier 365 Cream 80mL",
+"prdt_no": "GA240121573",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240121573",
+"list": "Skincare",
+"rank": 4,
+"store_rating": 4.9,
+"review_count": 1377
+},
+{
+"brand": "Anua",
+"product": "PDRN Hyaluronic Acid Hydrating Capsule Mist 100ml Double Pack",
+"prdt_no": "GA260237304",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237304",
+"list": "Skincare",
+"rank": 5,
+"store_rating": 4.8,
+"review_count": 684
+},
+{
+"brand": "ilso",
+"product": "Super Melting Sebum Softener 150ml",
+"prdt_no": "GA250530726",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250530726",
+"list": "Skincare",
+"rank": 6,
+"store_rating": 4.7,
+"review_count": 1375
+},
+{
+"brand": "Centellian24",
+"product": "Madeca Cream Time Reverse 50ml",
+"prdt_no": "GA260136971",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136971",
+"list": "Skincare",
+"rank": 7,
+"store_rating": 4.8,
+"review_count": 608
+},
+{
+"brand": "Anua",
+"product": "PDRN Hyaluronic Capsule 100 Serum 30ml Refill",
+"prdt_no": "GA250329148",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250329148",
+"list": "Skincare",
+"rank": 8,
+"store_rating": 4.8,
+"review_count": 3448
+},
+{
+"brand": "Torriden",
+"product": "Dive In Low Molecular Hyaluronic Acid Serum 50ml Double/Refill",
+"prdt_no": "GA260539969",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969",
+"list": "Skincare",
+"rank": 9,
+"store_rating": 4.9,
+"review_count": 668
+},
+{
+"brand": "Anua",
+"product": "PDRN Hyaluronic Acid 100 Moisturizing Cream 60ml",
+"prdt_no": "GA250732564",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250732564",
+"list": "Skincare",
+"rank": 10,
+"store_rating": 4.8,
+"review_count": 863
+},
+{
+"brand": "d'Alba",
+"product": "White Truffle First Spray Serum Peptide 100mL",
+"prdt_no": "GA260842596",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842596",
+"list": "Skincare",
+"rank": 11,
+"store_rating": 4.9,
+"review_count": 103
+},
+{
+"brand": "medicube",
+"product": "PDRN Pink Peptide Ampoule 30ml",
+"prdt_no": "GA260842693",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842693",
+"list": "Skincare",
+"rank": 12,
+"store_rating": 4.9,
+"review_count": 53
+},
+{
+"brand": "AESTURA",
+"product": "Atobarrier 365 Hydro Soothing Cream 80ml",
+"prdt_no": "GA260439765",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439765",
+"list": "Skincare",
+"rank": 13,
+"store_rating": 4.9,
+"review_count": 94
+},
+{
+"brand": "S.NATURE",
+"product": "Aqua Squalane Moisturizing Cream 60ml",
+"prdt_no": "GA231121124",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
+"list": "Skincare",
+"rank": 14,
+"store_rating": 4.8,
+"review_count": 1630
+},
+{
+"brand": "Anua",
+"product": "PDRN Hyaluronic Capsule 100 Serum 30ml",
+"prdt_no": "GA260439734",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439734",
+"list": "Skincare",
+"rank": 15,
+"store_rating": 4.8,
+"review_count": 382
+},
+{
+"brand": "Anua",
+"product": "Niacinamide 10 TXA 4 Serum 30ml Refill",
+"prdt_no": "GA260439574",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439574",
+"list": "Skincare",
+"rank": 16,
+"store_rating": 4.8,
+"review_count": 229
+},
+{
+"brand": "BIOHEAL BOH",
+"product": "PANTHECELL Repair Cica Cream Mist",
+"prdt_no": "GA260540598",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540598",
+"list": "Skincare",
+"rank": 17,
+"store_rating": 4.8,
+"review_count": 143
+},
+{
+"brand": "Anua",
+"product": "Niacinamide 10 TXA 4 Dark Spot Correcting Serum 30ml",
+"prdt_no": "GA250530674",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250530674",
+"list": "Skincare",
+"rank": 18,
+"store_rating": 4.7,
+"review_count": 1571
+},
+{
+"brand": "Anua",
+"product": "PDRN Hyaluronic Acid 100 Moisturizing Cream 60ml",
+"prdt_no": "GA250329147",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250329147",
+"list": "Skincare",
+"rank": 19,
+"store_rating": 4.8,
+"review_count": 866
+},
+{
+"brand": "Torriden",
+"product": "Dive In Low Molecular Hyaluronic Acid Serum 50ml",
+"prdt_no": "GA260640905",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260640905",
+"list": "Skincare",
+"rank": 20,
+"store_rating": 4.8,
+"review_count": 77
+},
+{
+"brand": "Anua",
+"product": "Heartleaf 77 Hyaluron Soothing Toner 350ml Refill",
+"prdt_no": "GA260237924",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237924",
+"list": "Skincare",
+"rank": 21,
+"store_rating": 4.7,
+"review_count": 281
+},
+{
+"brand": "VT",
+"product": "PDRN Reedle Shot Firming Eye Cream",
+"prdt_no": "GA250832756",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250832756",
+"list": "Skincare",
+"rank": 22,
+"store_rating": 4.8,
+"review_count": 632
+},
+{
+"brand": "BANILA CO",
+"product": "Clean It Zero Original Cleansing Balm 100ml",
+"prdt_no": "GA260943564",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260943564",
+"list": "Skincare",
+"rank": 23,
+"store_rating": 5.0,
+"review_count": 4
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Cream 80ml",
+"prdt_no": "GA260741960",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260741960",
+"list": "Skincare",
+"rank": 24,
+"store_rating": 4.6,
+"review_count": 13
+},
+{
+"brand": "manyo",
+"product": "ma:nyo Pure Soybean Cleansing Oil 200ml 2ea",
+"prdt_no": "GA260943563",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260943563",
+"list": "Skincare",
+"rank": 25,
+"store_rating": 5.0,
+"review_count": 2
+},
+{
+"brand": "Dr. Althea",
+"product": "147 Barrier Cream 50ml",
+"prdt_no": "GA260640941",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260640941",
+"list": "Skincare",
+"rank": 26,
+"store_rating": 4.9,
+"review_count": 17
+},
+{
+"brand": "beplain",
+"product": "Mung Bean pH-Balanced Cleansing Foam 160mL",
+"prdt_no": "GA230619360",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA230619360",
+"list": "Skincare",
+"rank": 27,
+"store_rating": 4.7,
+"review_count": 1242
+},
+{
+"brand": "Dr.G",
+"product": "Red Blemish Clear Soothing Cream EX 70ml",
+"prdt_no": "GA260540500",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540500",
+"list": "Skincare",
+"rank": 28,
+"store_rating": 4.8,
+"review_count": 115
+},
+{
+"brand": "S.NATURE",
+"product": "S. NATURE Aqua Squalane Moisturizing Cream 60mL",
+"prdt_no": "GA210811702",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA210811702",
+"list": "Skincare",
+"rank": 29,
+"store_rating": 4.8,
+"review_count": 1305
+},
+{
+"brand": "REJURAN",
+"product": "Healer Turnover Ampoule 10ml Double Pack",
+"prdt_no": "GA250832684",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250832684",
+"list": "Skincare",
+"rank": 30,
+"store_rating": 4.7,
+"review_count": 501
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Sunscreen 50ml 1+1",
+"prdt_no": "GA260742277",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260742277",
+"list": "Suncare",
+"rank": 1,
+"store_rating": 4.8,
+"review_count": 18
+},
+{
+"brand": "SKIN1004",
+"product": "Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 50mL",
+"prdt_no": "GA260843327",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260843327",
+"list": "Suncare",
+"rank": 2,
+"store_rating": 4.8,
+"review_count": 17
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Relief Sun: Rice + Probiotics Double Pack 50mL",
+"prdt_no": "GA220615265",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220615265",
+"list": "Suncare",
+"rank": 3,
+"store_rating": 4.9,
+"review_count": 8851
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Sunscreen 50ml",
+"prdt_no": "GA260741959",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260741959",
+"list": "Suncare",
+"rank": 4,
+"store_rating": 4.9,
+"review_count": 21
+},
+{
+"brand": "SKIN1004",
+"product": "Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 50mL",
+"prdt_no": "GA230518746",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA230518746",
+"list": "Suncare",
+"rank": 5,
+"store_rating": 4.9,
+"review_count": 10609
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Sun Serum 50ml",
+"prdt_no": "GA260741958",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260741958",
+"list": "Suncare",
+"rank": 6,
+"store_rating": 4.9,
+"review_count": 21
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Sunscreen 50ml",
+"prdt_no": "GA250430113",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250430113",
+"list": "Suncare",
+"rank": 7,
+"store_rating": 4.9,
+"review_count": 1570
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Stay Fresh Tone-up Sunscreen 50ml Deluxe",
+"prdt_no": "GA260641122",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260641122",
+"list": "Suncare",
+"rank": 8,
+"store_rating": 4.9,
+"review_count": 53
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Relief Sun Rice+Probiotics 50ml",
+"prdt_no": "GA260338435",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338435",
+"list": "Suncare",
+"rank": 9,
+"store_rating": 4.9,
+"review_count": 338
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Daily Tinted Fluid Sunscreen 50ml",
+"prdt_no": "GA251236258",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251236258",
+"list": "Suncare",
+"rank": 10,
+"store_rating": 4.5,
+"review_count": 103
+},
+{
+"brand": "d'Alba",
+"product": "Waterfull Essence Sun Cream 50ml",
+"prdt_no": "GA210001978",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA210001978",
+"list": "Suncare",
+"rank": 11,
+"store_rating": 4.8,
+"review_count": 70
+},
+{
+"brand": "Real Barrier",
+"product": "Cica Green Tone-Up Sun Cream 50ml",
+"prdt_no": "GA260539950",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539950",
+"list": "Suncare",
+"rank": 12,
+"store_rating": 0.0,
+"review_count": null
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Relief Sun Aqua Fresh Rice+B5 50ml",
+"prdt_no": "GA241227407",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA241227407",
+"list": "Suncare",
+"rank": 13,
+"store_rating": 4.9,
+"review_count": 1512
+},
+{
+"brand": "d'Alba",
+"product": "Waterful Tone Up Sun Cream Purple 65ml Jumbo",
+"prdt_no": "GA260842696",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842696",
+"list": "Suncare",
+"rank": 14,
+"store_rating": 5.0,
+"review_count": 1
+},
+{
+"brand": "Torriden",
+"product": "Dive In Moisture Sunscreen 60ml",
+"prdt_no": "GA250228557",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250228557",
+"list": "Suncare",
+"rank": 15,
+"store_rating": 4.8,
+"review_count": 380
+},
+{
+"brand": "SKIN1004",
+"product": "Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 100mL",
+"prdt_no": "GA240724745",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240724745",
+"list": "Suncare",
+"rank": 16,
+"store_rating": 4.9,
+"review_count": 1681
+},
+{
+"brand": "Isntree",
+"product": "Hyaluronic Acid Airy Body Sun Cream 150ml",
+"prdt_no": "GA260540355",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540355",
+"list": "Suncare",
+"rank": 17,
+"store_rating": 4.9,
+"review_count": 16
+},
+{
+"brand": "medicube",
+"product": "PDRN Pink Tone Up Sun Cream 50ml",
+"prdt_no": "GA250429915",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250429915",
+"list": "Suncare",
+"rank": 18,
+"store_rating": 4.6,
+"review_count": 89
+},
+{
+"brand": "AESTURA",
+"product": "Derma UV365 Barrier Hydro Mineral Sunscreen 40ml",
+"prdt_no": "GA240624151",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240624151",
+"list": "Suncare",
+"rank": 19,
+"store_rating": 4.6,
+"review_count": 207
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Relief Sun Aqua Fresh Rice+B5 50ml",
+"prdt_no": "GA260338436",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338436",
+"list": "Suncare",
+"rank": 20,
+"store_rating": 4.9,
+"review_count": 256
+},
+{
+"brand": "HERA",
+"product": "UV Protector Tone-Up Lavender SPF50+ PA++++ 40ml",
+"prdt_no": "GA260439589",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439589",
+"list": "Suncare",
+"rank": 21,
+"store_rating": 4.5,
+"review_count": 12
+},
+{
+"brand": "HERA",
+"product": "UV Protector CC SPF50+ PA4+",
+"prdt_no": "GA260843055",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260843055",
+"list": "Suncare",
+"rank": 22,
+"store_rating": 5.0,
+"review_count": 4
+},
+{
+"brand": "Abib",
+"product": "Airy Sunstick Smoothing Bar 23g",
+"prdt_no": "GA251135132",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251135132",
+"list": "Suncare",
+"rank": 23,
+"store_rating": 4.7,
+"review_count": 32
+},
+{
+"brand": "Cell Fusion C",
+"product": "Dark Spot Toning Sunscreen 35ml",
+"prdt_no": "GA260641102",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260641102",
+"list": "Suncare",
+"rank": 24,
+"store_rating": 4.5,
+"review_count": 8
+},
+{
+"brand": "Beauty of Joseon",
+"product": "Relief Sun : Rice + Probiotics 50mL",
+"prdt_no": "GA220816046",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220816046",
+"list": "Suncare",
+"rank": 25,
+"store_rating": 4.8,
+"review_count": 1374
+},
+{
+"brand": "ROUND LAB",
+"product": "BIRCH JUICE MILD-UP SUNSCREEN 50ml",
+"prdt_no": "GA220313898",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220313898",
+"list": "Suncare",
+"rank": 26,
+"store_rating": 4.5,
+"review_count": 193
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Tone Up Sun Cream 50mL 1+1",
+"prdt_no": "GA230618993",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA230618993",
+"list": "Suncare",
+"rank": 27,
+"store_rating": 4.6,
+"review_count": 236
+},
+{
+"brand": "SKIN1004",
+"product": "Madagascar Centella Air-Fit Sun Cream Light 50mL",
+"prdt_no": "GA220715345",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220715345",
+"list": "Suncare",
+"rank": 28,
+"store_rating": 4.5,
+"review_count": 318
+},
+{
+"brand": "ROUND LAB",
+"product": "Birch Juice Moisturizing Sunscreen 50ml",
+"prdt_no": "GA260439418",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439418",
+"list": "Suncare",
+"rank": 29,
+"store_rating": 4.9,
+"review_count": 48
+},
+{
+"brand": "Anua",
+"product": "Heartleaf Silky Moisture Sun Cream 50ml Double Pack",
+"prdt_no": "GA260439568",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439568",
+"list": "Suncare",
+"rank": 30,
+"store_rating": 5.0,
+"review_count": 11
+},
+{
+"brand": "MEDIHEAL",
+"product": "Essential Mask Sheet 10ea",
+"prdt_no": "GA240824996",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240824996",
+"list": "Face Masks",
+"rank": 1,
+"store_rating": 4.9,
+"review_count": 7910
+},
+{
+"brand": "MEDIHEAL",
+"product": "Essential Mask Sheet 20ea",
+"prdt_no": "GA250128210",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250128210",
+"list": "Face Masks",
+"rank": 2,
+"store_rating": 4.9,
+"review_count": 1909
+},
+{
+"brand": "MEDIHEAL",
+"product": "Toner 100 Pads",
+"prdt_no": "GA260741880",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260741880",
+"list": "Face Masks",
+"rank": 3,
+"store_rating": 4.9,
+"review_count": 360
+},
+{
+"brand": "Anua",
+"product": "PDRN Hyaluronic Acid Capsule 100 Serum Mask 10 sheets",
+"prdt_no": "GA260842466",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842466",
+"list": "Face Masks",
+"rank": 4,
+"store_rating": 4.8,
+"review_count": 168
+},
+{
+"brand": "BIODANCE",
+"product": "Bio-Collagen Real Deep Mask 4 Sheets",
+"prdt_no": "GA230418238",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA230418238",
+"list": "Face Masks",
+"rank": 5,
+"store_rating": 4.7,
+"review_count": 1118
+},
+{
+"brand": "numbuzin",
+"product": "No.1&ndash;5 Sheet Mask 10 Sheets",
+"prdt_no": "GA250228953",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250228953",
+"list": "Face Masks",
+"rank": 6,
+"store_rating": 4.8,
+"review_count": 1636
+},
+{
+"brand": "MEDIHEAL",
+"product": "Toner Pads 100P",
+"prdt_no": "GA260943503",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260943503",
+"list": "Face Masks",
+"rank": 7,
+"store_rating": 0.0,
+"review_count": null
+},
+{
+"brand": "Torriden",
+"product": "Dive In Low Molecular Hyaluronic Acid Mask 20ea",
+"prdt_no": "GA260540331",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540331",
+"list": "Face Masks",
+"rank": 8,
+"store_rating": 4.9,
+"review_count": 150
+},
+{
+"brand": "Abib",
+"product": "Mild Acidic pH Sheet Mask 5 Sheets",
+"prdt_no": "GA260842432",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842432",
+"list": "Face Masks",
+"rank": 9,
+"store_rating": 4.9,
+"review_count": 70
+},
+{
+"brand": "celimax",
+"product": "Pore & Dark Spot Brightening Pad",
+"prdt_no": "GA250329378",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250329378",
+"list": "Face Masks",
+"rank": 10,
+"store_rating": 4.8,
+"review_count": 112
+},
+{
+"brand": "MEDIHEAL",
+"product": "Toner Pads Double Pack",
+"prdt_no": "GA220815950",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220815950",
+"list": "Face Masks",
+"rank": 11,
+"store_rating": 4.8,
+"review_count": 6609
+},
+{
+"brand": "BIODANCE",
+"product": "Eye Patch 60 Sheets",
+"prdt_no": "GA260439597",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439597",
+"list": "Face Masks",
+"rank": 12,
+"store_rating": 4.7,
+"review_count": 248
+},
+{
+"brand": "REJURAN",
+"product": "Derma Healer Pore Tightening Toner Pad 60P Limited Double Pack",
+"prdt_no": "GA251034268",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251034268",
+"list": "Face Masks",
+"rank": 13,
+"store_rating": 4.8,
+"review_count": 504
+},
+{
+"brand": "medicube",
+"product": "PDRN Collagen/Pore Toner Pads",
+"prdt_no": "GA250228714",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250228714",
+"list": "Face Masks",
+"rank": 14,
+"store_rating": 4.8,
+"review_count": 232
+},
+{
+"brand": "Anua",
+"product": "Mask Sheet 5ea",
+"prdt_no": "GA250832713",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250832713",
+"list": "Face Masks",
+"rank": 15,
+"store_rating": 4.8,
+"review_count": 505
+},
+{
+"brand": "medicube",
+"product": "Zero Pore Pad 2.0 70P",
+"prdt_no": "GA260843240",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260843240",
+"list": "Face Masks",
+"rank": 16,
+"store_rating": 4.7,
+"review_count": 3
+},
+{
+"brand": "ROUND LAB",
+"product": "1025 Dokdo Hydrating Water Gel Mask Sheet 20ea",
+"prdt_no": "GA260237591",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237591",
+"list": "Face Masks",
+"rank": 17,
+"store_rating": 4.8,
+"review_count": 207
+},
+{
+"brand": "MEDIHEAL",
+"product": "Collagen Capsule Patch 60P",
+"prdt_no": "GA260338465",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338465",
+"list": "Face Masks",
+"rank": 18,
+"store_rating": 4.7,
+"review_count": 208
+},
+{
+"brand": "Abib",
+"product": "Eye Patch Jelly 60 Sheets",
+"prdt_no": "GA251034678",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251034678",
+"list": "Face Masks",
+"rank": 19,
+"store_rating": 4.7,
+"review_count": 171
+},
+{
+"brand": "MEDIHEAL",
+"product": "Derma 365 Sheet Mask 30P",
+"prdt_no": "GA251134905",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251134905",
+"list": "Face Masks",
+"rank": 20,
+"store_rating": 4.8,
+"review_count": 164
+},
+{
+"brand": "medicube",
+"product": "Zero Pore Blackhead Mud Mask 100g",
+"prdt_no": "GA240322566",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240322566",
+"list": "Face Masks",
+"rank": 21,
+"store_rating": 4.5,
+"review_count": 208
+},
+{
+"brand": "BIODANCE",
+"product": "Hydro Cera-Nol Real Deep Mask 7 Sheets",
+"prdt_no": "GA251235715",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251235715",
+"list": "Face Masks",
+"rank": 22,
+"store_rating": 4.7,
+"review_count": 21
+},
+{
+"brand": "REJURAN",
+"product": "c-PDRN Booster Shot Gel Mask Sheet 5 Sheets",
+"prdt_no": "GA260842714",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842714",
+"list": "Face Masks",
+"rank": 23,
+"store_rating": 5.0,
+"review_count": 6
+},
+{
+"brand": "SKINFOOD",
+"product": "Daily Mask Sheet 30ea",
+"prdt_no": "GA250127740",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250127740",
+"list": "Face Masks",
+"rank": 24,
+"store_rating": 4.8,
+"review_count": 172
+},
+{
+"brand": "SKINFOOD",
+"product": "Carrot Carotene Calming Water Pad 60P Double Pack",
+"prdt_no": "GA260539895",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539895",
+"list": "Face Masks",
+"rank": 25,
+"store_rating": 4.9,
+"review_count": 269
+},
+{
+"brand": "beplain",
+"product": "Mung Bean Cooling & Slim Face Mask Sheet",
+"prdt_no": "GA260742100",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260742100",
+"list": "Face Masks",
+"rank": 26,
+"store_rating": 4.6,
+"review_count": 25
+},
+{
+"brand": "d'Alba",
+"product": "Signature Vita Capsule Anti-Aging Hydrogel Mask 8 Shape 4ea",
+"prdt_no": "GA250631476",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250631476",
+"list": "Face Masks",
+"rank": 27,
+"store_rating": 4.5,
+"review_count": 18
+},
+{
+"brand": "numbuzin",
+"product": "Toner Pad 70P Refill",
+"prdt_no": "GA230518760",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA230518760",
+"list": "Face Masks",
+"rank": 28,
+"store_rating": 4.8,
+"review_count": 864
+},
+{
+"brand": "Torriden",
+"product": "★2025 Awards★ Torriden Dive-In Low Molecular Hyaluronic Acid Mask Sheet 10ea Limited Set (+Dive-In Mask Sheet 2ea+Balancefull Mask",
+"prdt_no": "GA251034553",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251034553",
+"list": "Face Masks",
+"rank": 29,
+"store_rating": 4.9,
+"review_count": 197
+},
+{
+"brand": "AESTURA",
+"product": "A-Cica365 Cooling Relief Pads pH4.5 60P",
+"prdt_no": "GA250329379",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250329379",
+"list": "Face Masks",
+"rank": 30,
+"store_rating": 4.8,
+"review_count": 37
+},
+{
+"brand": "UNOVE",
+"product": "Deep Damage Repair Hair Mask 320mL Double Pack",
+"prdt_no": "GA220916169",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220916169",
+"list": "Hair",
+"rank": 1,
+"store_rating": 4.8,
+"review_count": 3832
+},
+{
+"brand": "lilyeve",
+"product": "GROW:TURN Exosome Brush Ampoule",
+"prdt_no": "GA251235989",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251235989",
+"list": "Hair",
+"rank": 2,
+"store_rating": 4.7,
+"review_count": 438
+},
+{
+"brand": "AROMATICA",
+"product": "Rosemary Scalp Care All-in-One",
+"prdt_no": "GS260842888",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GS260842888",
+"list": "Hair",
+"rank": 3,
+"store_rating": 4.7,
+"review_count": 2605
+},
+{
+"brand": "UNOVE",
+"product": "Deep Damage Care",
+"prdt_no": "GS260843298",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GS260843298",
+"list": "Hair",
+"rank": 4,
+"store_rating": 4.8,
+"review_count": 2296
+},
+{
+"brand": "LABO-H",
+"product": "Scalp Strengthening Shampoo 750ml",
+"prdt_no": "GA260540643",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540643",
+"list": "Hair",
+"rank": 5,
+"store_rating": 4.9,
+"review_count": 34
+},
+{
+"brand": "La'dor",
+"product": "Perfumed Hair Oil 80ml",
+"prdt_no": "GA240724668",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240724668",
+"list": "Hair",
+"rank": 6,
+"store_rating": 4.7,
+"review_count": 1092
+},
+{
+"brand": "UNOVE",
+"product": "Deep Damage Repair Shampoo 500ml",
+"prdt_no": "GA250530907",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250530907",
+"list": "Hair",
+"rank": 7,
+"store_rating": 4.8,
+"review_count": 1723
+},
+{
+"brand": "Mise-en-Scene",
+"product": "Salon 10 Daily Detangle & Smooth",
+"prdt_no": "GS260943482",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GS260943482",
+"list": "Hair",
+"rank": 8,
+"store_rating": 4.7,
+"review_count": 114
+},
+{
+"brand": "MED:ALL",
+"product": "Scalp Strenghtening Nutrition Essence 120mL",
+"prdt_no": "GA231121165",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA231121165",
+"list": "Hair",
+"rank": 9,
+"store_rating": 4.8,
+"review_count": 35
+},
+{
+"brand": "vodana",
+"product": "Easy Up Hair Styler #Powder Pink",
+"prdt_no": "GA251034177",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA251034177",
+"list": "Hair",
+"rank": 10,
+"store_rating": 4.5,
+"review_count": 41
+},
+{
+"brand": "Mise-en-Scene",
+"product": "Salon 10 Peptide Repair Hair Mask 300ml",
+"prdt_no": "GA260439641",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439641",
+"list": "Hair",
+"rank": 11,
+"store_rating": 4.8,
+"review_count": 285
+},
+{
+"brand": "Longtake",
+"product": "Hair Oil 40ml",
+"prdt_no": "GA240925895",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240925895",
+"list": "Hair",
+"rank": 12,
+"store_rating": 4.8,
+"review_count": 379
+},
+{
+"brand": "vodana",
+"product": "Easy Up Hair Styler Flip",
+"prdt_no": "GA260136382",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136382",
+"list": "Hair",
+"rank": 13,
+"store_rating": 4.5,
+"review_count": 53
+},
+{
+"brand": "AROMATICA",
+"product": "Tea Tree Purifying Shampoo Double Pack 400ml",
+"prdt_no": "GA250732179",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250732179",
+"list": "Hair",
+"rank": 14,
+"store_rating": 4.7,
+"review_count": 72
+},
+{
+"brand": "The Ordinary",
+"product": "Hair Care Multi-Peptide Serum For Hair Density 60mL",
+"prdt_no": "GA220314066",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220314066",
+"list": "Hair",
+"rank": 15,
+"store_rating": 4.7,
+"review_count": 95
+},
+{
+"brand": "MODAMODA",
+"product": "Zero Gray Black Shampoo 10 300g",
+"prdt_no": "GA241026530",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA241026530",
+"list": "Hair",
+"rank": 16,
+"store_rating": 4.3,
+"review_count": 221
+},
+{
+"brand": "Dr.FORHAIR",
+"product": "Folligen Thickening Shampoo 750ml",
+"prdt_no": "GA260237865",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237865",
+"list": "Hair",
+"rank": 17,
+"store_rating": 4.7,
+"review_count": 146
+},
+{
+"brand": "AROMATICA",
+"product": "Rosemary Root Enhancer 100ml",
+"prdt_no": "GA260641116",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260641116",
+"list": "Hair",
+"rank": 18,
+"store_rating": 4.8,
+"review_count": 170
+},
+{
+"brand": "Dr.FORHAIR",
+"product": "Folligen Thickening Shampoo 400ml",
+"prdt_no": "GA260237869",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237869",
+"list": "Hair",
+"rank": 19,
+"store_rating": 4.7,
+"review_count": 88
+},
+{
+"brand": "Ryo",
+"product": "Black Gloss & Vitality 480ml",
+"prdt_no": "GA240523569",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA240523569",
+"list": "Hair",
+"rank": 20,
+"store_rating": 4.8,
+"review_count": 148
+},
+{
+"brand": "epais",
+"product": "Scalp Boosting Ampoule EX 150ml",
+"prdt_no": "GA260842750",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842750",
+"list": "Hair",
+"rank": 21,
+"store_rating": 4.5,
+"review_count": 2
+},
+{
+"brand": "growus",
+"product": "Damage Therapy Repair Clinic Hair Pack 230ml",
+"prdt_no": "GA260842923",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842923",
+"list": "Hair",
+"rank": 22,
+"store_rating": 4.8,
+"review_count": 67
+},
+{
+"brand": "rooton",
+"product": "Alpha Erguen Shampoo 500mL",
+"prdt_no": "GA220514969",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA220514969",
+"list": "Hair",
+"rank": 23,
+"store_rating": 4.7,
+"review_count": 157
+},
+{
+"brand": "AROMATICA",
+"product": "Rosemary PDRN Scalp Serum 100ml",
+"prdt_no": "GA260540414",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540414",
+"list": "Hair",
+"rank": 24,
+"store_rating": 4.7,
+"review_count": 146
+},
+{
+"brand": "vivelab",
+"product": "Scalp Spioxyl React Shot 600 15ml",
+"prdt_no": "GA260439452",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260439452",
+"list": "Hair",
+"rank": 25,
+"store_rating": 0.0,
+"review_count": null
+},
+{
+"brand": "UNOVE",
+"product": "Hydracoat Glow Hair Mask 200ml",
+"prdt_no": "GA260943862",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260943862",
+"list": "Hair",
+"rank": 26,
+"store_rating": 5.0,
+"review_count": 2
+},
+{
+"brand": "UNOVE",
+"product": "Frizz-Calming Sleek Hair Finishing Stick 10ml",
+"prdt_no": "GA250832997",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250832997",
+"list": "Hair",
+"rank": 27,
+"store_rating": 4.7,
+"review_count": 134
+},
+{
+"brand": "Ryo",
+"product": "Root:Gen Scalp Essence 80ml",
+"prdt_no": "GA250933484",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250933484",
+"list": "Hair",
+"rank": 28,
+"store_rating": 4.7,
+"review_count": 107
+},
+{
+"brand": "AROMATICA",
+"product": "PDRN Scalp Serum",
+"prdt_no": "GS260842768",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GS260842768",
+"list": "Hair",
+"rank": 29,
+"store_rating": 4.7,
+"review_count": 146
+},
+{
+"brand": "Dr.FORHAIR",
+"product": "Folligen Thickening Scalp Serum 50ml",
+"prdt_no": "GA260237870",
+"url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237870",
+"list": "Hair",
+"rank": 30,
+"store_rating": 4.5,
+"review_count": 67
+}
+]
+}
