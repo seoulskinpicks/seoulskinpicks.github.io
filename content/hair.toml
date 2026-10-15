@@ -706,3 +706,140 @@ sources = [
   "https://www.hwahae.co.kr/rankings?english_name=category&theme_id=4540",
   "https://skinsort.com/products/hair-oils-from-korean-brands",
 ]
+
+[[ingredient]]
+id = "scalp-exosome"
+name = "Scalp exosomes"
+full_name = "Exosomes for scalp care (plant-derived)"
+nickname = "Tiny cell messengers"
+area = "hair"
+heat = "korea"
+heat_note = "lilyeve ampoule: #1 OY hair care in 2 weeks"
+hot_since = 2025
+hook = "Scalp exosomes: Korea's newest hair-care buzzword"
+what_it_is = "Exosomes are tiny particles cells release to carry signals. Korean scalp ampoules now use plant-derived ones, like heartleaf exosomes, with other scalp-care ingredients."
+origin = "In Korean scalp care, mostly plant-derived (e.g. heartleaf)"
+benefits = [
+  "Helps the scalp feel refreshed and cared for",
+  "Supports a healthy-looking scalp routine",
+  "Often paired with cooling menthol for a fresh feel",
+]
+best_for = ["Thinning-looking hair", "Oily or tired scalp", "Scalp-care fans"]
+when = "Daily"
+how_to_use = [
+  "Brush or drip the ampoule onto a towel-dried scalp",
+  "Massage it in gently; don't rinse",
+  "Use daily for several weeks before judging",
+]
+pairs_with = ["Menthol", "Caffeine", "Rosemary"]
+avoid_with = []
+good_to_know = [
+  "Hair research on exosomes is mostly in mice; no human hair-growth data yet.",
+  "No exosome product is FDA-approved for hair loss.",
+  "Plant exosomes differ from clinic stem-cell exosomes. Check the label.",
+]
+myth = "Exosome ampoules make thinning hair grow back."
+fact = "Hair studies on exosomes are mostly in mice, with no human hair-growth trials yet. Enjoy it as scalp care."
+keywords = ["exosome brush", "scalp exosome", "exosome capsule", "exosome hair"]
+examples = [
+  {brand = "lilyeve", product = "GROW:TURN Exosome Brush Ampoule"},
+  {brand = "lilyeve", product = "GROW:TURN Exosome Capsule Treatment"},
+]
+hashtags = ["#exosome", "#scalpcare", "#koreanhaircare", "#kbeauty"]
+sources = [
+  "https://dhnews.co.kr/news/view/1065597229063054",
+  "https://www.elle.co.kr/article/1909776",
+  "https://assets.cureus.com/uploads/review_article/pdf/339071/20250325-65339-s0wvov.pdf",
+]
+
+[[ingredient]]
+id = "tea-tree"
+name = "Tea tree"
+full_name = "Tea tree leaf oil & extract"
+nickname = "The oily-scalp classic"
+area = "hair"
+heat = "both"
+heat_note = "AROMATICA tea tree shampoo: OY Global hair top 15"
+hot_since = 2026
+hook = "Tea tree: the oily-scalp classic with real study data"
+what_it_is = "Tea tree oil comes from the leaves of an Australian tree. Shampoos and tonics use it for oily, flaky scalps, often with mint for a cooling feel."
+origin = "Leaves of Australia's Melaleuca alternifolia tree"
+benefits = [
+  "Helps an oily scalp feel fresh and clean",
+  "May help reduce visible flakes with regular use",
+  "Known for a cooling, clarifying feel",
+]
+best_for = ["Oily scalp", "Flaky scalp", "Itchy-feeling scalp"]
+when = "Every wash"
+how_to_use = [
+  "Massage tea tree shampoo into the scalp",
+  "Leave it on about 3 minutes, then rinse well",
+  "Mist a tea tree tonic onto the scalp after drying",
+]
+pairs_with = ["Salicylic acid", "Menthol", "Probiotics"]
+avoid_with = []
+good_to_know = [
+  "A 4-week trial of 126 people: 5% tea tree shampoo cut flakes vs placebo.",
+  "Few users were fully flake-free; it helps but doesn't end dandruff.",
+  "Pure essential oil can irritate. Stick to ready-made products.",
+]
+myth = "Tea tree shampoo gets rid of dandruff for good."
+fact = "In a 4-week trial, 5% tea tree shampoo eased flakes and itch vs placebo, but few people were fully flake-free."
+keywords = ["tea tree"]
+examples = [
+  {brand = "AROMATICA", product = "Tea Tree Purifying Shampoo"},
+  {brand = "AROMATICA", product = "Tea Tree Purifying Tonic"},
+]
+hashtags = ["#teatree", "#oilyscalp", "#scalpcare", "#koreanhaircare"]
+sources = [
+  "https://www.aafp.org/pubs/afp/issues/2003/0501/p1985.html",
+  "https://global.aromatica.co/products/tea-tree-purifying-shampoo-180ml",
+  "https://www.cosmorning.com/news/article.html?no=50846",
+]
+
+[[ingredient]]
+id = "keratin"
+name = "Keratin"
+full_name = "Hydrolyzed keratin"
+nickname = "Hair's own protein"
+area = "hair"
+heat = "global"
+heat_note = "La'dor keratin ampoules on Bustle's US K-hair list"
+hot_since = 2026
+hook = "Keratin shampoo vs. salon keratin: not the same thing"
+what_it_is = "Keratin is the main protein in hair. Products use hydrolyzed keratin, broken into small pieces, to coat and condition damaged strands."
+origin = "Protein broken into small pieces, often from animal sources"
+benefits = [
+  "Helps damaged hair feel smoother and softer",
+  "Supports easier combing and less frizz",
+  "May help strands hold up better to UV and heat",
+]
+best_for = ["Bleached or colored hair", "Heat-styled hair", "Dry, frizzy ends"]
+when = "After shampoo"
+how_to_use = [
+  "Apply a keratin treatment to wet lengths, not roots",
+  "Leave it 1–3 minutes, then rinse well",
+  "Mist a keratin spray on before heat styling",
+]
+pairs_with = ["Bond-building", "Argan oil", "LPP protein"]
+avoid_with = []
+good_to_know = [
+  "Most keratin data is lab work on hair strands; human studies are limited.",
+  "It conditions the hair shaft. It is not a hair-growth ingredient.",
+  "Salon keratin smoothing is a different, heat-and-chemical process.",
+]
+myth = "A keratin shampoo gives you salon keratin results."
+fact = "Shampoos use small keratin pieces that coat strands. Salon smoothing uses heat and chemicals to last longer."
+keywords = ["keratin"]
+examples = [
+  {brand = "La'dor", product = "Keratin LPP Shampoo"},
+  {brand = "La'dor", product = "Keratin Layered Oil Hair Mist"},
+  {brand = "La'dor", product = "Keratin Power Glue"},
+]
+hashtags = ["#keratin", "#damagedhair", "#koreanhaircare", "#kbeauty"]
+sources = [
+  "https://origenere.com/blogs/ingredient-spotlight/benefits-of-keratin-for-hair-hydrolyzed-keratin",
+  "https://mdpi-res.com/d_attachment/molecules/molecules-30-01182/article_deploy/molecules-30-01182.pdf",
+  "https://www.bustle.com/style/the-14-best-korean-hair-products-you-can-find-stateside-50375",
+]
+

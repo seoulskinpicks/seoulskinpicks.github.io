@@ -1400,6 +1400,368 @@ sources = [
 ]
 
 [[ingredient]]
+id = "ectoin"
+name = "Ectoin"
+full_name = "Ectoine (ectoin)"
+nickname = "The extremophile shield"
+area = "skin"
+heat = "korea"
+heat_note = "Overlaps built 4 lines on it (interCHARM 2026)"
+hot_since = 2024
+hook = "Ectoin: the desert-microbe molecule in barrier care"
+what_it_is = "Ectoin is a small molecule that microbes make to survive salt, heat and dryness. Skincare uses a lab-made version to help skin hold water and feel protected."
+origin = "First found in desert salt-lake bacteria in Egypt (1985)"
+benefits = [
+  "Helps skin hold on to moisture for longer",
+  "Supports a calm, comfortable-feeling skin barrier",
+  "Known for helping skin feel protected from heat and dry air",
+]
+best_for = ["Dry, tight skin", "Sensitive skin", "Skin stressed by heat or sun"]
+when = "AM & PM"
+how_to_use = [
+  "Apply an ectoin serum or cream after toner",
+  "Layer under moisturizer; it pairs well with most actives",
+  "Sensitive? Start with a lower-strength product",
+]
+pairs_with = ["Hyaluronic acid", "Niacinamide", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "A 2022 review: 5.5–7% ectoin creams eased dryness and itch in eczema studies.",
+  "Those studies were small; think support, not a fix for a skin condition.",
+  "It can tingle at first for some people. Patch test new products.",
+]
+myth = "Ectoin is just another name for hyaluronic acid."
+fact = "Different molecules: ectoin helps hold water and shield skin; hyaluronic acid draws water in. They pair well."
+keywords = ["ectoin", "ectoine"]
+examples = [
+  {brand = "DMCK", product = "Ectoin Derma Booster Ampoule"},
+  {brand = "TROIAREUKE", product = "Seoul Ectoin Tone-Up Sun Serum"},
+  {brand = "Epii", product = "Double Up Cream Ectoin & Panthenol"},
+]
+hashtags = ["#ectoin", "#ectoine", "#skinbarrier", "#kbeauty"]
+sources = [
+  "https://www.elle.co.kr/article/1873766",
+  "https://www.venturesquare.net/1095444/",
+  "https://link.springer.com/10.1007/s13555-021-00676-9",
+]
+
+[[ingredient]]
+id = "pha"
+name = "PHA"
+full_name = "Polyhydroxy acids (e.g. gluconolactone)"
+nickname = "The gentle acid"
+area = "skin"
+heat = "korea"
+heat_note = "In Mediheal's PDRN pore pad (Bazaar KR, 2026)"
+hot_since = 2026
+hook = "PHA: the gentle acid inside Korea's new pore pads"
+what_it_is = "PHAs are exfoliating acids, like gluconolactone, with bigger molecules than AHAs. Korean pads and toners use them for smoother-feeling skin with less fuss."
+origin = "Occurs naturally in fruit, honey and wine; also lab-made"
+benefits = [
+  "Helps skin feel smoother and look brighter",
+  "Supports gentle exfoliation for many skin types",
+  "A larger molecule, often chosen as a gentler acid",
+]
+best_for = ["Rough texture", "Clogged-looking pores", "Acid beginners"]
+when = "PM"
+how_to_use = [
+  "Swipe a PHA pad or toner over clean skin at night",
+  "Start 2–3 times a week, then build up",
+  "Wear SPF daily when you use any acid",
+]
+pairs_with = ["Niacinamide", "Hyaluronic acid", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "A 1992 trial of 150 people: 14% gluconolactone matched 5% benzoyl peroxide.",
+  "No study yet compares PHA head-to-head with glycolic acid.",
+  "Any acid can sting very dry or broken skin. Patch test first.",
+]
+myth = "PHA is too mild to do anything."
+fact = "In a 12-week trial, 14% gluconolactone eased acne spots about as well as 5% benzoyl peroxide."
+keywords = ["pha"]
+examples = [
+  {brand = "SOME BY MI", product = "AHA BHA PHA 30 Days Miracle Toner"},
+  {brand = "numbuzin", product = "No.3 PHA Skin Prep Bubble Mask"},
+]
+hashtags = ["#pha", "#gluconolactone", "#gentleexfoliation", "#kbeauty"]
+sources = [
+  "https://www.harpersbazaar.co.kr/article/1910558",
+  "https://chemistconfessions.com/blogs/should-you-be-using-pha-gluconolactone-instead-of-glycolic-acid",
+]
+
+[[ingredient]]
+id = "egf"
+name = "EGF"
+full_name = "Epidermal growth factor (EGF)"
+nickname = "The skin-signal protein"
+area = "skin"
+heat = "korea"
+heat_note = "Easydew EGF ampoule: 10M+ bottles sold (2024)"
+hot_since = 2022
+hook = "EGF: the growth-factor ampoule Korea keeps buying"
+what_it_is = "EGF is a small protein the body uses to signal skin cells to renew. Skincare uses lab-made versions, a staple of Korean 'recovery' ampoules and creams."
+origin = "Found in 1962 by Stanley Cohen; now made by biotech"
+benefits = [
+  "Helps skin look smoother and more refreshed",
+  "Supports a comfortable feel on stressed-looking skin",
+  "May help dull, uneven-looking skin look brighter",
+]
+best_for = ["Dull or tired-looking skin", "Early fine lines", "Skin stressed by sun or heat"]
+when = "AM & PM"
+how_to_use = [
+  "Pat an EGF ampoule onto clean skin after toner",
+  "Follow with moisturizer to seal it in",
+  "Close the cap tightly and avoid heat; the protein is fragile",
+]
+pairs_with = ["Peptides", "PDRN", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Human studies show modest gains that seem to rise with strength.",
+  "Most brands don't say how much EGF is inside.",
+  "History of skin cancer? Ask your doctor before using growth factors.",
+]
+myth = "An EGF cream rebuilds skin like an in-clinic procedure."
+fact = "Studies on topical EGF show modest, gradual changes. It's a support step, not a swap for in-clinic care."
+keywords = ["egf"]
+examples = [
+  {brand = "Easydew", product = "DW-EGF Melatoning One Day Ampoule"},
+  {brand = "FROMRIER", product = "EGF Cica Water Sun Ampoule"},
+  {brand = "KAHI", product = "Caviar PDRN EGF Ampoule"},
+]
+hashtags = ["#egf", "#egfserum", "#koreanskincare", "#kbeauty"]
+sources = [
+  "https://v.daum.net/v/umm5P6P3DI",
+  "https://scienceinsights.org/what-is-egf-serum-and-does-it-actually-work/",
+  "https://www.harpersbazaar.co.kr/article/1910558",
+]
+
+[[ingredient]]
+id = "black-rice"
+name = "Black rice"
+full_name = "Black rice (Oryza sativa) extract"
+nickname = "Purple-grain antioxidant"
+area = "skin"
+heat = "global"
+heat_note = "Amazon black rice exfoliant searches soared (2026)"
+hot_since = 2026
+hook = "Black rice: the purple grain in gentle K-skincare"
+what_it_is = "Black rice is a dark, purple-black rice. Its color comes from anthocyanins, plant pigments studied as antioxidants. K-beauty uses its extract in toners, cleansers and peels."
+origin = "Asian heirloom rice; extracts and ferments in K-beauty"
+benefits = [
+  "Known for antioxidant plant pigments (anthocyanins)",
+  "Helps skin feel soft, hydrated and comfortable",
+  "Supports a gentle, low-fuss routine",
+]
+best_for = ["Dull-looking skin", "Sensitive skin", "Gentle-routine fans"]
+when = "AM & PM"
+how_to_use = [
+  "Cleanse with a black rice gel or oil at night",
+  "Pat a black rice toner onto damp skin",
+  "Follow with moisturizer, plus SPF by day",
+]
+pairs_with = ["Hyaluronic acid", "Niacinamide", "Ceramides"]
+avoid_with = []
+good_to_know = [
+  "Its antioxidant data comes mostly from lab tests, not skin trials.",
+  "Black rice peels often add acids like AHAs; check the label.",
+  "Patch test scented versions if your skin is sensitive.",
+]
+myth = "Black rice skincare works like eating antioxidant-rich food."
+fact = "Lab tests show its pigments act as antioxidants. On skin, evidence is still early: enjoy it as a gentle extra."
+keywords = ["black rice"]
+examples = [
+  {brand = "haruharu wonder", product = "Black Rice Hyaluronic Toner"},
+  {brand = "haruharu wonder", product = "Black Rice Moisture 5.5 Soft Cleansing Gel"},
+  {brand = "Dr.Melaxin", product = "Peel Shot Black Rice Exfoliating Ampoule"},
+]
+hashtags = ["#blackrice", "#haruharuwonder", "#gentleskincare", "#kbeauty"]
+sources = [
+  "https://www.frontrowgroup.com/en/insights/the-2026-amazon-beauty-snapshot-what-the-category-is-telling-you",
+  "https://haruharuusa.com/collections/best-sellers",
+  "https://www.asinsight.com/report/US/medicube-turmeric-and-kojic-acid",
+  "https://scholar.korea.ac.kr/handle/2021.sw.korea/125345",
+]
+
+[[ingredient]]
+id = "zinc"
+name = "Zinc"
+full_name = "Zinc (zinc PCA, zinc hyaluronate)"
+nickname = "The oil-balancing mineral"
+area = "skin"
+heat = "korea"
+heat_note = "Olive Young zinc searches +65% (Sept 2025 sale)"
+hot_since = 2025
+hook = "Zinc: the mineral behind Korea's cooling pore pads"
+what_it_is = "Zinc is a mineral skin needs. Toners and pads use forms like zinc PCA for oily skin; zinc oxide in sunscreen does a different job, filtering UV."
+origin = "A mineral; zinc PCA pairs it with a skin-friendly acid"
+benefits = [
+  "Helps oily skin feel fresher and less shiny",
+  "Supports a clear-looking, balanced complexion",
+  "Known for a calm feel on breakout-prone skin",
+]
+best_for = ["Oily or shiny skin", "Breakout-prone skin", "Visible pores"]
+when = "AM & PM"
+how_to_use = [
+  "Swipe a zinc pad over clean skin, mainly the T-zone",
+  "Follow with a light moisturizer",
+  "Add SPF in the morning; zinc PCA is not a sunscreen",
+]
+pairs_with = ["Niacinamide", "Hyaluronic acid", "Heartleaf"]
+avoid_with = []
+good_to_know = [
+  "A 2013 review rated zinc's acne evidence as limited or inconsistent.",
+  "Some zinc salts can irritate; start a few times a week.",
+  "Zinc oxide in sunscreen filters UV; it's not an oil-control step.",
+]
+myth = "Any zinc product controls oil, even zinc sunscreen."
+fact = "Zinc oxide in sunscreen filters UV. Oil-control products use forms like zinc PCA, and results are modest."
+keywords = ["zinc pca", "zinc cooling", "zinc toner", "zinc serum"]
+examples = [
+  {brand = "Isntree", product = "Ultra-Low Molecular Hyaluronic Acid Zinc Cooling Pad"},
+]
+hashtags = ["#zinc", "#oilyskin", "#tonerpads", "#kbeauty"]
+sources = [
+  "https://cjnews.cj.net/%ec%98%ac%ec%98%81%ec%84%b8%ec%9d%bc%eb%a1%9c-%eb%b3%b4%eb%8a%94-k%eb%b7%b0%ed%8b%b0-%ed%8a%b8%eb%a0%8c%eb%93%9c%ec%84%b1%eb%b6%84-%eb%b7%b0%ed%8b%b0%c2%b7%ed%8c%a9/",
+  "https://jddonline.com/articles/dermatology/S1545961613P0542X",
+  "https://www.medicalnewstoday.com/articles/zinc-for-acne",
+  "https://boozyshop.com/products/isntree-ultra-low-molecular-hyaluronic-acid-zinc-cooling-pad",
+]
+
+[[ingredient]]
+id = "hypochlorous-acid"
+name = "Hypochlorous"
+full_name = "Hypochlorous acid (HOCl)"
+nickname = "HOCl mist"
+area = "skin"
+heat = "global"
+heat_note = "Hwahae trend report: rising abroad"
+hot_since = 2025
+hook = "Hypochlorous acid: the gentle face mist going global"
+what_it_is = "Hypochlorous acid (HOCl) is a mild antimicrobial used in wound cleansing. Skincare sells it as gentle face mists for a clean, calm-feeling face."
+origin = "A mild antimicrobial, sold diluted in water as a mist"
+benefits = [
+  "Helps skin feel clean and refreshed between washes",
+  "Supports a calm feel on breakout-prone skin",
+  "Gentle enough for many sensitive skin types",
+]
+best_for = ["Breakout-prone skin", "Sensitive skin", "Post-workout refresh"]
+when = "AM & PM"
+how_to_use = [
+  "Mist 20–30 cm from your face with eyes closed",
+  "Let it dry, then apply serum and moisturizer",
+  "Use any time skin feels hot or sweaty",
+]
+pairs_with = ["Niacinamide", "Centella", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "Small trials suggest it may help mild acne; bigger studies are still needed.",
+  "A 12-week trial of 89 people found it comparable to benzoyl peroxide.",
+  "Keep the spray away from your eyes.",
+]
+myth = "A hypochlorous mist is basically water."
+fact = "It's a mild antimicrobial also used in wound care. Early acne trials look promising, but they're still small."
+keywords = ["hypochlorous"]
+examples = [
+  {brand = "medicube", product = "Hypochlorous Acid Daily Facial Spray"},
+  {brand = "Dr. Althea", product = "Rapid Hypochlorous Acid Rescue Mist"},
+]
+hashtags = ["#hypochlorousacid", "#hocl", "#sensitiveskin", "#kbeauty"]
+sources = [
+  "https://cosmorning.com/mobile/article.html?no=51122",
+  "https://mdedge.com/content/topical-hypochlorous-acid-acne-vulgaris-mechanisms-clinical-evidence-and-therapeutic-potential",
+  "https://kiokii.com/products/dr-althea-rapid-hypochlorous-acid-rescue-mist",
+]
+
+[[ingredient]]
+id = "kojic-acid"
+name = "Kojic acid"
+full_name = "Kojic acid"
+nickname = "The ferment brightener"
+area = "skin"
+heat = "global"
+heat_note = "medicube kojic pads: est. 50K/mo on Amazon (2026)"
+hot_since = 2025
+hook = "Kojic acid: the dark-spot pick behind Amazon hits"
+what_it_is = "Kojic acid is a brightening compound made by certain fungi during fermentation. It's used for dark spots and uneven tone, now in K-beauty pads and serums."
+origin = "A by-product of fungal fermentation; also lab-made"
+benefits = [
+  "Helps dark spots look lighter over time",
+  "Supports a more even-looking skin tone",
+  "Often paired with turmeric or niacinamide in K-beauty",
+]
+best_for = ["Dark spots", "Uneven tone", "Post-blemish marks"]
+when = "PM"
+how_to_use = [
+  "Use a kojic pad or serum at night on clean skin",
+  "Start every other night to check how skin feels",
+  "Wear SPF daily, or spots can come back",
+]
+pairs_with = ["Niacinamide", "Vitamin C", "Alpha arbutin"]
+avoid_with = []
+good_to_know = [
+  "A 12-week trial of 80 people found 1% kojic cream improved melasma scores.",
+  "It can sting or, rarely, cause allergy. Patch test first.",
+  "Results take weeks and fade without daily sunscreen.",
+]
+myth = "Kojic acid bleaches your skin."
+fact = "It slows the pigment-making step behind dark spots. In a small trial, a 1% cream helped melasma marks fade."
+keywords = ["kojic"]
+examples = [
+  {brand = "medicube", product = "Kojic Acid Turmeric Clarifying Toner Pad"},
+  {brand = "medicube", product = "Kojic Acid Turmeric Clarifying & Balancing Capsule Serum"},
+  {brand = "medicube", product = "Kojic Acid Turmeric Brightening Gel Mask Sheet"},
+]
+hashtags = ["#kojicacid", "#darkspots", "#medicube", "#kbeauty"]
+sources = [
+  "https://www.asinsight.com/report/US/medicube-turmeric-and-kojic-acid",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC3726874",
+]
+
+[[ingredient]]
+id = "calcium"
+name = "Calcium"
+full_name = "Calcium (in K-beauty multi balms)"
+nickname = "The 'calcium stick'"
+area = "skin"
+heat = "global"
+heat_note = "Calcium balm sticks surged in Amazon search (2026)"
+hot_since = 2026
+hook = "Calcium sticks: the swipe-on K-beauty balm, explained"
+what_it_is = "Calcium is a mineral skin uses to build its outer barrier layers. Viral K-beauty 'calcium sticks' pair it with collagen and oils in a swipe-on balm for eyes, neck and face."
+origin = "A mineral; healthy skin keeps a natural calcium gradient"
+benefits = [
+  "Helps dry spots feel cushioned and moisturized",
+  "Supports a comfortable-feeling skin barrier",
+  "Easy on-the-go care for eyes, neck and smile lines",
+]
+best_for = ["Dry under-eyes", "Neck and smile-line care", "On-the-go routines"]
+when = "AM & PM"
+how_to_use = [
+  "Glide the stick over dry areas after skincare",
+  "Pat in with fingertips for an even layer",
+  "Keep it capped and out of hot cars",
+]
+pairs_with = ["Collagen", "Peptides", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Calcium's barrier role comes mostly from lab and animal research.",
+  "Proof that calcium balms change skin is thin; the oils do much of the work.",
+  "Swipe on clean skin, and wipe the stick if it touches blemishes.",
+]
+myth = "Rubbing calcium on skin works like drinking milk for bones."
+fact = "Skin uses calcium to build its barrier, but proof that calcium balms add much is thin. Think moisture first."
+keywords = ["calcium"]
+examples = [
+  {brand = "Dr.Melaxin", product = "Cemenrete Calcium Volume Multi Balm"},
+]
+hashtags = ["#calciumstick", "#multibalm", "#kbeautyviral", "#kbeauty"]
+sources = [
+  "https://shopping.yahoo.com/beauty/skincare/articles/18-k-beauty-calcium-stick-171338557.html",
+  "https://www.frontrowgroup.com/en/insights/the-2026-amazon-beauty-snapshot-what-the-category-is-telling-you",
+  "https://synapse.koreamed.org/articles/1095470",
+]
+
+[[ingredient]]
 id = "ceramides"
 name = "Ceramides"
 full_name = ""

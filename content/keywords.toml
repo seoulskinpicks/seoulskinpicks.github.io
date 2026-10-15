@@ -304,3 +304,69 @@ id = "bond-building"
 name = "Bond-building"
 area = "hair"
 keywords = ["본딩 샴푸", "본딩 트리트먼트", "본딩 헤어팩", "프로틴 본딩"]
+
+[[term]]
+id = "ectoin"
+name = "Ectoin"
+area = "skin"
+keywords = ["엑토인 크림", "엑토인 세럼", "엑토인 앰플", "엑토인 선크림"]
+
+[[term]]
+id = "egf"
+name = "EGF"
+area = "skin"
+keywords = ["EGF 앰플", "EGF 크림", "EGF 세럼", "이지듀 EGF"]
+
+[[term]]
+id = "black-rice"
+name = "Black rice"
+area = "skin"
+keywords = ["흑미 토너", "흑미 클렌징", "흑미 크림", "흑미 에센스"]
+
+[[term]]
+id = "zinc"
+name = "Zinc"
+area = "skin"
+keywords = ["징크 패드", "징크 토너", "징크 세럼", "징크 앰플"]
+
+[[term]]
+id = "hypochlorous-acid"
+name = "Hypochlorous"
+area = "skin"
+keywords = ["차아염소산 미스트", "차아염소산수 미스트", "차아염소산 스프레이"]
+
+[[term]]
+id = "kojic-acid"
+name = "Kojic acid"
+area = "skin"
+keywords = ["코직산 패드", "코직산 세럼", "코직산 크림"]
+
+[[term]]
+id = "calcium"
+name = "Calcium"
+area = "skin"
+keywords = ["칼슘 밤", "칼슘 스틱", "칼슘 멀티밤"]
+
+[[term]]
+id = "scalp-exosome"
+name = "Scalp exosomes"
+area = "hair"
+keywords = ["엑소좀 탈모앰플", "엑소좀 두피 앰플", "엑소좀 샴푸", "엑소좀 브러쉬 앰플"]
+
+[[term]]
+id = "tea-tree"
+name = "Tea tree"
+area = "hair"
+keywords = ["티트리 샴푸", "티트리 두피 토닉", "티트리 스칼프"]
+
+[[term]]
+id = "keratin"
+name = "Keratin"
+area = "hair"
+keywords = ["케라틴 샴푸", "케라틴 트리트먼트", "케라틴 헤어팩", "케라틴 앰플"]
+
+[[term]]
+id = "pha"
+name = "PHA"
+area = "skin"
+keywords = ["PHA 패드", "PHA 토너", "PHA 클렌저", "글루코노락톤 토너"]

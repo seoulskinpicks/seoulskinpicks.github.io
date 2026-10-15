@@ -249,6 +249,40 @@ sources = [
 ]
 
 [[versus]]
+id = "searches-2026-10-15"
+year = 2026
+topic = "Ingredients"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "Mid-Oct 2026: Naver searches vs. Amazon searches"
+korea = [
+  {name = "PDRN", why = "Still the #1 tracked ingredient on Naver (Oct 2026)"},
+  {name = "Exosomes", why = "Naver searches up 240% in one week (Oct 2026)"},
+  {name = "Bakuchiol", why = "Naver searches up 47% in one week (Oct 2026)"},
+  {name = "Hyaluronic acid", why = "Naver searches up 19% in one week (Oct 2026)"},
+  {name = "TXA", why = "Naver searches up 18%; top 3 tracked ingredient"},
+]
+global = [
+  {name = "PDRN", why = "Amazon searches +740%, Q2 2025 to Q2 2026"},
+  {name = "Copper peptides", why = "Amazon searches +36,280% YoY in Q1 2026"},
+  {name = "NAD+", why = "Amazon 'NAD' searches +6,042% YoY in Q1 2026"},
+  {name = "Volufiline", why = "Amazon searches +723%, Q2 2025 to Q2 2026"},
+  {name = "Black rice", why = "Black rice exfoliant: 340K+ more Amazon searches"},
+]
+both = ["PDRN"]
+next = [
+  {name = "Ectoin", why = "Overlaps showed 4 ectoin lines at interCHARM Korea"},
+  {name = "Human-like collagen", why = "Kolmar Korea's microbe-made collagen, near launch"},
+  {name = "Nobiletin", why = "Kolmar Korea's citrus pick as a retinol alternative"},
+]
+basis = "Naver search data (week of Oct 5, 2026); Amazon search data quoted by BeautyMatter and Front Row"
+sources = [
+  "https://beautymatter.com/articles/amazon-builds-its-k-beauty-advantage",
+  "https://www.frontrowgroup.com/en/insights/the-2026-amazon-beauty-snapshot-what-the-category-is-telling-you",
+  "https://www.venturesquare.net/1095444/",
+  "https://news.mtn.co.kr/news-detail/2026090115191122445",
+]
+
+[[versus]]
 id = "trending-2026-10"
 year = 2026
 topic = "Ingredients"
