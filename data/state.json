@@ -3445,6 +3445,90 @@
       "permalink": "https://www.instagram.com/reel/Der_UfQjz7J/",
       "card_skipped": true,
       "published_at": "2026-10-20T04:17+09:00"
+    },
+    {
+      "number": 35,
+      "date": "2026-10-20",
+      "source": "myth",
+      "key": "my-pdrn+nad+azulene+hyaluronic-acid",
+      "brand": "",
+      "name": "K-beauty myths vs. facts: PDRN, NAD+, Azulene, Hyaluronic acid",
+      "link": "",
+      "links": {},
+      "products": [],
+      "data": {
+        "items": [
+          {
+            "id": "pdrn",
+            "name": "PDRN",
+            "area": "skin",
+            "myth": "A PDRN serum works like a PDRN or Rejuran injection.",
+            "fact": "Injections place DNA fragments deep in skin. Serums stay near the surface: think hydration, not a procedure.",
+            "sources": [
+              "https://newsroom.cj.net/k-beauty-trends-highlights-from-latest-olive-young-sale/",
+              "https://jcasonline.com/polynucleotides-and-polydeoxyribonucleotides-in-dermatology-a-narrative-review/",
+              "https://chemistconfessions.com/blogs/pdrn-skincare-hype-vs-reality",
+              "https://cosmeticsbusiness.com/same-inci-different-origins-why-pdrn-sourcing-matters"
+            ]
+          },
+          {
+            "id": "nad",
+            "name": "NAD+",
+            "area": "skin",
+            "myth": "Rubbing on NAD+ refills your skin's NAD+ levels.",
+            "fact": "NAD+ struggles to penetrate. Surface-level support is realistic; precursors like niacinamide may do more.",
+            "sources": [
+              "https://www.nbcnews.com/select/shopping/nad-skin-care-rcna259545",
+              "https://www.cosmorning.com/news/article.html?no=51144",
+              "https://www.newsis.com/view/NISX20251002_0003354775",
+              "https://incidecoder.com/products/numbuzin-no-9-nad-bio-lifting-sil-essence"
+            ]
+          },
+          {
+            "id": "azulene",
+            "name": "Azulene",
+            "area": "skin",
+            "myth": "The bluer the product, the more calming it is.",
+            "fact": "The color only shows azulene is there. How a formula feels depends on the whole recipe, not the shade of blue.",
+            "sources": [
+              "https://wwd.com/beauty-industry-news/beauty-features/pdrn-korea-azulene-beauty-skin-care-ingredient-trends-1239069353/",
+              "https://v.daum.net/v/20260908141623686",
+              "https://www.wwdkorea.com/news/articleView.html?idxno=20033"
+            ]
+          },
+          {
+            "id": "hyaluronic-acid",
+            "name": "Hyaluronic acid",
+            "area": "skin",
+            "myth": "More layers of hyaluronic acid mean more hydration.",
+            "fact": "HA needs water around it and a cream on top. Extra layers rarely help; sealing it in does.",
+            "sources": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC10078143/",
+              "https://pubmed.ncbi.nlm.nih.gov/35833366/",
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969"
+            ]
+          }
+        ]
+      },
+      "category": "myth",
+      "folder": "035",
+      "slides": 6,
+      "caption": "4 K-beauty myths, fact-checked 🔍\nMyth or fact? Swipe before you read the answers.\n\n🧪 PDRN\n❌ Myth: A PDRN serum works like a PDRN or Rejuran injection.\n✅ Fact: Injections place DNA fragments deep in skin. Serums stay near the surface: think hydration, not a procedure.\n\n🧪 NAD+\n❌ Myth: Rubbing on NAD+ refills your skin's NAD+ levels.\n✅ Fact: NAD+ struggles to penetrate. Surface-level support is realistic; precursors like niacinamide may do more.\n\n🧪 Azulene\n❌ Myth: The bluer the product, the more calming it is.\n✅ Fact: The color only shows azulene is there. How a formula feels depends on the whole recipe, not the shade of blue.\n\n🧪 Hyaluronic acid\n❌ Myth: More layers of hyaluronic acid mean more hydration.\n✅ Fact: HA needs water around it and a cream on top. Extra layers rarely help; sealing it in does.\n\nWhich one did you believe? Tell me below 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n.\n#skincaremyths #kbeauty #skincarefacts #koreanskincare",
+      "hook": "4 K-beauty myths, fact-checked",
+      "bullets": [
+        "PDRN: Injections place DNA fragments deep in skin. Serums stay near the surface: think hydration, not a procedure.",
+        "NAD+: NAD+ struggles to penetrate. Surface-level support is realistic; precursors like niacinamide may do more.",
+        "Azulene: The color only shows azulene is there. How a formula feels depends on the whole recipe, not the shade of blue."
+      ],
+      "status": "published",
+      "story": {
+        "image": "stories/035.jpg",
+        "status": "published",
+        "media_id": "18016820426747387"
+      },
+      "ig_media_id": "17914021638496315",
+      "permalink": "https://www.instagram.com/p/Des_wUPlsGQ/",
+      "published_at": "2026-10-20T13:40+09:00"
     }
   ],
   "tool_history": [
