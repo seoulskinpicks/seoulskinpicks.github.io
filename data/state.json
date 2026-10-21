@@ -3582,6 +3582,120 @@
       "permalink": "https://www.instagram.com/reel/DeubGJ5iaJF/",
       "card_skipped": true,
       "published_at": "2026-10-21T02:58+09:00"
+    },
+    {
+      "number": 37,
+      "date": "2026-10-21",
+      "source": "combo",
+      "key": "cb-retinol+copper-peptide+spicule+retinal",
+      "brand": "",
+      "name": "Mix & match: Retinol, Copper peptide, Spicules, Retinal",
+      "link": "",
+      "links": {},
+      "products": [],
+      "data": {
+        "items": [
+          {
+            "id": "retinol",
+            "name": "Retinol",
+            "area": "skin",
+            "pairs": [
+              "Ceramides",
+              "Panthenol",
+              "Peptides"
+            ],
+            "benefit": "Known for helping fine lines look softer over time",
+            "avoid": [
+              "Strong exfoliating acids",
+              "Other retinoids"
+            ],
+            "when": "PM only",
+            "sources": [
+              "https://jcadonline.com/efficacy-of-over-the-counter-vitamin-a/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC11608876/"
+            ]
+          },
+          {
+            "id": "copper-peptide",
+            "name": "Copper peptide",
+            "area": "skin",
+            "pairs": [
+              "Hyaluronic acid",
+              "Ceramides",
+              "Panthenol"
+            ],
+            "benefit": "May help skin look firmer and more elastic",
+            "avoid": [
+              "Pure vitamin C, same time",
+              "Strong AHA/BHA, same time"
+            ],
+            "when": "Mostly PM",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Copper_peptide_GHK-Cu",
+              "https://www.mdpi.com/2079-9284/5/2/29"
+            ]
+          },
+          {
+            "id": "spicule",
+            "name": "Spicules",
+            "area": "skin",
+            "pairs": [
+              "Centella (cica)",
+              "Hyaluronic acid",
+              "Panthenol"
+            ],
+            "benefit": "Gently exfoliates for smoother-feeling texture",
+            "avoid": [
+              "Retinoids same night",
+              "AHA/BHA same night"
+            ],
+            "when": "PM, 2–3x a week",
+            "sources": [
+              "https://www.drrachelho.com/blog/micro-spicule-skincare-review/",
+              "https://chemistconfessions.com/blogs/reedle-shot-deep-dive-science-of-spicules-in-skincare"
+            ]
+          },
+          {
+            "id": "retinal",
+            "name": "Retinal",
+            "area": "skin",
+            "pairs": [
+              "Niacinamide",
+              "Ceramides",
+              "Peptides"
+            ],
+            "benefit": "Helps skin look smoother and more even-toned",
+            "avoid": [
+              "AHA/BHA same night",
+              "Other retinoids"
+            ],
+            "when": "PM",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Retinal",
+              "https://dermnetnz.org/topics/topical-retinoids"
+            ]
+          }
+        ]
+      },
+      "category": "combo",
+      "folder": "037",
+      "slides": 6,
+      "caption": "Mix & match: what to layer, what to space out 🧩\nA quick pairing cheat sheet from our Ingredient 101 notes.\n\n🧪 Retinol (PM only)\n✅ Pairs well with: Ceramides, Panthenol, Peptides\n⏸ Space out from: Strong exfoliating acids, Other retinoids\n\n🧪 Copper peptide (Mostly PM)\n✅ Pairs well with: Hyaluronic acid, Ceramides, Panthenol\n⏸ Space out from: Pure vitamin C, same time, Strong AHA/BHA, same time\n\n🧪 Spicules (PM, 2–3x a week)\n✅ Pairs well with: Centella (cica), Hyaluronic acid, Panthenol\n⏸ Space out from: Retinoids same night, AHA/BHA same night\n\n🧪 Retinal (PM)\n✅ Pairs well with: Niacinamide, Ceramides, Peptides\n⏸ Space out from: AHA/BHA same night, Other retinoids\n\nNew to an active? Add one product at a time and patch test first.\nWhat combo do you want checked next? 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n.\n#skincarelayering #kbeauty #skincaretips #koreanskincare",
+      "hook": "Mix & match: what to layer, what to space out",
+      "bullets": [
+        "Retinol + Ceramides",
+        "Copper peptide + Hyaluronic acid",
+        "Spicules + Centella (cica)"
+      ],
+      "status": "published",
+      "story": {
+        "image": "stories/037.jpg",
+        "status": "published",
+        "media_id": "17875400322636304"
+      },
+      "ig_media_id": "17943077226097842",
+      "permalink": "https://www.instagram.com/p/Devj4IXFKF6/",
+      "published_at": "2026-10-21T13:34+09:00"
     }
   ],
   "tool_history": [
