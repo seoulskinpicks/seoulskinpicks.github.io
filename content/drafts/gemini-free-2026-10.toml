@@ -1,0 +1,392 @@
+# Gemini (free) research drafts, 2026-10-28. NOT posted unless merged into content/.
+
+# PASS
+[[ingredient]]
+id = "aloe-vera"
+name = "Aloe Vera"
+full_name = "Aloe vera"
+nickname = "Soothing Gel"
+area = "skin"
+heat = "global"
+heat_note = "Bestseller on Olive Young Global"
+hot_since = 2024
+hook = "The ultimate global bestseller for soothing skin."
+what_it_is = "A succulent plant species widely known for its refreshing gel texture that helps hydrate and soothe the skin."
+origin = "Succulent plant species"
+benefits = ["Supports skin hydration", "Helps soothe the skin", "Provides a refreshing feel"]
+best_for = ["All skin types", "Dehydrated skin", "Soothing needs"]
+when = "AM & PM"
+how_to_use = [
+  "Take an adequate amount of the gel.",
+  "Apply evenly to the face or body.",
+  "Gently pat to help absorption.",
+]
+pairs_with = ["Water", "Glycerin"]
+avoid_with = []
+good_to_know = [
+  "Aloe vera is a succulent plant species of the genus Aloe.",
+  "It is widely distributed and considered an invasive species in many regions.",
+]
+myth = "Aloe vera can completely replace all steps of your daily skincare routine."
+fact = "Aloe vera is a succulent plant species widely distributed across many regions of the world."
+keywords = ["aloe", "aloe vera"]
+examples = [
+  {brand = "AROMATICA", product = "Soothing Aloe Vera Gel 300ml"},
+  {brand = "BRINGGREEN", product = "Aloe 97% Soothing Gel 300ml Double Pack"},
+]
+hashtags = ["#AloeVera", "#SoothingGel"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA210000096",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA241227207",
+  "https://en.wikipedia.org/wiki/Aloe_vera",
+]
+
+# FAIL: heat_note 너무 김 (52>50)
+[[ingredient]]
+id = "red-bean"
+name = "Red bean"
+full_name = "Adzuki bean"
+nickname = "Red mung bean"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller with over 1330 reviews"
+hot_since = 2022
+hook = "Why shoppers love this East Asian bean for pores"
+what_it_is = "Red bean, also known as adzuki bean, is an annual vine widely cultivated throughout East Asia. It is featured in popular pore-refreshing masks."
+origin = "East Asia"
+benefits = [
+  "Supports refreshed-looking pores",
+  "Helps clarify the complexion",
+  "Provides traditional botanical care",
+]
+best_for = ["Pore concerns", "East Asian skincare fans", "Refreshing routines"]
+when = "As needed"
+how_to_use = [
+  "Apply the red bean mask to clean skin",
+  "Leave on for the recommended time",
+  "Rinse off gently with lukewarm water",
+]
+pairs_with = ["Water", "Glycerin"]
+avoid_with = []
+good_to_know = [
+  "Cultivars most familiar in East Asia have a uniform red color.",
+  "Available in white, black, gray, and variously mottled varieties.",
+]
+myth = "Red bean skincare products only use wild harvested beans from the forest."
+fact = "Red bean comes from an annual vine widely cultivated throughout East Asia for its small bean."
+keywords = ["red bean"]
+examples = [
+  {brand = "Beauty of Joseon", product = "Red Bean Refreshing Pore Mask 140mL"},
+]
+hashtags = ["#redbean", "#adzukibean", "#poremask"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA221217079",
+  "https://en.wikipedia.org/wiki/Adzuki_bean",
+]
+
+# PASS
+[[ingredient]]
+id = "glycolic-acid"
+name = "Glycolic Acid"
+full_name = "Glycolic Acid"
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller in toner category."
+hot_since = 1999
+hook = "A popular exfoliating ingredient for smoother skin"
+what_it_is = "A naturally occurring ingredient used in skincare products that is water-soluble, colorless, and odorless."
+origin = "Widespread in nature"
+benefits = [
+  "Helps exfoliate the surface of the skin",
+  "Supports skin affected by photodamage",
+  "May help improve the look of dark patches",
+]
+best_for = ["Photodamaged skin", "Skin with dark patches"]
+when = "As needed"
+how_to_use = [
+  "Apply as an exfoliating toner step",
+  "Sweep gently over the face and neck",
+  "Follow up with your regular moisturizer",
+]
+pairs_with = ["Kojic acid", "Hydroquinone"]
+avoid_with = []
+good_to_know = [
+  "It is a water-soluble, colorless, and odorless substance.",
+  "Evaluated in studies alongside peels and enzyme exfoliants.",
+]
+myth = "Glycolic acid completely removes dark patches instantly."
+fact = "It supports exfoliation and photodamage care, but individual results vary."
+keywords = ["glycolic acid"]
+examples = [
+  {brand = "The Ordinary", product = "Glycolic Acid 7% Exfoliating Toner 240ml"},
+]
+hashtags = ["#glycolicacid", "#exfoliation", "#skincare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250329644",
+  "https://en.wikipedia.org/wiki/Glycolic_acid",
+  "https://pubmed.ncbi.nlm.nih.gov/26580881/",
+  "https://pubmed.ncbi.nlm.nih.gov/10417583/",
+]
+
+# PASS
+[[ingredient]]
+id = "carrot"
+name = "Carrot"
+full_name = ""
+nickname = "Carrot Carotene"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller in calming pads"
+hot_since = 2022
+hook = "A root vegetable known to support soothing skincare"
+what_it_is = "A root vegetable rich in beta-carotene and vitamin A, used in calming skincare formulations and bioferments."
+origin = "Root vegetable of the Apiaceae family"
+benefits = [
+  "Helps calm and soothe the skin surface",
+  "Delivers antioxidant support from beta-carotene",
+  "Provides active substances that support skin conditioning",
+]
+best_for = ["Skin needing calming care", "Those looking for antioxidants"]
+when = "AM & PM"
+how_to_use = [
+  "Apply pads containing carrot carotene to cleansed skin",
+  "Leave on sensitive areas briefly for a soothing effect",
+  "Gently wipe across skin and pat in remaining moisture",
+]
+pairs_with = ["Kombucha", "Beta-carotene"]
+avoid_with = []
+good_to_know = [
+  "Carrots are a natural source of beta-carotene, which converts to vitamin A.",
+  "Popularly featured in pre-soaked calming water pads for quick skin relief.",
+]
+myth = "Carrot skincare only comes from bright orange root varieties."
+fact = "Heirloom carrots can also naturally be white, yellow, red, purple, or black."
+keywords = ["carrot", "carrot carotene"]
+examples = [
+  {brand = "SKINFOOD", product = "Carrot Carotene Calming Water Pad 60 Pads"},
+  {brand = "SKINFOOD", product = "Carrot Carotene Calming Water Pad 60P Double Pack"},
+]
+hashtags = ["#carrotpad", "#carrotskincare", "#calmingskin"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA220514832",
+  "https://pubmed.ncbi.nlm.nih.gov/40076207/",
+  "https://en.wikipedia.org/wiki/Carrot",
+]
+
+# PASS
+[[ingredient]]
+id = "pdlla"
+name = "PDLLA"
+full_name = "Poly-D,L-Lactic Acid"
+nickname = "Juvelook"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller in ampoules"
+hot_since = 2023
+hook = "A bio-stimulatory polymer explored for aging skin"
+what_it_is = "Poly-D,L-lactic acid is a biodegradable polyester derived from lactic acid, used as a bio-stimulatory ingredient for skin rejuvenation."
+origin = "Synthetic polyester derived from lactic acid"
+benefits = [
+  "Supports collagen synthesis in aged skin",
+  "Helps stimulate angiogenesis in skin tissue",
+  "Promotes skin rejuvenation and refining",
+]
+best_for = ["Aging skin", "Skin needing rejuvenation"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after cleansing as an essence or ampoule",
+  "Smooth gently across the skin until fully absorbed",
+  "Follow with your standard daily moisturizer",
+]
+pairs_with = ["Collagen", "Lactic acid"]
+avoid_with = []
+good_to_know = [
+  "Effects on collagen and angiogenesis were reported in animal testing.",
+  "Functions through bio-stimulatory mechanisms and cytokine modulation.",
+]
+myth = "PDLLA works as an immediate plastic filler on topical application."
+fact = "It is studied as a bio-stimulator supporting collagen synthesis over time."
+keywords = ["pdlla"]
+examples = [
+  {brand = "JUVELOOK", product = "PDLLA Refining First Essence 150ml"},
+  {brand = "JUVELOOK", product = "PDLLA Collagen Boosting Ampoule 20g"},
+]
+hashtags = ["#pdlla", "#juvelook", "#skinrejuvenation"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260439606",
+  "https://pubmed.ncbi.nlm.nih.gov/37175693/",
+  "https://pubmed.ncbi.nlm.nih.gov/42211639/",
+]
+
+# PASS
+[[ingredient]]
+id = "sea-kelp"
+name = "Sea kelp"
+full_name = "Laminariales"
+nickname = "Brown algae"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller mask ingredient"
+hot_since = 2024
+hook = "Did you know sea kelp is not actually a plant?"
+what_it_is = "Sea kelp refers to large brown algae or seaweeds belonging to the order Laminariales. Though it performs photosynthesis, it is classified as a stramenopile rather than a plant."
+origin = "Large brown algae (order Laminariales)"
+benefits = [
+  "Helps provide a refreshing sensation on the skin",
+  "Supports a refreshed feel during mask application",
+  "Helps deliver a revitalized, refreshed feeling",
+]
+best_for = ["Skin seeking a refresh", "Mask routine fans"]
+when = "1-2x a week"
+how_to_use = [
+  "Apply a sea kelp sheet mask to clean skin",
+  "Leave on to allow the refreshing formula to work",
+  "Remove gently and discard the mask sheet",
+]
+pairs_with = ["Not specified", "Data unavailable"]
+avoid_with = []
+good_to_know = [
+  "Documented clinical skin benefits in the provided evidence are very thin.",
+  "Featured in global bestselling sheet masks known for a refreshing effect.",
+]
+myth = "Sea kelp is classified as a marine plant."
+fact = "Sea kelp is actually a stramenopile brown alga from the order Laminariales, not a true plant."
+keywords = ["sea kelp"]
+examples = [
+  {brand = "BIODANCE", product = "Refreshing Sea Kelp Real Deep Mask 7 Sheets"},
+]
+hashtags = ["#seakelp", "#sheetmask", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250229020",
+  "https://en.wikipedia.org/wiki/Kelp",
+]
+
+# PASS
+[[ingredient]]
+id = "sea-salt"
+name = "Sea Salt"
+full_name = "Sea Salt"
+nickname = "Bay Salt"
+area = "hair"
+heat = "global"
+heat_note = "Olive Young Global bestseller in scalp care"
+hot_since = 2024
+hook = "Can ocean salt refresh and exfoliate your scalp?"
+what_it_is = "Sea salt is salt produced by evaporating seawater. In hair care, it is commonly used in cosmetic formulations to physically exfoliate the scalp."
+origin = "Produced by the evaporation of seawater"
+benefits = [
+  "Helps physically exfoliate buildup from the scalp",
+  "Used in cosmetic formulas designed to support hair thickening",
+  "Assists in cleansing and purifying the scalp surface",
+]
+best_for = ["Scalp exfoliation", "Scalp buildup"]
+when = "1-2x a week"
+how_to_use = [
+  "Apply a moderate amount directly onto a wet scalp",
+  "Gently massage across the scalp to exfoliate",
+  "Rinse thoroughly with lukewarm water",
+]
+pairs_with = ["Water", "Seawater"]
+avoid_with = []
+good_to_know = [
+  "Evidence for specific hair benefits beyond exfoliation is thin.",
+  "Formulated as a cosmetic physical scrub rather than a treatment.",
+]
+myth = "Sea salt is too harsh to ever be used on the scalp."
+fact = "Derived from evaporated seawater, it is used in scrubs, but hair evidence is thin."
+keywords = ["sea salt"]
+examples = [
+  {brand = "Dr.FORHAIR", product = "Folligen Thickening Sea Salt Scalp Exfoliator 250g"},
+]
+hashtags = ["#seasalt", "#scalpcare", "#scalpexfoliator"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260237867",
+  "https://en.wikipedia.org/wiki/Sea_salt",
+]
+
+# PASS
+[[ingredient]]
+id = "amino-acids"
+name = "Amino acids"
+full_name = "Amino Acids"
+nickname = "Protein building blocks"
+area = "hair"
+heat = "global"
+heat_note = "Olive Young Global bestseller with 42 reviews"
+hot_since = 2022
+hook = "Can protein building blocks elevate your hair routine?"
+what_it_is = "Organic compounds containing amino and carboxylic acid groups, essential as the 22 building blocks incorporated into proteins."
+origin = "Found in nature and biological systems"
+benefits = [
+  "Provides organic components incorporated into proteins",
+  "May support hair condition as part of a treatment formula",
+  "Known to act as foundational protein building blocks",
+]
+best_for = ["Hair treatment routines", "All hair types"]
+when = "During hair wash"
+how_to_use = [
+  "Apply treatment evenly through hair as directed on package",
+  "Follow specific treatment leave-in or dwell time instructions",
+  "Rinse thoroughly if required by product directions",
+]
+pairs_with = ["Biotin", "Proteins"]
+avoid_with = []
+good_to_know = [
+  "Over 500 amino acids exist in nature, but 22 are incorporated into proteins.",
+  "Specific hair benefits are limited in the provided scientific evidence.",
+]
+myth = "All 500+ natural amino acids are part of our genetic code."
+fact = "Only 22 α-amino acids are incorporated into proteins and appear in the genetic code of life."
+keywords = ["amino"]
+examples = [
+  {brand = "CKD Guaranteed", product = "CKD Amino Biotin All Powerful Treatment 150mL"},
+]
+hashtags = ["#aminoacids", "#hairtreatment", "#biotin"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA220916188",
+  "https://en.wikipedia.org/wiki/Amino_acid",
+]
+
+# PASS
+[[ingredient]]
+id = "kelp"
+name = "Kelp"
+full_name = "Laminariales"
+nickname = "Brown Seaweed"
+area = "hair"
+heat = "global"
+heat_note = "Olive Young Global bestseller shampoo ingredient"
+hot_since = 2024
+hook = "A popular seaweed ingredient in global hair shampoo"
+what_it_is = "Kelp refers to large brown seaweeds from the order Laminariales. In hair care routines, it is formulated into cleansing products such as shampoos."
+origin = "Brown algae (order Laminariales)"
+benefits = [
+  "Helps cleanse hair when formulated into shampoos",
+  "Supports daily hair washing routines as a seaweed agent",
+  "Specific hair benefits are not detailed in current evidence",
+]
+best_for = ["Hair wash routines", "Shampoo users"]
+when = "Every wash"
+how_to_use = [
+  "Wet hair thoroughly with water before cleansing",
+  "Apply kelp shampoo and gently massage into the scalp",
+  "Rinse thoroughly with clean water",
+]
+pairs_with = ["Water", "Seaweed extract"]
+avoid_with = []
+good_to_know = [
+  "Evidence for specific hair benefits remains limited in available sources.",
+  "Despite looking like a plant, kelp is scientifically a stramenopile.",
+]
+myth = "Kelp is classified as an ordinary plant."
+fact = "Kelp is not a plant but a stramenopile, a large brown algae from the order Laminariales."
+keywords = ["kelp"]
+examples = [
+  {brand = "CHUNGMIJUNG", product = "Kelp Shampoo 500ml"},
+]
+hashtags = ["#kelp", "#kelpshampoo", "#haircare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA241126782",
+  "https://en.wikipedia.org/wiki/Kelp",
+]
