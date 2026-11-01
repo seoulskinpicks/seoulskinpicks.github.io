@@ -370,3 +370,69 @@ id = "pha"
 name = "PHA"
 area = "skin"
 keywords = ["PHA 패드", "PHA 토너", "PHA 클렌저", "글루코노락톤 토너"]
+
+[[term]]
+id = "quercetin"
+name = "Quercetin"
+area = "skin"
+keywords = ["퀘르세틴 클렌징폼", "퀘르세티놀 폼", "퀘르세틴 세럼", "퀘르세틴 앰플", "퀘르세틴 크림"]
+
+[[term]]
+id = "bifida"
+name = "Bifida ferment"
+area = "skin"
+keywords = ["비피다 앰플", "비피다 에센스", "비피다 세럼", "비피다 크림"]
+
+[[term]]
+id = "pdlla"
+name = "PDLLA"
+area = "skin"
+keywords = ["PDLLA 에센스", "PDLLA 앰플", "PDLLA 크림", "쥬베룩 앰플", "쥬베룩 에센스"]
+
+[[term]]
+id = "madecassoside"
+name = "Madecassoside"
+area = "skin"
+keywords = ["마데카소사이드 크림", "마데카소사이드 패드", "마데카소사이드 앰플", "마데카소사이드 선스틱"]
+
+[[term]]
+id = "ginseng-skin"
+name = "Ginseng"
+area = "skin"
+keywords = ["인삼 세럼", "인삼 크림", "인삼 아이세럼", "인삼 에센스", "홍삼 크림"]
+
+[[term]]
+id = "aloe"
+name = "Aloe"
+area = "skin"
+keywords = ["알로에 수딩젤", "알로에 젤", "알로에 토너", "알로에 크림"]
+
+[[term]]
+id = "bha"
+name = "BHA"
+area = "skin"
+keywords = ["BHA 토너", "BHA 패드", "BHA 리퀴드", "살리실산 토너", "블랙헤드 리퀴드"]
+
+[[term]]
+id = "silk-protein"
+name = "Silk protein"
+area = "hair"
+keywords = ["실크 헤어오일", "실크 헤어에센스", "실크 단백질 샴푸", "실크 트리트먼트"]
+
+[[term]]
+id = "amino-acids"
+name = "Amino acids"
+area = "hair"
+keywords = ["아미노산 샴푸", "아미노 샴푸", "아미노산 트리트먼트", "아미노 비오틴 샴푸"]
+
+[[term]]
+id = "sea-salt"
+name = "Sea salt"
+area = "hair"
+keywords = ["두피 소금 스크럽", "씨솔트 스크럽", "씨솔트 두피", "솔트 스케일러"]
+
+[[term]]
+id = "aha"
+name = "AHA"
+area = "skin"
+keywords = ["AHA 토너", "AHA 패드", "AHA 필링", "글리콜산 토너", "젖산 패드"]

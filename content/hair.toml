@@ -708,6 +708,138 @@ sources = [
 ]
 
 [[ingredient]]
+id = "silk-protein"
+name = "Silk protein"
+full_name = "Hydrolyzed silk & silk peptides"
+nickname = ""
+area = "hair"
+heat = "both"
+heat_note = "UNOVE silk oil: #6 Olive Young Global hair (Oct)"
+hot_since = 2021
+hook = "Why so many K-hair oils are named after silk"
+what_it_is = "Proteins from silkworm cocoons, broken into small pieces (hydrolyzed silk or silk peptides). Hair products use them to coat and smooth the cuticle."
+origin = "Silkworm cocoons"
+benefits = [
+  "Helps hair feel smoother and silkier",
+  "Helps reduce frizz and roughness on the lengths",
+  "Adds light shine without a heavy, oily feel",
+]
+best_for = ["Frizzy or rough lengths", "Heat-styled hair"]
+when = "After each wash"
+how_to_use = [
+  "Apply to damp mid-lengths and ends, not the roots",
+  "Comb through, then blow-dry as usual",
+  "Add a drop to dry ends to smooth flyaways",
+]
+pairs_with = ["Argan oil", "LPP protein", "Keratin"]
+avoid_with = []
+good_to_know = [
+  "A small lab study found silk peptides helped smooth damaged hair fibers.",
+  "Many 'silk' hair oils are mostly oils and silicones; check the ingredient list.",
+  "It conditions the hair surface; damaged lengths can't be repaired for good.",
+]
+myth = "Silk hair products contain real silk threads."
+fact = "They use silk proteins broken into tiny pieces that cling to the hair surface. No fabric involved."
+keywords = ["silk hair oil", "silk protein", "silk peptide"]
+examples = [
+  {brand = "UNOVE", product = "Silk Hair Oil Essence"},
+  {brand = "UNOVE", product = "Silk Hair Oil Tender Bloom"},
+]
+hashtags = ["#silkprotein", "#hairoil", "#koreanhaircare", "#frizzcontrol"]
+sources = [
+  "https://www.koreascience.or.kr/article/JAKO200811237152786.page?&lang=ko",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260943864",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA210711372",
+]
+
+[[ingredient]]
+id = "amino-acids"
+name = "Amino acids"
+full_name = "Amino acids & amino acid cleansers"
+nickname = "Gentle-wash heroes"
+area = "hair"
+heat = "both"
+heat_note = "CKD Amino Biotin: Olive Young Global bestseller"
+hot_since = 2020
+hook = "What 'amino acid shampoo' really means"
+what_it_is = "Small building blocks of protein. On hair labels the term covers two things: mild cleansers made from amino acids, and added amino acids that help hair hold moisture."
+origin = "Plant proteins (wheat, soy) or fermentation"
+benefits = [
+  "Helps cleanse gently, with less stripped feeling",
+  "Helps hair hold moisture and feel softer",
+  "May suit dry or sensitive scalps better than harsh washes",
+]
+best_for = ["Dry or sensitive scalp", "Color-treated hair"]
+when = "Every wash"
+how_to_use = [
+  "Massage into a wet scalp for about a minute",
+  "Rinse well; wash twice after heavy styling products",
+  "Follow with conditioner or treatment on the lengths",
+]
+pairs_with = ["Biotin", "Panthenol", "LPP protein"]
+avoid_with = []
+good_to_know = [
+  "Glutamate or glycinate cleansers on the label are the amino-acid part.",
+  "Mild cleansers may need a double wash on very oily scalps.",
+  "Evidence is mostly formulation know-how, not clinical hair studies.",
+]
+myth = "Amino acid shampoo feeds your hair roots."
+fact = "Amino acids mostly make the wash milder and help strands hold water. Roots get nutrients from your blood."
+keywords = ["amino"]
+examples = [
+  {brand = "CKD Guaranteed", product = "CKD Amino Biotin All Powerful Treatment"},
+  {brand = "CKD Guaranteed", product = "Amino Biotin All Powerful Shampoo"},
+]
+hashtags = ["#aminoacidshampoo", "#gentleshampoo", "#koreanhaircare", "#scalpcare"]
+sources = [
+  "https://www.cosmeticsandtoiletries.com/formulas-products/hair-care/article/21835818/read-the-label-kiehls-amino-acid-shampoo",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA220916188",
+]
+
+[[ingredient]]
+id = "sea-salt"
+name = "Sea salt"
+full_name = "Sea salt (scalp scrub grains)"
+nickname = "Scalp scrub"
+area = "hair"
+heat = "global"
+heat_note = "Dr.FORHAIR salt scrub: Olive Young Global top 40"
+hot_since = 2022
+hook = "Should you scrub your scalp with salt?"
+what_it_is = "Salt crystals from evaporated seawater. In hair care they are the gritty part of scalp scrubs, used to loosen flakes, oil and product buildup before shampooing."
+origin = "Evaporated seawater"
+benefits = [
+  "Helps loosen flakes and product buildup",
+  "Leaves the scalp feeling fresh and clean",
+  "Helps shampoo reach the scalp after heavy styling",
+]
+best_for = ["Oily scalp", "Styling-product buildup"]
+when = "1x a week"
+how_to_use = [
+  "Apply to a wet scalp, section by section",
+  "Massage gently with fingertips for 1–2 minutes",
+  "Rinse well, then shampoo as usual",
+]
+pairs_with = ["Menthol", "Tea tree", "Rosemary"]
+avoid_with = ["Acid scalp scalers, same day", "Scratched or irritated scalp"]
+good_to_know = [
+  "Once a week is plenty for most; dry or sensitive scalps may need less.",
+  "Scrubbing hard can irritate skin, so use fingertips, not nails.",
+  "Evidence for salt beyond exfoliation is thin: it's a physical scrub.",
+]
+myth = "A salt scalp scrub makes your hair thicker."
+fact = "Salt only scrubs the scalp surface. A fuller feel comes from cleaner roots, not from more hair."
+keywords = ["sea salt"]
+examples = [
+  {brand = "Dr.FORHAIR", product = "Folligen Thickening Sea Salt Scalp Exfoliator"},
+]
+hashtags = ["#scalpscrub", "#seasalt", "#scalpcare", "#koreanhaircare"]
+sources = [
+  "https://dermstore.com/blog/how-to/how-to-exfoliate-scalp",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260237867",
+]
+
+[[ingredient]]
 id = "scalp-exosome"
 name = "Scalp exosomes"
 full_name = "Exosomes for scalp care (plant-derived)"

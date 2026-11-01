@@ -27,6 +27,60 @@
 # English only (no Hangul). Claim-safe wording (helps, supports, known for, may).
 
 [[issue]]
+id = "2026-11-japan"
+region = "japan"
+date = "2026-11-01"
+title = "What's hot in Japan right now"
+hook = "Japan's K-beauty boom is moving into real stores"
+items = [
+  { name = "PDRN lip serum", signal = "Dr.Reju-All PDRN lip serum: #1 lip care on Qoo10 Japan (Sept 2026)", why = "PDRN has moved from face serums to lips. This serum aims for soft, plump-looking lips, and it also ranked #4 in lip makeup." },
+  { name = "K-beauty at 7-Eleven", signal = "Qoo10 Pick corner rolls out to 7-Eleven Japan stores (Sept 26)", why = "21 mini-size products from 8 K-brands, chosen from Qoo10 sales data, so shoppers can try Korean skincare for less." },
+  { name = "Qoo10 Sample House", signal = "Sample-first store opens in Shibuya, Tokyo (Oct 1, 2026)", why = "Shoppers pick sample cards, take samples home and buy later in the app. Over 90% of the products on show are K-beauty." },
+  { name = "Live shopping", signal = "K-brands: ~90% of Qoo10 Japan live-commerce sales (Q3 2026)", why = "More Japanese shoppers now discover Korean skincare through live streams, a sign of how social K-beauty buying has become." },
+]
+sources = [
+  "https://www.value-press.com/pressrelease/382836",
+  "https://www.hankyung.com/article/202610103620i",
+  "https://www.hankyung.com/article/2026100663711",
+  "https://news.bizwatch.co.kr/article/consumer/2026/10/05/0002",
+]
+
+[[issue]]
+id = "2026-11-us"
+region = "us"
+date = "2026-11-01"
+title = "What's hot in the US right now"
+hook = "K-beauty ruled Amazon's October sale"
+items = [
+  { name = "Medicube Zero Pore Pad", signal = "#1 in Amazon beauty clicks, Prime Big Deal Days (Oct 6-7, 2026)", why = "Exfoliating toner pads for smoother-looking pores. Medicube was also the #1 beauty search term of the sale." },
+  { name = "K-creams in the top 10", signal = "7 of the top 10 most-clicked Amazon beauty items were Korean", why = "Anua's PDRN Hyaluronic Acid Cream, Illiyoon's Ceramide Cream and Dr. Althea's 345 Relief Cream: hydration and barrier picks." },
+  { name = "K-patches at Ulta", signal = "MARSHIQUE wrinkle and lifting patches: Ulta.com Oct 18, 504 stores", why = "Targeted patches for the look of frown lines and facial contours. A new K-beauty format reaching mass US stores from Nov 1." },
+]
+sources = [
+  "https://m.sedaily.com/article/20105603",
+  "https://www.nbcnews.com/select/shopping/amazon-october-prime-day-2026-beauty-deals-rcna600975",
+  "https://finance.yahoo.com/media-advertising/articles/k-beauty-k-patch-marshique-095800693.html",
+]
+
+[[issue]]
+id = "2026-11-filings"
+region = "filings"
+date = "2026-11-01"
+title = "New patents and ingredient filings"
+hook = "New K-beauty patents, and how to check a claim"
+items = [
+  { name = "miRNA skin composition", signal = "Patent registered by GFC Life Science (Oct 2026)", why = "A raw material using microRNA for skin-condition care, made for cosmetic makers. A patent, not a product: no named products yet." },
+  { name = "Sauerkraut-derived strain", signal = "Patent registered by GFC Life Science (Oct 2026)", why = "A cosmetic material from a Bifidobacterium breve strain found in sauerkraut. Ferment-based ingredients are a growing K-beauty theme." },
+  { name = "Red cabbage exosome", signal = "Daebong LS: patents filed, INCI name registered (Oct 2026)", why = "A plant-exosome raw material with Korean and international (PCT) patent filings. A filing is not proof it works; makers get it first." },
+  { name = "'Patented' label claims", signal = "Korea found 634 false IP marks in cosmetics listings (Sept 2026)", why = "81% cited expired rights, and hair care had the most cases. A 'patented' claim is worth checking against its registration number." },
+]
+sources = [
+  "https://www.biotimes.co.kr/news/articleView.html?idxno=35607",
+  "https://www.cosinkorea.com/news/article.html?no=58425",
+  "https://www.cosinkorea.com/mobile/article.html?no=58248",
+]
+
+[[issue]]
 id = "2026-10-japan"
 region = "japan"
 date = "2026-10-01"

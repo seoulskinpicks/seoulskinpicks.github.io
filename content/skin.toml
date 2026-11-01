@@ -1808,6 +1808,361 @@ sources = [
 ]
 
 [[ingredient]]
+id = "quercetin"
+name = "Quercetin"
+full_name = "Quercetin (plant flavonoid)"
+nickname = "Heartleaf flavonoid"
+area = "skin"
+heat = "korea"
+heat_note = "Korean press tips it as a 'next after PDRN' pick"
+hot_since = 2025
+hook = "The heartleaf compound Korean labs are betting on"
+what_it_is = "A yellow plant flavonoid found in heartleaf, onions and apples. Korean brands now name it on labels, mostly in heartleaf cleansers and serums for oily, reactive skin."
+origin = "Plants such as heartleaf (Houttuynia), onion and apple"
+benefits = [
+  "Known for antioxidant, soothing plant activity",
+  "May help reactive skin look calmer and less red",
+  "Often paired with heartleaf for oily, pore-prone skin",
+]
+best_for = ["Oily, pore-prone skin", "Redness-prone skin"]
+when = "AM & PM"
+how_to_use = [
+  "Use a quercetin cleanser on damp skin; rinse well",
+  "Follow with a soothing toner or serum",
+  "Finish with moisturizer, plus SPF in the morning",
+]
+pairs_with = ["Heartleaf", "Niacinamide", "Panthenol"]
+avoid_with = []
+good_to_know = [
+  "A small 2016 human study found a 1% quercetin cream eased induced redness.",
+  "Most other research is lab-based, and cleansers rinse off, so effects stay mild.",
+  "Pure quercetin dissolves poorly, so labs often use special delivery forms.",
+]
+myth = "Quercetin is a new lab-made chemical."
+fact = "It's a common plant flavonoid, also in onions and apples. What's new is brands naming it on the label."
+keywords = ["quercetin", "quercetinol"]
+examples = [
+  {brand = "Anua", product = "Heartleaf Quercetinol Pore Deep Cleansing Foam"},
+]
+hashtags = ["#quercetin", "#heartleaf", "#kbeauty", "#skincareingredients"]
+sources = [
+  "https://www.sisajournal-e.com/news/articleView.html?idxno=423873",
+  "https://www.dovepress.com/soothing-and-anti-itch-effect-of-quercetin-phytosome-in-human-subjects-peer-reviewed-article-CCID",
+  "https://research.bangor.ac.uk/en/publications/quercetin-topical-application-from-conventional-dosage-forms-to-n/",
+]
+
+[[ingredient]]
+id = "bifida"
+name = "Bifida ferment"
+full_name = "Bifida ferment lysate"
+nickname = "Postbiotic"
+area = "skin"
+heat = "both"
+heat_note = "Postbiotics: a K-beauty R&D trend to watch (2027)"
+hot_since = 2020
+hook = "The 'postbiotic' behind many K-beauty ampoules"
+what_it_is = "A lysate made by breaking down Bifidobacterium bacteria after fermentation. It is a postbiotic: no live bacteria, just their broken-down parts, used in ampoules, essences and creams."
+origin = "Fermented Bifidobacterium bacteria"
+benefits = [
+  "Helps support a calm, comfortable-feeling barrier",
+  "May help reactive skin feel less sensitive over time",
+  "Adds a light, hydrating feel to essences and ampoules",
+]
+best_for = ["Sensitive or reactive skin", "Dry, tight skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after toner, before heavier serums",
+  "Pat 2–3 drops over the face and neck",
+  "Seal with moisturizer; use SPF in the morning",
+]
+pairs_with = ["Ceramides", "Panthenol", "Galactomyces"]
+avoid_with = []
+good_to_know = [
+  "A small 2010 study in women with reactive skin found less sensitivity after 2 months.",
+  "It has no live bacteria, so it isn't a 'probiotic' in the strict sense.",
+  "Much of the other support comes from lab and skin-sample (explant) studies.",
+]
+myth = "Bifida ferment puts live, good bacteria on your skin."
+fact = "It's a lysate: bacteria broken down after fermentation. No live microbes, which keeps it stable in a bottle."
+keywords = ["bifida"]
+examples = [
+  {brand = "ma:nyo", product = "Bifida Biome Complex Ampoule"},
+]
+hashtags = ["#bifida", "#postbiotics", "#microbiomeskincare", "#kbeauty"]
+sources = [
+  "https://greyb.com/blog/korean-beauty-trends/",
+  "https://paulaschoice.co.uk/bifida-ferment-lysate/ingredient-bifida-ferment-lysate.html",
+]
+
+[[ingredient]]
+id = "aha"
+name = "AHA"
+full_name = "Alpha hydroxy acids (lactic, glycolic)"
+nickname = "Glow acids"
+area = "skin"
+heat = "global"
+heat_note = "AHA pore pads topped Amazon beauty clicks (Oct)"
+hot_since = 2015
+hook = "The smoothing acids inside K-beauty's pore pads"
+what_it_is = "Water-soluble acids such as lactic and glycolic acid. They loosen the bonds between dead surface cells, so they shed more evenly. K-beauty uses them in toner pads and liquids."
+origin = "First found in milk and sugarcane; now mostly lab-made"
+benefits = [
+  "Helps skin look smoother and more even",
+  "Helps dull, rough texture feel softer",
+  "May help pores look less clogged with dead skin",
+]
+best_for = ["Dull, rough skin", "Normal to oily skin"]
+when = "PM, 2–3x a week"
+how_to_use = [
+  "Swipe an AHA pad or liquid over clean, dry skin",
+  "Start 2 nights a week; skip broken or irritated skin",
+  "Moisturize after, and wear SPF every morning",
+]
+pairs_with = ["Hyaluronic acid", "Panthenol", "Ceramides"]
+avoid_with = ["Retinoids on the same night", "Other acids the same night"]
+good_to_know = [
+  "The US FDA says AHAs can raise sunburn risk: use SPF during and a week after.",
+  "Lactic acid is usually gentler than glycolic acid.",
+  "Stinging or peeling means too much: cut back how often you use it.",
+]
+myth = "The stronger the AHA, the better the glow."
+fact = "Higher strength mostly means more irritation. Gentle, regular use plus daily SPF keeps skin looking smooth."
+keywords = ["aha", "glycolic", "lactic acid"]
+examples = [
+  {brand = "COSRX", product = "AHA 7 Whitehead Power Liquid"},
+  {brand = "SOME BY MI", product = "AHA BHA PHA 30 Days Miracle Toner"},
+]
+hashtags = ["#aha", "#lacticacid", "#exfoliation", "#kbeauty"]
+sources = [
+  "https://www.cosmeticsdesign-europe.com/Article/2005/01/12/FDA-issues-sun-warning-guidance-on-AHAs",
+  "https://skinsort.com/products/medicube/medicube-zero-pore-pads-2-0-dual-textured-facial-toner-pads",
+  "https://m.sedaily.com/article/20105603",
+]
+
+[[ingredient]]
+id = "pdlla"
+name = "PDLLA"
+full_name = "Poly-D,L-lactic acid"
+nickname = "Skin-booster polymer"
+area = "skin"
+heat = "korea"
+heat_note = "Korean clinic booster now in Juvelook skincare"
+hot_since = 2024
+hook = "The clinic 'skin booster' that moved into skincare"
+what_it_is = "A biodegradable polymer made from lactic acid. Clinics inject it as a collagen-stimulating 'skin booster'; Korean brands now put it in essences and ampoules."
+origin = "Lactic acid, linked into a polymer in the lab"
+benefits = [
+  "Helps skin feel smooth and supple",
+  "Adds a soft, film-like finish to essences",
+  "Fits easily into a routine with peptides and hydrators",
+]
+best_for = ["Dry, dull-looking skin", "Clinic-to-home care fans"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after cleansing as an essence or ampoule",
+  "Pat in gently until absorbed",
+  "Follow with moisturizer, plus SPF in the morning",
+]
+pairs_with = ["Peptides", "Panthenol", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "The collagen evidence is for injections; topical PDLLA isn't shown to do the same.",
+  "Juvelook's maker, VAIM, launched its injectable PDLLA booster in 2019.",
+  "Think of a PDLLA cream as skincare, not a clinic treatment in a bottle.",
+]
+myth = "A PDLLA essence works like a PDLLA skin-booster injection."
+fact = "Injected PDLLA sits deep in skin. On the surface it mainly adds texture; collagen data comes from injections."
+keywords = ["pdlla"]
+examples = [
+  {brand = "JUVELOOK", product = "PDLLA Refining First Essence"},
+  {brand = "JUVELOOK", product = "PDLLA Collagen Boosting Ampoule"},
+]
+hashtags = ["#pdlla", "#skinbooster", "#kbeauty", "#koreanskincare"]
+sources = [
+  "https://www.drrachelho.com/blog/juvelook-skincare-topical-pdlla-korea/",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260439607",
+]
+
+[[ingredient]]
+id = "madecassoside"
+name = "Madecassoside"
+full_name = "Madecassoside (centella compound)"
+nickname = "Purified cica"
+area = "skin"
+heat = "korea"
+heat_note = "Cosmax patented a madecassoside vesicle (2025)"
+hot_since = 2018
+hook = "Cica's best-known compound, on its own"
+what_it_is = "One of the main active compounds in centella asiatica (cica). Korean brands use it on its own in creams, pads and sun care for stressed, sensitive-feeling skin."
+origin = "Leaves of centella asiatica"
+benefits = [
+  "Helps calm the look of redness and irritation",
+  "Supports a comfortable, healthy-looking barrier",
+  "A gentle soothing step for over-exfoliated skin",
+]
+best_for = ["Sensitive or stressed skin", "Over-exfoliated skin"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a madecassoside cream as your last step",
+  "Use pads on red or stressed areas for a few minutes",
+  "In the morning, follow with SPF",
+]
+pairs_with = ["Panthenol", "Ceramides", "Centella"]
+avoid_with = []
+good_to_know = [
+  "Small human studies on centella creams show better hydration and less irritation.",
+  "Much of the madecassoside-only research is still lab work.",
+  "A few people get small breakouts; stop if skin reacts.",
+]
+myth = "Madecassoside and centella extract are exactly the same."
+fact = "Madecassoside is one compound from centella; whole extracts also contain asiaticoside and other actives."
+keywords = ["madecassoside"]
+examples = [
+  {brand = "A'pieu", product = "Madecassoside Cream 2X"},
+  {brand = "MEDIHEAL", product = "Madecassoside Sun Stick Airy Fit"},
+]
+hashtags = ["#madecassoside", "#cica", "#sensitiveskin", "#kbeauty"]
+sources = [
+  "https://scienceinsights.org/what-is-madecassoside-and-what-does-it-do-for-skin/",
+  "https://www.digitaltoday.co.kr/aigongsi/4389/cosmax-patent-acquisition-skin-improvement",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260238119",
+]
+
+[[ingredient]]
+id = "ginseng-skin"
+name = "Ginseng"
+full_name = "Panax ginseng root extract"
+nickname = "Korean ginseng"
+area = "skin"
+heat = "global"
+heat_note = "Star of K-brands abroad like Beauty of Joseon"
+hot_since = 2010
+hook = "Korea's oldest beauty root, in a modern serum"
+what_it_is = "The root of Panax ginseng, a Korean herbal staple. Skincare uses ginseng extract or ginseng water in serums, creams and eye care, mostly for tired, dull-looking skin."
+origin = "Panax ginseng root, grown in Korea for centuries"
+benefits = [
+  "Known for antioxidant plant compounds (ginsenosides)",
+  "May help skin look brighter and more even",
+  "Helps skin feel moisturized and supple",
+]
+best_for = ["Dull, tired-looking skin", "Early fine lines"]
+when = "AM & PM"
+how_to_use = [
+  "Apply a ginseng serum after toner",
+  "Tap a ginseng eye serum gently around the eye area",
+  "Seal with moisturizer; add SPF in the morning",
+]
+pairs_with = ["Retinal", "Niacinamide", "Peptides"]
+avoid_with = []
+good_to_know = [
+  "A 2020 study found a 3% red ginseng cream helped skin moisture and tone in people.",
+  "Much of the anti-aging data still comes from cell and mouse studies.",
+  "Ginseng strength and form vary a lot between products.",
+]
+myth = "More ginseng on the label means faster anti-aging."
+fact = "Form and strength vary, and most anti-aging data is from lab studies. Expect gentle, gradual results."
+keywords = ["ginseng"]
+examples = [
+  {brand = "Beauty of Joseon", product = "Revive Eye Serum Ginseng + Retinal"},
+  {brand = "Sulwhasoo", product = "Concentrated Ginseng Rejuvenating Cream"},
+]
+hashtags = ["#ginseng", "#ginsengskincare", "#kbeauty", "#koreanskincare"]
+sources = [
+  "https://research.knu.ac.kr/en/publications/korean-red-ginseng-extract-ameliorates-melanogenesis-in-humans-an/",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA220816048",
+]
+
+[[ingredient]]
+id = "aloe"
+name = "Aloe"
+full_name = "Aloe barbadensis leaf juice"
+nickname = "Soothing gel"
+area = "skin"
+heat = "global"
+heat_note = "Aloe gels rank in Olive Young Global sun care"
+hot_since = 2012
+hook = "The after-sun classic, and what it really does"
+what_it_is = "The clear gel inside aloe vera leaves. K-beauty uses it in big-tub soothing gels, toners and masks for a cool, light layer of hydration."
+origin = "Leaves of the aloe vera plant"
+benefits = [
+  "Helps skin feel cool, soothed and refreshed",
+  "Adds light hydration without heaviness",
+  "Works as a simple after-sun or after-shave gel",
+]
+best_for = ["Skin after sun", "Oily skin, no heavy creams"]
+when = "AM & PM"
+how_to_use = [
+  "Smooth a thin layer of gel over clean skin",
+  "Use it as a light moisturizer or a 10-minute mask",
+  "Keep it in the fridge for extra cooling after sun",
+]
+pairs_with = ["Panthenol", "Centella", "Hyaluronic acid"]
+avoid_with = []
+good_to_know = [
+  "Reviews call topical aloe promising, but clinical proof is still not well defined.",
+  "Aloe cools skin after sun, but it is not a sunscreen.",
+  "Some people react to aloe; patch test, especially on irritated skin.",
+]
+myth = "Aloe gel protects your skin from the sun."
+fact = "Aloe can cool skin after sun, but it has no meaningful SPF. Use sunscreen first, aloe after."
+keywords = ["aloe"]
+examples = [
+  {brand = "AROMATICA", product = "Soothing Aloe Vera Gel"},
+  {brand = "BRINGGREEN", product = "Aloe 97% Soothing Gel"},
+]
+hashtags = ["#aloevera", "#soothinggel", "#aftersun", "#kbeauty"]
+sources = [
+  "https://www.msjonline.org/index.php/ijrms/article/view/3868",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA210000096",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA241227207",
+]
+
+[[ingredient]]
+id = "bha"
+name = "BHA"
+full_name = "Salicylic acid & betaine salicylate"
+nickname = "Pore-clearing acid"
+area = "skin"
+heat = "global"
+heat_note = "COSRX's BHA liquid: Olive Young Global bestseller"
+hot_since = 2016
+hook = "The oil-loving acid that gets inside pores"
+what_it_is = "Beta hydroxy acid, usually salicylic acid or the gentler betaine salicylate. It is oil-soluble, so it can work inside pores, unlike most AHAs."
+origin = "Salicylic acid, first found in willow bark; now lab-made"
+benefits = [
+  "Helps loosen dead skin and oil inside pores",
+  "May help blackheads and pores look clearer",
+  "Helps smooth rough, bumpy-feeling texture",
+]
+best_for = ["Oily skin", "Blackheads and clogged pores"]
+when = "PM, 2–4x a week"
+how_to_use = [
+  "Swipe a BHA pad or liquid over clean, dry skin",
+  "Start 2–3 nights a week and skip the eye area",
+  "Moisturize after, and use SPF the next morning",
+]
+pairs_with = ["Niacinamide", "Heartleaf", "Ceramides"]
+avoid_with = ["Other acids the same night", "Retinoids on the same night"]
+good_to_know = [
+  "A Cochrane review rated the acne evidence for salicylic acid as low quality.",
+  "Overuse can cause dryness or flaking; cut back if skin stings.",
+  "Betaine salicylate is a milder cousin used in many K-beauty liquids.",
+]
+myth = "BHA shrinks your pores for good."
+fact = "Pore size is mostly genetic. BHA clears oil and debris inside pores, so they can look smaller for a while."
+keywords = ["bha", "salicylic"]
+examples = [
+  {brand = "COSRX", product = "BHA Blackhead Power Liquid"},
+  {brand = "celimax", product = "Jiwoogae Heartleaf BHA Peeling Pad"},
+]
+hashtags = ["#bha", "#salicylicacid", "#poreclearing", "#kbeauty"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7193765",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA231020721",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250631253",
+]
+
+[[ingredient]]
 id = "propolis"
 name = "Propolis"
 full_name = "Propolis extract"

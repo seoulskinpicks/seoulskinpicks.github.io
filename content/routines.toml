@@ -88,6 +88,59 @@ tips = [
 ]
 
 [[routine]]
+id = "pores"
+area = "skin"
+concern = "Visible pores and blackheads"
+title = "The clear-pores routine"
+hook = "Pores can't close, but they can look clearer"
+why = "Pore size is mostly genetic. What changes is how full of oil and dead skin they are, so the routine cleans gently and exfoliates a little."
+am = [
+  "Gel cleanser or just water if skin feels tight",
+  "Light toner with heartleaf or niacinamide",
+  "Niacinamide serum for oil balance",
+  "Oil-free gel moisturizer",
+  "Sunscreen SPF 30+ every day",
+]
+pm = [
+  "Oil cleanser first: it lifts sebum and sunscreen",
+  "Gentle foam or gel cleanser",
+  "2-3 nights a week: BHA liquid or pad",
+  "Other nights: soothing serum instead",
+  "Light moisturizer to finish",
+]
+key = ["bha", "niacinamide", "heartleaf"]
+tips = [
+  "Squeezing blackheads can leave marks and bigger-looking pores.",
+  "Clay masks once a week are enough; more can dry skin out.",
+]
+
+[[routine]]
+id = "flat-roots"
+area = "hair"
+concern = "Flat, thin-looking hair"
+title = "The fuller-roots routine"
+hook = "A clean, calm scalp is where volume starts"
+why = "Flat roots often come from oil and buildup weighing hair down. Regular washing, scalp care and light products help hair look fuller."
+am = [
+  "Rinse or wash if your roots get oily overnight",
+  "Leave-on caffeine or rosemary scalp tonic",
+  "Blow-dry roots upward for lift",
+  "Keep heavy oils on the ends only",
+]
+pm = [
+  "Brush dry hair before washing",
+  "Massage scalp shampoo in for 1-2 minutes",
+  "Conditioner on mid-lengths and ends only",
+  "Dry the scalp fully before bed",
+  "1x a week: gentle scalp scrub or scaler",
+]
+key = ["caffeine", "rosemary", "dexpanthenol"]
+tips = [
+  "Scalp care takes months; sudden or patchy shedding needs a doctor.",
+  "Tight ponytails every day can pull on the hairline.",
+]
+
+[[routine]]
 id = "breakouts"
 area = "skin"
 concern = "Oily, breakout-prone skin"

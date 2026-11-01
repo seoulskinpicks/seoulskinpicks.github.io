@@ -18,6 +18,24 @@
 # sources = ["https://...", "https://..."]            # at least 2 public pages
 
 [[issue]]
+id = "2026-11"
+date = "2026-11-01"
+title = "What the K-beauty industry is betting on"
+hook = "4 lab ideas Korean makers are lining up for 2027"
+items = [
+  { name = "Plant-derived exosomes", signal = "Daebong LS red cabbage exosome wins a ministry award (Oct 2026)", why = "Tiny vesicles from red cabbage, now made at industrial scale with an INCI name. Supply deals are signed; shelf products come later." },
+  { name = "Human-like collagen", signal = "Kolmar Korea with Sungkyunkwan Univ., near launch (Sept 2026)", why = "Collagen made by microbes with a human-like structure, not from pigs, cows or fish. It may suit shoppers avoiding animal collagen." },
+  { name = "Heartleaf quercetin", signal = "Korean business press: a 'next after PDRN' pick (Sept 2026)", why = "A soothing plant flavonoid from heartleaf, already named in some cleansers. Early human data is small but points to calmer-looking skin." },
+  { name = "PDRN in exosome capsules", signal = "Cosmax secures PDRN stabilizing and capsule tech (Sept 2026)", why = "Wrapping PDRN in exosome-like particles aims to stop it breaking down in the bottle. A formula upgrade, not a new ingredient." },
+]
+sources = [
+  "https://www.cosinkorea.com/news/article.html?no=58425",
+  "https://news.mtn.co.kr/news-detail/2026090115191122445",
+  "https://www.sisajournal-e.com/news/articleView.html?idxno=423873",
+  "https://www.dovepress.com/soothing-and-anti-itch-effect-of-quercetin-phytosome-in-human-subjects-peer-reviewed-article-CCID",
+]
+
+[[issue]]
 id = "2026-10"
 date = "2026-10-01"
 title = "What the K-beauty industry is betting on"

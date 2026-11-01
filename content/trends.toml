@@ -249,6 +249,40 @@ sources = [
 ]
 
 [[versus]]
+id = "ingredients-2026-11"
+year = 2026
+topic = "Ingredients"
+title = "Hot in Seoul vs. hot abroad"
+subtitle = "Nov 2026: Naver searches vs. Amazon's October sale"
+korea = [
+  {name = "PDRN", why = "Still the #1 tracked ingredient on Naver (late Oct 2026)"},
+  {name = "Niacinamide", why = "#2 on Naver, close behind PDRN (late Oct 2026)"},
+  {name = "Hyaluronic acid", why = "#3 tracked ingredient on Naver (late Oct 2026)"},
+  {name = "Panthenol", why = "Naver searches up 14% in one week (late Oct 2026)"},
+  {name = "Blue peptide", why = "Copper peptide lines named a 'next after PDRN' pick"},
+]
+global = [
+  {name = "PDRN", why = "Anua's PDRN cream: top 10 Amazon beauty clicks (Oct)"},
+  {name = "Pore pads", why = "Medicube Zero Pore Pad: #1 Amazon beauty clicks (Oct)"},
+  {name = "Ceramides", why = "Illiyoon's ceramide cream: top 10 Amazon clicks (Oct)"},
+  {name = "Azelaic acid", why = "Amazon US searches up 228% YoY (Amorepacific data)"},
+  {name = "TXA", why = "Amazon US searches up 122% YoY (Korean press, 2026)"},
+]
+both = ["PDRN"]
+next = [
+  {name = "Plant exosomes", why = "Daebong LS's red cabbage exosome won an award (Oct)"},
+  {name = "Heartleaf quercetin", why = "Named as a next-wave pick by Korean press (Sept)"},
+  {name = "miRNA actives", why = "GFC Life Science registered a skin miRNA patent (Oct)"},
+]
+basis = "Naver search data (week of Oct 19, 2026); Amazon Prime Big Deal Days click data and Amazon search data quoted by Korean press"
+sources = [
+  "https://m.sedaily.com/article/20105603",
+  "https://www.sisajournal-e.com/news/articleView.html?idxno=423873",
+  "https://www.cosinkorea.com/news/article.html?no=58425",
+  "https://www.biotimes.co.kr/news/articleView.html?idxno=35607",
+]
+
+[[versus]]
 id = "searches-2026-10-15"
 year = 2026
 topic = "Ingredients"
