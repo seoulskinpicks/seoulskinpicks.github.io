@@ -6497,6 +6497,100 @@
       "ig_media_id": "18012117998775403",
       "permalink": "https://www.instagram.com/p/DfTxVshFuSN/",
       "published_at": "2026-11-04T15:04+09:00"
+    },
+    {
+      "number": 66,
+      "date": "2026-11-04",
+      "source": "myth",
+      "key": "my-squalane+alpha-arbutin+mung-bean+birch-juice",
+      "brand": "",
+      "name": "K-beauty myths vs. facts: Squalane, Alpha arbutin, Mung bean, Birch juice",
+      "link": "",
+      "links": {},
+      "products": [],
+      "data": {
+        "items": [
+          {
+            "id": "squalane",
+            "name": "Squalane",
+            "area": "skin",
+            "myth": "All squalane comes from sharks.",
+            "fact": "It once did, but cosmetic squalane today is mostly made from olives or sugarcane.",
+            "sources": [
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA231121124",
+              "https://en.wikipedia.org/wiki/Squalane",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC12073650/"
+            ]
+          },
+          {
+            "id": "alpha-arbutin",
+            "name": "Alpha arbutin",
+            "area": "skin",
+            "myth": "A brightening serum lightens your natural skin color.",
+            "fact": "Brightening serums target the look of spots and patchiness, not your natural skin tone.",
+            "sources": [
+              "https://www.fashionsnap.com/article/2026-08-12/qoo10-mega-beauty-award-26-july/",
+              "https://www.value-press.com/pressrelease/377808",
+              "https://www.etnews.com/20260722000319"
+            ]
+          },
+          {
+            "id": "mung-bean",
+            "name": "Mung bean",
+            "area": "skin",
+            "myth": "Mung bean skincare is only for oily skin.",
+            "fact": "It's popular in pore care, but gentle, pH-balanced mung bean cleansers suit many skin types.",
+            "sources": [
+              "https://www.newbeauty.com/view/mung-bean-ingredient",
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA230619360",
+              "https://pubmed.ncbi.nlm.nih.gov/30263307/",
+              "https://pubmed.ncbi.nlm.nih.gov/40334879/"
+            ]
+          },
+          {
+            "id": "birch-juice",
+            "name": "Birch juice",
+            "area": "skin",
+            "myth": "Birch juice is a powerful active ingredient.",
+            "fact": "It's mainly a gentle, hydrating base. The other ingredients in the formula do most of the work.",
+            "sources": [
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA250430113",
+              "https://pubmed.ncbi.nlm.nih.gov/36961534/",
+              "https://www.mdpi.com/2079-9284/12/6/282"
+            ]
+          }
+        ]
+      },
+      "category": "myth",
+      "folder": "066",
+      "slides": 6,
+      "caption": "4 K-beauty myths, fact-checked 🔍\nMyth or fact? Swipe before you read the answers.\n\n🧪 Squalane\n❌ Myth: All squalane comes from sharks.\n✅ Fact: It once did, but cosmetic squalane today is mostly made from olives or sugarcane.\n\n🧪 Alpha arbutin\n❌ Myth: A brightening serum lightens your natural skin color.\n✅ Fact: Brightening serums target the look of spots and patchiness, not your natural skin tone.\n\n🧪 Mung bean\n❌ Myth: Mung bean skincare is only for oily skin.\n✅ Fact: It's popular in pore care, but gentle, pH-balanced mung bean cleansers suit many skin types.\n\n🧪 Birch juice\n❌ Myth: Birch juice is a powerful active ingredient.\n✅ Fact: It's mainly a gentle, hydrating base. The other ingredients in the formula do most of the work.\n\nWhich one did you believe? Tell me below 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n.\n#skincaremyths #kbeauty #skincarefacts #koreanskincare",
+      "hook": "4 K-beauty myths, fact-checked",
+      "bullets": [
+        "Squalane: It once did, but cosmetic squalane today is mostly made from olives or sugarcane.",
+        "Alpha arbutin: Brightening serums target the look of spots and patchiness, not your natural skin tone.",
+        "Mung bean: It's popular in pore care, but gentle, pH-balanced mung bean cleansers suit many skin types."
+      ],
+      "status": "published",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/066.mp4",
+        "cover": "reels/066.jpg",
+        "seconds": 24.45,
+        "track": "olive-glow",
+        "status": "published",
+        "media_id": "17922276441454118",
+        "permalink": "https://www.instagram.com/reel/DfVTyuhAGrC/"
+      },
+      "story": {
+        "image": "stories/066.jpg",
+        "status": "published",
+        "media_id": "18142959832631274"
+      },
+      "ig_media_id": "17922276441454118",
+      "permalink": "https://www.instagram.com/reel/DfVTyuhAGrC/",
+      "card_skipped": true,
+      "published_at": "2026-11-05T05:25+09:00"
     }
   ],
   "tool_history": [
