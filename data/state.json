@@ -7636,6 +7636,125 @@
       "ig_media_id": "18121064938764238",
       "permalink": "https://www.instagram.com/p/DfY-GvfGygQ/",
       "published_at": "2026-11-06T15:32+09:00"
+    },
+    {
+      "number": 70,
+      "date": "2026-11-06",
+      "source": "combo",
+      "key": "cb-aha+bha+pdrn+nad",
+      "brand": "",
+      "name": "Mix & match: AHA, BHA, PDRN, NAD+",
+      "link": "",
+      "links": {},
+      "products": [],
+      "data": {
+        "items": [
+          {
+            "id": "aha",
+            "name": "AHA",
+            "area": "skin",
+            "pairs": [
+              "Hyaluronic acid",
+              "Panthenol",
+              "Ceramides"
+            ],
+            "benefit": "Helps skin look smoother and more even",
+            "avoid": [
+              "Retinoids on the same night",
+              "Other acids the same night"
+            ],
+            "when": "PM, 2–3x a week",
+            "sources": [
+              "https://www.cosmeticsdesign-europe.com/Article/2005/01/12/FDA-issues-sun-warning-guidance-on-AHAs",
+              "https://skinsort.com/products/medicube/medicube-zero-pore-pads-2-0-dual-textured-facial-toner-pads"
+            ]
+          },
+          {
+            "id": "bha",
+            "name": "BHA",
+            "area": "skin",
+            "pairs": [
+              "Niacinamide",
+              "Heartleaf",
+              "Ceramides"
+            ],
+            "benefit": "Helps loosen dead skin and oil inside pores",
+            "avoid": [
+              "Other acids the same night",
+              "Retinoids on the same night"
+            ],
+            "when": "PM, 2–4x a week",
+            "sources": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC7193765",
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA231020721"
+            ]
+          },
+          {
+            "id": "pdrn",
+            "name": "PDRN",
+            "area": "skin",
+            "pairs": [
+              "Hyaluronic acid",
+              "Peptides",
+              "Niacinamide"
+            ],
+            "benefit": "Helps skin feel hydrated, bouncy and comfortable",
+            "avoid": [],
+            "when": "AM & PM",
+            "sources": [
+              "https://newsroom.cj.net/k-beauty-trends-highlights-from-latest-olive-young-sale/",
+              "https://jcasonline.com/polynucleotides-and-polydeoxyribonucleotides-in-dermatology-a-narrative-review/"
+            ]
+          },
+          {
+            "id": "nad",
+            "name": "NAD+",
+            "area": "skin",
+            "pairs": [
+              "Niacinamide",
+              "Peptides",
+              "Ceramides"
+            ],
+            "benefit": "Supports skin's natural energy and resilience",
+            "avoid": [],
+            "when": "AM & PM",
+            "sources": [
+              "https://www.nbcnews.com/select/shopping/nad-skin-care-rcna259545",
+              "https://www.cosmorning.com/news/article.html?no=51144"
+            ]
+          }
+        ]
+      },
+      "category": "combo",
+      "folder": "070",
+      "slides": 6,
+      "caption": "Mix & match: what to layer, what to space out 🧩\nA quick pairing cheat sheet from our Ingredient 101 notes.\n\n🧪 AHA (PM, 2–3x a week)\n✅ Pairs well with: Hyaluronic acid, Panthenol, Ceramides\n⏸ Space out from: Retinoids on the same night, Other acids the same night\n\n🧪 BHA (PM, 2–4x a week)\n✅ Pairs well with: Niacinamide, Heartleaf, Ceramides\n⏸ Space out from: Other acids the same night, Retinoids on the same night\n\n🧪 PDRN (AM & PM)\n✅ Pairs well with: Hyaluronic acid, Peptides, Niacinamide\n\n🧪 NAD+ (AM & PM)\n✅ Pairs well with: Niacinamide, Peptides, Ceramides\n\nNew to an active? Add one product at a time and patch test first.\nWhat combo do you want checked next? 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n.\n#skincarelayering #kbeauty #skincaretips #koreanskincare",
+      "hook": "Mix & match: what to layer, what to space out",
+      "bullets": [
+        "AHA + Hyaluronic acid",
+        "BHA + Niacinamide",
+        "PDRN + Hyaluronic acid"
+      ],
+      "status": "published",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/070.mp4",
+        "cover": "reels/070.jpg",
+        "seconds": 24.45,
+        "track": "olive-glow",
+        "status": "published",
+        "media_id": "17966738292210349",
+        "permalink": "https://www.instagram.com/reel/DfaaIzllTtS/"
+      },
+      "story": {
+        "image": "stories/070.jpg",
+        "status": "published",
+        "media_id": "17924721138220470"
+      },
+      "ig_media_id": "17966738292210349",
+      "permalink": "https://www.instagram.com/reel/DfaaIzllTtS/",
+      "card_skipped": true,
+      "published_at": "2026-11-07T04:57+09:00"
     }
   ],
   "tool_history": [
