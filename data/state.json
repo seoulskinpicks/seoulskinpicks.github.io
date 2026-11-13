@@ -9301,6 +9301,57 @@
       "ig_media_id": "17925437328222364",
       "permalink": "https://www.instagram.com/p/Dfq_YPDlpPj/",
       "published_at": "2026-11-13T15:30+09:00"
+    },
+    {
+      "number": 84,
+      "date": "2026-11-13",
+      "source": "skin",
+      "key": "ing-propolis",
+      "brand": "",
+      "name": "Propolis",
+      "link": "",
+      "links": {},
+      "products": [
+        {
+          "brand": "CNP",
+          "name": "Propolis Energy Active Ampule",
+          "links": {}
+        },
+        {
+          "brand": "COSRX",
+          "name": "Full Fit Propolis Light Ampoule",
+          "links": {}
+        },
+        {
+          "brand": "Beauty of Joseon",
+          "name": "Glow Serum: Propolis + Niacinamide",
+          "links": {}
+        }
+      ],
+      "category": "skin",
+      "folder": "084",
+      "slides": 7,
+      "caption": "The resin bees use to guard their hive, on skin 🧪\nIngredient 101 · Propolis (Propolis extract)\n📍 Hot in Korea & abroad: CNP ampoule: 6.5M+ sold; trending on TikTok\n\nA sticky resin bees make from tree sap, beeswax and their own saliva to seal the hive. It's rich in flavonoids and other antioxidants, and loved for a soothing, honeyed glow.\n\n✨ What it does\n• Known for a soothing, comforting feel\n• Antioxidants may help defend against daily stressors\n• Helps skin look nourished, dewy and glowy\n\n👤 Best for: Dull or dry-feeling skin, Blemish-prone skin\n🕐 When: AM & PM\n\n🧴 How to use\n1. Patch test on your inner arm for a few days first\n2. Apply a propolis ampoule or serum after toner\n3. Top with moisturizer; it can feel sticky, so use a thin layer\n🤝 Pairs well with: Niacinamide, Honey, Centella asiatica\n\n⚠️ Good to know\n• Known contact allergen: skip it if you react to bee products, balsam of Peru or poplar.\n• Not vegan, since it's made by bees.\n• Evidence is mostly lab and small studies; results vary with the propolis source.\n\n❌ Myth: Natural bee ingredients can't cause allergies.\n✅ Fact: Propolis is a well-documented contact allergen; in European patch tests, 1.2–6.6% of people react to it.\n\n🛍 Where you'll find it\n• CNP Propolis Energy Active Ampule\n• COSRX Full Fit Propolis Light Ampoule\n• Beauty of Joseon Glow Serum: Propolis + Niacinamide\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n📷 Photo: Harriet B. / Pexels\n.\n#propolis #skincareingredients #kbeauty #kbeautyingredients",
+      "hook": "The resin bees use to guard their hive, on skin",
+      "bullets": [
+        "Known for a soothing, comforting feel",
+        "Antioxidants may help defend against daily stressors",
+        "Helps skin look nourished, dewy and glowy"
+      ],
+      "status": "prepared",
+      "photo_credit": "📷 Photo: Harriet B. / Pexels",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/084.mp4",
+        "cover": "reels/084.jpg",
+        "seconds": 30.35,
+        "track": "han-river",
+        "status": "prepared"
+      },
+      "story": {
+        "image": "stories/084.jpg",
+        "status": "prepared"
+      }
     }
   ],
   "tool_history": [
