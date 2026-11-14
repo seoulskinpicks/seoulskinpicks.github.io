@@ -9304,7 +9304,7 @@
     },
     {
       "number": 84,
-      "date": "2026-11-13",
+      "date": "2026-11-14",
       "source": "skin",
       "key": "ing-propolis",
       "brand": "",
@@ -9338,20 +9338,16 @@
         "Antioxidants may help defend against daily stressors",
         "Helps skin look nourished, dewy and glowy"
       ],
-      "status": "prepared",
+      "status": "published",
       "photo_credit": "📷 Photo: Harriet B. / Pexels",
-      "reel": {
-        "mode": "auto",
-        "video": "reels/084.mp4",
-        "cover": "reels/084.jpg",
-        "seconds": 30.35,
-        "track": "han-river",
-        "status": "prepared"
-      },
       "story": {
         "image": "stories/084.jpg",
-        "status": "prepared"
-      }
+        "status": "published",
+        "media_id": "17866210485694215"
+      },
+      "ig_media_id": "17974998354175027",
+      "permalink": "https://www.instagram.com/p/DfthvzrG5sa/",
+      "published_at": "2026-11-14T15:08+09:00"
     }
   ],
   "tool_history": [
