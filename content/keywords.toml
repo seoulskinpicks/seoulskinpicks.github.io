@@ -436,3 +436,69 @@ id = "aha"
 name = "AHA"
 area = "skin"
 keywords = ["AHA 토너", "AHA 패드", "AHA 필링", "글리콜산 토너", "젖산 패드"]
+
+[[term]]
+id = "carrot"
+name = "Carrot"
+area = "skin"
+keywords = ["당근 패드", "당근 토너패드", "당근 크림", "캐롯 패드"]
+
+[[term]]
+id = "urea"
+name = "Urea"
+area = "skin"
+keywords = ["우레아 크림", "요소 크림", "우레아 로션", "우레아 바디로션"]
+
+[[term]]
+id = "yuja"
+name = "Yuja"
+area = "skin"
+keywords = ["유자 슬리핑팩", "유자 크림", "유자 토너", "유자 세럼"]
+
+[[term]]
+id = "mandelic-acid"
+name = "Mandelic acid"
+area = "skin"
+keywords = ["만델릭산", "만델릭애씨드", "만델릭 토너", "만델릭산 세럼"]
+
+[[term]]
+id = "camellia"
+name = "Camellia"
+area = "skin"
+keywords = ["동백 크림", "동백 오일", "동백 선세럼", "카멜리아 크림"]
+
+[[term]]
+id = "honey"
+name = "Honey"
+area = "skin"
+keywords = ["꿀 마스크", "허니 마스크", "꿀 크림", "허니 크림"]
+
+[[term]]
+id = "jericho-rose"
+name = "Jericho rose"
+area = "skin"
+keywords = ["여리고 장미 마스크", "여리고장미", "부활초 화장품"]
+
+[[term]]
+id = "scalp-cica"
+name = "Cica scalp care"
+area = "hair"
+keywords = ["시카 두피", "시카 샴푸", "시카 두피앰플", "두피 시카"]
+
+[[term]]
+id = "ginger"
+name = "Ginger"
+area = "hair"
+keywords = ["생강 샴푸", "진저 샴푸", "생강 두피"]
+
+[[term]]
+id = "hair-hyaluronic"
+name = "Hyaluronic hair"
+area = "hair"
+keywords = ["히알루론산 헤어미스트", "히알루론 헤어", "히알루론산 샴푸"]
+
+[[term]]
+id = "pga"
+name = "PGA"
+area = "skin"
+keywords = ["폴리글루탐산", "폴리글루탐산 세럼", "폴리글루탐산 앰플", "PGA 세럼"]

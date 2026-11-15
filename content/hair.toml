@@ -930,6 +930,139 @@ sources = [
 ]
 
 [[ingredient]]
+id = "scalp-cica"
+name = "Cica scalp care"
+full_name = "Centella asiatica for the scalp"
+nickname = "Face-to-scalp calmer"
+area = "hair"
+heat = "korea"
+heat_note = "lilyeve Cica PDRN scalp ampoule: OY Global top 40"
+hot_since = 2025
+hook = "Cica moves from your face to your scalp"
+what_it_is = "Cica is centella asiatica, K-beauty's classic calming plant. Scalp ampoules, tonics and shampoos now use it to keep a dry or sensitive scalp comfortable."
+origin = "Leaves of the centella asiatica plant"
+benefits = [
+  "Helps a sensitive scalp feel calm and comfortable",
+  "Supports a balanced, healthy-feeling scalp",
+  "Known for a soothing, refreshing feel",
+]
+best_for = ["Sensitive scalp", "Itchy-feeling scalp", "Tight scalp after washing"]
+when = "After washing"
+how_to_use = [
+  "Part dry or towel-dried hair into sections",
+  "Apply the ampoule along the parts, then massage gently",
+  "Use daily or as directed; no need to rinse",
+]
+pairs_with = ["Panthenol", "Probiotics", "Peptides"]
+avoid_with = ["Harsh scalp scrubs"]
+good_to_know = [
+  "Evidence is early: one 56-day industry study tested centella vesicles in a mix.",
+  "Most centella research is on facial skin, not scalps.",
+  "Ongoing flakes, redness or itch are worth a dermatologist visit.",
+]
+myth = "Cica scalp ampoules make hair grow back."
+fact = "Cica is known for calming. A small 2025 industry study tested a centella blend; that is not proof of growth."
+keywords = ["cica"]
+examples = [
+  {brand = "lilyeve", product = "SCALP:TURN Cica PDRN Brush Ampoule"},
+  {brand = "lilyeve", product = "SCALP:TURN Cica PDRN Deep Clean Shampoo"},
+]
+hashtags = ["#cica", "#scalpcare", "#sensitivescalp", "#koreanhaircare"]
+sources = [
+  "https://www.cosmeticsdesign-asia.com/Article/2025/12/16/centella-asiatica-bubbles-key-proteins-boost-hair-growth-in-56-day-study",
+  "https://www.mdpi.com/2079-9284/12/6/253",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250933491",
+]
+
+[[ingredient]]
+id = "ginger"
+name = "Ginger"
+full_name = "Ginger root extract (Zingiber officinale)"
+nickname = "The warming scalp root"
+area = "hair"
+heat = "global"
+heat_note = "Viral 'ginger regrowth' claims, fact-checked"
+hot_since = 2022
+hook = "Ginger for hair growth? The lab result is a twist"
+what_it_is = "Ginger root extract is used in shampoos for a warming, clarifying feel, often for dry, flaky scalps. Social media also pushes raw ginger as a growth hack."
+origin = "Root of the ginger plant"
+benefits = [
+  "Helps a flaky scalp feel clean and fresh",
+  "Known for a warming, tingly feel",
+  "Supports a regular scalp-care routine",
+]
+best_for = ["Flaky-feeling scalp", "Dull, buildup-prone scalp", "Fans of warming scents"]
+when = "Every wash"
+how_to_use = [
+  "Massage ginger shampoo into the scalp, not the ends",
+  "Leave 1–2 minutes, then rinse well",
+  "Skip rubbing raw ginger juice on your scalp",
+]
+pairs_with = ["Tea tree", "Salicylic acid", "Panthenol"]
+avoid_with = ["Raw ginger juice on the scalp"]
+good_to_know = [
+  "Lab and mouse research: 6-gingerol slowed hair growth in follicle tests.",
+  "No good human studies show ginger helps hair grow.",
+  "Raw ginger can sting or irritate; ready-made shampoos are milder.",
+]
+myth = "Rubbing ginger on your scalp makes hair grow faster."
+fact = "In a 2013 lab and mouse study, a key ginger compound actually slowed hair growth. Human proof is missing."
+keywords = ["ginger"]
+examples = [
+  {brand = "The Body Shop", product = "Ginger Scalp Care Shampoo"},
+]
+hashtags = ["#ginger", "#scalpcare", "#hairmyths", "#haircare"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC3578824",
+  "https://www.thip.media/health-news-fact-check/fact-check-can-using-ginger-regrow-your-hair-in-21-days/34688/",
+  "https://www.thebodyshop.com/en-ca/hair/shampoo/ginger-scalp-care-shampoo/p/1045528",
+]
+
+[[ingredient]]
+id = "hair-hyaluronic"
+name = "Hyaluronic hair"
+full_name = "Hyaluronic acid for hair"
+nickname = "Skin's hydrator for hair"
+area = "hair"
+heat = "both"
+heat_note = "Healingbird Hyaluron hair mist: OY Global top 100"
+hot_since = 2024
+hook = "Hyaluronic acid for hair: hydration or hype?"
+what_it_is = "Hyaluronic acid is a humectant that holds water. In mists, masks and shampoos it helps dry, frizzy lengths feel softer and smoother."
+origin = "Mostly made by bacterial fermentation"
+benefits = [
+  "Helps dry lengths feel softer and smoother",
+  "May help reduce the look of frizz",
+  "Gives a light, non-greasy moisture feel",
+]
+best_for = ["Dry, frizzy hair", "Heat-styled hair", "Fine hair that hates oils"]
+when = "After washing"
+how_to_use = [
+  "Mist onto towel-dried lengths and ends",
+  "Comb through, then style or blow-dry as usual",
+  "Top up on dry hair to tame frizz",
+]
+pairs_with = ["Amino acids", "Silk protein", "Argan oil"]
+avoid_with = []
+good_to_know = [
+  "Evidence is thin: a few lab tests on hair fibers, no strong human trials.",
+  "It moisturizes hair; it doesn't repair split ends.",
+  "In very humid air, follow with a light oil to seal it in.",
+]
+myth = "Hyaluronic acid repairs damaged hair."
+fact = "It's a humectant: it helps hair feel softer and less frizzy. Split ends still need a trim."
+keywords = ["hyaluron"]
+examples = [
+  {brand = "Healingbird", product = "Hyaluron Milk Hair Mist"},
+]
+hashtags = ["#hyaluronicacid", "#frizzyhair", "#hairmist", "#koreanhaircare"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9695591",
+  "https://colorwowhair.com/blogs/all/is-hyaluronic-acid-good-for-hair",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250732314",
+]
+
+[[ingredient]]
 id = "keratin"
 name = "Keratin"
 full_name = "Hydrolyzed keratin"

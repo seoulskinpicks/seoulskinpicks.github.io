@@ -141,6 +141,56 @@ tips = [
 ]
 
 [[routine]]
+id = "redness"
+area = "skin"
+concern = "Red, easily flushed skin"
+title = "The calm-down routine"
+hook = "Less is more when your skin flushes easily"
+why = "Skin that reddens easily likes fewer steps, gentle textures and steady barrier care. Calming ingredients help it feel comfortable."
+am = [
+  "Rinse with lukewarm water or a mild cleanser",
+  "Azulene or centella calming toner",
+  "Panthenol cream, pressed in gently",
+  "Mineral or gentle sunscreen SPF 30+",
+]
+pm = [
+  "Mild, low-foam cleanser; no hot water",
+  "Calming toner patted in with your palms",
+  "Centella or madecassoside serum",
+  "Panthenol or ceramide cream",
+]
+key = ["azulene", "centella", "panthenol"]
+tips = [
+  "Add one new product at a time and patch test first.",
+  "Redness that burns, spreads or won't fade is worth a dermatologist visit.",
+]
+
+[[routine]]
+id = "dry-scalp"
+area = "hair"
+concern = "Dry, itchy, tight scalp"
+title = "The comfy scalp routine"
+hook = "Winter scalp feeling tight? Wash gentler, not less"
+why = "A dry scalp often comes from harsh washing and dry indoor air. Mild cleansers and light, soothing scalp products help it feel comfortable."
+am = [
+  "Mist a soothing scalp tonic on dry patches",
+  "Wear a hat outside in cold, windy weather",
+  "Keep heavy styling products off the scalp",
+]
+pm = [
+  "Wash with lukewarm water, not hot",
+  "Gentle amino acid shampoo, massaged with fingertips",
+  "Conditioner on lengths only",
+  "Panthenol or cica scalp ampoule on parts",
+  "Dry the scalp fully before bed",
+]
+key = ["amino-acids", "dexpanthenol", "scalp-cica"]
+tips = [
+  "Thick flakes, redness or strong itching: see a dermatologist.",
+  "Scratching with nails makes a dry scalp worse.",
+]
+
+[[routine]]
 id = "breakouts"
 area = "skin"
 concern = "Oily, breakout-prone skin"

@@ -2210,6 +2210,365 @@ sources = [
 ]
 
 [[ingredient]]
+id = "pga"
+name = "PGA"
+full_name = "Polyglutamic acid"
+nickname = "Fermented moisture film"
+area = "skin"
+heat = "global"
+heat_note = "A Western serum staple (The INKEY List)"
+hot_since = 2020
+hook = "PGA: the hydrator that's said to out-hold HA"
+what_it_is = "Polyglutamic acid (PGA) is a large, water-loving peptide made by fermentation, first from natto. It forms a light film that helps skin hold on to water."
+origin = "Bacterial fermentation, first found in natto"
+benefits = [
+  "Helps skin hold on to moisture",
+  "Leaves a smooth, cushiony surface feel",
+  "Supports a plump, hydrated look",
+]
+best_for = ["Dehydrated skin", "Dry indoor air", "Layering under makeup"]
+when = "AM & PM"
+how_to_use = [
+  "Apply after toner, on slightly damp skin",
+  "Layer over or under hyaluronic acid if you like",
+  "Seal with moisturizer to lock the water in",
+]
+pairs_with = ["Hyaluronic acid", "Ceramides", "Niacinamide"]
+avoid_with = []
+good_to_know = [
+  "Evidence is thin: mostly supplier and lab data, few independent human studies.",
+  "The '5x more water than HA' line comes from supplier tests, not trials.",
+  "It's a humectant, so always finish with a moisturizer.",
+]
+myth = "PGA holds 5 times more water than hyaluronic acid, so it beats it."
+fact = "That figure comes from supplier lab tests. Both are humectants and work well together."
+keywords = ["polyglutamic"]
+examples = [
+  {brand = "The INKEY List", product = "Polyglutamic Acid Hydrating Serum"},
+]
+hashtags = ["#polyglutamicacid", "#pga", "#hydration", "#skincare"]
+sources = [
+  "https://www.cosmeticsandtoiletries.com/cosmetic-ingredients/moisturizing/article/21834034/poly-glutamic-acid-a-novel-peptide-for-skin-care",
+  "https://myskinrecipes.com/shop/en/moisturizer/874-gamma-polyglutamic-acid-low-molecule-weight-sodium-polyglutamate.html",
+]
+
+[[ingredient]]
+id = "carrot"
+name = "Carrot"
+full_name = "Carrot root extract & carrot seed oil"
+nickname = "The orange calming pad"
+area = "skin"
+heat = "korea"
+heat_note = "Skinfood carrot pads: #9 OY Global masks (Nov)"
+hot_since = 2024
+hook = "Why Korea is putting carrots on its face"
+what_it_is = "Carrot extract and carrot seed oil bring plant antioxidants like beta-carotene. K-beauty uses them in calming toner pads, creams and oils."
+origin = "Carrot roots and seeds"
+benefits = [
+  "Helps skin feel calm and comfortable",
+  "Gives a light layer of moisture",
+  "Known for antioxidant plant compounds",
+]
+best_for = ["Sensitive-feeling skin", "Dry, tight skin", "Rough patches"]
+when = "AM & PM"
+how_to_use = [
+  "Swipe a pad over clean skin, or rest it on dry spots",
+  "Leave as a 5-minute mini mask, then pat in what's left",
+  "Follow with your usual serum and moisturizer",
+]
+pairs_with = ["Panthenol", "Ceramides", "Centella"]
+avoid_with = []
+good_to_know = [
+  "Research on carrot in skincare is thin: mostly lab and antioxidant tests.",
+  "Carrot seed oil is not a retinoid, despite its vitamin A reputation.",
+  "Orange-tinted pads don't stain skin; patch test if you react to plant extracts.",
+]
+myth = "Carrot skincare works like vitamin A or retinol."
+fact = "Eaten, beta-carotene becomes vitamin A. On skin, carrot extract is mainly a calming, moisturizing extra."
+keywords = ["carrot"]
+examples = [
+  {brand = "SKINFOOD", product = "Carrot Carotene Calming Water Pad"},
+  {brand = "SKINFOOD", product = "Carrot PDRN Pad"},
+]
+hashtags = ["#carrotskincare", "#tonerpads", "#calmingskin", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240624146",
+  "https://northbiomedical.com/articles/carrot-seed-oil-for-skin/",
+  "https://www.evigrade.com/en/ingredients/daucus-carota-sativa-root-extract",
+]
+
+[[ingredient]]
+id = "urea"
+name = "Urea"
+full_name = "Urea (carbamide)"
+nickname = "The derm-favorite softener"
+area = "skin"
+heat = "global"
+heat_note = "Dermatologists weigh in on urea (NBC Select)"
+hot_since = 2025
+hook = "Urea: the unglamorous ingredient derms love"
+what_it_is = "Urea is part of skin's own natural moisturizing factor. Made in labs for skincare, it draws in water and, at higher levels, softens rough, flaky skin."
+origin = "Lab-made; also found naturally in skin"
+benefits = [
+  "Helps skin hold on to moisture",
+  "Higher levels help soften rough, flaky patches",
+  "Supports a smoother-feeling skin barrier",
+]
+best_for = ["Very dry skin", "Rough elbows, heels and hands", "Flaky, tight skin"]
+when = "AM & PM"
+how_to_use = [
+  "Low levels (around 5%) suit face creams",
+  "Save 10% and up for body, hands and heels",
+  "Apply to slightly damp skin, then lock in with cream",
+]
+pairs_with = ["Ceramides", "Hyaluronic acid", "Panthenol"]
+avoid_with = ["Broken or cracked skin"]
+good_to_know = [
+  "Reviews of clinical studies support urea for dry, rough skin.",
+  "It can sting on irritated or broken skin, especially at high levels.",
+  "It's synthetic, not taken from urine.",
+]
+myth = "Urea in skincare comes from urine."
+fact = "Cosmetic urea is made in labs. It matches the urea in skin's own moisturizing factor."
+keywords = ["urea"]
+examples = [
+  {brand = "Jumiso", product = "Urea 5 Intensive Moisture Cream"},
+  {brand = "APLB", product = "Urea Hyaluronic Acid Facial Cream"},
+  {brand = "Derma:B", product = "Urea 9.8% Foot Cream"},
+]
+hashtags = ["#urea", "#dryskin", "#skinbarrier", "#skincare"]
+sources = [
+  "https://pubmed.ncbi.nlm.nih.gov/24314769/",
+  "https://www.springermedicine.com/atopic-dermatitis/vulgar-psoriasis/urea-in-dermatology-a-review-of-its-emollient-moisturizing-kerat/22219224",
+  "https://nbcnews.com/select/shopping/urea-skin-care-rcna199348",
+]
+
+[[ingredient]]
+id = "yuja"
+name = "Yuja"
+full_name = "Yuja (Citrus junos) fruit & peel extract"
+nickname = "Korea's winter citrus"
+area = "skin"
+heat = "korea"
+heat_note = "Hanyul yuja pack: OY Global masks top 100 (Nov)"
+hot_since = 2020
+hook = "Yuja: the Korean citrus behind glowy night packs"
+what_it_is = "Yuja (yuzu) is a fragrant citrus grown in southern Korea. Its peel extract brings vitamin C-rich plant compounds to brightening toners and sleeping packs."
+origin = "Fruit and peel of the yuja tree (Citrus junos)"
+benefits = [
+  "Helps dull skin look brighter",
+  "Known for antioxidant plant compounds",
+  "Gives a fresh, moisturized finish overnight",
+]
+best_for = ["Dull winter skin", "Tired-looking skin", "Uneven-looking tone"]
+when = "PM"
+how_to_use = [
+  "Use a yuja sleeping pack as the last night step",
+  "Spread a thin layer; no need to rinse until morning",
+  "Patch test first: citrus extracts can irritate some skin",
+]
+pairs_with = ["Niacinamide", "Hyaluronic acid", "Vitamin C"]
+avoid_with = ["Very sensitive or broken skin"]
+good_to_know = [
+  "Evidence is early: a 2022 study tested yuja peel fractions in lab cell models.",
+  "Yuja extract is not the same as a stable vitamin C serum.",
+  "Citrus extracts can bother reactive skin; patch test first.",
+]
+myth = "Yuja extract is as strong as a vitamin C serum."
+fact = "Yuja has vitamin C-rich compounds, but the extract is gentler; most data on it is from lab studies."
+keywords = ["yuja", "yuzu"]
+examples = [
+  {brand = "HANYUL", product = "Yuja Sleeping Pack"},
+  {brand = "HANYUL", product = "Yuja Sleeping Mask"},
+]
+hashtags = ["#yuja", "#yuzu", "#sleepingmask", "#kbeauty"]
+sources = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854771",
+  "https://www.asiae.co.kr/en/article/2022100409395415376",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230418306",
+]
+
+[[ingredient]]
+id = "mandelic-acid"
+name = "Mandelic acid"
+full_name = "Mandelic acid (an AHA from bitter almonds)"
+nickname = "The slow, gentle AHA"
+area = "skin"
+heat = "global"
+heat_note = "By Wishtrend's mandelic toner: a K-beauty export"
+hot_since = 2021
+hook = "Mandelic acid: the AHA for skin that hates AHAs"
+what_it_is = "Mandelic acid is an alpha hydroxy acid first found in bitter almonds. Its large molecule soaks in slowly, so it is a milder exfoliant than glycolic acid."
+origin = "Bitter almonds; lab-made for skincare"
+benefits = [
+  "Helps exfoliate dull surface skin gently",
+  "May help skin look smoother and clearer",
+  "Known as milder than glycolic acid",
+]
+best_for = ["Sensitive skin new to acids", "Dull, rough texture", "Clogged-looking pores"]
+when = "PM"
+how_to_use = [
+  "Swipe a mandelic toner over clean skin at night",
+  "Start 2–3 nights a week, then build up if comfy",
+  "Wear sunscreen daily: acids make skin sun-sensitive",
+]
+pairs_with = ["Panthenol", "Ceramides", "Centella"]
+avoid_with = ["Retinol on the same night", "Other acids or scrubs"]
+good_to_know = [
+  "Small human studies, mostly on clinic peels, report good results and tolerance.",
+  "Home toners use lower levels than peels: think gentle and gradual.",
+  "Stop if you get burning or redness that lasts.",
+]
+myth = "Mandelic acid is too weak to do anything."
+fact = "It works more slowly than glycolic acid, but small studies show it exfoliates with less stinging."
+keywords = ["mandelic"]
+examples = [
+  {brand = "By Wishtrend", product = "Mandelic Acid 5% Skin Prep Water"},
+  {brand = "By Wishtrend", product = "Mandelic Acid Gentle Exfoliating Toner"},
+  {brand = "Nine Less", product = "Molecule-Clear 5% Mandelic Acid Serum"},
+]
+hashtags = ["#mandelicacid", "#gentleexfoliation", "#aha", "#kbeauty"]
+sources = [
+  "https://library.scconline.org/v061n03/47",
+  "https://www.healthline.com/health/mandelic-acid",
+  "https://www.barchart.com/story/news/31482811/by-wishtrend-launches-mandelic-acid-gentle-exfoliating-toner-as-a-revolutionary-skincare-solution",
+]
+
+[[ingredient]]
+id = "camellia"
+name = "Camellia"
+full_name = "Camellia japonica oil & extracts"
+nickname = "Jeju's dongbaek flower"
+area = "skin"
+heat = "korea"
+heat_note = "Round Lab camellia sun serum: #11 OY Global sun"
+hot_since = 2025
+hook = "Camellia: the Jeju flower in Korea's firming SPF"
+what_it_is = "Camellia (dongbaek) grows wild on Korea's Jeju Island. Its seed oil and extracts are used for a soft, nourished feel in creams, cleansers and sun serums."
+origin = "Seeds, leaves and flowers of Camellia japonica"
+benefits = [
+  "Helps skin feel soft and nourished",
+  "Supports a comfortable, moisturized barrier",
+  "May help skin look smoother and firmer",
+]
+best_for = ["Dry skin", "Skin that feels tight in winter", "Early fine lines"]
+when = "AM & PM"
+how_to_use = [
+  "Use a camellia cream or oil as your last night step",
+  "In the morning, a camellia sun serum goes on last",
+  "Mix a drop of oil into cream if your skin is very dry",
+]
+pairs_with = ["Peptides", "Ceramides", "Collagen"]
+avoid_with = []
+good_to_know = [
+  "Evidence is early: a 2007 study tested camellia oil on procollagen and barrier.",
+  "A firming name on an SPF doesn't change its main job: sun protection.",
+  "Rich oils can feel heavy on oily, breakout-prone skin.",
+]
+myth = "Camellia sun serums lift and firm the skin."
+fact = "The SPF protects from UV; camellia adds a nourishing feel. Firming data on camellia is mostly lab-based."
+keywords = ["camellia"]
+examples = [
+  {brand = "ROUND LAB", product = "Camellia Deep Collagen Firming Sun Serum"},
+  {brand = "ROUND LAB", product = "Camellia Deep Collagen Rice Cake Mask Cleanser"},
+]
+hashtags = ["#camellia", "#jejubeauty", "#koreansunscreen", "#kbeauty"]
+sources = [
+  "https://pubmed.ncbi.nlm.nih.gov/17386986/",
+  "https://cosmeticsbusiness.com/dongbaek-tsubaki-oil-by-biospectrum-skin-soothing-anti-wrinkle-79175",
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250329208",
+]
+
+[[ingredient]]
+id = "honey"
+name = "Honey"
+full_name = "Honey & honey extract"
+nickname = "The sticky glow mask"
+area = "skin"
+heat = "global"
+heat_note = "I'm From Honey Mask: a K-beauty bestseller abroad"
+hot_since = 2018
+hook = "Honey masks: sweet glow or sticky hype?"
+what_it_is = "Honey is a natural humectant: it pulls water into the skin. K-beauty honey masks and creams use it for a soft, glowy, cushioned feel."
+origin = "Made by bees from flower nectar"
+benefits = [
+  "Helps skin hold on to moisture",
+  "Leaves skin feeling soft and glowy",
+  "Supports a calm, comfortable feel",
+]
+best_for = ["Dry, dull skin", "Rough texture", "Winter dryness"]
+when = "PM"
+how_to_use = [
+  "Spread a honey mask over clean, dry skin",
+  "Leave 10–20 minutes, then rinse with lukewarm water",
+  "Use 1–2 times a week, then moisturize",
+]
+pairs_with = ["Propolis", "Ceramides", "Hyaluronic acid"]
+avoid_with = ["Bee product allergy"]
+good_to_know = [
+  "Reviews of honey in dermatology focus on wound care, not cosmetic masks.",
+  "Cosmetic benefits are mostly about moisture; strong claims lack data.",
+  "Skip it if you're allergic to bee products or pollen.",
+]
+myth = "Raw kitchen honey works just like a honey skincare mask."
+fact = "Kitchen honey can moisturize, but it's messy and unpreserved. Masks are made for skin and easier to rinse."
+keywords = ["honey"]
+examples = [
+  {brand = "I'm From", product = "Honey Mask"},
+]
+hashtags = ["#honeymask", "#glowyskin", "#washoffmask", "#kbeauty"]
+sources = [
+  "https://pubmed.ncbi.nlm.nih.gov/24305429/",
+  "https://pubmed.ncbi.nlm.nih.gov/38013499/",
+  "https://sukoshi.com/collections/ultimate-search-bestseller-collection-do-not-delete/products/im-from-honey-mask",
+]
+
+[[ingredient]]
+id = "jericho-rose"
+name = "Jericho rose"
+full_name = "Selaginella lepidophylla extract"
+nickname = "The resurrection plant"
+area = "skin"
+heat = "korea"
+heat_note = "Abib Jericho Rose mask: OY Global masks top 100"
+hot_since = 2025
+hook = "The 'resurrection plant' in Korea's wrapping masks"
+what_it_is = "Jericho rose is a desert plant that curls up dry and unfolds green again with water. K-beauty uses its extract in hydrating gel and wrapping masks."
+origin = "A desert plant from Mexico and the US Southwest"
+benefits = [
+  "Helps skin feel hydrated and plump",
+  "Leaves a smooth, bouncy finish",
+  "Supports a comfortable, moisturized feel",
+]
+best_for = ["Dehydrated skin", "Dull, tired skin", "Pre-event glow"]
+when = "PM"
+how_to_use = [
+  "Spread a thin, even layer of the wrapping mask",
+  "Let it dry into a film, then peel or rinse as directed",
+  "Follow with a light moisturizer",
+]
+pairs_with = ["Collagen", "Hyaluronic acid", "Peptides"]
+avoid_with = ["Peel films on irritated skin"]
+good_to_know = [
+  "Evidence is thin: few studies test Jericho rose extract on human skin.",
+  "Its 'resurrection' story is about the plant, not your skin.",
+  "Peel-off films can tug; peel slowly and skip on irritated skin.",
+]
+myth = "Jericho rose 'resurrects' tired skin like it revives itself."
+fact = "The plant survives drying by itself. On skin, the extract mainly adds moisture; human data is limited."
+keywords = ["jericho rose"]
+examples = [
+  {brand = "Abib", product = "Lifting Collagen Wrapping Mask Jericho Rose Film"},
+  {brand = "Abib", product = "Collagen Gel Mask Jericho Rose Jelly"},
+]
+hashtags = ["#jerichorose", "#wrappingmask", "#hydration", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250530794",
+  "https://www.specialchem.com/cosmetics/inci-ingredients/selaginella-lepidophylla-extract",
+  "https://www.dodoskin.com/en-ca/collections/viral-in-korea/products/abib-lifting-collagen-wrapping-mask-jericho-rose-film-100ml",
+]
+
+[[ingredient]]
 id = "azelaic-acid"
 name = "Azelaic acid"
 full_name = ""

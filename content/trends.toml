@@ -283,6 +283,40 @@ sources = [
 ]
 
 [[versus]]
+id = "rising-2026-11-15"
+year = 2026
+topic = "Rising this month"
+title = "Rising in Seoul vs. selling abroad"
+subtitle = "Mid-Nov 2026: Naver searches vs. Olive Young Global"
+korea = [
+  {name = "Propolis", why = "Naver searches up 108% in one week (early Nov 2026)"},
+  {name = "Rice", why = "Naver searches up 107% in one week (early Nov 2026)"},
+  {name = "Heartleaf", why = "Naver searches up 91% in one week (early Nov 2026)"},
+  {name = "Peptides", why = "Naver searches up 82% in one week (early Nov 2026)"},
+  {name = "PDRN", why = "Still the #1 tracked ingredient on Naver (Nov 2026)"},
+]
+global = [
+  {name = "Squalane", why = "S.NATURE squalane cream: #4 OY Global skincare (Nov)"},
+  {name = "Hyaluronic acid", why = "Torriden hyaluronic serum: #5 OY Global skincare"},
+  {name = "PDRN", why = "Anua PDRN mist and serum: #6 and #7 OY Global (Nov)"},
+  {name = "Glutathione", why = "numbuzin No.5 serum: #8 OY Global skincare (Nov)"},
+  {name = "Carrot", why = "Skinfood carrot pads: #9 OY Global face masks (Nov)"},
+]
+both = ["PDRN"]
+next = [
+  {name = "Centella vesicles", why = "Centella EVs tested on scalps in a 56-day study"},
+  {name = "Human-like collagen", why = "Kolmar Korea's microbe-made collagen nears launch"},
+  {name = "Plant exosomes", why = "Daebong LS's red cabbage exosome won an award (Oct)"},
+]
+basis = "Naver search data (week of Nov 2, 2026) and Olive Young Global bestseller ranks (Nov 9, 2026)"
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240624146",
+  "https://www.cosmeticsdesign-asia.com/Article/2025/12/16/centella-asiatica-bubbles-key-proteins-boost-hair-growth-in-56-day-study",
+  "https://news.mtn.co.kr/news-detail/2026090115191122445",
+  "https://www.cosinkorea.com/news/article.html?no=58425",
+]
+
+[[versus]]
 id = "searches-2026-10-15"
 year = 2026
 topic = "Ingredients"
