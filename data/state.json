@@ -10970,6 +10970,100 @@
       "ig_media_id": "17871846045659149",
       "permalink": "https://www.instagram.com/p/Df_o2J5lu51/",
       "published_at": "2026-11-21T15:57+09:00"
+    },
+    {
+      "number": 99,
+      "date": "2026-11-21",
+      "source": "myth",
+      "key": "my-retinol+vitamin-c+copper-peptide+nmn",
+      "brand": "",
+      "name": "K-beauty myths vs. facts: Retinol, Vitamin C, Copper peptide, NMN",
+      "link": "",
+      "links": {},
+      "products": [],
+      "data": {
+        "items": [
+          {
+            "id": "retinol",
+            "name": "Retinol",
+            "area": "skin",
+            "myth": "Retinol thins your skin.",
+            "fact": "The flaking is temporary irritation. Studies link retinoids with a thicker outer skin layer over time.",
+            "sources": [
+              "https://jcadonline.com/efficacy-of-over-the-counter-vitamin-a/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC11608876/",
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA250329696"
+            ]
+          },
+          {
+            "id": "vitamin-c",
+            "name": "Vitamin C",
+            "area": "skin",
+            "myth": "Vitamin C serum replaces sunscreen.",
+            "fact": "It adds antioxidant support under SPF but doesn't block UV. Keep the sunscreen.",
+            "sources": [
+              "https://pubmed.ncbi.nlm.nih.gov/29104718/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC13588479",
+              "https://global.oliveyoung.com/product/detail?prdtNo=GA260439702"
+            ]
+          },
+          {
+            "id": "copper-peptide",
+            "name": "Copper peptide",
+            "area": "skin",
+            "myth": "A copper peptide serum works like a clinic peptide treatment.",
+            "fact": "Clinic routes deliver it deeper. From a serum only a little gets in, so results are milder and slower.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Copper_peptide_GHK-Cu",
+              "https://www.mdpi.com/2079-9284/5/2/29",
+              "https://nayawell.com/skin-laser/ghk-copper-peptide-skin-delivery/",
+              "https://www.glossy.co/beauty/the-beauty-industry-welcomes-a-flood-of-new-peptide-products-as-peptide-therapy-trends-online/",
+              "https://www.sisajournal-e.com/news/articleView.html?idxno=423873"
+            ]
+          },
+          {
+            "id": "nmn",
+            "name": "NMN",
+            "area": "skin",
+            "myth": "Putting NMN on your skin works like taking NMN supplements.",
+            "fact": "Different routes. Skin studies are early, so treat NMN serums as glow support, not an anti-aging fix.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Nicotinamide_mononucleotide",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC12048825/",
+              "https://www.etoday.co.kr/news/view/2596456",
+              "https://www.enetnews.co.kr/news/articleView.html?idxno=49099"
+            ]
+          }
+        ]
+      },
+      "category": "myth",
+      "folder": "099",
+      "slides": 6,
+      "caption": "4 K-beauty myths, fact-checked 🔍\nMyth or fact? Swipe before you read the answers.\n\n🧪 Retinol\n❌ Myth: Retinol thins your skin.\n✅ Fact: The flaking is temporary irritation. Studies link retinoids with a thicker outer skin layer over time.\n\n🧪 Vitamin C\n❌ Myth: Vitamin C serum replaces sunscreen.\n✅ Fact: It adds antioxidant support under SPF but doesn't block UV. Keep the sunscreen.\n\n🧪 Copper peptide\n❌ Myth: A copper peptide serum works like a clinic peptide treatment.\n✅ Fact: Clinic routes deliver it deeper. From a serum only a little gets in, so results are milder and slower.\n\n🧪 NMN\n❌ Myth: Putting NMN on your skin works like taking NMN supplements.\n✅ Fact: Different routes. Skin studies are early, so treat NMN serums as glow support, not an anti-aging fix.\n\nWhich one did you believe? Tell me below 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n.\n#skincaremyths #kbeauty #skincarefacts #koreanskincare",
+      "hook": "4 K-beauty myths, fact-checked",
+      "bullets": [
+        "Retinol: The flaking is temporary irritation. Studies link retinoids with a thicker outer skin layer over time.",
+        "Vitamin C: It adds antioxidant support under SPF but doesn't block UV. Keep the sunscreen.",
+        "Copper peptide: Clinic routes deliver it deeper. From a serum only a little gets in, so results are milder and slower."
+      ],
+      "status": "published",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/099.mp4",
+        "cover": "reels/099.jpg",
+        "seconds": 24.45,
+        "track": "seoul-morning",
+        "status": "failed",
+        "error": "컨테이너 처리 실패: ERROR"
+      },
+      "story": {
+        "image": "stories/099.jpg",
+        "status": "failed",
+        "error": "The requested resource does not exist (code 24/2207006)"
+      },
+      "ig_media_id": "18107609000373299",
+      "permalink": "https://www.instagram.com/p/DgBDIblo72K/",
+      "published_at": "2026-11-22T05:06+09:00"
     }
   ],
   "tool_history": [
