@@ -11110,6 +11110,128 @@
       "ig_media_id": "18157937176516647",
       "permalink": "https://www.instagram.com/p/DgCLB87kdfD/",
       "published_at": "2026-11-22T15:34+09:00"
+    },
+    {
+      "number": 101,
+      "date": "2026-11-22",
+      "source": "combo",
+      "key": "cb-urea+yuja+mandelic-acid+honey",
+      "brand": "",
+      "name": "Mix & match: Urea, Yuja, Mandelic acid, Honey",
+      "link": "",
+      "links": {},
+      "products": [],
+      "data": {
+        "items": [
+          {
+            "id": "urea",
+            "name": "Urea",
+            "area": "skin",
+            "pairs": [
+              "Ceramides",
+              "Hyaluronic acid",
+              "Panthenol"
+            ],
+            "benefit": "Helps skin hold on to moisture",
+            "avoid": [
+              "Broken or cracked skin"
+            ],
+            "when": "AM & PM",
+            "sources": [
+              "https://pubmed.ncbi.nlm.nih.gov/24314769/",
+              "https://www.springermedicine.com/atopic-dermatitis/vulgar-psoriasis/urea-in-dermatology-a-review-of-its-emollient-moisturizing-kerat/22219224"
+            ]
+          },
+          {
+            "id": "yuja",
+            "name": "Yuja",
+            "area": "skin",
+            "pairs": [
+              "Niacinamide",
+              "Hyaluronic acid",
+              "Vitamin C"
+            ],
+            "benefit": "Helps dull skin look brighter",
+            "avoid": [
+              "Very sensitive or broken skin"
+            ],
+            "when": "PM",
+            "sources": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854771",
+              "https://www.asiae.co.kr/en/article/2022100409395415376"
+            ]
+          },
+          {
+            "id": "mandelic-acid",
+            "name": "Mandelic acid",
+            "area": "skin",
+            "pairs": [
+              "Panthenol",
+              "Ceramides",
+              "Centella"
+            ],
+            "benefit": "Helps exfoliate dull surface skin gently",
+            "avoid": [
+              "Retinol on the same night",
+              "Other acids or scrubs"
+            ],
+            "when": "PM",
+            "sources": [
+              "https://library.scconline.org/v061n03/47",
+              "https://www.healthline.com/health/mandelic-acid"
+            ]
+          },
+          {
+            "id": "honey",
+            "name": "Honey",
+            "area": "skin",
+            "pairs": [
+              "Propolis",
+              "Ceramides",
+              "Hyaluronic acid"
+            ],
+            "benefit": "Helps skin hold on to moisture",
+            "avoid": [
+              "Bee product allergy"
+            ],
+            "when": "PM",
+            "sources": [
+              "https://pubmed.ncbi.nlm.nih.gov/24305429/",
+              "https://pubmed.ncbi.nlm.nih.gov/38013499/"
+            ]
+          }
+        ]
+      },
+      "category": "combo",
+      "folder": "101",
+      "slides": 6,
+      "caption": "Mix & match: what to layer, what to space out 🧩\nA quick pairing cheat sheet from our Ingredient 101 notes.\n\n🧪 Urea (AM & PM)\n✅ Pairs well with: Ceramides, Hyaluronic acid, Panthenol\n⏸ Space out from: Broken or cracked skin\n\n🧪 Yuja (PM)\n✅ Pairs well with: Niacinamide, Hyaluronic acid, Vitamin C\n⏸ Space out from: Very sensitive or broken skin\n\n🧪 Mandelic acid (PM)\n✅ Pairs well with: Panthenol, Ceramides, Centella\n⏸ Space out from: Retinol on the same night, Other acids or scrubs\n\n🧪 Honey (PM)\n✅ Pairs well with: Propolis, Ceramides, Hyaluronic acid\n⏸ Space out from: Bee product allergy\n\nNew to an active? Add one product at a time and patch test first.\nWhat combo do you want checked next? 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\nInfo only, not medical advice. Patch test new products.\n.\n#skincarelayering #kbeauty #skincaretips #koreanskincare",
+      "hook": "Mix & match: what to layer, what to space out",
+      "bullets": [
+        "Urea + Ceramides",
+        "Yuja + Niacinamide",
+        "Mandelic acid + Panthenol"
+      ],
+      "status": "published",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/101.mp4",
+        "cover": "reels/101.jpg",
+        "seconds": 24.45,
+        "track": "night-routine",
+        "status": "published",
+        "media_id": "18036947036675112",
+        "permalink": "https://www.instagram.com/reel/DgDpav4D1jP/"
+      },
+      "story": {
+        "image": "stories/101.jpg",
+        "status": "published",
+        "media_id": "17899564635416128"
+      },
+      "ig_media_id": "18036947036675112",
+      "permalink": "https://www.instagram.com/reel/DgDpav4D1jP/",
+      "card_skipped": true,
+      "published_at": "2026-11-23T05:19+09:00"
     }
   ],
   "tool_history": [
