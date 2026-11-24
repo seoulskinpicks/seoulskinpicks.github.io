@@ -11299,20 +11299,16 @@
         "May help ease the feeling of scalp itch",
         "L-menthol is an MFDS-listed hair-loss care ingredient"
       ],
-      "status": "prepared",
+      "status": "published",
       "photo_credit": "📷 Photo: cottonbro studio / Pexels",
-      "reel": {
-        "mode": "auto",
-        "video": "reels/103.mp4",
-        "cover": "reels/103.jpg",
-        "seconds": 30.35,
-        "track": "seoul-morning",
-        "status": "prepared"
-      },
       "story": {
         "image": "stories/103.jpg",
-        "status": "prepared"
-      }
+        "status": "published",
+        "media_id": "18109894202365560"
+      },
+      "ig_media_id": "18143637314497652",
+      "permalink": "https://www.instagram.com/p/DgHqVUEFYov/",
+      "published_at": "2026-11-24T18:44+09:00"
     }
   ],
   "tool_history": [
