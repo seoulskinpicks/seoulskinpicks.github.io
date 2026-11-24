@@ -11263,6 +11263,56 @@
       "ig_media_id": "18122108353770818",
       "permalink": "https://www.instagram.com/p/DgE1gLNkRcK/",
       "published_at": "2026-11-23T16:24+09:00"
+    },
+    {
+      "number": 103,
+      "date": "2026-11-24",
+      "source": "hair",
+      "key": "hair-menthol",
+      "brand": "",
+      "name": "Menthol",
+      "link": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540708",
+      "links": {},
+      "products": [
+        {
+          "brand": "LABO-H",
+          "name": "Scalp Strengthening Cooling & No Sebum Shampoo 333ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260540708"
+          }
+        },
+        {
+          "brand": "LABO-H",
+          "name": "Scalp Cooling & No Sebum Shampoo 750ml Refill",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136730"
+          }
+        }
+      ],
+      "category": "hair",
+      "folder": "103",
+      "slides": 7,
+      "caption": "Why Korean scalp shampoos feel ice-cold 💇‍♀️\nHair & scalp 101 · Menthol (L-menthol & peppermint)\n📍 Hot in Korea: A cooling salt pack tops Hwahae scalp care\n\nA cooling compound from mint plants. It triggers the skin's cold receptors, creating a fresh, tingly feeling on the scalp.\n\n✨ What it does\n• Gives an instant cooling, refreshing scalp feel\n• May help ease the feeling of scalp itch\n• L-menthol is an MFDS-listed hair-loss care ingredient\n\n👤 Best for: Oily, sweaty scalp, Itchy-feeling scalp, Hot, humid months\n🕐 When: Daily in summer\n\n🧴 How to use\n1. Massage cooling shampoo into the scalp; leave on 1–2 minutes\n2. Rinse with lukewarm water to keep the chill comfortable\n3. Mist on a mint scalp tonic after washing for extra refresh\n🤝 Pairs well with: Salicylic acid, Panthenol, Tea tree\n\n⚠️ Good to know\n• Strong tingling can sting a dry or sensitive scalp. Switch if it burns.\n• The chill is a sensation; it doesn't really lower scalp temperature.\n• Keep lather out of your eyes and rinse it off your face.\n\n❌ Myth: The stronger the tingle, the better it works.\n✅ Fact: The tingle is menthol switching on cold receptors. It's not a sign of deeper cleaning or better results.\n\n🛍 Where to find it (link in bio → tap No.103)\n• LABO-H Scalp Strengthening Cooling & No Sebum Shampoo 333ml (⭐ 4.6, 27 reviews)\n• LABO-H Scalp Cooling & No Sebum Shampoo 750ml Refill (⭐ 4.7, 23 reviews)\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\n🛍 Shop: link in bio → tap No.103\nInfo only, not medical advice. Patch test new products.\n📷 Photo: cottonbro studio / Pexels\n.\n#coolingshampoo #koreanhaircare #kbeauty #menthol",
+      "hook": "Why Korean scalp shampoos feel ice-cold",
+      "bullets": [
+        "Gives an instant cooling, refreshing scalp feel",
+        "May help ease the feeling of scalp itch",
+        "L-menthol is an MFDS-listed hair-loss care ingredient"
+      ],
+      "status": "prepared",
+      "photo_credit": "📷 Photo: cottonbro studio / Pexels",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/103.mp4",
+        "cover": "reels/103.jpg",
+        "seconds": 30.35,
+        "track": "seoul-morning",
+        "status": "prepared"
+      },
+      "story": {
+        "image": "stories/103.jpg",
+        "status": "prepared"
+      }
     }
   ],
   "tool_history": [
