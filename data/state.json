@@ -11394,11 +11394,26 @@
         "It-products: Cushion compact, CC cream",
         "Buzzwords: Cushion, Color correcting"
       ],
-      "status": "prepared",
+      "status": "published",
+      "reel": {
+        "mode": "auto",
+        "video": "reels/105.mp4",
+        "cover": "reels/105.jpg",
+        "seconds": 20.7,
+        "track": "night-routine",
+        "status": "published",
+        "media_id": "18097268696163580",
+        "permalink": "https://www.instagram.com/reel/DgLmmnSBHhs/"
+      },
       "story": {
         "image": "stories/105.jpg",
-        "status": "prepared"
-      }
+        "status": "failed",
+        "error": "The requested resource does not exist (code 24/2207006)"
+      },
+      "ig_media_id": "18097268696163580",
+      "permalink": "https://www.instagram.com/reel/DgLmmnSBHhs/",
+      "card_skipped": true,
+      "published_at": "2026-11-26T07:28+09:00"
     }
   ],
   "tool_history": [
