@@ -11414,6 +11414,1066 @@
       "permalink": "https://www.instagram.com/reel/DgLmmnSBHhs/",
       "card_skipped": true,
       "published_at": "2026-11-26T07:28+09:00"
+    },
+    {
+      "number": 106,
+      "date": "2026-11-26",
+      "source": "weekly",
+      "key": "wk-2026-11-22",
+      "brand": "",
+      "name": "This week in K-beauty (Nov 16–22)",
+      "link": "https://global.oliveyoung.com/product/detail?prdtNo=GA261044273",
+      "links": {},
+      "products": [
+        {
+          "brand": "AESTURA",
+          "name": "Atobarrier 365 Cream 80ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA261044273"
+          }
+        },
+        {
+          "brand": "BIOHEAL BOH",
+          "name": "Probioderm 3D Lifting Cream 50mL",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338983"
+          }
+        },
+        {
+          "brand": "Dr. Althea",
+          "name": "345 Relief Cream 50ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559"
+          }
+        },
+        {
+          "brand": "celimax",
+          "name": "The Vita A Retinal Shot Tightening Booster 15ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260339051"
+          }
+        },
+        {
+          "brand": "Torriden",
+          "name": "Dive In Low Molecular Hyaluronic Acid Serum 50ml Refill",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969"
+          }
+        },
+        {
+          "brand": "Centellian24",
+          "name": "Madeca Cream Time Reverse 50ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136971"
+          }
+        },
+        {
+          "brand": "Anua",
+          "name": "Heartleaf Double Cleansing Set (Heartleaf Pore Control Cleansing Oil 200ml+Heartleaf Quercetinol Pore Deep Cleansing Foam 150",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA250530720"
+          }
+        },
+        {
+          "brand": "medicube",
+          "name": "PDRN Pink Peptide Ampoule 30ml Refill",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842693"
+          }
+        },
+        {
+          "brand": "d'Alba",
+          "name": "White Truffle First Spray Serum Peptide 100ml",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842596"
+          }
+        },
+        {
+          "brand": "Anua",
+          "name": "PDRN Hyaluronic Acid Hydrating Capsule Mist 100ml Double Pack",
+          "links": {
+            "oliveyoung": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237304"
+          }
+        }
+      ],
+      "weekly": {
+        "week_start": "2026-11-16",
+        "week_end": "2026-11-22",
+        "made": "2026-11-23",
+        "korea": [
+          {
+            "id": "niacinamide",
+            "name": "Niacinamide",
+            "area": "skin",
+            "level": 1.048323483764022,
+            "this_week": 186.47,
+            "last_week": 217.09,
+            "change": -14,
+            "index": 100
+          },
+          {
+            "id": "pdrn",
+            "name": "PDRN",
+            "area": "skin",
+            "level": 1.0,
+            "this_week": 177.88,
+            "last_week": 346.58,
+            "change": -49,
+            "index": 95
+          },
+          {
+            "id": "hyaluronic-acid",
+            "name": "Hyaluronic acid",
+            "area": "skin",
+            "level": 0.6096094002675662,
+            "this_week": 108.44,
+            "last_week": 135.35,
+            "change": -20,
+            "index": 58
+          },
+          {
+            "id": "snail-mucin",
+            "name": "Snail mucin",
+            "area": "skin",
+            "level": 0.4336674078322108,
+            "this_week": 77.14,
+            "last_week": 95.02,
+            "change": -19,
+            "index": 41
+          },
+          {
+            "id": "retinol",
+            "name": "Retinol",
+            "area": "skin",
+            "level": 0.402281199268103,
+            "this_week": 71.56,
+            "last_week": 91.86,
+            "change": -22,
+            "index": 38
+          },
+          {
+            "id": "collagen",
+            "name": "Collagen",
+            "area": "skin",
+            "level": 0.37870710903330157,
+            "this_week": 67.36,
+            "last_week": 84.22,
+            "change": -20,
+            "index": 36
+          },
+          {
+            "id": "centella",
+            "name": "Centella",
+            "area": "skin",
+            "level": 0.3625300761777109,
+            "this_week": 64.49,
+            "last_week": 83.39,
+            "change": -23,
+            "index": 35
+          },
+          {
+            "id": "birch-juice",
+            "name": "Birch juice",
+            "area": "skin",
+            "level": 0.2887658241635858,
+            "this_week": 51.36,
+            "last_week": 62.48,
+            "change": -18,
+            "index": 28
+          },
+          {
+            "id": "txa",
+            "name": "TXA",
+            "area": "skin",
+            "level": 0.2851018979411054,
+            "this_week": 50.71,
+            "last_week": 66.12,
+            "change": -23,
+            "index": 27
+          },
+          {
+            "id": "peptide",
+            "name": "Peptides",
+            "area": "skin",
+            "level": 0.26705824328868144,
+            "this_week": 47.5,
+            "last_week": 62.16,
+            "change": -24,
+            "index": 25
+          },
+          {
+            "id": "ceramides",
+            "name": "Ceramides",
+            "area": "skin",
+            "level": 0.266850853359804,
+            "this_week": 47.47,
+            "last_week": 56.06,
+            "change": -15,
+            "index": 25
+          },
+          {
+            "id": "azulene",
+            "name": "Azulene",
+            "area": "skin",
+            "level": 0.25786365660995103,
+            "this_week": 45.87,
+            "last_week": 52.8,
+            "change": -13,
+            "index": 25
+          },
+          {
+            "id": "spicule",
+            "name": "Spicules",
+            "area": "skin",
+            "level": 0.24894555235741184,
+            "this_week": 44.28,
+            "last_week": 52.55,
+            "change": -16,
+            "index": 24
+          },
+          {
+            "id": "vitamin-c",
+            "name": "Vitamin C",
+            "area": "skin",
+            "level": 0.23726223031368388,
+            "this_week": 42.2,
+            "last_week": 49.7,
+            "change": -15,
+            "index": 23
+          },
+          {
+            "id": "heartleaf",
+            "name": "Heartleaf",
+            "area": "skin",
+            "level": 0.23753871273987506,
+            "this_week": 42.25,
+            "last_week": 55.72,
+            "change": -24,
+            "index": 23
+          },
+          {
+            "id": "salicylic-acid",
+            "name": "Scalp scaling",
+            "area": "hair",
+            "level": 0.2245418461886324,
+            "this_week": 39.94,
+            "last_week": 41.18,
+            "change": -3,
+            "index": 21
+          },
+          {
+            "id": "rice",
+            "name": "Rice",
+            "area": "skin",
+            "level": 0.20871061313041916,
+            "this_week": 37.12,
+            "last_week": 52.69,
+            "change": -30,
+            "index": 20
+          },
+          {
+            "id": "propolis",
+            "name": "Propolis",
+            "area": "skin",
+            "level": 0.21437934614436038,
+            "this_week": 38.13,
+            "last_week": 54.33,
+            "change": -30,
+            "index": 20
+          },
+          {
+            "id": "panthenol",
+            "name": "Panthenol",
+            "area": "skin",
+            "level": 0.21251272434752708,
+            "this_week": 37.8,
+            "last_week": 41.56,
+            "change": -9,
+            "index": 20
+          },
+          {
+            "id": "green-tea",
+            "name": "Green tea",
+            "area": "skin",
+            "level": 0.2135498988657868,
+            "this_week": 37.99,
+            "last_week": 53.23,
+            "change": -29,
+            "index": 20
+          },
+          {
+            "id": "nmn",
+            "name": "NMN",
+            "area": "skin",
+            "level": 0.16730025817207111,
+            "this_week": 29.76,
+            "last_week": 32.1,
+            "change": -7,
+            "index": 16
+          },
+          {
+            "id": "aloe",
+            "name": "Aloe",
+            "area": "skin",
+            "level": 0.17082594318145597,
+            "this_week": 30.39,
+            "last_week": 37.96,
+            "change": -20,
+            "index": 16
+          },
+          {
+            "id": "urea",
+            "name": "Urea",
+            "area": "skin",
+            "level": 0.16494976402016917,
+            "this_week": 29.34,
+            "last_week": 37.84,
+            "change": -22,
+            "index": 16
+          },
+          {
+            "id": "retinal",
+            "name": "Retinal",
+            "area": "skin",
+            "level": 0.14566182601294858,
+            "this_week": 25.91,
+            "last_week": 26.6,
+            "change": -3,
+            "index": 14
+          },
+          {
+            "id": "carrot",
+            "name": "Carrot",
+            "area": "skin",
+            "level": 0.13204267723813734,
+            "this_week": 23.49,
+            "last_week": 28.9,
+            "change": -19,
+            "index": 13
+          },
+          {
+            "id": "argan-oil",
+            "name": "Argan oil",
+            "area": "hair",
+            "level": 0.12547512335596822,
+            "this_week": 22.32,
+            "last_week": 20.73,
+            "change": 8,
+            "index": 12
+          },
+          {
+            "id": "egf",
+            "name": "EGF",
+            "area": "skin",
+            "level": 0.10356015255218634,
+            "this_week": 18.42,
+            "last_week": 15.45,
+            "change": 19,
+            "index": 10
+          },
+          {
+            "id": "azelaic-acid",
+            "name": "Azelaic acid",
+            "area": "skin",
+            "level": 0.09899740546147802,
+            "this_week": 17.61,
+            "last_week": 15.43,
+            "change": 14,
+            "index": 9
+          },
+          {
+            "id": "bakuchiol",
+            "name": "Bakuchiol",
+            "area": "skin",
+            "level": 0.0896645213511839,
+            "this_week": 15.95,
+            "last_week": 17.52,
+            "change": -9,
+            "index": 9
+          },
+          {
+            "id": "bha",
+            "name": "BHA",
+            "area": "skin",
+            "level": 0.08157608925109074,
+            "this_week": 14.51,
+            "last_week": 20.41,
+            "change": -29,
+            "index": 8
+          },
+          {
+            "id": "lpp-protein",
+            "name": "LPP protein",
+            "area": "hair",
+            "level": 0.06913218755223047,
+            "this_week": 12.3,
+            "last_week": 13.74,
+            "change": -10,
+            "index": 7
+          },
+          {
+            "id": "dexpanthenol",
+            "name": "Panthenol (B5)",
+            "area": "hair",
+            "level": 0.064638589177304,
+            "this_week": 11.5,
+            "last_week": 13.63,
+            "change": -16,
+            "index": 6
+          },
+          {
+            "id": "mung-bean",
+            "name": "Mung bean",
+            "area": "skin",
+            "level": 0.06733471447117902,
+            "this_week": 11.98,
+            "last_week": 11.69,
+            "change": 2,
+            "index": 6
+          },
+          {
+            "id": "aha",
+            "name": "AHA",
+            "area": "skin",
+            "level": 0.06657430347145106,
+            "this_week": 11.84,
+            "last_week": 17.76,
+            "change": -33,
+            "index": 6
+          },
+          {
+            "id": "squalane",
+            "name": "Squalane",
+            "area": "skin",
+            "level": 0.05295521091510792,
+            "this_week": 9.42,
+            "last_week": 12.83,
+            "change": -27,
+            "index": 5
+          },
+          {
+            "id": "caffeine",
+            "name": "Caffeine",
+            "area": "hair",
+            "level": 0.052194799915379966,
+            "this_week": 9.28,
+            "last_week": 10.88,
+            "change": -15,
+            "index": 5
+          },
+          {
+            "id": "camellia",
+            "name": "Camellia",
+            "area": "skin",
+            "level": 0.040027549298115236,
+            "this_week": 7.12,
+            "last_week": 7.97,
+            "change": -11,
+            "index": 4
+          },
+          {
+            "id": "exosome",
+            "name": "Exosomes",
+            "area": "skin",
+            "level": 0.030971091395544204,
+            "this_week": 5.51,
+            "last_week": 5.0,
+            "change": 10,
+            "index": 3
+          },
+          {
+            "id": "copper-peptide",
+            "name": "Copper peptide",
+            "area": "skin",
+            "level": 0.018596394630933908,
+            "this_week": 3.31,
+            "last_week": 3.87,
+            "change": -15,
+            "index": 2
+          },
+          {
+            "id": "mugwort",
+            "name": "Mugwort",
+            "area": "skin",
+            "level": 0.019702492991103035,
+            "this_week": 3.5,
+            "last_week": 1.89,
+            "change": 85,
+            "index": 2
+          },
+          {
+            "id": "galactomyces",
+            "name": "Galactomyces",
+            "area": "skin",
+            "level": 0.023228290437424092,
+            "this_week": 4.13,
+            "last_week": 6.39,
+            "change": -35,
+            "index": 2
+          },
+          {
+            "id": "menthol",
+            "name": "Menthol",
+            "area": "hair",
+            "level": 0.01831996842321083,
+            "this_week": 3.26,
+            "last_week": 2.47,
+            "change": 32,
+            "index": 2
+          },
+          {
+            "id": "biotin",
+            "name": "Biotin",
+            "area": "hair",
+            "level": 0.021154391148649556,
+            "this_week": 3.76,
+            "last_week": 3.33,
+            "change": 13,
+            "index": 2
+          },
+          {
+            "id": "black-bean",
+            "name": "Black bean",
+            "area": "hair",
+            "level": 0.017075572631477992,
+            "this_week": 3.04,
+            "last_week": 3.33,
+            "change": -9,
+            "index": 2
+          },
+          {
+            "id": "tea-tree",
+            "name": "Tea tree",
+            "area": "hair",
+            "level": 0.01769762998117412,
+            "this_week": 3.15,
+            "last_week": 3.33,
+            "change": -6,
+            "index": 2
+          },
+          {
+            "id": "glutathione",
+            "name": "Glutathione",
+            "area": "skin",
+            "level": 0.011544968393696132,
+            "this_week": 2.05,
+            "last_week": 2.45,
+            "change": -16,
+            "index": 1
+          },
+          {
+            "id": "alpha-arbutin",
+            "name": "Alpha arbutin",
+            "area": "skin",
+            "level": 0.005737825511254965,
+            "this_week": 1.02,
+            "last_week": 1.6,
+            "change": -36,
+            "index": 1
+          },
+          {
+            "id": "pdrn-scalp",
+            "name": "PDRN scalp care",
+            "area": "hair",
+            "level": 0.011752358322573587,
+            "this_week": 2.09,
+            "last_week": 0.5,
+            "change": 315,
+            "index": 1
+          },
+          {
+            "id": "ectoin",
+            "name": "Ectoin",
+            "area": "skin",
+            "level": 0.008503099520911836,
+            "this_week": 1.51,
+            "last_week": 1.82,
+            "change": -17,
+            "index": 1
+          },
+          {
+            "id": "keratin",
+            "name": "Keratin",
+            "area": "hair",
+            "level": 0.010093070236149611,
+            "this_week": 1.8,
+            "last_week": 2.15,
+            "change": -17,
+            "index": 1
+          },
+          {
+            "id": "pdlla",
+            "name": "PDLLA",
+            "area": "skin",
+            "level": 0.0075352985923064246,
+            "this_week": 1.34,
+            "last_week": 1.28,
+            "change": 5,
+            "index": 1
+          },
+          {
+            "id": "ginger",
+            "name": "Ginger",
+            "area": "hair",
+            "level": 0.008503099520911836,
+            "this_week": 1.51,
+            "last_week": 1.24,
+            "change": 22,
+            "index": 1
+          },
+          {
+            "id": "bdrn",
+            "name": "BDRN",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0.07,
+            "change": -100,
+            "index": 0
+          },
+          {
+            "id": "pn",
+            "name": "PN",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "nad",
+            "name": "NAD+",
+            "area": "skin",
+            "level": 0.0016590069940833996,
+            "this_week": 0.3,
+            "last_week": 0.44,
+            "change": -33,
+            "index": 0
+          },
+          {
+            "id": "beta-glucan",
+            "name": "Beta-glucan",
+            "area": "skin",
+            "level": 0.0020738992887745383,
+            "this_week": 0.37,
+            "last_week": 0.06,
+            "change": 500,
+            "index": 0
+          },
+          {
+            "id": "rosemary",
+            "name": "Rosemary",
+            "area": "hair",
+            "level": 0.004977302074590776,
+            "this_week": 0.89,
+            "last_week": 0.75,
+            "change": 18,
+            "index": 0
+          },
+          {
+            "id": "rice-water",
+            "name": "Rice water",
+            "area": "hair",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "scalp-peptides",
+            "name": "Peptides (scalp)",
+            "area": "hair",
+            "level": 0.00034563114197305126,
+            "this_week": 0.06,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "ginseng",
+            "name": "Ginseng",
+            "area": "hair",
+            "level": 0.0004147798577549076,
+            "this_week": 0.07,
+            "last_week": 0.23,
+            "change": -68,
+            "index": 0
+          },
+          {
+            "id": "probiotics",
+            "name": "Probiotics",
+            "area": "hair",
+            "level": 0.0013825807863603202,
+            "this_week": 0.25,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "bond-building",
+            "name": "Bond-building",
+            "area": "hair",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "black-rice",
+            "name": "Black rice",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "zinc",
+            "name": "Zinc",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0.2,
+            "change": -100,
+            "index": 0
+          },
+          {
+            "id": "hypochlorous-acid",
+            "name": "Hypochlorous",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "kojic-acid",
+            "name": "Kojic acid",
+            "area": "skin",
+            "level": 0.00034563114197305126,
+            "this_week": 0.06,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "calcium",
+            "name": "Calcium",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "scalp-exosome",
+            "name": "Scalp exosomes",
+            "area": "hair",
+            "level": 0.0022121405018701358,
+            "this_week": 0.39,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "pha",
+            "name": "PHA",
+            "area": "skin",
+            "level": 0.0010369496443872691,
+            "this_week": 0.18,
+            "last_week": 0.07,
+            "change": 150,
+            "index": 0
+          },
+          {
+            "id": "quercetin",
+            "name": "Quercetin",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "bifida",
+            "name": "Bifida ferment",
+            "area": "skin",
+            "level": 0.00034563114197305126,
+            "this_week": 0.06,
+            "last_week": 0.06,
+            "change": 0,
+            "index": 0
+          },
+          {
+            "id": "madecassoside",
+            "name": "Madecassoside",
+            "area": "skin",
+            "level": 0.0030416439989118353,
+            "this_week": 0.54,
+            "last_week": 1.09,
+            "change": -51,
+            "index": 0
+          },
+          {
+            "id": "ginseng-skin",
+            "name": "Ginseng",
+            "area": "skin",
+            "level": 0.00034563114197305126,
+            "this_week": 0.06,
+            "last_week": 0.07,
+            "change": -17,
+            "index": 0
+          },
+          {
+            "id": "silk-protein",
+            "name": "Silk protein",
+            "area": "hair",
+            "level": 0.004009444927517248,
+            "this_week": 0.71,
+            "last_week": 0.14,
+            "change": 427,
+            "index": 0
+          },
+          {
+            "id": "amino-acids",
+            "name": "Amino acids",
+            "area": "hair",
+            "level": 0.0004147798577549076,
+            "this_week": 0.07,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "sea-salt",
+            "name": "Sea salt",
+            "area": "hair",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "yuja",
+            "name": "Yuja",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "mandelic-acid",
+            "name": "Mandelic acid",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0.06,
+            "change": -100,
+            "index": 0
+          },
+          {
+            "id": "honey",
+            "name": "Honey",
+            "area": "skin",
+            "level": 0.00034563114197305126,
+            "this_week": 0.06,
+            "last_week": 0.07,
+            "change": -17,
+            "index": 0
+          },
+          {
+            "id": "jericho-rose",
+            "name": "Jericho rose",
+            "area": "skin",
+            "level": 0.0004147798577549076,
+            "this_week": 0.07,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "scalp-cica",
+            "name": "Cica scalp care",
+            "area": "hair",
+            "level": 0.0033873875778211173,
+            "this_week": 0.6,
+            "last_week": 0.68,
+            "change": -11,
+            "index": 0
+          },
+          {
+            "id": "hair-hyaluronic",
+            "name": "Hyaluronic hair",
+            "area": "hair",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          },
+          {
+            "id": "pga",
+            "name": "PGA",
+            "area": "skin",
+            "level": 0.0,
+            "this_week": 0,
+            "last_week": 0,
+            "change": null,
+            "index": 0
+          }
+        ],
+        "products": [
+          {
+            "brand": "AESTURA",
+            "product": "Atobarrier 365 Cream 80ml",
+            "prdt_no": "GA261044273",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA261044273",
+            "rank": 1,
+            "prev_rank": 5,
+            "store_rating": 5.0,
+            "review_count": 10,
+            "list": "Skincare"
+          },
+          {
+            "brand": "BIOHEAL BOH",
+            "product": "Probioderm 3D Lifting Cream 50mL",
+            "prdt_no": "GA260338983",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260338983",
+            "rank": 2,
+            "prev_rank": 2,
+            "store_rating": 4.8,
+            "review_count": 539,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Dr. Althea",
+            "product": "345 Relief Cream 50ml",
+            "prdt_no": "GA260136559",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136559",
+            "rank": 3,
+            "prev_rank": 1,
+            "store_rating": 4.8,
+            "review_count": 1786,
+            "list": "Skincare"
+          },
+          {
+            "brand": "celimax",
+            "product": "The Vita A Retinal Shot Tightening Booster 15ml",
+            "prdt_no": "GA260339051",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260339051",
+            "rank": 4,
+            "prev_rank": 3,
+            "store_rating": 4.7,
+            "review_count": 1440,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Torriden",
+            "product": "Dive In Low Molecular Hyaluronic Acid Serum 50ml Refill",
+            "prdt_no": "GA260539969",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260539969",
+            "rank": 5,
+            "prev_rank": 6,
+            "store_rating": 4.8,
+            "review_count": 877,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Centellian24",
+            "product": "Madeca Cream Time Reverse 50ml",
+            "prdt_no": "GA260136971",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260136971",
+            "rank": 6,
+            "prev_rank": 13,
+            "store_rating": 4.8,
+            "review_count": 727,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Anua",
+            "product": "Heartleaf Double Cleansing Set (Heartleaf Pore Control Cleansing Oil 200ml+Heartleaf Quercetinol Pore Deep Cleansing Foam 150",
+            "prdt_no": "GA250530720",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA250530720",
+            "rank": 7,
+            "prev_rank": 18,
+            "store_rating": 4.8,
+            "review_count": 435,
+            "list": "Skincare"
+          },
+          {
+            "brand": "medicube",
+            "product": "PDRN Pink Peptide Ampoule 30ml Refill",
+            "prdt_no": "GA260842693",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842693",
+            "rank": 8,
+            "prev_rank": 25,
+            "store_rating": 4.9,
+            "review_count": 146,
+            "list": "Skincare"
+          },
+          {
+            "brand": "d'Alba",
+            "product": "White Truffle First Spray Serum Peptide 100ml",
+            "prdt_no": "GA260842596",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260842596",
+            "rank": 9,
+            "prev_rank": 12,
+            "store_rating": 4.9,
+            "review_count": 208,
+            "list": "Skincare"
+          },
+          {
+            "brand": "Anua",
+            "product": "PDRN Hyaluronic Acid Hydrating Capsule Mist 100ml Double Pack",
+            "prdt_no": "GA260237304",
+            "url": "https://global.oliveyoung.com/product/detail?prdtNo=GA260237304",
+            "rank": 10,
+            "prev_rank": 10,
+            "store_rating": 4.8,
+            "review_count": 786,
+            "list": "Skincare"
+          }
+        ],
+        "spotlight": {
+          "id": "egf",
+          "name": "EGF",
+          "change": 19,
+          "what_it_is": "EGF is a small protein the body uses to signal skin cells to renew. Skincare uses lab-made versions, a staple of Korean 'recovery' ampoules and creams.",
+          "benefits": [
+            "Helps skin look smoother and more refreshed",
+            "Supports a comfortable feel on stressed-looking skin"
+          ],
+          "more": "Full guide coming in our Ingredient 101 series"
+        }
+      },
+      "category": "weekly",
+      "folder": "106",
+      "slides": 5,
+      "caption": "This week in K-beauty: Nov 16–22 📈\nWhat Korea searched and what K-beauty fans abroad bought, last week.\n\n🇰🇷 Most-searched skincare & hair ingredients in Korea (Naver search, top = 100)\n1. Niacinamide · 100 (-14% vs last week)\n2. PDRN · 95 (-49% vs last week)\n3. Hyaluronic acid · 58 (-20% vs last week)\n4. Snail mucin · 41 (-19% vs last week)\n5. Retinol · 38 (-22% vs last week)\n6. Collagen · 36 (-20% vs last week)\n7. Centella · 35 (-23% vs last week)\n8. Birch juice · 28 (-18% vs last week)\n9. TXA · 27 (-23% vs last week)\n10. Peptides · 25 (-24% vs last week)\n\n🛍 Top bestsellers on Olive Young Global (link in bio → tap No.106)\n1. AESTURA Atobarrier 365 Cream 80ml (▲4)\n2. BIOHEAL BOH Probioderm 3D Lifting Cream 50mL\n3. Dr. Althea 345 Relief Cream 50ml (▼2)\n4. celimax The Vita A Retinal Shot Tightening Booster 15ml (▼1)\n5. Torriden Dive In Low Molecular Hyaluronic Acid Serum 50ml Refill (▲1)\n6. Centellian24 Madeca Cream Time Reverse 50ml (▲7)\n7. Anua Heartleaf Double Cleansing Set (Heartleaf Pore Control Cleansing Oil 200ml+Heartleaf Quercetinol Pore Deep Cleansing Foam 150 (▲11)\n8. medicube PDRN Pink Peptide Ampoule 30ml Refill (▲17)\n9. d'Alba White Truffle First Spray Serum Peptide 100ml (▲3)\n10. Anua PDRN Hyaluronic Acid Hydrating Capsule Mist 100ml Double Pack\n\nWhich one are you trying next? Tell me below 👇\n\n🔖 Save this for later · Follow @seoul.skin.picks for daily K-beauty know-how\n🛍 Shop: link in bio → tap No.106\n.\n#kbeautytrends #kbeauty #oliveyoungglobal #koreanskincare",
+      "hook": "This week in K-beauty: Nov 16–22",
+      "bullets": [
+        "Most searched in Korea: Niacinamide",
+        "#1 on Olive Young Global: AESTURA Atobarrier 365 Cream 80ml"
+      ],
+      "status": "published",
+      "story": {
+        "image": "stories/106.jpg",
+        "status": "published",
+        "media_id": "17872294614660809"
+      },
+      "ig_media_id": "18128160076694579",
+      "permalink": "https://www.instagram.com/p/DgMog81EQCH/",
+      "published_at": "2026-11-26T17:04+09:00"
     }
   ],
   "tool_history": [
