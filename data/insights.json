@@ -659,6 +659,17 @@
     "views": 128
    },
    "media_count": 123
+  },
+  "2026-11-28": {
+   "followers": 4,
+   "last_7_days": {
+    "accounts_engaged": 1,
+    "profile_links_taps": 0,
+    "reach": 54,
+    "total_interactions": 1,
+    "views": 60
+   },
+   "media_count": 126
   }
  },
  "media": {
@@ -711,6 +722,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -790,6 +810,16 @@
      "views": 110
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 4097,
+     "likes": 0,
+     "reach": 100,
+     "saved": 1,
+     "shares": 0,
+     "total_interactions": 1,
+     "views": 110
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 4097,
      "likes": 0,
@@ -910,6 +940,16 @@
      "views": 3
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 2104,
+     "likes": 0,
+     "reach": 3,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 3
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 2104,
      "likes": 0,
@@ -1098,6 +1138,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 18
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 734,
+     "likes": 0,
+     "reach": 18,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 18
     }
    },
    "number": 78,
@@ -1164,6 +1214,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -1363,6 +1422,16 @@
      "views": 8
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1208,
+     "likes": 0,
+     "reach": 5,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 8
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 1208,
      "likes": 0,
@@ -2637,6 +2706,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 15
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1296,
+     "likes": 0,
+     "reach": 13,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 15
     }
    },
    "number": 85,
@@ -3105,6 +3184,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 67,
@@ -3521,6 +3609,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 73,
@@ -3781,6 +3878,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 2
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 620,
+     "likes": 0,
+     "reach": 2,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 2
     }
    },
    "number": 62,
@@ -4000,6 +4107,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -4491,6 +4607,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 5
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 605,
+     "likes": 0,
+     "reach": 4,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 5
     }
    },
    "number": 66,
@@ -4566,6 +4692,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -4702,6 +4837,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -5574,6 +5718,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 93,
@@ -6124,6 +6278,25 @@
    "ts": "2026-10-02T18:23:18+0000",
    "type": "carousel"
   },
+  "17948475984385609": {
+   "head": "Black rice: the purple grain in gentle K-skincare 🧪\nIngredient 101 · B",
+   "history": {
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    }
+   },
+   "number": 108,
+   "permalink": "https://www.instagram.com/p/DgPOQI4lRzn/",
+   "posted": "2026-11-27",
+   "ts": "2026-11-27T08:12:30+0000",
+   "type": "carousel"
+  },
   "17953138362325550": {
    "head": "Trending in Seoul: the sheet mask worth knowing 🇰🇷\n🛍 Shop: link in bio",
    "history": {
@@ -6270,6 +6443,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 79,
@@ -6408,6 +6590,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -6917,6 +7108,16 @@
      "views": 8
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 752,
+     "likes": 0,
+     "reach": 7,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 8
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 752,
      "likes": 0,
@@ -7547,6 +7748,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 84,
@@ -7745,6 +7955,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 8
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 760,
+     "likes": 0,
+     "reach": 7,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 8
     }
    },
    "number": 80,
@@ -7847,6 +8067,16 @@
      "views": 12
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 934,
+     "likes": 0,
+     "reach": 11,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 12
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 934,
      "likes": 0,
@@ -8576,6 +8806,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 65,
@@ -9223,6 +9462,16 @@
      "views": 11
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 926,
+     "likes": 0,
+     "reach": 10,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 11
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 926,
      "likes": 0,
@@ -10660,6 +10909,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 24
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1145,
+     "likes": 0,
+     "reach": 21,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 24
     }
    },
    "number": 87,
@@ -11224,6 +11483,16 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1883,
+     "likes": 0,
+     "reach": 4,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 4
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 1883,
      "likes": 0,
@@ -13129,6 +13398,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 99,
@@ -13747,6 +14025,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -14743,6 +15030,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 48
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 680,
+     "likes": 0,
+     "reach": 46,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 48
     }
    },
    "number": 64,
@@ -14825,6 +15122,16 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 0,
      "likes": 0,
@@ -15707,6 +16014,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 90,
@@ -16141,6 +16457,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 69,
@@ -16440,6 +16765,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 102,
@@ -16683,6 +17017,26 @@
    "ts": "2026-10-27T04:53:44+0000",
    "type": "carousel"
   },
+  "18124793705071508": {
+   "head": "Rising in Seoul vs. selling abroad: rising this month, 2026 🇰🇷🌍\nMid-No",
+   "history": {
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    }
+   },
+   "number": 109,
+   "permalink": "https://www.instagram.com/reel/DgQskEsB_jK/",
+   "posted": "2026-11-27",
+   "ts": "2026-11-27T21:57:05+0000",
+   "type": "reel"
+  },
   "18125890847299217": {
    "head": "Speak K-beauty · Skin-type talk 🇰🇷\nRead Korean reviews like a local\n\n속",
    "history": {
@@ -16827,6 +17181,16 @@
      "views": 10
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1500,
+     "likes": 0,
+     "reach": 10,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 10
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 1500,
      "likes": 0,
@@ -17063,6 +17427,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -17335,6 +17708,15 @@
    "head": "This week in K-beauty: Nov 16–22 📈\nWhat Korea searched and what K-beau",
    "history": {
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -18450,6 +18832,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 3
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 864,
+     "likes": 0,
+     "reach": 3,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 3
     }
    },
    "number": 104,
@@ -18803,6 +19195,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 86,
@@ -19065,6 +19466,16 @@
      "views": 4
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1123,
+     "likes": 0,
+     "reach": 3,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 4
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 1123,
      "likes": 0,
@@ -20121,6 +20532,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 71,
@@ -20420,6 +20840,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 103,
@@ -20475,6 +20904,15 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 100,
@@ -20495,6 +20933,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 961,
+     "likes": 0,
+     "reach": 8,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 8
     }
    },
    "number": 107,
@@ -20705,6 +21153,16 @@
      "shares": 0,
      "total_interactions": 1,
      "views": 3
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 593,
+     "likes": 0,
+     "reach": 3,
+     "saved": 1,
+     "shares": 0,
+     "total_interactions": 1,
+     "views": 3
     }
    },
    "number": 72,
@@ -20807,6 +21265,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -21239,6 +21706,16 @@
      "shares": 0,
      "total_interactions": 0,
      "views": 0
+    },
+    "2026-11-28": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
     }
    },
    "number": 76,
@@ -21461,6 +21938,16 @@
      "views": 8
     },
     "2026-11-27": {
+     "comments": 0,
+     "ig_reels_avg_watch_time": 1015,
+     "likes": 0,
+     "reach": 7,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 8
+    },
+    "2026-11-28": {
      "comments": 0,
      "ig_reels_avg_watch_time": 1015,
      "likes": 0,
@@ -21906,6 +22393,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
@@ -23146,6 +23642,15 @@
      "views": 0
     },
     "2026-11-27": {
+     "comments": 0,
+     "likes": 0,
+     "reach": 0,
+     "saved": 0,
+     "shares": 0,
+     "total_interactions": 0,
+     "views": 0
+    },
+    "2026-11-28": {
      "comments": 0,
      "likes": 0,
      "reach": 0,
