@@ -1,0 +1,393 @@
+# Gemini (free) research drafts, 2026-11-28. NOT posted unless merged into content/.
+
+# FAIL: heat_note 너무 김 (52>50)
+[[ingredient]]
+id = "noni"
+name = "Noni"
+full_name = "Morinda Citrifolia"
+nickname = "Indian Mulberry"
+area = "skin"
+heat = "global"
+heat_note = "Featured in top global ampoules with 1,000+ reviews."
+hot_since = 2020
+hook = "A botanical extract for skin barrier support."
+what_it_is = "Noni comes from the Morinda citrifolia fruit. In skincare, fermented noni extracts help support the skin barrier and foster a healthy skin environment."
+origin = "Fruit-bearing tree in the Rubiaceae (coffee) family"
+benefits = [
+  "Helps support skin barrier function",
+  "May assist in modulating immune balance in skin",
+  "May support hair growth by stimulating hair cells",
+]
+best_for = ["Weakened skin barriers", "Sensitive skin", "Hair and scalp vitality"]
+when = "AM & PM"
+how_to_use = [
+  "Cleanse the skin thoroughly.",
+  "Apply a few drops of noni ampoule or serum.",
+  "Gently pat into skin until fully absorbed.",
+]
+pairs_with = ["Moisturizers", "Serums"]
+avoid_with = []
+good_to_know = [
+  "Evidence for skin barrier repair is based on fermented noni extract.",
+  "Hair growth benefits have been demonstrated in preliminary cell studies.",
+]
+myth = "Noni immediately cures skin conditions like atopic dermatitis."
+fact = "Studies suggest fermented noni supports immune balance and barrier function in lab research."
+keywords = ["noni"]
+examples = [
+  {brand = "celimax", product = "The Real Noni Energy Ampoule 80ml"},
+]
+hashtags = ["#noni", "#skincare", "#skinbarrier"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240423022",
+  "https://pubmed.ncbi.nlm.nih.gov/31963703/",
+  "https://pubmed.ncbi.nlm.nih.gov/42501924/",
+]
+
+# PASS
+[[ingredient]]
+id = "oat"
+name = "Oat"
+full_name = "Colloidal Oatmeal"
+nickname = "Barrier-Soothing Grain"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller with 1,000+ reviews"
+hot_since = 2020
+hook = "Can a simple cereal grain soothe sensitive skin?"
+what_it_is = "Derived from Avena cereal grass, oat is an active ingredient featured in topical creams to help soothe sensitive skin and support skin-barrier repair."
+origin = "Cereal grass (Avena)"
+benefits = [
+  "Helps support skin-barrier repair",
+  "May help soothe and comfort sensitive skin",
+  "Supports skin microbiome and barrier properties",
+]
+best_for = ["Sensitive skin", "Skin barrier support"]
+when = "AM & PM"
+how_to_use = [
+  "Cleanse skin with a gentle cleanser",
+  "Apply oat-infused cream evenly to face",
+  "Pat gently to support absorption",
+]
+pairs_with = ["Natural oils", "Colloidal oatmeal"]
+avoid_with = []
+good_to_know = [
+  "Topical colloidal oatmeal is studied for supporting the skin microbiome.",
+  "Ancient compounds like natural oat formulations are backed by modern science.",
+]
+myth = "Oats are only beneficial as a food item and have no skin benefits."
+fact = "Studies show topical colloidal oatmeal supports skin microbiome and skin barrier properties."
+keywords = ["oat", "oat-in"]
+examples = [
+  {brand = "Purito Seoul", product = "Oat-In Calming Gel Cream 100ml"},
+]
+hashtags = ["#oat", "#sensitiveskin", "#barrierrepair"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250228767",
+  "https://pubmed.ncbi.nlm.nih.gov/32484623/",
+  "https://pubmed.ncbi.nlm.nih.gov/34813665/",
+]
+
+# PASS
+[[ingredient]]
+id = "red-bean"
+name = "Red Bean"
+full_name = "Vigna Angularis Seed Extract"
+nickname = "Adzuki Bean"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller with 1,300+ reviews"
+hot_since = 2022
+hook = "Can red bean help refresh pores and soothe skin?"
+what_it_is = "Red bean (Vigna angularis) is an East Asian crop used in skincare products like refreshing pore masks and studied for its active compound hemiphloin."
+origin = "East Asia"
+benefits = [
+  "Helps refresh skin when used in pore mask products",
+  "May support skin against inflammation",
+  "Contains hemiphloin which may help soothe irritated skin",
+]
+best_for = ["Refreshing clogged pores", "Skin prone to inflammation"]
+when = "1-2 times a week"
+how_to_use = [
+  "Apply evenly to clean skin as a refreshing mask",
+  "Leave on for specified time to refresh pores",
+  "Rinse off gently with lukewarm water",
+]
+pairs_with = ["Soothing mask", "Gentle cleansers"]
+avoid_with = []
+good_to_know = [
+  "Evidence for skin inflammation effects comes from a 2023 Vigna angularis extract study.",
+  "Adzuki beans come in red, white, black, gray, and mottled varieties.",
+]
+myth = "Red bean skincare products can cure chronic eczema or severe dermatitis."
+fact = "Vigna angularis extract and its compound hemiphloin show promise against skin inflammation in research."
+keywords = ["red bean"]
+examples = [
+  {brand = "Beauty of Joseon", product = "Red Bean Refreshing Pore Mask 140mL"},
+]
+hashtags = ["#redbean", "#adzukibean", "#porecare", "#kbeauty"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA221217079",
+  "https://en.wikipedia.org/wiki/Adzuki_bean",
+  "https://pubmed.ncbi.nlm.nih.gov/36793948/",
+]
+
+# PASS
+[[ingredient]]
+id = "white-truffle"
+name = "White Truffle"
+full_name = "Tuber Magnatum Extract"
+nickname = ""
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller in spray serums"
+hot_since = 2023
+hook = "A popular botanical ingredient in global spray serums"
+what_it_is = "White truffle (Tuber magnatum) is a subterranean fungus species found mainly in Italy, Southern Europe, and Thailand, featured in popular spray serums."
+origin = "Italy, Southern Europe, and Thailand"
+benefits = [
+  "Helps hydrate and refresh skin in spray mist formulas",
+  "Supports skin nourishment when used in daily serums",
+  "Known for pairing well with peptides in skin care",
+]
+best_for = ["Dry or dull skin", "Daily facial misting"]
+when = "AM & PM"
+how_to_use = [
+  "Shake bottle well if using a bi-phase spray serum formula",
+  "Spray evenly onto face from a short distance",
+  "Gently pat into skin to support absorption",
+]
+pairs_with = ["Peptides"]
+avoid_with = []
+good_to_know = [
+  "Specific clinical evidence for skincare benefits is limited in open research.",
+  "Often formulated in spray serums alongside peptides and oils.",
+]
+myth = "White truffle can instantly erase wrinkles or cure skin conditions."
+fact = "It is a trending ingredient in spray serums, though detailed skin research is thin."
+keywords = ["white truffle"]
+examples = [
+  {brand = "d'Alba", product = "White Truffle First Spray Serum Peptide 100ml"},
+]
+hashtags = ["#whitetruffle", "#skincare", "#sprayserum"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA260842596",
+  "https://en.wikipedia.org/wiki/Tuber_magnatum",
+]
+
+# PASS
+[[ingredient]]
+id = "bamboo"
+name = "Bamboo"
+full_name = "Bambusoideae Extract"
+nickname = "Plant Skin Soother"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller ingredient."
+hot_since = 2021
+hook = "A plant extract known for soothing skin irritation."
+what_it_is = "Bamboo is a perennial plant native to tropical and subtropical regions. Its extract is used in skincare to help comfort and calm the skin."
+origin = "Tropical and subtropical regions, especially Asia"
+benefits = [
+  "May help soothe skin inflammation",
+  "Supports a calm and comforted skin barrier",
+  "Helps ease visible skin irritation",
+]
+best_for = ["Sensitive skin", "Irritated skin", "Redness-prone skin"]
+when = "AM & PM"
+how_to_use = [
+  "Cleanse your face before applying product.",
+  "Smooth a generous layer onto face and neck.",
+  "Pat gently until absorbed into the skin.",
+]
+pairs_with = ["Panthenol", "Botanical Extracts"]
+avoid_with = []
+good_to_know = [
+  "Evidence for soothing effects comes from animal model studies.",
+  "Commonly featured in global bestselling barrier creams.",
+]
+myth = "Bamboo extract permanently erases skin redness overnight."
+fact = "Studies in mice show bamboo leaf extract may help lower inflammatory markers in skin."
+keywords = ["bamboo"]
+examples = [
+  {brand = "Purito Seoul", product = "Mighty Bamboo Panthenol Cream 100ml"},
+]
+hashtags = ["#bamboo", "#skincare", "#soothing"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA250530960",
+  "https://en.wikipedia.org/wiki/Bamboo",
+  "https://pubmed.ncbi.nlm.nih.gov/32290690/",
+]
+
+# PASS
+[[ingredient]]
+id = "green-tomato"
+name = "Green Tomato"
+full_name = ""
+nickname = "Pore-Blurring Tomato"
+area = "skin"
+heat = "global"
+heat_note = "Olive Young Global bestseller ingredient"
+hot_since = 2023
+hook = "A tomato-derived ingredient popular in sun creams."
+what_it_is = "Green tomato is a botanical extract from tomato fruit, featured in pore-blurring sun creams and skin health supplements."
+origin = "Western South America"
+benefits = [
+  "Helps support overall skin health and appearance.",
+  "May assist in cosmetic pore-blurring sun creams.",
+  "Supports skin appearance when used in oral supplements.",
+]
+best_for = ["Pore blurring", "Sun protection", "Skin health support"]
+when = "AM"
+how_to_use = [
+  "Apply evenly as the final step of your AM skincare routine.",
+  "Reapply regularly during sun exposure if used in sun cream.",
+  "Smooth over areas with visible pores before applying makeup.",
+]
+pairs_with = ["Sunscreen", "Oral supplements"]
+avoid_with = []
+good_to_know = [
+  "Clinical evidence on topical green tomato extract remains limited.",
+  "Derived from nightshade family fruits native to South America.",
+]
+myth = "Green tomato extracts can permanently cure or shrink deep pores."
+fact = "Green tomato formulas may help blur pores visually and support general skin health."
+keywords = ["green tomato"]
+examples = [
+  {brand = "SUNGBOON EDITOR", product = "Green Tomato Pore Blurring Sun Cream 50g"},
+]
+hashtags = ["#greentomato", "#poreblurring", "#suncream", "#skincare"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA230418271",
+  "https://pubmed.ncbi.nlm.nih.gov/36860176/",
+  "https://en.wikipedia.org/wiki/Tomato",
+]
+
+# PASS
+[[ingredient]]
+id = "raspberry"
+name = "Raspberry"
+full_name = "Rubus Plant Fruit Extract"
+nickname = "Fruity Scalp Vinegar"
+area = "hair"
+heat = "global"
+heat_note = "Bestseller on Olive Young Global for hair care."
+hot_since = 2024
+hook = "Why this berry is taking over hair rinse routines."
+what_it_is = "Raspberry is the edible fruit of several plant species in the genus Rubus. In hair care, it is used in rinse formulas like hair vinegar to refresh the hair and scalp."
+origin = "Edible fruit of Rubus plant species (rose family)"
+benefits = [
+  "Helps refresh hair and scalp during rinse routines.",
+  "Supports a glossy, smooth appearance for dull strands.",
+  "Known for providing a pleasant berry scent to hair.",
+]
+best_for = ["Dull or tired hair", "Scalp refresh routines"]
+when = "1-2x a week"
+how_to_use = [
+  "After shampooing, apply directly onto damp scalp and hair.",
+  "Gently massage into the scalp and through lengths of hair.",
+  "Rinse thoroughly with lukewarm water.",
+]
+pairs_with = ["Vinegar", "Water"]
+avoid_with = []
+good_to_know = [
+  "Clinical evidence specifically on raspberry's hair benefits is thin.",
+  "Popularized in Korean hair care in lightweight vinegar formulations.",
+]
+myth = "Raspberry hair rinses can permanently alter hair color."
+fact = "Raspberry is used in hair rinses mainly to refresh the scalp and add a pleasant scent."
+keywords = ["raspberry"]
+examples = [
+  {brand = "A'pieu", product = "A&rsquo;pieu Raspberry Hair Vinegar 200ml"},
+]
+hashtags = ["#raspberry", "#hairvinegar", "#kbeautyhair"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA240724670",
+  "https://en.wikipedia.org/wiki/Raspberry",
+]
+
+# PASS
+[[ingredient]]
+id = "kelp"
+name = "Kelp"
+full_name = "Kelp Extract"
+nickname = "Brown Algae"
+area = "hair"
+heat = "global"
+heat_note = "Featured in an Olive Young Global bestseller."
+hot_since = 2024
+hook = "An ocean algae used in everyday hair cleansing."
+what_it_is = "Kelp is a large brown seaweed that belongs to the order Laminariales. It is popular in hair care formulas such as daily shampoos."
+origin = "Ocean-derived brown algae (Laminariales)"
+benefits = [
+  "Helps gently cleanse hair when formulated in shampoos.",
+  "Supports routine scalp and hair care.",
+  "Known for providing ocean-derived hair care support.",
+]
+best_for = ["Daily hair washing", "Scalp care routines", "All hair types"]
+when = "Every wash"
+how_to_use = [
+  "Apply a moderate amount of kelp shampoo to wet hair.",
+  "Lather into scalp and strands using gentle fingertips.",
+  "Rinse thoroughly with lukewarm water.",
+]
+pairs_with = ["Water", "Gentle cleansers"]
+avoid_with = []
+good_to_know = [
+  "Specific scientific evidence for hair benefits remains thin.",
+  "Biologically, kelp is a stramenopile rather than a true plant.",
+]
+myth = "Kelp shampoos can regrow hair or instantly cure hair loss."
+fact = "Evidence for specific hair benefits is thin, though kelp is popular in daily shampoos."
+keywords = ["kelp"]
+examples = [
+  {brand = "CHUNGMIJUNG", product = "Kelp Shampoo 500ml"},
+]
+hashtags = ["#kelp", "#haircare", "#shampoo"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA241126782",
+  "https://en.wikipedia.org/wiki/Kelp",
+]
+
+# PASS
+[[ingredient]]
+id = "peony"
+name = "Peony"
+full_name = "Paeonia Extract"
+nickname = "Soothing Scalp Botanical"
+area = "hair"
+heat = "global"
+heat_note = "Popular in global soothing scalp serums."
+hot_since = 2021
+hook = "A soothing botanical extract for scalp care."
+what_it_is = "Peony comes from flowering plants of the Paeonia genus and is included in hair care products like soothing serums to help comfort the scalp."
+origin = "Asia, Europe, and Western North America"
+benefits = [
+  "Helps soothe delicate or uncomfortable scalps.",
+  "Supports a calm and balanced scalp feeling.",
+  "Provides light soothing care in leave-in hair serums.",
+]
+best_for = ["Sensitive scalps", "Scalp discomfort"]
+when = "As needed"
+how_to_use = [
+  "Apply a small amount of peony serum directly to the scalp.",
+  "Gently massage with fingertips to cover affected areas.",
+  "Leave in without rinsing as part of your hair care routine.",
+]
+pairs_with = ["Scalp serums", "Soothing botanicals"]
+avoid_with = []
+good_to_know = [
+  "Direct scientific evidence on peony for scalp health remains limited.",
+  "Belongs to the Paeoniaceae plant family, comprising about 33 species.",
+]
+myth = "Peony extracts can instantly cure severe scalp conditions."
+fact = "Peony is used in hair care to help soothe the scalp, though evidence is limited."
+keywords = ["peony"]
+examples = [
+  {brand = "KLORANE", product = "Soothing Serum with Peony 100mL"},
+]
+hashtags = ["#peony", "#scalpcare", "#soothingserum"]
+sources = [
+  "https://global.oliveyoung.com/product/detail?prdtNo=GA211112793",
+  "https://en.wikipedia.org/wiki/Peony",
+]
